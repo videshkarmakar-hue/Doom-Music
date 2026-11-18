@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

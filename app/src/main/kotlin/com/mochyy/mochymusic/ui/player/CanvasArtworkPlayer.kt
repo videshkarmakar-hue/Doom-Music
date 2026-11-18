@@ -1,12 +1,12 @@
 // CanvasArtworkPlayer.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import com.mochyy.mochymusic.ui.utils.rememberSettled
+import com.videshkarmakar.doom.ui.utils.rememberSettled
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,7 +36,7 @@ import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.ui.AspectRatioFrameLayout
-import com.mochyy.mochymusic.utils.followAppProxy
+import com.videshkarmakar.doom.utils.followAppProxy
 import com.music.innertube.models.YouTubeClient
 import okhttp3.OkHttpClient
 import java.util.Locale
@@ -244,7 +244,7 @@ fun CanvasArtworkPlayer(
     val sampling = onFrameColors != null
     LaunchedEffect(isVideoReady, sampling, shouldPlay) {
         if (!isVideoReady || !sampling) return@LaunchedEffect
-        val sampler = com.mochyy.mochymusic.ui.player.video.VideoFrameSampler(CanvasSamplePx)
+        val sampler = com.videshkarmakar.doom.ui.player.video.VideoFrameSampler(CanvasSamplePx)
         val pixels = IntArray(CanvasSamplePx * CanvasSamplePx)
         // a paused canvas never changes, so it's read once and left alone
         do {
@@ -252,7 +252,7 @@ fun CanvasArtworkPlayer(
             if (sampler.read(session.frameSurface, view)) {
                 sampler.bitmap.getPixels(pixels, 0, CanvasSamplePx, 0, 0, CanvasSamplePx, CanvasSamplePx)
                 currentOnFrameColors?.invoke(
-                    com.mochyy.mochymusic.ui.player.flagship.ambientTones(pixels, CanvasSamplePx, CanvasSamplePx)
+                    com.videshkarmakar.doom.ui.player.flagship.ambientTones(pixels, CanvasSamplePx, CanvasSamplePx)
                 )
             }
             kotlinx.coroutines.delay(CanvasSampleMs)
@@ -274,7 +274,7 @@ fun CanvasArtworkPlayer(
 
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
                 view.setRenderEffect(
-                    com.mochyy.mochymusic.ui.component.BlurEffectCache.getNative(
+                    com.videshkarmakar.doom.ui.component.BlurEffectCache.getNative(
                         blurRadiusPx,
                         android.graphics.Shader.TileMode.CLAMP
                     )

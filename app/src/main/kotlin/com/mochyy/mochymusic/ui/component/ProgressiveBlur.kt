@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -192,7 +192,7 @@ internal fun ProgressiveBlurBands(
     val currentRadius by rememberUpdatedState(radius)
     val currentOffscreen by rememberUpdatedState(offscreen)
     val currentDraw by rememberUpdatedState(draw)
-    val low = LocalBlurQuality.current == com.mochyy.mochymusic.constants.BlurQuality.LOW
+    val low = LocalBlurQuality.current == com.videshkarmakar.doom.constants.BlurQuality.LOW
     val layers = arrayOf(rememberGraphicsLayer(), rememberGraphicsLayer(), rememberGraphicsLayer())
     // hwui hands the clip a blurred layer is drawn under to its filter, which then reads nothing past it: each band's blur sits in a frame of its own, and only the frame is clipped
     val frames = arrayOf(rememberGraphicsLayer(), rememberGraphicsLayer(), rememberGraphicsLayer())

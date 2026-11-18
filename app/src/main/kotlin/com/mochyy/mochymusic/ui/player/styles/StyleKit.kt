@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.core.Animatable
@@ -60,18 +60,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.ColorUtils
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.LocalArtworkColor
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.extensions.toggleRepeatMode
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState
+import com.videshkarmakar.doom.LocalArtworkColor
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.extensions.toggleRepeatMode
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedPlayGlyph
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedSkipGlyph
-import com.mochyy.mochymusic.ui.player.flagship.SkipCycleState
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedPlayGlyph
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedSkipGlyph
+import com.videshkarmakar.doom.ui.player.flagship.SkipCycleState
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.launch
 import kotlin.math.abs
@@ -218,7 +218,7 @@ fun rememberLivePosition(animated: Boolean = true): LivePosition {
     }
     return remember(connection) {
         // the player's own position only moves every 10 ms or so, which judders at 120 hz; this one moves on the frame's time
-        val clock = com.mochyy.mochymusic.ui.player.PlaybackClock({ connection?.player })
+        val clock = com.videshkarmakar.doom.ui.player.PlaybackClock({ connection?.player })
         LivePosition(read = clock, tick = { tick.longValue })
     }
 }
@@ -379,7 +379,7 @@ private const val CircleSkipWidth = 0.46f
 @Composable
 fun TransportCircles(tones: StyleTones, size: Dp = 30.dp, vertical: Boolean = false, spacing: Dp = 8.dp) {
     // a tv's remote plays and skips, buttons on the screen are only more things for focus to land on
-    if (com.mochyy.mochymusic.ui.utils.isTvLayout()) return
+    if (com.videshkarmakar.doom.ui.utils.isTvLayout()) return
     val connection = LocalPlayerConnection.current ?: return
     val transport by connection.uiState.transportState.collectAsState()
     val scope = rememberCoroutineScope()
@@ -464,7 +464,7 @@ fun Modifier.styleGestures(
     enabled: Boolean,
     interactive: () -> Boolean,
     onToggle: () -> Unit,
-    carousel: com.mochyy.mochymusic.ui.player.SongCarousel?,
+    carousel: com.videshkarmakar.doom.ui.player.SongCarousel?,
     player: () -> androidx.media3.common.Player?,
 ): Modifier =
     if (!enabled) this else this
@@ -476,7 +476,7 @@ fun Modifier.styleGestures(
 // the sideways swipe alone, for a style that wants its own taps
 fun Modifier.styleSongSwipe(
     interactive: () -> Boolean,
-    carousel: com.mochyy.mochymusic.ui.player.SongCarousel?,
+    carousel: com.videshkarmakar.doom.ui.player.SongCarousel?,
     player: () -> androidx.media3.common.Player?,
 ): Modifier =
     this.then(
@@ -641,7 +641,7 @@ fun BoxScope.StyleMenu(
                 ) {
                     // the circle stays nearest the edge the button sits on, the words face into the screen
                     val label = @Composable {
-                        Text(text = item.label, style = com.mochyy.mochymusic.ui.player.chevronMenuLabelStyle(if (pill) Color.White else tones.ink, 13.sp))
+                        Text(text = item.label, style = com.videshkarmakar.doom.ui.player.chevronMenuLabelStyle(if (pill) Color.White else tones.ink, 13.sp))
                     }
                     if (!atStart) label()
                     StyleCircle(icon = item.icon, tones = tones, size = buttonSize + 6.dp, onClick = item.onClick, pill = pill, active = item.active, picture = item.picture)

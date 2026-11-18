@@ -1,6 +1,6 @@
 // the equalizer's bands tab: the graph's bands as sliders, one sweep of a finger draws the curve
 
-package com.mochyy.mochymusic.ui.screens.equalizer
+package com.videshkarmakar.doom.ui.screens.equalizer
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -39,14 +39,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.eq.data.FilterType
-import com.mochyy.mochymusic.eq.data.ParametricEQBand
-import com.mochyy.mochymusic.ui.screens.audiolab.LabCard
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSectionLabel
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.viewmodels.frequencyLabel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.eq.data.FilterType
+import com.videshkarmakar.doom.eq.data.ParametricEQBand
+import com.videshkarmakar.doom.ui.screens.audiolab.LabCard
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSectionLabel
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.viewmodels.frequencyLabel
 import kotlin.math.abs
 import kotlin.math.roundToInt
 

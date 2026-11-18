@@ -1,13 +1,13 @@
 // VideoAudioSync.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import android.net.Uri
 import android.os.SystemClock
 import android.util.LruCache
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DataSource
-import com.mochyy.mochymusic.playback.audio.StreamPcmDecoder
+import com.videshkarmakar.doom.playback.audio.StreamPcmDecoder
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.asCoroutineDispatcher
 import kotlinx.coroutines.sync.Mutex

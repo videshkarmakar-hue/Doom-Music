@@ -1,6 +1,6 @@
 // CarTabsScreen.kt
 
-package com.mochyy.mochymusic.car.screens
+package com.videshkarmakar.doom.car.screens
 
 import androidx.car.app.Screen
 import androidx.car.app.model.Action
@@ -11,7 +11,7 @@ import androidx.car.app.model.Template
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.car.CarApp
+import com.videshkarmakar.doom.car.CarApp
 
 // the car's first screen: home, remote control, recent and library as android auto's own tab bar, the same four the concept has
 @UnstableApi

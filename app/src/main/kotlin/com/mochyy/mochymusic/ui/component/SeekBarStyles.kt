@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.annotation.StringRes
 import androidx.compose.animation.core.CubicBezierEasing
@@ -24,7 +24,7 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import kotlin.math.sin
 
 /**

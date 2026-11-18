@@ -1,6 +1,6 @@
 // LinkRows.kt
 
-package com.mochyy.mochymusic.link
+package com.videshkarmakar.doom.link
 
 import android.content.ContentValues
 import android.database.Cursor

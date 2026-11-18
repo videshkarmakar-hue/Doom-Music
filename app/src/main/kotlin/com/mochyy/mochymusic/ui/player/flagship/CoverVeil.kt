@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.flagship
+package com.videshkarmakar.doom.ui.player.flagship
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -6,8 +6,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.graphics.Brush
-import com.mochyy.mochymusic.ui.player.CarouselPictures
-import com.mochyy.mochymusic.ui.player.SongCarousel
+import com.videshkarmakar.doom.ui.player.CarouselPictures
+import com.videshkarmakar.doom.ui.player.SongCarousel
 
 // the colour stays clear over the top of the blurred mirror and rises toward the bottom of the screen
 private const val VeilFrom = 0.3f

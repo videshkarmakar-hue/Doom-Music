@@ -4,7 +4,7 @@
 // was imported as, with how long each runs and where it's from, so a live or sped-up take is easy
 // to tell from the studio one. The pick is saved for that track, so later imports use it too.
 
-package com.mochyy.mochymusic.ui.menu
+package com.videshkarmakar.doom.ui.menu
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -36,19 +36,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.importer.ImportedVersions
-import com.mochyy.mochymusic.importer.TrackMatch
-import com.mochyy.mochymusic.importer.TrackMatcher
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.screens.library.LibraryGridArtwork
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.importer.ImportedVersions
+import com.videshkarmakar.doom.importer.TrackMatch
+import com.videshkarmakar.doom.importer.TrackMatcher
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.screens.library.LibraryGridArtwork
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.utils.makeTimeString
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_OMV

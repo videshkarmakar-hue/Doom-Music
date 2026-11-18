@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.bedside
+package com.videshkarmakar.doom.ui.player.bedside
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -60,8 +60,8 @@ import androidx.compose.ui.unit.em
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
-import com.mochyy.mochymusic.constants.BedsideClockFace
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.constants.BedsideClockFace
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.launch
 import java.util.Calendar
 import java.util.Locale

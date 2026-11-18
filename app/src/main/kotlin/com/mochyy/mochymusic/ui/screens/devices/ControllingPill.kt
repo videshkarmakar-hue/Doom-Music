@@ -1,6 +1,6 @@
 // ControllingPill.kt
 
-package com.mochyy.mochymusic.ui.screens.devices
+package com.videshkarmakar.doom.ui.screens.devices
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.spring
@@ -39,12 +39,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.remote.RemoteTarget
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.remote.RemoteTarget
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 

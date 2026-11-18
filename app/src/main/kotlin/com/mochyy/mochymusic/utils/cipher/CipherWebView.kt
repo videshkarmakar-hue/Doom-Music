@@ -1,6 +1,6 @@
 // CipherWebView.kt
 
-package com.mochyy.mochymusic.utils.cipher
+package com.videshkarmakar.doom.utils.cipher
 
 import android.content.Context
 import android.webkit.ConsoleMessage
@@ -300,7 +300,7 @@ function discoverAndInit() {
     }
 
     companion object {
-        private const val TAG = "mochy_CipherWebView"
+        private const val TAG = "doom_CipherWebView"
         private const val JS_INTERFACE = "CipherBridge"
 
         suspend fun create(

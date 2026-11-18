@@ -1,8 +1,8 @@
 // LyricsProviderRegistry.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
-import com.mochyy.mochymusic.constants.PreferredLyricsProvider
+import com.videshkarmakar.doom.constants.PreferredLyricsProvider
 import com.music.directlyrics.LrcRed
 
 object LyricsProviderRegistry {

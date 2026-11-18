@@ -1,6 +1,6 @@
 // SleepTimerSheet.kt
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearEasing
@@ -57,12 +57,12 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.playback.SleepTimer
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.SheetIcon
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.playback.SleepTimer
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.SheetIcon
 import kotlinx.coroutines.delay
 
 private val CardSurface = MenuRowSurface

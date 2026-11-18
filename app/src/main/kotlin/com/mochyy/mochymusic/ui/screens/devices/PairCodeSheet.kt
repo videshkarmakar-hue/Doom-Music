@@ -1,6 +1,6 @@
 // PairCodeSheet.kt
 
-package com.mochyy.mochymusic.ui.screens.devices
+package com.videshkarmakar.doom.ui.screens.devices
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.animateFloatAsState
@@ -52,14 +52,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.LinkPeer
-import com.mochyy.mochymusic.link.LinkWire
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetLabel
-import com.mochyy.mochymusic.ui.screens.update.SheetPrimaryButton
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.LinkPeer
+import com.videshkarmakar.doom.link.LinkWire
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetLabel
+import com.videshkarmakar.doom.ui.screens.update.SheetPrimaryButton
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.launch
 
 private val BoxColor = Color(0xFF2A2A2E)

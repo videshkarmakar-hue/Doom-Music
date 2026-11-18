@@ -1,6 +1,6 @@
 // PrecisionSink.kt
 
-package com.mochyy.mochymusic.playback.audio
+package com.videshkarmakar.doom.playback.audio
 
 import androidx.media3.common.C
 import androidx.media3.common.Format
@@ -9,7 +9,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.common.util.Util
 import androidx.media3.exoplayer.audio.AudioSink
 import androidx.media3.exoplayer.audio.ForwardingAudioSink
-import com.mochyy.mochymusic.playback.StreamInspector
+import com.videshkarmakar.doom.playback.StreamInspector
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import kotlin.math.roundToInt

@@ -1,6 +1,6 @@
-package com.mochyy.mochymusic.di
+package com.videshkarmakar.doom.di
 
-import com.mochyy.mochymusic.lyrics.LyricsHelper
+import com.videshkarmakar.doom.lyrics.LyricsHelper
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent

@@ -1,6 +1,6 @@
 // DeviceMenuRows.kt
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -13,13 +13,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.LinkSongs
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.ui.screens.devices.rememberDevicesLink
-import com.mochyy.mochymusic.ui.screens.devices.showRemoteControl
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.LinkSongs
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.ui.screens.devices.rememberDevicesLink
+import com.videshkarmakar.doom.ui.screens.devices.showRemoteControl
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 

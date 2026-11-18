@@ -1,6 +1,6 @@
 // ShapeUtils.kt
 
-package com.mochyy.mochymusic.ui.utils
+package com.videshkarmakar.doom.ui.utils
 
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.foundation.shape.CornerSize

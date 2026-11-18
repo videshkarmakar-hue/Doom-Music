@@ -1,6 +1,6 @@
 // SearchBar.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
@@ -60,8 +60,8 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AppBarHeight
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AppBarHeight
 
 @ExperimentalMaterial3Api
 @Composable

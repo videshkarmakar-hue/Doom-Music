@@ -1,6 +1,6 @@
 // CarSession.kt
 
-package com.mochyy.mochymusic.car
+package com.videshkarmakar.doom.car
 
 import android.content.Intent
 import androidx.car.app.Screen
@@ -10,14 +10,14 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.car.screens.CarTabsScreen
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.link.phone.PhoneLinkHost
-import com.mochyy.mochymusic.link.phone.PhonePairing
-import com.mochyy.mochymusic.lyrics.LyricsHelper
+import com.videshkarmakar.doom.car.screens.CarTabsScreen
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.link.phone.PhoneLinkHost
+import com.videshkarmakar.doom.link.phone.PhonePairing
+import com.videshkarmakar.doom.lyrics.LyricsHelper
 import kotlinx.coroutines.launch
 
-// one run of mochy on the car screen: binds the music service while it lasts and starts on the tabs
+// one run of doom on the car screen: binds the music service while it lasts and starts on the tabs
 @UnstableApi
 class CarSession(
     private val database: MusicDatabase,

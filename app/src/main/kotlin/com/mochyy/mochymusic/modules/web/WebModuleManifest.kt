@@ -1,12 +1,12 @@
 // what a web module says about itself in its manifest.json, see docs/notes/modules.md for the whole format
 
-package com.mochyy.mochymusic.modules.web
+package com.videshkarmakar.doom.modules.web
 
-import com.mochyy.mochymusic.module.FieldKind
-import com.mochyy.mochymusic.module.ModuleField
-import com.mochyy.mochymusic.module.StreamOption
-import com.mochyy.mochymusic.modules.skin.GlassChange
-import com.mochyy.mochymusic.modules.skin.SkinParser
+import com.videshkarmakar.doom.module.FieldKind
+import com.videshkarmakar.doom.module.ModuleField
+import com.videshkarmakar.doom.module.StreamOption
+import com.videshkarmakar.doom.modules.skin.GlassChange
+import com.videshkarmakar.doom.modules.skin.SkinParser
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
@@ -33,7 +33,7 @@ internal data class WebModuleManifest(
     val settings: List<Setting> = emptyList(),
     // only read from a zip: the service the module plays from, since a file has no link of its own
     val url: String? = null,
-    // only read from a zip: the apk inside it holding the module's own code, which mochy runs only when it's signed with mochy's key
+    // only read from a zip: the apk inside it holding the module's own code, which doom runs only when it's signed with doom's key
     val code: String? = null,
     // a skin: a player of its own, a font and a glass shader from the zip, pages, rows in the player's menu; read as raw json so one bad part can't sink the whole manifest
     val player: JsonElement? = null,
@@ -124,7 +124,7 @@ internal data class WebModuleManifest(
             ((element as? JsonPrimitive) ?: ((element as? JsonObject)?.get("name") as? JsonPrimitive))?.contentOrNull?.lowercase()
         }.toSet()
 
-    // anything that changes how mochy looks or what it shows: settings, a player, a font, pages, menu rows
+    // anything that changes how doom looks or what it shows: settings, a player, a font, pages, menu rows
     val changesLook: Boolean
         get() = look.isNotEmpty() || player != null || font != null || pages != null || actions != null || glass != null || settings.any { it.changesLook }
 

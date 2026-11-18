@@ -1,10 +1,10 @@
 // YouTubeLyricsVideoSync.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
-import com.mochyy.mochymusic.lyrics.CaptionAligner
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.lyrics.VideoCaptionSource
+import com.videshkarmakar.doom.lyrics.CaptionAligner
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.lyrics.VideoCaptionSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

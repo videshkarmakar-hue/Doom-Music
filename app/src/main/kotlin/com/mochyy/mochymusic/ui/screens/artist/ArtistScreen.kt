@@ -1,6 +1,6 @@
 // ArtistScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.artist
+package com.videshkarmakar.doom.ui.screens.artist
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -14,7 +14,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
-import com.mochyy.mochymusic.ui.utils.SnapLayoutInfoProvider
+import com.videshkarmakar.doom.ui.utils.SnapLayoutInfoProvider
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -71,59 +71,59 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalAppContentObscured
-import com.mochyy.mochymusic.LocalDetailAccentColor
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.canvas.appleArtworkUrl
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.ProfilePicUriKey
-import com.mochyy.mochymusic.constants.ShowArtistBackgroundVideoKey
-import com.mochyy.mochymusic.constants.ShowArtistDescriptionKey
-import com.mochyy.mochymusic.constants.ShowArtistSubscriberCountKey
-import com.mochyy.mochymusic.constants.ShowMonthlyListenersKey
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.playback.queues.YouTubeAlbumRadio
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.HomeCardHighlight
-import com.mochyy.mochymusic.ui.component.HomeCardSpacing
-import com.mochyy.mochymusic.ui.component.HomeCoverCard
-import com.mochyy.mochymusic.ui.component.homeRowHeight
-import com.mochyy.mochymusic.ui.component.HomeTrackRow
-import com.mochyy.mochymusic.ui.component.HomeVideoCard
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.detail.FeaturedArtistUi
-import com.mochyy.mochymusic.ui.component.detail.FeaturedArtistsRow
-import com.mochyy.mochymusic.ui.component.detail.PlaylistInset
-import com.mochyy.mochymusic.ui.component.detail.PlaylistStatsStyle
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackBones
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackRow
-import com.mochyy.mochymusic.ui.component.detail.playlistCoverHeight
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.component.navigateToTab
-import com.mochyy.mochymusic.ui.component.rememberCoverBlurAvailable
-import com.mochyy.mochymusic.ui.component.rememberRevealSeenState
-import com.mochyy.mochymusic.ui.component.revealOnAppear
-import com.mochyy.mochymusic.ui.menu.AlbumMenu
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeAlbumMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeArtistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubePlaylistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeSongMenu
-import com.mochyy.mochymusic.ui.screens.settings.importsync.rememberYouTubeSignedIn
-import com.mochyy.mochymusic.ui.theme.rememberCoverThemeColor
-import com.mochyy.mochymusic.ui.utils.backToMain
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.ArtistVideos
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.ArtistViewModel
+import com.videshkarmakar.doom.LocalAppContentObscured
+import com.videshkarmakar.doom.LocalDetailAccentColor
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.canvas.appleArtworkUrl
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.ProfilePicUriKey
+import com.videshkarmakar.doom.constants.ShowArtistBackgroundVideoKey
+import com.videshkarmakar.doom.constants.ShowArtistDescriptionKey
+import com.videshkarmakar.doom.constants.ShowArtistSubscriberCountKey
+import com.videshkarmakar.doom.constants.ShowMonthlyListenersKey
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.playback.queues.YouTubeAlbumRadio
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.HomeCardHighlight
+import com.videshkarmakar.doom.ui.component.HomeCardSpacing
+import com.videshkarmakar.doom.ui.component.HomeCoverCard
+import com.videshkarmakar.doom.ui.component.homeRowHeight
+import com.videshkarmakar.doom.ui.component.HomeTrackRow
+import com.videshkarmakar.doom.ui.component.HomeVideoCard
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.detail.FeaturedArtistUi
+import com.videshkarmakar.doom.ui.component.detail.FeaturedArtistsRow
+import com.videshkarmakar.doom.ui.component.detail.PlaylistInset
+import com.videshkarmakar.doom.ui.component.detail.PlaylistStatsStyle
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackBones
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackRow
+import com.videshkarmakar.doom.ui.component.detail.playlistCoverHeight
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.component.navigateToTab
+import com.videshkarmakar.doom.ui.component.rememberCoverBlurAvailable
+import com.videshkarmakar.doom.ui.component.rememberRevealSeenState
+import com.videshkarmakar.doom.ui.component.revealOnAppear
+import com.videshkarmakar.doom.ui.menu.AlbumMenu
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeAlbumMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeArtistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubePlaylistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeSongMenu
+import com.videshkarmakar.doom.ui.screens.settings.importsync.rememberYouTubeSignedIn
+import com.videshkarmakar.doom.ui.theme.rememberCoverThemeColor
+import com.videshkarmakar.doom.ui.utils.backToMain
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.ArtistVideos
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.ArtistViewModel
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.BrowseEndpoint
@@ -134,7 +134,7 @@ import com.music.innertube.models.YTItem
 import com.music.innertube.pages.ArtistSection
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** an artist page's shelves, sorted by what they hold; YouTube's titles are in the account's language */
 private class ArtistShelves(sections: List<ArtistSection>) {
@@ -232,7 +232,7 @@ fun ArtistScreen(
     val lazyListState = rememberLazyListState()
     val revealSeen = rememberRevealSeenState()
     // on its side the banner is the whole screen, the name block sitting at its foot just over the bottom bar
-    val landscape = com.mochyy.mochymusic.ui.utils.isLandscapeLayout()
+    val landscape = com.videshkarmakar.doom.ui.utils.isLandscapeLayout()
     val bannerHeight = if (landscape) androidx.compose.ui.platform.LocalConfiguration.current.screenHeightDp.dp else playlistCoverHeight()
     val headerFoot = LocalPlayerAwareWindowInsets.current.asPaddingValues().calculateBottomPadding() + 6.dp
     val bannerHeightPx = with(LocalDensity.current) { bannerHeight.toPx() }
@@ -571,7 +571,7 @@ private fun LazyListScope.artistShelves(
     mediaAlbumId: () -> String?,
     isPlaying: () -> Boolean,
     artistName: String,
-    revealSeen: com.mochyy.mochymusic.ui.component.RevealSeenState,
+    revealSeen: com.videshkarmakar.doom.ui.component.RevealSeenState,
     onOpenMore: (BrowseEndpoint?) -> Unit,
     onOpen: (YTItem) -> Unit,
     onMenu: (YTItem) -> Unit,
@@ -733,7 +733,7 @@ private fun LazyListScope.coverShelf(
     title: String,
     items: List<YTItem>,
     moreEndpoint: BrowseEndpoint?,
-    revealSeen: com.mochyy.mochymusic.ui.component.RevealSeenState,
+    revealSeen: com.videshkarmakar.doom.ui.component.RevealSeenState,
     mediaAlbumId: () -> String?,
     isPlaying: () -> Boolean,
     onOpenMore: (BrowseEndpoint?) -> Unit,
@@ -770,7 +770,7 @@ private fun LazyListScope.coverShelf(
                     circular = item is ArtistItem,
                     isActive = item is AlbumItem && item.id == mediaAlbumId(),
                     isPlaying = isPlaying,
-                    sharedElementKey = com.mochyy.mochymusic.ui.component.coverTransitionKey(item),
+                    sharedElementKey = com.videshkarmakar.doom.ui.component.coverTransitionKey(item),
                     modifier = Modifier.combinedClickable(
                         interactionSource = null,
                         indication = HomeCardHighlight,
@@ -791,7 +791,7 @@ private fun LazyListScope.videoShelf(
     moreEndpoint: BrowseEndpoint?,
     screenWidth: Dp,
     artistName: String,
-    revealSeen: com.mochyy.mochymusic.ui.component.RevealSeenState,
+    revealSeen: com.videshkarmakar.doom.ui.component.RevealSeenState,
     mediaMetadataId: () -> String?,
     isPlaying: () -> Boolean,
     onOpenMore: (BrowseEndpoint?) -> Unit,

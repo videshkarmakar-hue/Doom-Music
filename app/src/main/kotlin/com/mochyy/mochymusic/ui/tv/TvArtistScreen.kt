@@ -1,6 +1,6 @@
 // TvArtistScreen.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -42,10 +42,10 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.SongItem
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.viewmodels.ArtistViewModel
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.viewmodels.ArtistViewModel
 
 // the artist page from the concept: their photo across the page, who they are and what's new on the left, their music on the right
 @OptIn(ExperimentalFoundationApi::class)

@@ -1,6 +1,6 @@
 // ArtistAlbumsScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.artist
+package com.videshkarmakar.doom.ui.screens.artist
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsetsSides
@@ -28,20 +28,20 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.containerTransformSource
-import com.mochyy.mochymusic.ui.component.detail.PlaylistDetailScaffold
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackRow
-import com.mochyy.mochymusic.ui.component.rememberRevealSeenState
-import com.mochyy.mochymusic.ui.component.revealOnAppear
-import com.mochyy.mochymusic.ui.menu.AlbumMenu
-import com.mochyy.mochymusic.ui.screens.library.LibraryIndexRail
-import com.mochyy.mochymusic.ui.screens.library.indexSections
-import com.mochyy.mochymusic.ui.utils.backToMain
-import com.mochyy.mochymusic.viewmodels.ArtistAlbumsViewModel
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.containerTransformSource
+import com.videshkarmakar.doom.ui.component.detail.PlaylistDetailScaffold
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackRow
+import com.videshkarmakar.doom.ui.component.rememberRevealSeenState
+import com.videshkarmakar.doom.ui.component.revealOnAppear
+import com.videshkarmakar.doom.ui.menu.AlbumMenu
+import com.videshkarmakar.doom.ui.screens.library.LibraryIndexRail
+import com.videshkarmakar.doom.ui.screens.library.indexSections
+import com.videshkarmakar.doom.ui.utils.backToMain
+import com.videshkarmakar.doom.viewmodels.ArtistAlbumsViewModel
 import kotlinx.coroutines.launch
 
 /** the artist's albums in your library: big squares two up, or an A-Z list with the rail */

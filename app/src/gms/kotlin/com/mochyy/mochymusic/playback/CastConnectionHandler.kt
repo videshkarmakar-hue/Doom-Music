@@ -1,6 +1,6 @@
 // CastConnectionHandler.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.content.Context
 import android.net.Uri
@@ -21,9 +21,9 @@ import com.google.android.gms.cast.framework.SessionManager
 import com.google.android.gms.cast.framework.SessionManagerListener
 import com.google.android.gms.cast.framework.media.RemoteMediaClient
 import com.google.android.gms.common.images.WebImage
-import com.mochyy.mochymusic.extensions.metadata
-import com.mochyy.mochymusic.models.MediaMetadata as AppMediaMetadata
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.extensions.metadata
+import com.videshkarmakar.doom.models.MediaMetadata as AppMediaMetadata
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

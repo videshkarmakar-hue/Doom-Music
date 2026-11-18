@@ -3,7 +3,7 @@
 // CoolfontEditor, the Cinematic share's word editor. Pick a look on a card (glow, caps or big), then
 // tap words or swipe across them to give it to them; the card again (or Done) finishes.
 
-package com.mochyy.mochymusic.ui.player.share
+package com.videshkarmakar.doom.ui.player.share
 
 import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedContent
@@ -77,18 +77,18 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.abs
 import kotlin.math.ceil
 import kotlin.math.hypot
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // the three looks a word can take, each with its card and its prompt
 private enum class WordMode(@param:StringRes val label: Int, @param:StringRes val prompt: Int) {

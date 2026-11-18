@@ -1,6 +1,6 @@
 // renders a github release body (markdown and html img tags), anything it doesn't recognise shows as plain text, never dropped
 
-package com.mochyy.mochymusic.ui.screens.update
+package com.videshkarmakar.doom.ui.screens.update
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

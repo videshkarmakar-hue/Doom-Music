@@ -1,6 +1,6 @@
 // LyricsFileBox.kt
 
-package com.mochyy.mochymusic.ui.menu.songedit
+package com.videshkarmakar.doom.ui.menu.songedit
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -37,12 +37,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.songedit.LyricsFileReader
-import com.mochyy.mochymusic.songedit.PickedLyrics
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.SheetIcon
-import com.mochyy.mochymusic.ui.component.TopToaster
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.songedit.LyricsFileReader
+import com.videshkarmakar.doom.songedit.PickedLyrics
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.SheetIcon
+import com.videshkarmakar.doom.ui.component.TopToaster
 import kotlinx.coroutines.launch
 
 // .lrc and .ttml files often come without a proper type, so the picker also lets plain binary files through

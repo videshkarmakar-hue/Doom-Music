@@ -1,6 +1,6 @@
 // MediaLibrarySessionCallback.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.content.ContentResolver
 import android.content.Context
@@ -32,23 +32,23 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.constants.MediaSessionConstants
-import com.mochyy.mochymusic.constants.SongSortType
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.PlaylistEntity
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.extensions.toggleRepeatMode
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.voice.VoicePicker
-import com.mochyy.mochymusic.playback.voice.VoiceRequest
-import com.mochyy.mochymusic.playback.voice.VoiceSearch
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
-import com.mochyy.mochymusic.utils.reportException
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.constants.MediaSessionConstants
+import com.videshkarmakar.doom.constants.SongSortType
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.PlaylistEntity
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.extensions.toggleRepeatMode
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.voice.VoicePicker
+import com.videshkarmakar.doom.playback.voice.VoiceRequest
+import com.videshkarmakar.doom.playback.voice.VoiceSearch
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
+import com.videshkarmakar.doom.utils.reportException
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -583,7 +583,7 @@ constructor(
         }
     }
 
-    // "hey google, play … on mochy" from the car or the phone: the service starts the queue itself, so the answer is cancelled and media3 leaves the player be
+    // "hey google, play … on doom" from the car or the phone: the service starts the queue itself, so the answer is cancelled and media3 leaves the player be
     private fun playVoice(
         session: MediaSession,
         controller: MediaSession.ControllerInfo,
@@ -849,7 +849,7 @@ constructor(
         singleItemStyle = MediaConstants.EXTRAS_VALUE_CONTENT_STYLE_CATEGORY_LIST_ITEM,
     )
 
-    private fun com.mochyy.mochymusic.db.entities.Playlist.toBrowsableMediaItem() = browsableMediaItem(
+    private fun com.videshkarmakar.doom.db.entities.Playlist.toBrowsableMediaItem() = browsableMediaItem(
         "${MusicService.PLAYLIST}/$id",
         playlist.name,
         context.resources.getQuantityString(

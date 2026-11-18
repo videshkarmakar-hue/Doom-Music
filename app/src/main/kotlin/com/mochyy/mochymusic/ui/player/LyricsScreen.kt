@@ -1,6 +1,6 @@
 // LyricsScreen.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
@@ -67,11 +67,11 @@ import androidx.compose.ui.layout.LayoutCoordinates
 import androidx.compose.ui.layout.onPlaced
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
-import com.mochyy.mochymusic.ui.player.share.LyricsShareSession
-import com.mochyy.mochymusic.ui.player.share.song.LyricsSongShare
-import com.mochyy.mochymusic.ui.player.share.ShareFlightSource
-import com.mochyy.mochymusic.ui.player.share.fullBoundsInWindow
-import com.mochyy.mochymusic.ui.player.share.ShareSong
+import com.videshkarmakar.doom.ui.player.share.LyricsShareSession
+import com.videshkarmakar.doom.ui.player.share.song.LyricsSongShare
+import com.videshkarmakar.doom.ui.player.share.ShareFlightSource
+import com.videshkarmakar.doom.ui.player.share.fullBoundsInWindow
+import com.videshkarmakar.doom.ui.player.share.ShareSong
 import androidx.compose.ui.layout.positionInRoot
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
@@ -93,41 +93,41 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.extensions.togglePlayPause
-import com.mochyy.mochymusic.extensions.toggleRepeatMode
-import com.mochyy.mochymusic.constants.AiProviderKey
-import com.mochyy.mochymusic.constants.DeeplApiKey
-import com.mochyy.mochymusic.constants.DeeplFormalityKey
-import com.mochyy.mochymusic.constants.LyricsHighBloomKey
-import com.mochyy.mochymusic.constants.OpenRouterApiKey
-import com.mochyy.mochymusic.constants.OpenRouterBaseUrlKey
-import com.mochyy.mochymusic.constants.OpenRouterModelKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeBelarusianKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeBulgarianKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeChineseKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeHindiKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeJapaneseKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeKoreanKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeKyrgyzKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeMacedonianKey
-import com.mochyy.mochymusic.constants.LyricsRomanizePunjabiKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeRussianKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeSerbianKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeUkrainianKey
-import com.mochyy.mochymusic.constants.TranslateLanguageKey
-import com.mochyy.mochymusic.constants.TranslateLyricsKey
-import com.mochyy.mochymusic.constants.TranslateSourceLanguageKey
-import com.mochyy.mochymusic.constants.TranslateModeKey
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.LyricsTranslationHelper
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.ui.theme.PlayerColorExtractor
-import com.mochyy.mochymusic.viewmodels.LyricsScreenViewModel
+import com.videshkarmakar.doom.extensions.togglePlayPause
+import com.videshkarmakar.doom.extensions.toggleRepeatMode
+import com.videshkarmakar.doom.constants.AiProviderKey
+import com.videshkarmakar.doom.constants.DeeplApiKey
+import com.videshkarmakar.doom.constants.DeeplFormalityKey
+import com.videshkarmakar.doom.constants.LyricsHighBloomKey
+import com.videshkarmakar.doom.constants.OpenRouterApiKey
+import com.videshkarmakar.doom.constants.OpenRouterBaseUrlKey
+import com.videshkarmakar.doom.constants.OpenRouterModelKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeBelarusianKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeBulgarianKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeChineseKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeHindiKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeJapaneseKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeKoreanKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeKyrgyzKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeMacedonianKey
+import com.videshkarmakar.doom.constants.LyricsRomanizePunjabiKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeRussianKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeSerbianKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeUkrainianKey
+import com.videshkarmakar.doom.constants.TranslateLanguageKey
+import com.videshkarmakar.doom.constants.TranslateLyricsKey
+import com.videshkarmakar.doom.constants.TranslateSourceLanguageKey
+import com.videshkarmakar.doom.constants.TranslateModeKey
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsTranslationHelper
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.ui.theme.PlayerColorExtractor
+import com.videshkarmakar.doom.viewmodels.LyricsScreenViewModel
 import kotlin.math.roundToInt
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -135,7 +135,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.mochyy.mochymusic.ui.utils.stableStatusBarsPadding
+import com.videshkarmakar.doom.ui.utils.stableStatusBarsPadding
 
 private const val ActiveLineViewportFraction = 0.055f
 
@@ -181,7 +181,7 @@ internal val LyricsRecenterEasing = CubicBezierEasing(0.5f, 0.45f, 0f, 1f)
  */
 internal val LyricsSmoothRecenterEasing = CubicBezierEasing(0.42f, 0f, 0.16f, 1f)
 
-internal fun recenterEasingFor(style: com.mochyy.mochymusic.constants.LyricsMotionStyle) =
+internal fun recenterEasingFor(style: com.videshkarmakar.doom.constants.LyricsMotionStyle) =
     if (style.risesWords) LyricsSmoothRecenterEasing else LyricsRecenterEasing
 
 private const val ScrollDirectionThresholdPx = 6L
@@ -331,9 +331,9 @@ fun LyricsScreen(
         }
     }
 
-    val (motionStyle) = com.mochyy.mochymusic.utils.rememberEnumPreference(
-        com.mochyy.mochymusic.constants.LyricsMotionStyleKey,
-        defaultValue = com.mochyy.mochymusic.constants.LyricsMotionStyle.MOTION,
+    val (motionStyle) = com.videshkarmakar.doom.utils.rememberEnumPreference(
+        com.videshkarmakar.doom.constants.LyricsMotionStyleKey,
+        defaultValue = com.videshkarmakar.doom.constants.LyricsMotionStyle.MOTION,
     )
     val cascade = motionStyle.risesWords
 
@@ -503,7 +503,7 @@ fun LyricsScreen(
     // the boring and plain styles are styles 1 and 2 with the shader left out
     val lyricsWaveAnimation = motionStyle.shaded
     // the lines' blur by their distance from the sung one is an element blur, the glass blur switch doesn't touch it
-    val (lineBlurAllowed) = rememberPreference(com.mochyy.mochymusic.constants.ElementBlurKey, defaultValue = true)
+    val (lineBlurAllowed) = rememberPreference(com.videshkarmakar.doom.constants.ElementBlurKey, defaultValue = true)
     val (lyricsHighBloom) = rememberPreference(LyricsHighBloomKey, defaultValue = true)
 
     // Drives the per-line loading dots and lifts the readings out of the way. The button that
@@ -807,7 +807,7 @@ fun LyricsScreen(
                     // connection" aren't sources, so there's nothing to credit for them.
                     val provider = lyricsEntity?.provider
                     if (provider != null && provider != "Unknown" &&
-                        provider != com.mochyy.mochymusic.lyrics.LyricsHelper.NoConnectionProvider
+                        provider != com.videshkarmakar.doom.lyrics.LyricsHelper.NoConnectionProvider
                     ) {
                         item(key = "source", contentType = "source") {
                             LyricsSourceFooter(

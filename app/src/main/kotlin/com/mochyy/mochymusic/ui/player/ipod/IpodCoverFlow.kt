@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
@@ -37,10 +37,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.player.styles.LocalStyleInteractive
-import com.mochyy.mochymusic.ui.player.styles.whileStyleInteractive
-import com.mochyy.mochymusic.viewmodels.IpodAlbum
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.player.styles.LocalStyleInteractive
+import com.videshkarmakar.doom.ui.player.styles.whileStyleInteractive
+import com.videshkarmakar.doom.viewmodels.IpodAlbum
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlin.math.abs

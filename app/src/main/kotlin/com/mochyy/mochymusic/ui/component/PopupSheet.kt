@@ -37,7 +37,7 @@
 // transition, not one per pointer event.
 // -----------------------------------------------------------------------------------------------------
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Spring
@@ -117,13 +117,13 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.player.menu.MenuSurface
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.player.menu.MenuSurface
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 
 /**
  * Backing state for a popup sheet stack. Three composition-local instances of this exist
@@ -418,7 +418,7 @@ private fun PopupSheetStack(state: PopupSheetState) {
     BoxWithConstraints(Modifier.fillMaxSize()) {
         val metrics = StackMetrics(
             isTablet = maxWidth >= TabletBreakpoint,
-            floating = com.mochyy.mochymusic.ui.utils.isLandscapeLayout(),
+            floating = com.videshkarmakar.doom.ui.utils.isLandscapeLayout(),
             parentHeightPx = constraints.maxHeight.toFloat(),
             peekPx = with(LocalDensity.current) { PeekHeight.toPx() },
             floatingMarginPx = with(LocalDensity.current) { FloatingMargin.toPx() },

@@ -1,6 +1,6 @@
 // SortHeader.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.padding
@@ -39,8 +39,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlaylistSongSortType
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlaylistSongSortType
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable

@@ -1,6 +1,6 @@
 // AboutSongSheet.kt
 
-package com.mochyy.mochymusic.ui.player.info
+package com.videshkarmakar.doom.ui.player.info
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
@@ -54,18 +54,18 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AboutSongSourceKey
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.player.menu.LocalMenuSheetStack
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.player.menu.MenuSheetSurface
-import com.mochyy.mochymusic.ui.player.menu.SongHeader
-import com.mochyy.mochymusic.ui.player.menu.rememberMenuSheetStack
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.ProviderSquircle
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AboutSongSourceKey
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.player.menu.LocalMenuSheetStack
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.player.menu.MenuSheetSurface
+import com.videshkarmakar.doom.ui.player.menu.SongHeader
+import com.videshkarmakar.doom.ui.player.menu.rememberMenuSheetStack
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.ProviderSquircle
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** where the "about" text comes from; the chip beside the title swaps it */
 enum class AboutSource(val id: String, val label: String) {

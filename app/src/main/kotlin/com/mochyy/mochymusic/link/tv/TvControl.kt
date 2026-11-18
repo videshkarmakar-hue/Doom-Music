@@ -1,18 +1,18 @@
 // TvControl.kt
 
-package com.mochyy.mochymusic.link.tv
+package com.videshkarmakar.doom.link.tv
 
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import androidx.core.content.edit
-import com.mochyy.mochymusic.link.LinkAuth
-import com.mochyy.mochymusic.link.LinkControlRoutes
-import com.mochyy.mochymusic.link.LinkHttpServer
-import com.mochyy.mochymusic.link.LinkPlayer
-import com.mochyy.mochymusic.link.LinkRequest
-import com.mochyy.mochymusic.link.LinkResponse
-import com.mochyy.mochymusic.link.LinkWire
+import com.videshkarmakar.doom.link.LinkAuth
+import com.videshkarmakar.doom.link.LinkControlRoutes
+import com.videshkarmakar.doom.link.LinkHttpServer
+import com.videshkarmakar.doom.link.LinkPlayer
+import com.videshkarmakar.doom.link.LinkRequest
+import com.videshkarmakar.doom.link.LinkResponse
+import com.videshkarmakar.doom.link.LinkWire
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -81,11 +81,11 @@ object TvControl {
 
     private fun route(request: LinkRequest): LinkResponse {
         val phone = TvProfiles.active()?.phone ?: return LinkResponse.status(409, "no phone linked")
-        if (request.header(LinkWire.OldKeyHeader) != null) return LinkResponse.status(426, "update mochy on the phone")
+        if (request.header(LinkWire.OldKeyHeader) != null) return LinkResponse.status(426, "update doom on the phone")
         // signed by the linked phone's key, which never travels; anything else is turned away
         verifier.verify(request) { id -> phone.key.takeIf { id == phone.id } } ?: return LinkResponse.status(401)
         if (!_allowed.value) return LinkResponse.status(403, "control is off on the tv")
-        val connection = LinkPlayer.connection ?: return LinkResponse.status(409, "mochy isn't open on the tv")
+        val connection = LinkPlayer.connection ?: return LinkResponse.status(409, "doom isn't open on the tv")
         val handler = routes ?: return LinkResponse.status(409)
         noteController(phone.name)
         return handler.handle(request, connection)

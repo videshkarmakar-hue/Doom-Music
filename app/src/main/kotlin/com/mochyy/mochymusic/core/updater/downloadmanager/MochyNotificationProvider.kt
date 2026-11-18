@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.core.updater.downloadmanager
+package com.videshkarmakar.doom.core.updater.downloadmanager
 
 import android.app.Notification
 import android.content.Context
@@ -13,11 +13,11 @@ import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.media3.session.MediaNotification
 import androidx.media3.session.MediaSession
 import com.google.common.collect.ImmutableList
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import java.util.Locale
 
 @OptIn(UnstableApi::class)
-class MochyNotificationProvider(
+class DoomNotificationProvider(
     private val context: Context,
     notificationIdProvider: DefaultMediaNotificationProvider.NotificationIdProvider,
     channelId: String,
@@ -31,7 +31,7 @@ class MochyNotificationProvider(
         channelNameResourceId
     )
 
-    fun setSmallIcon(iconResId: Int): MochyNotificationProvider {
+    fun setSmallIcon(iconResId: Int): DoomNotificationProvider {
         defaultProvider.setSmallIcon(iconResId)
         return this
     }
@@ -76,7 +76,7 @@ class MochyNotificationProvider(
 
             builder.setColorized(false)
 
-            builder.setSmallIcon(R.drawable.mochy_notification)
+            builder.setSmallIcon(R.drawable.doom_notification)
 
             setRequestPromotedOngoingSafely(builder, true)
 

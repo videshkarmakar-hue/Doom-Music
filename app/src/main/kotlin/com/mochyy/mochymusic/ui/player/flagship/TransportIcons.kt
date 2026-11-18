@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.flagship
+package com.videshkarmakar.doom.ui.player.flagship
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutLinearInEasing
@@ -30,7 +30,7 @@ import androidx.compose.ui.graphics.vector.VectorPath
 import androidx.compose.ui.graphics.vector.toPath
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.Dp
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 
 // how small play and pause get before they swap and spring back
 private const val SquashLow = 0.5f

@@ -1,13 +1,13 @@
 // PlayerSliderColors.kt
 
-package com.mochyy.mochymusic.ui.theme
+package com.videshkarmakar.doom.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SliderColors
 import androidx.compose.material3.SliderDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyle
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyle
 
 object PlayerSliderColors {
 

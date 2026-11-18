@@ -1,6 +1,6 @@
 // FloatingLyrics.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import android.content.Context
 import android.content.Intent
@@ -13,18 +13,18 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.MainActivity
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.car.CarLyricsSource
-import com.mochyy.mochymusic.constants.FloatingLyricsKey
-import com.mochyy.mochymusic.constants.FloatingLyricsXKey
-import com.mochyy.mochymusic.constants.FloatingLyricsYKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.lyrics.LyricsTranslationHelper
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.player.LineReading
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.MainActivity
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.car.CarLyricsSource
+import com.videshkarmakar.doom.constants.FloatingLyricsKey
+import com.videshkarmakar.doom.constants.FloatingLyricsXKey
+import com.videshkarmakar.doom.constants.FloatingLyricsYKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.lyrics.LyricsTranslationHelper
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.player.LineReading
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -41,7 +41,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-// the line being sung floating over other apps: shown while it's turned on and allowed, a song is loaded and mochy itself is out of sight
+// the line being sung floating over other apps: shown while it's turned on and allowed, a song is loaded and doom itself is out of sight
 class FloatingLyrics(
     private val context: Context,
     private val database: MusicDatabase,
@@ -52,7 +52,7 @@ class FloatingLyrics(
 ) {
     private val appVisible = MutableStateFlow(true)
 
-    // dropped on close: hidden until mochy is opened again
+    // dropped on close: hidden until doom is opened again
     private val dismissed = MutableStateFlow(false)
     private val state = PillState { player.value }
     private var job: Job? = null

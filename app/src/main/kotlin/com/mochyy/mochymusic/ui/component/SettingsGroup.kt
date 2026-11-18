@@ -1,6 +1,6 @@
 // SettingsGroup.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateDpAsState
@@ -15,7 +15,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.ui.layout.onPlaced
@@ -107,7 +107,7 @@ private fun ClassicItems(items: List<SettingsItem>) {
                         .padding(bottom = 8.dp),
                     shape = shape,
                     colors = CardDefaults.cardColors(
-                        containerColor = com.mochyy.mochymusic.ui.screens.search.SearchColors.Field
+                        containerColor = com.videshkarmakar.doom.ui.screens.search.SearchColors.Field
                     ),
                     elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
                 ) {
@@ -143,7 +143,7 @@ private fun GroupedItems(items: List<SettingsItem>) {
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(28.dp),
         colors = CardDefaults.cardColors(
-            containerColor = com.mochyy.mochymusic.ui.screens.search.SearchColors.Field
+            containerColor = com.videshkarmakar.doom.ui.screens.search.SearchColors.Field
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
@@ -208,8 +208,8 @@ private fun SettingsItemRow(
     style: SettingsGroupStyle,
 ) {
     // app behaviour can hide the line under each title, holding the row still shows it
-    val (hideDescriptions) = com.mochyy.mochymusic.utils.rememberPreference(
-        com.mochyy.mochymusic.constants.HideSettingsDescriptionsKey,
+    val (hideDescriptions) = com.videshkarmakar.doom.utils.rememberPreference(
+        com.videshkarmakar.doom.constants.HideSettingsDescriptionsKey,
         defaultValue = true,
     )
     // a row arrived at from search or a related link claims the request once, scrolls into view and flashes

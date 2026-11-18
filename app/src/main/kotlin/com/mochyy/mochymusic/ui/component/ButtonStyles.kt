@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.annotation.StringRes
 import androidx.compose.animation.core.animateDpAsState
@@ -44,7 +44,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 
 /**
  * Transport control appearance.

@@ -1,6 +1,6 @@
 // PillControls.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -56,9 +56,9 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.makeTimeString
 import kotlinx.coroutines.delay
 import kotlin.math.PI
 import kotlin.math.cos

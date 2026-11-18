@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import android.content.Context
 import android.os.Build
@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import com.mochyy.mochymusic.ui.player.studio.vibrator
+import com.videshkarmakar.doom.ui.player.studio.vibrator
 
 // the click wheel's feel: a crisp tick per notch, a firm click for the buttons and a light clack when they let go
 @Stable

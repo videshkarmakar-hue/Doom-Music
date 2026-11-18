@@ -1,6 +1,6 @@
 // ForceProviderSheet.kt
 
-package com.mochyy.mochymusic.ui.player.info
+package com.videshkarmakar.doom.ui.player.info
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -45,20 +45,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AudioQuality
-import com.mochyy.mochymusic.constants.AudioQualityKey
-import com.mochyy.mochymusic.module.StreamOption
-import com.mochyy.mochymusic.modules.SourceModules
-import com.mochyy.mochymusic.playback.ProviderSwitch
-import com.mochyy.mochymusic.playback.ProviderSwitchState
-import com.mochyy.mochymusic.ui.player.menu.LocalMenuSheetClose
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.player.menu.MenuSheetSurface
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AudioQuality
+import com.videshkarmakar.doom.constants.AudioQualityKey
+import com.videshkarmakar.doom.module.StreamOption
+import com.videshkarmakar.doom.modules.SourceModules
+import com.videshkarmakar.doom.playback.ProviderSwitch
+import com.videshkarmakar.doom.playback.ProviderSwitchState
+import com.videshkarmakar.doom.ui.player.menu.LocalMenuSheetClose
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.player.menu.MenuSheetSurface
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.delay
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 private val YouTubeQualities = listOf(AudioQuality.AUTO, AudioQuality.HIGH, AudioQuality.MEDIUM, AudioQuality.LOW)
 

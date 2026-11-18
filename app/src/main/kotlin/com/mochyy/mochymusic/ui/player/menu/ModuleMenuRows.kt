@@ -1,6 +1,6 @@
 // the rows switched-on modules add to the player's menu: a web page, one of their own pages, or a search, with the song filled in, and the look's customise sheet
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import android.content.Context
 import androidx.compose.foundation.background
@@ -29,16 +29,16 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.modules.skin.ActionTarget
-import com.mochyy.mochymusic.modules.skin.ActiveSkin
-import com.mochyy.mochymusic.modules.skin.ModuleMenu
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.SheetIcon
-import com.mochyy.mochymusic.ui.screens.search.searchRoute
-import com.mochyy.mochymusic.ui.screens.settings.devspace.openDevUrl
-import com.mochyy.mochymusic.ui.screens.settings.modules.modulePageRoute
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.modules.skin.ActionTarget
+import com.videshkarmakar.doom.modules.skin.ActiveSkin
+import com.videshkarmakar.doom.modules.skin.ModuleMenu
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.SheetIcon
+import com.videshkarmakar.doom.ui.screens.search.searchRoute
+import com.videshkarmakar.doom.ui.screens.settings.devspace.openDevUrl
+import com.videshkarmakar.doom.ui.screens.settings.modules.modulePageRoute
 import java.net.URLEncoder
 
 @Composable
@@ -74,7 +74,7 @@ internal fun openModuleTarget(context: Context, target: ActionTarget, song: Medi
     }
 }
 
-// the same look as the menu's own rows, with the module's picture in place of mochy's icon when it brings one
+// the same look as the menu's own rows, with the module's picture in place of doom's icon when it brings one
 @Composable
 private fun ModuleMenuRow(title: String, picture: Any?, enabled: Boolean, onClick: () -> Unit) {
     val alpha = if (enabled) 1f else 0.35f

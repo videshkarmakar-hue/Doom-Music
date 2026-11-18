@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.core.shapes
+package com.videshkarmakar.doom.core.shapes
 
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Outline

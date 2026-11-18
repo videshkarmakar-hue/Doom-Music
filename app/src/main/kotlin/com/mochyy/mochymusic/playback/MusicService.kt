@@ -2,7 +2,7 @@
 
 @file:Suppress("DEPRECATION")
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -80,172 +80,172 @@ import androidx.media3.session.MediaLibraryService
 import androidx.media3.session.MediaSession
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.MoreExecutors
-import com.mochyy.mochymusic.utils.followAppProxy
+import com.videshkarmakar.doom.utils.followAppProxy
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import com.mochyy.mochymusic.MainActivity
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.car.CarLyrics
-import com.mochyy.mochymusic.car.CarLyricsPlayer
-import com.mochyy.mochymusic.car.CarLyricsSource
-import com.mochyy.mochymusic.constants.AudioNormalizationKey
-import com.mochyy.mochymusic.constants.AudioOffload
-import com.mochyy.mochymusic.constants.AudioQualityKey
-import com.mochyy.mochymusic.constants.AutoDownloadOnLikeKey
-import com.mochyy.mochymusic.constants.AutoLoadMoreKey
-import com.mochyy.mochymusic.constants.AutoSkipNextOnErrorKey
-import com.mochyy.mochymusic.constants.DontSkipOnFailureKey
-import com.mochyy.mochymusic.constants.StreamFailureTimeoutKey
-import com.mochyy.mochymusic.constants.CrossfadeDurationKey
-import com.mochyy.mochymusic.constants.TransportEffect
-import com.mochyy.mochymusic.constants.TransportEffectKey
-import com.mochyy.mochymusic.constants.TransportFadeDefaultSeconds
-import com.mochyy.mochymusic.constants.TransportFadeEnabledKey
-import com.mochyy.mochymusic.constants.TransportFadeMaxSeconds
-import com.mochyy.mochymusic.constants.TransportFadeMinSeconds
-import com.mochyy.mochymusic.constants.TransportFadeSecondsKey
-import com.mochyy.mochymusic.constants.CrossfadeGaplessKey
-import com.mochyy.mochymusic.constants.SkipBlendKey
-import com.mochyy.mochymusic.constants.SkipBlendAheadKey
-import com.mochyy.mochymusic.constants.SkipBlendAheadMax
-import com.mochyy.mochymusic.constants.StudioForVideosKey
-import com.mochyy.mochymusic.constants.CrossmixMode
-import com.mochyy.mochymusic.constants.HiFiResamplerKey
-import com.mochyy.mochymusic.constants.HiResOutputKey
-import com.mochyy.mochymusic.constants.PreferUsbDacKey
-import com.mochyy.mochymusic.constants.UsbPassthroughKey
-import com.mochyy.mochymusic.constants.AudioPassMode
-import com.mochyy.mochymusic.constants.AudioPassModeKey
-import com.mochyy.mochymusic.constants.AudioPassFixedVolumeKey
-import com.mochyy.mochymusic.constants.AudioPassRestoreKey
-import com.mochyy.mochymusic.constants.CrossmixLength
-import com.mochyy.mochymusic.constants.CrossmixLengthKey
-import com.mochyy.mochymusic.constants.CrossmixStartLatencyKey
-import com.mochyy.mochymusic.constants.CrossmixStuntsKey
-import com.mochyy.mochymusic.constants.CrossmixStyleAuto
-import com.mochyy.mochymusic.constants.CrossmixStyleKey
-import com.mochyy.mochymusic.constants.CrossmixTempoMatch
-import com.mochyy.mochymusic.constants.CrossmixTempoMatchKey
-import com.mochyy.mochymusic.crossmix.CrossmixAnalysisRepository
-import com.mochyy.mochymusic.crossmix.CrossmixRole
-import com.mochyy.mochymusic.crossmix.CrossmixSettings
-import com.mochyy.mochymusic.crossmix.CrossmixStyle
-import com.mochyy.mochymusic.constants.DisableLoadMoreWhenRepeatAllKey
+import com.videshkarmakar.doom.MainActivity
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.car.CarLyrics
+import com.videshkarmakar.doom.car.CarLyricsPlayer
+import com.videshkarmakar.doom.car.CarLyricsSource
+import com.videshkarmakar.doom.constants.AudioNormalizationKey
+import com.videshkarmakar.doom.constants.AudioOffload
+import com.videshkarmakar.doom.constants.AudioQualityKey
+import com.videshkarmakar.doom.constants.AutoDownloadOnLikeKey
+import com.videshkarmakar.doom.constants.AutoLoadMoreKey
+import com.videshkarmakar.doom.constants.AutoSkipNextOnErrorKey
+import com.videshkarmakar.doom.constants.DontSkipOnFailureKey
+import com.videshkarmakar.doom.constants.StreamFailureTimeoutKey
+import com.videshkarmakar.doom.constants.CrossfadeDurationKey
+import com.videshkarmakar.doom.constants.TransportEffect
+import com.videshkarmakar.doom.constants.TransportEffectKey
+import com.videshkarmakar.doom.constants.TransportFadeDefaultSeconds
+import com.videshkarmakar.doom.constants.TransportFadeEnabledKey
+import com.videshkarmakar.doom.constants.TransportFadeMaxSeconds
+import com.videshkarmakar.doom.constants.TransportFadeMinSeconds
+import com.videshkarmakar.doom.constants.TransportFadeSecondsKey
+import com.videshkarmakar.doom.constants.CrossfadeGaplessKey
+import com.videshkarmakar.doom.constants.SkipBlendKey
+import com.videshkarmakar.doom.constants.SkipBlendAheadKey
+import com.videshkarmakar.doom.constants.SkipBlendAheadMax
+import com.videshkarmakar.doom.constants.StudioForVideosKey
+import com.videshkarmakar.doom.constants.CrossmixMode
+import com.videshkarmakar.doom.constants.HiFiResamplerKey
+import com.videshkarmakar.doom.constants.HiResOutputKey
+import com.videshkarmakar.doom.constants.PreferUsbDacKey
+import com.videshkarmakar.doom.constants.UsbPassthroughKey
+import com.videshkarmakar.doom.constants.AudioPassMode
+import com.videshkarmakar.doom.constants.AudioPassModeKey
+import com.videshkarmakar.doom.constants.AudioPassFixedVolumeKey
+import com.videshkarmakar.doom.constants.AudioPassRestoreKey
+import com.videshkarmakar.doom.constants.CrossmixLength
+import com.videshkarmakar.doom.constants.CrossmixLengthKey
+import com.videshkarmakar.doom.constants.CrossmixStartLatencyKey
+import com.videshkarmakar.doom.constants.CrossmixStuntsKey
+import com.videshkarmakar.doom.constants.CrossmixStyleAuto
+import com.videshkarmakar.doom.constants.CrossmixStyleKey
+import com.videshkarmakar.doom.constants.CrossmixTempoMatch
+import com.videshkarmakar.doom.constants.CrossmixTempoMatchKey
+import com.videshkarmakar.doom.crossmix.CrossmixAnalysisRepository
+import com.videshkarmakar.doom.crossmix.CrossmixRole
+import com.videshkarmakar.doom.crossmix.CrossmixSettings
+import com.videshkarmakar.doom.crossmix.CrossmixStyle
+import com.videshkarmakar.doom.constants.DisableLoadMoreWhenRepeatAllKey
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.constants.HistoryDuration
-import com.mochyy.mochymusic.constants.MediaSessionConstants.CommandToggleLike
-import com.mochyy.mochymusic.constants.MediaSessionConstants.CommandToggleRepeatMode
-import com.mochyy.mochymusic.constants.MediaSessionConstants.CommandToggleShuffle
-import com.mochyy.mochymusic.constants.MediaSessionConstants.CommandToggleStartRadio
-import com.mochyy.mochymusic.constants.OfflineModeKey
-import com.mochyy.mochymusic.constants.PauseListenHistoryKey
-import com.mochyy.mochymusic.constants.MixWithOtherAppsKey
-import com.mochyy.mochymusic.constants.PauseOnMute
-import com.mochyy.mochymusic.constants.PersistentQueueKey
-import com.mochyy.mochymusic.constants.InfiniteQueueKey
-import com.mochyy.mochymusic.constants.PersistentShuffleAcrossQueuesKey
-import com.mochyy.mochymusic.constants.PlayerVolumeKey
-import com.mochyy.mochymusic.constants.RememberShuffleAndRepeatKey
-import com.mochyy.mochymusic.constants.RepeatModeKey
-import com.mochyy.mochymusic.constants.ResumeOnBluetoothConnectKey
-import com.mochyy.mochymusic.constants.ScrobbleDelayPercentKey
-import com.mochyy.mochymusic.constants.ScrobbleDelaySecondsKey
-import com.mochyy.mochymusic.constants.ScrobbleMinSongDurationKey
-import com.mochyy.mochymusic.constants.ShowLyricsKey
-import com.mochyy.mochymusic.constants.ShuffleModeKey
-import com.mochyy.mochymusic.constants.ShufflePlaylistFirstKey
-import com.mochyy.mochymusic.constants.SimilarContent
-import com.mochyy.mochymusic.constants.SkipSilenceInstantKey
-import com.mochyy.mochymusic.constants.SkipSilenceKey
-import com.mochyy.mochymusic.constants.StopPlaybackOnTaskRemovedKey
-import com.mochyy.mochymusic.constants.IpVersionKey
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.constants.HistoryDuration
+import com.videshkarmakar.doom.constants.MediaSessionConstants.CommandToggleLike
+import com.videshkarmakar.doom.constants.MediaSessionConstants.CommandToggleRepeatMode
+import com.videshkarmakar.doom.constants.MediaSessionConstants.CommandToggleShuffle
+import com.videshkarmakar.doom.constants.MediaSessionConstants.CommandToggleStartRadio
+import com.videshkarmakar.doom.constants.OfflineModeKey
+import com.videshkarmakar.doom.constants.PauseListenHistoryKey
+import com.videshkarmakar.doom.constants.MixWithOtherAppsKey
+import com.videshkarmakar.doom.constants.PauseOnMute
+import com.videshkarmakar.doom.constants.PersistentQueueKey
+import com.videshkarmakar.doom.constants.InfiniteQueueKey
+import com.videshkarmakar.doom.constants.PersistentShuffleAcrossQueuesKey
+import com.videshkarmakar.doom.constants.PlayerVolumeKey
+import com.videshkarmakar.doom.constants.RememberShuffleAndRepeatKey
+import com.videshkarmakar.doom.constants.RepeatModeKey
+import com.videshkarmakar.doom.constants.ResumeOnBluetoothConnectKey
+import com.videshkarmakar.doom.constants.ScrobbleDelayPercentKey
+import com.videshkarmakar.doom.constants.ScrobbleDelaySecondsKey
+import com.videshkarmakar.doom.constants.ScrobbleMinSongDurationKey
+import com.videshkarmakar.doom.constants.ShowLyricsKey
+import com.videshkarmakar.doom.constants.ShuffleModeKey
+import com.videshkarmakar.doom.constants.ShufflePlaylistFirstKey
+import com.videshkarmakar.doom.constants.SimilarContent
+import com.videshkarmakar.doom.constants.SkipSilenceInstantKey
+import com.videshkarmakar.doom.constants.SkipSilenceKey
+import com.videshkarmakar.doom.constants.StopPlaybackOnTaskRemovedKey
+import com.videshkarmakar.doom.constants.IpVersionKey
 import com.music.innertube.models.IpVersion
 import okhttp3.Dns
 import java.net.InetAddress
 import java.net.Inet4Address
 import java.net.Inet6Address
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.Event
-import com.mochyy.mochymusic.db.entities.FormatEntity
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.db.entities.RelatedSongMap
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.di.DownloadCache
-import com.mochyy.mochymusic.di.PlayerCache
-import com.mochyy.mochymusic.eq.AudioFxService
-import com.mochyy.mochymusic.eq.AudioLabStore
-import com.mochyy.mochymusic.eq.EqualizerService
-import com.mochyy.mochymusic.eq.audio.CustomEqualizerAudioProcessor
-import com.mochyy.mochymusic.eq.audio.LoudnessAudioProcessor
-import com.mochyy.mochymusic.eq.audio.ReverbAudioProcessor
-import com.mochyy.mochymusic.eq.audio.SpatialAudioProcessor
-import com.mochyy.mochymusic.extensions.SilentHandler
-import com.mochyy.mochymusic.extensions.collect
-import com.mochyy.mochymusic.extensions.collectLatest
-import com.mochyy.mochymusic.extensions.currentMetadata
-import com.mochyy.mochymusic.extensions.findNextMediaItemById
-import com.mochyy.mochymusic.extensions.isAutoplay
-import com.mochyy.mochymusic.extensions.isManualQueued
-import com.mochyy.mochymusic.extensions.withAutoplay
-import com.mochyy.mochymusic.extensions.withManualQueued
-import com.mochyy.mochymusic.extensions.mediaItems
-import com.mochyy.mochymusic.extensions.metadata
-import com.mochyy.mochymusic.extensions.setOffloadEnabled
-import com.mochyy.mochymusic.extensions.toEnum
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.extensions.toPersistQueue
-import com.mochyy.mochymusic.extensions.toQueue
-import com.mochyy.mochymusic.lyrics.LyricsHelper
-import com.mochyy.mochymusic.models.PersistPlayerState
-import com.mochyy.mochymusic.models.PersistQueue
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.audio.SilenceDetectorAudioProcessor
-import com.mochyy.mochymusic.playback.audio.HapticAudioProcessor
-import com.mochyy.mochymusic.playback.audio.CrossmixClockSink
-import com.mochyy.mochymusic.playback.audio.CrossmixTransitionAudioProcessor
-import com.mochyy.mochymusic.playback.audio.pass.LabSound
-import com.mochyy.mochymusic.playback.audio.pass.AudioPass
-import com.mochyy.mochymusic.playback.audio.pass.PassRouterSink
-import com.mochyy.mochymusic.playback.audio.pass.PassSink
-import com.mochyy.mochymusic.playback.audio.pass.PassBlocker
-import com.mochyy.mochymusic.playback.audio.pass.clearPassBlockers
-import com.mochyy.mochymusic.playback.audio.pass.PassBlockersBefore
-import com.mochyy.mochymusic.playback.audio.pass.restorePassBlockers
-import com.mochyy.mochymusic.playback.audio.pass.passBlockersOf
-import com.mochyy.mochymusic.constants.MusicHapticsEnabledKey
-import com.mochyy.mochymusic.constants.MusicHapticsSensitivityKey
-import com.mochyy.mochymusic.constants.HapticSensitivity
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.Event
+import com.videshkarmakar.doom.db.entities.FormatEntity
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.db.entities.RelatedSongMap
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.di.DownloadCache
+import com.videshkarmakar.doom.di.PlayerCache
+import com.videshkarmakar.doom.eq.AudioFxService
+import com.videshkarmakar.doom.eq.AudioLabStore
+import com.videshkarmakar.doom.eq.EqualizerService
+import com.videshkarmakar.doom.eq.audio.CustomEqualizerAudioProcessor
+import com.videshkarmakar.doom.eq.audio.LoudnessAudioProcessor
+import com.videshkarmakar.doom.eq.audio.ReverbAudioProcessor
+import com.videshkarmakar.doom.eq.audio.SpatialAudioProcessor
+import com.videshkarmakar.doom.extensions.SilentHandler
+import com.videshkarmakar.doom.extensions.collect
+import com.videshkarmakar.doom.extensions.collectLatest
+import com.videshkarmakar.doom.extensions.currentMetadata
+import com.videshkarmakar.doom.extensions.findNextMediaItemById
+import com.videshkarmakar.doom.extensions.isAutoplay
+import com.videshkarmakar.doom.extensions.isManualQueued
+import com.videshkarmakar.doom.extensions.withAutoplay
+import com.videshkarmakar.doom.extensions.withManualQueued
+import com.videshkarmakar.doom.extensions.mediaItems
+import com.videshkarmakar.doom.extensions.metadata
+import com.videshkarmakar.doom.extensions.setOffloadEnabled
+import com.videshkarmakar.doom.extensions.toEnum
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.extensions.toPersistQueue
+import com.videshkarmakar.doom.extensions.toQueue
+import com.videshkarmakar.doom.lyrics.LyricsHelper
+import com.videshkarmakar.doom.models.PersistPlayerState
+import com.videshkarmakar.doom.models.PersistQueue
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.audio.SilenceDetectorAudioProcessor
+import com.videshkarmakar.doom.playback.audio.HapticAudioProcessor
+import com.videshkarmakar.doom.playback.audio.CrossmixClockSink
+import com.videshkarmakar.doom.playback.audio.CrossmixTransitionAudioProcessor
+import com.videshkarmakar.doom.playback.audio.pass.LabSound
+import com.videshkarmakar.doom.playback.audio.pass.AudioPass
+import com.videshkarmakar.doom.playback.audio.pass.PassRouterSink
+import com.videshkarmakar.doom.playback.audio.pass.PassSink
+import com.videshkarmakar.doom.playback.audio.pass.PassBlocker
+import com.videshkarmakar.doom.playback.audio.pass.clearPassBlockers
+import com.videshkarmakar.doom.playback.audio.pass.PassBlockersBefore
+import com.videshkarmakar.doom.playback.audio.pass.restorePassBlockers
+import com.videshkarmakar.doom.playback.audio.pass.passBlockersOf
+import com.videshkarmakar.doom.constants.MusicHapticsEnabledKey
+import com.videshkarmakar.doom.constants.MusicHapticsSensitivityKey
+import com.videshkarmakar.doom.constants.HapticSensitivity
 import android.os.Vibrator
 import android.os.VibratorManager
 import android.os.VibrationEffect
-import com.mochyy.mochymusic.playback.queues.EmptyQueue
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.playback.queues.Queue
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.playback.queues.filterExplicit
-import com.mochyy.mochymusic.playback.queues.filterVideoSongs
-import com.mochyy.mochymusic.utils.NotRecommended
-import com.mochyy.mochymusic.utils.CoilBitmapLoader
-import com.mochyy.mochymusic.utils.NetworkConnectivityObserver
-import com.mochyy.mochymusic.scrobble.ScrobbleTimer
-import com.mochyy.mochymusic.scrobble.Scrobbler
-import com.mochyy.mochymusic.utils.SyncUtils
-import com.mochyy.mochymusic.utils.YTPlayerUtils
-import com.mochyy.mochymusic.constants.ShowStreamSourceToastKey
-import com.mochyy.mochymusic.constants.YtReportPlaysKey
-import com.mochyy.mochymusic.constants.ForcePlaybackKey
-import com.mochyy.mochymusic.constants.transitionModeOf
-import com.mochyy.mochymusic.constants.CrossmixAlwaysMixKey
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
-import com.mochyy.mochymusic.utils.reportException
-import com.mochyy.mochymusic.widget.MochyWidgetManager
-import com.mochyy.mochymusic.widget.MusicWidgetReceiver
+import com.videshkarmakar.doom.playback.queues.EmptyQueue
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.playback.queues.Queue
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.playback.queues.filterExplicit
+import com.videshkarmakar.doom.playback.queues.filterVideoSongs
+import com.videshkarmakar.doom.utils.NotRecommended
+import com.videshkarmakar.doom.utils.CoilBitmapLoader
+import com.videshkarmakar.doom.utils.NetworkConnectivityObserver
+import com.videshkarmakar.doom.scrobble.ScrobbleTimer
+import com.videshkarmakar.doom.scrobble.Scrobbler
+import com.videshkarmakar.doom.utils.SyncUtils
+import com.videshkarmakar.doom.utils.YTPlayerUtils
+import com.videshkarmakar.doom.constants.ShowStreamSourceToastKey
+import com.videshkarmakar.doom.constants.YtReportPlaysKey
+import com.videshkarmakar.doom.constants.ForcePlaybackKey
+import com.videshkarmakar.doom.constants.transitionModeOf
+import com.videshkarmakar.doom.constants.CrossmixAlwaysMixKey
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
+import com.videshkarmakar.doom.utils.reportException
+import com.videshkarmakar.doom.widget.DoomWidgetManager
+import com.videshkarmakar.doom.widget.MusicWidgetReceiver
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -340,14 +340,14 @@ class MusicService :
 
     /** the Discord status; it does nothing until the user signs in on the Discord page */
     @Inject
-    lateinit var discordPresence: com.mochyy.mochymusic.discord.DiscordPresence
+    lateinit var discordPresence: com.videshkarmakar.doom.discord.DiscordPresence
 
     /** source modules (Apple Music): asked for a stream before YouTube */
     @Inject
-    lateinit var sourceModules: com.mochyy.mochymusic.modules.SourceModules
+    lateinit var sourceModules: com.videshkarmakar.doom.modules.SourceModules
 
     @Inject
-    lateinit var widgetManager: MochyWidgetManager
+    lateinit var widgetManager: DoomWidgetManager
 
     private lateinit var audioManager: AudioManager
     private var audioFocusRequest: AudioFocusRequest? = null
@@ -365,7 +365,7 @@ class MusicService :
         private set
 
     /** the outputs, the one picked in the player, the usb dac's mixer, and whether 32-bit float may pass */
-    val audioOutputs by lazy { com.mochyy.mochymusic.playback.audio.AudioOutputs(this) }
+    val audioOutputs by lazy { com.videshkarmakar.doom.playback.audio.AudioOutputs(this) }
 
     /** the exclusive output every player shares: bit-perfect, aaudio exclusive and the direct usb driver */
     val audioPass by lazy { AudioPass(this, audioOutputs) }
@@ -421,7 +421,7 @@ class MusicService :
     private var failureJob: Job? = null
     private val isNetworkConnected = MutableStateFlow(false)
 
-    private lateinit var audioQuality: com.mochyy.mochymusic.constants.AudioQuality
+    private lateinit var audioQuality: com.videshkarmakar.doom.constants.AudioQuality
     private lateinit var ipVersion: IpVersion
 
     private var currentQueue: Queue = EmptyQueue
@@ -451,7 +451,7 @@ class MusicService :
     // only local songs) it waits a while instead of retrying on every song change.
     private var autoplayPreviewRetryAt = 0L
 
-    val currentMediaMetadata = MutableStateFlow<com.mochyy.mochymusic.models.MediaMetadata?>(null)
+    val currentMediaMetadata = MutableStateFlow<com.videshkarmakar.doom.models.MediaMetadata?>(null)
     private val currentSong =
         currentMediaMetadata
             .flatMapLatest { mediaMetadata ->
@@ -596,40 +596,40 @@ class MusicService :
     fun testCrossmix() = crossmixDirector.testMix()
 
     /** the stream each song was handed to the player as, when it wasn't the plain YouTube one */
-    private val playingStreams = java.util.concurrent.ConcurrentHashMap<String, com.mochyy.mochymusic.playback.custom.CustomStreamResult>()
+    private val playingStreams = java.util.concurrent.ConcurrentHashMap<String, com.videshkarmakar.doom.playback.custom.CustomStreamResult>()
 
     // streams opened only to be listened to (a music video matched against its song); a failure there isn't the user's playback failing
     private val listeningOnlyStreams: MutableSet<String> = java.util.concurrent.ConcurrentHashMap.newKeySet()
 
     // matches a song's recording against its music video's, for the video background and for a music video's lyrics
     private val videoAudioSync by lazy {
-        com.mochyy.mochymusic.lyrics.VideoAudioSync({ createDataSourceFactory() }, listeningOnlyStreams)
+        com.videshkarmakar.doom.lyrics.VideoAudioSync({ createDataSourceFactory() }, listeningOnlyStreams)
     }
 
     // where songId's recording sits inside videoId's, found by listening to both; null when they don't share it
-    suspend fun matchSongToVideo(songId: String, videoId: String): com.mochyy.mochymusic.lyrics.SongVideoMap? {
+    suspend fun matchSongToVideo(songId: String, videoId: String): com.videshkarmakar.doom.lyrics.SongVideoMap? {
         val current = withContext(Dispatchers.Main) { player.currentMediaItem }
-        fun sourceOf(id: String): com.mochyy.mochymusic.lyrics.VideoAudioSync.Source {
+        fun sourceOf(id: String): com.videshkarmakar.doom.lyrics.VideoAudioSync.Source {
             if (current != null && current.mediaId == id) {
                 val (uri, key) = lyricsAudioSource(current)
-                return com.mochyy.mochymusic.lyrics.VideoAudioSync.Source(uri, key, listeningOnly = false)
+                return com.videshkarmakar.doom.lyrics.VideoAudioSync.Source(uri, key, listeningOnly = false)
             }
-            return com.mochyy.mochymusic.lyrics.VideoAudioSync.Source(id.toUri(), id, listeningOnly = true)
+            return com.videshkarmakar.doom.lyrics.VideoAudioSync.Source(id.toUri(), id, listeningOnly = true)
         }
         return videoAudioSync.match(sourceOf(songId), sourceOf(videoId))
     }
 
     /** Lyrics auto offset; the lyrics offset sheet starts it and shows how it's going. */
     val lyricsAutoSync by lazy {
-        com.mochyy.mochymusic.lyrics.LyricsAutoSync(
+        com.videshkarmakar.doom.lyrics.LyricsAutoSync(
             dataSourceFactory = { createDataSourceFactory() },
             saveOffset = { songId, offsetMs -> database.query { updateLyricsOffset(songId, offsetMs) } },
             onUnwatchedResult = ::announceLyricsSync,
         )
     }
 
-    /** Lines the playing song's lyrics up with its singing: see [com.mochyy.mochymusic.lyrics.LyricsAutoSync]. */
-    fun autoSyncLyrics(lines: List<com.mochyy.mochymusic.lyrics.LyricsEntry>, currentOffsetMs: Int) {
+    /** Lines the playing song's lyrics up with its singing: see [com.videshkarmakar.doom.lyrics.LyricsAutoSync]. */
+    fun autoSyncLyrics(lines: List<com.videshkarmakar.doom.lyrics.LyricsEntry>, currentOffsetMs: Int) {
         val item = player.currentMediaItem ?: return
         val (uri, key) = lyricsAudioSource(item)
         val durationMs = player.duration.takeIf { it != C.TIME_UNSET && it > 0 }
@@ -652,10 +652,10 @@ class MusicService :
     }
 
     /** A sync that finished with its sheet closed says how it went in the banner. */
-    private fun announceLyricsSync(state: com.mochyy.mochymusic.lyrics.LyricsAutoSync.State) {
+    private fun announceLyricsSync(state: com.videshkarmakar.doom.lyrics.LyricsAutoSync.State) {
         val text = when (state) {
-            is com.mochyy.mochymusic.lyrics.LyricsAutoSync.State.Synced -> "Lyrics synced to the singing"
-            is com.mochyy.mochymusic.lyrics.LyricsAutoSync.State.Failed -> state.message
+            is com.videshkarmakar.doom.lyrics.LyricsAutoSync.State.Synced -> "Lyrics synced to the singing"
+            is com.videshkarmakar.doom.lyrics.LyricsAutoSync.State.Failed -> state.message
             else -> return
         }
         Handler(Looper.getMainLooper()).post { showBanner(text) }
@@ -674,7 +674,7 @@ class MusicService :
     private var carLyrics: CarLyrics? = null
 
     // the line being sung floating over other apps, when it's turned on
-    private var floatingLyrics: com.mochyy.mochymusic.floating.FloatingLyrics? = null
+    private var floatingLyrics: com.videshkarmakar.doom.floating.FloatingLyrics? = null
 
     // what android auto's templated player reads, handed over by the car app
     val platformSessionToken: android.media.session.MediaSession.Token
@@ -687,15 +687,15 @@ class MusicService :
     val playerFlow = _playerFlow.asStateFlow()
 
     private val playerSilenceProcessors = HashMap<Player, SilenceDetectorAudioProcessor>()
-    private val playerReplayGain = HashMap<Player, com.mochyy.mochymusic.eq.audio.ReplayGainTags>()
+    private val playerReplayGain = HashMap<Player, com.videshkarmakar.doom.eq.audio.ReplayGainTags>()
     // each player's equaliser, so it's unregistered when that player goes (crossfades make many)
     private val playerEqProcessors = HashMap<Player, CustomEqualizerAudioProcessor>()
     private val playerCrossmixProcessors = HashMap<Player, CrossmixTransitionAudioProcessor>()
     // each player's ear for the visualizer; weak, so a player let go takes its own with it
-    private val playerSpectra = java.util.WeakHashMap<Player, com.mochyy.mochymusic.playback.audio.AudioSpectrum>()
+    private val playerSpectra = java.util.WeakHashMap<Player, com.videshkarmakar.doom.playback.audio.AudioSpectrum>()
 
     /** what [player] is playing, as bands for the visualizer (the main thread's) */
-    fun spectrumOf(player: Player): com.mochyy.mochymusic.playback.audio.AudioSpectrum? = playerSpectra[player]
+    fun spectrumOf(player: Player): com.videshkarmakar.doom.playback.audio.AudioSpectrum? = playerSpectra[player]
 
 
     private val instantSilenceSkipEnabled = MutableStateFlow(false)
@@ -789,7 +789,7 @@ class MusicService :
             val notification: Notification = NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(getString(R.string.music_player))
                 .setContentText("")
-                .setSmallIcon(R.drawable.mochy_notification)
+                .setSmallIcon(R.drawable.doom_notification)
                 .setContentIntent(pending)
                 .setOngoing(true)
                 .build()
@@ -807,7 +807,7 @@ class MusicService :
                 R.string.music_player
             )
                 .apply {
-                    setSmallIcon(R.drawable.mochy_notification)
+                    setSmallIcon(R.drawable.doom_notification)
                 },
         )
         audioOutputs.onRouteChanged = ::applyOutputRoute
@@ -839,7 +839,7 @@ class MusicService :
         }
 
         scope.launch {
-            dataStore.data.map { it[com.mochyy.mochymusic.constants.HapticFocusKey]?.toEnum(com.mochyy.mochymusic.constants.HapticFocus.VIBE) ?: com.mochyy.mochymusic.constants.HapticFocus.VIBE }
+            dataStore.data.map { it[com.videshkarmakar.doom.constants.HapticFocusKey]?.toEnum(com.videshkarmakar.doom.constants.HapticFocus.VIBE) ?: com.videshkarmakar.doom.constants.HapticFocus.VIBE }
                 .distinctUntilChanged()
                 .collect { focus ->
                     hapticAudioProcessor.focus = focus
@@ -874,7 +874,7 @@ class MusicService :
                 .build()
         carLyrics = CarLyrics(this, CarLyricsSource(database, lyricsHelper), currentMediaMetadata, { player }, sessionPlayer, scope)
             .also { it.start() }
-        floatingLyrics = com.mochyy.mochymusic.floating.FloatingLyrics(
+        floatingLyrics = com.videshkarmakar.doom.floating.FloatingLyrics(
             this, database, CarLyricsSource(database, lyricsHelper), currentMediaMetadata, playerFlow, scope,
         ).also { it.start() }
         player.repeatMode = dataStore.get(RepeatModeKey, REPEAT_MODE_OFF)
@@ -892,7 +892,7 @@ class MusicService :
 
         audioManager.registerAudioDeviceCallback(audioDeviceCallback, null)
 
-        audioQuality = dataStore.get(AudioQualityKey).toEnum(com.mochyy.mochymusic.constants.AudioQuality.AUTO)
+        audioQuality = dataStore.get(AudioQualityKey).toEnum(com.videshkarmakar.doom.constants.AudioQuality.AUTO)
         ipVersion = dataStore.get(IpVersionKey).toEnum(IpVersion.AUTO)
         // a saved volume of (next to) nothing is almost always left over from the old saving bug
         // (the live volume saved while muted or mid-fade, and copied back into this setting): it
@@ -930,7 +930,7 @@ class MusicService :
         }
 
         // the hand edits from the song edit sheet, kept in memory for building queue items and the player
-        com.mochyy.mochymusic.songedit.SongEdits.follow(database, scope)
+        com.videshkarmakar.doom.songedit.SongEdits.follow(database, scope)
 
         scope.launch {
             connectivityObserver.networkStatus.collect { isConnected ->
@@ -948,8 +948,8 @@ class MusicService :
         scope.launch {
             dataStore.data
                 .map { it[AudioQualityKey]?.let { value ->
-                    com.mochyy.mochymusic.constants.AudioQuality.entries.find { it.name == value }
-                } ?: com.mochyy.mochymusic.constants.AudioQuality.AUTO }
+                    com.videshkarmakar.doom.constants.AudioQuality.entries.find { it.name == value }
+                } ?: com.videshkarmakar.doom.constants.AudioQuality.AUTO }
                 .distinctUntilChanged()
                 .collect { newQuality ->
                     val oldQuality = audioQuality
@@ -1067,7 +1067,7 @@ class MusicService :
             ) {
                 val lyricsWithProvider = lyricsHelper.getLyrics(mediaMetadata)
                 // offline: nothing was found because nothing was asked; try again when online
-                if (lyricsWithProvider.provider != com.mochyy.mochymusic.lyrics.LyricsHelper.NoConnectionProvider) {
+                if (lyricsWithProvider.provider != com.videshkarmakar.doom.lyrics.LyricsHelper.NoConnectionProvider) {
                     database.query {
                         upsert(
                             LyricsEntity(
@@ -1338,7 +1338,7 @@ class MusicService :
         val eqProcessor = CustomEqualizerAudioProcessor()
         equalizerService.addAudioProcessor(eqProcessor)
         // this player's song's ReplayGain, read from its file's tags when its tracks change
-        val replayGain = com.mochyy.mochymusic.eq.audio.ReplayGainTags()
+        val replayGain = com.videshkarmakar.doom.eq.audio.ReplayGainTags()
         val fxProcessors = arrayOf<androidx.media3.common.audio.AudioProcessor>(
             SpatialAudioProcessor(audioFx),
             ReverbAudioProcessor(audioFx),
@@ -1347,7 +1347,7 @@ class MusicService :
 
         val silenceProcessor = SilenceDetectorAudioProcessor { handleLongSilenceDetected() }
         val crossmixProcessor = CrossmixTransitionAudioProcessor()
-        val spectrum = com.mochyy.mochymusic.playback.audio.AudioSpectrum()
+        val spectrum = com.videshkarmakar.doom.playback.audio.AudioSpectrum()
         val inspector = StreamInspector()
 
         val hapticVibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -1690,7 +1690,7 @@ class MusicService :
         }
 
         waitingForNetworkConnection.value = true
-        com.mochyy.mochymusic.ui.component.TopToaster.error("Stream failed: no internet connection")
+        com.videshkarmakar.doom.ui.component.TopToaster.error("Stream failed: no internet connection")
 
         retryJob?.cancel()
         retryJob = scope.launch {
@@ -1784,8 +1784,8 @@ class MusicService :
         codec ?: return
         val rate = sampleRate?.takeIf { it > 0 }
         val text = when {
-            !com.mochyy.mochymusic.modules.DeviceDecoders.canPlay(codec) -> "No $codec decoder available on this phone"
-            rate != null && !com.mochyy.mochymusic.modules.DeviceDecoders.canPlay(codec, rate) ->
+            !com.videshkarmakar.doom.modules.DeviceDecoders.canPlay(codec) -> "No $codec decoder available on this phone"
+            rate != null && !com.videshkarmakar.doom.modules.DeviceDecoders.canPlay(codec, rate) ->
                 "No $codec decoder for ${if (rate % 1000 == 0) "${rate / 1000}" else "%.1f".format(rate / 1000f)} kHz on this phone"
             else -> "This phone can't decode this $codec"
         }
@@ -1848,7 +1848,7 @@ class MusicService :
         // no decoder for it here, and nowhere else had it: that's the whole reason
         val notice = player.currentMediaItem?.mediaId?.let { decoderNotices.remove(it) }
         if (notice != null && e != null && isDecoderError(e)) {
-            com.mochyy.mochymusic.ui.component.TopToaster.error(notice.text)
+            com.videshkarmakar.doom.ui.component.TopToaster.error(notice.text)
             return
         }
         val reason = when {
@@ -1859,13 +1859,13 @@ class MusicService :
             e != null -> plainReason(e)
             else -> "unknown error"
         }
-        com.mochyy.mochymusic.ui.component.TopToaster.error("Stream failed: $reason")
+        com.videshkarmakar.doom.ui.component.TopToaster.error("Stream failed: $reason")
     }
 
     /** A readable reason from the root cause, since IO_UNSPECIFIED alone says nothing. */
     private fun plainReason(e: PlaybackException): String {
         val causes = generateSequence<Throwable>(e) { it.cause }.toList()
-        val noProvider = causes.firstOrNull { it is com.mochyy.mochymusic.playback.custom.NoProviderException }
+        val noProvider = causes.firstOrNull { it is com.videshkarmakar.doom.playback.custom.NoProviderException }
         return when {
             noProvider != null -> noProvider.message.orEmpty()
             causes.any { it is java.net.SocketTimeoutException } -> "connection timed out"
@@ -2165,7 +2165,7 @@ class MusicService :
 
     private fun isInfiniteQueueEnabled(): Boolean {
         // its songs come from YouTube radios
-        if (com.mochyy.mochymusic.utils.OfflineMode.isOn) return false
+        if (com.videshkarmakar.doom.utils.OfflineMode.isOn) return false
         val stored = dataStore.get(InfiniteQueueKey, true)
         val pending = pendingInfiniteQueue ?: return stored
         if (pending == stored) pendingInfiniteQueue = null
@@ -2177,7 +2177,7 @@ class MusicService :
      * e.g. the first request on a fresh install failed. Each retry waits twice as long as the last.
      */
     private fun scheduleRunwayRetry(generation: Int) {
-        if (runwayRetries >= MAX_RUNWAY_RETRIES || com.mochyy.mochymusic.utils.OfflineMode.isOn) return
+        if (runwayRetries >= MAX_RUNWAY_RETRIES || com.videshkarmakar.doom.utils.OfflineMode.isOn) return
         val canGrow = (dataStore.get(AutoLoadMoreKey, true) && currentQueue.hasNextPage()) ||
             (isInfiniteQueueEnabled() && player.repeatMode == REPEAT_MODE_OFF)
         if (!canGrow) return
@@ -2380,7 +2380,7 @@ class MusicService :
     /** Returns the next batch of songs and whether they came from the infinite queue, or null if there's nothing to add. */
     private suspend fun loadMoreQueueItems(): Pair<List<MediaItem>, Boolean>? {
         // a queue's next page and the infinite queue are both online
-        if (com.mochyy.mochymusic.utils.OfflineMode.isOn) return null
+        if (com.videshkarmakar.doom.utils.OfflineMode.isOn) return null
         val hideExplicit = dataStore.get(HideExplicitKey, false)
         val hideVideos = dataStore.get(HideVideoSongsKey, false)
 
@@ -2854,7 +2854,7 @@ class MusicService :
                 // YouTube's loudness numbers describe YouTube's stream: a song from a module plays
                 // another master, and evens out by its own ReplayGain in the sink instead
                 val fromModule = currentMediaId != null &&
-                    resolvedSourceIds[currentMediaId].let { it != null && it != com.mochyy.mochymusic.modules.SourceModules.YouTubeId }
+                    resolvedSourceIds[currentMediaId].let { it != null && it != com.videshkarmakar.doom.modules.SourceModules.YouTubeId }
                 if (normalizeAudio && currentMediaId != null && !fromModule) {
                     val format = withContext(Dispatchers.IO) {
                         database.format(currentMediaId).first()
@@ -3324,7 +3324,7 @@ class MusicService :
         // Offline mode refused a song that isn't on the device before anything went out. Nothing
         // to retry or recover - and the recovery below clears the song's cache, which is what
         // offline playback plays from - so straight on to the next song that is on the device.
-        if (com.mochyy.mochymusic.utils.OfflineMode.isOn &&
+        if (com.videshkarmakar.doom.utils.OfflineMode.isOn &&
             generateSequence<Throwable>(error) { it.cause }.any { it is com.music.innertube.OfflineModeException }
         ) {
             val next = nextOfflineIndex()
@@ -3354,7 +3354,7 @@ class MusicService :
         // every provider that's on was already asked: retrying would only ask them all again, so
         // straight on with the reason. Without a connection it waits for one like any other song.
         if (isNetworkConnected.value &&
-            generateSequence<Throwable>(error) { it.cause }.any { it is com.mochyy.mochymusic.playback.custom.NoProviderException }
+            generateSequence<Throwable>(error) { it.cause }.any { it is com.videshkarmakar.doom.playback.custom.NoProviderException }
         ) {
             failStream()
             return
@@ -3762,7 +3762,7 @@ class MusicService :
         val song = currentSong.value?.takeIf { it.id == metadata.id }
         val facts = streamFacts.value[metadata.id]
         discordPresence.update(
-            com.mochyy.mochymusic.discord.NowPlaying(
+            com.videshkarmakar.doom.discord.NowPlaying(
                 mediaId = metadata.id,
                 title = metadata.title,
                 artist = metadata.artists.joinToString { it.name },
@@ -3846,10 +3846,10 @@ class MusicService :
      */
     // what the error says to the listener: plain words for the failures we understand, the resolver's own line for the rest
     private fun friendlyReason(throwable: Throwable): String = when (throwable) {
-        is com.mochyy.mochymusic.utils.YouTubeBotCheckException -> getString(R.string.error_bot_check)
-        is com.mochyy.mochymusic.utils.YouTubePremiumOnlyException ->
+        is com.videshkarmakar.doom.utils.YouTubeBotCheckException -> getString(R.string.error_bot_check)
+        is com.videshkarmakar.doom.utils.YouTubePremiumOnlyException ->
             getString(if (YouTube.cookie == null) R.string.error_premium_only_login else R.string.error_premium_only)
-        is com.mochyy.mochymusic.utils.YouTubeRateLimitedException -> getString(R.string.error_rate_limited)
+        is com.videshkarmakar.doom.utils.YouTubeRateLimitedException -> getString(R.string.error_rate_limited)
         else -> throwable.message ?: getString(R.string.error_unknown)
     }
 
@@ -3866,7 +3866,7 @@ class MusicService :
                 )
             }
             val notification = NotificationCompat.Builder(this, ERROR_CHANNEL_ID)
-                .setSmallIcon(R.drawable.mochy_notification)
+                .setSmallIcon(R.drawable.doom_notification)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setStyle(NotificationCompat.BigTextStyle().bigText(message))
@@ -3896,7 +3896,7 @@ class MusicService :
             // keeping its per-segment key for the cache. Taking it for a song id sent the segment
             // URL to YouTube as a video id, and the song failed as "unavailable".
             if (isResolvedUrlCacheKey(mediaId)) {
-                if (com.mochyy.mochymusic.utils.OfflineMode.isOn) throw com.music.innertube.OfflineModeException()
+                if (com.videshkarmakar.doom.utils.OfflineMode.isOn) throw com.music.innertube.OfflineModeException()
                 return@Factory dataSpec
             }
 
@@ -3907,14 +3907,14 @@ class MusicService :
             // decoder said otherwise.
             if (mediaId.startsWith(ModuleCacheKeyPrefix)) {
                 // offline mode switched on mid-song: the rest of it isn't fetched either
-                if (com.mochyy.mochymusic.utils.OfflineMode.isOn) throw com.music.innertube.OfflineModeException()
+                if (com.videshkarmakar.doom.utils.OfflineMode.isOn) throw com.music.innertube.OfflineModeException()
                 return@Factory dataSpec.withRequestHeaders(
                     dataSpec.httpRequestHeaders + moduleStreamHeaders[mediaId].orEmpty()
                 )
             }
 
             // a song streamed from the linked phone goes to the phone's address as it is
-            if (mediaId.startsWith(com.mochyy.mochymusic.link.PhoneFiles.CacheKeyPrefix)) return@Factory dataSpec
+            if (mediaId.startsWith(com.videshkarmakar.doom.link.PhoneFiles.CacheKeyPrefix)) return@Factory dataSpec
 
             val shouldBypassCache = bypassCacheForQualityChange.contains(mediaId)
 
@@ -3931,7 +3931,7 @@ class MusicService :
 
                 // Offline mode: what isn't on the device isn't fetched, not even from a url
                 // already in hand. onPlayerError moves on to the next song that is.
-                if (com.mochyy.mochymusic.utils.OfflineMode.isOn) throw com.music.innertube.OfflineModeException()
+                if (com.videshkarmakar.doom.utils.OfflineMode.isOn) throw com.music.innertube.OfflineModeException()
 
                 songUrlCache[mediaId]?.takeIf { it.second > System.currentTimeMillis() }?.let { cached ->
                     scope.launch(Dispatchers.IO) { recoverSong(mediaId) }
@@ -3943,7 +3943,7 @@ class MusicService :
                 Timber.tag("MusicService").i("BYPASSING CACHE for $mediaId due to quality change")
             }
 
-            if (com.mochyy.mochymusic.utils.OfflineMode.isOn) throw com.music.innertube.OfflineModeException()
+            if (com.videshkarmakar.doom.utils.OfflineMode.isOn) throw com.music.innertube.OfflineModeException()
 
             Timber.tag("MusicService").i("FETCHING STREAM: $mediaId | quality=$audioQuality")
             val playbackData = runBlocking(Dispatchers.IO) {
@@ -4077,14 +4077,14 @@ class MusicService :
 
     /**
      * The app's top banner (the one "Added to playlist" uses), with the song's cover. Only while
-     * Mochy is on screen: one raised in the background would greet the user later, for a song
+     * Doom is on screen: one raised in the background would greet the user later, for a song
      * that's long gone.
      */
     private fun showBanner(text: String) {
         val visible = androidx.lifecycle.ProcessLifecycleOwner.get().lifecycle.currentState
             .isAtLeast(androidx.lifecycle.Lifecycle.State.STARTED)
         if (!visible) return
-        com.mochyy.mochymusic.ui.component.TopToaster.show(
+        com.videshkarmakar.doom.ui.component.TopToaster.show(
             text = text,
             thumbnail = player.currentMediaItem?.mediaMetadata?.artworkUri?.toString(),
         )
@@ -4100,7 +4100,7 @@ class MusicService :
      */
     private fun forceFallBack(mediaId: String, includeYouTube: Boolean = false, announce: Boolean = true): Boolean {
         val failed = resolvedSourceIds[mediaId] ?: return false
-        if (failed == com.mochyy.mochymusic.modules.SourceModules.YouTubeId &&
+        if (failed == com.videshkarmakar.doom.modules.SourceModules.YouTubeId &&
             (!includeYouTube || !dataStore.get(ForcePlaybackKey, false))
         ) {
             return false
@@ -4133,7 +4133,7 @@ class MusicService :
 
         return object : androidx.media3.exoplayer.source.MediaSource.Factory by defaultFactory {
             override fun createMediaSource(mediaItem: androidx.media3.common.MediaItem): androidx.media3.exoplayer.source.MediaSource {
-                return com.mochyy.mochymusic.playback.custom.DynamicResolvingMediaSource(
+                return com.videshkarmakar.doom.playback.custom.DynamicResolvingMediaSource(
                     originalMediaItem = mediaItem,
                     mediaSourceFactoryProvider = { drmManager ->
                         val factory = DefaultMediaSourceFactory(
@@ -4170,8 +4170,8 @@ class MusicService :
         silenceProcessor: SilenceDetectorAudioProcessor,
         hapticProcessor: HapticAudioProcessor,
         crossmixProcessor: CrossmixTransitionAudioProcessor,
-        replayGain: com.mochyy.mochymusic.eq.audio.ReplayGainTags,
-        spectrum: com.mochyy.mochymusic.playback.audio.AudioSpectrum,
+        replayGain: com.videshkarmakar.doom.eq.audio.ReplayGainTags,
+        spectrum: com.videshkarmakar.doom.playback.audio.AudioSpectrum,
         inspector: StreamInspector,
     ) =
         object : DefaultRenderersFactory(this) {
@@ -4182,7 +4182,7 @@ class MusicService :
                 context: Context,
                 enableFloatOutput: Boolean,
                 enableAudioTrackPlaybackParams: Boolean,
-            ) = CrossmixClockSink(PassRouterSink(com.mochyy.mochymusic.playback.audio.PrecisionSink(DefaultAudioSink
+            ) = CrossmixClockSink(PassRouterSink(com.videshkarmakar.doom.playback.audio.PrecisionSink(DefaultAudioSink
                 .Builder(this@MusicService)
                 // float is only ever let through by PrecisionSink, while nothing it would skip is on
                 .setEnableFloatOutput(true)
@@ -4568,7 +4568,7 @@ class MusicService :
     }
 
     private fun initializeCast() {
-        if (dataStore.get(com.mochyy.mochymusic.constants.EnableGoogleCastKey, true)) {
+        if (dataStore.get(com.videshkarmakar.doom.constants.EnableGoogleCastKey, true)) {
             try {
                 castConnectionHandler = CastConnectionHandler(this, scope, this)
                 castConnectionHandler?.initialize()
@@ -4687,7 +4687,7 @@ class MusicService :
         prefetchJob?.cancel()
         if (!skipBlend || player.mediaItemCount == 0 || !canFetchAhead()) return
         // data saver keeps it to the next one, the extra songs are only worth it on a connection that doesn't count
-        val ahead = if (com.mochyy.mochymusic.utils.DataSaver.isActive(this)) 1 else blendAhead
+        val ahead = if (com.videshkarmakar.doom.utils.DataSaver.isActive(this)) 1 else blendAhead
         val upcoming = upcomingIndices(ahead)
         // the next one first, then back, then the rest coming up
         val ids = (upcoming.take(1) + player.previousMediaItemIndex + upcoming.drop(1))
@@ -4708,12 +4708,12 @@ class MusicService :
 
     // only songs youtube plays get their start fetched ahead: a source module's stream is found and cached its own way
     private fun canFetchAhead(): Boolean =
-        !com.mochyy.mochymusic.utils.OfflineMode.isOn &&
-            sourceModules.order.value.firstOrNull { sourceModules.isUsable(it) } == com.mochyy.mochymusic.modules.SourceModules.YouTubeId
+        !com.videshkarmakar.doom.utils.OfflineMode.isOn &&
+            sourceModules.order.value.firstOrNull { sourceModules.isUsable(it) } == com.videshkarmakar.doom.modules.SourceModules.YouTubeId
 
     // an imported file, a download or a song on the linked phone: it starts at once with nothing to fetch
     private fun onThePhone(mediaId: String): Boolean =
-        mediaId.startsWith("LOCAL_") || isFullyDownloaded(mediaId) || com.mochyy.mochymusic.link.PhoneFiles.has(mediaId)
+        mediaId.startsWith("LOCAL_") || isFullyDownloaded(mediaId) || com.videshkarmakar.doom.link.PhoneFiles.has(mediaId)
 
     // a picked song's stream found and its first seconds cached; the fetch runs on its own, so a pick that stops waiting still leaves it to the player
     private suspend fun warmPick(mediaId: String) {
@@ -5038,7 +5038,7 @@ class MusicService :
      * song played that module's online stream instead, and otherwise it was announced as playing
      * from YouTube Music.
      */
-    private suspend fun deviceStream(mediaItem: androidx.media3.common.MediaItem): com.mochyy.mochymusic.playback.custom.CustomStreamResult? {
+    private suspend fun deviceStream(mediaItem: androidx.media3.common.MediaItem): com.videshkarmakar.doom.playback.custom.CustomStreamResult? {
         val mediaId = mediaItem.mediaId
         val uri = mediaItem.localConfiguration?.uri
         val file = when {
@@ -5052,36 +5052,36 @@ class MusicService :
             forgetModuleFacts(mediaId)
             notePlayingFrom(mediaId, PlayingFrom(PlayingFrom.Device, "This device"))
             // announced as "Playing from this device"
-            return com.mochyy.mochymusic.playback.custom.CustomStreamResult(streamUrl = file, source = "this device")
+            return com.videshkarmakar.doom.playback.custom.CustomStreamResult(streamUrl = file, source = "this device")
         }
         if (isFullyDownloaded(mediaId)) {
             forgetModuleFacts(mediaId)
             notePlayingFrom(mediaId, PlayingFrom(PlayingFrom.Downloads, "Your downloads"))
             // the same item: the data source finds the download under its media id
-            return com.mochyy.mochymusic.playback.custom.CustomStreamResult(
+            return com.videshkarmakar.doom.playback.custom.CustomStreamResult(
                 streamUrl = uri?.toString() ?: mediaId,
                 source = "your downloads",
             )
         }
         // on a tv, the linked phone's downloads and song files stream from the phone over the wi-fi
-        com.mochyy.mochymusic.link.PhoneFiles.streamUrl(mediaId)?.let { url ->
+        com.videshkarmakar.doom.link.PhoneFiles.streamUrl(mediaId)?.let { url ->
             forgetModuleFacts(mediaId)
             notePlayingFrom(mediaId, PlayingFrom(PlayingFrom.Device, "Your phone"))
-            return com.mochyy.mochymusic.playback.custom.CustomStreamResult(
+            return com.videshkarmakar.doom.playback.custom.CustomStreamResult(
                 streamUrl = url,
                 source = "your phone",
-                cacheKey = com.mochyy.mochymusic.link.PhoneFiles.cacheKeyOf(mediaId),
+                cacheKey = com.videshkarmakar.doom.link.PhoneFiles.cacheKeyOf(mediaId),
             )
         }
         return null
     }
 
-    private suspend fun routeStream(mediaId: String): com.mochyy.mochymusic.playback.custom.CustomStreamResult? {
+    private suspend fun routeStream(mediaId: String): com.videshkarmakar.doom.playback.custom.CustomStreamResult? {
         // offline: no provider is asked; the song plays if it's cached, and is skipped if not.
         // An imported file is never looked for online, even one whose file has gone missing.
-        if (com.mochyy.mochymusic.utils.OfflineMode.isOn || mediaId.startsWith("LOCAL_")) return null
+        if (com.videshkarmakar.doom.utils.OfflineMode.isOn || mediaId.startsWith("LOCAL_")) return null
         forcedRoutes[mediaId]?.let { forced ->
-            if (forced.providerId == com.mochyy.mochymusic.modules.SourceModules.YouTubeId) return youTubeRoute(mediaId)
+            if (forced.providerId == com.videshkarmakar.doom.modules.SourceModules.YouTubeId) return youTubeRoute(mediaId)
             forcedModuleStream(mediaId, forced)?.let { return it }
             // the picked provider doesn't have it any more: the usual order takes over
             forcedRoutes.remove(mediaId)
@@ -5091,31 +5091,31 @@ class MusicService :
         if (skip.isEmpty()) decoderNotices.remove(mediaId)
         // songs that only YouTube has (and the common case of YouTube first) need no lookup
         val first = sourceModules.order.value.firstOrNull { it !in skip && sourceModules.isUsable(it) }
-        if (first == com.mochyy.mochymusic.modules.SourceModules.YouTubeId) return youTubeRoute(mediaId)
+        if (first == com.videshkarmakar.doom.modules.SourceModules.YouTubeId) return youTubeRoute(mediaId)
         val track = trackQueryOf(mediaId)
         val route = sourceModules.route(track, skip) { id, passed ->
             if (!decoderNotices.containsKey(mediaId)) noteMissingDecoder(mediaId, passed.codec?.uppercase(), passed.sampleRateHz, from = id)
         }
         return when (route) {
-            is com.mochyy.mochymusic.modules.SourceModules.Route.Module -> moduleStream(mediaId, route.module, route.stream)
-            com.mochyy.mochymusic.modules.SourceModules.Route.YouTube -> youTubeRoute(mediaId)
-            com.mochyy.mochymusic.modules.SourceModules.Route.Exhausted -> {
-                val youTube = com.mochyy.mochymusic.modules.SourceModules.YouTubeId
+            is com.videshkarmakar.doom.modules.SourceModules.Route.Module -> moduleStream(mediaId, route.module, route.stream)
+            com.videshkarmakar.doom.modules.SourceModules.Route.YouTube -> youTubeRoute(mediaId)
+            com.videshkarmakar.doom.modules.SourceModules.Route.Exhausted -> {
+                val youTube = com.videshkarmakar.doom.modules.SourceModules.YouTubeId
                 when {
                     // YouTube is in the order after providers that don't have it: it plays there
                     youTube !in skip && sourceModules.isUsable(youTube) -> youTubeRoute(mediaId)
                     // the user turned YouTube off to hear only their other providers
                     !sourceModules.isEnabled(youTube) ->
-                        throw com.mochyy.mochymusic.playback.custom.NoProviderException("none of your providers have it, and YouTube Music is off")
-                    else -> throw com.mochyy.mochymusic.playback.custom.NoProviderException("every provider failed on it")
+                        throw com.videshkarmakar.doom.playback.custom.NoProviderException("none of your providers have it, and YouTube Music is off")
+                    else -> throw com.videshkarmakar.doom.playback.custom.NoProviderException("every provider failed on it")
                 }
             }
         }
     }
 
     /** null hands the song to YouTube, which is all YouTube needs */
-    private fun youTubeRoute(mediaId: String): com.mochyy.mochymusic.playback.custom.CustomStreamResult? {
-        val youTube = com.mochyy.mochymusic.modules.SourceModules.YouTubeId
+    private fun youTubeRoute(mediaId: String): com.videshkarmakar.doom.playback.custom.CustomStreamResult? {
+        val youTube = com.videshkarmakar.doom.modules.SourceModules.YouTubeId
         resolvedSourceIds[mediaId] = youTube
         forgetModuleFacts(mediaId)
         notePlayingFrom(mediaId, PlayingFrom(youTube, "YouTube Music"))
@@ -5124,9 +5124,9 @@ class MusicService :
 
     private fun moduleStream(
         mediaId: String,
-        module: com.mochyy.mochymusic.module.SourceModule,
-        stream: com.mochyy.mochymusic.module.SourceStream,
-    ): com.mochyy.mochymusic.playback.custom.CustomStreamResult {
+        module: com.videshkarmakar.doom.module.SourceModule,
+        stream: com.videshkarmakar.doom.module.SourceStream,
+    ): com.videshkarmakar.doom.playback.custom.CustomStreamResult {
         resolvedSourceIds[mediaId] = module.info.id
         // the youtube path saves the song, a module has to as well or its plays never reach history
         scope.launch(Dispatchers.IO) { recoverSong(mediaId) }
@@ -5135,12 +5135,12 @@ class MusicService :
         streamFacts.update { it + (mediaId to StreamFacts(codec = stream.codec, fromModule = true)) }
         notePlayingFrom(mediaId, PlayingFrom(module.info.id, module.info.name, stream.qualityLabel, stream.matched.id))
         Timber.tag("StreamFetch").i("$mediaId plays from ${module.info.name}: ${stream.matched.title} · ${stream.qualityLabel}")
-        return com.mochyy.mochymusic.playback.custom.CustomStreamResult(
+        return com.videshkarmakar.doom.playback.custom.CustomStreamResult(
             streamUrl = stream.url,
-            isHls = stream.format == com.mochyy.mochymusic.module.StreamFormat.Hls,
-            isDash = stream.format == com.mochyy.mochymusic.module.StreamFormat.Dash,
+            isHls = stream.format == com.videshkarmakar.doom.module.StreamFormat.Hls,
+            isDash = stream.format == com.videshkarmakar.doom.module.StreamFormat.Dash,
             source = "${module.info.name} · ${stream.qualityLabel}",
-            widevineLicense = (stream.drm as? com.mochyy.mochymusic.module.StreamDrm.Widevine)?.license,
+            widevineLicense = (stream.drm as? com.videshkarmakar.doom.module.StreamDrm.Widevine)?.license,
             cacheKey = cacheKey,
         )
     }
@@ -5150,9 +5150,9 @@ class MusicService :
     }
 
     /** the song as a module looks for it: its saved row, or the queue's own copy for a song played straight from search that isn't saved yet */
-    private suspend fun trackQueryOf(mediaId: String): com.mochyy.mochymusic.module.TrackQuery? {
+    private suspend fun trackQueryOf(mediaId: String): com.videshkarmakar.doom.module.TrackQuery? {
         database.song(mediaId).first()?.let {
-            return com.mochyy.mochymusic.module.TrackQuery(
+            return com.videshkarmakar.doom.module.TrackQuery(
                 title = it.song.title,
                 artists = it.artists.map { a -> a.name },
                 album = it.song.albumName ?: it.album?.title,
@@ -5161,7 +5161,7 @@ class MusicService :
         }
         // only the youtube path saves a new song, so without this every module was passed over for it
         val queued = withContext(Dispatchers.Main) { player.findNextMediaItemById(mediaId)?.metadata } ?: return null
-        return com.mochyy.mochymusic.module.TrackQuery(
+        return com.videshkarmakar.doom.module.TrackQuery(
             title = queued.title,
             artists = queued.artists.map { it.name },
             album = queued.album?.title,
@@ -5170,15 +5170,15 @@ class MusicService :
     }
 
     /** one ask of [module] for the song, passing over a stream this phone has no decoder for */
-    private suspend fun resolveWith(module: com.mochyy.mochymusic.module.SourceModule, mediaId: String): com.mochyy.mochymusic.module.SourceStream? {
+    private suspend fun resolveWith(module: com.videshkarmakar.doom.module.SourceModule, mediaId: String): com.videshkarmakar.doom.module.SourceStream? {
         val track = trackQueryOf(mediaId) ?: return null
         val result = module.resolve(track, sourceModules.picks(module.info.id))
-        return (result as? com.mochyy.mochymusic.module.ResolveResult.Found)?.stream
-            ?.takeIf { com.mochyy.mochymusic.modules.DeviceDecoders.canPlay(it) }
+        return (result as? com.videshkarmakar.doom.module.ResolveResult.Found)?.stream
+            ?.takeIf { com.videshkarmakar.doom.modules.DeviceDecoders.canPlay(it) }
     }
 
     // the stream the switch already found is used once; a later replay asks the provider again
-    private suspend fun forcedModuleStream(mediaId: String, forced: ForcedRoute): com.mochyy.mochymusic.playback.custom.CustomStreamResult? {
+    private suspend fun forcedModuleStream(mediaId: String, forced: ForcedRoute): com.videshkarmakar.doom.playback.custom.CustomStreamResult? {
         val module = sourceModules.module(forced.providerId) ?: return null
         val stream = forced.freshStream?.also { forced.freshStream = null }
             ?: runCatching { resolveWith(module, mediaId) }.getOrNull()
@@ -5198,7 +5198,7 @@ class MusicService :
         override fun resumePlayback() = player.play()
 
         override suspend fun resolve(providerId: String, mediaId: String): ForcedRoute? = withContext(Dispatchers.IO) {
-            if (providerId == com.mochyy.mochymusic.modules.SourceModules.YouTubeId) {
+            if (providerId == com.videshkarmakar.doom.modules.SourceModules.YouTubeId) {
                 YTPlayerUtils.playerResponseForPlayback(mediaId, null, audioQuality, connectivityManager).getOrNull()
                     ?: return@withContext null
                 return@withContext ForcedRoute(providerId, null)
@@ -5429,7 +5429,7 @@ class MusicService :
             val found = kotlinx.coroutines.withTimeoutOrNull(10_000L) {
                 runCatching { lyricsHelper.getLyrics(metadata) }.getOrNull()
             } ?: return@withContext null
-            if (found.provider == com.mochyy.mochymusic.lyrics.LyricsHelper.NoConnectionProvider) return@withContext null
+            if (found.provider == com.videshkarmakar.doom.lyrics.LyricsHelper.NoConnectionProvider) return@withContext null
             runCatching {
                 database.query { upsert(LyricsEntity(id = metadata.id, lyrics = found.lyrics, provider = found.provider)) }
             }

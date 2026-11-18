@@ -1,9 +1,9 @@
 // ScrobbleTimer.kt
 
-package com.mochyy.mochymusic.scrobble
+package com.videshkarmakar.doom.scrobble
 
 import android.os.SystemClock
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.models.MediaMetadata
 import com.music.lastfm.ScrobbleTrack
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

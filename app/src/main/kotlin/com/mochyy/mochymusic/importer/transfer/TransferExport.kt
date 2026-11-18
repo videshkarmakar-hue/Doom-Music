@@ -1,6 +1,6 @@
 // TransferExport.kt
 
-package com.mochyy.mochymusic.importer.transfer
+package com.videshkarmakar.doom.importer.transfer
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -9,12 +9,12 @@ import android.os.Build
 import android.provider.MediaStore
 import android.provider.OpenableColumns
 import androidx.media3.database.DatabaseProvider
-import com.mochyy.mochymusic.BuildConfig
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.playback.DownloadUtil
-import com.mochyy.mochymusic.playback.StoragePlaces
-import com.mochyy.mochymusic.playback.StoredKind
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.BuildConfig
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.playback.DownloadUtil
+import com.videshkarmakar.doom.playback.StoragePlaces
+import com.videshkarmakar.doom.playback.StoredKind
+import com.videshkarmakar.doom.utils.dataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

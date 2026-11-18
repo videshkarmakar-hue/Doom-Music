@@ -2,9 +2,9 @@
 //
 // Turning one audio file into a song in the library: tags, artwork, artist, album, lyrics and format row.
 // Used by the local import (files picked or found on the phone, see LocalImportService) and by
-// audio files shared into Mochy from other apps.
+// audio files shared into Doom from other apps.
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
 import android.net.Uri
@@ -13,14 +13,14 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.MimeTypes
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.MetadataRetriever
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.AlbumArtistMap
-import com.mochyy.mochymusic.db.entities.AlbumEntity
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.db.entities.FormatEntity
-import com.mochyy.mochymusic.db.entities.SongAlbumMap
-import com.mochyy.mochymusic.db.entities.SongArtistMap
-import com.mochyy.mochymusic.db.entities.SongEntity
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.AlbumArtistMap
+import com.videshkarmakar.doom.db.entities.AlbumEntity
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.db.entities.FormatEntity
+import com.videshkarmakar.doom.db.entities.SongAlbumMap
+import com.videshkarmakar.doom.db.entities.SongArtistMap
+import com.videshkarmakar.doom.db.entities.SongEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.time.LocalDateTime
@@ -44,7 +44,7 @@ suspend fun importLocalAudio(
     // the file's own lyrics or the lyrics file beside it, saved with the song so they work offline from the first play
     val embeddedLyrics = withContext(Dispatchers.IO) {
         LocalSidecars.betterLyrics(
-            embedded = com.mochyy.mochymusic.lyrics.readEmbeddedLyrics(context, uri),
+            embedded = com.videshkarmakar.doom.lyrics.readEmbeddedLyrics(context, uri),
             beside = lyricsFile?.let { LocalSidecars.readLyrics(context, it) },
         )
     }
@@ -99,10 +99,10 @@ suspend fun importLocalAudio(
 
             embeddedLyrics?.let { lyrics ->
                 upsert(
-                    com.mochyy.mochymusic.db.entities.LyricsEntity(
+                    com.videshkarmakar.doom.db.entities.LyricsEntity(
                         id = songId,
                         lyrics = lyrics,
-                        provider = com.mochyy.mochymusic.lyrics.EmbeddedLyrics.Provider,
+                        provider = com.videshkarmakar.doom.lyrics.EmbeddedLyrics.Provider,
                     ),
                 )
             }

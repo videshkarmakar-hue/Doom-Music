@@ -3,12 +3,12 @@
 // "Imported from Spotify": every song one service brought in, in the same A-Z list as Songs, with the
 // service's own icon where the Library home has the avatar.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.screens.search.AvatarSize
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.screens.search.AvatarSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -16,16 +16,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.SongSwipeBox
-import com.mochyy.mochymusic.ui.component.librarySwipeAction
-import com.mochyy.mochymusic.ui.component.queueSwipeAction
-import com.mochyy.mochymusic.ui.component.removeImportSwipeAction
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.viewmodels.LibraryImportedViewModel
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.SongSwipeBox
+import com.videshkarmakar.doom.ui.component.librarySwipeAction
+import com.videshkarmakar.doom.ui.component.queueSwipeAction
+import com.videshkarmakar.doom.ui.component.removeImportSwipeAction
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.viewmodels.LibraryImportedViewModel
 
 @Composable
 fun LibraryImportedScreen(

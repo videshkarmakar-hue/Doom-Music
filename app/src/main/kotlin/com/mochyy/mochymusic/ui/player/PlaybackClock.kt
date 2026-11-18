@@ -1,6 +1,6 @@
 // PlaybackClock.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import android.view.animation.AnimationUtils
 import androidx.compose.runtime.Stable

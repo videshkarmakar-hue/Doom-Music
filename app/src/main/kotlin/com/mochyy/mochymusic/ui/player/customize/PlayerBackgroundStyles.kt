@@ -1,6 +1,6 @@
 // PlayerBackgroundStyles.kt
 
-package com.mochyy.mochymusic.ui.player.customize
+package com.videshkarmakar.doom.ui.player.customize
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.LinearEasing
@@ -32,8 +32,8 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyle
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyle
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -62,11 +62,11 @@ fun PlayerBackgroundContent(
 // the ambient backdrop on its own, from the picture's colours and with its own clock, for previews and the other styles' pages
 @Composable
 private fun StandaloneAmbientBackground(thumbnailUrl: String?, modifier: Modifier = Modifier) {
-    val colors = com.mochyy.mochymusic.ui.player.flagship.rememberAmbientColors()
-    com.mochyy.mochymusic.ui.player.flagship.FollowPicture(colors, thumbnailUrl)
-    com.mochyy.mochymusic.ui.player.flagship.AmbientBackdrop(
+    val colors = com.videshkarmakar.doom.ui.player.flagship.rememberAmbientColors()
+    com.videshkarmakar.doom.ui.player.flagship.FollowPicture(colors, thumbnailUrl)
+    com.videshkarmakar.doom.ui.player.flagship.AmbientBackdrop(
         colors = colors,
-        time = com.mochyy.mochymusic.ui.player.flagship.rememberAmbientClock(running = true),
+        time = com.videshkarmakar.doom.ui.player.flagship.rememberAmbientClock(running = true),
         modifier = modifier,
     )
 }
@@ -151,7 +151,7 @@ private fun AppleMusicBackground(thumbnailUrl: String?, modifier: Modifier = Mod
                         .resizeBitmapArea(100 * 100)
                         .generate()
                 }
-                palette = com.mochyy.mochymusic.ui.theme.PlayerColorExtractor.extractAppleMusicColors(
+                palette = com.videshkarmakar.doom.ui.theme.PlayerColorExtractor.extractAppleMusicColors(
                     palette = generated,
                     fallbackColor = fallbackColorInt,
                 )

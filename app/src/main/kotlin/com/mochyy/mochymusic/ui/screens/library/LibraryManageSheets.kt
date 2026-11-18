@@ -4,7 +4,7 @@
 // other action, as in the mocks. Anything that takes music out of the library asks once more on a
 // sheet pushed over this one.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
@@ -32,16 +32,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetIcon
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.viewmodels.LibraryImportViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetIcon
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.viewmodels.LibraryImportViewModel
 
 /**
  * [sources] are the services that have brought music in, one "Delete ... imports" row each.

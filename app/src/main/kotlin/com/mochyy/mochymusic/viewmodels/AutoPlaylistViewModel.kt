@@ -1,29 +1,29 @@
 // AutoPlaylistViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.constants.LikedSongSortDescendingKey
-import com.mochyy.mochymusic.constants.LikedSongSortType
-import com.mochyy.mochymusic.constants.LikedSongSortTypeKey
-import com.mochyy.mochymusic.constants.SongSortDescendingKey
-import com.mochyy.mochymusic.constants.SongSortType
-import com.mochyy.mochymusic.constants.SongSortTypeKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.ImportedSong
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.filterExplicit
-import com.mochyy.mochymusic.extensions.filterVideoSongs
-import com.mochyy.mochymusic.extensions.toEnum
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.playback.CachedSongs
-import com.mochyy.mochymusic.utils.SyncUtils
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.constants.LikedSongSortDescendingKey
+import com.videshkarmakar.doom.constants.LikedSongSortType
+import com.videshkarmakar.doom.constants.LikedSongSortTypeKey
+import com.videshkarmakar.doom.constants.SongSortDescendingKey
+import com.videshkarmakar.doom.constants.SongSortType
+import com.videshkarmakar.doom.constants.SongSortTypeKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.ImportedSong
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.filterExplicit
+import com.videshkarmakar.doom.extensions.filterVideoSongs
+import com.videshkarmakar.doom.extensions.toEnum
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.playback.CachedSongs
+import com.videshkarmakar.doom.utils.SyncUtils
+import com.videshkarmakar.doom.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -41,7 +41,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-/** Liked songs that came from one place; [source] null is the ones liked here in Mochy. */
+/** Liked songs that came from one place; [source] null is the ones liked here in Doom. */
 data class LikedSourceSection(val source: ImportSource?, val songs: List<Song>)
 
 data class AutoPlaylistSongs(

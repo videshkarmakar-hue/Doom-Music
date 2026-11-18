@@ -1,6 +1,6 @@
 // UploadedPictures.kt
 
-package com.mochyy.mochymusic.discord
+package com.videshkarmakar.doom.discord
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -61,10 +61,10 @@ internal class UploadedPictures(
         val out = ByteArrayOutputStream()
         if (picture.hasAlpha()) {
             picture.compress(Bitmap.CompressFormat.PNG, 100, out)
-            Triple(out.toByteArray(), "mochy.png", "image/png")
+            Triple(out.toByteArray(), "doom.png", "image/png")
         } else {
             picture.compress(Bitmap.CompressFormat.JPEG, 90, out)
-            Triple(out.toByteArray(), "mochy.jpg", "image/jpeg")
+            Triple(out.toByteArray(), "doom.jpg", "image/jpeg")
         }
     }
 
@@ -91,7 +91,7 @@ internal suspend fun loadLocalPicture(context: Context, source: String, size: In
     Bitmap.createBitmap(image, (image.width - side) / 2, (image.height - side) / 2, side, side)
 }
 
-// keeps a picked picture in mochy's own folder (the picker's link stops working later) and gives back its file uri, or null if it can't be read
+// keeps a picked picture in doom's own folder (the picker's link stops working later) and gives back its file uri, or null if it can't be read
 internal suspend fun savePresencePicture(context: Context, picked: Uri, slot: String): String? {
     val picture = loadLocalPicture(context, picked.toString(), 512) ?: return null
     return withContext(Dispatchers.IO) {

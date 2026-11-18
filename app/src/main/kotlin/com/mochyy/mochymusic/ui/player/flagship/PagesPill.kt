@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.flagship
+package com.videshkarmakar.doom.ui.player.flagship
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -48,19 +48,19 @@ import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.player.BehindDimPeak
-import com.mochyy.mochymusic.ui.player.CardMorphState
-import com.mochyy.mochymusic.ui.player.PlayerCardLook
-import com.mochyy.mochymusic.ui.player.PlayerPage
-import com.mochyy.mochymusic.ui.player.PlayerPageTransition
-import com.mochyy.mochymusic.ui.player.cardRectOr
-import com.mochyy.mochymusic.ui.player.expandingCardRect
-import com.mochyy.mochymusic.ui.player.mixF
-import com.mochyy.mochymusic.ui.player.smoothstepF
-import com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.player.BehindDimPeak
+import com.videshkarmakar.doom.ui.player.CardMorphState
+import com.videshkarmakar.doom.ui.player.PlayerCardLook
+import com.videshkarmakar.doom.ui.player.PlayerPage
+import com.videshkarmakar.doom.ui.player.PlayerPageTransition
+import com.videshkarmakar.doom.ui.player.cardRectOr
+import com.videshkarmakar.doom.ui.player.expandingCardRect
+import com.videshkarmakar.doom.ui.player.mixF
+import com.videshkarmakar.doom.ui.player.smoothstepF
+import com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction
 import kotlinx.coroutines.flow.collectLatest
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // the page's clip starts as the pill's round ends and squares off as it fills the screen, no outline
 internal val FlagshipPillLook = PlayerCardLook(PillHeight / 2, 0f, 0f, 0f, 0f, 0.dp)

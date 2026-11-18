@@ -1,14 +1,14 @@
 // SpotifyAccount.kt
 
-package com.mochyy.mochymusic.importer.account
+package com.videshkarmakar.doom.importer.account
 
-import com.mochyy.mochymusic.importer.ImportedTrack
-import com.mochyy.mochymusic.importer.array
-import com.mochyy.mochymusic.importer.dateMs
-import com.mochyy.mochymusic.importer.long
-import com.mochyy.mochymusic.importer.obj
-import com.mochyy.mochymusic.importer.path
-import com.mochyy.mochymusic.importer.string
+import com.videshkarmakar.doom.importer.ImportedTrack
+import com.videshkarmakar.doom.importer.array
+import com.videshkarmakar.doom.importer.dateMs
+import com.videshkarmakar.doom.importer.long
+import com.videshkarmakar.doom.importer.obj
+import com.videshkarmakar.doom.importer.path
+import com.videshkarmakar.doom.importer.string
 import java.net.URLEncoder
 import kotlinx.coroutines.delay
 import kotlinx.serialization.json.JsonArray

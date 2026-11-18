@@ -1,13 +1,13 @@
 // YouTubeSongMenu.kt
 
-package com.mochyy.mochymusic.ui.menu
+package com.videshkarmakar.doom.ui.menu
 
-import com.mochyy.mochymusic.ui.component.SheetActionCard
-import com.mochyy.mochymusic.ui.component.SheetActionCardRow
-import com.mochyy.mochymusic.ui.component.SheetDownloadCard
-import com.mochyy.mochymusic.ui.component.SheetHeaderGap
-import com.mochyy.mochymusic.ui.component.SheetHeaderButton
-import com.mochyy.mochymusic.ui.component.SheetHeader
+import com.videshkarmakar.doom.ui.component.SheetActionCard
+import com.videshkarmakar.doom.ui.component.SheetActionCardRow
+import com.videshkarmakar.doom.ui.component.SheetDownloadCard
+import com.videshkarmakar.doom.ui.component.SheetHeaderGap
+import com.videshkarmakar.doom.ui.component.SheetHeaderButton
+import com.videshkarmakar.doom.ui.component.SheetHeader
 import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.compose.foundation.basicMarquee
@@ -57,29 +57,29 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.LocalSyncUtils
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.ListItemHeight
-import com.mochyy.mochymusic.constants.ListThumbnailSize
-import com.mochyy.mochymusic.constants.ThumbnailCornerRadius
-import com.mochyy.mochymusic.db.entities.SpeedDialItem
-import com.mochyy.mochymusic.db.entities.SongEntity
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.ExoDownloadService
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.ListDialog
-import com.mochyy.mochymusic.ui.component.LocalBottomSheetPageState
-import com.mochyy.mochymusic.ui.component.Material3MenuGroup
-import com.mochyy.mochymusic.ui.component.Material3MenuItemData
-import com.mochyy.mochymusic.ui.utils.ShowMediaInfo
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.joinByBullet
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.LocalSyncUtils
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.ListItemHeight
+import com.videshkarmakar.doom.constants.ListThumbnailSize
+import com.videshkarmakar.doom.constants.ThumbnailCornerRadius
+import com.videshkarmakar.doom.db.entities.SpeedDialItem
+import com.videshkarmakar.doom.db.entities.SongEntity
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.ExoDownloadService
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.ListDialog
+import com.videshkarmakar.doom.ui.component.LocalBottomSheetPageState
+import com.videshkarmakar.doom.ui.component.Material3MenuGroup
+import com.videshkarmakar.doom.ui.component.Material3MenuItemData
+import com.videshkarmakar.doom.ui.utils.ShowMediaInfo
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.joinByBullet
+import com.videshkarmakar.doom.utils.makeTimeString
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -297,7 +297,7 @@ fun YouTubeSongMenu(
                         },
                         onClick = {
                             onDismiss()
-                            com.mochyy.mochymusic.ui.player.share.song.SongShare.open(song.toMediaMetadata())
+                            com.videshkarmakar.doom.ui.player.share.song.SongShare.open(song.toMediaMetadata())
                         }
                     ),
                     song.album?.let { album ->

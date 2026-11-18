@@ -1,6 +1,6 @@
 // OnlineSearchResult.kt
 
-package com.mochyy.mochymusic.ui.screens.search
+package com.videshkarmakar.doom.ui.screens.search
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
@@ -18,14 +18,14 @@ import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.WindowInsets
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.ui.unit.Dp
-import com.mochyy.mochymusic.ui.utils.isWideLayout
+import com.videshkarmakar.doom.ui.utils.isWideLayout
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -80,35 +80,35 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PauseSearchHistoryKey
-import com.mochyy.mochymusic.constants.ProfilePicUriKey
-import com.mochyy.mochymusic.db.entities.SearchHistory
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.extensions.togglePlayPause
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.RoundedHighlight
-import com.mochyy.mochymusic.ui.component.SongSwipeBox
-import com.mochyy.mochymusic.ui.component.librarySwipeAction
-import com.mochyy.mochymusic.ui.component.queueSwipeAction
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.menu.YouTubeAlbumMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeArtistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubePlaylistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeSongMenu
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.OnlineSearchViewModel
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PauseSearchHistoryKey
+import com.videshkarmakar.doom.constants.ProfilePicUriKey
+import com.videshkarmakar.doom.db.entities.SearchHistory
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.extensions.togglePlayPause
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.RoundedHighlight
+import com.videshkarmakar.doom.ui.component.SongSwipeBox
+import com.videshkarmakar.doom.ui.component.librarySwipeAction
+import com.videshkarmakar.doom.ui.component.queueSwipeAction
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.menu.YouTubeAlbumMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeArtistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubePlaylistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeSongMenu
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.OnlineSearchViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.component.navigateToTab
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.navigateToTab
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 private val SearchCategories = listOf(
     R.string.search_category_all to null,
@@ -227,7 +227,7 @@ fun OnlineSearchResult(
 
     val bottomInset = LocalPlayerAwareWindowInsets.current.asPaddingValues().calculateBottomPadding()
     // on its side the field is in the pane at the left (SearchSidePane): only the kinds of result sit over the list
-    val landscape = com.mochyy.mochymusic.ui.utils.isLandscapeLayout()
+    val landscape = com.videshkarmakar.doom.ui.utils.isLandscapeLayout()
     val statusTop = WindowInsets.stableStatusBars.asPaddingValues().calculateTopPadding()
 
     val top = remember(summary, viewModel.query) {
@@ -524,7 +524,7 @@ private fun TopResultCard(
                     .graphicsLayer {
                         alpha = 0.55f
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                            renderEffect = com.mochyy.mochymusic.ui.component.BlurEffectCache.get(
+                            renderEffect = com.videshkarmakar.doom.ui.component.BlurEffectCache.get(
                                 70f,
                                 android.graphics.Shader.TileMode.CLAMP
                             )
@@ -550,7 +550,7 @@ private fun TopResultCard(
             size = 108.dp,
             circle = item is ArtistItem,
             corner = 8.dp,
-            sharedElementKey = com.mochyy.mochymusic.ui.component.coverTransitionKey(item),
+            sharedElementKey = com.videshkarmakar.doom.ui.component.coverTransitionKey(item),
         )
         Spacer(modifier = Modifier.height(14.dp))
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -688,7 +688,7 @@ private fun ResultRow(
                 url = item.thumbnail,
                 size = 46.dp,
                 circle = item is ArtistItem,
-                sharedElementKey = com.mochyy.mochymusic.ui.component.coverTransitionKey(item),
+                sharedElementKey = com.videshkarmakar.doom.ui.component.coverTransitionKey(item),
             )
             Spacer(modifier = Modifier.width(14.dp))
             Column(modifier = Modifier.weight(1f)) {

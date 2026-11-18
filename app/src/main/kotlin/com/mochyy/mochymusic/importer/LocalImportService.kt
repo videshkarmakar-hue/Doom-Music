@@ -1,16 +1,16 @@
 // LocalImportService.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.ImportSession
-import com.mochyy.mochymusic.db.entities.ImportSessionSong
-import com.mochyy.mochymusic.models.TransferBatch
-import com.mochyy.mochymusic.models.TransferItem
-import com.mochyy.mochymusic.models.TransferState
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.ImportSession
+import com.videshkarmakar.doom.db.entities.ImportSessionSong
+import com.videshkarmakar.doom.models.TransferBatch
+import com.videshkarmakar.doom.models.TransferItem
+import com.videshkarmakar.doom.models.TransferState
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler

@@ -1,22 +1,22 @@
 // DiscordViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.discord.DiscordAuth
-import com.mochyy.mochymusic.discord.DiscordLogin
-import com.mochyy.mochymusic.discord.DiscordPresence
-import com.mochyy.mochymusic.discord.DiscordProfile
-import com.mochyy.mochymusic.discord.NowPlaying
-import com.mochyy.mochymusic.discord.PresenceConnection
-import com.mochyy.mochymusic.discord.PresenceImage
-import com.mochyy.mochymusic.discord.PresenceSettings
-import com.mochyy.mochymusic.discord.savePresencePicture
-import com.mochyy.mochymusic.utils.PreferencesCache
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.discord.DiscordAuth
+import com.videshkarmakar.doom.discord.DiscordLogin
+import com.videshkarmakar.doom.discord.DiscordPresence
+import com.videshkarmakar.doom.discord.DiscordProfile
+import com.videshkarmakar.doom.discord.NowPlaying
+import com.videshkarmakar.doom.discord.PresenceConnection
+import com.videshkarmakar.doom.discord.PresenceImage
+import com.videshkarmakar.doom.discord.PresenceSettings
+import com.videshkarmakar.doom.discord.savePresencePicture
+import com.videshkarmakar.doom.utils.PreferencesCache
+import com.videshkarmakar.doom.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.NonCancellable

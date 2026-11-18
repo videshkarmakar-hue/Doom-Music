@@ -1,6 +1,6 @@
 // LyricsFileFormats.kt
 
-package com.mochyy.mochymusic.songedit
+package com.videshkarmakar.doom.songedit
 
 import java.io.ByteArrayOutputStream
 import java.nio.ByteBuffer

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.utils
+package com.videshkarmakar.doom.ui.utils
 
 import kotlin.math.abs
 import kotlin.math.sign

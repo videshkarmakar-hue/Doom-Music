@@ -1,8 +1,8 @@
 // LinkSongs.kt
 
-package com.mochyy.mochymusic.link
+package com.videshkarmakar.doom.link
 
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.models.MediaMetadata
 import org.json.JSONArray
 import org.json.JSONObject
 

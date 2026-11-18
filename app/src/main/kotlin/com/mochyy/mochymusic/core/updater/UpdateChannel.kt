@@ -1,7 +1,7 @@
-package com.mochyy.mochymusic.core.updater
+package com.videshkarmakar.doom.core.updater
 
 import android.content.Context
-import com.mochyy.mochymusic.BuildConfig
+import com.videshkarmakar.doom.BuildConfig
 
 // release only sees normal github releases, nightly sees the prereleases too and takes whichever is newest
 enum class UpdateChannel { Release, Nightly }

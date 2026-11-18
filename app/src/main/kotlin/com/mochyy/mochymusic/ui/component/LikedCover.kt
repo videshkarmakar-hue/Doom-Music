@@ -6,7 +6,7 @@
 // and doesn't need blur, which older phones can't do. LikedCoverImage saves the same drawing as a
 // picture for the places that only take an image link.
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.content.Context
 import android.graphics.RadialGradient
@@ -41,9 +41,9 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.theme.CoverThemeColor
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.theme.CoverThemeColor
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

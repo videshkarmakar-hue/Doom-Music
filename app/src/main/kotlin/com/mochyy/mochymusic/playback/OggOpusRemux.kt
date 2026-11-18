@@ -1,6 +1,6 @@
 // OggOpusRemux.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.media.MediaCodec
 import android.media.MediaDataSource

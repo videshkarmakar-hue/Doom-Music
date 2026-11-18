@@ -1,6 +1,6 @@
 // SongSharePicture.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -41,21 +41,21 @@ import androidx.compose.ui.layout.positionInParent
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.ui.component.DownscaledBlur
-import com.mochyy.mochymusic.ui.player.share.CinematicFlow
-import com.mochyy.mochymusic.ui.player.share.CinematicLayout
-import com.mochyy.mochymusic.ui.player.share.LyricsShareSession
-import com.mochyy.mochymusic.ui.player.share.MusicCloudsRestPhase
-import com.mochyy.mochymusic.ui.player.share.ShareBackground
-import com.mochyy.mochymusic.ui.player.share.ShareHeight
-import com.mochyy.mochymusic.ui.player.share.ShareRegions
-import com.mochyy.mochymusic.ui.player.share.ShareStyle
-import com.mochyy.mochymusic.ui.player.share.ShareWidth
-import com.mochyy.mochymusic.ui.player.share.cinematicTimings
-import com.mochyy.mochymusic.ui.player.share.drawMusicClouds
+import com.videshkarmakar.doom.ui.component.DownscaledBlur
+import com.videshkarmakar.doom.ui.player.share.CinematicFlow
+import com.videshkarmakar.doom.ui.player.share.CinematicLayout
+import com.videshkarmakar.doom.ui.player.share.LyricsShareSession
+import com.videshkarmakar.doom.ui.player.share.MusicCloudsRestPhase
+import com.videshkarmakar.doom.ui.player.share.ShareBackground
+import com.videshkarmakar.doom.ui.player.share.ShareHeight
+import com.videshkarmakar.doom.ui.player.share.ShareRegions
+import com.videshkarmakar.doom.ui.player.share.ShareStyle
+import com.videshkarmakar.doom.ui.player.share.ShareWidth
+import com.videshkarmakar.doom.ui.player.share.cinematicTimings
+import com.videshkarmakar.doom.ui.player.share.drawMusicClouds
 import kotlin.math.PI
 import kotlin.math.ceil
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // the card's blur at full strength, in the picture's own units
 internal val MaxCardBlur = 26.dp

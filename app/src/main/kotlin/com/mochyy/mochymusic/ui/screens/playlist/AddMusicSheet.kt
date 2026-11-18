@@ -1,6 +1,6 @@
 // AddMusicSheet.kt
 
-package com.mochyy.mochymusic.ui.screens.playlist
+package com.videshkarmakar.doom.ui.screens.playlist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.horizontalScroll
@@ -41,21 +41,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.constants.SongSortType
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetLabel
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.SheetSearchField
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.constants.SongSortType
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetLabel
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.SheetSearchField
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 import com.music.innertube.models.SongItem
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
@@ -277,7 +277,7 @@ private fun LazyListScope.searchResults(
             SheetNote("Couldn't search online. Check your connection and try again.")
         }
         results.library.isEmpty() -> item(key = "nothing") {
-            SheetNote("Nothing found for “${results.query}”.")
+            SheetNote("Nothing found for “${results.query}�.")
         }
     }
 }

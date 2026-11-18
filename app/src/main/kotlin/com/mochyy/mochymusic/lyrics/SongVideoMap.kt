@@ -1,6 +1,6 @@
 // SongVideoMap.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import kotlin.math.abs
 import kotlin.math.roundToLong

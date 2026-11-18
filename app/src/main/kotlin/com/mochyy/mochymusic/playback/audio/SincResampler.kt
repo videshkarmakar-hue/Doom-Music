@@ -1,6 +1,6 @@
 // SincResampler.kt
 
-package com.mochyy.mochymusic.playback.audio
+package com.videshkarmakar.doom.playback.audio
 
 import java.util.concurrent.ConcurrentHashMap
 import kotlin.math.PI

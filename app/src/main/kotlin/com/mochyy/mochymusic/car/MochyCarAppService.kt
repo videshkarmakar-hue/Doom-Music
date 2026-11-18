@@ -1,6 +1,6 @@
-// MochyCarAppService.kt
+// DoomCarAppService.kt
 
-package com.mochyy.mochymusic.car
+package com.videshkarmakar.doom.car
 
 import android.content.pm.ApplicationInfo
 import androidx.car.app.CarAppService
@@ -8,17 +8,17 @@ import androidx.car.app.Session
 import androidx.car.app.SessionInfo
 import androidx.car.app.validation.HostValidator
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.link.phone.PhoneLinkHost
-import com.mochyy.mochymusic.link.phone.PhonePairing
-import com.mochyy.mochymusic.lyrics.LyricsHelper
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.link.phone.PhoneLinkHost
+import com.videshkarmakar.doom.link.phone.PhonePairing
+import com.videshkarmakar.doom.lyrics.LyricsHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-// mochy's own android auto screens, drawn by the car from google's media templates so they look and size like every other car app
+// doom's own android auto screens, drawn by the car from google's media templates so they look and size like every other car app
 @UnstableApi
 @AndroidEntryPoint
-class MochyCarAppService : CarAppService() {
+class DoomCarAppService : CarAppService() {
     @Inject lateinit var database: MusicDatabase
     @Inject lateinit var lyricsHelper: LyricsHelper
     @Inject lateinit var pairing: PhonePairing

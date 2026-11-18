@@ -1,6 +1,6 @@
 // ShareSources.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import android.content.Context
 import android.net.Uri
@@ -12,20 +12,20 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.transformations
 import coil3.toBitmap
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.lyrics.LyricsHelper
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.playback.MusicService
-import com.mochyy.mochymusic.ui.player.CanvasArtworkPlaybackCache
-import com.mochyy.mochymusic.ui.player.findCanvas
-import com.mochyy.mochymusic.ui.player.lookUpVideo
-import com.mochyy.mochymusic.ui.player.normalizeCanvasArtistName
-import com.mochyy.mochymusic.ui.player.normalizeCanvasSongTitle
-import com.mochyy.mochymusic.ui.player.share.coverPalette
-import com.mochyy.mochymusic.ui.utils.SoftBlurTransformation
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.YTPlayerUtils
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.lyrics.LyricsHelper
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.playback.MusicService
+import com.videshkarmakar.doom.ui.player.CanvasArtworkPlaybackCache
+import com.videshkarmakar.doom.ui.player.findCanvas
+import com.videshkarmakar.doom.ui.player.lookUpVideo
+import com.videshkarmakar.doom.ui.player.normalizeCanvasArtistName
+import com.videshkarmakar.doom.ui.player.normalizeCanvasSongTitle
+import com.videshkarmakar.doom.ui.player.share.coverPalette
+import com.videshkarmakar.doom.ui.utils.SoftBlurTransformation
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.YTPlayerUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext

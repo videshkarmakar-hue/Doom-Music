@@ -1,6 +1,6 @@
 // SongDetailsSheet.kt
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.rememberScrollState
@@ -47,14 +47,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.player.info.AboutPreviewCard
-import com.mochyy.mochymusic.ui.player.info.SongAbout
-import com.mochyy.mochymusic.ui.player.info.SongAboutLoader
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.player.info.AboutPreviewCard
+import com.videshkarmakar.doom.ui.player.info.SongAbout
+import com.videshkarmakar.doom.ui.player.info.SongAboutLoader
+import com.videshkarmakar.doom.ui.utils.resize
 import com.music.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -62,7 +62,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import java.util.concurrent.ConcurrentHashMap
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** tapping the player's title opens this: the song, a few lines about it, its artists and album, then about song and stream info */
 @Composable
@@ -149,7 +149,7 @@ fun SongDetailsSheet(
         }
 
         if (showAbout) {
-            com.mochyy.mochymusic.ui.player.info.AboutSongSheet(
+            com.videshkarmakar.doom.ui.player.info.AboutSongSheet(
                 song = song,
                 about = about,
                 onDismiss = { showAbout = false },
@@ -157,7 +157,7 @@ fun SongDetailsSheet(
             )
         }
         if (showStream) {
-            com.mochyy.mochymusic.ui.player.info.StreamInfoSheet(onDismiss = { showStream = false })
+            com.videshkarmakar.doom.ui.player.info.StreamInfoSheet(onDismiss = { showStream = false })
         }
     }
 }

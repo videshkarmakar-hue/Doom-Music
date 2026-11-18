@@ -4,7 +4,7 @@
 // top fading through the pure colour to black at the bottom. Drag anywhere on it and the picture
 // changes as you go.
 
-package com.mochyy.mochymusic.ui.player.share
+package com.videshkarmakar.doom.ui.player.share
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.snap

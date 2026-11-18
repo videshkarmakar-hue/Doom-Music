@@ -1,6 +1,6 @@
 // AccountViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -11,11 +11,11 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.filterYoutubeShorts
 import com.music.innertube.utils.completed
-import com.mochyy.mochymusic.constants.HideYoutubeShortsKey
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
-import com.mochyy.mochymusic.utils.reportException
+import com.videshkarmakar.doom.constants.HideYoutubeShortsKey
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
+import com.videshkarmakar.doom.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.eq.data
+package com.videshkarmakar.doom.eq.data
 
 import android.content.Context
 import android.content.SharedPreferences

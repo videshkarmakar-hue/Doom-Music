@@ -1,6 +1,6 @@
 // SoftBlur.kt
 
-package com.mochyy.mochymusic.ui.utils
+package com.videshkarmakar.doom.ui.utils
 
 import android.graphics.Bitmap
 import coil3.size.Size

@@ -1,6 +1,6 @@
 // TopPlaylistScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.playlist
+package com.videshkarmakar.doom.ui.screens.playlist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Spacer
@@ -41,33 +41,33 @@ import androidx.compose.ui.util.fastForEachReversed
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.exoplayer.offline.Download
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.MyTopFilter
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.SongSwipeBox
-import com.mochyy.mochymusic.ui.component.detail.FeaturedArtistsRow
-import com.mochyy.mochymusic.ui.component.detail.PlaylistEndOfLine
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSortControl
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackBones
-import com.mochyy.mochymusic.ui.component.detail.PlaylistModeBar
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSelectTick
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackRow
-import com.mochyy.mochymusic.ui.component.detail.featuredArtistsOf
-import com.mochyy.mochymusic.ui.component.librarySwipeAction
-import com.mochyy.mochymusic.ui.component.queueSwipeAction
-import com.mochyy.mochymusic.ui.component.rememberRevealSeenState
-import com.mochyy.mochymusic.ui.component.revealOnAppear
-import com.mochyy.mochymusic.ui.menu.SelectionSongMenu
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.ui.menu.TopPlaylistMenu
-import com.mochyy.mochymusic.ui.utils.backToMain
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.viewmodels.TopPlaylistViewModel
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.MyTopFilter
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.SongSwipeBox
+import com.videshkarmakar.doom.ui.component.detail.FeaturedArtistsRow
+import com.videshkarmakar.doom.ui.component.detail.PlaylistEndOfLine
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSortControl
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackBones
+import com.videshkarmakar.doom.ui.component.detail.PlaylistModeBar
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSelectTick
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackRow
+import com.videshkarmakar.doom.ui.component.detail.featuredArtistsOf
+import com.videshkarmakar.doom.ui.component.librarySwipeAction
+import com.videshkarmakar.doom.ui.component.queueSwipeAction
+import com.videshkarmakar.doom.ui.component.rememberRevealSeenState
+import com.videshkarmakar.doom.ui.component.revealOnAppear
+import com.videshkarmakar.doom.ui.menu.SelectionSongMenu
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.ui.menu.TopPlaylistMenu
+import com.videshkarmakar.doom.ui.utils.backToMain
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.viewmodels.TopPlaylistViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -169,7 +169,7 @@ fun TopPlaylistScreen(
         searchPlaceholder = "Search your top songs",
         onBackClick = { navController.navigateUp() },
         onBackLongClick = { navController.backToMain() },
-        creator = "mochy",
+        creator = "doom",
         onMoreClick = {
             menuState.show {
                 TopPlaylistMenu(

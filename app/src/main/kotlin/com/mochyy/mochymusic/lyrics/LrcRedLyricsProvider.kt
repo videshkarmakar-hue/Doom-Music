@@ -1,13 +1,13 @@
 // LrcRedLyricsProvider.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import android.content.Context
 import com.music.directlyrics.LrcRed
-import com.mochyy.mochymusic.betterlyrics.TTMLParser
-import com.mochyy.mochymusic.constants.EnableLrcRedKey
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.betterlyrics.TTMLParser
+import com.videshkarmakar.doom.constants.EnableLrcRedKey
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 
 object LrcRedLyricsProvider : LyricsProvider {
     override val name = "LrcRed"

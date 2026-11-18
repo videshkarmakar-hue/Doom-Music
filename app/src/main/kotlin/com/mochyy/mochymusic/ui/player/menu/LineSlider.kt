@@ -1,6 +1,6 @@
 // LineSlider.kt
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures

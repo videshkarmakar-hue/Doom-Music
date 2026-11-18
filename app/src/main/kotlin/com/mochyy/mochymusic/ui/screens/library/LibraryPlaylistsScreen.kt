@@ -1,6 +1,6 @@
 // LibraryPlaylistsScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -13,12 +13,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.menu.PlaylistMenu
-import com.mochyy.mochymusic.viewmodels.LibraryHomeViewModel
-import com.mochyy.mochymusic.viewmodels.LibraryShelfKind
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.menu.PlaylistMenu
+import com.videshkarmakar.doom.viewmodels.LibraryHomeViewModel
+import com.videshkarmakar.doom.viewmodels.LibraryShelfKind
 
 /**
  * The library's playlists, or with a [shelf] the Local or Cached tab's: only the playlists that

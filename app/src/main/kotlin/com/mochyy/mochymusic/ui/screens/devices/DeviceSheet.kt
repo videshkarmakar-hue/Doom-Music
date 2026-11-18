@@ -1,6 +1,6 @@
 // DeviceSheet.kt
 
-package com.mochyy.mochymusic.ui.screens.devices
+package com.videshkarmakar.doom.ui.screens.devices
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -38,13 +38,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.phone.PairedDevice
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.phone.PairedDevice
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 

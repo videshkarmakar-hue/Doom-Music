@@ -1,6 +1,6 @@
 // SongMenu.kt
 
-package com.mochyy.mochymusic.ui.menu
+package com.videshkarmakar.doom.ui.menu
 
 import android.content.res.Configuration
 import androidx.compose.animation.core.animateFloatAsState
@@ -56,44 +56,44 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.importer.ImportedVersions
-import com.mochyy.mochymusic.importer.TrackMatch
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.LocalSyncUtils
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.ListItemHeight
-import com.mochyy.mochymusic.constants.ListThumbnailSize
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.db.entities.Event
-import com.mochyy.mochymusic.db.entities.SpeedDialItem
-import com.mochyy.mochymusic.db.entities.PlaylistSong
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.ExoDownloadService
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.ListDialog
-import com.mochyy.mochymusic.ui.component.LocalBottomSheetPageState
-import com.mochyy.mochymusic.ui.component.Material3MenuGroup
-import com.mochyy.mochymusic.ui.component.Material3MenuItemData
-import com.mochyy.mochymusic.ui.component.NewAction
-import com.mochyy.mochymusic.ui.component.NewActionGrid
-import com.mochyy.mochymusic.ui.component.SheetActionCard
-import com.mochyy.mochymusic.ui.component.SheetActionCardRow
-import com.mochyy.mochymusic.ui.component.SheetDownloadCard
-import com.mochyy.mochymusic.ui.component.SheetHeaderGap
-import com.mochyy.mochymusic.ui.component.SheetHeader
-import com.mochyy.mochymusic.ui.component.SheetHeaderButton
-import com.mochyy.mochymusic.ui.component.SongListItem
-import com.mochyy.mochymusic.ui.menu.songedit.SongEditSheet
-import com.mochyy.mochymusic.utils.listItemShape
-import com.mochyy.mochymusic.ui.utils.ShowMediaInfo
-import com.mochyy.mochymusic.viewmodels.CachePlaylistViewModel
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.importer.ImportedVersions
+import com.videshkarmakar.doom.importer.TrackMatch
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.LocalSyncUtils
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.ListItemHeight
+import com.videshkarmakar.doom.constants.ListThumbnailSize
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.db.entities.Event
+import com.videshkarmakar.doom.db.entities.SpeedDialItem
+import com.videshkarmakar.doom.db.entities.PlaylistSong
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.ExoDownloadService
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.ListDialog
+import com.videshkarmakar.doom.ui.component.LocalBottomSheetPageState
+import com.videshkarmakar.doom.ui.component.Material3MenuGroup
+import com.videshkarmakar.doom.ui.component.Material3MenuItemData
+import com.videshkarmakar.doom.ui.component.NewAction
+import com.videshkarmakar.doom.ui.component.NewActionGrid
+import com.videshkarmakar.doom.ui.component.SheetActionCard
+import com.videshkarmakar.doom.ui.component.SheetActionCardRow
+import com.videshkarmakar.doom.ui.component.SheetDownloadCard
+import com.videshkarmakar.doom.ui.component.SheetHeaderGap
+import com.videshkarmakar.doom.ui.component.SheetHeader
+import com.videshkarmakar.doom.ui.component.SheetHeaderButton
+import com.videshkarmakar.doom.ui.component.SongListItem
+import com.videshkarmakar.doom.ui.menu.songedit.SongEditSheet
+import com.videshkarmakar.doom.utils.listItemShape
+import com.videshkarmakar.doom.ui.utils.ShowMediaInfo
+import com.videshkarmakar.doom.viewmodels.CachePlaylistViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -363,7 +363,7 @@ fun SongMenu(
                         },
                         onClick = {
                             onDismiss()
-                            com.mochyy.mochymusic.ui.player.share.song.SongShare.open(song.toMediaMetadata())
+                            com.videshkarmakar.doom.ui.player.share.song.SongShare.open(song.toMediaMetadata())
                         }
                     ),
                     if (song.song.albumId != null) {
@@ -720,7 +720,7 @@ fun SongMenu(
  * of it. It used to only refresh this song's own details, so a wrong version stayed wrong and the
  * button looked like it did nothing.
  */
-private fun refetchImported(context: android.content.Context, database: com.mochyy.mochymusic.db.MusicDatabase, match: TrackMatch) {
+private fun refetchImported(context: android.content.Context, database: com.videshkarmakar.doom.db.MusicDatabase, match: TrackMatch) {
     ImportedVersions.scope.launch {
         val switched = ImportedVersions.refetch(context.applicationContext, database, match)
         if (switched != null) {

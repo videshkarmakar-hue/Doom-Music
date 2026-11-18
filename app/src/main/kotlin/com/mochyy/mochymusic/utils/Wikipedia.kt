@@ -1,6 +1,6 @@
 // Wikipedia.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body

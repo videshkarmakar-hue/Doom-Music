@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.utils
+package com.videshkarmakar.doom.ui.utils
 
 import android.os.Build
 import android.view.View
@@ -12,8 +12,8 @@ import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.platform.LocalView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.mochyy.mochymusic.constants.EnableHighRefreshRateKey
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.EnableHighRefreshRateKey
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.flow.combine
 
 // asks android 15+ for the top refresh rate while active() holds; there a screen moving with no finger on it falls to 60hz (docs/notes/performance.md)

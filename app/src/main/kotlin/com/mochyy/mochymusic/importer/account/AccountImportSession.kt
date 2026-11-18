@@ -1,17 +1,17 @@
 // AccountImportSession.kt
 
-package com.mochyy.mochymusic.importer.account
+package com.videshkarmakar.doom.importer.account
 
 import android.content.Context
-import com.mochyy.mochymusic.constants.AccountNameKey
-import com.mochyy.mochymusic.extensions.isUserLoggedIn
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.importer.ImportedTrack
-import com.mochyy.mochymusic.importer.ParsedImport
-import com.mochyy.mochymusic.importer.PlaylistOrigin
-import com.mochyy.mochymusic.importer.ResyncRead
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.constants.AccountNameKey
+import com.videshkarmakar.doom.extensions.isUserLoggedIn
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.importer.ImportedTrack
+import com.videshkarmakar.doom.importer.ParsedImport
+import com.videshkarmakar.doom.importer.PlaylistOrigin
+import com.videshkarmakar.doom.importer.ResyncRead
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 import com.music.innertube.YouTube
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope

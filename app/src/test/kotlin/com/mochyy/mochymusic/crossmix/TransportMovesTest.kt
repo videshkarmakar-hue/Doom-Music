@@ -1,9 +1,9 @@
-package com.mochyy.mochymusic.crossmix
+package com.videshkarmakar.doom.crossmix
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
-import com.mochyy.mochymusic.constants.TransportEffect
-import com.mochyy.mochymusic.playback.audio.CrossmixTransitionAudioProcessor
+import com.videshkarmakar.doom.constants.TransportEffect
+import com.videshkarmakar.doom.playback.audio.CrossmixTransitionAudioProcessor
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

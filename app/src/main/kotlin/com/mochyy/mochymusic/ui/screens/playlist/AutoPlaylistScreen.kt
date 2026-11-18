@@ -1,6 +1,6 @@
 // AutoPlaylistScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.playlist
+package com.videshkarmakar.doom.ui.screens.playlist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -65,60 +65,60 @@ import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.LastPlayedLikedSongsTimeKey
-import com.mochyy.mochymusic.constants.LikedSongSortDescendingKey
-import com.mochyy.mochymusic.constants.LikedSongSortType
-import com.mochyy.mochymusic.constants.LikedSongSortTypeKey
-import com.mochyy.mochymusic.constants.SongSortDescendingKey
-import com.mochyy.mochymusic.constants.SongSortType
-import com.mochyy.mochymusic.constants.SongSortTypeKey
-import com.mochyy.mochymusic.constants.YtmSyncKey
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.playback.ExoDownloadService
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.ui.component.DraggableScrollbar
-import com.mochyy.mochymusic.ui.component.EmptyPlaceholder
-import com.mochyy.mochymusic.ui.component.LikedCover
-import com.mochyy.mochymusic.ui.component.LikedCoverColors
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.SongSwipeBox
-import com.mochyy.mochymusic.ui.component.librarySwipeAction
-import com.mochyy.mochymusic.ui.component.rememberLikedCoverColors
-import com.mochyy.mochymusic.ui.component.queueSwipeAction
-import com.mochyy.mochymusic.ui.component.detail.featuredArtistsOf
-import com.mochyy.mochymusic.ui.component.detail.FeaturedArtistsRow
-import com.mochyy.mochymusic.ui.component.detail.PlaylistDetailScaffold
-import com.mochyy.mochymusic.ui.component.detail.PlaylistEndOfLine
-import com.mochyy.mochymusic.ui.component.detail.PlaylistHeader
-import com.mochyy.mochymusic.ui.component.detail.PlaylistInset
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSortControl
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSearchBar
-import com.mochyy.mochymusic.ui.component.detail.PlaylistStatsStyle
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackBones
-import com.mochyy.mochymusic.ui.component.detail.PlaylistModeBar
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSelectTick
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackRow
-import com.mochyy.mochymusic.ui.component.detail.playlistCoverHeight
-import com.mochyy.mochymusic.ui.component.rememberRevealSeenState
-import com.mochyy.mochymusic.ui.component.revealOnAppear
-import com.mochyy.mochymusic.ui.menu.AutoPlaylistMenu
-import com.mochyy.mochymusic.ui.menu.SelectionSongMenu
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.ui.screens.library.ImportSourceIcon
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.SquircleShape
-import com.mochyy.mochymusic.ui.utils.backToMain
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.AutoPlaylistViewModel
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.LastPlayedLikedSongsTimeKey
+import com.videshkarmakar.doom.constants.LikedSongSortDescendingKey
+import com.videshkarmakar.doom.constants.LikedSongSortType
+import com.videshkarmakar.doom.constants.LikedSongSortTypeKey
+import com.videshkarmakar.doom.constants.SongSortDescendingKey
+import com.videshkarmakar.doom.constants.SongSortType
+import com.videshkarmakar.doom.constants.SongSortTypeKey
+import com.videshkarmakar.doom.constants.YtmSyncKey
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.playback.ExoDownloadService
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.ui.component.DraggableScrollbar
+import com.videshkarmakar.doom.ui.component.EmptyPlaceholder
+import com.videshkarmakar.doom.ui.component.LikedCover
+import com.videshkarmakar.doom.ui.component.LikedCoverColors
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.SongSwipeBox
+import com.videshkarmakar.doom.ui.component.librarySwipeAction
+import com.videshkarmakar.doom.ui.component.rememberLikedCoverColors
+import com.videshkarmakar.doom.ui.component.queueSwipeAction
+import com.videshkarmakar.doom.ui.component.detail.featuredArtistsOf
+import com.videshkarmakar.doom.ui.component.detail.FeaturedArtistsRow
+import com.videshkarmakar.doom.ui.component.detail.PlaylistDetailScaffold
+import com.videshkarmakar.doom.ui.component.detail.PlaylistEndOfLine
+import com.videshkarmakar.doom.ui.component.detail.PlaylistHeader
+import com.videshkarmakar.doom.ui.component.detail.PlaylistInset
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSortControl
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSearchBar
+import com.videshkarmakar.doom.ui.component.detail.PlaylistStatsStyle
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackBones
+import com.videshkarmakar.doom.ui.component.detail.PlaylistModeBar
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSelectTick
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackRow
+import com.videshkarmakar.doom.ui.component.detail.playlistCoverHeight
+import com.videshkarmakar.doom.ui.component.rememberRevealSeenState
+import com.videshkarmakar.doom.ui.component.revealOnAppear
+import com.videshkarmakar.doom.ui.menu.AutoPlaylistMenu
+import com.videshkarmakar.doom.ui.menu.SelectionSongMenu
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.ui.screens.library.ImportSourceIcon
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.SquircleShape
+import com.videshkarmakar.doom.ui.utils.backToMain
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.AutoPlaylistViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -378,7 +378,7 @@ fun AutoPlaylistScreen(
                     },
                     onDismiss = { menuState.dismiss() },
                     onSearch = { isSearching = true },
-                    autoDownloadId = if (isLiked) com.mochyy.mochymusic.playback.AutoDownloads.LikedId else null,
+                    autoDownloadId = if (isLiked) com.videshkarmakar.doom.playback.AutoDownloads.LikedId else null,
                 )
             }
         },
@@ -582,12 +582,12 @@ fun AutoPlaylistScreen(
             ) { index, song -> trackRow(index, song) }
         } else {
             filteredSections.forEach { section ->
-                item(key = "source_${section.source?.key ?: "mochy"}") {
+                item(key = "source_${section.source?.key ?: "doom"}") {
                     LikedSourceSeparator(
                         source = section.source,
                         modifier = Modifier
                             .animateItem()
-                            .revealOnAppear(key = "source_${section.source?.key ?: "mochy"}", seenState = revealSeen),
+                            .revealOnAppear(key = "source_${section.source?.key ?: "doom"}", seenState = revealSeen),
                     )
                 }
                 itemsIndexed(
@@ -621,7 +621,7 @@ fun AutoPlaylistScreen(
 
 /**
  * the small line above each service's songs in Liked songs' import order: its app icon, its name,
- * then a hairline across. the ones liked here get Mochy's own.
+ * then a hairline across. the ones liked here get Doom's own.
  */
 @Composable
 private fun LikedSourceSeparator(source: ImportSource?, modifier: Modifier = Modifier) {
@@ -642,7 +642,7 @@ private fun LikedSourceSeparator(source: ImportSource?, modifier: Modifier = Mod
                     .background(colorResource(R.color.ic_launcher_background)),
             ) {
                 Icon(
-                    painter = painterResource(R.drawable.ic_mochy_mark),
+                    painter = painterResource(R.drawable.ic_doom_mark),
                     contentDescription = null,
                     tint = Color.White,
                     modifier = Modifier.size(9.dp),
@@ -651,7 +651,7 @@ private fun LikedSourceSeparator(source: ImportSource?, modifier: Modifier = Mod
         }
         Spacer(Modifier.width(6.dp))
         Text(
-            text = source?.label?.replaceFirstChar { it.uppercase() } ?: "Mochy",
+            text = source?.label?.replaceFirstChar { it.uppercase() } ?: "Doom",
             style = PlaylistStatsStyle,
             color = Color.White.copy(alpha = 0.62f),
             maxLines = 1,

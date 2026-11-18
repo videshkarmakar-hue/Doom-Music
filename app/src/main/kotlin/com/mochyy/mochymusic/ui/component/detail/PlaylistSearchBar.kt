@@ -1,6 +1,6 @@
 // PlaylistSearchBar.kt
 
-package com.mochyy.mochymusic.ui.component.detail
+package com.videshkarmakar.doom.ui.component.detail
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -40,10 +40,10 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.stableStatusBarsPadding
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.stableStatusBarsPadding
 
 private val BarHeight = 44.dp
 private val BarFill = Color(0xFF3A3D42).copy(alpha = 0.78f)

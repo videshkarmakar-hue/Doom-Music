@@ -1,7 +1,7 @@
-package com.mochyy.mochymusic.crossmix
+package com.videshkarmakar.doom.crossmix
 
-import com.mochyy.mochymusic.constants.CrossmixLength
-import com.mochyy.mochymusic.lyrics.LyricsUtils
+import com.videshkarmakar.doom.constants.CrossmixLength
+import com.videshkarmakar.doom.lyrics.LyricsUtils
 import kotlin.math.abs
 import kotlin.math.ln
 import kotlin.math.max

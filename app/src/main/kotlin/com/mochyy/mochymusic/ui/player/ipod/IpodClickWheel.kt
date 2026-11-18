@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
@@ -29,9 +29,9 @@ import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.em
-import com.mochyy.mochymusic.ui.player.styles.LocalStyleInteractive
-import com.mochyy.mochymusic.ui.player.styles.whileStyleInteractive
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.player.styles.LocalStyleInteractive
+import com.videshkarmakar.doom.ui.player.styles.whileStyleInteractive
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.launch
 import kotlin.math.PI
 import kotlin.math.atan2

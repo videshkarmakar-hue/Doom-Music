@@ -1,6 +1,6 @@
 // GenreViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -8,7 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.pages.BrowseResult
-import com.mochyy.mochymusic.utils.reportException
+import com.videshkarmakar.doom.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope

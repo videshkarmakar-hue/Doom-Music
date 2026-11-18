@@ -1,6 +1,6 @@
 // PillFlight.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import android.view.Choreographer
 import kotlin.math.abs

@@ -1,6 +1,6 @@
 // TvPlayerHost.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
@@ -70,25 +70,25 @@ import androidx.compose.ui.input.key.type
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.Player
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlayerStyle
-import com.mochyy.mochymusic.constants.PlayerStyleKey
-import com.mochyy.mochymusic.constants.TvFlagshipSquareKey
-import com.mochyy.mochymusic.constants.VideoModeReturnStyleKey
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedPlayGlyph
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedSkipGlyph
-import com.mochyy.mochymusic.ui.player.flagship.SkipCycleState
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlayerStyle
+import com.videshkarmakar.doom.constants.PlayerStyleKey
+import com.videshkarmakar.doom.constants.TvFlagshipSquareKey
+import com.videshkarmakar.doom.constants.VideoModeReturnStyleKey
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedPlayGlyph
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedSkipGlyph
+import com.videshkarmakar.doom.ui.player.flagship.SkipCycleState
 import androidx.compose.runtime.rememberCoroutineScope
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.extensions.togglePlayPause
-import com.mochyy.mochymusic.extensions.toggleRepeatMode
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.ui.component.BottomSheetState
-import com.mochyy.mochymusic.ui.player.BottomSheetPlayer
-import com.mochyy.mochymusic.ui.player.TvPlayerCommand
-import com.mochyy.mochymusic.ui.player.TvPlayerRemote
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.extensions.togglePlayPause
+import com.videshkarmakar.doom.extensions.toggleRepeatMode
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.ui.component.BottomSheetState
+import com.videshkarmakar.doom.ui.player.BottomSheetPlayer
+import com.videshkarmakar.doom.ui.player.TvPlayerCommand
+import com.videshkarmakar.doom.ui.player.TvPlayerRemote
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.delay
 
 // the phone's own player, every style it has on a tv, opened full screen from the pill and run from the remote

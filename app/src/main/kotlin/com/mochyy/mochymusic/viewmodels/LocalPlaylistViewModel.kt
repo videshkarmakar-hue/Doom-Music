@@ -1,22 +1,22 @@
 // LocalPlaylistViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.constants.PlaylistSongSortDescendingKey
-import com.mochyy.mochymusic.constants.PlaylistSongSortType
-import com.mochyy.mochymusic.constants.PlaylistSongSortTypeKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.PlaylistSong
-import com.mochyy.mochymusic.extensions.reversed
-import com.mochyy.mochymusic.extensions.toEnum
-import com.mochyy.mochymusic.playlistcover.PlaylistCovers
-import com.mochyy.mochymusic.utils.SyncUtils
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.constants.PlaylistSongSortDescendingKey
+import com.videshkarmakar.doom.constants.PlaylistSongSortType
+import com.videshkarmakar.doom.constants.PlaylistSongSortTypeKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.PlaylistSong
+import com.videshkarmakar.doom.extensions.reversed
+import com.videshkarmakar.doom.extensions.toEnum
+import com.videshkarmakar.doom.playlistcover.PlaylistCovers
+import com.videshkarmakar.doom.utils.SyncUtils
+import com.videshkarmakar.doom.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers

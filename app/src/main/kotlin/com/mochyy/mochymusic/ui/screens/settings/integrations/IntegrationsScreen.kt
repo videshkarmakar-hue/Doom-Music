@@ -1,6 +1,6 @@
-// mochy → settings → integrations: a row per service, always all of them, tapping one opens its own page
+// doom → settings → integrations: a row per service, always all of them, tapping one opens its own page
 
-package com.mochyy.mochymusic.ui.screens.settings.integrations
+package com.videshkarmakar.doom.ui.screens.settings.integrations
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,11 +12,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.scrobble.ScrobbleSite
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.screens.settings.importsync.YouTubeSyncRoute
-import com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordRoute
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.scrobble.ScrobbleSite
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.screens.settings.importsync.YouTubeSyncRoute
+import com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordRoute
 
 const val IntegrationsRoute = "integrations_settings"
 

@@ -1,10 +1,10 @@
 // ThemeViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import androidx.lifecycle.ViewModel
-import com.mochyy.mochymusic.ui.screens.DarkMode
-import com.mochyy.mochymusic.ui.theme.DefaultThemeColor
+import com.videshkarmakar.doom.ui.screens.DarkMode
+import com.videshkarmakar.doom.ui.theme.DefaultThemeColor
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

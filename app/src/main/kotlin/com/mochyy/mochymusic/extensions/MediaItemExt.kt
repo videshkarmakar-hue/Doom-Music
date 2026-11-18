@@ -1,16 +1,16 @@
 // MediaItemExt.kt
 
-package com.mochyy.mochymusic.extensions
+package com.videshkarmakar.doom.extensions
 
 import android.os.Bundle
 import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata.MEDIA_TYPE_MUSIC
 import com.music.innertube.models.SongItem
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.songedit.SongEdits
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.songedit.SongEdits
 
 val MediaItem.metadata: MediaMetadata?
     get() = localConfiguration?.tag as? MediaMetadata
@@ -74,7 +74,7 @@ private fun MediaMetadata.buildMediaItem() = MediaItem.Builder()
  * opposed to one the user queued. Kept in the media metadata extras so it travels with the item
  * through the player's timeline.
  */
-private const val AutoplayExtra = "mochy.autoplay"
+private const val AutoplayExtra = "doom.autoplay"
 
 val MediaItem.isAutoplay: Boolean
     get() = mediaMetadata.extras?.getBoolean(AutoplayExtra, false) == true
@@ -92,7 +92,7 @@ fun MediaItem.withAutoplay(autoplay: Boolean): MediaItem {
  * came with the queue they started or one Autoplay lined up. These are the queue's "Next in Queue"
  * songs: they play ahead of everything else, and starting another song doesn't drop them.
  */
-private const val ManualQueueExtra = "mochy.manualqueue"
+private const val ManualQueueExtra = "doom.manualqueue"
 
 val MediaItem.isManualQueued: Boolean
     get() = mediaMetadata.extras?.getBoolean(ManualQueueExtra, false) == true

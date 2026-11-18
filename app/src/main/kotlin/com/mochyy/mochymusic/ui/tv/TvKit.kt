@@ -1,6 +1,6 @@
 // TvKit.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -46,8 +46,8 @@ import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlin.math.roundToInt
 
 // the concept's colours: black ground, near-black cards, greys for anything that isn't the point

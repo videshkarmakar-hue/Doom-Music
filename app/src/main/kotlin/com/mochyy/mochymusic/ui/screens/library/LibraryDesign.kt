@@ -8,10 +8,10 @@
 // the nav bar; a near-identical-but-not-quite header would read as a bug, and sharing the actual
 // implementation is the only way to guarantee the collapse feels the same in both places.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.ui.component.containerTransformSource
+import com.videshkarmakar.doom.ui.component.containerTransformSource
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.CubicBezierEasing
@@ -64,17 +64,17 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.HomeTrackRow
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.HomeTrackRow
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.em
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.ui.screens.search.SearchHorizontalPadding
-import com.mochyy.mochymusic.ui.screens.search.SearchTitleBlockHeight
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.ui.screens.search.SearchHorizontalPadding
+import com.videshkarmakar.doom.ui.screens.search.SearchTitleBlockHeight
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** Title + subtitle block height, for the collapsing header on Library screens. */
 val LibraryTitleBlockHeight: Dp = SearchTitleBlockHeight + 16.dp
@@ -483,9 +483,9 @@ fun LibraryPlayBar(
         modifier = modifier.fillMaxWidth().padding(horizontal = SearchHorizontalPadding),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        com.mochyy.mochymusic.ui.component.detail.PlayPill(isPlaying = false, onClick = onPlay)
+        com.videshkarmakar.doom.ui.component.detail.PlayPill(isPlaying = false, onClick = onPlay)
         Spacer(modifier = Modifier.width(9.dp))
-        com.mochyy.mochymusic.ui.component.detail.CircleAction(
+        com.videshkarmakar.doom.ui.component.detail.CircleAction(
             icon = R.drawable.shuffle,
             contentDescription = stringResource(R.string.shuffle),
             onClick = onMore,

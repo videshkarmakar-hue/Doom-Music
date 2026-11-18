@@ -1,6 +1,6 @@
 // SongShareEditor.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -44,24 +44,24 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.player.share.EditOutlines
-import com.mochyy.mochymusic.ui.player.share.ShareHeight
-import com.mochyy.mochymusic.ui.player.share.ShareMuted
-import com.mochyy.mochymusic.ui.player.share.ShareRegions
-import com.mochyy.mochymusic.ui.player.share.ShareTitle
-import com.mochyy.mochymusic.ui.player.share.ShareWidth
-import com.mochyy.mochymusic.ui.player.share.showWordEditor
-import com.mochyy.mochymusic.ui.player.share.song.export.ShareApp
-import com.mochyy.mochymusic.ui.player.share.song.export.takesSticker
-import com.mochyy.mochymusic.ui.screens.audiolab.LabCard
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSlider
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.player.share.EditOutlines
+import com.videshkarmakar.doom.ui.player.share.ShareHeight
+import com.videshkarmakar.doom.ui.player.share.ShareMuted
+import com.videshkarmakar.doom.ui.player.share.ShareRegions
+import com.videshkarmakar.doom.ui.player.share.ShareTitle
+import com.videshkarmakar.doom.ui.player.share.ShareWidth
+import com.videshkarmakar.doom.ui.player.share.showWordEditor
+import com.videshkarmakar.doom.ui.player.share.song.export.ShareApp
+import com.videshkarmakar.doom.ui.player.share.song.export.takesSticker
+import com.videshkarmakar.doom.ui.screens.audiolab.LabCard
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSlider
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // the picture, the background that moves under your fingers, and, for a video, the part of the song it plays
 internal fun PopupSheetState.showEditor(session: SongShareSession) {

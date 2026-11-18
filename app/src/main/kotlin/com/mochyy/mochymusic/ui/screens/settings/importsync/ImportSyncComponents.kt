@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings.importsync
+package com.videshkarmakar.doom.ui.screens.settings.importsync
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -41,15 +41,15 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.InnerTubeCookieKey
-import com.mochyy.mochymusic.importer.LinkSource
-import com.mochyy.mochymusic.importer.ParsedImport
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.ImportSyncViewModel
-import com.mochyy.mochymusic.viewmodels.PendingImport
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.InnerTubeCookieKey
+import com.videshkarmakar.doom.importer.LinkSource
+import com.videshkarmakar.doom.importer.ParsedImport
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.ImportSyncViewModel
+import com.videshkarmakar.doom.viewmodels.PendingImport
 import com.music.innertube.utils.parseCookieString
 
 const val ImportSyncRoute = "import_sync"
@@ -74,7 +74,7 @@ fun ImportInfoCard(
     Card(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(28.dp),
-        colors = CardDefaults.cardColors(containerColor = com.mochyy.mochymusic.ui.screens.search.SearchColors.Field),
+        colors = CardDefaults.cardColors(containerColor = com.videshkarmakar.doom.ui.screens.search.SearchColors.Field),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
     ) {
         Column(modifier = Modifier.padding(horizontal = 20.dp, vertical = 18.dp), content = content)

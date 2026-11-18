@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.bedside
+package com.videshkarmakar.doom.ui.player.bedside
 
 import android.app.Activity
 import android.app.KeyguardManager
@@ -21,8 +21,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
-import com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState
-import com.mochyy.mochymusic.ui.player.findActivity
+import com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState
+import com.videshkarmakar.doom.ui.player.findActivity
 import kotlinx.coroutines.flow.distinctUntilChanged
 
 // asking for an unlock from over the lock screen needs android 8.1, older phones just don't get the option

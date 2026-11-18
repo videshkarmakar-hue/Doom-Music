@@ -1,11 +1,11 @@
 // LocalArtwork.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
 import android.net.Uri
 import androidx.core.net.toUri
-import com.mochyy.mochymusic.db.MusicDatabase
+import com.videshkarmakar.doom.db.MusicDatabase
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

@@ -1,6 +1,6 @@
 // MixerPass.kt
 
-package com.mochyy.mochymusic.playback.audio.pass
+package com.videshkarmakar.doom.playback.audio.pass
 
 import android.media.AudioDeviceInfo
 import android.media.AudioFormat
@@ -13,7 +13,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import androidx.annotation.RequiresApi
-import com.mochyy.mochymusic.playback.audio.AudioOutputs
+import com.videshkarmakar.doom.playback.audio.AudioOutputs
 import java.nio.ByteBuffer
 
 /** android 14's bit-perfect mixer: the dac opens at exactly the song's format and our own track plays to it with nothing in between (docs/notes/audio-output.md) */

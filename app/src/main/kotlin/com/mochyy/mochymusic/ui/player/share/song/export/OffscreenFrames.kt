@@ -1,6 +1,6 @@
 // OffscreenFrames.kt
 
-package com.mochyy.mochymusic.ui.player.share.song.export
+package com.videshkarmakar.doom.ui.player.share.song.export
 
 import android.graphics.Bitmap
 import android.graphics.Canvas

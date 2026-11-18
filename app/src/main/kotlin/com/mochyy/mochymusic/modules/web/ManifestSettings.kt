@@ -1,9 +1,9 @@
 // a link or zip module's settings while it runs: the fields its page shows, what people picked, and the look and glass those picks bring
 
-package com.mochyy.mochymusic.modules.web
+package com.videshkarmakar.doom.modules.web
 
-import com.mochyy.mochymusic.module.ModuleField
-import com.mochyy.mochymusic.modules.skin.SkinGlass
+import com.videshkarmakar.doom.module.ModuleField
+import com.videshkarmakar.doom.modules.skin.SkinGlass
 import java.io.File
 
 internal class ManifestSettings(manifest: WebModuleManifest, skip: Set<String> = emptySet()) {

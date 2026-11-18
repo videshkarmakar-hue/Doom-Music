@@ -1,6 +1,6 @@
 // SpinningArtwork.kt
 
-package com.mochyy.mochymusic.discord
+package com.videshkarmakar.doom.discord
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -10,7 +10,7 @@ import android.graphics.Color
 import android.graphics.Matrix
 import android.graphics.Paint
 import android.graphics.Shader
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -49,7 +49,7 @@ internal class SpinningArtwork(
         if (working.add(key)) {
             scope.launch {
                 try {
-                    made[key] = PictureHosts.upload(render(download(sourceUrl), style), "mochy.gif", "image/gif")
+                    made[key] = PictureHosts.upload(render(download(sourceUrl), style), "doom.gif", "image/gif")
                     onReady()
                 } catch (e: CancellationException) {
                     throw e

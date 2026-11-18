@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.flagship
+package com.videshkarmakar.doom.ui.player.flagship
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -51,16 +51,16 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.FlagshipTransportLayout
-import com.mochyy.mochymusic.ui.component.tapOrHold
-import com.mochyy.mochymusic.ui.player.HoldFastFactor
-import com.mochyy.mochymusic.ui.player.HoldSlowFactor
-import com.mochyy.mochymusic.ui.player.HoldSpeed
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.FlagshipTransportLayout
+import com.videshkarmakar.doom.ui.component.tapOrHold
+import com.videshkarmakar.doom.ui.player.HoldFastFactor
+import com.videshkarmakar.doom.ui.player.HoldSlowFactor
+import com.videshkarmakar.doom.ui.player.HoldSpeed
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // the design's phone is this many of its units across; one unit of every shape is the screen's width over this
 private const val DesignWidth = 1172f

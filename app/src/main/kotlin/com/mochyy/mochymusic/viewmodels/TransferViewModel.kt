@@ -1,6 +1,6 @@
 // TransferViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.Manifest
 import android.content.Context
@@ -10,10 +10,10 @@ import android.os.Build
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.importer.transfer.TransferExporter
-import com.mochyy.mochymusic.importer.transfer.TransferImporter
-import com.mochyy.mochymusic.importer.transfer.TransferManifest
-import com.mochyy.mochymusic.importer.transfer.TransferRestore
+import com.videshkarmakar.doom.importer.transfer.TransferExporter
+import com.videshkarmakar.doom.importer.transfer.TransferImporter
+import com.videshkarmakar.doom.importer.transfer.TransferManifest
+import com.videshkarmakar.doom.importer.transfer.TransferRestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.delay
@@ -52,7 +52,7 @@ class TransferViewModel @Inject constructor(
     val manifest: StateFlow<TransferManifest?> = _manifest.asStateFlow()
 
     /** the name the export suggests, so it's easy to spot in downloads later */
-    fun exportFileName(): String = "mochy-export-${LocalDate.now()}.zip"
+    fun exportFileName(): String = "doom-export-${LocalDate.now()}.zip"
 
     fun exportTo(target: Uri) {
         if (_export.value is TransferStep.Working) return
@@ -71,7 +71,7 @@ class TransferViewModel @Inject constructor(
     suspend fun check(source: Uri): Result<TransferManifest> =
         importer.peek(source).onSuccess { _manifest.value = it }
 
-    /** true when the zip has local songs and mochy can't see the phone's music yet, so it's worth asking first */
+    /** true when the zip has local songs and doom can't see the phone's music yet, so it's worth asking first */
     fun wantsAudioPermission(manifest: TransferManifest): Boolean =
         manifest.localSongs > 0 && ContextCompat.checkSelfPermission(context, AudioPermission) != PackageManager.PERMISSION_GRANTED
 
@@ -100,7 +100,7 @@ class TransferViewModel @Inject constructor(
     }
 
     companion object {
-        /** the permission that lets mochy find local songs again, it changed name in android 13 */
+        /** the permission that lets doom find local songs again, it changed name in android 13 */
         val AudioPermission: String =
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) Manifest.permission.READ_MEDIA_AUDIO else Manifest.permission.READ_EXTERNAL_STORAGE
     }

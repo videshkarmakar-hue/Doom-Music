@@ -1,6 +1,6 @@
-// storage → export downloaded songs: copies them as plain files into a mochy-preserve folder, sorted by playlist or by album
+// storage → export downloaded songs: copies them as plain files into a doom-preserve folder, sorted by playlist or by album
 
-package com.mochyy.mochymusic.ui.screens.settings.storage
+package com.videshkarmakar.doom.ui.screens.settings.storage
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -37,17 +37,17 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.playback.ExportChoice
-import com.mochyy.mochymusic.playback.ExportLayout
-import com.mochyy.mochymusic.playback.ExportStep
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.SheetLabel
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.viewmodels.StorageViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.playback.ExportChoice
+import com.videshkarmakar.doom.playback.ExportLayout
+import com.videshkarmakar.doom.playback.ExportStep
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.SheetLabel
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.viewmodels.StorageViewModel
 
 // what the export will do, shared by the options and the button under them
 @Stable

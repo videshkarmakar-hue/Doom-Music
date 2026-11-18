@@ -1,6 +1,6 @@
 // VideoLetterbox.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import kotlin.math.abs
 import kotlin.math.max
@@ -30,7 +30,7 @@ internal data class FrameReading(
  * zoom back out when a scene drops them. Many music videos switch between letterboxed and full
  * frame scenes, so this runs on every sample rather than once per video.
  *
- * Pure so it can be unit tested; [com.mochyy.mochymusic.ui.player.video.YouTubeVideoSurface] feeds it small frame samples.
+ * Pure so it can be unit tested; [com.videshkarmakar.doom.ui.player.video.YouTubeVideoSurface] feeds it small frame samples.
  */
 internal object VideoLetterbox {
     /** Largest bar, per side, worth believing. Anything taller is a dark frame, not a bar. */

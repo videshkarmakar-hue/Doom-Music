@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.flagship
+package com.videshkarmakar.doom.ui.player.flagship
 
 import android.os.Build
 import androidx.compose.runtime.Composable
@@ -16,14 +16,14 @@ import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.request.transformations
 import coil3.size.Size as CoilSize
-import com.mochyy.mochymusic.ui.component.DownscaledBlur
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.drawGlassNode
-import com.mochyy.mochymusic.ui.component.glassNodeHasContent
-import com.mochyy.mochymusic.ui.player.BackdropBlurTransformation
-import com.mochyy.mochymusic.ui.player.ReflectionBlurPx
-import com.mochyy.mochymusic.ui.player.ReflectionPx
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.ui.component.DownscaledBlur
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.drawGlassNode
+import com.videshkarmakar.doom.ui.component.glassNodeHasContent
+import com.videshkarmakar.doom.ui.player.BackdropBlurTransformation
+import com.videshkarmakar.doom.ui.player.ReflectionBlurPx
+import com.videshkarmakar.doom.ui.player.ReflectionPx
+import com.videshkarmakar.doom.ui.utils.resize
 
 // about as soft as the still picture's blurred copy once it's stretched over the cover
 private val LiveBlur = 28.dp

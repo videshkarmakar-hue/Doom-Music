@@ -4,7 +4,7 @@
 // audio files imported from storage. At the top, the ways to bring files in; under them the same
 // cards as All, counting only what is local; at the bottom, Manage local.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,10 +29,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.ui.screens.search.SearchHorizontalPadding
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.ui.screens.search.SearchHorizontalPadding
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 
 internal fun LazyListScope.libraryLocalTab(
     data: ShelfTabData,
@@ -50,7 +50,7 @@ internal fun LazyListScope.libraryLocalTab(
         )
     }
 
-    // once Mochy may read the storage, the import card itself lists the phone's songs
+    // once Doom may read the storage, the import card itself lists the phone's songs
     if (!hasStorageAccess) {
         item(key = "local_storage") {
             Text(

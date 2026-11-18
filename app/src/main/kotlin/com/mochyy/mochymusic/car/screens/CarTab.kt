@@ -1,12 +1,12 @@
 // CarTab.kt
 
-package com.mochyy.mochymusic.car.screens
+package com.videshkarmakar.doom.car.screens
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.car.app.model.Template
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.car.CarApp
+import com.videshkarmakar.doom.car.CarApp
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch

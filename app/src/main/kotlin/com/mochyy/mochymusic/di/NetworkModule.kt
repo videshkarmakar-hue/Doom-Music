@@ -1,7 +1,7 @@
-package com.mochyy.mochymusic.di
+package com.videshkarmakar.doom.di
 
 import android.content.Context
-import com.mochyy.mochymusic.utils.NetworkConnectivityObserver
+import com.videshkarmakar.doom.utils.NetworkConnectivityObserver
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

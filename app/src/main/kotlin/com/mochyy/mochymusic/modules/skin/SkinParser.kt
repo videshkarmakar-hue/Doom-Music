@@ -1,6 +1,6 @@
 // turns a manifest's player, font, glass, pages and menu rows into a skin, every value checked and kept in range so a typo can't break anything
 
-package com.mochyy.mochymusic.modules.skin
+package com.videshkarmakar.doom.modules.skin
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -40,15 +40,15 @@ internal object SkinParser {
     private fun glass(o: JsonObject): SkinGlass? {
         val shader = o.string("shader")?.takeIf { name -> ShaderKinds.any { name.endsWith(it, ignoreCase = true) } } ?: return null
         val change = glassChange(o)
-        // a glass that draws its own edge can turn off mochy's hairline and shadow, or the bars get two edges
+        // a glass that draws its own edge can turn off doom's hairline and shadow, or the bars get two edges
         return SkinGlass(shader, change.blurDp ?: 6f, change.marginDp ?: 16f, change.uniforms, outline = o.bool("outline") ?: true, shadow = o.bool("shadow") ?: true)
     }
 
-    /** a blur, a margin and uniforms, as the glass and a setting's option both write them; mochy's own uniforms can't be set this way */
+    /** a blur, a margin and uniforms, as the glass and a setting's option both write them; doom's own uniforms can't be set this way */
     fun glassChange(o: JsonObject): GlassChange = GlassChange(
         blurDp = o.float("blur")?.coerceIn(0f, 40f),
         marginDp = o.float("margin")?.coerceIn(0f, 64f),
-        uniforms = shaderUniforms(o["uniforms"], MochyUniforms),
+        uniforms = shaderUniforms(o["uniforms"], DoomUniforms),
     )
 
     // "scope": "app" puts the font everywhere; left out, it stays on the module's player
@@ -169,8 +169,8 @@ internal object SkinParser {
     private const val MaxActions = 6
     private val ShaderKinds = listOf(".agsl", ".sksl")
     private const val DefaultCardGlass = 24f
-    // what mochy hands every page shader itself
+    // what doom hands every page shader itself
     val PageUniforms = setOf("size", "time", "density", "touch", "pressed", "accent")
-    // what mochy hands every glass shader itself
-    val MochyUniforms = setOf("content", "size", "margin", "radius", "density", "quality", "chrome", "accent", "kind", "pill", "pillShown", "pillLift")
+    // what doom hands every glass shader itself
+    val DoomUniforms = setOf("content", "size", "margin", "radius", "density", "quality", "chrome", "accent", "kind", "pill", "pillShown", "pillLift")
 }

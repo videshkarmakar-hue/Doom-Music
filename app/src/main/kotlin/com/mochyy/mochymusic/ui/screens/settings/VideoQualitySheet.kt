@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,14 +13,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.VideoQuality
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetIcon
-import com.mochyy.mochymusic.ui.component.SheetLabel
-import com.mochyy.mochymusic.ui.component.SheetOptionRow
-import com.mochyy.mochymusic.ui.utils.stableSystemBars
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.VideoQuality
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetIcon
+import com.videshkarmakar.doom.ui.component.SheetLabel
+import com.videshkarmakar.doom.ui.component.SheetOptionRow
+import com.videshkarmakar.doom.ui.utils.stableSystemBars
 
 // how a size reads: "720p", and 4k by the name people know it by
 @Composable

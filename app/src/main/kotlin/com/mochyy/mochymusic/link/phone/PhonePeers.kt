@@ -1,13 +1,13 @@
 // PhonePeers.kt
 
-package com.mochyy.mochymusic.link.phone
+package com.videshkarmakar.doom.link.phone
 
 import android.content.Context
-import com.mochyy.mochymusic.link.DeviceKind
-import com.mochyy.mochymusic.link.LinkCredentials
-import com.mochyy.mochymusic.link.LinkIdentity
-import com.mochyy.mochymusic.link.LinkWire
-import com.mochyy.mochymusic.link.discoverPeers
+import com.videshkarmakar.doom.link.DeviceKind
+import com.videshkarmakar.doom.link.LinkCredentials
+import com.videshkarmakar.doom.link.LinkIdentity
+import com.videshkarmakar.doom.link.LinkWire
+import com.videshkarmakar.doom.link.discoverPeers
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -19,7 +19,7 @@ import kotlinx.coroutines.withTimeoutOrNull
 import java.io.IOException
 import java.util.concurrent.ConcurrentHashMap
 
-// while mochy is on screen, a phone says hello to the other phones and tablets it's paired with, so each knows the other is there to steer
+// while doom is on screen, a phone says hello to the other phones and tablets it's paired with, so each knows the other is there to steer
 internal class PhonePeers(
     private val context: Context,
     private val host: PhoneLinkHost,

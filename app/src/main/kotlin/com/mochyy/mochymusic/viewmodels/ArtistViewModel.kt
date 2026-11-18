@@ -1,6 +1,6 @@
 // ArtistViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
@@ -13,23 +13,23 @@ import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
 import com.music.innertube.models.filterYoutubeShorts
 import com.music.innertube.pages.ArtistPage
-import com.mochyy.mochymusic.canvas.AppleArtistEditorial
-import com.mochyy.mochymusic.canvas.AppleMusicArtistBackgroundProvider
-import com.mochyy.mochymusic.canvas.appleArtworkUrl
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.constants.HideYoutubeShortsKey
-import com.mochyy.mochymusic.constants.ShowArtistVideoKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.extensions.filterExplicit
-import com.mochyy.mochymusic.extensions.filterExplicitAlbums
-import com.mochyy.mochymusic.utils.ArtistHeader
-import com.mochyy.mochymusic.utils.ArtistPageCache
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
-import com.mochyy.mochymusic.utils.reportException
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.canvas.AppleArtistEditorial
+import com.videshkarmakar.doom.canvas.AppleMusicArtistBackgroundProvider
+import com.videshkarmakar.doom.canvas.appleArtworkUrl
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.constants.HideYoutubeShortsKey
+import com.videshkarmakar.doom.constants.ShowArtistVideoKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.extensions.filterExplicit
+import com.videshkarmakar.doom.extensions.filterExplicitAlbums
+import com.videshkarmakar.doom.utils.ArtistHeader
+import com.videshkarmakar.doom.utils.ArtistPageCache
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
+import com.videshkarmakar.doom.utils.reportException
+import com.videshkarmakar.doom.ui.utils.resize
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -52,8 +52,8 @@ import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 import java.util.Locale
 import javax.inject.Inject
-import com.mochyy.mochymusic.artistvideo.ArtistVideoCanvasProvider
-import com.mochyy.mochymusic.extensions.filterVideoSongs as filterVideoSongsLocal
+import com.videshkarmakar.doom.artistvideo.ArtistVideoCanvasProvider
+import com.videshkarmakar.doom.extensions.filterVideoSongs as filterVideoSongsLocal
 
 /**
  * the card under the artist's buttons: their newest release, or, for an artist with none listed,

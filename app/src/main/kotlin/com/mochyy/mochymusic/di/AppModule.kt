@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.di
+package com.videshkarmakar.doom.di
 
 import android.content.Context
 import androidx.media3.database.DatabaseProvider
@@ -7,12 +7,12 @@ import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.NoOpCacheEvictor
 import androidx.media3.datasource.cache.SimpleCache
 import androidx.room.Room
-import com.mochyy.mochymusic.constants.MaxSongCacheSizeKey
-import com.mochyy.mochymusic.db.InternalDatabase
-import com.mochyy.mochymusic.db.MusicDatabase
+import com.videshkarmakar.doom.constants.MaxSongCacheSizeKey
+import com.videshkarmakar.doom.db.InternalDatabase
+import com.videshkarmakar.doom.db.MusicDatabase
 
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -46,10 +46,10 @@ object AppModule {
         @ApplicationContext context: Context,
     ): InternalDatabase = Room
         // on a tv each profile has its own library; everywhere else this is the one database
-        .databaseBuilder(context, InternalDatabase::class.java, com.mochyy.mochymusic.link.tv.TvProfiles.databaseName(context))
+        .databaseBuilder(context, InternalDatabase::class.java, com.videshkarmakar.doom.link.tv.TvProfiles.databaseName(context))
         // The one list in MusicDatabase.kt. This copy used to be its own, stopped at 35 -> 36, and
         // every later version reached the phone as "no migration path" -> all tables dropped.
-        .addMigrations(*com.mochyy.mochymusic.db.AllMigrations)
+        .addMigrations(*com.videshkarmakar.doom.db.AllMigrations)
         .fallbackToDestructiveMigration(dropAllTables = true)
         .setJournalMode(androidx.room.RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)
         .setTransactionExecutor(java.util.concurrent.Executors.newFixedThreadPool(4))
@@ -90,7 +90,7 @@ object AppModule {
     ): SimpleCache {
         val cacheSize = context.dataStore[MaxSongCacheSizeKey] ?: 1024
         return SimpleCache(
-            com.mochyy.mochymusic.playback.StoragePlaces.dir(context, com.mochyy.mochymusic.playback.StoredKind.SongCache),
+            com.videshkarmakar.doom.playback.StoragePlaces.dir(context, com.videshkarmakar.doom.playback.StoredKind.SongCache),
             when (cacheSize) {
                 -1 -> NoOpCacheEvictor()
                 else -> LeastRecentlyUsedCacheEvictor(cacheSize * 1024 * 1024L)
@@ -107,7 +107,7 @@ object AppModule {
         databaseProvider: DatabaseProvider,
     ): SimpleCache {
         return SimpleCache(
-            com.mochyy.mochymusic.playback.StoragePlaces.dir(context, com.mochyy.mochymusic.playback.StoredKind.Downloads),
+            com.videshkarmakar.doom.playback.StoragePlaces.dir(context, com.videshkarmakar.doom.playback.StoredKind.Downloads),
             NoOpCacheEvictor(),
             databaseProvider
         )

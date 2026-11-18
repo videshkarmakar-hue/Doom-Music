@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -61,9 +61,9 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import coil3.size.Size as CoilSize
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.player.styles.LocalStyleInteractive
-import com.mochyy.mochymusic.ui.player.styles.whileStyleInteractive
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.player.styles.LocalStyleInteractive
+import com.videshkarmakar.doom.ui.player.styles.whileStyleInteractive
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlin.math.roundToInt

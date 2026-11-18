@@ -1,11 +1,11 @@
 // PlayerCoverLayout.kt
 
-package com.mochyy.mochymusic.ui.player.customize
+package com.videshkarmakar.doom.ui.player.customize
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.constants.PlayerCoverStyle
+import com.videshkarmakar.doom.constants.PlayerCoverStyle
 
 const val CoverRegionFraction = 0.63f
 

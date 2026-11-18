@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings.importsync
+package com.videshkarmakar.doom.ui.screens.settings.importsync
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

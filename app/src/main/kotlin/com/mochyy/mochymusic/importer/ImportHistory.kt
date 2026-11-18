@@ -1,14 +1,14 @@
 // ImportHistory.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
 import android.net.Uri
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.ImportSession
-import com.mochyy.mochymusic.db.entities.SongEntity
-import com.mochyy.mochymusic.extensions.isSyncEnabled
-import com.mochyy.mochymusic.utils.SyncUtils
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.ImportSession
+import com.videshkarmakar.doom.db.entities.SongEntity
+import com.videshkarmakar.doom.extensions.isSyncEnabled
+import com.videshkarmakar.doom.utils.SyncUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

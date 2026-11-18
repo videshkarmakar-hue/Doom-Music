@@ -1,6 +1,6 @@
-// the stream and phone words a module player's text can show: codec, rate, bitrate, bits, size, lossy or lossless, the output, the volume and how busy mochy is (docs/wiki, text blocks)
+// the stream and phone words a module player's text can show: codec, rate, bitrate, bits, size, lossy or lossless, the output, the volume and how busy doom is (docs/wiki, text blocks)
 
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import android.content.Context
 import android.media.AudioManager
@@ -16,17 +16,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.platform.LocalContext
 import androidx.media3.common.C
-import com.mochyy.mochymusic.LocalAppContentObscured
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.FormatEntity
-import com.mochyy.mochymusic.modules.SourceModules
-import com.mochyy.mochymusic.modules.skin.SkinAudioField
-import com.mochyy.mochymusic.playback.MusicService
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.playback.StreamDetails
-import com.mochyy.mochymusic.playback.StreamFacts
-import com.mochyy.mochymusic.playback.audio.AudioOutputs
+import com.videshkarmakar.doom.LocalAppContentObscured
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.FormatEntity
+import com.videshkarmakar.doom.modules.SourceModules
+import com.videshkarmakar.doom.modules.skin.SkinAudioField
+import com.videshkarmakar.doom.playback.MusicService
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.playback.StreamDetails
+import com.videshkarmakar.doom.playback.StreamFacts
+import com.videshkarmakar.doom.playback.audio.AudioOutputs
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
@@ -48,7 +48,7 @@ internal class SkinAudio(initial: Map<String, String> = emptyMap()) {
     var fields by mutableStateOf(initial)
         internal set
 
-    // a value mochy doesn't know yet shows as a dash, so the layout never jumps around an empty gap
+    // a value doom doesn't know yet shows as a dash, so the layout never jumps around an empty gap
     fun fill(text: String): String = SkinAudioField.replace(text) { fields[it.groupValues[1].lowercase()] ?: Unknown }
 }
 
@@ -112,7 +112,7 @@ private fun streamWords(facts: StreamFacts?, details: StreamDetails, youtube: Fo
     }
 }
 
-// the phone's media volume and mochy's share of the cpu, once a second, off the main thread since the volume is a binder call
+// the phone's media volume and doom's share of the cpu, once a second, off the main thread since the volume is a binder call
 private fun liveFlow(android: Context): Flow<Map<String, String>> = flow {
     val manager = android.getSystemService(Context.AUDIO_SERVICE) as AudioManager
     val cores = Runtime.getRuntime().availableProcessors().coerceAtLeast(1)

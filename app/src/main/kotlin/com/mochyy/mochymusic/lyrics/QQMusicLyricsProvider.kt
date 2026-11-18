@@ -1,12 +1,12 @@
 // QQMusicLyricsProvider.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import android.content.Context
 import com.music.directlyrics.QQMusic
-import com.mochyy.mochymusic.constants.EnableQQMusicKey
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.constants.EnableQQMusicKey
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 
 object QQMusicLyricsProvider : LyricsProvider {
     override val name = "QQMusic"

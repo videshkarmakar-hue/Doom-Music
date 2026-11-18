@@ -3,12 +3,12 @@
 // Everything the monthly recap and the Stats page show, worked out from the play history alone
 // (the `event` table: one row per play of 30 s or more). Nothing here leaves the device.
 
-package com.mochyy.mochymusic.ui.screens.recap
+package com.videshkarmakar.doom.ui.screens.recap
 
 import androidx.compose.runtime.Immutable
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.RecapEventRow
-import com.mochyy.mochymusic.db.entities.Song
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.RecapEventRow
+import com.videshkarmakar.doom.db.entities.Song
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.time.DayOfWeek

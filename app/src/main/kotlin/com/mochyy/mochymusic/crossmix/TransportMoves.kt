@@ -1,6 +1,6 @@
-package com.mochyy.mochymusic.crossmix
+package com.videshkarmakar.doom.crossmix
 
-import com.mochyy.mochymusic.constants.TransportEffect
+import com.videshkarmakar.doom.constants.TransportEffect
 import kotlin.math.PI
 import kotlin.math.min
 import kotlin.math.sin

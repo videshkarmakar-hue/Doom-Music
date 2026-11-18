@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.animateFloatAsState
@@ -33,32 +33,32 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.TransportEffect
-import com.mochyy.mochymusic.constants.TransportEffectKey
-import com.mochyy.mochymusic.constants.TransportFadeDefaultSeconds
-import com.mochyy.mochymusic.constants.SkipBlendKey
-import com.mochyy.mochymusic.constants.SkipBlendAheadKey
-import com.mochyy.mochymusic.constants.SkipBlendAheadMax
-import com.mochyy.mochymusic.constants.TransportFadeEnabledKey
-import com.mochyy.mochymusic.constants.TransportFadeMaxSeconds
-import com.mochyy.mochymusic.constants.TransportFadeMinSeconds
-import com.mochyy.mochymusic.constants.TransportFadeSecondsKey
-import com.mochyy.mochymusic.ui.screens.audiolab.LabCard
-import com.mochyy.mochymusic.ui.screens.audiolab.LabCollapsible
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSelect
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSlider
-import com.mochyy.mochymusic.ui.screens.audiolab.LabStage
-import com.mochyy.mochymusic.ui.screens.audiolab.LabToggleRow
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberLabTime
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberOnScreen
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberPicturesHeld
-import com.mochyy.mochymusic.ui.screens.audiolab.trackOnScreen
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.rememberDataSaverActive
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.TransportEffect
+import com.videshkarmakar.doom.constants.TransportEffectKey
+import com.videshkarmakar.doom.constants.TransportFadeDefaultSeconds
+import com.videshkarmakar.doom.constants.SkipBlendKey
+import com.videshkarmakar.doom.constants.SkipBlendAheadKey
+import com.videshkarmakar.doom.constants.SkipBlendAheadMax
+import com.videshkarmakar.doom.constants.TransportFadeEnabledKey
+import com.videshkarmakar.doom.constants.TransportFadeMaxSeconds
+import com.videshkarmakar.doom.constants.TransportFadeMinSeconds
+import com.videshkarmakar.doom.constants.TransportFadeSecondsKey
+import com.videshkarmakar.doom.ui.screens.audiolab.LabCard
+import com.videshkarmakar.doom.ui.screens.audiolab.LabCollapsible
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSelect
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSlider
+import com.videshkarmakar.doom.ui.screens.audiolab.LabStage
+import com.videshkarmakar.doom.ui.screens.audiolab.LabToggleRow
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberLabTime
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberOnScreen
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberPicturesHeld
+import com.videshkarmakar.doom.ui.screens.audiolab.trackOnScreen
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.rememberDataSaverActive
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.exp
@@ -92,7 +92,7 @@ fun TransportFadeSection() {
             onCheckedChange = onEnabledChange,
         )
         LabToggleRow(
-            title = androidx.compose.ui.res.stringResource(com.mochyy.mochymusic.R.string.settings_blend_skips),
+            title = androidx.compose.ui.res.stringResource(com.videshkarmakar.doom.R.string.settings_blend_skips),
             subtitle = stringResource(R.string.settings_blend_skips_desc),
             checked = blendSkips,
             onCheckedChange = onBlendSkipsChange,

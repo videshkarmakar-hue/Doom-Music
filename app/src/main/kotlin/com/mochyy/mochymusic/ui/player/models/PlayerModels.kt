@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.models
+package com.videshkarmakar.doom.ui.player.models
 
 import android.net.Uri
 import androidx.compose.runtime.Immutable

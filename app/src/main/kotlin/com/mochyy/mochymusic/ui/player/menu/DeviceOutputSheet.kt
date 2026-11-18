@@ -1,6 +1,6 @@
 // DeviceOutputSheet.kt
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import android.media.AudioManager
 import androidx.compose.animation.animateContentSize
@@ -56,13 +56,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.UsbPassthroughKey
-import com.mochyy.mochymusic.playback.audio.AudioOutputs
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.SheetIcon
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.UsbPassthroughKey
+import com.videshkarmakar.doom.playback.audio.AudioOutputs
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.SheetIcon
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.flow.MutableStateFlow
 
 /** "change playback": both volumes, then every output; picking one moves the song there, cast receivers play it themselves */
@@ -101,9 +101,9 @@ fun DeviceOutputSheet(onDismiss: () -> Unit) {
     var tappedTarget by remember { mutableStateOf<String?>(null) }
     val (passthrough) = rememberPreference(UsbPassthroughKey, false)
     val anyChosen = devices.any { it.isChosen }
-    // larping, whatever is really playing turns into the level's dac, fed straight from mochy
+    // larping, whatever is really playing turns into the level's dac, fed straight from doom
     val larp =
-        com.mochyy.mochymusic.ui.player
+        com.videshkarmakar.doom.ui.player
             .rememberLarpMode()
     val larping = larp != null
     val larpName =
@@ -115,7 +115,7 @@ fun DeviceOutputSheet(onDismiss: () -> Unit) {
     val larpDetail =
         larp
             ?.let {
-                com.mochyy.mochymusic.ui.player
+                com.videshkarmakar.doom.ui.player
                     .larpDacDetail(it)
             }.orEmpty()
 

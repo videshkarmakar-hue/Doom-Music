@@ -1,8 +1,8 @@
 // LyricsAligner.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
-import com.mochyy.mochymusic.lyrics.VocalActivity.Companion.FrameMs
+import com.videshkarmakar.doom.lyrics.VocalActivity.Companion.FrameMs
 import kotlin.math.abs
 import kotlin.math.exp
 import kotlin.math.max
@@ -385,5 +385,5 @@ internal object LyricsAligner {
     /** How many frames a line timed by line trails off over at its guessed end: 200 ms. */
     private const val FadeFrames = 20
 
-    private val Vowels = "aeiouyàáâãäåæèéêëìíîïòóôõöøùúûüýÿąęėīįōőūűų"
+    private val Vowels = "aeiouyàáâãäåæèéêëìíîïòóôõöøùúûüýÿąęėīį�őūűų"
 }

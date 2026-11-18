@@ -1,19 +1,19 @@
 // PlayerCoverStyles.kt
 
-package com.mochyy.mochymusic.ui.player.customize
+package com.videshkarmakar.doom.ui.player.customize
 
 import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.datastore.preferences.core.Preferences
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.CanvasThumbnailAnimationKey
-import com.mochyy.mochymusic.constants.DiscNameKey
-import com.mochyy.mochymusic.constants.DiscRealisticModeKey
-import com.mochyy.mochymusic.constants.DiscRotatingAnimationKey
-import com.mochyy.mochymusic.constants.PlayVideoBackgroundKey
-import com.mochyy.mochymusic.constants.PlayerCoverStyle
-import com.mochyy.mochymusic.constants.YtVideoBackgroundLyricsSyncKey
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.CanvasThumbnailAnimationKey
+import com.videshkarmakar.doom.constants.DiscNameKey
+import com.videshkarmakar.doom.constants.DiscRealisticModeKey
+import com.videshkarmakar.doom.constants.DiscRotatingAnimationKey
+import com.videshkarmakar.doom.constants.PlayVideoBackgroundKey
+import com.videshkarmakar.doom.constants.PlayerCoverStyle
+import com.videshkarmakar.doom.constants.YtVideoBackgroundLyricsSyncKey
 
 val PlayerCoverStyle.isDisc: Boolean
     get() = when (this) {

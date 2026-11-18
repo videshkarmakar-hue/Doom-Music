@@ -1,6 +1,6 @@
 // AddToPlaylistDialog.kt
 
-package com.mochyy.mochymusic.ui.menu
+package com.videshkarmakar.doom.ui.menu
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -41,19 +41,19 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.ui.component.CreatePlaylistDialog
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.PlaylistThumbnail
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.SheetLabel
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.SheetSearchField
-import com.mochyy.mochymusic.viewmodels.PlaylistsViewModel
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.ui.component.CreatePlaylistDialog
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.PlaylistThumbnail
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.SheetLabel
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.SheetSearchField
+import com.videshkarmakar.doom.viewmodels.PlaylistsViewModel
 import com.music.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
@@ -78,7 +78,7 @@ private const val RecentCount = 4
 
 /** [context] words the toast in the app language; callers that cannot give one get the English wording. */
 internal fun announceAddedToPlaylist(
-    database: com.mochyy.mochymusic.db.MusicDatabase,
+    database: com.videshkarmakar.doom.db.MusicDatabase,
     playlist: Playlist,
     ids: List<String>,
     context: android.content.Context? = null,
@@ -87,7 +87,7 @@ internal fun announceAddedToPlaylist(
     kotlinx.coroutines.CoroutineScope(Dispatchers.IO).launch {
         val first = database.song(ids.first()).firstOrNull()?.song
         val name = playlist.playlist.name
-        com.mochyy.mochymusic.ui.component.TopToaster.show(
+        com.videshkarmakar.doom.ui.component.TopToaster.show(
             text =
                 if (context != null) {
                     if (ids.size == 1) {
@@ -111,14 +111,14 @@ internal fun announceAddedToPlaylist(
 // a playlist that mirrors youtube keeps what's added here on top through its syncs, and youtube gets the songs too
 internal suspend fun addToPlaylistKeepingSync(
     context: android.content.Context,
-    database: com.mochyy.mochymusic.db.MusicDatabase,
+    database: com.videshkarmakar.doom.db.MusicDatabase,
     playlist: Playlist,
     ids: List<String>,
 ) {
     if (ids.isEmpty()) return
     val browseId = playlist.playlist.browseId
     if (browseId != null) {
-        com.mochyy.mochymusic.importer.PlaylistAddedHere.add(context, playlist.id, ids)
+        com.videshkarmakar.doom.importer.PlaylistAddedHere.add(context, playlist.id, ids)
         database.addSongsToPlaylistTop(playlist, ids)
     } else {
         database.addSongToPlaylist(playlist, ids)

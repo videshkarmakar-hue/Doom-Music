@@ -1,6 +1,6 @@
 // BluetoothCodecs.kt
 
-package com.mochyy.mochymusic.playback.audio
+package com.videshkarmakar.doom.playback.audio
 
 import android.Manifest
 import android.annotation.SuppressLint

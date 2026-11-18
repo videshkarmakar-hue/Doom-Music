@@ -1,6 +1,6 @@
 // PlayerProgressSlider.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.RepeatMode
@@ -65,12 +65,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.C
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlayerHorizontalPadding
-import com.mochyy.mochymusic.ui.component.SeekBarExpandSpring
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.ui.utils.rubberBand
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlayerHorizontalPadding
+import com.videshkarmakar.doom.ui.component.SeekBarExpandSpring
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.ui.utils.rubberBand
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -97,9 +97,9 @@ fun PlayerProgressSlider(
     endTimeModifier: Modifier = Modifier,
 ) {
     val playerConnection = LocalPlayerConnection.current ?: return
-    val endTimestamp by com.mochyy.mochymusic.utils.rememberEnumPreference(
-        com.mochyy.mochymusic.constants.PlayerEndTimestampKey,
-        com.mochyy.mochymusic.constants.PlayerEndTimestamp.END_TIME,
+    val endTimestamp by com.videshkarmakar.doom.utils.rememberEnumPreference(
+        com.videshkarmakar.doom.constants.PlayerEndTimestampKey,
+        com.videshkarmakar.doom.constants.PlayerEndTimestamp.END_TIME,
     )
     val progressFlow = playerConnection.uiState.progressState
     // only the bar and the time texts read the position, so a tick redraws them and not the whole slider
@@ -144,18 +144,18 @@ fun PlayerProgressSlider(
     }
     val transport = playerConnection.uiState.transportState.collectAsState()
     val transportState = transport.value
-    val seekBarStyle by com.mochyy.mochymusic.utils.rememberEnumPreference(
-        com.mochyy.mochymusic.constants.SeekBarStyleKey,
-        com.mochyy.mochymusic.ui.component.SeekBarStyle.DEFAULT,
+    val seekBarStyle by com.videshkarmakar.doom.utils.rememberEnumPreference(
+        com.videshkarmakar.doom.constants.SeekBarStyleKey,
+        com.videshkarmakar.doom.ui.component.SeekBarStyle.DEFAULT,
     )
 
     // The Material 3 bars follow the artwork palette; the plain and default bars stay white so
     // they keep working over any cover.
-    val artworkColor = com.mochyy.mochymusic.LocalArtworkColor.current
-    val isM3Bar = seekBarStyle == com.mochyy.mochymusic.ui.component.SeekBarStyle.M3_EXPRESSIVE ||
-        seekBarStyle == com.mochyy.mochymusic.ui.component.SeekBarStyle.M3_EXPRESSIVE_LINE
+    val artworkColor = com.videshkarmakar.doom.LocalArtworkColor.current
+    val isM3Bar = seekBarStyle == com.videshkarmakar.doom.ui.component.SeekBarStyle.M3_EXPRESSIVE ||
+        seekBarStyle == com.videshkarmakar.doom.ui.component.SeekBarStyle.M3_EXPRESSIVE_LINE
     val barActiveColor = if (isM3Bar) {
-        com.mochyy.mochymusic.ui.theme.ArtworkPalette.from(artworkColor).accent
+        com.videshkarmakar.doom.ui.theme.ArtworkPalette.from(artworkColor).accent
     } else {
         Color.White
     }
@@ -180,7 +180,7 @@ fun PlayerProgressSlider(
         derivedStateOf {
             when {
                 !durationKnown || showLoading -> ""
-                endTimestamp == com.mochyy.mochymusic.constants.PlayerEndTimestamp.TIME_LEFT ->
+                endTimestamp == com.videshkarmakar.doom.constants.PlayerEndTimestamp.TIME_LEFT ->
                     "-" + makeTimeString((progress.value.duration - (sliderPosition ?: pendingSeek ?: progress.value.position)).coerceAtLeast(0L))
                 else -> makeTimeString(progress.value.duration)
             }
@@ -228,7 +228,7 @@ fun PlayerProgressSlider(
             interactionSource = trackInteractionSource,
             thumb = { Spacer(modifier = Modifier.size(0.dp)) },
             track = {
-                com.mochyy.mochymusic.ui.component.SeekBarTrack(
+                com.videshkarmakar.doom.ui.component.SeekBarTrack(
                     style = seekBarStyle,
                     fractionProvider = { fill.fraction },
                     activeColor = barActiveColor,

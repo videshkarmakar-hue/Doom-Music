@@ -1,6 +1,6 @@
 // adding a server to a module from a pasted link: the server's own, or a site that plays from one
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -26,14 +26,14 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.module.ServerProblem
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.SheetTextField
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.viewmodels.ModulesViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.module.ServerProblem
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.SheetTextField
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.viewmodels.ModulesViewModel
 import kotlinx.coroutines.launch
 
 /** opens the sheet for module [id]; it closes itself once the server is in */

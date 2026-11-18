@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.db
+package com.videshkarmakar.doom.db
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -16,35 +16,35 @@ import androidx.room.migration.AutoMigrationSpec
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.sqlite.db.SupportSQLiteOpenHelper
-import com.mochyy.mochymusic.db.daos.SpeedDialDao
-import com.mochyy.mochymusic.db.entities.AlbumArtistMap
-import com.mochyy.mochymusic.db.entities.AlbumEntity
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.db.entities.Event
-import com.mochyy.mochymusic.db.entities.FormatEntity
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.db.entities.PlayCountEntity
-import com.mochyy.mochymusic.db.entities.PlaylistEntity
-import com.mochyy.mochymusic.db.entities.ImportSession
-import com.mochyy.mochymusic.db.entities.ImportSessionSong
-import com.mochyy.mochymusic.db.entities.ImportedPlaylist
-import com.mochyy.mochymusic.db.entities.ImportedPlaylistTrack
-import com.mochyy.mochymusic.db.entities.ImportedSong
-import com.mochyy.mochymusic.db.entities.PlaylistEvent
-import com.mochyy.mochymusic.db.entities.PlaylistSongMap
-import com.mochyy.mochymusic.db.entities.PlaylistSongMapPreview
-import com.mochyy.mochymusic.db.entities.RecognitionHistory
-import com.mochyy.mochymusic.db.entities.RelatedSongMap
-import com.mochyy.mochymusic.db.entities.SearchHistory
-import com.mochyy.mochymusic.db.entities.SetVideoIdEntity
-import com.mochyy.mochymusic.db.entities.SongAlbumMap
-import com.mochyy.mochymusic.db.entities.SongArtistMap
-import com.mochyy.mochymusic.db.entities.SongEdit
-import com.mochyy.mochymusic.db.entities.SongEntity
-import com.mochyy.mochymusic.db.entities.SpeedDialItem
-import com.mochyy.mochymusic.db.entities.SortedSongAlbumMap
-import com.mochyy.mochymusic.db.entities.SortedSongArtistMap
-import com.mochyy.mochymusic.extensions.toSQLiteQuery
+import com.videshkarmakar.doom.db.daos.SpeedDialDao
+import com.videshkarmakar.doom.db.entities.AlbumArtistMap
+import com.videshkarmakar.doom.db.entities.AlbumEntity
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.db.entities.Event
+import com.videshkarmakar.doom.db.entities.FormatEntity
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.db.entities.PlayCountEntity
+import com.videshkarmakar.doom.db.entities.PlaylistEntity
+import com.videshkarmakar.doom.db.entities.ImportSession
+import com.videshkarmakar.doom.db.entities.ImportSessionSong
+import com.videshkarmakar.doom.db.entities.ImportedPlaylist
+import com.videshkarmakar.doom.db.entities.ImportedPlaylistTrack
+import com.videshkarmakar.doom.db.entities.ImportedSong
+import com.videshkarmakar.doom.db.entities.PlaylistEvent
+import com.videshkarmakar.doom.db.entities.PlaylistSongMap
+import com.videshkarmakar.doom.db.entities.PlaylistSongMapPreview
+import com.videshkarmakar.doom.db.entities.RecognitionHistory
+import com.videshkarmakar.doom.db.entities.RelatedSongMap
+import com.videshkarmakar.doom.db.entities.SearchHistory
+import com.videshkarmakar.doom.db.entities.SetVideoIdEntity
+import com.videshkarmakar.doom.db.entities.SongAlbumMap
+import com.videshkarmakar.doom.db.entities.SongArtistMap
+import com.videshkarmakar.doom.db.entities.SongEdit
+import com.videshkarmakar.doom.db.entities.SongEntity
+import com.videshkarmakar.doom.db.entities.SpeedDialItem
+import com.videshkarmakar.doom.db.entities.SortedSongAlbumMap
+import com.videshkarmakar.doom.db.entities.SortedSongArtistMap
+import com.videshkarmakar.doom.extensions.toSQLiteQuery
 import timber.log.Timber
 import java.time.Instant
 import java.time.LocalDateTime
@@ -59,14 +59,14 @@ class MusicDatabase(
 
     /**
      * Pins [item], evicting the oldest pin first if that would push the count past
-     * [com.mochyy.mochymusic.db.daos.SpeedDialDao.Companion.MaxPinned].
+     * [com.videshkarmakar.doom.db.daos.SpeedDialDao.Companion.MaxPinned].
      *
      * The one place pins are created. Every menu that offers "Pin to Speed dial" should call this
      * instead of `speedDialDao.insert` directly — the cap only holds if there's a single entry
      * point enforcing it, and scattering the limit check across each menu's onClick would drift
      * the moment one of them was written (or edited) without it.
      */
-    suspend fun pinToSpeedDial(item: com.mochyy.mochymusic.db.entities.SpeedDialItem) {
+    suspend fun pinToSpeedDial(item: com.videshkarmakar.doom.db.entities.SpeedDialItem) {
         if (speedDialDao.count() >= SpeedDialDao.MaxPinned) {
             speedDialDao.oldest()?.let { speedDialDao.delete(it.id) }
         }
@@ -150,7 +150,7 @@ abstract class InternalDatabase : RoomDatabase() {
     abstract val speedDialDao: SpeedDialDao
 
     companion object {
-        const val DB_NAME = "mochy.db"
+        const val DB_NAME = "doom.db"
 
         fun newInstance(context: Context): MusicDatabase =
             MusicDatabase(

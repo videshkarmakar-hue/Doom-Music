@@ -1,12 +1,12 @@
 // decides whether onboarding suggests turning blur off, by timing real frames on the hello page
 
-package com.mochyy.mochymusic.ui.screens.setup.onboarding
+package com.videshkarmakar.doom.ui.screens.setup.onboarding
 
 import android.app.ActivityManager
 import android.content.Context
 import android.os.Build
 import android.view.WindowManager
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import java.util.Locale
 
 object BlurCapability {

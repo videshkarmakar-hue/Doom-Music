@@ -1,6 +1,6 @@
 // DiscCoverStack.kt
 
-package com.mochyy.mochymusic.ui.player.customize
+package com.videshkarmakar.doom.ui.player.customize
 
 import androidx.compose.animation.core.withInfiniteAnimationFrameNanos
 import androidx.compose.foundation.layout.Box
@@ -12,7 +12,7 @@ import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -26,13 +26,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.rememberTextMeasurer
-import com.mochyy.mochymusic.constants.DiscLabelContent
-import com.mochyy.mochymusic.constants.DiscNameKey
-import com.mochyy.mochymusic.constants.DiscRealisticModeKey
-import com.mochyy.mochymusic.constants.DiscRotatingAnimationKey
-import com.mochyy.mochymusic.constants.PlayerCoverStyle
-import com.mochyy.mochymusic.ui.player.CarouselSong
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.DiscLabelContent
+import com.videshkarmakar.doom.constants.DiscNameKey
+import com.videshkarmakar.doom.constants.DiscRealisticModeKey
+import com.videshkarmakar.doom.constants.DiscRotatingAnimationKey
+import com.videshkarmakar.doom.constants.PlayerCoverStyle
+import com.videshkarmakar.doom.ui.player.CarouselSong
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.isActive
 
@@ -61,18 +61,18 @@ fun DiscCoverStack(
      * the player's row of songs the swipe and skips run along (see SongCarousel). Without one -
      * the editor, the previews - there's just the playing song's record, still.
      */
-    carousel: com.mochyy.mochymusic.ui.player.SongCarousel? = null,
+    carousel: com.videshkarmakar.doom.ui.player.SongCarousel? = null,
     /** how much colour the records' pictures keep: greyer while paused */
     saturationProvider: () -> Float = { 1f },
 ) {
     val (rotatingEnabled) = rememberPreference(DiscRotatingAnimationKey, defaultValue = true)
     val (realistic) = rememberPreference(DiscRealisticModeKey, defaultValue = true)
     val (customName) = rememberPreference(DiscNameKey, defaultValue = "")
-    val labelContent by com.mochyy.mochymusic.utils.rememberEnumPreference(
-        com.mochyy.mochymusic.constants.DiscLabelContentKey,
+    val labelContent by com.videshkarmakar.doom.utils.rememberEnumPreference(
+        com.videshkarmakar.doom.constants.DiscLabelContentKey,
         DiscLabelContent.CUSTOM,
     )
-    val connection = com.mochyy.mochymusic.LocalPlayerConnection.current
+    val connection = com.videshkarmakar.doom.LocalPlayerConnection.current
     val track = connection?.uiState?.trackInfo?.collectAsState()?.value
 
     // what a record's label says, as chosen in the cover editor
@@ -227,7 +227,7 @@ private val albumArtworkCache = java.util.concurrent.ConcurrentHashMap<String, S
  */
 @Composable
 internal fun rememberAlbumArtwork(mediaId: String, fallback: String?): String? {
-    val database = com.mochyy.mochymusic.LocalDatabase.current
+    val database = com.videshkarmakar.doom.LocalDatabase.current
     val found by androidx.compose.runtime.produceState(albumArtworkCache[mediaId], mediaId) {
         if (mediaId.isBlank() || albumArtworkCache.containsKey(mediaId)) {
             value = albumArtworkCache[mediaId]

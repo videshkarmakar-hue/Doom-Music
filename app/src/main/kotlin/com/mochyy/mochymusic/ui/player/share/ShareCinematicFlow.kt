@@ -4,15 +4,15 @@
 // then lights up left to right while it's sung, so the lines play along with the song. A picture
 // keeps them all lit.
 
-package com.mochyy.mochymusic.ui.player.share
+package com.videshkarmakar.doom.ui.player.share
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.padding
-import com.mochyy.mochymusic.ui.player.sweepBloom
-import com.mochyy.mochymusic.ui.player.layerBleed
-import com.mochyy.mochymusic.ui.player.SweepHeadGeometry
+import com.videshkarmakar.doom.ui.player.sweepBloom
+import com.videshkarmakar.doom.ui.player.layerBleed
+import com.videshkarmakar.doom.ui.player.SweepHeadGeometry
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -25,7 +25,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsEntry
 import kotlin.math.max
 import kotlin.math.min
 

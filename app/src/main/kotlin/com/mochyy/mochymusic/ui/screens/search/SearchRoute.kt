@@ -1,6 +1,6 @@
 // SearchRoute.kt
 
-package com.mochyy.mochymusic.ui.screens.search
+package com.videshkarmakar.doom.ui.screens.search
 
 import android.net.Uri
 

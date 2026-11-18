@@ -1,18 +1,18 @@
 // StreamStats.kt
 
-package com.mochyy.mochymusic.ui.player.info
+package com.videshkarmakar.doom.ui.player.info
 
 import android.content.Context
 import androidx.annotation.StringRes
 import androidx.media3.common.C
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.FormatEntity
-import com.mochyy.mochymusic.playback.PlayingFrom
-import com.mochyy.mochymusic.playback.StreamDetails
-import com.mochyy.mochymusic.playback.StreamFacts
-import com.mochyy.mochymusic.playback.StreamInspector
-import com.mochyy.mochymusic.playback.audio.AudioOutputs
-import com.mochyy.mochymusic.playback.audio.SincResampler
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.FormatEntity
+import com.videshkarmakar.doom.playback.PlayingFrom
+import com.videshkarmakar.doom.playback.StreamDetails
+import com.videshkarmakar.doom.playback.StreamFacts
+import com.videshkarmakar.doom.playback.StreamInspector
+import com.videshkarmakar.doom.playback.audio.AudioOutputs
+import com.videshkarmakar.doom.playback.audio.SincResampler
 import java.util.Locale
 import kotlin.math.log2
 import kotlin.math.roundToInt
@@ -117,7 +117,7 @@ private fun decoderCard(c: Context, input: StatsInput): StatCard {
 private fun resamplerCard(c: Context, input: StatsInput): StatCard {
     val d = input.details
     val effects = input.effects
-    if (d.resampledFrom != null && d.resampledTo != null) return mochyResamplerCard(c, d, effects)
+    if (d.resampledFrom != null && d.resampledTo != null) return doomResamplerCard(c, d, effects)
     val inRate = d.decodedSampleRate ?: d.sampleRate ?: return StatCard(c.t(R.string.pc_stat_resampler), emptyList())
     val outRate = input.mixer?.sampleRate ?: input.systemMixerRate?.takeIf { input.device?.kind in FixedRateKinds && input.castingTo == null }
     val timeStretch = effects.speed != 1f || effects.pitch != 1f
@@ -143,11 +143,11 @@ private fun resamplerCard(c: Context, input: StatsInput): StatCard {
     )
 }
 
-// mochy's own filter did the work, so android's mixer is handed the rate it already runs at
-private fun mochyResamplerCard(c: Context, d: StreamDetails, effects: EffectsSnapshot): StatCard = StatCard(
+// doom's own filter did the work, so android's mixer is handed the rate it already runs at
+private fun doomResamplerCard(c: Context, d: StreamDetails, effects: EffectsSnapshot): StatCard = StatCard(
     title = c.t(R.string.pc_stat_resampler),
     lines = listOfNotNull(
-        c.t(R.string.pc_stat_type) to c.t(R.string.pc_stat_rs_mochy),
+        c.t(R.string.pc_stat_type) to c.t(R.string.pc_stat_rs_doom),
         c.t(R.string.pc_stat_io_rate) to "${kHz(d.resampledFrom!!)} → ${kHz(d.resampledTo!!)}",
         d.resamplerPassbandHz?.let { c.t(R.string.pc_stat_passband) to c.t(R.string.pc_stat_flat_to, kHz(it.toInt())) },
         c.t(R.string.pc_stat_cutoff) to kHz(minOf(d.resampledFrom, d.resampledTo) / 2),

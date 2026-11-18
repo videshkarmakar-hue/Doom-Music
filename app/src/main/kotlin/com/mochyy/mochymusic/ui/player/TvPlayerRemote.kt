@@ -1,6 +1,6 @@
 // TvPlayerRemote.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

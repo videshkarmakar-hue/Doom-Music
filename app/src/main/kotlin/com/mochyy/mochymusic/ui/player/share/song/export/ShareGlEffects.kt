@@ -1,6 +1,6 @@
 // ShareGlEffects.kt
 
-package com.mochyy.mochymusic.ui.player.share.song.export
+package com.videshkarmakar.doom.ui.player.share.song.export
 
 import android.content.Context
 import android.opengl.GLES20

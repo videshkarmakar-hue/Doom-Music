@@ -1,6 +1,6 @@
 // SelectionSongsMenu.kt
 
-package com.mochyy.mochymusic.ui.menu
+package com.videshkarmakar.doom.ui.menu
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -38,22 +38,22 @@ import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import com.music.innertube.YouTube
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.LocalSyncUtils
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.PlaylistSongMap
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.ExoDownloadService
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.ui.component.Material3MenuGroup
-import com.mochyy.mochymusic.ui.component.Material3MenuItemData
-import com.mochyy.mochymusic.ui.component.NewAction
-import com.mochyy.mochymusic.ui.component.NewActionGrid
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.LocalSyncUtils
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.PlaylistSongMap
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.ExoDownloadService
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.ui.component.Material3MenuGroup
+import com.videshkarmakar.doom.ui.component.Material3MenuItemData
+import com.videshkarmakar.doom.ui.component.NewAction
+import com.videshkarmakar.doom.ui.component.NewActionGrid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime

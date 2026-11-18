@@ -1,30 +1,30 @@
 // PresenceSettings.kt
 
-package com.mochyy.mochymusic.discord
+package com.videshkarmakar.doom.discord
 
 import androidx.annotation.DrawableRes
 import androidx.datastore.preferences.core.MutablePreferences
 import androidx.datastore.preferences.core.Preferences
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.DiscordActivityNameKey
-import com.mochyy.mochymusic.constants.DiscordActivityTypeKey
-import com.mochyy.mochymusic.constants.DiscordButton1TargetKey
-import com.mochyy.mochymusic.constants.DiscordButton1TextKey
-import com.mochyy.mochymusic.constants.DiscordButton2TargetKey
-import com.mochyy.mochymusic.constants.DiscordButton2TextKey
-import com.mochyy.mochymusic.constants.DiscordClearOnPauseKey
-import com.mochyy.mochymusic.constants.DiscordDetailsKey
-import com.mochyy.mochymusic.constants.DiscordLargeCustomImageKey
-import com.mochyy.mochymusic.constants.DiscordLargeImageKey
-import com.mochyy.mochymusic.constants.DiscordLargeTextKey
-import com.mochyy.mochymusic.constants.DiscordRefreshSecondsKey
-import com.mochyy.mochymusic.constants.DiscordSmallCustomImageKey
-import com.mochyy.mochymusic.constants.DiscordSmallImageKey
-import com.mochyy.mochymusic.constants.DiscordSmallTextKey
-import com.mochyy.mochymusic.constants.DiscordSpinFpsKey
-import com.mochyy.mochymusic.constants.DiscordSpinSecondsKey
-import com.mochyy.mochymusic.constants.DiscordStateKey
-import com.mochyy.mochymusic.constants.EnableDiscordRPCKey
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.DiscordActivityNameKey
+import com.videshkarmakar.doom.constants.DiscordActivityTypeKey
+import com.videshkarmakar.doom.constants.DiscordButton1TargetKey
+import com.videshkarmakar.doom.constants.DiscordButton1TextKey
+import com.videshkarmakar.doom.constants.DiscordButton2TargetKey
+import com.videshkarmakar.doom.constants.DiscordButton2TextKey
+import com.videshkarmakar.doom.constants.DiscordClearOnPauseKey
+import com.videshkarmakar.doom.constants.DiscordDetailsKey
+import com.videshkarmakar.doom.constants.DiscordLargeCustomImageKey
+import com.videshkarmakar.doom.constants.DiscordLargeImageKey
+import com.videshkarmakar.doom.constants.DiscordLargeTextKey
+import com.videshkarmakar.doom.constants.DiscordRefreshSecondsKey
+import com.videshkarmakar.doom.constants.DiscordSmallCustomImageKey
+import com.videshkarmakar.doom.constants.DiscordSmallImageKey
+import com.videshkarmakar.doom.constants.DiscordSmallTextKey
+import com.videshkarmakar.doom.constants.DiscordSpinFpsKey
+import com.videshkarmakar.doom.constants.DiscordSpinSecondsKey
+import com.videshkarmakar.doom.constants.DiscordStateKey
+import com.videshkarmakar.doom.constants.EnableDiscordRPCKey
 
 /** The line Discord writes above the status: "Listening to ..." or "Playing ...". */
 enum class PresenceKind(val prefValue: String, val label: String, val discordType: Int) {
@@ -38,7 +38,7 @@ enum class PresenceImage(val label: String, val forLargeImage: Boolean) {
     ARTWORK("Music artwork", true),
     ARTIST("Artist artwork", true),
     PLAYBACK_STATUS("Playback status", false),
-    APP_LOGO("Mochy logo", true),
+    APP_LOGO("Doom logo", true),
     SPINNING_ARTIST("Rotating artist artwork", false),
     SPINNING_ARTWORK("Rotating music artwork", false),
     // a picture from the phone, put on a free host for discord like the rotating ones
@@ -60,7 +60,7 @@ enum class PresenceButtonTarget(val label: String, @DrawableRes val icon: Int) {
     SPOTIFY("Spotify", R.drawable.provider_spotify),
     APPLE_MUSIC("Apple Music", R.drawable.provider_apple_music),
     TIDAL("Tidal", R.drawable.provider_tidal),
-    MOCHY("Mochy on GitHub", R.drawable.github),
+    MOCHY("Doom on GitHub", R.drawable.github),
 }
 
 data class PresenceButton(val text: String, val target: PresenceButtonTarget)
@@ -81,7 +81,7 @@ data class PresenceSettings(
     val largeImage: PresenceImage = PresenceImage.ARTWORK,
     val smallImage: PresenceImage = PresenceImage.PLAYBACK_STATUS,
     val button1: PresenceButton = PresenceButton("See on YouTube Music", PresenceButtonTarget.YOUTUBE_MUSIC),
-    val button2: PresenceButton = PresenceButton("Open Mochy", PresenceButtonTarget.MOCHY),
+    val button2: PresenceButton = PresenceButton("Open Doom", PresenceButtonTarget.MOCHY),
     /** how long one full turn of the rotating artwork takes */
     val spinSeconds: Int = DefaultSpinSeconds,
     /** frames per second of the rotating artwork's GIF, one of [SpinFpsSteps] */

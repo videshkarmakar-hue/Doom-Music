@@ -1,39 +1,39 @@
-// a module added from a link: a service that answers search, stream, lyrics and song facts over plain http, no code of its own runs in mochy
+// a module added from a link: a service that answers search, stream, lyrics and song facts over plain http, no code of its own runs in doom
 
-package com.mochyy.mochymusic.modules.web
+package com.videshkarmakar.doom.modules.web
 
 import android.content.res.Resources
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.CatalogTrack
-import com.mochyy.mochymusic.module.DiagnosticStep
-import com.mochyy.mochymusic.module.HttpRequest
-import com.mochyy.mochymusic.module.LookModule
-import com.mochyy.mochymusic.module.LyricsModule
-import com.mochyy.mochymusic.module.MatchedTrack
-import com.mochyy.mochymusic.module.MetadataModule
-import com.mochyy.mochymusic.module.ModuleArt
-import com.mochyy.mochymusic.module.ModuleChoice
-import com.mochyy.mochymusic.module.ModuleField
-import com.mochyy.mochymusic.module.ModuleFields
-import com.mochyy.mochymusic.module.ModuleFeature
-import com.mochyy.mochymusic.module.ModuleHost
-import com.mochyy.mochymusic.module.ModuleInfo
-import com.mochyy.mochymusic.module.NO_ACCOUNT_LABEL
-import com.mochyy.mochymusic.module.ResolveResult
-import com.mochyy.mochymusic.module.SourceModule
-import com.mochyy.mochymusic.module.SourceStream
-import com.mochyy.mochymusic.module.StreamFormat
-import com.mochyy.mochymusic.module.StreamOption
-import com.mochyy.mochymusic.module.TrackMatcher
-import com.mochyy.mochymusic.module.TrackMetadata
-import com.mochyy.mochymusic.module.TrackQuery
-import com.mochyy.mochymusic.modules.DeviceDecoders
-import com.mochyy.mochymusic.modules.skin.ModuleSkin
-import com.mochyy.mochymusic.modules.skin.SkinGlass
-import com.mochyy.mochymusic.modules.skin.SkinParser
-import com.mochyy.mochymusic.modules.skin.SkinSource
-import com.mochyy.mochymusic.modules.skin.appliedLook
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.CatalogTrack
+import com.videshkarmakar.doom.module.DiagnosticStep
+import com.videshkarmakar.doom.module.HttpRequest
+import com.videshkarmakar.doom.module.LookModule
+import com.videshkarmakar.doom.module.LyricsModule
+import com.videshkarmakar.doom.module.MatchedTrack
+import com.videshkarmakar.doom.module.MetadataModule
+import com.videshkarmakar.doom.module.ModuleArt
+import com.videshkarmakar.doom.module.ModuleChoice
+import com.videshkarmakar.doom.module.ModuleField
+import com.videshkarmakar.doom.module.ModuleFields
+import com.videshkarmakar.doom.module.ModuleFeature
+import com.videshkarmakar.doom.module.ModuleHost
+import com.videshkarmakar.doom.module.ModuleInfo
+import com.videshkarmakar.doom.module.NO_ACCOUNT_LABEL
+import com.videshkarmakar.doom.module.ResolveResult
+import com.videshkarmakar.doom.module.SourceModule
+import com.videshkarmakar.doom.module.SourceStream
+import com.videshkarmakar.doom.module.StreamFormat
+import com.videshkarmakar.doom.module.StreamOption
+import com.videshkarmakar.doom.module.TrackMatcher
+import com.videshkarmakar.doom.module.TrackMetadata
+import com.videshkarmakar.doom.module.TrackQuery
+import com.videshkarmakar.doom.modules.DeviceDecoders
+import com.videshkarmakar.doom.modules.skin.ModuleSkin
+import com.videshkarmakar.doom.modules.skin.SkinGlass
+import com.videshkarmakar.doom.modules.skin.SkinParser
+import com.videshkarmakar.doom.modules.skin.SkinSource
+import com.videshkarmakar.doom.modules.skin.appliedLook
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject
@@ -185,7 +185,7 @@ internal class WebModule(
             val best = pick(TrackMatcher.ranked(track, tracksIn(response.text, asked)), atmos)
             if (best == null) {
                 misses[key] = System.currentTimeMillis()
-                report(DiagnosticStep("Find the song", false, "No matching recording of “${track.title}”"))
+                report(DiagnosticStep("Find the song", false, "No matching recording of “${track.title}�"))
                 return ResolveResult.NotFound("No matching recording on ${info.name}")
             }
             matches[key] = best
@@ -202,8 +202,8 @@ internal class WebModule(
             asTiered
         }
         if (stream == null) {
-            report(DiagnosticStep("Stream", false, "$siteName gave no stream Mochy can play"))
-            return ResolveResult.Unavailable("$siteName gave no stream Mochy can play")
+            report(DiagnosticStep("Stream", false, "$siteName gave no stream Doom can play"))
+            return ResolveResult.Unavailable("$siteName gave no stream Doom can play")
         }
         report(DiagnosticStep("Stream", true, stream.qualityLabel))
         return ResolveResult.Found(
@@ -295,7 +295,7 @@ internal class WebModule(
         val response = runCatching { host.http(HttpRequest("$base/stream/${enc(track.id)}?${paramsFor(tier, atmos)}", headers = headers)) }.getOrNull()
         if (response == null || !response.ok) return null
         val answer = runCatching { json.parseToJsonElement(response.text) as? JsonObject }.getOrNull() ?: return null
-        // a locked stream would need keys mochy doesn't have
+        // a locked stream would need keys doom doesn't have
         if ((answer["encrypted"] as? JsonPrimitive)?.let { it.booleanOrNull ?: (it.contentOrNull !in setOf(null, "", "false", "none")) } == true) return null
         val url = answer.string("url")?.takeIf { it.startsWith("http") } ?: return null
         return streamOf(url, answer, rowIsAtmos)
@@ -414,7 +414,7 @@ internal class WebModule(
     private companion object {
         const val MissMemoryMs = 30L * 60 * 1000
         const val UnreachableRetryMs = 10L * 60 * 1000
-        val headers = mapOf("Accept" to "application/json", "User-Agent" to "Mochy")
+        val headers = mapOf("Accept" to "application/json", "User-Agent" to "Doom")
 
         // the id the audio quality page looks for to list a module's qualities
         const val ChoiceQuality = "quality"

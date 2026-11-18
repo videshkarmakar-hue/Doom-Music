@@ -1,6 +1,6 @@
 // ThumbnailCornerRadiusSelector.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -21,9 +21,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.ThumbnailCornerRadiusKey
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.ThumbnailCornerRadiusKey
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

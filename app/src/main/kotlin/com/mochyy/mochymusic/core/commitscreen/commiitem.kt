@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.core.commitscreen
+package com.videshkarmakar.doom.core.commitscreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 
 @Composable
  fun CommitItem(

@@ -1,16 +1,16 @@
 // where each module was added from on the web, and whether a newer copy waits there; looked at now and then so github's limits are never hit
 
-package com.mochyy.mochymusic.modules
+package com.videshkarmakar.doom.modules
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import com.mochyy.mochymusic.modules.web.WebModuleManifest
+import com.videshkarmakar.doom.modules.web.WebModuleManifest
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONObject
 import java.security.MessageDigest
 
-/** where mochy can look for a newer copy of a module */
+/** where doom can look for a newer copy of a module */
 sealed interface ModuleSource {
     /** a github project's release zip, with the tag and file stamp it was added at */
     data class GitHub(val owner: String, val repo: String, val tag: String, val stamp: String) : ModuleSource

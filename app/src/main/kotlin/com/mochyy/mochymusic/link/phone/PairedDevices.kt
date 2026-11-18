@@ -1,12 +1,12 @@
 // PairedDevices.kt
 
-package com.mochyy.mochymusic.link.phone
+package com.videshkarmakar.doom.link.phone
 
 import android.content.SharedPreferences
 import androidx.compose.runtime.Immutable
 import androidx.core.content.edit
-import com.mochyy.mochymusic.link.DeviceKind
-import com.mochyy.mochymusic.utils.SecretVault
+import com.videshkarmakar.doom.link.DeviceKind
+import com.videshkarmakar.doom.utils.SecretVault
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -48,7 +48,7 @@ data class LiveDevice(
 // paired devices as json in shared preferences (the keys sealed), so the boot receiver can read them without hilt
 internal object PairedDeviceStore {
     // the names are from when only tvs could pair, kept so nobody has to pair again
-    const val Prefs = "mochy_link_tvs"
+    const val Prefs = "doom_link_tvs"
     private const val ListKey = "tvs"
 
     fun read(prefs: SharedPreferences): List<PairedDevice> {

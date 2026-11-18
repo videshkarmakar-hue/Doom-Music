@@ -1,6 +1,6 @@
 // AddMusicSources.kt
 
-package com.mochyy.mochymusic.ui.screens.playlist
+package com.videshkarmakar.doom.ui.screens.playlist
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -10,15 +10,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.component.isImportedFile
-import com.mochyy.mochymusic.ui.menu.addToPlaylistKeepingSync
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.component.isImportedFile
+import com.videshkarmakar.doom.ui.menu.addToPlaylistKeepingSync
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint

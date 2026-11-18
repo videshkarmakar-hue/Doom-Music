@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.studio
+package com.videshkarmakar.doom.ui.player.studio
 
 import android.graphics.Bitmap
 import android.os.Build
@@ -24,7 +24,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.layer.GraphicsLayer
 import androidx.compose.ui.graphics.layer.drawLayer
 import androidx.compose.ui.graphics.rememberGraphicsLayer
-import com.mochyy.mochymusic.constants.PlayerBottomBarStyle
+import com.videshkarmakar.doom.constants.PlayerBottomBarStyle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first

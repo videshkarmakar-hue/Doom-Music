@@ -1,6 +1,6 @@
 // a styled block's motion, all worked out in its own layer each frame: nudges, loops, keyframes on any clock, states blending in and out, event animations, its entrance and its blur
 
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -25,18 +25,18 @@ import androidx.compose.ui.graphics.RenderEffect
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.modules.skin.EnterKind
-import com.mochyy.mochymusic.modules.skin.PoseProp
-import com.mochyy.mochymusic.modules.skin.SkinBlock
-import com.mochyy.mochymusic.modules.skin.SkinClock
-import com.mochyy.mochymusic.modules.skin.SkinEvent
-import com.mochyy.mochymusic.modules.skin.SkinFlag
-import com.mochyy.mochymusic.modules.skin.SkinKeyframes
-import com.mochyy.mochymusic.modules.skin.SkinRepeat
-import com.mochyy.mochymusic.modules.skin.SkinTimeline
-import com.mochyy.mochymusic.modules.skin.SkinTrigger
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.modules.skin.EnterKind
+import com.videshkarmakar.doom.modules.skin.PoseProp
+import com.videshkarmakar.doom.modules.skin.SkinBlock
+import com.videshkarmakar.doom.modules.skin.SkinClock
+import com.videshkarmakar.doom.modules.skin.SkinEvent
+import com.videshkarmakar.doom.modules.skin.SkinFlag
+import com.videshkarmakar.doom.modules.skin.SkinKeyframes
+import com.videshkarmakar.doom.modules.skin.SkinRepeat
+import com.videshkarmakar.doom.modules.skin.SkinTimeline
+import com.videshkarmakar.doom.modules.skin.SkinTrigger
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.collectLatest

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.graphics.RenderNode
 import android.os.Build
@@ -29,8 +29,8 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
-import com.mochyy.mochymusic.constants.DisableBlurKey
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.DisableBlurKey
+import com.videshkarmakar.doom.utils.rememberPreference
 
 @Stable
 class GlassState {
@@ -200,7 +200,7 @@ private const val ChromeAccentWash = 0.55f
  */
 @Composable
 fun rememberChromeAccentWash(): () -> Color {
-    val accent = com.mochyy.mochymusic.LocalDetailAccentColor.current
+    val accent = com.videshkarmakar.doom.LocalDetailAccentColor.current
     val wash = remember { androidx.compose.animation.Animatable(Color.Transparent) }
     LaunchedEffect(accent) {
         // fading out keeps the page's hue instead of greying through transparent black
@@ -246,12 +246,12 @@ private val StrongGlassChips = listOf(
 )
 
 /** the quality a phone starts on until someone picks one in Customisation */
-val DefaultBlurQuality: com.mochyy.mochymusic.constants.BlurQuality by lazy {
+val DefaultBlurQuality: com.videshkarmakar.doom.constants.BlurQuality by lazy {
     val soc = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) Build.SOC_MODEL.lowercase(java.util.Locale.ROOT) else ""
     // high's glass took 11 to 15 ms of gpu per scroll frame on a mid-range 120 hz phone, more than a frame has
     val strong = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
         (Build.VERSION.MEDIA_PERFORMANCE_CLASS >= Build.VERSION_CODES.S || StrongGlassChips.any { soc.startsWith(it) })
-    if (strong) com.mochyy.mochymusic.constants.BlurQuality.HIGH else com.mochyy.mochymusic.constants.BlurQuality.LOW
+    if (strong) com.videshkarmakar.doom.constants.BlurQuality.HIGH else com.videshkarmakar.doom.constants.BlurQuality.LOW
 }
 
 /** Lays its content out [margin] px bigger on every side, centred over the space it takes. */
@@ -341,7 +341,7 @@ internal fun DownscaledBlur(
     val currentRadius by rememberUpdatedState(radius)
     val currentOffscreen by rememberUpdatedState(offscreen)
     // A radius that animates only re-lays this out when it crosses into another resolution step.
-    val low = LocalBlurQuality.current == com.mochyy.mochymusic.constants.BlurQuality.LOW
+    val low = LocalBlurQuality.current == com.videshkarmakar.doom.constants.BlurQuality.LOW
     val downscale by remember(low) { derivedStateOf { glassDownscale(currentRadius(), low) } }
     val maskCache = remember { MaskedEffectCache() }
     val full = remember { FullSize() }
@@ -447,7 +447,7 @@ fun GlassPillBackground(
     var position by remember { mutableStateOf(Offset.Zero) }
 
     val (disableBlur) = rememberPreference(DisableBlurKey, defaultValue = false)
-    val (blurStrengthPx) = rememberPreference(com.mochyy.mochymusic.constants.BlurStrengthPxKey, defaultValue = 25f)
+    val (blurStrengthPx) = rememberPreference(com.videshkarmakar.doom.constants.BlurStrengthPxKey, defaultValue = 25f)
 
     val currentBlurRadius by rememberUpdatedState(blurRadius)
 
@@ -469,7 +469,7 @@ fun GlassPillBackground(
                 // no blur below Android 12, so nothing to read past the edges; and low quality
                 // keeps to what's right under the glass, a much smaller area to blur
                 if (bleed && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
-                    LocalBlurQuality.current == com.mochyy.mochymusic.constants.BlurQuality.HIGH
+                    LocalBlurQuality.current == com.videshkarmakar.doom.constants.BlurQuality.HIGH
                 ) {
                     Modifier.bleed { kotlin.math.ceil(radius()).toInt() }
                 } else Modifier
@@ -511,7 +511,7 @@ const val FlatBarScrimAlpha = 0.45f
 // whether bars blur progressively; off, they're flat with a hairline, and their own fading scrims turn into one tint
 @Composable
 fun rememberProgressiveBlur(): Boolean {
-    val (enabled) = rememberPreference(com.mochyy.mochymusic.constants.EnableProgressiveBlurKey, defaultValue = true)
+    val (enabled) = rememberPreference(com.videshkarmakar.doom.constants.EnableProgressiveBlurKey, defaultValue = true)
     return enabled
 }
 
@@ -551,7 +551,7 @@ fun ProgressiveGlassBackground(
         return
     }
     val smooth = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
-        LocalBlurQuality.current == com.mochyy.mochymusic.constants.BlurQuality.HIGH
+        LocalBlurQuality.current == com.videshkarmakar.doom.constants.BlurQuality.HIGH
     if (smooth) {
         // high quality: one pass whose radius grows row by row, faded in where the first step used to fade in
         val fade = 1f / steps.coerceAtLeast(1)

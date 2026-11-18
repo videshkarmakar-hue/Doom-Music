@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.studio
+package com.videshkarmakar.doom.ui.player.studio
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
@@ -34,16 +34,16 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.player.PressScaleActionButton
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.player.PressScaleActionButton
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** the player's menu item label, exactly as its chevron menu sets it */
 private val MenuLabelStyle = TextStyle(
-    fontFamily = com.mochyy.mochymusic.ui.theme.InterFontFamily,
+    fontFamily = com.videshkarmakar.doom.ui.theme.InterFontFamily,
     fontSize = 14.sp,
     fontWeight = FontWeight.SemiBold,
     color = Color.White,
@@ -330,7 +330,7 @@ private fun MenuItemButton(icon: Int, active: Boolean, badge: Boolean, center: (
                     translationY = c.y - basePx / 2f
                     if (android.os.Build.VERSION.SDK_INT >= 31) {
                         val blur = (1f - a) * 14.dp.toPx()
-                        renderEffect = if (blur > 0.5f && com.mochyy.mochymusic.ui.utils.AppMotion.elementBlur) {
+                        renderEffect = if (blur > 0.5f && com.videshkarmakar.doom.ui.utils.AppMotion.elementBlur) {
                             androidx.compose.ui.graphics.BlurEffect(blur, blur, androidx.compose.ui.graphics.TileMode.Clamp)
                         } else null
                     }

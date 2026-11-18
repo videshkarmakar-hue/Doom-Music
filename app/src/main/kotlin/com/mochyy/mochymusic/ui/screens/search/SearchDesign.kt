@@ -1,6 +1,6 @@
 // SearchDesign.kt
 
-package com.mochyy.mochymusic.ui.screens.search
+package com.videshkarmakar.doom.ui.screens.search
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -75,17 +75,17 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.FlatBarScrimAlpha
-import com.mochyy.mochymusic.ui.component.rememberProgressiveBlur
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.ui.component.containerTransformSource
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.FlatBarScrimAlpha
+import com.videshkarmakar.doom.ui.component.rememberProgressiveBlur
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.ui.component.containerTransformSource
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 val SearchHorizontalPadding = 24.dp
 
@@ -302,7 +302,7 @@ fun SearchGlassTopBar(
                             transformOrigin = TransformOrigin(0f, 0.5f)
                             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
                                 val quantised = ((p * 14f) / 3f).toInt() * 3
-                                renderEffect = if (quantised > 0 && com.mochyy.mochymusic.ui.utils.AppMotion.elementBlur) {
+                                renderEffect = if (quantised > 0 && com.videshkarmakar.doom.ui.utils.AppMotion.elementBlur) {
                                     blurCache.getOrPut(quantised) {
                                         android.graphics.RenderEffect.createBlurEffect(
                                             quantised.toFloat(),

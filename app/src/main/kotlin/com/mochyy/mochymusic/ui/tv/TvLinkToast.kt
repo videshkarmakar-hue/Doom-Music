@@ -1,6 +1,6 @@
 // TvLinkToast.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
@@ -35,8 +35,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.tv.PhoneSyncState
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.tv.PhoneSyncState
 import kotlinx.coroutines.delay
 
 // what the banner says: the phone came back, or the library is now the phone's

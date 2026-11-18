@@ -6,7 +6,7 @@
 // into black down the screen, the collapsed pill is a full capsule with a round cover, and search
 // is the Library's capsule under the buttons instead of a toolbar.
 
-package com.mochyy.mochymusic.ui.screens.playlist
+package com.videshkarmakar.doom.ui.screens.playlist
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -52,17 +52,17 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.detail.CreatorUi
-import com.mochyy.mochymusic.ui.component.detail.PlaylistDetailScaffold
-import com.mochyy.mochymusic.ui.component.detail.PlaylistHeader
-import com.mochyy.mochymusic.ui.component.detail.PlaylistInset
-import com.mochyy.mochymusic.ui.component.detail.PlaylistModeBar
-import com.mochyy.mochymusic.ui.component.detail.PlaylistStatsStyle
-import com.mochyy.mochymusic.ui.component.detail.SectionTitleStyle
-import com.mochyy.mochymusic.ui.component.detail.playlistCompactHeaderHeight
-import com.mochyy.mochymusic.ui.screens.search.SearchFieldHeight
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.detail.CreatorUi
+import com.videshkarmakar.doom.ui.component.detail.PlaylistDetailScaffold
+import com.videshkarmakar.doom.ui.component.detail.PlaylistHeader
+import com.videshkarmakar.doom.ui.component.detail.PlaylistInset
+import com.videshkarmakar.doom.ui.component.detail.PlaylistModeBar
+import com.videshkarmakar.doom.ui.component.detail.PlaylistStatsStyle
+import com.videshkarmakar.doom.ui.component.detail.SectionTitleStyle
+import com.videshkarmakar.doom.ui.component.detail.playlistCompactHeaderHeight
+import com.videshkarmakar.doom.ui.screens.search.SearchFieldHeight
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 import kotlinx.coroutines.launch
 
 /**
@@ -246,7 +246,7 @@ fun generatedStats(songCount: Int, totalSeconds: Int): String {
 /** all downloaded, some on their way, or neither, for the ••• menu's download line */
 @Composable
 fun rememberSongsDownloadState(songIds: List<String>): Int {
-    val downloadUtil = com.mochyy.mochymusic.LocalDownloadUtil.current
+    val downloadUtil = com.videshkarmakar.doom.LocalDownloadUtil.current
     var state by remember { mutableStateOf(androidx.media3.exoplayer.offline.Download.STATE_STOPPED) }
     androidx.compose.runtime.LaunchedEffect(songIds) {
         if (songIds.isEmpty()) return@LaunchedEffect
@@ -271,10 +271,10 @@ fun rememberSongsDownloadState(songIds: List<String>): Int {
 /** what the menu's download line does from each state: start them, or take them back off */
 fun toggleSongsDownload(
     context: android.content.Context,
-    songs: List<com.mochyy.mochymusic.db.entities.Song>,
+    songs: List<com.videshkarmakar.doom.db.entities.Song>,
     state: Int,
 ) {
-    val service = com.mochyy.mochymusic.playback.ExoDownloadService::class.java
+    val service = com.videshkarmakar.doom.playback.ExoDownloadService::class.java
     if (state == androidx.media3.exoplayer.offline.Download.STATE_COMPLETED ||
         state == androidx.media3.exoplayer.offline.Download.STATE_DOWNLOADING
     ) {

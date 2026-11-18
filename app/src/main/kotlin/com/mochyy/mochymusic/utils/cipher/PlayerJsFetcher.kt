@@ -1,8 +1,8 @@
 // PlayerJsFetcher.kt
 
-package com.mochyy.mochymusic.utils.cipher
+package com.videshkarmakar.doom.utils.cipher
 
-import com.mochyy.mochymusic.utils.followAppProxy
+import com.videshkarmakar.doom.utils.followAppProxy
 import com.music.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -12,7 +12,7 @@ import timber.log.Timber
 import java.io.File
 
 object PlayerJsFetcher {
-    private const val TAG = "mochy_CipherFetcher"
+    private const val TAG = "doom_CipherFetcher"
     private const val IFRAME_API_URL = "https://www.youtube.com/iframe_api"
     private const val PLAYER_JS_URL_TEMPLATE = "https://www.youtube.com/s/player/%s/player_ias.vflset/en_GB/base.js"
     /** How long a downloaded player script is reused before it is re-fetched. */

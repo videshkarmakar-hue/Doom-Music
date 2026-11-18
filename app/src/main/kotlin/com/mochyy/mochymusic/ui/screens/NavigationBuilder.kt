@@ -1,12 +1,12 @@
 // NavigationBuilder.kt
 
-package com.mochyy.mochymusic.ui.screens
+package com.videshkarmakar.doom.ui.screens
 
 import android.app.Activity
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import com.mochyy.mochymusic.db.entities.FormatEntity
+import com.videshkarmakar.doom.db.entities.FormatEntity
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -72,44 +72,44 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable as navigationComposable
 import androidx.navigation.compose.dialog
-import com.mochyy.mochymusic.ui.utils.motionEnter
-import com.mochyy.mochymusic.ui.utils.motionExit
+import com.videshkarmakar.doom.ui.utils.motionEnter
+import com.videshkarmakar.doom.ui.utils.motionExit
 import androidx.navigation.navArgument
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.constants.DarkModeKey
-import com.mochyy.mochymusic.ui.theme.ForceDarkTheme
-import com.mochyy.mochymusic.constants.PlaylistSortType
-import com.mochyy.mochymusic.constants.PureBlackKey
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.db.entities.SongArtistMap
-import com.mochyy.mochymusic.db.entities.SongEntity
-import com.mochyy.mochymusic.ui.component.ContainerCloseEasing
-import com.mochyy.mochymusic.ui.component.ContainerCloseMillis
-import com.mochyy.mochymusic.ui.component.ContainerOpenDamping
-import com.mochyy.mochymusic.ui.component.ContainerOpenStiffness
-import com.mochyy.mochymusic.ui.component.LocalNavAnimatedContentScope
-import com.mochyy.mochymusic.ui.component.NavigationTitle
-import com.mochyy.mochymusic.ui.screens.artist.ArtistAlbumsScreen
-import com.mochyy.mochymusic.ui.screens.artist.ArtistItemsScreen
-import com.mochyy.mochymusic.ui.screens.artist.ArtistScreen
-import com.mochyy.mochymusic.ui.screens.artist.ArtistSongsScreen
-import com.mochyy.mochymusic.ui.screens.playlist.AutoPlaylistScreen
-import com.mochyy.mochymusic.ui.screens.playlist.CachePlaylistScreen
-import com.mochyy.mochymusic.ui.screens.playlist.LocalPlaylistScreen
-import com.mochyy.mochymusic.ui.screens.playlist.OnlinePlaylistScreen
-import com.mochyy.mochymusic.ui.screens.playlist.TopPlaylistScreen
-import com.mochyy.mochymusic.ui.screens.search.GenreScreen
-import com.mochyy.mochymusic.ui.screens.search.OnlineSearchResult
-import com.mochyy.mochymusic.ui.screens.search.SearchScreen
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.ui.screens.settings.ProfileScreen
-import com.mochyy.mochymusic.ui.screens.library.LibraryAlbumsScreen
-import com.mochyy.mochymusic.ui.screens.SectionDetailScreen
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.constants.DarkModeKey
+import com.videshkarmakar.doom.ui.theme.ForceDarkTheme
+import com.videshkarmakar.doom.constants.PlaylistSortType
+import com.videshkarmakar.doom.constants.PureBlackKey
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.db.entities.SongArtistMap
+import com.videshkarmakar.doom.db.entities.SongEntity
+import com.videshkarmakar.doom.ui.component.ContainerCloseEasing
+import com.videshkarmakar.doom.ui.component.ContainerCloseMillis
+import com.videshkarmakar.doom.ui.component.ContainerOpenDamping
+import com.videshkarmakar.doom.ui.component.ContainerOpenStiffness
+import com.videshkarmakar.doom.ui.component.LocalNavAnimatedContentScope
+import com.videshkarmakar.doom.ui.component.NavigationTitle
+import com.videshkarmakar.doom.ui.screens.artist.ArtistAlbumsScreen
+import com.videshkarmakar.doom.ui.screens.artist.ArtistItemsScreen
+import com.videshkarmakar.doom.ui.screens.artist.ArtistScreen
+import com.videshkarmakar.doom.ui.screens.artist.ArtistSongsScreen
+import com.videshkarmakar.doom.ui.screens.playlist.AutoPlaylistScreen
+import com.videshkarmakar.doom.ui.screens.playlist.CachePlaylistScreen
+import com.videshkarmakar.doom.ui.screens.playlist.LocalPlaylistScreen
+import com.videshkarmakar.doom.ui.screens.playlist.OnlinePlaylistScreen
+import com.videshkarmakar.doom.ui.screens.playlist.TopPlaylistScreen
+import com.videshkarmakar.doom.ui.screens.search.GenreScreen
+import com.videshkarmakar.doom.ui.screens.search.OnlineSearchResult
+import com.videshkarmakar.doom.ui.screens.search.SearchScreen
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.ui.screens.settings.ProfileScreen
+import com.videshkarmakar.doom.ui.screens.library.LibraryAlbumsScreen
+import com.videshkarmakar.doom.ui.screens.SectionDetailScreen
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.mochyy.mochymusic.viewmodels.HomeViewModel
-import com.mochyy.mochymusic.ui.screens.library.LibraryArtistsScreen
+import com.videshkarmakar.doom.viewmodels.HomeViewModel
+import com.videshkarmakar.doom.ui.screens.library.LibraryArtistsScreen
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -288,7 +288,7 @@ fun NavGraphBuilder.navigationBuilder(
         val pureBlackEnabled by rememberPreference(PureBlackKey, defaultValue = false)
         val useDarkTheme = ForceDarkTheme
         CompositionLocalProvider(LocalNavAnimatedContentScope provides this) {
-            com.mochyy.mochymusic.ui.screens.library.LibraryHomeScreen(
+            com.videshkarmakar.doom.ui.screens.library.LibraryHomeScreen(
                 navController = navController,
                 pureBlack = remember(pureBlackEnabled, useDarkTheme) { pureBlackEnabled && useDarkTheme },
             )
@@ -296,7 +296,7 @@ fun NavGraphBuilder.navigationBuilder(
     }
 
     coverSourceComposable("library/songs") {
-        com.mochyy.mochymusic.ui.screens.library.LibrarySongsScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.library.LibrarySongsScreen(navController = navController)
     }
 
     composable(
@@ -306,27 +306,27 @@ fun NavGraphBuilder.navigationBuilder(
     ) {
         // the scope a playlist's cover needs to grow into its page, as on Home
         CompositionLocalProvider(LocalNavAnimatedContentScope provides this) {
-            com.mochyy.mochymusic.ui.screens.library.LibraryPlaylistsScreen(navController = navController)
+            com.videshkarmakar.doom.ui.screens.library.LibraryPlaylistsScreen(navController = navController)
         }
     }
 
     coverSourceComposable("library/added") {
-        com.mochyy.mochymusic.ui.screens.library.LibraryRecentlyAddedScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.library.LibraryRecentlyAddedScreen(navController = navController)
     }
 
     // The Library's Local and Cached tabs open these: the same pages again, counting only that
     // tab's songs. "library/local/albums", "library/cached/albums" and so on.
-    com.mochyy.mochymusic.viewmodels.LibraryShelfKind.entries.forEach { shelf ->
+    com.videshkarmakar.doom.viewmodels.LibraryShelfKind.entries.forEach { shelf ->
         coverSourceComposable("library/${shelf.key}/added") {
-            com.mochyy.mochymusic.ui.screens.library.LibraryRecentlyAddedScreen(navController = navController, shelf = shelf)
+            com.videshkarmakar.doom.ui.screens.library.LibraryRecentlyAddedScreen(navController = navController, shelf = shelf)
         }
 
         coverSourceComposable("library/${shelf.key}/albums") {
-            com.mochyy.mochymusic.ui.screens.library.LibraryAlbumsScreen(navController = navController, shelf = shelf)
+            com.videshkarmakar.doom.ui.screens.library.LibraryAlbumsScreen(navController = navController, shelf = shelf)
         }
 
         coverSourceComposable("library/${shelf.key}/artists") {
-            com.mochyy.mochymusic.ui.screens.library.LibraryArtistsScreen(navController = navController, shelf = shelf)
+            com.videshkarmakar.doom.ui.screens.library.LibraryArtistsScreen(navController = navController, shelf = shelf)
         }
 
         composable(
@@ -335,7 +335,7 @@ fun NavGraphBuilder.navigationBuilder(
             popEnterTransition = { libraryReturnFrom(initialState.destination.route) },
         ) {
             CompositionLocalProvider(LocalNavAnimatedContentScope provides this) {
-                com.mochyy.mochymusic.ui.screens.library.LibraryPlaylistsScreen(navController = navController, shelf = shelf)
+                com.videshkarmakar.doom.ui.screens.library.LibraryPlaylistsScreen(navController = navController, shelf = shelf)
             }
         }
     }
@@ -345,7 +345,7 @@ fun NavGraphBuilder.navigationBuilder(
         route = "library/imported/{source}",
         arguments = listOf(navArgument("source") { type = NavType.StringType }),
     ) {
-        com.mochyy.mochymusic.ui.screens.library.LibraryImportedScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.library.LibraryImportedScreen(navController = navController)
     }
 
     // The Imported tab's Playlists cards: the playlists one service brought in.
@@ -356,9 +356,9 @@ fun NavGraphBuilder.navigationBuilder(
         popEnterTransition = { libraryReturnFrom(initialState.destination.route) },
     ) { entry ->
         CompositionLocalProvider(LocalNavAnimatedContentScope provides this) {
-            com.mochyy.mochymusic.ui.screens.library.LibraryPlaylistsScreen(
+            com.videshkarmakar.doom.ui.screens.library.LibraryPlaylistsScreen(
                 navController = navController,
-                source = com.mochyy.mochymusic.importer.ImportSource.fromKey(entry.arguments?.getString("source")),
+                source = com.videshkarmakar.doom.importer.ImportSource.fromKey(entry.arguments?.getString("source")),
             )
         }
     }
@@ -368,9 +368,9 @@ fun NavGraphBuilder.navigationBuilder(
         route = "library/imported/{source}/albums",
         arguments = listOf(navArgument("source") { type = NavType.StringType }),
     ) {
-        com.mochyy.mochymusic.ui.screens.library.LibraryAlbumsScreen(
+        com.videshkarmakar.doom.ui.screens.library.LibraryAlbumsScreen(
             navController = navController,
-            source = com.mochyy.mochymusic.importer.ImportSource.fromKey(it.arguments?.getString("source")),
+            source = com.videshkarmakar.doom.importer.ImportSource.fromKey(it.arguments?.getString("source")),
         )
     }
 
@@ -379,67 +379,67 @@ fun NavGraphBuilder.navigationBuilder(
     }
 
     composable("stats") {
-        com.mochyy.mochymusic.ui.screens.recap.StatsScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.recap.StatsScreen(navController = navController)
     }
 
     composable("cipher_settings") {
-        com.mochyy.mochymusic.ui.screens.settings.CipherSettingsScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.settings.CipherSettingsScreen(navController = navController)
     }
 
     composable("playback_diagnostics") {
-        com.mochyy.mochymusic.ui.screens.settings.PlaybackDiagnosticsScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.settings.PlaybackDiagnosticsScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.SettingsListRoute) {
+    composable(com.videshkarmakar.doom.ui.screens.settings.SettingsListRoute) {
         // on a wide screen the list itself stays at the left (MainActivity), so this side waits for a pick
-        if (com.mochyy.mochymusic.ui.utils.isWideLayout()) {
-            com.mochyy.mochymusic.ui.screens.settings.SettingsPanePlaceholder()
+        if (com.videshkarmakar.doom.ui.utils.isWideLayout()) {
+            com.videshkarmakar.doom.ui.screens.settings.SettingsPanePlaceholder()
         } else {
-            com.mochyy.mochymusic.ui.screens.settings.MochySettingsScreen(navController = navController)
+            com.videshkarmakar.doom.ui.screens.settings.DoomSettingsScreen(navController = navController)
         }
     }
 
     // app behaviour kept general's route, so old links and search results still land on it
     composable("general_settings") {
-        com.mochyy.mochymusic.ui.screens.settings.AppBehaviourSettingsScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.settings.AppBehaviourSettingsScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.PlaybackSettingsRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.PlaybackSettingsScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.PlaybackSettingsRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.PlaybackSettingsScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.NowPlayingSettingsRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.NowPlayingSettingsScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.NowPlayingSettingsRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.NowPlayingSettingsScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.integrations.IntegrationsRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.integrations.IntegrationsScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.integrations.IntegrationsRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.integrations.IntegrationsScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.integrations.spotify.SpotifyRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.integrations.spotify.SpotifyScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.integrations.spotify.SpotifyRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.integrations.spotify.SpotifyScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordScreen(navController = navController)
     }
 
     composable(
-        route = com.mochyy.mochymusic.ui.screens.settings.integrations.ScrobbleServiceRoute,
+        route = com.videshkarmakar.doom.ui.screens.settings.integrations.ScrobbleServiceRoute,
         arguments = listOf(navArgument("site") { type = NavType.StringType }),
     ) { entry ->
-        val site = com.mochyy.mochymusic.scrobble.ScrobbleSite.entries
+        val site = com.videshkarmakar.doom.scrobble.ScrobbleSite.entries
             .find { it.name == entry.arguments?.getString("site") }
-            ?: com.mochyy.mochymusic.scrobble.ScrobbleSite.LASTFM
-        com.mochyy.mochymusic.ui.screens.settings.integrations.ScrobbleServiceScreen(navController = navController, site = site)
+            ?: com.videshkarmakar.doom.scrobble.ScrobbleSite.LASTFM
+        com.videshkarmakar.doom.ui.screens.settings.integrations.ScrobbleServiceScreen(navController = navController, site = site)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.ProxySettingsRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.ProxySettingsScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.ProxySettingsRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.ProxySettingsScreen(navController = navController)
     }
 
     composable("crossmix_settings") {
-        com.mochyy.mochymusic.ui.screens.settings.CrossmixSettingsScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.settings.CrossmixSettingsScreen(navController = navController)
     }
 
     composable(
@@ -447,46 +447,46 @@ fun NavGraphBuilder.navigationBuilder(
         arguments = listOf(navArgument("person") { type = NavType.IntType; defaultValue = 0 }),
     ) { entry ->
         val person = entry.arguments?.getInt("person") ?: 0
-        com.mochyy.mochymusic.ui.screens.settings.devspace.DeveloperSpaceScreen(
+        com.videshkarmakar.doom.ui.screens.settings.devspace.DeveloperSpaceScreen(
             navController = navController,
             initialPage = person,
         )
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.devspace.DevPlaygroundRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.devspace.DevPlaygroundScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.devspace.DevPlaygroundRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.devspace.DevPlaygroundScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.storage.StorageRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.storage.StorageScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.storage.StorageRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.storage.StorageScreen(navController = navController)
     }
 
     composable("experimental_settings") {
-        com.mochyy.mochymusic.ui.screens.settings.ExperimentalSettingsScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.settings.ExperimentalSettingsScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.importsync.ImportSyncRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.importsync.ImportSyncScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.importsync.ImportSyncRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.importsync.ImportSyncScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.importsync.ImportProvidersRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.importsync.ImportProvidersScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.importsync.ImportProvidersRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.importsync.ImportProvidersScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.importsync.ImportTuneMyMusicRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.importsync.TuneMyMusicImportScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.importsync.ImportTuneMyMusicRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.importsync.TuneMyMusicImportScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.importsync.ImportProgressRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.importsync.ImportProgressScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.importsync.ImportProgressRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.importsync.ImportProgressScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.importsync.YouTubeSyncRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.importsync.YouTubeSyncScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.importsync.YouTubeSyncRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.importsync.YouTubeSyncScreen(navController = navController)
     }
 
     composable(
-        route = com.mochyy.mochymusic.ui.screens.settings.importsync.AccountImportRoutePattern,
+        route = com.videshkarmakar.doom.ui.screens.settings.importsync.AccountImportRoutePattern,
         arguments = listOf(
             navArgument("service") { type = NavType.StringType },
             // what a Re-sync opened the page for, and the services Re-sync all goes on to
@@ -502,63 +502,63 @@ fun NavGraphBuilder.navigationBuilder(
             },
         ),
     ) {
-        com.mochyy.mochymusic.ui.screens.settings.importsync.AccountImportScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.settings.importsync.AccountImportScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.importsync.YouTubeLoginRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.importsync.YouTubeLoginScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.importsync.YouTubeLoginRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.importsync.YouTubeLoginScreen(navController = navController)
     }
 
     composable("equalizer") {
-        com.mochyy.mochymusic.ui.screens.equalizer.EqualizerScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.equalizer.EqualizerScreen(navController = navController)
     }
 
     composable("gesture_settings") {
-        com.mochyy.mochymusic.ui.screens.gesture.GestureScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.gesture.GestureScreen(navController = navController)
     }
 
     composable("customisation_settings") {
-        com.mochyy.mochymusic.ui.screens.gesture.CustomisationScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.gesture.CustomisationScreen(navController = navController)
     }
 
     composable("audio_lab") {
-        com.mochyy.mochymusic.ui.screens.audiolab.AudioLabScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.audiolab.AudioLabScreen(navController = navController)
     }
 
     composable("audio_fx") {
-        com.mochyy.mochymusic.ui.screens.audiolab.AudioFxScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.audiolab.AudioFxScreen(navController = navController)
     }
 
     composable("audio_quality") {
-        com.mochyy.mochymusic.ui.screens.audiolab.AudioQualityScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.audiolab.AudioQualityScreen(navController = navController)
     }
 
     composable("audio_pass") {
-        com.mochyy.mochymusic.ui.screens.audiolab.AudioPassScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.audiolab.AudioPassScreen(navController = navController)
     }
 
-    composable(com.mochyy.mochymusic.ui.screens.settings.modules.ModulesRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.modules.ModulesScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.modules.ModulesRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.modules.ModulesScreen(navController = navController)
     }
-    composable(com.mochyy.mochymusic.ui.screens.settings.modules.ModuleBrowserRoute) {
-        com.mochyy.mochymusic.ui.screens.settings.modules.ModuleBrowserScreen(navController = navController)
+    composable(com.videshkarmakar.doom.ui.screens.settings.modules.ModuleBrowserRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.modules.ModuleBrowserScreen(navController = navController)
     }
 
     composable(
-        route = com.mochyy.mochymusic.ui.screens.settings.modules.ModuleRoutePattern,
+        route = com.videshkarmakar.doom.ui.screens.settings.modules.ModuleRoutePattern,
         arguments = listOf(navArgument("id") { type = NavType.StringType }),
     ) { entry ->
-        com.mochyy.mochymusic.ui.screens.settings.modules.ModuleScreen(
+        com.videshkarmakar.doom.ui.screens.settings.modules.ModuleScreen(
             navController = navController,
             id = entry.arguments?.getString("id").orEmpty(),
         )
     }
 
     composable(
-        route = com.mochyy.mochymusic.ui.screens.settings.modules.ModulePageRoutePattern,
+        route = com.videshkarmakar.doom.ui.screens.settings.modules.ModulePageRoutePattern,
         arguments = listOf(navArgument("id") { type = NavType.StringType }, navArgument("page") { type = NavType.StringType }),
     ) { entry ->
-        com.mochyy.mochymusic.ui.screens.settings.modules.ModulePageScreen(
+        com.videshkarmakar.doom.ui.screens.settings.modules.ModulePageScreen(
             navController = navController,
             id = entry.arguments?.getString("id").orEmpty(),
             pageId = entry.arguments?.getString("page").orEmpty(),
@@ -680,7 +680,7 @@ fun NavGraphBuilder.navigationBuilder(
             },
         ),
     ) {
-        com.mochyy.mochymusic.ui.screens.artist.ArtistSimilarScreen(navController)
+        com.videshkarmakar.doom.ui.screens.artist.ArtistSimilarScreen(navController)
     }
 
     coverSourceComposable(
@@ -835,10 +835,10 @@ fun NavGraphBuilder.navigationBuilder(
     }
 
     coverSourceComposable("library/albums") {
-        com.mochyy.mochymusic.ui.screens.library.LibraryAlbumsScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.library.LibraryAlbumsScreen(navController = navController)
     }
 
     coverSourceComposable("library/artists") {
-        com.mochyy.mochymusic.ui.screens.library.LibraryArtistsScreen(navController = navController)
+        com.videshkarmakar.doom.ui.screens.library.LibraryArtistsScreen(navController = navController)
     }
 }

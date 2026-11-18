@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.graphics.RenderEffect
 import android.graphics.RuntimeShader

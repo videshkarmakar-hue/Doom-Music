@@ -1,6 +1,6 @@
 // the pieces app behaviour, playback and now playing build their rows from
 
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -21,12 +21,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.SettingsGroup
-import com.mochyy.mochymusic.ui.component.SettingsGroupStyle
-import com.mochyy.mochymusic.ui.component.SettingsItem
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.SettingsGroup
+import com.videshkarmakar.doom.ui.component.SettingsGroupStyle
+import com.videshkarmakar.doom.ui.component.SettingsItem
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 
 // a section's title (if it has one) and its grouped rows, left out whole when the search hides every row
 @Composable

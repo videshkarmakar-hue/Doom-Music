@@ -1,6 +1,6 @@
 // LinkWire.kt
 
-package com.mochyy.mochymusic.link
+package com.videshkarmakar.doom.link
 
 import android.content.Context
 import android.net.nsd.NsdManager
@@ -26,10 +26,10 @@ import java.util.concurrent.TimeUnit
 // the names both sides agree on, so a phone and a tv on different app versions still find each other
 object LinkWire {
     // a phone keeps this one up while it has any device paired
-    const val PhoneServiceType = "_mochylink._tcp."
+    const val PhoneServiceType = "_doomlink._tcp."
 
     // a device only shows up as this while its pairing screen is open, the name is from when only tvs had one
-    const val PairServiceType = "_mochytv._tcp."
+    const val PairServiceType = "_doomtv._tcp."
 
     const val PhonePort = 47_801
     const val PairPort = 47_802
@@ -41,7 +41,7 @@ object LinkWire {
     const val ProtocolVersion = 2
 
     // the header the old protocol carried the key itself in; only looked for, so an un-updated device hears "update" instead of "unpaired"
-    const val OldKeyHeader = "X-Mochy-Key"
+    const val OldKeyHeader = "X-Doom-Key"
 
     const val AttrId = "id"
     const val AttrName = "n"
@@ -85,7 +85,7 @@ object LinkWire {
 
 // this device as the other side sees it: a stable id that survives renames, and a name people recognise
 object LinkIdentity {
-    private const val Prefs = "mochy_link"
+    private const val Prefs = "doom_link"
     private const val IdKey = "device_id"
 
     fun id(context: Context): String {

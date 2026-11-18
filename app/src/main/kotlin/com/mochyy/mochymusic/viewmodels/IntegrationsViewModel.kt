@@ -1,14 +1,14 @@
 // IntegrationsViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.scrobble.ScrobbleSite
-import com.mochyy.mochymusic.scrobble.Scrobbler
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.scrobble.ScrobbleSite
+import com.videshkarmakar.doom.scrobble.Scrobbler
+import com.videshkarmakar.doom.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

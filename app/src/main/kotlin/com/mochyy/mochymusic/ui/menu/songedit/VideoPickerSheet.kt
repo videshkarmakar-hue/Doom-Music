@@ -1,6 +1,6 @@
 // VideoPickerSheet.kt
 
-package com.mochyy.mochymusic.ui.menu.songedit
+package com.videshkarmakar.doom.ui.menu.songedit
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -49,18 +49,18 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.songedit.SongEditSaver
-import com.mochyy.mochymusic.songedit.SongEdits
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.SheetSearchField
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.songedit.SongEditSaver
+import com.videshkarmakar.doom.songedit.SongEdits
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.SheetSearchField
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.makeTimeString
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -68,7 +68,7 @@ import kotlinx.coroutines.withContext
 
 private const val SearchSettleMs = 400L
 
-// what the song's video should be: whatever mochy finds, none at all, or one picked here
+// what the song's video should be: whatever doom finds, none at all, or one picked here
 internal sealed interface VideoChoice {
     data object Auto : VideoChoice
     data object None : VideoChoice

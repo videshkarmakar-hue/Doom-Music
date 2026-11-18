@@ -1,6 +1,6 @@
-package com.mochyy.mochymusic.eq
+package com.videshkarmakar.doom.eq
 
-import com.mochyy.mochymusic.eq.audio.ReverbParams
+import com.videshkarmakar.doom.eq.audio.ReverbParams
 import kotlinx.serialization.Serializable
 
 @Serializable

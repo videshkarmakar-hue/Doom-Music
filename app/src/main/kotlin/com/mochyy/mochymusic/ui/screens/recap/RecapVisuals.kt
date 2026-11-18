@@ -1,11 +1,11 @@
 // RecapVisuals.kt
 //
-// The pieces the Mochy page, the recap story and Stats share: one clock, the dot grid, the giant
+// The pieces the Doom page, the recap story and Stats share: one clock, the dot grid, the giant
 // slow-moving words behind everything, the moving cover/artist gradient, odometer numbers and the
 // gradient-to-white text. All of them animate in draw or layer lambdas only, so a running page
 // redraws but never recomposes.
 
-package com.mochyy.mochymusic.ui.screens.recap
+package com.videshkarmakar.doom.ui.screens.recap
 
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.CompositingStrategy
@@ -73,11 +73,11 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.mochyy.mochymusic.ui.component.asAgslPaintShader
-import com.mochyy.mochymusic.ui.component.createAgslShader
-import com.mochyy.mochymusic.ui.component.setAgslUniform
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.ui.component.asAgslPaintShader
+import com.videshkarmakar.doom.ui.component.createAgslShader
+import com.videshkarmakar.doom.ui.component.setAgslUniform
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

@@ -1,6 +1,6 @@
 // MainActivity.kt
 
-package com.mochyy.mochymusic
+package com.videshkarmakar.doom
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -25,7 +25,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
-import com.mochyy.mochymusic.ui.component.LocalSharedTransitionScope
+import com.videshkarmakar.doom.ui.component.LocalSharedTransitionScope
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -72,10 +72,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
-import com.mochyy.mochymusic.ui.utils.isWideLayout
-import com.mochyy.mochymusic.link.isTelevision
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.ui.utils.stableSystemBars
+import com.videshkarmakar.doom.ui.utils.isWideLayout
+import com.videshkarmakar.doom.link.isTelevision
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableSystemBars
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -145,87 +145,87 @@ import coil3.toBitmap
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AppBarHeight
-import com.mochyy.mochymusic.constants.DarkModeKey
-import com.mochyy.mochymusic.ui.utils.defaultMotionEnter
-import com.mochyy.mochymusic.ui.utils.defaultMotionExit
-import com.mochyy.mochymusic.ui.theme.ForceDarkTheme
-import com.mochyy.mochymusic.constants.DefaultOpenTabKey
-import com.mochyy.mochymusic.constants.CropAlbumArtKey
-import com.mochyy.mochymusic.constants.GridItemsSizeKey
-import com.mochyy.mochymusic.constants.GridItemSize
-import com.mochyy.mochymusic.constants.SwipeToSongKey
-import com.mochyy.mochymusic.constants.DisableScreenshotKey
-import com.mochyy.mochymusic.constants.DynamicThemeKey
-import com.mochyy.mochymusic.constants.EnableHighRefreshRateKey
-import com.mochyy.mochymusic.constants.MiniPlayerBottomSpacing
-import com.mochyy.mochymusic.constants.MiniPlayerHeight
-import com.mochyy.mochymusic.constants.NavigationBarAnimationSpec
-import com.mochyy.mochymusic.constants.NavigationBarHeight
-import com.mochyy.mochymusic.constants.SlimNavBarHeight
-import com.mochyy.mochymusic.constants.SlimNavBarKey
-import com.mochyy.mochymusic.constants.StopMusicOnTaskClearKey
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AppBarHeight
+import com.videshkarmakar.doom.constants.DarkModeKey
+import com.videshkarmakar.doom.ui.utils.defaultMotionEnter
+import com.videshkarmakar.doom.ui.utils.defaultMotionExit
+import com.videshkarmakar.doom.ui.theme.ForceDarkTheme
+import com.videshkarmakar.doom.constants.DefaultOpenTabKey
+import com.videshkarmakar.doom.constants.CropAlbumArtKey
+import com.videshkarmakar.doom.constants.GridItemsSizeKey
+import com.videshkarmakar.doom.constants.GridItemSize
+import com.videshkarmakar.doom.constants.SwipeToSongKey
+import com.videshkarmakar.doom.constants.DisableScreenshotKey
+import com.videshkarmakar.doom.constants.DynamicThemeKey
+import com.videshkarmakar.doom.constants.EnableHighRefreshRateKey
+import com.videshkarmakar.doom.constants.MiniPlayerBottomSpacing
+import com.videshkarmakar.doom.constants.MiniPlayerHeight
+import com.videshkarmakar.doom.constants.NavigationBarAnimationSpec
+import com.videshkarmakar.doom.constants.NavigationBarHeight
+import com.videshkarmakar.doom.constants.SlimNavBarHeight
+import com.videshkarmakar.doom.constants.SlimNavBarKey
+import com.videshkarmakar.doom.constants.StopMusicOnTaskClearKey
 
-import com.mochyy.mochymusic.core.updater.getAutoUpdateCheckSetting
-import com.mochyy.mochymusic.core.updater.isNewerVersion
-import com.mochyy.mochymusic.core.updater.saveUpdateAvailableState
-import com.mochyy.mochymusic.core.updater.getUpdateNotificationsSetting
+import com.videshkarmakar.doom.core.updater.getAutoUpdateCheckSetting
+import com.videshkarmakar.doom.core.updater.isNewerVersion
+import com.videshkarmakar.doom.core.updater.saveUpdateAvailableState
+import com.videshkarmakar.doom.core.updater.getUpdateNotificationsSetting
 import android.util.Log
 import androidx.compose.ui.platform.LocalContext
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.constants.PauseListenHistoryKey
-import com.mochyy.mochymusic.constants.PauseSearchHistoryKey
-import com.mochyy.mochymusic.constants.PureBlackKey
-import com.mochyy.mochymusic.constants.SelectedThemeColorKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.SearchHistory
-import com.mochyy.mochymusic.extensions.toEnum
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.DownloadUtil
-import com.mochyy.mochymusic.playback.MusicService
-import com.mochyy.mochymusic.playback.MusicService.MusicBinder
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.AppNavigationBar
-import com.mochyy.mochymusic.ui.component.onTabTapped
-import com.mochyy.mochymusic.ui.component.LocalBottomSheetPageState
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.BottomSheetState
-import com.mochyy.mochymusic.ui.component.rememberBottomSheetState
-import com.mochyy.mochymusic.ui.component.shimmer.ShimmerTheme
-import com.mochyy.mochymusic.ui.menu.YouTubeSongMenu
-import com.mochyy.mochymusic.ui.player.BottomSheetPlayer
-import com.mochyy.mochymusic.ui.screens.Screens
-import com.mochyy.mochymusic.ui.screens.search.requestSearchFocus
-import com.mochyy.mochymusic.ui.screens.search.searchRoute
-import com.mochyy.mochymusic.ui.screens.navigationBuilder
-import com.mochyy.mochymusic.ui.screens.DarkMode
-import com.mochyy.mochymusic.ui.screens.NavigationTab
-import com.mochyy.mochymusic.ui.theme.ColorSaver
-import com.mochyy.mochymusic.ui.theme.DefaultThemeColor
-import com.mochyy.mochymusic.ui.theme.MochyTheme
-import com.mochyy.mochymusic.ui.theme.extractThemeColor
-import com.mochyy.mochymusic.ui.utils.appBarScrollBehavior
-import com.mochyy.mochymusic.ui.utils.resetHeightOffset
-import com.mochyy.mochymusic.ui.utils.handOffToLaunchIntro
-import com.mochyy.mochymusic.ui.launch.LaunchGate
-import com.mochyy.mochymusic.ui.launch.LaunchIntroOverlay
-import com.mochyy.mochymusic.ui.launch.LaunchIntroState
-import com.mochyy.mochymusic.ui.launch.LocalLaunchIntro
-import com.mochyy.mochymusic.ui.launch.launchRise
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.utils.SyncUtils
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.utils.reportException
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.constants.PauseListenHistoryKey
+import com.videshkarmakar.doom.constants.PauseSearchHistoryKey
+import com.videshkarmakar.doom.constants.PureBlackKey
+import com.videshkarmakar.doom.constants.SelectedThemeColorKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.SearchHistory
+import com.videshkarmakar.doom.extensions.toEnum
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.DownloadUtil
+import com.videshkarmakar.doom.playback.MusicService
+import com.videshkarmakar.doom.playback.MusicService.MusicBinder
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.AppNavigationBar
+import com.videshkarmakar.doom.ui.component.onTabTapped
+import com.videshkarmakar.doom.ui.component.LocalBottomSheetPageState
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.BottomSheetState
+import com.videshkarmakar.doom.ui.component.rememberBottomSheetState
+import com.videshkarmakar.doom.ui.component.shimmer.ShimmerTheme
+import com.videshkarmakar.doom.ui.menu.YouTubeSongMenu
+import com.videshkarmakar.doom.ui.player.BottomSheetPlayer
+import com.videshkarmakar.doom.ui.screens.Screens
+import com.videshkarmakar.doom.ui.screens.search.requestSearchFocus
+import com.videshkarmakar.doom.ui.screens.search.searchRoute
+import com.videshkarmakar.doom.ui.screens.navigationBuilder
+import com.videshkarmakar.doom.ui.screens.DarkMode
+import com.videshkarmakar.doom.ui.screens.NavigationTab
+import com.videshkarmakar.doom.ui.theme.ColorSaver
+import com.videshkarmakar.doom.ui.theme.DefaultThemeColor
+import com.videshkarmakar.doom.ui.theme.DoomTheme
+import com.videshkarmakar.doom.ui.theme.extractThemeColor
+import com.videshkarmakar.doom.ui.utils.appBarScrollBehavior
+import com.videshkarmakar.doom.ui.utils.resetHeightOffset
+import com.videshkarmakar.doom.ui.utils.handOffToLaunchIntro
+import com.videshkarmakar.doom.ui.launch.LaunchGate
+import com.videshkarmakar.doom.ui.launch.LaunchIntroOverlay
+import com.videshkarmakar.doom.ui.launch.LaunchIntroState
+import com.videshkarmakar.doom.ui.launch.LocalLaunchIntro
+import com.videshkarmakar.doom.ui.launch.launchRise
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.utils.SyncUtils
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.utils.reportException
 import com.valentinilk.shimmer.LocalShimmerTheme
 import dagger.hilt.android.AndroidEntryPoint
-import com.mochyy.mochymusic.ui.screens.setup.SetupWizardContainer
+import com.videshkarmakar.doom.ui.screens.setup.SetupWizardContainer
 import kotlinx.coroutines.Dispatchers
 import androidx.datastore.preferences.core.edit
 import kotlinx.coroutines.delay
@@ -270,11 +270,11 @@ internal fun markOnboardedOnThisInstall(context: android.content.Context) {
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(com.mochyy.mochymusic.i18n.AppLanguage.wrapActivityContext(newBase))
+        super.attachBaseContext(com.videshkarmakar.doom.i18n.AppLanguage.wrapActivityContext(newBase))
     }
     companion object {
-        private const val ACTION_SEARCH = "com.mochyy.mochymusic.action.SEARCH"
-        private const val ACTION_LIBRARY = "com.mochyy.mochymusic.action.LIBRARY"
+        private const val ACTION_SEARCH = "com.videshkarmakar.doom.action.SEARCH"
+        private const val ACTION_LIBRARY = "com.videshkarmakar.doom.action.LIBRARY"
     }
 
     @Inject
@@ -288,7 +288,7 @@ class MainActivity : ComponentActivity() {
 
     // made only when first used, so a phone with nothing paired never builds it on the way in
     @Inject
-    lateinit var phoneLink: dagger.Lazy<com.mochyy.mochymusic.link.phone.PhoneLinkHost>
+    lateinit var phoneLink: dagger.Lazy<com.videshkarmakar.doom.link.phone.PhoneLinkHost>
 
     private lateinit var navController: NavHostController
     private var pendingIntent: Intent? = null
@@ -330,7 +330,7 @@ class MainActivity : ComponentActivity() {
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
-            com.mochyy.mochymusic.link.LinkPlayer.release(playerConnection)
+            com.videshkarmakar.doom.link.LinkPlayer.release(playerConnection)
             playerConnection?.dispose()
             playerConnection = null
         }
@@ -343,16 +343,16 @@ class MainActivity : ComponentActivity() {
             // the retry above can land after onStop, so it starts resting if the app is already hidden
             it.isUiVisible.value = lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.STARTED)
             // another phone steering this one plays through it
-            com.mochyy.mochymusic.link.LinkPlayer.connection = it
+            com.videshkarmakar.doom.link.LinkPlayer.connection = it
         }
-        com.mochyy.mochymusic.link.LinkPlayer.release(previous)
+        com.videshkarmakar.doom.link.LinkPlayer.release(previous)
         previous?.dispose()
     }
 
     override fun onStart() {
         super.onStart()
         playerConnection?.isUiVisible?.value = true
-        // paired phones are checked on, and a steered device asked what it plays, only while mochy is on screen
+        // paired phones are checked on, and a steered device asked what it plays, only while doom is on screen
         if (!isTelevision()) phoneLink.get().appShown()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -387,7 +387,7 @@ class MainActivity : ComponentActivity() {
             unbindService(serviceConnection)
         }
         // the service outlives us, so take our listener off its player or a recreate leaves the old one firing
-        com.mochyy.mochymusic.link.LinkPlayer.release(playerConnection)
+        com.videshkarmakar.doom.link.LinkPlayer.release(playerConnection)
         playerConnection?.dispose()
         playerConnection = null
         // closed for good while the music plays on: the covers decoded for this screen have nothing left to show on
@@ -396,7 +396,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        if (intent.action == com.mochyy.mochymusic.ui.screens.update.ActionOpenUpdate) {
+        if (intent.action == com.videshkarmakar.doom.ui.screens.update.ActionOpenUpdate) {
             openUpdateRequests++
             return
         }
@@ -414,22 +414,22 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         // a tv that opens the phone app from an old shortcut gets the big-screen one instead
         if (savedInstanceState == null && intent?.action == Intent.ACTION_MAIN && isTelevision()) {
-            startActivity(Intent(this, com.mochyy.mochymusic.ui.tv.TvActivity::class.java))
+            startActivity(Intent(this, com.videshkarmakar.doom.ui.tv.TvActivity::class.java))
             finish()
             return
         }
         introRequested = savedInstanceState == null && intent?.action == Intent.ACTION_MAIN
         if (introRequested) LaunchGate.begin() else LaunchGate.skip()
         // kept in step with the icon in use, in case it was switched some way other than customisation
-        com.mochyy.mochymusic.utils.AppIcons.syncSplash(this)
+        com.videshkarmakar.doom.utils.AppIcons.syncSplash(this)
         // the first start after an import says so once the intro is out of the way
-        com.mochyy.mochymusic.importer.transfer.TransferRestore.takeRestoredNote(this)?.let { note ->
+        com.videshkarmakar.doom.importer.transfer.TransferRestore.takeRestoredNote(this)?.let { note ->
             lifecycleScope.launch {
                 LaunchGate.awaitIntro()
-                com.mochyy.mochymusic.ui.component.TopToaster.show(note, iconRes = R.drawable.backup, durationMs = 5000L)
+                com.videshkarmakar.doom.ui.component.TopToaster.show(note, iconRes = R.drawable.backup, durationMs = 5000L)
             }
         }
-        if (savedInstanceState == null && intent?.action == com.mochyy.mochymusic.ui.screens.update.ActionOpenUpdate) {
+        if (savedInstanceState == null && intent?.action == com.videshkarmakar.doom.ui.screens.update.ActionOpenUpdate) {
             openUpdateRequests++
         }
 
@@ -437,9 +437,9 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         // upright unless landscape is unlocked in Experimental; set before the first frame, so it never opens sideways and then turns
         if (!isTelevision()) {
-            com.mochyy.mochymusic.ui.utils.WindowTurning.setUnlocked(this, dataStore[com.mochyy.mochymusic.constants.LandscapeUnlockedKey] == true)
+            com.videshkarmakar.doom.ui.utils.WindowTurning.setUnlocked(this, dataStore[com.videshkarmakar.doom.constants.LandscapeUnlockedKey] == true)
         }
-        systemScaleObserver = com.mochyy.mochymusic.ui.utils.AppMotion.followSystemScale(this)
+        systemScaleObserver = com.videshkarmakar.doom.ui.utils.AppMotion.followSystemScale(this)
         moveOffOldLyricsShaderSwitch()
         followLookSettings()
 
@@ -461,11 +461,11 @@ class MainActivity : ComponentActivity() {
 
         // our own animation scale goes into the window's recomposer, so the customize speed and the off switch reach every animation
         val motionRecomposer = window.decorView.createLifecycleAwareWindowRecomposer(
-            com.mochyy.mochymusic.ui.utils.AppMotion.durationScale,
+            com.videshkarmakar.doom.ui.utils.AppMotion.durationScale,
             lifecycle,
         )
         setContent(parent = motionRecomposer) {
-            mochyApp(
+            doomApp(
                 playerConnection = playerConnection,
                 database = database,
                 downloadUtil = downloadUtil,
@@ -477,7 +477,7 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @OptIn(ExperimentalMaterial3Api::class, androidx.compose.animation.ExperimentalSharedTransitionApi::class)
     @Composable
-    private fun mochyApp(
+    private fun doomApp(
         playerConnection: PlayerConnection?,
         database: MusicDatabase,
         downloadUtil: DownloadUtil,
@@ -494,22 +494,22 @@ class MainActivity : ComponentActivity() {
                 // Same cached lookup the version sheet and home prompt use (this app's own
                 // releases - the old checker here queried another project's repo). Launch-time
                 // only: nothing about updates runs in the background.
-                val channel = com.mochyy.mochymusic.core.updater.updateChannel(context)
-                val release = com.mochyy.mochymusic.core.updater.getLatestRelease(channel).getOrNull()
+                val channel = com.videshkarmakar.doom.core.updater.updateChannel(context)
+                val release = com.videshkarmakar.doom.core.updater.getLatestRelease(channel).getOrNull()
                 val isAvailable = release != null &&
-                    com.mochyy.mochymusic.core.updater.isNewerThanInstalled(release.version)
+                    com.videshkarmakar.doom.core.updater.isNewerThanInstalled(release.version)
                 saveUpdateAvailableState(context, isAvailable)
 
                 if (release != null && isAvailable && getUpdateNotificationsSetting(context)) {
                     // At most three reminders per release (now, +2 weeks, +3 months).
-                    com.mochyy.mochymusic.ui.screens.update.maybeNotifyUpdate(context, release)
+                    com.videshkarmakar.doom.ui.screens.update.maybeNotifyUpdate(context, release)
                 }
             }
         }
 
         // "Keep screen on" (the player's menu, or a chevron button): the phone doesn't sleep while
-        // Mochy is on screen. A window flag only holds while the app is in front, which is the point.
-        val keepScreenOn by rememberPreference(com.mochyy.mochymusic.constants.KeepScreenOn, defaultValue = false)
+        // Doom is on screen. A window flag only holds while the app is in front, which is the point.
+        val keepScreenOn by rememberPreference(com.videshkarmakar.doom.constants.KeepScreenOn, defaultValue = false)
         val rootView = androidx.compose.ui.platform.LocalView.current
         DisposableEffect(keepScreenOn) {
             rootView.keepScreenOn = keepScreenOn
@@ -609,7 +609,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        MochyTheme(
+        DoomTheme(
             darkTheme = useDarkTheme,
             pureBlack = pureBlack,
         ) {
@@ -638,9 +638,9 @@ class MainActivity : ComponentActivity() {
                 }
                 val (slimNav) = rememberPreference(SlimNavBarKey, defaultValue = false)
                 // flipped in Experimental while the app is open: it starts (or stops) turning right away
-                val (landscapeUnlocked) = rememberPreference(com.mochyy.mochymusic.constants.LandscapeUnlockedKey, defaultValue = false)
+                val (landscapeUnlocked) = rememberPreference(com.videshkarmakar.doom.constants.LandscapeUnlockedKey, defaultValue = false)
                 LaunchedEffect(landscapeUnlocked) {
-                    if (!isTelevision()) com.mochyy.mochymusic.ui.utils.WindowTurning.setUnlocked(this@MainActivity, landscapeUnlocked)
+                    if (!isTelevision()) com.videshkarmakar.doom.ui.utils.WindowTurning.setUnlocked(this@MainActivity, landscapeUnlocked)
                 }
 
                 val defaultOpenTab = remember {
@@ -660,7 +660,7 @@ class MainActivity : ComponentActivity() {
                     introPlays = plays
                     if (introRequested && !plays) LaunchGate.skip()
                     // an anime icon's splash shows the icon itself, so the intro bounces out of it; every other launch starts from the bare mark
-                    val icon = com.mochyy.mochymusic.utils.AppIcons.launchedFrom(intent)?.takeIf(com.mochyy.mochymusic.utils.AppIcons::splashShows)
+                    val icon = com.videshkarmakar.doom.utils.AppIcons.launchedFrom(intent)?.takeIf(com.videshkarmakar.doom.utils.AppIcons::splashShows)
                     LaunchIntroState(plays, icon)
                 }
 
@@ -701,10 +701,10 @@ class MainActivity : ComponentActivity() {
                 // a page belongs to the tab page under it, however it was reached
                 val backStack by navController.currentBackStack.collectAsState()
                 val selectedTabRoute by remember(navigationItems) {
-                    derivedStateOf { com.mochyy.mochymusic.ui.component.owningTab(backStack, navigationItems) }
+                    derivedStateOf { com.videshkarmakar.doom.ui.component.owningTab(backStack, navigationItems) }
                 }
                 val tabOwnership = remember(navigationItems) {
-                    com.mochyy.mochymusic.ui.component.TabOwnership(navigationItems)
+                    com.videshkarmakar.doom.ui.component.TabOwnership(navigationItems)
                 }
                 // every page's tab is noted while it's on the stack, so the slide still knows it
                 // after a tab switch has saved the page away
@@ -738,10 +738,10 @@ class MainActivity : ComponentActivity() {
 
                 // a phone on its side or a tablet: the mini player and the tabs share one pill along the bottom
                 val wideBar = if (isWideLayout()) {
-                    com.mochyy.mochymusic.ui.component.rememberWideBar(maxWidth, maxHeight, navigationItems.size)
+                    com.videshkarmakar.doom.ui.component.rememberWideBar(maxWidth, maxHeight, navigationItems.size)
                 } else null
                 val miniPill = when {
-                    wideBar == null -> com.mochyy.mochymusic.ui.component.PhoneMiniPill
+                    wideBar == null -> com.videshkarmakar.doom.ui.component.PhoneMiniPill
                     shouldShowNavigationBar -> wideBar.miniFrame
                     else -> wideBar.miniAloneFrame
                 }
@@ -914,12 +914,12 @@ class MainActivity : ComponentActivity() {
                 val cropAlbumArt by rememberPreference(CropAlbumArtKey, false)
                 val gridItemSize by rememberEnumPreference(GridItemsSizeKey, GridItemSize.BIG)
                 val blurQuality by rememberEnumPreference(
-                    com.mochyy.mochymusic.constants.BlurQualityKey,
-                    com.mochyy.mochymusic.ui.component.DefaultBlurQuality,
+                    com.videshkarmakar.doom.constants.BlurQualityKey,
+                    com.videshkarmakar.doom.ui.component.DefaultBlurQuality,
                 )
                 val swipeToSong by rememberPreference(SwipeToSongKey, false)
 
-                val setupCompleted by rememberPreference(com.mochyy.mochymusic.constants.SetupCompletedKey, false)
+                val setupCompleted by rememberPreference(com.videshkarmakar.doom.constants.SetupCompletedKey, false)
                 var forceShowSetup by remember { mutableStateOf(false) }
                 // Seeded once per process: a restored backup can say setup is done on an
                 // install that has never actually shown the wizard. Kept as state because
@@ -930,7 +930,7 @@ class MainActivity : ComponentActivity() {
                 CompositionLocalProvider(
                     LocalDatabase provides database,
                     LocalContentColor provides if (pureBlack) Color.White else contentColorFor(MaterialTheme.colorScheme.surface),
-                    com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState provides playerBottomSheetState,
+                    com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState provides playerBottomSheetState,
 
                     LocalPlayerConnection provides playerConnection,
                     LocalGlassState provides glassState,
@@ -945,26 +945,26 @@ class MainActivity : ComponentActivity() {
                     LocalGridItemSize provides gridItemSize,
                     LocalSwipeToSong provides swipeToSong,
                     LocalLaunchIntro provides launchIntro,
-                    com.mochyy.mochymusic.ui.component.LocalBlurQuality provides blurQuality,
+                    com.videshkarmakar.doom.ui.component.LocalBlurQuality provides blurQuality,
                 ) {
-                    com.mochyy.mochymusic.ui.component.PopupSheetHost(
+                    com.videshkarmakar.doom.ui.component.PopupSheetHost(
                         states = listOf(
-                            com.mochyy.mochymusic.ui.component.LocalMenuState.current,
-                            com.mochyy.mochymusic.ui.component.LocalBottomSheetPageState.current,
-                            com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState.current,
+                            com.videshkarmakar.doom.ui.component.LocalMenuState.current,
+                            com.videshkarmakar.doom.ui.component.LocalBottomSheetPageState.current,
+                            com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState.current,
                         ),
                     ) {
-                    com.mochyy.mochymusic.ui.screens.devices.DeviceIntegrationOpener(requests = openDevicesRequests)
+                    com.videshkarmakar.doom.ui.screens.devices.DeviceIntegrationOpener(requests = openDevicesRequests)
                     // a phone paired before android 17 can't reach its devices until it's allowed on the wi-fi again
-                    val linkPaired = remember { !isTelevision() && com.mochyy.mochymusic.link.phone.PhoneLinkHost.hasPairedDevices(this@MainActivity) }
-                    com.mochyy.mochymusic.link.AskForLocalNetwork(wanted = linkPaired, onGranted = { phoneLink.get().advertiseAgain() })
-                    com.mochyy.mochymusic.ui.screens.update.UpdateNotificationOpener(
+                    val linkPaired = remember { !isTelevision() && com.videshkarmakar.doom.link.phone.PhoneLinkHost.hasPairedDevices(this@MainActivity) }
+                    com.videshkarmakar.doom.link.AskForLocalNetwork(wanted = linkPaired, onGranted = { phoneLink.get().advertiseAgain() })
+                    com.videshkarmakar.doom.ui.screens.update.UpdateNotificationOpener(
                         requests = openUpdateRequests,
                         onOpenDevSpace = { personIndex ->
                             navController.navigate("developer_space?person=$personIndex")
                         },
                     )
-                    com.mochyy.mochymusic.ui.screens.donate.DonatePromptScheduler(
+                    com.videshkarmakar.doom.ui.screens.donate.DonatePromptScheduler(
                         enabled = setupCompleted && onboardedHere && !forceShowSetup,
                     )
                         SetupWizardContainer(
@@ -973,14 +973,14 @@ class MainActivity : ComponentActivity() {
                                 markOnboardedOnThisInstall(context)
                                 onboardedHere = true
                                 coroutineScope.launch(Dispatchers.IO) {
-                                    val savedUriStr = uri?.let { com.mochyy.mochymusic.ui.screens.profile.ProfileStore.copyPhoto(context, it) }.orEmpty()
+                                    val savedUriStr = uri?.let { com.videshkarmakar.doom.ui.screens.profile.ProfileStore.copyPhoto(context, it) }.orEmpty()
 
                                     dataStore.updateData { prefs ->
                                         prefs.toMutablePreferences().apply {
-                                            set(com.mochyy.mochymusic.constants.SetupCompletedKey, true)
-                                            set(com.mochyy.mochymusic.constants.UsernameKey, username)
+                                            set(com.videshkarmakar.doom.constants.SetupCompletedKey, true)
+                                            set(com.videshkarmakar.doom.constants.UsernameKey, username)
                                             if (savedUriStr.isNotEmpty()) {
-                                                set(com.mochyy.mochymusic.constants.ProfilePicUriKey, savedUriStr)
+                                                set(com.videshkarmakar.doom.constants.ProfilePicUriKey, savedUriStr)
                                             }
                                         }
                                     }
@@ -997,7 +997,7 @@ class MainActivity : ComponentActivity() {
                                     exit = fadeOut(animationSpec = tween(durationMillis = 200))
                                 ) {
                                     Row {
-                                        val profilePicStr by rememberPreference(com.mochyy.mochymusic.constants.ProfilePicUriKey, "")
+                                        val profilePicStr by rememberPreference(com.videshkarmakar.doom.constants.ProfilePicUriKey, "")
                                         TopAppBar(
                                             navigationIcon = {},
                                             title = {
@@ -1147,7 +1147,7 @@ class MainActivity : ComponentActivity() {
                                         val withPlayerNow = remember(withPlayer) { { withPlayer.value } }
 
                                         if (wideBar != null) {
-                                            com.mochyy.mochymusic.ui.component.WideBarBackground(
+                                            com.videshkarmakar.doom.ui.component.WideBarBackground(
                                                 bar = wideBar,
                                                 withPlayer = withPlayerNow,
                                                 pureBlack = pureBlack,
@@ -1155,7 +1155,7 @@ class MainActivity : ComponentActivity() {
                                             )
                                         }
 
-                                        CompositionLocalProvider(com.mochyy.mochymusic.ui.component.LocalMiniPillFrame provides miniPill) {
+                                        CompositionLocalProvider(com.videshkarmakar.doom.ui.component.LocalMiniPillFrame provides miniPill) {
                                             BottomSheetPlayer(
                                                 state = playerBottomSheetState,
                                                 navController = navController,
@@ -1165,7 +1165,7 @@ class MainActivity : ComponentActivity() {
                                         }
 
                                         if (wideBar != null) {
-                                            com.mochyy.mochymusic.ui.component.WideBarTabs(
+                                            com.videshkarmakar.doom.ui.component.WideBarTabs(
                                                 bar = wideBar,
                                                 withPlayer = withPlayerNow,
                                                 navigationItems = navigationItems,
@@ -1174,7 +1174,7 @@ class MainActivity : ComponentActivity() {
                                                 onSearchDoubleTap = onSearchDoubleTap,
                                                 modifier = barMotion.fillMaxWidth(),
                                             )
-                                            com.mochyy.mochymusic.ui.component.WideBarExtras(
+                                            com.videshkarmakar.doom.ui.component.WideBarExtras(
                                                 bar = wideBar,
                                                 withPlayer = withPlayerNow,
                                                 shown = !playerBottomSheetState.isDismissed,
@@ -1246,7 +1246,7 @@ class MainActivity : ComponentActivity() {
                                     ) {
                                     // the settings list stays at the left of a wide screen while its pages open beside it
                                     val settingsPane = isWideLayout() &&
-                                        com.mochyy.mochymusic.ui.screens.settings.showsSettingsPane(backStack, currentRoute)
+                                        com.videshkarmakar.doom.ui.screens.settings.showsSettingsPane(backStack, currentRoute)
                                     // one glass capture for both panes so the bar frosts what's under it, clear of a sideways phone's side nav bar (its shown size, so hiding it moves nothing)
                                     Row(
                                         Modifier
@@ -1255,16 +1255,16 @@ class MainActivity : ComponentActivity() {
                                             .glassRoot(glassState, isActive = { true })
                                     ) {
                                     if (settingsPane) {
-                                        com.mochyy.mochymusic.ui.screens.settings.SettingsListPane(
+                                        com.videshkarmakar.doom.ui.screens.settings.SettingsListPane(
                                             navController = navController,
-                                            selectedRoute = com.mochyy.mochymusic.ui.screens.settings.settingsPaneSelection(backStack),
+                                            selectedRoute = com.videshkarmakar.doom.ui.screens.settings.settingsPaneSelection(backStack),
                                         )
                                     }
                                     // on its side the search field and its history stay at the left while the categories or results change beside it
-                                    if (com.mochyy.mochymusic.ui.utils.isLandscapeLayout() &&
-                                        com.mochyy.mochymusic.ui.screens.search.showsSearchPane(currentRoute)
+                                    if (com.videshkarmakar.doom.ui.utils.isLandscapeLayout() &&
+                                        com.videshkarmakar.doom.ui.screens.search.showsSearchPane(currentRoute)
                                     ) {
-                                        com.mochyy.mochymusic.ui.screens.search.SearchSidePane(
+                                        com.videshkarmakar.doom.ui.screens.search.SearchSidePane(
                                             navController = navController,
                                             currentRoute = currentRoute,
                                             query = queryState,
@@ -1355,7 +1355,7 @@ class MainActivity : ComponentActivity() {
                     val playerOpen by remember { derivedStateOf { playerBottomSheetState.progress > 0.2f } }
                     if (!playerOpen) {
                         Box(Modifier.fillMaxSize()) {
-                            com.mochyy.mochymusic.ui.screens.devices.ControllingPill(
+                            com.videshkarmakar.doom.ui.screens.devices.ControllingPill(
                                 Modifier
                                     .align(Alignment.TopStart)
                                     .windowInsetsPadding(WindowInsets.stableStatusBars)
@@ -1365,10 +1365,10 @@ class MainActivity : ComponentActivity() {
                     }
 
                     // action feedback ("Added to Queue", "Undo"...) drops in over the sheets too
-                    com.mochyy.mochymusic.ui.component.TopToastHost()
+                    com.videshkarmakar.doom.ui.component.TopToastHost()
 
                     // "share song" from any menu opens here, over the app and the player
-                    com.mochyy.mochymusic.ui.player.share.song.SongShareHost()
+                    com.videshkarmakar.doom.ui.player.share.song.SongShareHost()
 
                     HomeUpdatePrompt(currentRoute = currentRoute)
 
@@ -1433,19 +1433,19 @@ class MainActivity : ComponentActivity() {
         val playerOpen = state.isExpanded
         val playerHeadingDown = !state.isExpandedOrExpanding
         // the status bar goes too when customize's top bar is off, on every player style
-        val (statusBarShown) = rememberPreference(com.mochyy.mochymusic.constants.PlayerStatusBarKey, defaultValue = com.mochyy.mochymusic.constants.PlayerStatusBarDefault)
+        val (statusBarShown) = rememberPreference(com.videshkarmakar.doom.constants.PlayerStatusBarKey, defaultValue = com.videshkarmakar.doom.constants.PlayerStatusBarDefault)
         // the full video mode fills the screen sideways, a status bar down one side of it would cut into the picture
-        val (playerStyle) = com.mochyy.mochymusic.utils.rememberEnumPreference(
-            com.mochyy.mochymusic.constants.PlayerStyleKey,
-            com.mochyy.mochymusic.constants.PlayerStyle.FLAGSHIP,
+        val (playerStyle) = com.videshkarmakar.doom.utils.rememberEnumPreference(
+            com.videshkarmakar.doom.constants.PlayerStyleKey,
+            com.videshkarmakar.doom.constants.PlayerStyle.FLAGSHIP,
         )
         // and the bedside is a clock on the nightstand, a row of notifications over it would only glow in the dark
         val portrait = LocalConfiguration.current.orientation == android.content.res.Configuration.ORIENTATION_PORTRAIT
         // on its side the phone has little height to spare, so every style gets the whole of it
-        val hideStatusBar = !statusBarShown || !portrait || playerStyle == com.mochyy.mochymusic.constants.PlayerStyle.VIDEO || playerStyle.isBedside
+        val hideStatusBar = !statusBarShown || !portrait || playerStyle == com.videshkarmakar.doom.constants.PlayerStyle.VIDEO || playerStyle.isBedside
         // customize's bottom bar brings the navigation bar back, except where it would cut into the video or glow by the bed
-        val (navBarShown) = rememberPreference(com.mochyy.mochymusic.constants.PlayerNavBarKey, defaultValue = com.mochyy.mochymusic.constants.PlayerNavBarDefault)
-        val hideNavBar = !navBarShown || playerStyle == com.mochyy.mochymusic.constants.PlayerStyle.VIDEO || playerStyle.isBedside
+        val (navBarShown) = rememberPreference(com.videshkarmakar.doom.constants.PlayerNavBarKey, defaultValue = com.videshkarmakar.doom.constants.PlayerNavBarDefault)
+        val hideNavBar = !navBarShown || playerStyle == com.videshkarmakar.doom.constants.PlayerStyle.VIDEO || playerStyle.isBedside
         // Back in the app (from Home, the recents, a dialog) it's hidden again: with
         // gesture navigation a swipe from the bottom brings it back for good (see
         // playerNavBarBehavior).
@@ -1502,21 +1502,21 @@ class MainActivity : ComponentActivity() {
             dataStore.data
                 .map { prefs ->
                     LookSettings(
-                        animations = prefs[com.mochyy.mochymusic.constants.EnableElementBlurAnimatorKey] ?: true,
-                        speed = prefs[com.mochyy.mochymusic.constants.AnimationSpeedKey] ?: 1f,
-                        elementBlur = prefs[com.mochyy.mochymusic.constants.ElementBlurKey] ?: true,
-                        coverRadius = prefs[com.mochyy.mochymusic.constants.ThumbnailCornerRadiusKey] ?: 25f,
+                        animations = prefs[com.videshkarmakar.doom.constants.EnableElementBlurAnimatorKey] ?: true,
+                        speed = prefs[com.videshkarmakar.doom.constants.AnimationSpeedKey] ?: 1f,
+                        elementBlur = prefs[com.videshkarmakar.doom.constants.ElementBlurKey] ?: true,
+                        coverRadius = prefs[com.videshkarmakar.doom.constants.ThumbnailCornerRadiusKey] ?: 25f,
                     )
                 }
                 .distinctUntilChanged()
                 .collect { look ->
-                    com.mochyy.mochymusic.ui.utils.AppMotion.enabled = look.animations
-                    com.mochyy.mochymusic.ui.utils.AppMotion.speed = look.speed
-                    com.mochyy.mochymusic.ui.utils.AppMotion.elementBlur = look.elementBlur
+                    com.videshkarmakar.doom.ui.utils.AppMotion.enabled = look.animations
+                    com.videshkarmakar.doom.ui.utils.AppMotion.speed = look.speed
+                    com.videshkarmakar.doom.ui.utils.AppMotion.elementBlur = look.elementBlur
                     val r = look.coverRadius.coerceIn(0f, 45f)
-                    com.mochyy.mochymusic.ui.component.HomeCardCornerRadius = r.dp
-                    com.mochyy.mochymusic.constants.GridThumbnailCornerRadius = (r * 0.6f).coerceIn(0f, 28f).dp
-                    com.mochyy.mochymusic.constants.ThumbnailCornerRadius = (r * 0.35f).coerceIn(0f, 16f).dp
+                    com.videshkarmakar.doom.ui.component.HomeCardCornerRadius = r.dp
+                    com.videshkarmakar.doom.constants.GridThumbnailCornerRadius = (r * 0.6f).coerceIn(0f, 28f).dp
+                    com.videshkarmakar.doom.constants.ThumbnailCornerRadius = (r * 0.35f).coerceIn(0f, 16f).dp
                 }
         }
     }
@@ -1525,20 +1525,20 @@ class MainActivity : ComponentActivity() {
 
     // people who had the old lyrics shader switch off land on the matching shaderless lyric style, once
     private fun moveOffOldLyricsShaderSwitch() {
-        if (dataStore[com.mochyy.mochymusic.constants.LyricsWaveAnimationKey] != false) return
+        if (dataStore[com.videshkarmakar.doom.constants.LyricsWaveAnimationKey] != false) return
         lifecycleScope.launch(Dispatchers.IO) {
             dataStore.edit { prefs ->
-                if (prefs[com.mochyy.mochymusic.constants.LyricsWaveAnimationKey] != false) return@edit
-                val stored = prefs[com.mochyy.mochymusic.constants.LyricsMotionStyleKey]
-                val style = com.mochyy.mochymusic.constants.LyricsMotionStyle.entries.firstOrNull { it.name == stored }
-                    ?: com.mochyy.mochymusic.constants.LyricsMotionStyle.MOTION
-                prefs[com.mochyy.mochymusic.constants.LyricsMotionStyleKey] = style.withoutShader.name
-                prefs.remove(com.mochyy.mochymusic.constants.LyricsWaveAnimationKey)
+                if (prefs[com.videshkarmakar.doom.constants.LyricsWaveAnimationKey] != false) return@edit
+                val stored = prefs[com.videshkarmakar.doom.constants.LyricsMotionStyleKey]
+                val style = com.videshkarmakar.doom.constants.LyricsMotionStyle.entries.firstOrNull { it.name == stored }
+                    ?: com.videshkarmakar.doom.constants.LyricsMotionStyle.MOTION
+                prefs[com.videshkarmakar.doom.constants.LyricsMotionStyleKey] = style.withoutShader.name
+                prefs.remove(com.videshkarmakar.doom.constants.LyricsWaveAnimationKey)
             }
         }
     }
 
-    /** Audio files shared to Mochy from another app or a file manager are imported as local songs. */
+    /** Audio files shared to Doom from another app or a file manager are imported as local songs. */
     private fun importSharedAudio(intent: Intent): Boolean {
         if (intent.action != Intent.ACTION_SEND && intent.action != Intent.ACTION_SEND_MULTIPLE) return false
         val uris = if (intent.action == Intent.ACTION_SEND) {
@@ -1554,14 +1554,14 @@ class MainActivity : ComponentActivity() {
             var done = 0
             for (uri in uris) {
                 try {
-                    com.mochyy.mochymusic.importer.importSharedAudio(applicationContext, database, uri)
+                    com.videshkarmakar.doom.importer.importSharedAudio(applicationContext, database, uri)
                     done++
                 } catch (e: Exception) {
                     reportException(e)
                 }
             }
-            com.mochyy.mochymusic.ui.component.TopToaster.show(
-                if (done == 0) "Couldn't import that" else "Imported $done song${if (done != 1) "s" else ""} to Mochy",
+            com.videshkarmakar.doom.ui.component.TopToaster.show(
+                if (done == 0) "Couldn't import that" else "Imported $done song${if (done != 1) "s" else ""} to Doom",
             )
         }
         return true
@@ -1569,7 +1569,7 @@ class MainActivity : ComponentActivity() {
 
     private fun handleDeepLinkIntent(intent: Intent, navController: NavHostController) {
         // the device link's notification opens its sheet
-        if (intent.action == com.mochyy.mochymusic.link.phone.PhoneLinkService.ActionOpenTvLink) {
+        if (intent.action == com.videshkarmakar.doom.link.phone.PhoneLinkService.ActionOpenTvLink) {
             intent.action = null
             openDevicesRequests++
             return
@@ -1675,7 +1675,7 @@ val SubSettingsRoutes = setOf(
     "experimental_settings",
     "cipher_settings",
     "playback_diagnostics",
-    "mochy_settings",
+    "doom_settings",
     "import_sync",
     "import_providers",
     "import_tunemymusic",
@@ -1720,23 +1720,23 @@ private const val UpdateSnoozeWindowMillis = 24L * 60L * 60L * 1000L
 @Composable
 private fun HomeUpdatePrompt(currentRoute: String?) {
     if (currentRoute != Screens.Home.route) return
-    val (noticeHidden) = rememberPreference(com.mochyy.mochymusic.constants.HideUpdateNoticeKey, defaultValue = false)
+    val (noticeHidden) = rememberPreference(com.videshkarmakar.doom.constants.HideUpdateNoticeKey, defaultValue = false)
     if (noticeHidden) return
 
-    val updateState by com.mochyy.mochymusic.ui.screens.update.rememberUpdateState()
+    val updateState by com.videshkarmakar.doom.ui.screens.update.rememberUpdateState()
     val (snoozedAt, setSnoozedAt) = rememberPreference(
-        com.mochyy.mochymusic.constants.UpdatePromptSnoozedAtKey,
+        com.videshkarmakar.doom.constants.UpdatePromptSnoozedAtKey,
         defaultValue = 0L,
     )
-    val (userName) = rememberPreference(com.mochyy.mochymusic.constants.UsernameKey, "")
+    val (userName) = rememberPreference(com.videshkarmakar.doom.constants.UsernameKey, "")
 
     var dismissed by rememberSaveable { mutableStateOf(false) }
 
-    val release = (updateState as? com.mochyy.mochymusic.core.updater.UpdateState.Available)?.release
+    val release = (updateState as? com.videshkarmakar.doom.core.updater.UpdateState.Available)?.release
     val snoozeExpired = System.currentTimeMillis() - snoozedAt > UpdateSnoozeWindowMillis
 
     if (release != null && snoozeExpired && !dismissed) {
-        com.mochyy.mochymusic.ui.screens.update.UpdatePromptSheet(
+        com.videshkarmakar.doom.ui.screens.update.UpdatePromptSheet(
             release = release,
             userName = userName,
             onSnooze = {

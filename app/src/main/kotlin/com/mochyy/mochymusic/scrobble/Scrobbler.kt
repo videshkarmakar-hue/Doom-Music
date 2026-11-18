@@ -1,6 +1,6 @@
 // Scrobbler.kt
 
-package com.mochyy.mochymusic.scrobble
+package com.videshkarmakar.doom.scrobble
 
 import android.content.Context
 import android.os.Handler
@@ -13,11 +13,11 @@ import androidx.work.ExistingWorkPolicy
 import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.LastFMUseNowPlaying
-import com.mochyy.mochymusic.constants.LastFMUseSendLikes
-import com.mochyy.mochymusic.utils.OfflineMode
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.LastFMUseNowPlaying
+import com.videshkarmakar.doom.constants.LastFMUseSendLikes
+import com.videshkarmakar.doom.utils.OfflineMode
+import com.videshkarmakar.doom.utils.dataStore
 import com.music.lastfm.Audioscrobbler
 import com.music.lastfm.AudioscrobblerException
 import com.music.lastfm.ScrobbleTrack
@@ -157,7 +157,7 @@ class Scrobbler @Inject constructor(
 
     // ---- signing in and out ----
 
-    /** signs in from mochy's own form and keeps only the session key, the password is never stored; gives back the account's name */
+    /** signs in from doom's own form and keeps only the session key, the password is never stored; gives back the account's name */
     suspend fun signIn(site: ScrobbleSite, username: String, password: String): String {
         val session = site.api.getMobileSession(username.trim(), password)
         context.dataStore.edit {
@@ -177,7 +177,7 @@ class Scrobbler @Inject constructor(
         queue.forget(site)
     }
 
-    /** The service took back Mochy's access, so the account is forgotten here too. */
+    /** The service took back Doom's access, so the account is forgotten here too. */
     private suspend fun signedOut(site: ScrobbleSite) {
         signOut(site)
         val message = context.getString(R.string.scrobble_signed_out, site.label)

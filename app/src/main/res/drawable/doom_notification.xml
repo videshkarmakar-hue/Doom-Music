@@ -3,7 +3,7 @@
     android:height="24dp"
     android:viewportWidth="128"
     android:viewportHeight="139">
-    <!-- the mochy mark from icon new - transparent 2.svg, moved 58,48 so it sits in the same box as the old mark -->
+    <!-- the notification icon, the same outline mark as ic_doom_mark; android only reads its alpha -->
     <group
         android:translateX="-58"
         android:translateY="-48">

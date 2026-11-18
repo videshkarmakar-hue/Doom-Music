@@ -1,6 +1,6 @@
 // the looks that are on right now: the player's module style, the app's font and the bottom bar's glass each follow the highest one that brings them
 
-package com.mochyy.mochymusic.modules.skin
+package com.videshkarmakar.doom.modules.skin
 
 import android.os.Build
 import androidx.compose.runtime.Immutable
@@ -10,11 +10,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import com.mochyy.mochymusic.constants.ChromeGlassStyle
-import com.mochyy.mochymusic.constants.PlayerStyle
-import com.mochyy.mochymusic.module.LookSetting
-import com.mochyy.mochymusic.ui.component.createAgslShader
-import com.mochyy.mochymusic.ui.theme.LookFont
+import com.videshkarmakar.doom.constants.ChromeGlassStyle
+import com.videshkarmakar.doom.constants.PlayerStyle
+import com.videshkarmakar.doom.module.LookSetting
+import com.videshkarmakar.doom.ui.component.createAgslShader
+import com.videshkarmakar.doom.ui.theme.LookFont
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -163,7 +163,7 @@ object ActiveSkin {
 
     // the shader's text, compiled once per file; a broken one gives the compiler's first line back for the module's page
     private fun compile(skin: ModuleSkin, look: SkinGlass): Compiled {
-        // runtime shaders are android 13+, older phones keep mochy's frost and that's not a fault of the module's
+        // runtime shaders are android 13+, older phones keep doom's frost and that's not a fault of the module's
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return Compiled(null, null)
         val file = skin.fontFile(look.shader)?.takeIf { it.isFile } ?: return Compiled(null, "its shader file ${look.shader} isn't in the module")
         if (file.length() > MaxShaderBytes) return Compiled(null, "its shader is bigger than ${MaxShaderBytes / 1024} KB")
@@ -174,7 +174,7 @@ object ActiveSkin {
             val made = createAgslShader(source)
             shaderKey = key
             shader = made
-            // a glass that takes the lit tab's place draws it itself, and mochy leaves its own highlight out
+            // a glass that takes the lit tab's place draws it itself, and doom leaves its own highlight out
             shaderDrawsPill = DeclaredUniform.findAll(source).any { it.groupValues[1] == "pill" }
             Compiled(made, null, shaderDrawsPill)
         } catch (e: Exception) {

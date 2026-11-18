@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.core.updater
+package com.videshkarmakar.doom.core.updater
 
 import android.content.Context
 import android.content.Intent
@@ -53,13 +53,13 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import androidx.work.workDataOf
-import com.mochyy.mochymusic.BuildConfig
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.BuildConfig
+import com.videshkarmakar.doom.R
 import coil3.compose.AsyncImage
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import com.mochyy.mochymusic.core.updater.downloadmanager.UpdateDownloadWorker
-import com.mochyy.mochymusic.core.updater.downloadmanager.DownloadNotificationManager
+import com.videshkarmakar.doom.core.updater.downloadmanager.UpdateDownloadWorker
+import com.videshkarmakar.doom.core.updater.downloadmanager.DownloadNotificationManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -71,14 +71,14 @@ import java.net.URL
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.regex.Pattern
-import com.mochyy.mochymusic.ui.component.ChangelogItem
-import com.mochyy.mochymusic.ui.component.leadingItemShape
-import com.mochyy.mochymusic.ui.component.middleItemShape
-import com.mochyy.mochymusic.ui.component.endItemShape
-import com.mochyy.mochymusic.ui.component.detachedItemShape
-import com.mochyy.mochymusic.ui.component.AnimatedActionButton
-import com.mochyy.mochymusic.ui.component.ExpressiveIconButton
-import com.mochyy.mochymusic.ui.component.ErrorSnackbar
+import com.videshkarmakar.doom.ui.component.ChangelogItem
+import com.videshkarmakar.doom.ui.component.leadingItemShape
+import com.videshkarmakar.doom.ui.component.middleItemShape
+import com.videshkarmakar.doom.ui.component.endItemShape
+import com.videshkarmakar.doom.ui.component.detachedItemShape
+import com.videshkarmakar.doom.ui.component.AnimatedActionButton
+import com.videshkarmakar.doom.ui.component.ExpressiveIconButton
+import com.videshkarmakar.doom.ui.component.ErrorSnackbar
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -101,9 +101,9 @@ import androidx.compose.ui.text.style.TextDecoration
 
 data class ChangelogSection(val title: String, val items: List<String>)
 
-sealed class MochyUpdateStatus {
-    object Idle : MochyUpdateStatus()
-    object Checking : MochyUpdateStatus()
+sealed class DoomUpdateStatus {
+    object Idle : DoomUpdateStatus()
+    object Checking : DoomUpdateStatus()
     data class Available(
         val version: String,
         val changelog: List<ChangelogSection>,
@@ -112,10 +112,10 @@ sealed class MochyUpdateStatus {
         val description: String?,
         val imageUrl: String?,
         val apkUrl: String?
-    ) : MochyUpdateStatus()
+    ) : DoomUpdateStatus()
 
-    data class NoUpdate(val version: String) : MochyUpdateStatus()
-    data class Error(val message: String) : MochyUpdateStatus()
+    data class NoUpdate(val version: String) : DoomUpdateStatus()
+    data class Error(val message: String) : DoomUpdateStatus()
 }
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
@@ -123,7 +123,7 @@ sealed class MochyUpdateStatus {
 fun UpdateScreen(navController: NavHostController) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
-    var status by remember { mutableStateOf<MochyUpdateStatus>(MochyUpdateStatus.NoUpdate(BuildConfig.VERSION_NAME)) }
+    var status by remember { mutableStateOf<DoomUpdateStatus>(DoomUpdateStatus.NoUpdate(BuildConfig.VERSION_NAME)) }
     var isDownloading by remember { mutableStateOf(false) }
     var downloadProgress by remember { mutableStateOf(0f) }
     var isDownloadComplete by remember { mutableStateOf(false) }
@@ -182,7 +182,7 @@ fun UpdateScreen(navController: NavHostController) {
     }
 
     fun triggerUpdateCheck() {
-        status = MochyUpdateStatus.Checking
+        status = DoomUpdateStatus.Checking
         scope.launch {
 
             delay(1000L)
@@ -192,7 +192,7 @@ fun UpdateScreen(navController: NavHostController) {
                     saveLastCheckedTime(context, LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMMM yyyy, h:mm a")))
                     saveUpdateAvailableState(context, isAvailable)
                     status = if (isAvailable) {
-                        MochyUpdateStatus.Available(
+                        DoomUpdateStatus.Available(
                             version = tag,
                             changelog = changelog,
                             size = size,
@@ -202,11 +202,11 @@ fun UpdateScreen(navController: NavHostController) {
                             apkUrl = apkUrl
                         )
                     } else {
-                        MochyUpdateStatus.NoUpdate(tag)
+                        DoomUpdateStatus.NoUpdate(tag)
                     }
                 },
                 onError = {
-                    status = MochyUpdateStatus.Error(context.getString(R.string.cant_check_updates))
+                    status = DoomUpdateStatus.Error(context.getString(R.string.cant_check_updates))
                 }
             )
         }
@@ -224,7 +224,7 @@ fun UpdateScreen(navController: NavHostController) {
         topBar = {
             LargeTopAppBar(
                 title = {
-                    val titleText = if (status is MochyUpdateStatus.Available) {
+                    val titleText = if (status is DoomUpdateStatus.Available) {
                         buildAnnotatedString {
                             append(stringResource(R.string.new_update) + " ")
                             withStyle(
@@ -233,7 +233,7 @@ fun UpdateScreen(navController: NavHostController) {
                                     fontWeight = FontWeight.Bold
                                 )
                             ) {
-                                append((status as MochyUpdateStatus.Available).version)
+                                append((status as DoomUpdateStatus.Available).version)
                             }
                         }
                     } else {
@@ -273,16 +273,16 @@ fun UpdateScreen(navController: NavHostController) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     when (val currentStatus = status) {
-                        is MochyUpdateStatus.Idle, is MochyUpdateStatus.Checking, is MochyUpdateStatus.NoUpdate, is MochyUpdateStatus.Error -> {
+                        is DoomUpdateStatus.Idle, is DoomUpdateStatus.Checking, is DoomUpdateStatus.NoUpdate, is DoomUpdateStatus.Error -> {
                             AnimatedActionButton(
                                 text = stringResource(R.string.check_for_update),
                                 onClick = { triggerUpdateCheck() },
-                                enabled = currentStatus !is MochyUpdateStatus.Checking && !isDownloading,
+                                enabled = currentStatus !is DoomUpdateStatus.Checking && !isDownloading,
                                 modifier = Modifier.fillMaxWidth()
                             )
                         }
 
-                        is MochyUpdateStatus.Available -> {
+                        is DoomUpdateStatus.Available -> {
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.spacedBy(12.dp)
@@ -324,7 +324,7 @@ fun UpdateScreen(navController: NavHostController) {
                                                 ContextCompat.startActivity(context, installIntent, null)
                                             }
                                         } else {
-                                            val urlToDownload = currentStatus.apkUrl ?: "https://github.com/realidkroo/Mochy-Music/releases/download/${currentStatus.version}/mochy.apk"
+                                            val urlToDownload = currentStatus.apkUrl ?: "https://github.com/realidkroo/Doom-Music/releases/download/${currentStatus.version}/doom.apk"
                                             val downloadRequest = OneTimeWorkRequestBuilder<UpdateDownloadWorker>()
                                                 .setInputData(workDataOf("apk_url" to urlToDownload, "version" to currentStatus.version, "file_size" to currentStatus.size))
                                                 .addTag("update_download")
@@ -360,7 +360,7 @@ fun UpdateScreen(navController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 item {
-                    val contentModifier = if (status is MochyUpdateStatus.Available) {
+                    val contentModifier = if (status is DoomUpdateStatus.Available) {
                         Modifier.fillMaxWidth()
                     } else {
                         Modifier.fillParentMaxSize()
@@ -371,13 +371,13 @@ fun UpdateScreen(navController: NavHostController) {
                         contentAlignment = Alignment.Center
                     ) {
                         when (val currentStatus = status) {
-                            is MochyUpdateStatus.Checking -> {
+                            is DoomUpdateStatus.Checking -> {
                                 androidx.compose.material3.ContainedLoadingIndicator(
                                     modifier = Modifier.size(64.dp)
                                 )
                             }
 
-                            is MochyUpdateStatus.NoUpdate -> {
+                            is DoomUpdateStatus.NoUpdate -> {
                                 Column(
                                     horizontalAlignment = Alignment.CenterHorizontally
                                 ) {
@@ -405,7 +405,7 @@ fun UpdateScreen(navController: NavHostController) {
                                 }
                             }
 
-                            is MochyUpdateStatus.Error -> {
+                            is DoomUpdateStatus.Error -> {
                                 Column(
                                     horizontalAlignment = Alignment.CenterHorizontally
                                 ) {
@@ -426,7 +426,7 @@ fun UpdateScreen(navController: NavHostController) {
                                 }
                             }
 
-                            is MochyUpdateStatus.Available -> {
+                            is DoomUpdateStatus.Available -> {
                                 Column(
                                     modifier = Modifier.fillMaxWidth(),
                                     horizontalAlignment = Alignment.Start
@@ -520,12 +520,12 @@ fun UpdateScreen(navController: NavHostController) {
                                         }
                                         section.items.forEachIndexed { index, item ->
                                             val shape = when {
-                                                section.items.size == 1 -> com.mochyy.mochymusic.ui.component.detachedItemShape()
-                                                index == 0 -> com.mochyy.mochymusic.ui.component.leadingItemShape()
-                                                index == section.items.size - 1 -> com.mochyy.mochymusic.ui.component.endItemShape()
-                                                else -> com.mochyy.mochymusic.ui.component.middleItemShape()
+                                                section.items.size == 1 -> com.videshkarmakar.doom.ui.component.detachedItemShape()
+                                                index == 0 -> com.videshkarmakar.doom.ui.component.leadingItemShape()
+                                                index == section.items.size - 1 -> com.videshkarmakar.doom.ui.component.endItemShape()
+                                                else -> com.videshkarmakar.doom.ui.component.middleItemShape()
                                             }
-                                            com.mochyy.mochymusic.ui.component.ChangelogItem(
+                                            com.videshkarmakar.doom.ui.component.ChangelogItem(
                                                 text = item,
                                                 shape = shape,
                                                 modifier = Modifier.padding(vertical = 1.dp)
@@ -644,7 +644,7 @@ suspend fun checkForUpdate(
 ) {
     withContext(Dispatchers.IO) {
         try {
-            val url = URL("https://api.github.com/repos/realidkroo/Mochy-Music/releases")
+            val url = URL("https://api.github.com/repos/realidkroo/Doom-Music/releases")
             val json = url.openStream().bufferedReader().use { it.readText() }
             val releases = JSONArray(json)
 
@@ -656,7 +656,7 @@ suspend fun checkForUpdate(
 
             if (betaEnabled) {
                 try {
-                    val nightlyUrl = URL("https://api.github.com/repos/realidkroo/Mochy-Music/actions/workflows/nightly.yml/runs?status=success&per_page=1")
+                    val nightlyUrl = URL("https://api.github.com/repos/realidkroo/Doom-Music/actions/workflows/nightly.yml/runs?status=success&per_page=1")
                     val nightlyJson = nightlyUrl.openStream().bufferedReader().use { it.readText() }
                     val nightlyData = JSONObject(nightlyJson)
                     val runs = nightlyData.optJSONArray("workflow_runs")
@@ -708,7 +708,7 @@ suspend fun checkForUpdate(
                 changelogList.add(ChangelogSection(context.getString(R.string.changelog), listOf(subjectLine)))
 
                 val formattedReleaseDate = formatGitHubDate(runUpdatedAt)
-                val apkDownloadUrl = "https://nightly.link/realidkroo/Mochy-Music/workflows/nightly.yml/main/mochy-gms-nightly.zip"
+                val apkDownloadUrl = "https://nightly.link/realidkroo/Doom-Music/workflows/nightly.yml/main/doom-gms-nightly.zip"
 
                 withContext(Dispatchers.Main) {
                     onSuccess(displayTag, true, changelogList, "~30", formattedReleaseDate, "Bleeding-edge nightly build from main branch.", null, apkDownloadUrl)
@@ -768,7 +768,7 @@ suspend fun checkForUpdate(
                     var imageUrl: String? = null
                     try {
                         val changelogUrl =
-                            URL("https://github.com/realidkroo/Mochy-Music/releases/download/$tagWithPrefix/changelog.json")
+                            URL("https://github.com/realidkroo/Doom-Music/releases/download/$tagWithPrefix/changelog.json")
                         val changelogJson = changelogUrl.openStream().bufferedReader().use { it.readText() }
                         val changelogData = JSONObject(changelogJson)
 
@@ -802,7 +802,7 @@ suspend fun checkForUpdate(
                     for (j in 0 until assets.length()) {
                         val asset = assets.getJSONObject(j)
                         val assetName = asset.getString("name")
-                        if (assetName == "mochy.apk") {
+                        if (assetName == "doom.apk") {
                             val apkSizeInBytes = asset.getLong("size")
                             apkSizeInMB = String.format("%.1f", apkSizeInBytes / (1024.0 * 1024.0))
                             apkDownloadUrl = asset.getString("browser_download_url")

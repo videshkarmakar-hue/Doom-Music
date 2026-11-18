@@ -13,7 +13,7 @@
     <string name="home">Inicio</string>
     <string name="songs">Canciones</string>
     <string name="artists">Artistas</string>
-    <string name="albums">Álbumes</string>
+    <string name="albums">�lbumes</string>
     <string name="playlists">Listas de reproducción</string>
     <plurals name="n_selected">
         <item quantity="one">%d seleccionada</item>
@@ -28,7 +28,7 @@
     <string name="last_week">La semana pasada</string>
     <string name="most_played_songs">Canciones más reproducidas</string>
     <string name="most_played_artists">Artistas más reproducidos</string>
-    <string name="most_played_albums">Álbumes más reproducidos</string>
+    <string name="most_played_albums">�lbumes más reproducidos</string>
     <string name="search">Buscar</string>
     <string name="search_yt_music">Buscar música en YouTube…</string>
     <string name="search_library">Buscar biblioteca…</string>
@@ -38,7 +38,7 @@
     <string name="filter_all">Todo</string>
     <string name="filter_songs">Canciones</string>
     <string name="filter_videos">Vídeos</string>
-    <string name="filter_albums">Álbumes</string>
+    <string name="filter_albums">�lbumes</string>
     <string name="filter_artists">Artistas</string>
     <string name="filter_playlists">Listas de reproducción</string>
     <string name="filter_community_playlists">Listas de reproducción de la comunidad</string>
@@ -276,7 +276,7 @@
     <string name="backup_create_failed">No se pudo crear la copia de seguridad</string>
     <string name="restore_failed">No se pudo restaurar la copia de seguridad</string>
     <string name="discord_integration">Integración con Discord</string>
-    <string name="discord_information">mochy utiliza la biblioteca KizzyRPC para configurar el estado de tu cuenta de Discord. Esto implica el uso de la conexión Discord Gateway, lo que puede considerarse una violación de los Términos de servicio de Discord. Sin embargo, no se conocen casos de cuentas de usuario suspendidas por este motivo. Úsalo bajo tu propia responsabilidad.\n\nmochy solo extraerá tu token, y todo lo demás se almacena localmente.</string>
+    <string name="discord_information">doom utiliza la biblioteca KizzyRPC para configurar el estado de tu cuenta de Discord. Esto implica el uso de la conexión Discord Gateway, lo que puede considerarse una violación de los Términos de servicio de Discord. Sin embargo, no se conocen casos de cuentas de usuario suspendidas por este motivo. Úsalo bajo tu propia responsabilidad.\n\ndoom solo extraerá tu token, y todo lo demás se almacena localmente.</string>
     <string name="dismiss">Desestimar</string>
     <string name="options">Opciones</string>
     <string name="preview">Vista previa</string>

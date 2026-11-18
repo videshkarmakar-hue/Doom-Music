@@ -1,15 +1,15 @@
 // PlaylistResync.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.ImportedPlaylist
-import com.mochyy.mochymusic.extensions.isUserLoggedIn
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.importer.account.ResyncTarget
-import com.mochyy.mochymusic.importer.account.YouTubeMusicLibrary
-import com.mochyy.mochymusic.importer.account.named
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.ImportedPlaylist
+import com.videshkarmakar.doom.extensions.isUserLoggedIn
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.importer.account.ResyncTarget
+import com.videshkarmakar.doom.importer.account.YouTubeMusicLibrary
+import com.videshkarmakar.doom.importer.account.named
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

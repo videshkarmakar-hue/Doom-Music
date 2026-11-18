@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.os.Handler
 import android.os.Looper
@@ -7,7 +7,7 @@ import androidx.media3.common.ForwardingPlayer
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
-import com.mochyy.mochymusic.playback.audio.pass.AudioPass
+import com.videshkarmakar.doom.playback.audio.pass.AudioPass
 import java.util.concurrent.CopyOnWriteArrayList
 import kotlin.math.roundToInt
 
@@ -74,7 +74,7 @@ class TransportFadingPlayer(
         listeners -= listener
     }
 
-    // while mochy's own usb driver plays, android's music volume no longer reaches the dac: the volume keys and the system panel turn the dac's own knob instead
+    // while doom's own usb driver plays, android's music volume no longer reaches the dac: the volume keys and the system panel turn the dac's own knob instead
     private val dac: AudioPass.DacVolume? get() = pass?.dacVolume?.value
 
     override fun getDeviceInfo(): DeviceInfo = if (dac != null) DacDevice else super.getDeviceInfo()

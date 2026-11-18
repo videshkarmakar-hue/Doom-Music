@@ -1,6 +1,6 @@
 // OpenRouterStreamingService.kt
 
-package com.mochyy.mochymusic.api
+package com.videshkarmakar.doom.api
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -114,8 +114,8 @@ Output MUST be a JSON array with EXACTLY $lineCount strings."""
                     }
                 }
                 .addHeader("Content-Type", "application/json")
-                .addHeader("HTTP-Referer", "https://github.com/realidkroo/Mochy-Music")
-                .addHeader("X-Title", "mochy")
+                .addHeader("HTTP-Referer", "https://github.com/realidkroo/Doom-Music")
+                .addHeader("X-Title", "doom")
                 .post(jsonBody.toString().toRequestBody(JSON))
                 .build()
 

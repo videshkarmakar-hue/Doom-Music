@@ -1,6 +1,6 @@
-// the module browser's side of mochy's module feed: signing in with discord through it, the list of modules from mochy's bar, and their zips
+// the module browser's side of doom's module feed: signing in with discord through it, the list of modules from doom's bar, and their zips
 
-package com.mochyy.mochymusic.modules.browser
+package com.videshkarmakar.doom.modules.browser
 
 import android.content.Context
 import android.net.Uri
@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import javax.inject.Singleton
 
-/** one module in mochy's bar; [id] is its forum post, which is how its zip is asked for */
+/** one module in doom's bar; [id] is its forum post, which is how its zip is asked for */
 data class FeedModule(
     val id: String,
     val name: String,
@@ -40,7 +40,7 @@ data class FeedModule(
 
 enum class FeedKind { Look, Player, Source, Other }
 
-/** who's signed in, for the chip at the top; [member] is whether they're in mochy's bar */
+/** who's signed in, for the chip at the top; [member] is whether they're in doom's bar */
 data class FeedPerson(val name: String, val avatar: String?, val member: Boolean, val invite: String?)
 
 sealed interface FeedResult {
@@ -77,7 +77,7 @@ class ModuleFeed @Inject constructor(
         return Uri.parse("$FeedUrl/login").buildUpon().appendQueryParameter("state", state).build()
     }
 
-    /** back from the browser with mochy-modules://signed-in; true when it carried a session from the sign-in started here */
+    /** back from the browser with doom-modules://signed-in; true when it carried a session from the sign-in started here */
     fun finishSignIn(redirect: Uri): Boolean {
         val expected = prefs.getString(StateKey, null) ?: return false
         val session = redirect.getQueryParameter("session")?.takeIf { SessionPattern.matches(it) }
@@ -169,7 +169,7 @@ class ModuleFeed @Inject constructor(
     }
 
     companion object {
-        // the worker's address (see the mochy-module-feed project); empty until it's deployed, and the browser says so
+        // the worker's address (see the doom-module-feed project); empty until it's deployed, and the browser says so
         const val FeedUrl = ""
 
         private const val SessionKey = "session"

@@ -1,6 +1,6 @@
 // LarpModeSheet.kt
 
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -39,15 +39,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetLabel
-import com.mochyy.mochymusic.ui.component.SheetOptionRow
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.player.LarpLevel
-import com.mochyy.mochymusic.ui.player.larpQualityText
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetLabel
+import com.videshkarmakar.doom.ui.component.SheetOptionRow
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.player.LarpLevel
+import com.videshkarmakar.doom.ui.player.larpQualityText
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

@@ -1,6 +1,6 @@
-// a github project's link turned into the module zip on its newest release, the one with mochyymodule in its file name
+// a github project's link turned into the module zip on its newest release, the one with doomymodule in its file name
 
-package com.mochyy.mochymusic.modules
+package com.videshkarmakar.doom.modules
 
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -71,7 +71,7 @@ internal object GitHubReleases {
         }
         val target = File(folder, release.asset.replace(Regex("[^A-Za-z0-9._-]"), "-"))
         return try {
-            client.newCall(Request.Builder().url(release.url).header("User-Agent", "Mochy").build()).execute().use { response ->
+            client.newCall(Request.Builder().url(release.url).header("User-Agent", "Doom").build()).execute().use { response ->
                 if (!response.isSuccessful) throw IOException("HTTP ${response.code}")
                 copyCapped(response.body.byteStream(), target)
             }
@@ -84,7 +84,7 @@ internal object GitHubReleases {
 
     private class Asset(val name: String, val url: String, val stamp: String)
 
-    // the zips with mochyymodule in their name; with a debug and a release one side by side, the one signed like this mochy
+    // the zips with doomymodule in their name; with a debug and a release one side by side, the one signed like this doom
     private fun pickAsset(release: JSONObject, preferDebug: Boolean): Asset? {
         val assets = release.optJSONArray("assets") ?: return null
         val zips = (0 until assets.length()).mapNotNull { i ->
@@ -103,7 +103,7 @@ internal object GitHubReleases {
     private fun apiRequest(url: String) = Request.Builder()
         .url(url)
         .header("Accept", "application/vnd.github+json")
-        .header("User-Agent", "Mochy")
+        .header("User-Agent", "Doom")
         .build()
 
     // a release asset can be anything, so stop reading once it's past what a module zip could ever be
@@ -121,8 +121,8 @@ internal object GitHubReleases {
         }
     }
 
-    /** what a release file's name has to have in it for mochy to take it */
-    const val Marker = "mochyymodule"
+    /** what a release file's name has to have in it for doom to take it */
+    const val Marker = "doomymodule"
     private const val MaxZipBytes = 40L * 1024 * 1024
     private val Name = Regex("[A-Za-z0-9._-]{1,100}")
     private val FileViews = setOf("blob", "raw", "issues", "pulls", "actions", "wiki")

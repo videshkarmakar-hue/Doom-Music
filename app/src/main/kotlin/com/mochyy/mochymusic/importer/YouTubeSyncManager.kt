@@ -1,21 +1,21 @@
 // YouTubeSyncManager.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.YtExcludeImportsKey
-import com.mochyy.mochymusic.constants.YtPullHistoryKey
-import com.mochyy.mochymusic.constants.YtSyncHoldKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.Event
-import com.mochyy.mochymusic.db.entities.PlaylistEntity
-import com.mochyy.mochymusic.extensions.isUserLoggedIn
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.utils.SyncUtils
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.YtExcludeImportsKey
+import com.videshkarmakar.doom.constants.YtPullHistoryKey
+import com.videshkarmakar.doom.constants.YtSyncHoldKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.Event
+import com.videshkarmakar.doom.db.entities.PlaylistEntity
+import com.videshkarmakar.doom.extensions.isUserLoggedIn
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.utils.SyncUtils
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 import com.music.innertube.YouTube
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException

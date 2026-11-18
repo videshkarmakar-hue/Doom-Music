@@ -1,6 +1,6 @@
 // the module browser's pieces: the header with the account chip, the search, the kind chips, a module's card and its loading stand-in
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -39,11 +39,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.modules.browser.FeedModule
-import com.mochyy.mochymusic.modules.browser.FeedPerson
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.viewmodels.BrowserFilter
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.modules.browser.FeedModule
+import com.videshkarmakar.doom.modules.browser.FeedPerson
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.viewmodels.BrowserFilter
 
 internal val BrowserCard = Color(0xFF2A2A2A)
 private val BrowserChipOn = Color(0xFF5A5A5A)
@@ -56,7 +56,7 @@ private val BrowserCardShape = RoundedCornerShape(36.dp)
 /** what a module's button says: it can be added, a newer one is out, it's already in, or it's paid and not theirs yet */
 enum class BrowserAction { Add, Update, Added, Locked }
 
-/** the back button and, once someone's signed in, their avatar with a dot that's green while they're in mochy's bar */
+/** the back button and, once someone's signed in, their avatar with a dot that's green while they're in doom's bar */
 @Composable
 internal fun BrowserHeader(person: FeedPerson?, onBack: () -> Unit) {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {

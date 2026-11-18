@@ -1,19 +1,19 @@
 // ImportSteps.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
-import com.mochyy.mochymusic.constants.YtExcludeImportsKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.ImportSessionSong
-import com.mochyy.mochymusic.db.entities.ImportedPlaylist
-import com.mochyy.mochymusic.db.entities.ImportedSong
-import com.mochyy.mochymusic.db.entities.PlaylistEntity
-import com.mochyy.mochymusic.db.entities.PlaylistSongMap
-import com.mochyy.mochymusic.extensions.isUserLoggedIn
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.constants.YtExcludeImportsKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.ImportSessionSong
+import com.videshkarmakar.doom.db.entities.ImportedPlaylist
+import com.videshkarmakar.doom.db.entities.ImportedSong
+import com.videshkarmakar.doom.db.entities.PlaylistEntity
+import com.videshkarmakar.doom.db.entities.PlaylistSongMap
+import com.videshkarmakar.doom.extensions.isUserLoggedIn
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import kotlinx.coroutines.CancellationException

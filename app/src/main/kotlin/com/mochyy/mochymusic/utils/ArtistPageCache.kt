@@ -1,8 +1,8 @@
 // ArtistPageCache.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
-import com.mochyy.mochymusic.models.ArtistGroup
+import com.videshkarmakar.doom.models.ArtistGroup
 import com.music.innertube.pages.ArtistPage
 import java.util.concurrent.ConcurrentHashMap
 

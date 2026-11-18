@@ -1,6 +1,6 @@
 // FloatingPill.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
@@ -53,7 +53,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -249,7 +249,7 @@ internal fun Modifier.fromCoverSide(end: Boolean, x: Density.() -> Float, y: Den
     }
 }
 
-// the song's cover in a circle; a tap opens the controls, a hold opens mochy
+// the song's cover in a circle; a tap opens the controls, a hold opens doom
 @Composable
 private fun CoverDisc(
     state: PillState,

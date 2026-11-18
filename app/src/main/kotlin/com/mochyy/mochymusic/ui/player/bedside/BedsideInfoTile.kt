@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.bedside
+package com.videshkarmakar.doom.ui.player.bedside
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -27,14 +27,14 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.player.PlaybackClock
-import com.mochyy.mochymusic.ui.player.styles.BarLevels
-import com.mochyy.mochymusic.ui.player.styles.rememberStyleShowing
-import com.mochyy.mochymusic.ui.player.video.FollowingLyrics
-import com.mochyy.mochymusic.ui.player.video.rememberVideoLyricLook
-import com.mochyy.mochymusic.ui.player.video.rememberVideoLyrics
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.player.PlaybackClock
+import com.videshkarmakar.doom.ui.player.styles.BarLevels
+import com.videshkarmakar.doom.ui.player.styles.rememberStyleShowing
+import com.videshkarmakar.doom.ui.player.video.FollowingLyrics
+import com.videshkarmakar.doom.ui.player.video.rememberVideoLyricLook
+import com.videshkarmakar.doom.ui.player.video.rememberVideoLyrics
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import java.util.Locale

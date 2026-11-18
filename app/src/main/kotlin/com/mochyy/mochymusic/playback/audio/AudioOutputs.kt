@@ -1,6 +1,6 @@
 // AudioOutputs.kt
 
-package com.mochyy.mochymusic.playback.audio
+package com.videshkarmakar.doom.playback.audio
 
 import android.content.Context
 import android.media.AudioAttributes

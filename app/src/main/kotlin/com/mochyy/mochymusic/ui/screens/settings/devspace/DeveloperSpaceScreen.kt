@@ -1,6 +1,6 @@
-// dev spaces: a pager with a page for each person who makes mochy, the repo numbers are fetched on every open
+// dev spaces: a pager with a page for each person who makes doom, the repo numbers are fetched on every open
 
-package com.mochyy.mochymusic.ui.screens.settings.devspace
+package com.videshkarmakar.doom.ui.screens.settings.devspace
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.spring
@@ -42,20 +42,20 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.BuildConfig
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.utils.stableSystemBars
+import com.videshkarmakar.doom.BuildConfig
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.utils.stableSystemBars
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.launch
 import kotlin.math.abs
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** how long the picker stays open showing names after the last tap or swipe */
 private const val PickerOpenMs = 2600L
@@ -147,7 +147,7 @@ fun DeveloperSpaceScreen(navController: NavController, initialPage: Int = 0) {
                     modifier = Modifier.fillMaxSize(),
                 )
             }
-            val progressiveBar = com.mochyy.mochymusic.ui.component.rememberProgressiveBlur()
+            val progressiveBar = com.videshkarmakar.doom.ui.component.rememberProgressiveBlur()
             Box(
                 Modifier
                     .fillMaxSize()
@@ -155,7 +155,7 @@ fun DeveloperSpaceScreen(navController: NavController, initialPage: Int = 0) {
                         if (progressiveBar) {
                             Brush.verticalGradient(listOf(Color.Black, Color.Black.copy(alpha = 0.7f), Color.Transparent))
                         } else {
-                            androidx.compose.ui.graphics.SolidColor(Color.Black.copy(alpha = com.mochyy.mochymusic.ui.component.FlatBarScrimAlpha))
+                            androidx.compose.ui.graphics.SolidColor(Color.Black.copy(alpha = com.videshkarmakar.doom.ui.component.FlatBarScrimAlpha))
                         },
                     ),
             )

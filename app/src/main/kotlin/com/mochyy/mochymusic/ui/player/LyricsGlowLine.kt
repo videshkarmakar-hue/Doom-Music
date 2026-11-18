@@ -1,6 +1,6 @@
 // LyricsGlowLine.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import android.os.Build
 import androidx.compose.animation.core.CubicBezierEasing
@@ -63,11 +63,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.offset
 import androidx.compose.ui.unit.sp
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.ui.component.agslRenderEffect
-import com.mochyy.mochymusic.ui.component.createAgslShader
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.component.setAgslUniform
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.ui.component.agslRenderEffect
+import com.videshkarmakar.doom.ui.component.createAgslShader
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.component.setAgslUniform
 
 enum class LyricsLineState { ACTIVE, UPCOMING, PAST, DEFAULT }
 
@@ -75,8 +75,8 @@ enum class LyricsLineState { ACTIVE, UPCOMING, PAST, DEFAULT }
  * Which side of the screen a line sits on.
  *
  * Word-synced providers mark duet and call-and-response lines with `{agent:v1}` / `{agent:v2}`,
- * which LyricsUtils has always parsed into [com.mochyy.mochymusic.lyrics.LyricsEntry.agent]. Until
- * now only the three unused renderers (MetroLyrics, MochyLyrics, LyricsV2) did anything with it,
+ * which LyricsUtils has always parsed into [com.videshkarmakar.doom.lyrics.LyricsEntry.agent]. Until
+ * now only the three unused renderers (MetroLyrics, DoomLyrics, LyricsV2) did anything with it,
  * so in the live player every voice rendered flush left and duets were impossible to follow.
  */
 enum class LyricsAlignment { START, CENTER, END }
@@ -117,7 +117,7 @@ private val BlurEffectCache: Array<androidx.compose.ui.graphics.RenderEffect?> =
 // a lyric line's or a note's own blur, so it goes with element blur switched off
 internal fun blurEffectForRadius(radius: Float): androidx.compose.ui.graphics.RenderEffect? {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || radius <= 0.05f) return null
-    if (!com.mochyy.mochymusic.ui.utils.AppMotion.elementBlur) return null
+    if (!com.videshkarmakar.doom.ui.utils.AppMotion.elementBlur) return null
     val step = (radius / BlurQuantStepPx).roundToInt().coerceIn(1, BlurEffectCache.lastIndex)
     BlurEffectCache[step]?.let { return it }
     val quantised = step * BlurQuantStepPx
@@ -210,7 +210,7 @@ fun LyricsGlowLine(
     alignment: LyricsAlignment = LyricsAlignment.START,
 
     /** Per-word readings drawn against the line, furigana style. */
-    ruby: List<com.mochyy.mochymusic.lyrics.RubyToken>? = null,
+    ruby: List<com.videshkarmakar.doom.lyrics.RubyToken>? = null,
 
     /**
      * Which side the readings sit on. Below by default; the caller moves them above when a
@@ -232,8 +232,8 @@ fun LyricsGlowLine(
     translationAbove: Boolean = false,
 
     /** style 1 or boring (words rise, held notes swell), or style 2 or plain (the original wave) */
-    motionStyle: com.mochyy.mochymusic.constants.LyricsMotionStyle =
-        com.mochyy.mochymusic.constants.LyricsMotionStyle.MOTION,
+    motionStyle: com.videshkarmakar.doom.constants.LyricsMotionStyle =
+        com.videshkarmakar.doom.constants.LyricsMotionStyle.MOTION,
 
     /** Holding the line: the lyrics page opens sharing with it. */
     onLongClick: (() -> Unit)? = null,
@@ -604,7 +604,7 @@ enum class RubyPlacement { ABOVE, BELOW }
 @Composable
 private fun rememberRubyOverlay(
     layoutHolder: Array<TextLayoutResult?>,
-    ruby: List<com.mochyy.mochymusic.lyrics.RubyToken>?,
+    ruby: List<com.videshkarmakar.doom.lyrics.RubyToken>?,
     textLength: Int,
     placement: RubyPlacement,
     dimColor: ColorProducer,
@@ -1016,7 +1016,7 @@ internal class SweepProbe {
 @Composable
 internal fun KaraokeSweepText(
     text: String,
-    words: List<com.mochyy.mochymusic.lyrics.WordTimestamp>,
+    words: List<com.videshkarmakar.doom.lyrics.WordTimestamp>,
     positionProvider: () -> Long,
     waveAmplitudeProvider: () -> Float,
     // read while drawing, so a fading line doesn't recompose every frame
@@ -1027,11 +1027,11 @@ internal fun KaraokeSweepText(
     lineHeight: androidx.compose.ui.unit.TextUnit = LyricsLineHeight,
     highBloom: Boolean = true,
     textAlign: TextAlign = TextAlign.Start,
-    ruby: List<com.mochyy.mochymusic.lyrics.RubyToken>? = null,
+    ruby: List<com.videshkarmakar.doom.lyrics.RubyToken>? = null,
     rubyPlacement: RubyPlacement = RubyPlacement.BELOW,
     rubyColor: ColorProducer = DefaultRubyColor,
-    motionStyle: com.mochyy.mochymusic.constants.LyricsMotionStyle =
-        com.mochyy.mochymusic.constants.LyricsMotionStyle.MOTION,
+    motionStyle: com.videshkarmakar.doom.constants.LyricsMotionStyle =
+        com.videshkarmakar.doom.constants.LyricsMotionStyle.MOTION,
     /**
      * Style 1 word rise, 0..1 with the line becoming active. Separate from [waveAmplitudeProvider]
      * on purpose: that one is zero when the lyrics shader is switched off, and the rise is drawn
@@ -1243,18 +1243,18 @@ private val LitRubyColor = ColorProducer { Color.White }
 internal class LyricLineParts(
     val lead: String,
     val backing: String?,
-    val leadWords: List<com.mochyy.mochymusic.lyrics.WordTimestamp>?,
-    val backingWords: List<com.mochyy.mochymusic.lyrics.WordTimestamp>?,
+    val leadWords: List<com.videshkarmakar.doom.lyrics.WordTimestamp>?,
+    val backingWords: List<com.videshkarmakar.doom.lyrics.WordTimestamp>?,
 )
 
 private fun partitionWords(
     text: String,
-    words: List<com.mochyy.mochymusic.lyrics.WordTimestamp>?,
+    words: List<com.videshkarmakar.doom.lyrics.WordTimestamp>?,
     inBracket: BooleanArray,
-): Pair<List<com.mochyy.mochymusic.lyrics.WordTimestamp>, List<com.mochyy.mochymusic.lyrics.WordTimestamp>> {
-    if (words.isNullOrEmpty()) return emptyList<com.mochyy.mochymusic.lyrics.WordTimestamp>() to emptyList()
-    val lead = ArrayList<com.mochyy.mochymusic.lyrics.WordTimestamp>(words.size)
-    val backing = ArrayList<com.mochyy.mochymusic.lyrics.WordTimestamp>()
+): Pair<List<com.videshkarmakar.doom.lyrics.WordTimestamp>, List<com.videshkarmakar.doom.lyrics.WordTimestamp>> {
+    if (words.isNullOrEmpty()) return emptyList<com.videshkarmakar.doom.lyrics.WordTimestamp>() to emptyList()
+    val lead = ArrayList<com.videshkarmakar.doom.lyrics.WordTimestamp>(words.size)
+    val backing = ArrayList<com.videshkarmakar.doom.lyrics.WordTimestamp>()
     var searchFrom = 0
     for (word in words) {
         val trimmed = word.text.trim()
@@ -1270,7 +1270,7 @@ private fun partitionWords(
 
 internal fun splitBackingVocal(
     text: String,
-    words: List<com.mochyy.mochymusic.lyrics.WordTimestamp>?,
+    words: List<com.videshkarmakar.doom.lyrics.WordTimestamp>?,
 ): LyricLineParts {
     val untouched = LyricLineParts(text, null, words, null)
     if (text.indexOf('(') < 0 && text.indexOf('[') < 0) return untouched
@@ -1320,7 +1320,7 @@ internal fun splitBackingVocal(
  * by searching the text it draws, and "(ooh" is not in "ooh yeah", so the first and last backing
  * words were never found: the sweep sat still until the middle word and stopped before the end.
  */
-private fun List<com.mochyy.mochymusic.lyrics.WordTimestamp>.withoutBrackets() =
+private fun List<com.videshkarmakar.doom.lyrics.WordTimestamp>.withoutBrackets() =
     mapNotNull { word ->
         val bare = word.text.filterNot { it == '(' || it == ')' || it == '[' || it == ']' }
         when {
@@ -1337,15 +1337,15 @@ private fun BackingVocalLine(
     text: String,
     color: ColorProducer,
     slide: Boolean,
-    words: List<com.mochyy.mochymusic.lyrics.WordTimestamp>?,
+    words: List<com.videshkarmakar.doom.lyrics.WordTimestamp>?,
     positionProvider: () -> Long,
     waveAmplitudeProvider: () -> Float,
     sweep: Boolean,
     expandProvider: () -> Float,
     highBloom: Boolean,
     textAlign: TextAlign = TextAlign.Start,
-    motionStyle: com.mochyy.mochymusic.constants.LyricsMotionStyle =
-        com.mochyy.mochymusic.constants.LyricsMotionStyle.MOTION,
+    motionStyle: com.videshkarmakar.doom.constants.LyricsMotionStyle =
+        com.videshkarmakar.doom.constants.LyricsMotionStyle.MOTION,
     riseAmplitudeProvider: () -> Float = waveAmplitudeProvider,
 ) {
 
@@ -1429,7 +1429,7 @@ private const val BackingTailSec = 0.6
 
 @Composable
 private fun rememberBackingExpand(
-    words: List<com.mochyy.mochymusic.lyrics.WordTimestamp>?,
+    words: List<com.videshkarmakar.doom.lyrics.WordTimestamp>?,
     positionProvider: () -> Long,
     lineAmplitudeProvider: () -> Float,
 ): androidx.compose.runtime.MutableFloatState {
@@ -1966,7 +1966,7 @@ private fun isSyllableGlyph(codePoint: Int): Boolean = when (Character.UnicodeSc
 
 internal fun karaokeFilledChars(
     text: String,
-    words: List<com.mochyy.mochymusic.lyrics.WordTimestamp>,
+    words: List<com.videshkarmakar.doom.lyrics.WordTimestamp>,
     positionMs: Long,
 ): Int {
     var searchFrom = 0
@@ -2012,7 +2012,7 @@ internal fun karaokeAnnotated(
 @Composable
 private fun rememberKaraokeHead(
     text: String,
-    words: List<com.mochyy.mochymusic.lyrics.WordTimestamp>,
+    words: List<com.videshkarmakar.doom.lyrics.WordTimestamp>,
     positionProvider: () -> Long,
     /** Style 1: sweep through spaces smoothly and drive the per-word rise/swell springs. */
     wordMotion: Boolean = false,
@@ -2038,7 +2038,7 @@ private fun rememberKaraokeHead(
 // each timed word found in the line's own text, so the sweep knows which letters it covers
 internal fun karaokeTimedRanges(
     text: String,
-    words: List<com.mochyy.mochymusic.lyrics.WordTimestamp>,
+    words: List<com.videshkarmakar.doom.lyrics.WordTimestamp>,
 ): List<TimedRange> {
     var searchFrom = 0
     return words.mapNotNull { word ->

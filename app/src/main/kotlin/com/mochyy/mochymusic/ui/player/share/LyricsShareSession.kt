@@ -3,7 +3,7 @@
 // The lyrics half of a song share: which lines are picked, the style, and how each word looks.
 // The song share (share/song) holds everything else, the background and the card included.
 
-package com.mochyy.mochymusic.ui.player.share
+package com.videshkarmakar.doom.ui.player.share
 
 import android.net.Uri
 import androidx.compose.runtime.Stable
@@ -17,10 +17,10 @@ import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.LayoutCoordinates
 import androidx.compose.ui.text.TextStyle
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.player.LyricsAlignment
-import com.mochyy.mochymusic.ui.player.LyricsLineInsets
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.player.LyricsAlignment
+import com.videshkarmakar.doom.ui.player.LyricsLineInsets
 
 internal data class ShareSong(val title: String, val artist: String, val thumbnailUrl: String?)
 

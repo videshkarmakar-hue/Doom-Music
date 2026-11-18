@@ -1,9 +1,9 @@
 // PlaylistSheetKit.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.ui.unit.em
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -53,9 +53,9 @@ import androidx.compose.ui.unit.offset
 import androidx.compose.ui.unit.sp
 import androidx.media3.exoplayer.offline.Download
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
 
 /*
  * The small pieces the sheets are built from, taken from the reference mocks: a labelled field, a

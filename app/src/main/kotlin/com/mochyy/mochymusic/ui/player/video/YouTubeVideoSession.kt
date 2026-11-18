@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.video
+package com.videshkarmakar.doom.ui.player.video
 
 import android.content.Context
 import android.graphics.SurfaceTexture
@@ -27,10 +27,10 @@ import androidx.media3.exoplayer.dash.DashMediaSource
 import androidx.media3.exoplayer.dash.manifest.DashManifestParser
 import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.ProgressiveMediaSource
-import com.mochyy.mochymusic.constants.VideoQuality
-import com.mochyy.mochymusic.utils.VideoStreams
-import com.mochyy.mochymusic.utils.VideoTrack
-import com.mochyy.mochymusic.utils.followAppProxy
+import com.videshkarmakar.doom.constants.VideoQuality
+import com.videshkarmakar.doom.utils.VideoStreams
+import com.videshkarmakar.doom.utils.VideoTrack
+import com.videshkarmakar.doom.utils.followAppProxy
 import okhttp3.OkHttpClient
 import kotlin.math.abs
 
@@ -59,7 +59,7 @@ private const val MaxBufferMs = 40_000
 private const val BufferToStartMs = 800
 private const val BufferToResumeMs = 1_600
 
-private val ManifestUri: Uri = Uri.parse("https://www.youtube.com/mochy-video.mpd")
+private val ManifestUri: Uri = Uri.parse("https://www.youtube.com/doom-video.mpd")
 
 // the youtube video's own thread: building, loading and letting go of a player never lands on a frame
 private object YouTubeVideoThread {

@@ -1,6 +1,6 @@
 // PillState.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
@@ -10,8 +10,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.media3.common.C
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.player.PlaybackClock
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.player.PlaybackClock
 
 // what the floating pill shows, written by the service on the main thread and read by the pill's compose
 @Stable

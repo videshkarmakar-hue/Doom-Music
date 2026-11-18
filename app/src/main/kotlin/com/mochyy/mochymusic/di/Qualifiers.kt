@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.di
+package com.videshkarmakar.doom.di
 
 import javax.inject.Qualifier
 

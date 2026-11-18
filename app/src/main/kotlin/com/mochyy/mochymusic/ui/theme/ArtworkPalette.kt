@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.theme
+package com.videshkarmakar.doom.ui.theme
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb

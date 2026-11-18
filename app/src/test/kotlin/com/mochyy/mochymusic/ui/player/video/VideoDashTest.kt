@@ -1,9 +1,9 @@
-package com.mochyy.mochymusic.ui.player.video
+package com.videshkarmakar.doom.ui.player.video
 
-import com.mochyy.mochymusic.ui.player.videoCropTransform
-import com.mochyy.mochymusic.utils.VideoStreams
-import com.mochyy.mochymusic.utils.VideoTrack
-import com.mochyy.mochymusic.utils.pickVideoFamily
+import com.videshkarmakar.doom.ui.player.videoCropTransform
+import com.videshkarmakar.doom.utils.VideoStreams
+import com.videshkarmakar.doom.utils.VideoTrack
+import com.videshkarmakar.doom.utils.pickVideoFamily
 import com.music.innertube.models.response.PlayerResponse
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

@@ -1,6 +1,6 @@
 // audio lab's equalizer: one curve shaped as a graph or as sliders, with an optional headphone correction
 
-package com.mochyy.mochymusic.ui.screens.equalizer
+package com.videshkarmakar.doom.ui.screens.equalizer
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.spring
@@ -28,25 +28,25 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.eq.EqPreset
-import com.mochyy.mochymusic.eq.EqPresets
-import com.mochyy.mochymusic.eq.EqSettings
-import com.mochyy.mochymusic.ui.component.ActionPromptDialog
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.component.TextFieldDialog
-import com.mochyy.mochymusic.ui.screens.audiolab.LabCard
-import com.mochyy.mochymusic.ui.screens.audiolab.LabChip
-import com.mochyy.mochymusic.ui.screens.audiolab.LabChips
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSectionLabel
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSegmented
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSlider
-import com.mochyy.mochymusic.ui.screens.audiolab.LabTextAction
-import com.mochyy.mochymusic.ui.screens.audiolab.LabToggleRow
-import com.mochyy.mochymusic.ui.screens.audiolab.ListenToAudio
-import com.mochyy.mochymusic.ui.screens.audiolab.animatedDim
-import com.mochyy.mochymusic.viewmodels.AudioLabViewModel
-import com.mochyy.mochymusic.viewmodels.isFlat
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.eq.EqPreset
+import com.videshkarmakar.doom.eq.EqPresets
+import com.videshkarmakar.doom.eq.EqSettings
+import com.videshkarmakar.doom.ui.component.ActionPromptDialog
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.component.TextFieldDialog
+import com.videshkarmakar.doom.ui.screens.audiolab.LabCard
+import com.videshkarmakar.doom.ui.screens.audiolab.LabChip
+import com.videshkarmakar.doom.ui.screens.audiolab.LabChips
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSectionLabel
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSegmented
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSlider
+import com.videshkarmakar.doom.ui.screens.audiolab.LabTextAction
+import com.videshkarmakar.doom.ui.screens.audiolab.LabToggleRow
+import com.videshkarmakar.doom.ui.screens.audiolab.ListenToAudio
+import com.videshkarmakar.doom.ui.screens.audiolab.animatedDim
+import com.videshkarmakar.doom.viewmodels.AudioLabViewModel
+import com.videshkarmakar.doom.viewmodels.isFlat
 import kotlin.math.roundToInt
 
 @Composable

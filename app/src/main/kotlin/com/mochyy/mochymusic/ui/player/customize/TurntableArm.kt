@@ -1,6 +1,6 @@
 // TurntableArm.kt
 
-package com.mochyy.mochymusic.ui.player.customize
+package com.videshkarmakar.doom.ui.player.customize
 
 import android.os.Build
 import androidx.compose.animation.core.Animatable
@@ -43,9 +43,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.constants.PlayerCoverStyle
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.constants.PlayerCoverStyle
+import com.videshkarmakar.doom.utils.makeTimeString
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
@@ -172,13 +172,13 @@ fun TurntableArm(
         }
     }
 
-    val failureProgress = com.mochyy.mochymusic.ui.player.rememberStreamFailureProgress()
-    val failureLabel by com.mochyy.mochymusic.ui.player.rememberStreamFailureLabel(failureProgress)
+    val failureProgress = com.videshkarmakar.doom.ui.player.rememberStreamFailureProgress()
+    val failureLabel by com.videshkarmakar.doom.ui.player.rememberStreamFailureLabel(failureProgress)
 
     val measurer = rememberTextMeasurer(cacheSize = 16)
     val labelStyle = remember {
         TextStyle(
-            fontFamily = com.mochyy.mochymusic.ui.theme.InterFontFamily,
+            fontFamily = com.videshkarmakar.doom.ui.theme.InterFontFamily,
             fontWeight = FontWeight.SemiBold,
             fontSize = 11.sp,
             color = Color.White,
@@ -388,7 +388,7 @@ private fun DrawScope.drawTimeArc(
         val total = EndDegrees - StartDegrees
         val red = total * failureProgress.coerceAtMost(1f)
         drawArc(
-            color = com.mochyy.mochymusic.ui.player.StreamFailureRed.copy(alpha = alpha),
+            color = com.videshkarmakar.doom.ui.player.StreamFailureRed.copy(alpha = alpha),
             startAngle = start + total - red,
             sweepAngle = red.coerceAtLeast(0.01f),
             useCenter = false,
@@ -403,7 +403,7 @@ private fun DrawScope.drawTimeArc(
     if (failureLabel != null) {
         timeLabel(
             failureLabel, pivot, start - LabelGapDegrees, radius, alpha, measurer,
-            labelStyle.copy(color = com.mochyy.mochymusic.ui.player.StreamFailureRed),
+            labelStyle.copy(color = com.videshkarmakar.doom.ui.player.StreamFailureRed),
         )
     } else {
         timeLabel(makeTimeString(shown), pivot, start - LabelGapDegrees, radius, alpha, measurer, labelStyle)

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.betterlyrics
+package com.videshkarmakar.doom.betterlyrics
 
 import org.w3c.dom.Element
 import org.w3c.dom.Node

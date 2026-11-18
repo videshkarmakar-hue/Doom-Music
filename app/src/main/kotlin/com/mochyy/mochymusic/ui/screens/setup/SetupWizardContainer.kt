@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.setup
+package com.videshkarmakar.doom.ui.screens.setup
 
 import android.net.Uri
 import androidx.compose.animation.core.Animatable
@@ -28,13 +28,13 @@ import androidx.compose.ui.graphics.asComposeRenderEffect
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.constants.SetupCompletedKey
-import com.mochyy.mochymusic.ui.launch.LaunchGate
-import com.mochyy.mochymusic.ui.utils.stableSystemBars
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.constants.SetupCompletedKey
+import com.videshkarmakar.doom.ui.launch.LaunchGate
+import com.videshkarmakar.doom.ui.utils.stableSystemBars
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.component.backdropClick
+import com.videshkarmakar.doom.ui.component.backdropClick
 
 // a beat with the bones settled before the sheet slides over them
 private const val SheetAfterIntroMillis = 120L

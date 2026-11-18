@@ -1,6 +1,6 @@
 // StreamFailureUi.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import android.os.SystemClock
 import androidx.compose.runtime.Composable
@@ -19,8 +19,8 @@ import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
 import kotlin.math.ceil
 
 /** The red of a failed stream's countdown. */

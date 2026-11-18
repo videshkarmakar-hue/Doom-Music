@@ -1,12 +1,12 @@
 // turns a manifest's player into a layout: backgrounds, blocks, loops, keyframes, states, entrances and settings that switch blocks on and off, every number kept in range
 
-package com.mochyy.mochymusic.modules.skin
+package com.videshkarmakar.doom.modules.skin
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyle
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyle
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
@@ -16,7 +16,7 @@ import kotlinx.serialization.json.contentOrNull
 
 internal object SkinPlayerParser {
 
-    /** null when it has no block mochy knows; shaders only count from a zip, the same as a glass */
+    /** null when it has no block doom knows; shaders only count from a zip, the same as a glass */
     fun player(o: JsonObject, fallbackName: String, fromZip: Boolean): SkinPlayer? {
         val reader = Reader(fromZip, styleSheet(o["styles"]), SkinAnimationParser.library(o["keyframes"]))
         val blocks = reader.blocks(o["blocks"], depth = 0)
@@ -64,7 +64,7 @@ internal object SkinPlayerParser {
         return target(o)?.let { SkinMenuItem(title, o.string("icon") ?: o.string("image"), it) }
     }
 
-    /** one of mochy's controls by "action", else a link, a page or a search */
+    /** one of doom's controls by "action", else a link, a page or a search */
     fun target(o: JsonObject): SkinTarget? =
         buttonKind(o.string("action"))?.let(SkinTarget::Control) ?: SkinParser.actionTarget(o)?.let(SkinTarget::Action)
 
@@ -465,6 +465,6 @@ internal object SkinPlayerParser {
     private const val MaxStyles = 40
     private const val MaxMenu = 4
     private const val MaxHeader = 8
-    // what mochy hands every player shader itself
+    // what doom hands every player shader itself
     val PlayerUniforms = setOf("size", "time", "progress", "level", "bass", "mid", "treble", "playing", "density", "played", "remaining", "cover", "accent")
 }

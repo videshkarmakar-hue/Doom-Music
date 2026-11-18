@@ -4,7 +4,7 @@
 // on, translating the lyrics, downloading the song and adding it to a playlist. BottomSheetPlayer
 // hands these to [PlayerMenuExtras] so its own list of actions stays a list.
 
-package com.mochyy.mochymusic.ui.player.studio
+package com.videshkarmakar.doom.ui.player.studio
 
 import android.content.Context
 import android.widget.Toast
@@ -19,17 +19,17 @@ import androidx.core.net.toUri
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.KeepScreenOn
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.lyrics.LyricsTranslationHelper
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.playback.ExoDownloadService
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.ui.menu.AddToPlaylistDialog
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.KeepScreenOn
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.lyrics.LyricsTranslationHelper
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.playback.ExoDownloadService
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.ui.menu.AddToPlaylistDialog
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.flow.flowOf
 
 /** What the extra chevron actions do, and whether each one is on right now. */

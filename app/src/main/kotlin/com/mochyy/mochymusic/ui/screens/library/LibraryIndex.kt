@@ -9,7 +9,7 @@
 // first letter for alphabets like Cyrillic), and the rail folds each script into one short tag at
 // its foot - JP, KR, CN - that opens out into those sections when the finger reaches it.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.CubicBezierEasing
@@ -50,7 +50,7 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.Normalizer
@@ -92,19 +92,19 @@ data class IndexSection(
 private val SymbolSection = IndexSection(IndexScript.SYMBOL, 0, "#")
 
 /** Kana rows, in gojūon order, then kanji for titles that start with one. */
-private val KanaRowLabels = listOf("あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ", "漢")
+private val KanaRowLabels = listOf("�", "�", "�", "�", "�", "�", "�", "や", "ら", "�", "漢")
 private const val KanjiRow = 10
 
 /** Initial consonants as they head a Korean index (doubled ones file with their single). */
-private val HangulInitialLabels = listOf("가", "나", "다", "라", "마", "바", "사", "아", "자", "차", "카", "타", "파", "하")
+private val HangulInitialLabels = listOf("가", "나", "다", "�", "마", "바", "사", "아", "�", "차", "카", "타", "파", "하")
 
 /** For each of Unicode's 19 syllable initials, its place in [HangulInitialLabels]. */
 private val HangulInitialToRow = intArrayOf(0, 0, 1, 2, 2, 3, 4, 5, 5, 6, 6, 7, 8, 8, 9, 10, 11, 12, 13)
 
 /** Compatibility jamo (ㄱ...ㅎ, as typed on their own) mapped to the same rows. */
 private val JamoToRow: Map<Char, Int> = mapOf(
-    'ㄱ' to 0, 'ㄲ' to 0, 'ㄴ' to 1, 'ㄷ' to 2, 'ㄸ' to 2, 'ㄹ' to 3, 'ㅁ' to 4, 'ㅂ' to 5, 'ㅃ' to 5,
-    'ㅅ' to 6, 'ㅆ' to 6, 'ㅇ' to 7, 'ㅈ' to 8, 'ㅉ' to 8, 'ㅊ' to 9, 'ㅋ' to 10, 'ㅌ' to 11, 'ㅍ' to 12, 'ㅎ' to 13,
+    'ㄱ' to 0, 'ㄲ' to 0, 'ㄴ' to 1, 'ㄷ' to 2, 'ㄸ' to 2, 'ㄹ' to 3, '�' to 4, 'ㅂ' to 5, 'ㅃ' to 5,
+    'ㅅ' to 6, 'ㅆ' to 6, 'ㅇ' to 7, 'ㅈ' to 8, 'ㅉ' to 8, 'ㅊ' to 9, 'ㅋ' to 10, 'ㅌ' to 11, '�' to 12, 'ㅎ' to 13,
 )
 
 /**
@@ -117,22 +117,22 @@ private val chineseIndex by lazy {
     }.getOrNull()
 }
 
-private fun isKana(c: Char): Boolean = c in '぀'..'ヿ' || c in 'ㇰ'..'ㇿ' || c in 'ｦ'..'ﾝ'
+private fun isKana(c: Char): Boolean = c in '�'..'ヿ' || c in 'ㇰ'..'ㇿ' || c in 'ｦ'..'�'
 
 /** The hiragana row a kana belongs to; katakana is read as its hiragana. */
 private fun kanaRow(c: Char): Int {
     var h = c
     if (h in 'ァ'..'ヶ') h = h - 0x60
     return when (h) {
-        in 'ぁ'..'お' -> 0 // ぁ-お
-        in 'か'..'ご' -> 1 // か-ご
-        in 'さ'..'ぞ' -> 2 // さ-ぞ
-        in 'た'..'ど' -> 3 // た-ど
-        in 'な'..'の' -> 4 // な-の
-        in 'は'..'ぽ' -> 5 // は-ぽ
-        in 'ま'..'も' -> 6 // ま-も
+        in '�'..'�' -> 0 // �-�
+        in '�'..'�' -> 1 // �-�
+        in '�'..'�' -> 2 // �-�
+        in '�'..'�' -> 3 // �-�
+        in '�'..'�' -> 4 // �-�
+        in '�'..'�' -> 5 // �-�
+        in '�'..'も' -> 6 // �-も
         in 'ゃ'..'よ' -> 7 // ゃ-よ
-        in 'ら'..'ろ' -> 8 // ら-ろ
+        in 'ら'..'�' -> 8 // ら-�
         in 'ゎ'..'ん' -> 9 // ゎ-ん
         'ゕ', 'ゖ' -> 1 // ゕ ゖ
         else -> 0 // ゔ, the long-vowel mark, small katakana extensions

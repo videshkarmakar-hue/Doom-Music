@@ -1,6 +1,6 @@
 // the top of the discord page: the switch and a preview of the status, built by PresenceActivity, the same code that sends it
 
-package com.mochyy.mochymusic.ui.screens.settings.integrations.discord
+package com.videshkarmakar.doom.ui.screens.settings.integrations.discord
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
@@ -56,15 +56,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.discord.DiscordProfile
-import com.mochyy.mochymusic.discord.NowPlaying
-import com.mochyy.mochymusic.discord.PresenceActivity
-import com.mochyy.mochymusic.discord.PresenceImages
-import com.mochyy.mochymusic.discord.PresenceKind
-import com.mochyy.mochymusic.discord.PresencePicture
-import com.mochyy.mochymusic.discord.PresenceSettings
-import com.mochyy.mochymusic.ui.component.AppSwitch
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.discord.DiscordProfile
+import com.videshkarmakar.doom.discord.NowPlaying
+import com.videshkarmakar.doom.discord.PresenceActivity
+import com.videshkarmakar.doom.discord.PresenceImages
+import com.videshkarmakar.doom.discord.PresenceKind
+import com.videshkarmakar.doom.discord.PresencePicture
+import com.videshkarmakar.doom.discord.PresenceSettings
+import com.videshkarmakar.doom.ui.component.AppSwitch
 import kotlinx.coroutines.delay
 
 private val BannerHeight = 104.dp
@@ -403,7 +403,7 @@ private fun PictureView(picture: PresencePicture) {
             Box(fill.background(Color(0xFF1A1A1A))) {
                 Image(
                     painter = painterResource(R.drawable.ic_launcher_mark),
-                    contentDescription = "Mochy",
+                    contentDescription = "Doom",
                     contentScale = ContentScale.Crop,
                     // the launcher picture has a safe margin around it, the github copy is cropped the same
                     modifier =

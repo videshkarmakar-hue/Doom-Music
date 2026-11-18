@@ -1,6 +1,6 @@
 // opens the support sheet on its own: once after a new user's first 5 minutes of listening, then 4 times a week
 
-package com.mochyy.mochymusic.ui.screens.donate
+package com.videshkarmakar.doom.ui.screens.donate
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -14,18 +14,18 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.constants.DonateFirstPromptShownKey
-import com.mochyy.mochymusic.constants.DonateOpenPromptAtKey
-import com.mochyy.mochymusic.constants.DonatePlaytimeMsKey
-import com.mochyy.mochymusic.constants.DonatePromptSlotsKey
-import com.mochyy.mochymusic.constants.DonatePromptWindowStartKey
-import com.mochyy.mochymusic.constants.LastDonateShownTimeKey
-import com.mochyy.mochymusic.ui.component.LocalBottomSheetPageState
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.constants.DonateFirstPromptShownKey
+import com.videshkarmakar.doom.constants.DonateOpenPromptAtKey
+import com.videshkarmakar.doom.constants.DonatePlaytimeMsKey
+import com.videshkarmakar.doom.constants.DonatePromptSlotsKey
+import com.videshkarmakar.doom.constants.DonatePromptWindowStartKey
+import com.videshkarmakar.doom.constants.LastDonateShownTimeKey
+import com.videshkarmakar.doom.ui.component.LocalBottomSheetPageState
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine

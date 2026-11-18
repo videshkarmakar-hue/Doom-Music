@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,7 +9,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
-import com.mochyy.mochymusic.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.AppSwitch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -21,24 +21,24 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.CrossmixTestToolsKey
-import com.mochyy.mochymusic.constants.ForcePlaybackKey
-import com.mochyy.mochymusic.constants.ShowStreamSourceToastKey
-import com.mochyy.mochymusic.constants.ForceYtBackdropBlur1500Key
-import com.mochyy.mochymusic.constants.HapticFocus
-import com.mochyy.mochymusic.constants.HapticFocusKey
-import com.mochyy.mochymusic.constants.HapticSensitivity
-import com.mochyy.mochymusic.constants.MusicHapticsEnabledKey
-import com.mochyy.mochymusic.constants.MusicHapticsSensitivityKey
-import com.mochyy.mochymusic.constants.SetupCompletedKey
-import com.mochyy.mochymusic.ui.component.SettingsGroup
-import com.mochyy.mochymusic.ui.component.SettingsGroupStyle
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.component.SettingsItem
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.CrossmixTestToolsKey
+import com.videshkarmakar.doom.constants.ForcePlaybackKey
+import com.videshkarmakar.doom.constants.ShowStreamSourceToastKey
+import com.videshkarmakar.doom.constants.ForceYtBackdropBlur1500Key
+import com.videshkarmakar.doom.constants.HapticFocus
+import com.videshkarmakar.doom.constants.HapticFocusKey
+import com.videshkarmakar.doom.constants.HapticSensitivity
+import com.videshkarmakar.doom.constants.MusicHapticsEnabledKey
+import com.videshkarmakar.doom.constants.MusicHapticsSensitivityKey
+import com.videshkarmakar.doom.constants.SetupCompletedKey
+import com.videshkarmakar.doom.ui.component.SettingsGroup
+import com.videshkarmakar.doom.ui.component.SettingsGroupStyle
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.component.SettingsItem
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -48,11 +48,11 @@ fun ExperimentalSettingsScreen(navController: NavController) {
     val (musicHapticsSensitivity, onMusicHapticsSensitivityChange) = rememberEnumPreference(MusicHapticsSensitivityKey, defaultValue = HapticSensitivity.MEDIUM)
     val (hapticFocus, onHapticFocusChange) = rememberEnumPreference(HapticFocusKey, defaultValue = HapticFocus.VIBE)
     val (showBigDiscStyles, onShowBigDiscStylesChange) = rememberPreference(
-        com.mochyy.mochymusic.constants.ShowBigDiscStylesKey,
+        com.videshkarmakar.doom.constants.ShowBigDiscStylesKey,
         defaultValue = false,
     )
     val (forceRecap, onForceRecapChange) = rememberPreference(
-        com.mochyy.mochymusic.constants.ForceMonthlyRecapKey,
+        com.videshkarmakar.doom.constants.ForceMonthlyRecapKey,
         defaultValue = false,
     )
     val (forceYtBackdropBlur1500, onForceYtBackdropBlur1500Change) = rememberPreference(
@@ -68,13 +68,13 @@ fun ExperimentalSettingsScreen(navController: NavController) {
     val (sourceBanner, onSourceBannerChange) = rememberPreference(ShowStreamSourceToastKey, defaultValue = false)
     val (forcePlayback, onForcePlaybackChange) = rememberPreference(ForcePlaybackKey, defaultValue = false)
     val (streamBackend, onStreamBackendChange) = rememberEnumPreference(
-        com.mochyy.mochymusic.constants.StreamBackendKey,
-        defaultValue = com.mochyy.mochymusic.constants.StreamBackend.INNERTUBEX,
+        com.videshkarmakar.doom.constants.StreamBackendKey,
+        defaultValue = com.videshkarmakar.doom.constants.StreamBackend.INNERTUBEX,
     )
     val streamBackendTitle = stringResource(R.string.experimental_stream_backend)
     // off by default: the whole app stays upright until the wide layout is ready
     val (landscapeUnlocked, onLandscapeUnlockedChange) = rememberPreference(
-        com.mochyy.mochymusic.constants.LandscapeUnlockedKey,
+        com.videshkarmakar.doom.constants.LandscapeUnlockedKey,
         defaultValue = false,
     )
     val unlockLandscapeTitle = stringResource(R.string.experimental_unlock_landscape)
@@ -110,7 +110,7 @@ fun ExperimentalSettingsScreen(navController: NavController) {
                             descriptionText = stringResource(R.string.experimental_import_sync_desc),
                             icon = painterResource(R.drawable.sync),
                             iconShape = androidx.compose.foundation.shape.CircleShape,
-                            onClick = { navController.navigate(com.mochyy.mochymusic.ui.screens.settings.importsync.ImportSyncRoute) }
+                            onClick = { navController.navigate(com.videshkarmakar.doom.ui.screens.settings.importsync.ImportSyncRoute) }
                         )
                     )
                     add(
@@ -153,8 +153,8 @@ fun ExperimentalSettingsScreen(navController: NavController) {
                                 Text(
                                     stringResource(
                                         when (streamBackend) {
-                                            com.mochyy.mochymusic.constants.StreamBackend.INNERTUBEX -> R.string.experimental_stream_backend_innertubex
-                                            com.mochyy.mochymusic.constants.StreamBackend.CLASSIC -> R.string.experimental_stream_backend_classic
+                                            com.videshkarmakar.doom.constants.StreamBackend.INNERTUBEX -> R.string.experimental_stream_backend_innertubex
+                                            com.videshkarmakar.doom.constants.StreamBackend.CLASSIC -> R.string.experimental_stream_backend_classic
                                         }
                                     )
                                 )
@@ -165,8 +165,8 @@ fun ExperimentalSettingsScreen(navController: NavController) {
                             onClick = {
                                 onStreamBackendChange(
                                     when (streamBackend) {
-                                        com.mochyy.mochymusic.constants.StreamBackend.INNERTUBEX -> com.mochyy.mochymusic.constants.StreamBackend.CLASSIC
-                                        com.mochyy.mochymusic.constants.StreamBackend.CLASSIC -> com.mochyy.mochymusic.constants.StreamBackend.INNERTUBEX
+                                        com.videshkarmakar.doom.constants.StreamBackend.INNERTUBEX -> com.videshkarmakar.doom.constants.StreamBackend.CLASSIC
+                                        com.videshkarmakar.doom.constants.StreamBackend.CLASSIC -> com.videshkarmakar.doom.constants.StreamBackend.INNERTUBEX
                                     }
                                 )
                             }

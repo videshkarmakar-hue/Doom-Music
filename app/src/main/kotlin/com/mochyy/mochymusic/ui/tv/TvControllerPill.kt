@@ -1,6 +1,6 @@
 // TvControllerPill.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
@@ -35,8 +35,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.tv.TvControl
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.tv.TvControl
 
 // "controlled from kei's pixel": a small pill under the logo while a phone steers the tv, so the room knows who's picking
 @Composable

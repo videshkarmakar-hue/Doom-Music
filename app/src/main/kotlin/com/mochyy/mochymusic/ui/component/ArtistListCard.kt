@@ -1,6 +1,6 @@
 // ArtistListCard.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -34,8 +34,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.models.ArtistGroup
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.models.ArtistGroup
 import com.music.innertube.models.YTItem
 
 @Composable

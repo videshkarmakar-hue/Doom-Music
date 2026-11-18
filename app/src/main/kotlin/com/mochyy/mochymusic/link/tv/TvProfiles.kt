@@ -1,11 +1,11 @@
 // TvProfiles.kt
 
-package com.mochyy.mochymusic.link.tv
+package com.videshkarmakar.doom.link.tv
 
 import android.content.Context
 import androidx.compose.runtime.Immutable
 import androidx.core.content.edit
-import com.mochyy.mochymusic.db.InternalDatabase
+import com.videshkarmakar.doom.db.InternalDatabase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -96,7 +96,7 @@ object TvProfiles {
             id = id,
             name = name.trim().ifBlank { "You" },
             avatarPath = avatarPath,
-            dbName = if (dbTaken) "mochy_profile_$id.db" else InternalDatabase.DB_NAME,
+            dbName = if (dbTaken) "doom_profile_$id.db" else InternalDatabase.DB_NAME,
             phone = phone,
             createdAt = System.currentTimeMillis(),
         )
@@ -153,7 +153,7 @@ object TvProfiles {
             val json = array.optJSONObject(index) ?: return@mapNotNull null
             val phone = json.optJSONObject("phone")?.let { p ->
                 // sealed by this tv's vault; a key from another tv's backup can't be opened, so the phone pairs again
-                val key = com.mochyy.mochymusic.utils.SecretVault.open(p.optString("key"))?.ifBlank { null } ?: return@let null
+                val key = com.videshkarmakar.doom.utils.SecretVault.open(p.optString("key"))?.ifBlank { null } ?: return@let null
                 LinkedPhone(
                     id = p.optString("id"),
                     name = p.optString("name"),
@@ -192,7 +192,7 @@ object TvProfiles {
                         .put("name", phone.name)
                         .put("host", phone.host)
                         .put("port", phone.port)
-                        .put("key", com.mochyy.mochymusic.utils.SecretVault.seal(phone.key))
+                        .put("key", com.videshkarmakar.doom.utils.SecretVault.seal(phone.key))
                         .put("pairedAt", phone.pairedAt)
                         .put("lastSyncAt", phone.lastSyncAt),
                 )

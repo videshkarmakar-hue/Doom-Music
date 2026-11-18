@@ -1,6 +1,6 @@
 // Dimensions.kt
 
-package com.mochyy.mochymusic.constants
+package com.videshkarmakar.doom.constants
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring

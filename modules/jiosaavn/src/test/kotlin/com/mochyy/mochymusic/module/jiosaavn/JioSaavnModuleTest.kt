@@ -1,11 +1,11 @@
-package com.mochyy.mochymusic.module.jiosaavn
+package com.videshkarmakar.doom.module.jiosaavn
 
-import com.mochyy.mochymusic.module.HttpRequest
-import com.mochyy.mochymusic.module.HttpResponse
-import com.mochyy.mochymusic.module.ModuleHost
-import com.mochyy.mochymusic.module.ModuleStorage
-import com.mochyy.mochymusic.module.ResolveResult
-import com.mochyy.mochymusic.module.TrackQuery
+import com.videshkarmakar.doom.module.HttpRequest
+import com.videshkarmakar.doom.module.HttpResponse
+import com.videshkarmakar.doom.module.ModuleHost
+import com.videshkarmakar.doom.module.ModuleStorage
+import com.videshkarmakar.doom.module.ResolveResult
+import com.videshkarmakar.doom.module.TrackQuery
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

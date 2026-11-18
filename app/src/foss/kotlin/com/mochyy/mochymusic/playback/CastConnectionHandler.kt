@@ -1,19 +1,19 @@
 // CastConnectionHandler.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.content.Context
 import androidx.compose.runtime.Stable
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.cast.CastDiscovery
-import com.mochyy.mochymusic.cast.ChromecastRenderer
-import com.mochyy.mochymusic.cast.DlnaRenderer
-import com.mochyy.mochymusic.cast.FoundReceiver
-import com.mochyy.mochymusic.cast.RemoteMedia
-import com.mochyy.mochymusic.cast.RemoteRenderer
-import com.mochyy.mochymusic.cast.RemoteState
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.cast.CastDiscovery
+import com.videshkarmakar.doom.cast.ChromecastRenderer
+import com.videshkarmakar.doom.cast.DlnaRenderer
+import com.videshkarmakar.doom.cast.FoundReceiver
+import com.videshkarmakar.doom.cast.RemoteMedia
+import com.videshkarmakar.doom.cast.RemoteRenderer
+import com.videshkarmakar.doom.cast.RemoteState
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -27,7 +27,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import com.mochyy.mochymusic.models.MediaMetadata as AppMediaMetadata
+import com.videshkarmakar.doom.models.MediaMetadata as AppMediaMetadata
 
 /** casting without google play services: chromecasts over the cast protocol and dlna renderers over upnp (docs/notes/cast.md) */
 @Stable

@@ -1,6 +1,6 @@
 // HistorySource.kt
 
-package com.mochyy.mochymusic.constants
+package com.videshkarmakar.doom.constants
 
 enum class HistorySource {
     LOCAL, REMOTE

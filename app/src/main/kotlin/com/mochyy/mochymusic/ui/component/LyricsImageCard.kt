@@ -1,6 +1,6 @@
 // LyricsImageCard.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -47,8 +47,8 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.rememberAsyncImagePainter
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.models.MediaMetadata
 
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Brush
@@ -60,7 +60,7 @@ import coil3.request.allowHardware
 import coil3.toBitmap
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 
 @Composable
 fun rememberAdjustedFontSize(
@@ -395,7 +395,7 @@ fun LyricsImageCard(
                         contentAlignment = Alignment.Center
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.mochy_notification),
+                            painter = painterResource(id = R.drawable.doom_notification),
                             contentDescription = null,
                             modifier = Modifier
                                 .size(16.dp),

@@ -1,18 +1,18 @@
 // EditPlaylistSheet.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.content.Context
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import com.music.innertube.YouTube
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.PlaylistEntity
-import com.mochyy.mochymusic.playlistcover.CoverChoice
-import com.mochyy.mochymusic.playlistcover.PlaylistCoverStore
-import com.mochyy.mochymusic.playlistcover.PlaylistCoverStyle
-import com.mochyy.mochymusic.playlistcover.PlaylistCovers
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.PlaylistEntity
+import com.videshkarmakar.doom.playlistcover.CoverChoice
+import com.videshkarmakar.doom.playlistcover.PlaylistCoverStore
+import com.videshkarmakar.doom.playlistcover.PlaylistCoverStyle
+import com.videshkarmakar.doom.playlistcover.PlaylistCovers
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

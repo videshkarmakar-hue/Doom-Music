@@ -1,15 +1,15 @@
 // HomeRecommender.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import androidx.core.content.edit
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.utils.ListeningGenres
-import com.mochyy.mochymusic.utils.NotRecommended
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.utils.ListeningGenres
+import com.videshkarmakar.doom.utils.NotRecommended
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.BrowseEndpoint
@@ -143,7 +143,7 @@ class HomeRecommender(
             .ifEmpty {
                 // nothing played yet: the artists picked during onboarding (saved to the library)
                 // stand in until listening history takes over
-                database.artists(com.mochyy.mochymusic.constants.ArtistSortType.CREATE_DATE, true).first()
+                database.artists(com.videshkarmakar.doom.constants.ArtistSortType.CREATE_DATE, true).first()
                     .filter { it.artist.isYouTubeArtist && it.artist.name.lowercase() !in avoidArtists }
                     .take(14)
             }

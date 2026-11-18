@@ -1,30 +1,30 @@
 // PhoneLinkHost.kt
 
-package com.mochyy.mochymusic.link.phone
+package com.videshkarmakar.doom.link.phone
 
 import android.content.Context
 import androidx.core.content.edit
-import com.mochyy.mochymusic.BuildConfig
-import com.mochyy.mochymusic.constants.ProfilePicUriKey
-import com.mochyy.mochymusic.constants.UsernameKey
-import com.mochyy.mochymusic.db.InternalDatabase
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.MusicDatabaseVersion
-import com.mochyy.mochymusic.di.ApplicationScope
-import com.mochyy.mochymusic.link.DeviceKind
-import com.mochyy.mochymusic.link.LinkAdvert
-import com.mochyy.mochymusic.link.LinkAuth
-import com.mochyy.mochymusic.link.LinkCredentials
-import com.mochyy.mochymusic.link.LinkControlRoutes
-import com.mochyy.mochymusic.link.LinkHttpServer
-import com.mochyy.mochymusic.link.LinkIdentity
-import com.mochyy.mochymusic.link.LinkPeer
-import com.mochyy.mochymusic.link.LinkPlayer
-import com.mochyy.mochymusic.link.LinkRequest
-import com.mochyy.mochymusic.link.LinkResponse
-import com.mochyy.mochymusic.link.LinkWire
-import com.mochyy.mochymusic.playback.DownloadUtil
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.BuildConfig
+import com.videshkarmakar.doom.constants.ProfilePicUriKey
+import com.videshkarmakar.doom.constants.UsernameKey
+import com.videshkarmakar.doom.db.InternalDatabase
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.MusicDatabaseVersion
+import com.videshkarmakar.doom.di.ApplicationScope
+import com.videshkarmakar.doom.link.DeviceKind
+import com.videshkarmakar.doom.link.LinkAdvert
+import com.videshkarmakar.doom.link.LinkAuth
+import com.videshkarmakar.doom.link.LinkCredentials
+import com.videshkarmakar.doom.link.LinkControlRoutes
+import com.videshkarmakar.doom.link.LinkHttpServer
+import com.videshkarmakar.doom.link.LinkIdentity
+import com.videshkarmakar.doom.link.LinkPeer
+import com.videshkarmakar.doom.link.LinkPlayer
+import com.videshkarmakar.doom.link.LinkRequest
+import com.videshkarmakar.doom.link.LinkResponse
+import com.videshkarmakar.doom.link.LinkWire
+import com.videshkarmakar.doom.playback.DownloadUtil
+import com.videshkarmakar.doom.utils.dataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -65,7 +65,7 @@ class PhoneLinkHost @Inject constructor(
     private var advert: LinkAdvert? = null
     private var advertPort = -1
 
-    // devices that said hello lately; a tv with mochy open says it every 20 seconds, a phone as long as it's on screen
+    // devices that said hello lately; a tv with doom open says it every 20 seconds, a phone as long as it's on screen
     private val _live = MutableStateFlow<Map<String, LiveDevice>>(emptyMap())
     val live: StateFlow<Map<String, LiveDevice>> = _live.asStateFlow()
 
@@ -79,7 +79,7 @@ class PhoneLinkHost @Inject constructor(
 
     private val _foreground = MutableStateFlow(false)
 
-    // mochy is on screen here: other phones are checked on and a steered device is asked what it plays
+    // doom is on screen here: other phones are checked on and a steered device is asked what it plays
     val foreground: StateFlow<Boolean> = _foreground.asStateFlow()
 
     private val _notifyShown = MutableStateFlow(prefs.getBoolean(NotifyKey, true))
@@ -141,7 +141,7 @@ class PhoneLinkHost @Inject constructor(
         }
         watchLibrary()
         val port = server.start(LinkWire.PhonePort)
-        // a phone paired while mochy is on screen is checked on straight away, not from the next launch
+        // a phone paired while doom is on screen is checked on straight away, not from the next launch
         if (_foreground.value) peers.start()
         // pairing opens the server before anything is saved, so the advert can't hang on the server being down
         if (advert != null && advertPort == port) return
@@ -150,7 +150,7 @@ class PhoneLinkHost @Inject constructor(
         advert = LinkAdvert(
             context,
             LinkWire.PhoneServiceType,
-            "Mochy ${LinkIdentity.name(context)}",
+            "Doom ${LinkIdentity.name(context)}",
             port,
             mapOf(
                 LinkWire.AttrId to LinkIdentity.id(context),
@@ -342,7 +342,7 @@ class PhoneLinkHost @Inject constructor(
 
     private fun route(request: LinkRequest): LinkResponse {
         // a device still on the old protocol sends its key in a header; told to update rather than turned away as unpaired, which made it forget this phone
-        if (request.header(LinkWire.OldKeyHeader) != null) return LinkResponse.status(426, "update mochy on that device")
+        if (request.header(LinkWire.OldKeyHeader) != null) return LinkResponse.status(426, "update doom on that device")
         // the call must be signed by a paired device's key; the key itself is never in the call
         val from = verifier.verify(request) { id -> _devices.value.firstOrNull { it.id == id }?.key }
         val device = from?.let { id -> _devices.value.firstOrNull { it.id == id } }
@@ -404,11 +404,11 @@ class PhoneLinkHost @Inject constructor(
         return LinkResponse.json(json.toString())
     }
 
-    // another phone steering this one: only while both allow it, and only while mochy has a screen up here or android auto is open
+    // another phone steering this one: only while both allow it, and only while doom has a screen up here or android auto is open
     private fun controlled(request: LinkRequest, device: PairedDevice): LinkResponse {
         if (device.kind.isTv) return LinkResponse.status(404)
         if (!device.remoteControl) return LinkResponse.status(403, "remote control is off on this phone")
-        val connection = LinkPlayer.current() ?: return LinkResponse.status(409, "mochy isn't open on this phone")
+        val connection = LinkPlayer.current() ?: return LinkResponse.status(409, "doom isn't open on this phone")
         return control.handle(request, connection)
     }
 

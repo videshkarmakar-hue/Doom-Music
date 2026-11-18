@@ -1,6 +1,6 @@
 // PhoneLinkNotices.kt
 
-package com.mochyy.mochymusic.link.phone
+package com.videshkarmakar.doom.link.phone
 
 import android.Manifest
 import android.content.Context
@@ -15,11 +15,11 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ProcessLifecycleOwner
-import com.mochyy.mochymusic.MainActivity
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.TopToaster
+import com.videshkarmakar.doom.MainActivity
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.TopToaster
 
-// the phone's side of "your tv and phone are in step": a banner while mochy is open, a quiet notification otherwise
+// the phone's side of "your tv and phone are in step": a banner while doom is open, a quiet notification otherwise
 internal object PhoneLinkNotices {
     private const val ChannelId = "tv_link_events"
     private const val NoticeId = 4_712
@@ -64,7 +64,7 @@ internal object PhoneLinkNotices {
         manager.notify(
             NoticeId,
             NotificationCompat.Builder(context, ChannelId)
-                .setSmallIcon(R.drawable.mochy_notification)
+                .setSmallIcon(R.drawable.doom_notification)
                 .setContentTitle(title)
                 .setContentText(detail)
                 .setContentIntent(open)

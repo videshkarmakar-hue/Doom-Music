@@ -1,6 +1,6 @@
 // OnboardingViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import android.net.Uri
@@ -10,22 +10,22 @@ import androidx.compose.runtime.setValue
 import androidx.datastore.preferences.core.edit
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.constants.ProfileCardNumberKey
-import com.mochyy.mochymusic.constants.ProfileJoinedEpochDayKey
-import com.mochyy.mochymusic.constants.SelectedYtmPlaylistsKey
-import com.mochyy.mochymusic.constants.YtPullHistoryKey
-import com.mochyy.mochymusic.constants.YtReportPlaysKey
-import com.mochyy.mochymusic.constants.YtSyncLikedSongsKey
-import com.mochyy.mochymusic.constants.YtSyncNewPlaylistsKey
-import com.mochyy.mochymusic.constants.YtmSyncKey
-import com.mochyy.mochymusic.importer.MusicImportService
-import com.mochyy.mochymusic.importer.ParsedImport
-import com.mochyy.mochymusic.importer.YouTubeSyncManager
-import com.mochyy.mochymusic.importer.account.AccountImportSession
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.importer.parseImportCsv
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.BlurCapability
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.constants.ProfileCardNumberKey
+import com.videshkarmakar.doom.constants.ProfileJoinedEpochDayKey
+import com.videshkarmakar.doom.constants.SelectedYtmPlaylistsKey
+import com.videshkarmakar.doom.constants.YtPullHistoryKey
+import com.videshkarmakar.doom.constants.YtReportPlaysKey
+import com.videshkarmakar.doom.constants.YtSyncLikedSongsKey
+import com.videshkarmakar.doom.constants.YtSyncNewPlaylistsKey
+import com.videshkarmakar.doom.constants.YtmSyncKey
+import com.videshkarmakar.doom.importer.MusicImportService
+import com.videshkarmakar.doom.importer.ParsedImport
+import com.videshkarmakar.doom.importer.YouTubeSyncManager
+import com.videshkarmakar.doom.importer.account.AccountImportSession
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.importer.parseImportCsv
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.BlurCapability
+import com.videshkarmakar.doom.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
@@ -108,7 +108,7 @@ class OnboardingViewModel @Inject constructor(
         }
     }
 
-    /** A Mochy (or any playlist) CSV; null on success, otherwise what went wrong. */
+    /** A Doom (or any playlist) CSV; null on success, otherwise what went wrong. */
     suspend fun importBackup(uri: Uri): String? = withContext(Dispatchers.IO) {
         try {
             val text = context.contentResolver.openInputStream(uri)?.bufferedReader(Charsets.UTF_8)?.use { it.readText() }

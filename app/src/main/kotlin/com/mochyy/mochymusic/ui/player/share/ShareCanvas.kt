@@ -4,7 +4,7 @@
 // the share's fixed 360 x 640 picture with the font scale held at 1, so it looks the same on every
 // phone and in every export. The song share (share/song) puts it over its background.
 
-package com.mochyy.mochymusic.ui.player.share
+package com.videshkarmakar.doom.ui.player.share
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -55,9 +55,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.lerp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlin.math.sqrt
 
 internal val ShareWidth = 360.dp
@@ -90,16 +90,16 @@ private fun shareText(size: Float, weight: FontWeight = FontWeight.Bold, color: 
     TextStyle(fontFamily = InterFontFamily, fontWeight = weight, fontSize = size.sp, letterSpacing = tracking.sp, color = color)
 
 @Composable
-internal fun MochyMark(color: Color, size: Float = 14f) {
+internal fun DoomMark(color: Color, size: Float = 14f) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Icon(
-            painter = painterResource(R.drawable.ic_mochy_mark),
+            painter = painterResource(R.drawable.ic_doom_mark),
             contentDescription = null,
             tint = color,
             modifier = Modifier.size((size + 2f).dp),
         )
         Spacer(Modifier.width(6.dp))
-        Text("Mochy", style = shareText(size, color = color, tracking = -0.4f))
+        Text("Doom", style = shareText(size, color = color, tracking = -0.4f))
     }
 }
 
@@ -137,7 +137,7 @@ private fun SongHeader(song: ShareSong, color: Color, cover: Float, title: Float
 /**
  * The cinematic style: the words straight on the background, each one as its look says - bigger,
  * in capitals, glowing. Lines sit on their own, so a big word only pushes its own line apart. The
- * words shrink to fit when there are many, the Mochy mark always keeps its place at the bottom,
+ * words shrink to fit when there are many, the Doom mark always keeps its place at the bottom,
  * and the song slides past the words when it moves above or below them.
  */
 @Composable
@@ -187,7 +187,7 @@ internal fun CinematicLayout(
                     }
                 }
             },
-            { MochyMark(ink) },
+            { DoomMark(ink) },
         ),
         modifier = Modifier.fillMaxSize(),
     ) { (headerPart, wordsPart, markPart), constraints ->

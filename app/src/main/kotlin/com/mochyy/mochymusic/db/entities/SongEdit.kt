@@ -1,12 +1,12 @@
 // SongEdit.kt
 
-package com.mochyy.mochymusic.db.entities
+package com.videshkarmakar.doom.db.entities
 
 import androidx.compose.runtime.Immutable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.models.MediaMetadata
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json

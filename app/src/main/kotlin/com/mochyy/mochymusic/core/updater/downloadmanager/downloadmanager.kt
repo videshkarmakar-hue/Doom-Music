@@ -1,8 +1,8 @@
-package com.mochyy.mochymusic.core.updater.downloadmanager
+package com.videshkarmakar.doom.core.updater.downloadmanager
 
 import android.content.Context
 import android.os.Environment
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import kotlinx.coroutines.*
 import java.io.File
 import java.io.FileOutputStream
@@ -44,13 +44,13 @@ class CustomDownloadManager {
 
                 val downloadDir = File(
                     context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS),
-                    "mochy_updates"
+                    "doom_updates"
                 )
                 if (!downloadDir.exists()) {
                     downloadDir.mkdirs()
                 }
 
-                val outputFile = File(downloadDir, "mochy.apk")
+                val outputFile = File(downloadDir, "doom.apk")
                 val outputStream = FileOutputStream(outputFile)
 
                 val buffer = ByteArray(8192)

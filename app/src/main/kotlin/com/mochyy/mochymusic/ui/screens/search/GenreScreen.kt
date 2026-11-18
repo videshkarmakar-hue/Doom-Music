@@ -1,6 +1,6 @@
 // GenreScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.search
+package com.videshkarmakar.doom.ui.screens.search
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -58,20 +58,20 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.viewmodels.CommunityPlaylistItem
-import com.mochyy.mochymusic.viewmodels.GenreViewModel
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.viewmodels.CommunityPlaylistItem
+import com.videshkarmakar.doom.viewmodels.GenreViewModel
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
@@ -323,7 +323,7 @@ private fun GenreHeader(
 
                             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
                                 renderEffect =
-                                    com.mochyy.mochymusic.ui.component.BlurEffectCache.get(
+                                    com.videshkarmakar.doom.ui.component.BlurEffectCache.get(
                                         60f,
                                         android.graphics.Shader.TileMode.CLAMP,
                                     )
@@ -436,7 +436,7 @@ private fun GenreTopBar(
                 )
             }
             val progressiveBar =
-                com.mochyy.mochymusic.ui.component
+                com.videshkarmakar.doom.ui.component
                     .rememberProgressiveBlur()
             Box(
                 modifier =
@@ -446,7 +446,7 @@ private fun GenreTopBar(
                             onDrawBehind {
                                 val p = progressProvider().coerceIn(0f, 1f)
                                 if (!progressiveBar) {
-                                    drawRect(pageColor.copy(alpha = p * com.mochyy.mochymusic.ui.component.FlatBarScrimAlpha))
+                                    drawRect(pageColor.copy(alpha = p * com.videshkarmakar.doom.ui.component.FlatBarScrimAlpha))
                                     return@onDrawBehind
                                 }
                                 drawRect(
@@ -553,7 +553,7 @@ private fun GenreItemCard(
             circle = item is ArtistItem,
             corner = 10.dp,
             sharedElementKey =
-                com.mochyy.mochymusic.ui.component
+                com.videshkarmakar.doom.ui.component
                     .coverTransitionKey(item),
         )
         Spacer(modifier = Modifier.height(8.dp))

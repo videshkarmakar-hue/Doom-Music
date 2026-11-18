@@ -1,6 +1,6 @@
 // a module player's panels and drawn shapes: boxes with a fill, a gradient or frosted glass behind their blocks, and shapes from svg path data
 
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.graphics.vector.PathParser
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.modules.skin.GradientKind
-import com.mochyy.mochymusic.modules.skin.SkinBlock
-import com.mochyy.mochymusic.ui.component.GlassPillBackground
+import com.videshkarmakar.doom.modules.skin.GradientKind
+import com.videshkarmakar.doom.modules.skin.SkinBlock
+import com.videshkarmakar.doom.ui.component.GlassPillBackground
 import kotlin.math.min
 
 /** a panel: frosted glass, a fill or a gradient behind its blocks, a border, round corners, its blocks in a column or a row */

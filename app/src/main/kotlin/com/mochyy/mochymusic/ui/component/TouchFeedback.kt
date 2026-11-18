@@ -1,6 +1,6 @@
 // TouchFeedback.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring

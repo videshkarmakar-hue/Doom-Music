@@ -1,6 +1,6 @@
 // MediaSessionConstants.kt
 
-package com.mochyy.mochymusic.constants
+package com.videshkarmakar.doom.constants
 
 import android.os.Bundle
 import androidx.media3.session.SessionCommand

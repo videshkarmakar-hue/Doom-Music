@@ -1,6 +1,6 @@
 // DocumentTree.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import android.content.ContentResolver
 import android.net.Uri

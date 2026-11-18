@@ -1,6 +1,6 @@
 // SubSettingsScaffold.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
@@ -65,12 +65,12 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.lerp as lerpDp
 import androidx.compose.ui.util.lerp
 import coil3.compose.rememberAsyncImagePainter
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.screens.search.rememberScrollCollapseProgress
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.screens.search.rememberScrollCollapseProgress
 import kotlin.math.PI
 import kotlin.math.sin
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 
 private val PagePadding = 20.dp
 private val BackButtonSize = 40.dp
@@ -393,7 +393,7 @@ fun SubSettingsSearchBar(
                 onValueChange = onQueryChange,
                 singleLine = true,
                 textStyle = androidx.compose.ui.text.TextStyle(
-                    fontFamily = com.mochyy.mochymusic.ui.theme.InterFontFamily,
+                    fontFamily = com.videshkarmakar.doom.ui.theme.InterFontFamily,
                     fontSize = 16.sp,
                     color = Color.White,
                     fontWeight = FontWeight.Normal
@@ -404,7 +404,7 @@ fun SubSettingsSearchBar(
                     if (query.isEmpty()) {
                         Text(
                             text = stringResource(R.string.settings_search_placeholder),
-                            fontFamily = com.mochyy.mochymusic.ui.theme.InterFontFamily,
+                            fontFamily = com.videshkarmakar.doom.ui.theme.InterFontFamily,
                             fontSize = 16.sp,
                             color = Color.White.copy(alpha = 0.5f)
                         )

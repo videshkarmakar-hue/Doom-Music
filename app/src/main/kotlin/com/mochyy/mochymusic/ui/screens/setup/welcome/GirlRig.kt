@@ -1,8 +1,8 @@
 // the welcome girl's layers and her idle loop, like an animated wallpaper: breathing, flowing hair, small easy sways
 
-package com.mochyy.mochymusic.ui.screens.setup.welcome
+package com.videshkarmakar.doom.ui.screens.setup.welcome
 
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos

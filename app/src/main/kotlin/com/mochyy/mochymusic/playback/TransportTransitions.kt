@@ -1,13 +1,13 @@
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import androidx.media3.common.C
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
-import com.mochyy.mochymusic.constants.TransportEffect
-import com.mochyy.mochymusic.crossmix.CrossmixRole
-import com.mochyy.mochymusic.crossmix.CrossmixStyle
-import com.mochyy.mochymusic.playback.audio.CrossmixTransitionAudioProcessor
+import com.videshkarmakar.doom.constants.TransportEffect
+import com.videshkarmakar.doom.crossmix.CrossmixRole
+import com.videshkarmakar.doom.crossmix.CrossmixStyle
+import com.videshkarmakar.doom.playback.audio.CrossmixTransitionAudioProcessor
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

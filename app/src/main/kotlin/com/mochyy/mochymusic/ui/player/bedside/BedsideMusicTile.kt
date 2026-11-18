@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.bedside
+package com.videshkarmakar.doom.ui.player.bedside
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
@@ -43,16 +43,16 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.player.SongCarousel
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedPlayGlyph
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedSkipGlyph
-import com.mochyy.mochymusic.ui.player.flagship.SkipCycleState
-import com.mochyy.mochymusic.ui.player.models.TrackInfo
-import com.mochyy.mochymusic.ui.player.styles.LocalStyleInteractive
-import com.mochyy.mochymusic.ui.player.styles.whileStyleInteractive
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.player.SongCarousel
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedPlayGlyph
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedSkipGlyph
+import com.videshkarmakar.doom.ui.player.flagship.SkipCycleState
+import com.videshkarmakar.doom.ui.player.models.TrackInfo
+import com.videshkarmakar.doom.ui.player.styles.LocalStyleInteractive
+import com.videshkarmakar.doom.ui.player.styles.whileStyleInteractive
+import com.videshkarmakar.doom.utils.makeTimeString
 import kotlinx.coroutines.launch
 
 // the music tile's pages, top to bottom
@@ -229,7 +229,7 @@ private fun LikeButton(liked: Boolean) {
 @Composable
 private fun TileTransport(modifier: Modifier = Modifier, vertical: Boolean = false, gap: Dp = 30.dp, glyph: Dp = 22.dp) {
     // the remote plays and skips on a tv
-    if (com.mochyy.mochymusic.ui.utils.isTvLayout()) return
+    if (com.videshkarmakar.doom.ui.utils.isTvLayout()) return
     val connection = LocalPlayerConnection.current ?: return
     val transport by connection.uiState.transportState.collectAsState()
     val scope = rememberCoroutineScope()

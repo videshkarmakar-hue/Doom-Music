@@ -1,6 +1,6 @@
-// the module browser: mochy's bar's module forums, searched and sorted by kind, each added with one tap through the usual add sheet
+// the module browser: doom's bar's module forums, searched and sorted by kind, each added with one tap through the usual add sheet
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -36,20 +36,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.core.updater.DiscordUrl
-import com.mochyy.mochymusic.modules.ModuleRegistry.LinkCheck
-import com.mochyy.mochymusic.modules.browser.FeedKind
-import com.mochyy.mochymusic.modules.browser.FeedModule
-import com.mochyy.mochymusic.modules.browser.FeedResult
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.screens.settings.devspace.openDevUrl
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.viewmodels.BrowserFilter
-import com.mochyy.mochymusic.viewmodels.ModuleBrowserViewModel
-import com.mochyy.mochymusic.viewmodels.ModulesViewModel
-import com.mochyy.mochymusic.viewmodels.matching
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.core.updater.DiscordUrl
+import com.videshkarmakar.doom.modules.ModuleRegistry.LinkCheck
+import com.videshkarmakar.doom.modules.browser.FeedKind
+import com.videshkarmakar.doom.modules.browser.FeedModule
+import com.videshkarmakar.doom.modules.browser.FeedResult
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.screens.settings.devspace.openDevUrl
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.viewmodels.BrowserFilter
+import com.videshkarmakar.doom.viewmodels.ModuleBrowserViewModel
+import com.videshkarmakar.doom.viewmodels.ModulesViewModel
+import com.videshkarmakar.doom.viewmodels.matching
 import kotlinx.coroutines.launch
 
 const val ModuleBrowserRoute = "module_browser"

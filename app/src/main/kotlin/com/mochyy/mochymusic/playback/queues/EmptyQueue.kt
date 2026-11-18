@@ -1,9 +1,9 @@
 // EmptyQueue.kt
 
-package com.mochyy.mochymusic.playback.queues
+package com.videshkarmakar.doom.playback.queues
 
 import androidx.media3.common.MediaItem
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.models.MediaMetadata
 
 object EmptyQueue : Queue {
     override val preloadItem: MediaMetadata? = null

@@ -1,6 +1,6 @@
 // TvSongInfo.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.animateContentSize
@@ -43,13 +43,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.ui.player.info.AboutSource
-import com.mochyy.mochymusic.ui.player.info.SongAbout
-import com.mochyy.mochymusic.ui.player.info.SongAboutLoader
-import com.mochyy.mochymusic.ui.player.info.textFor
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.ui.player.info.AboutSource
+import com.videshkarmakar.doom.ui.player.info.SongAbout
+import com.videshkarmakar.doom.ui.player.info.SongAboutLoader
+import com.videshkarmakar.doom.ui.player.info.textFor
 
 // which part of the panel the remote lands on first
 internal enum class TvInfoStart { Song, Source }

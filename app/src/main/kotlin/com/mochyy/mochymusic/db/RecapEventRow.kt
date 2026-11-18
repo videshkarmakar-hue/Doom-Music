@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.db
+package com.videshkarmakar.doom.db
 
 /**
  * One play from the `event` table without its song attached. [timestamp] is the stored column as-is:

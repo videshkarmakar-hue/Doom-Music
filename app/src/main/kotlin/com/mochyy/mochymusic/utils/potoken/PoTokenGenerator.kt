@@ -1,9 +1,9 @@
 // PoTokenGenerator.kt
 
-package com.mochyy.mochymusic.utils.potoken
+package com.videshkarmakar.doom.utils.potoken
 
 import android.webkit.CookieManager
-import com.mochyy.mochymusic.utils.cipher.CipherDeobfuscator
+import com.videshkarmakar.doom.utils.cipher.CipherDeobfuscator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Mutex

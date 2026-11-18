@@ -1,15 +1,15 @@
 // TvPairing.kt
 
-package com.mochyy.mochymusic.link.tv
+package com.videshkarmakar.doom.link.tv
 
 import android.content.Context
-import com.mochyy.mochymusic.link.DeviceKind
-import com.mochyy.mochymusic.link.LinkAuth
-import com.mochyy.mochymusic.link.LinkIdentity
-import com.mochyy.mochymusic.link.LinkPairingDoor
-import com.mochyy.mochymusic.link.LinkResponse
-import com.mochyy.mochymusic.link.LinkWire
-import com.mochyy.mochymusic.link.PairingCode
+import com.videshkarmakar.doom.link.DeviceKind
+import com.videshkarmakar.doom.link.LinkAuth
+import com.videshkarmakar.doom.link.LinkIdentity
+import com.videshkarmakar.doom.link.LinkPairingDoor
+import com.videshkarmakar.doom.link.LinkResponse
+import com.videshkarmakar.doom.link.LinkWire
+import com.videshkarmakar.doom.link.PairingCode
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -53,7 +53,7 @@ class TvPairing @Inject constructor(
     private fun accept(body: JSONObject, remoteHost: String, code: String): LinkResponse {
         val phoneId = body.optString("phoneId").ifBlank { return LinkResponse.status(400) }
         // a phone on the old protocol sends the key itself instead of a public half; it has to update first
-        val otherPublic = body.optString("pub").ifBlank { return LinkResponse.status(426, "update mochy on the phone") }
+        val otherPublic = body.optString("pub").ifBlank { return LinkResponse.status(426, "update doom on the phone") }
         val keyPair = LinkAuth.newKeyPair()
         val key = LinkAuth.sharedKey(keyPair, otherPublic, code, listOf(phoneId, LinkIdentity.id(context))) ?: return LinkResponse.status(400)
         val phone = LinkedPhone(

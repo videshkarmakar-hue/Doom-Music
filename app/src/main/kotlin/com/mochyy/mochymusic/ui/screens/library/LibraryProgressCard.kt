@@ -3,7 +3,7 @@
 // The small "Download progress  87%" card the Library shows while songs download or files come in
 // from the phone, and the ring each song gets on the progress sheet.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
@@ -53,9 +53,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.models.TransferBatch
-import com.mochyy.mochymusic.models.TransferState
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.models.TransferBatch
+import com.videshkarmakar.doom.models.TransferState
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
 import kotlinx.coroutines.delay
 
 /** The green of a song that is coming in or is done, from the mock. */

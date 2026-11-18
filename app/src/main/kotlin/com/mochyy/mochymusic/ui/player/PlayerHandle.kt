@@ -1,6 +1,6 @@
 // PlayerHandle.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import android.app.Activity
 import android.content.Context
@@ -52,7 +52,7 @@ import androidx.compose.ui.util.lerp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
-import com.mochyy.mochymusic.ui.component.BottomSheetState
+import com.videshkarmakar.doom.ui.component.BottomSheetState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

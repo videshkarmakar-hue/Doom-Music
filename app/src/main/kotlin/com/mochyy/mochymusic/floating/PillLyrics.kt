@@ -1,6 +1,6 @@
 // PillLyrics.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.Animatable
@@ -54,17 +54,17 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.ui.player.KaraokeHead
-import com.mochyy.mochymusic.ui.player.LyricsAlignment
-import com.mochyy.mochymusic.ui.player.WordWaitDrop
-import com.mochyy.mochymusic.ui.player.advance
-import com.mochyy.mochymusic.ui.player.isRtlLine
-import com.mochyy.mochymusic.ui.player.karaokeHeadFor
-import com.mochyy.mochymusic.ui.player.karaokeTimedRanges
-import com.mochyy.mochymusic.ui.player.rememberWordMotionModifier
-import com.mochyy.mochymusic.ui.player.sweepHeadX
-import com.mochyy.mochymusic.ui.player.withLetterMotionFeatures
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.player.KaraokeHead
+import com.videshkarmakar.doom.ui.player.LyricsAlignment
+import com.videshkarmakar.doom.ui.player.WordWaitDrop
+import com.videshkarmakar.doom.ui.player.advance
+import com.videshkarmakar.doom.ui.player.isRtlLine
+import com.videshkarmakar.doom.ui.player.karaokeHeadFor
+import com.videshkarmakar.doom.ui.player.karaokeTimedRanges
+import com.videshkarmakar.doom.ui.player.rememberWordMotionModifier
+import com.videshkarmakar.doom.ui.player.sweepHeadX
+import com.videshkarmakar.doom.ui.player.withLetterMotionFeatures
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.coroutineScope

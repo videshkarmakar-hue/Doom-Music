@@ -1,14 +1,14 @@
 // what a look module brings beyond plain settings: a player of its own, a font, a glass for the bottom bar, pages, rows in the player's menu, and where its files live (docs/wiki, module pages)
 
-package com.mochyy.mochymusic.modules.skin
+package com.videshkarmakar.doom.modules.skin
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyle
-import com.mochyy.mochymusic.modules.web.resolveModulePath
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyle
+import com.videshkarmakar.doom.modules.web.resolveModulePath
 import java.io.File
 
 @Immutable
@@ -23,7 +23,7 @@ class ModuleSkin(
     val actions: List<SkinAction> = emptyList(),
     val glass: SkinGlass? = null,
 ) {
-    // a style, a font or a glass changes how mochy looks, so only one such module is on at a time; pages and menu rows alone don't
+    // a style, a font or a glass changes how doom looks, so only one such module is on at a time; pages and menu rows alone don't
     val restyles: Boolean get() = player != null || font != null || glass != null
 
     /** a picture or font a skin names: a link as it is, a path from the module's zip, or a path next to a link module's manifest */
@@ -62,7 +62,7 @@ class ModuleSkin(
 
 // ---- the bottom bar's glass -------------------------------------------------------------------
 
-/** a glass of the module's own for the nav bar and mini player: its agsl file, the blur it reads through, how far past the bar it may read, its own uniforms, and whether mochy still draws its hairline and shadow round the bars */
+/** a glass of the module's own for the nav bar and mini player: its agsl file, the blur it reads through, how far past the bar it may read, its own uniforms, and whether doom still draws its hairline and shadow round the bars */
 @Immutable
 data class SkinGlass(
     val shader: String,
@@ -115,7 +115,7 @@ data class SkinText(
 @Immutable
 data class SkinFont(val regular: String, val bold: String?, val wholeApp: Boolean = false)
 
-/** where mochy's chevron sits and how it's dressed: [side] start or end, or hidden when the module brings its own menu button */
+/** where doom's chevron sits and how it's dressed: [side] start or end, or hidden when the module brings its own menu button */
 @Immutable
 data class SkinMenuButton(val side: MenuSide, val color: SkinColor?, val fill: SkinColor?)
 
@@ -135,7 +135,7 @@ data class SkinPlayer(
     val layers: List<SkinLayer> = emptyList(),
     /** the settings the player's customise sheet offers, from the ••• menu or a customise button */
     val customise: SkinCustomise? = null,
-    /** the module's own items in the player's chevron menu, above mochy's other menu and edit player */
+    /** the module's own items in the player's chevron menu, above doom's other menu and edit player */
     val menu: List<SkinMenuItem> = emptyList(),
     val menuButton: SkinMenuButton = DefaultMenuButton,
     /** blocks in a row level with the chevron, at the very top, taking no room from the rest */
@@ -165,7 +165,7 @@ data class SkinPlayer(
     /** a box asks for frosted glass, so the backdrop has to be captured for it */
     val frosted: Boolean by lazy { all.any { it is SkinBlock.Box && it.glass != null } }
 
-    /** some words name the stream or the phone ({codec}, {kbps}, {device}...), so mochy only gathers them for players that show them */
+    /** some words name the stream or the phone ({codec}, {kbps}, {device}...), so doom only gathers them for players that show them */
     val audio: Boolean by lazy { all.any { it is SkinBlock.Label && SkinAudioField.containsMatchIn(it.value) } }
 
     /** lyrics show somewhere, so the player fetches and parses them */
@@ -180,14 +180,14 @@ val SkinAudioField = Regex("""\{(codec|khz|kbps|bits|size|quality|device|volume|
 @Immutable
 data class SkinCustomise(val title: String?, val keys: List<String>)
 
-/** what a player button or a chevron menu item does: one of mochy's own controls, or a link, a page or a search like a menu row */
+/** what a player button or a chevron menu item does: one of doom's own controls, or a link, a page or a search like a menu row */
 @Immutable
 sealed interface SkinTarget {
     data class Control(val kind: ButtonKind) : SkinTarget
     data class Action(val target: ActionTarget) : SkinTarget
 }
 
-/** an item in the chevron menu: its words, a picture from the module (mochy's icon for a control when it has none) and what it does */
+/** an item in the chevron menu: its words, a picture from the module (doom's icon for a control when it has none) and what it does */
 @Immutable
 data class SkinMenuItem(val title: String, val icon: String?, val target: SkinTarget)
 
@@ -274,7 +274,7 @@ sealed interface SkinBlock {
     data class Stack(val blocks: List<SkinBlock>, val align: StackAlign, val height: Dp?) : SkinBlock
     /** bars, a wave or dots that follow the music as it's heard */
     data class Visualizer(val style: VisualizerStyle, val count: Int, val height: Dp, val color: SkinColor, val fill: Float, val round: Boolean) : SkinBlock
-    /** one control or custom action, with mochy's icon or the module's [image] ([imageOn] while it's on: playing, liked, shuffling) */
+    /** one control or custom action, with doom's icon or the module's [image] ([imageOn] while it's on: playing, liked, shuffling) */
     data class Button(val target: SkinTarget, val size: Dp, val color: SkinColor?, val fill: SkinColor?, val image: String?, val imageOn: String?) : SkinBlock
     /** a plain shape to decorate with: a box, a circle, a pill or a line, filled or outlined */
     data class Shape(val kind: ShapeKind, val width: Dp?, val height: Dp, val colors: List<SkinColor>, val corner: Dp, val stroke: Dp?) : SkinBlock

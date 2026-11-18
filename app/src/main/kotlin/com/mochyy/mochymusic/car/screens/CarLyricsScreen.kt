@@ -1,6 +1,6 @@
 // CarLyricsScreen.kt
 
-package com.mochyy.mochymusic.car.screens
+package com.videshkarmakar.doom.car.screens
 
 import androidx.car.app.Screen
 import androidx.car.app.model.Action
@@ -17,12 +17,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.car.CarApp
-import com.mochyy.mochymusic.car.CarLyricLines
-import com.mochyy.mochymusic.constants.CarLyricsKey
-import com.mochyy.mochymusic.playback.MusicService
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.car.CarApp
+import com.videshkarmakar.doom.car.CarLyricLines
+import com.videshkarmakar.doom.constants.CarLyricsKey
+import com.videshkarmakar.doom.playback.MusicService
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first

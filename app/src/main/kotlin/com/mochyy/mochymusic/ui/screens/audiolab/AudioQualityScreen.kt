@@ -1,6 +1,6 @@
 // audio lab's quality page: streaming tiers per provider, download quality, and the orders songs play and download in
 
-package com.mochyy.mochymusic.ui.screens.audiolab
+package com.videshkarmakar.doom.ui.screens.audiolab
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -46,19 +46,19 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.compose.runtime.collectAsState
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.ModuleFeature
-import com.mochyy.mochymusic.module.jiosaavn.JioSaavnModule
-import com.mochyy.mochymusic.module.applemusic.AppleMusicModule
-import com.mochyy.mochymusic.module.monochrome.MonochromeModule
-import com.mochyy.mochymusic.modules.SourceModules
-import com.mochyy.mochymusic.viewmodels.ModulesViewModel
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AudioQuality
-import com.mochyy.mochymusic.constants.AudioQualityKey
-import com.mochyy.mochymusic.eq.audio.AudioTap
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.rememberEnumPreference
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.ModuleFeature
+import com.videshkarmakar.doom.module.jiosaavn.JioSaavnModule
+import com.videshkarmakar.doom.module.applemusic.AppleMusicModule
+import com.videshkarmakar.doom.module.monochrome.MonochromeModule
+import com.videshkarmakar.doom.modules.SourceModules
+import com.videshkarmakar.doom.viewmodels.ModulesViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AudioQuality
+import com.videshkarmakar.doom.constants.AudioQualityKey
+import com.videshkarmakar.doom.eq.audio.AudioTap
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.rememberEnumPreference
 import kotlin.math.exp
 import kotlin.math.roundToInt
 import kotlin.math.sin
@@ -84,8 +84,8 @@ private class Effective(val quality: AudioQuality, val title: String, val format
 fun AudioQualityScreen(navController: NavController, modules: ModulesViewModel = hiltViewModel()) {
     val (stored, onQuality) = rememberEnumPreference(AudioQualityKey, defaultValue = AudioQuality.AUTO)
     val (downloadQuality, onDownloadQuality) = rememberEnumPreference(
-        com.mochyy.mochymusic.constants.DownloadQualityKey,
-        defaultValue = com.mochyy.mochymusic.constants.DownloadQuality.HIGH,
+        com.videshkarmakar.doom.constants.DownloadQualityKey,
+        defaultValue = com.videshkarmakar.doom.constants.DownloadQuality.HIGH,
     )
     // the tiers Monochrome used to serve from here belong to its module now
     val quality = if (stored.usesMonochrome) AudioQuality.HIGH else stored
@@ -99,7 +99,7 @@ fun AudioQualityScreen(navController: NavController, modules: ModulesViewModel =
     val statusOn = stringResource(R.string.aq_status_on)
     val statusOffTap = stringResource(R.string.aq_status_off_tap)
     val statusNotInstalled = stringResource(R.string.aq_status_not_installed)
-    val moduleStatus = { entry: com.mochyy.mochymusic.modules.ModuleEntry ->
+    val moduleStatus = { entry: com.videshkarmakar.doom.modules.ModuleEntry ->
         when {
             entry.account is AccountState.SignedOut -> statusSignIn
             entry.account is AccountState.Expired -> statusSignInAgain
@@ -185,7 +185,7 @@ fun AudioQualityScreen(navController: NavController, modules: ModulesViewModel =
                     QualityRow(stringResource(R.string.aq_quality_lossless), stringResource(R.string.aq_desc_monochrome_lossless), selected = true, enabled = active) {}
                 }
                 LabTextAction(stringResource(R.string.aq_module_settings, entry.module.info.name), R.drawable.navigate_next) {
-                    navController.navigate(com.mochyy.mochymusic.ui.screens.settings.modules.moduleRoute(id))
+                    navController.navigate(com.videshkarmakar.doom.ui.screens.settings.modules.moduleRoute(id))
                 }
             }
         }
@@ -194,11 +194,11 @@ fun AudioQualityScreen(navController: NavController, modules: ModulesViewModel =
         Spacer(Modifier.height(24.dp))
         LabSheetTitle(stringResource(R.string.aq_section_download))
         LabGroup {
-            com.mochyy.mochymusic.constants.DownloadQuality.entries.forEach { option ->
+            com.videshkarmakar.doom.constants.DownloadQuality.entries.forEach { option ->
                 val (titleRes, descRes) = when (option) {
-                    com.mochyy.mochymusic.constants.DownloadQuality.HIGH -> R.string.aq_quality_high to R.string.aq_dl_desc_high
-                    com.mochyy.mochymusic.constants.DownloadQuality.MEDIUM -> R.string.aq_quality_medium to R.string.aq_dl_desc_medium
-                    com.mochyy.mochymusic.constants.DownloadQuality.LOW -> R.string.aq_quality_low to R.string.aq_dl_desc_low
+                    com.videshkarmakar.doom.constants.DownloadQuality.HIGH -> R.string.aq_quality_high to R.string.aq_dl_desc_high
+                    com.videshkarmakar.doom.constants.DownloadQuality.MEDIUM -> R.string.aq_quality_medium to R.string.aq_dl_desc_medium
+                    com.videshkarmakar.doom.constants.DownloadQuality.LOW -> R.string.aq_quality_low to R.string.aq_dl_desc_low
                 }
                 QualityRow(stringResource(titleRes), stringResource(descRes), selected = downloadQuality == option, enabled = true) {
                     onDownloadQuality(option)
@@ -226,7 +226,7 @@ fun AudioQualityScreen(navController: NavController, modules: ModulesViewModel =
                 if (id == SourceModules.YouTubeId) {
                     modules.setEnabled(id, !youTubeOn)
                 } else {
-                    navController.navigate(com.mochyy.mochymusic.ui.screens.settings.modules.moduleRoute(id))
+                    navController.navigate(com.videshkarmakar.doom.ui.screens.settings.modules.moduleRoute(id))
                 }
             },
             onReorder = modules::setVisibleOrder,
@@ -250,7 +250,7 @@ fun AudioQualityScreen(navController: NavController, modules: ModulesViewModel =
             },
             // youtube is always there for downloads, so only a module's row has somewhere to go
             onTap = { id ->
-                if (id != SourceModules.YouTubeId) navController.navigate(com.mochyy.mochymusic.ui.screens.settings.modules.moduleRoute(id))
+                if (id != SourceModules.YouTubeId) navController.navigate(com.videshkarmakar.doom.ui.screens.settings.modules.moduleRoute(id))
             },
             onReorder = modules::setVisibleDownloadOrder,
         )

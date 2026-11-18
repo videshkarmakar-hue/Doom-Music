@@ -1,6 +1,6 @@
 // "test the module": search any song (or take the one playing) and see every step the module takes with it, songs, lyrics and song info alike
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
@@ -46,15 +46,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.DiagnosticStep
-import com.mochyy.mochymusic.module.TrackQuery
-import com.mochyy.mochymusic.modules.ModuleEntry
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.viewmodels.ModulesViewModel
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.DiagnosticStep
+import com.videshkarmakar.doom.module.TrackQuery
+import com.videshkarmakar.doom.modules.ModuleEntry
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.viewmodels.ModulesViewModel
 import com.music.innertube.models.WatchEndpoint
 
 /** a song the test can run with: what the module is asked for, and what the row shows */

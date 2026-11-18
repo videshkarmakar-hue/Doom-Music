@@ -1,6 +1,6 @@
 // JavaScriptUtil.kt
 
-package com.mochyy.mochymusic.utils.potoken
+package com.videshkarmakar.doom.utils.potoken
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonNull

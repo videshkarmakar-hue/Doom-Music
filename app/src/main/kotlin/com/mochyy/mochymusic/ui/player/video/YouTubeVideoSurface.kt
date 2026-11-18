@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.video
+package com.videshkarmakar.doom.ui.player.video
 
 import android.graphics.SurfaceTexture
 import android.os.SystemClock
@@ -30,17 +30,17 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.currentStateAsState
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.constants.VideoQuality
-import com.mochyy.mochymusic.constants.VideoQualityKey
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.player.LetterboxStabilizer
-import com.mochyy.mochymusic.ui.player.SongVideo
-import com.mochyy.mochymusic.ui.player.VideoLetterbox
-import com.mochyy.mochymusic.ui.player.videoCropTransform
-import com.mochyy.mochymusic.utils.YTPlayerUtils
-import com.mochyy.mochymusic.utils.rememberEnumPreference
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.constants.VideoQuality
+import com.videshkarmakar.doom.constants.VideoQualityKey
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.player.LetterboxStabilizer
+import com.videshkarmakar.doom.ui.player.SongVideo
+import com.videshkarmakar.doom.ui.player.VideoLetterbox
+import com.videshkarmakar.doom.ui.player.videoCropTransform
+import com.videshkarmakar.doom.utils.YTPlayerUtils
+import com.videshkarmakar.doom.utils.rememberEnumPreference
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.filter
@@ -186,7 +186,7 @@ fun YouTubeVideoSurface(
             if (horizontal.offer(reading.horizontal, now)) launch { barInsetX.animateTo(horizontal.inset, zoomSpec) }
             currentOnAmbient?.invoke(edgeColors(pixels, SampleSize, horizontal.inset, vertical.inset))
             currentOnFrameColors?.invoke(
-                com.mochyy.mochymusic.ui.player.flagship.ambientTones(pixels, SampleSize, SampleSize, horizontal.inset, vertical.inset)
+                com.videshkarmakar.doom.ui.player.flagship.ambientTones(pixels, SampleSize, SampleSize, horizontal.inset, vertical.inset)
             )
         }
     }
@@ -233,10 +233,10 @@ fun YouTubeVideoSurface(
     }
 }
 
-private fun com.mochyy.mochymusic.ui.player.VideoTransform.lerpTo(
-    other: com.mochyy.mochymusic.ui.player.VideoTransform,
+private fun com.videshkarmakar.doom.ui.player.VideoTransform.lerpTo(
+    other: com.videshkarmakar.doom.ui.player.VideoTransform,
     t: Float,
-) = com.mochyy.mochymusic.ui.player.VideoTransform(
+) = com.videshkarmakar.doom.ui.player.VideoTransform(
     scaleX = scaleX + (other.scaleX - scaleX) * t,
     scaleY = scaleY + (other.scaleY - scaleY) * t,
     translationX = translationX + (other.translationX - translationX) * t,

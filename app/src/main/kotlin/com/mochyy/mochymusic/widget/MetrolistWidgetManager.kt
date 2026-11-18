@@ -1,6 +1,6 @@
 // MetrolistWidgetManager.kt
 
-package com.mochyy.mochymusic.widget
+package com.videshkarmakar.doom.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -20,9 +20,9 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
-import com.mochyy.mochymusic.MainActivity
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.MusicDatabase
+import com.videshkarmakar.doom.MainActivity
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.MusicDatabase
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.withLock
@@ -31,7 +31,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class MochyWidgetManager @Inject constructor(
+class DoomWidgetManager @Inject constructor(
     @ApplicationContext private val context: Context,
     private val database: MusicDatabase
 ) {

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import android.content.Context
 import android.media.AudioManager
@@ -6,12 +6,12 @@ import android.os.SystemClock
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.snapshotFlow
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.viewmodels.IpodLibraryViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.viewmodels.IpodLibraryViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

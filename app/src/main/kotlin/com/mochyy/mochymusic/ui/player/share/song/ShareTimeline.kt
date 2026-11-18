@@ -1,6 +1,6 @@
 // ShareTimeline.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import androidx.compose.animation.core.AnimationState
 import androidx.compose.animation.core.animate
@@ -47,9 +47,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.lerp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.player.share.ShareMuted
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.player.share.ShareMuted
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.math.abs

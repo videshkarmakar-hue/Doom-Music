@@ -1,6 +1,6 @@
 // SecretVault.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
@@ -15,7 +15,7 @@ import javax.crypto.spec.GCMParameterSpec
 
 // seals the app's secrets (sign-in cookies, api keys, the link keys) with a key that lives in the phone's keystore and never leaves it
 object SecretVault {
-    private const val Alias = "mochy_secrets"
+    private const val Alias = "doom_secrets"
     private const val Prefix = "enc1:"
     private const val IvBytes = 12
     private const val TagBits = 128

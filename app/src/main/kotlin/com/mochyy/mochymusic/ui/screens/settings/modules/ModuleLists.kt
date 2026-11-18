@@ -1,6 +1,6 @@
 // the lists on a module's page: the servers it plays from, the scripts and links people added to it, and the pages it brings
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -31,17 +31,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.module.ItemListModule
-import com.mochyy.mochymusic.module.ModuleItem
-import com.mochyy.mochymusic.module.ModuleServer
-import com.mochyy.mochymusic.modules.ModuleEntry
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.component.SwipeAction
-import com.mochyy.mochymusic.ui.component.SwipeActionsBox
-import com.mochyy.mochymusic.ui.component.SwipeRemoveColor
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.viewmodels.ModulesViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.module.ItemListModule
+import com.videshkarmakar.doom.module.ModuleItem
+import com.videshkarmakar.doom.module.ModuleServer
+import com.videshkarmakar.doom.modules.ModuleEntry
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.component.SwipeAction
+import com.videshkarmakar.doom.ui.component.SwipeActionsBox
+import com.videshkarmakar.doom.ui.component.SwipeRemoveColor
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.viewmodels.ModulesViewModel
 
 /** the servers the module plays from, the ones people added first, and adding another */
 @Composable

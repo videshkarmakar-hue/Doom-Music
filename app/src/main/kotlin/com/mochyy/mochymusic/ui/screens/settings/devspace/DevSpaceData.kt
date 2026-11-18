@@ -1,9 +1,9 @@
 // repo numbers for dev spaces straight from github, if github refuses (rate limit, offline) the last good numbers stay
 
-package com.mochyy.mochymusic.ui.screens.settings.devspace
+package com.videshkarmakar.doom.ui.screens.settings.devspace
 
-import com.mochyy.mochymusic.core.updater.GithubOwner
-import com.mochyy.mochymusic.core.updater.GithubRepo
+import com.videshkarmakar.doom.core.updater.GithubOwner
+import com.videshkarmakar.doom.core.updater.GithubRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
@@ -120,7 +120,7 @@ object DevSpaceRepository {
         c.connectTimeout = 8000
         c.readTimeout = 10000
         c.setRequestProperty("Accept", "application/vnd.github+json")
-        c.setRequestProperty("User-Agent", "Mochy")
+        c.setRequestProperty("User-Agent", "Doom")
         try {
             val code = c.responseCode
             if (code == 403 || code == 429) throw RateLimited()

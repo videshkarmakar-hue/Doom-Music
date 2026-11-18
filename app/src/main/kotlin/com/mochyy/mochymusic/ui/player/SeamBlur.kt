@@ -1,6 +1,6 @@
 // SeamBlur.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -29,14 +29,14 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.mochyy.mochymusic.ui.component.GlassPillBackground
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.component.rememberProgressiveBlur
-import com.mochyy.mochymusic.ui.component.rememberCoverBlurAvailable
-import com.mochyy.mochymusic.ui.player.models.TrackInfo
-import com.mochyy.mochymusic.ui.theme.PlayerColorExtractor
+import com.videshkarmakar.doom.ui.component.GlassPillBackground
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.component.rememberProgressiveBlur
+import com.videshkarmakar.doom.ui.component.rememberCoverBlurAvailable
+import com.videshkarmakar.doom.ui.player.models.TrackInfo
+import com.videshkarmakar.doom.ui.theme.PlayerColorExtractor
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -63,7 +63,7 @@ fun SeamBlur(
     // offscreen layer below Android 12). The cover fades its own bottom edge instead then.
     val blurAvailable = rememberCoverBlurAvailable() && !noBlur
 
-    val lowQuality = com.mochyy.mochymusic.ui.component.LocalBlurQuality.current == com.mochyy.mochymusic.constants.BlurQuality.LOW
+    val lowQuality = com.videshkarmakar.doom.ui.component.LocalBlurQuality.current == com.videshkarmakar.doom.constants.BlurQuality.LOW
 
     val bandTop = maxHeight * 0.52f
     val bandBottom = maxHeight * 0.74f

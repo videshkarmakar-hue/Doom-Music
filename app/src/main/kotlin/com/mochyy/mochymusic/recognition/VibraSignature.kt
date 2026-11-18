@@ -1,6 +1,6 @@
 // VibraSignature.kt
 
-package com.mochyy.mochymusic.recognition
+package com.videshkarmakar.doom.recognition
 
 object VibraSignature {
 

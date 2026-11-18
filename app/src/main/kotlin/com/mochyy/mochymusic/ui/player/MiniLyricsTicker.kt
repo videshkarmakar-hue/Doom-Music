@@ -1,6 +1,6 @@
 // MiniLyricsTicker.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.SizeTransform
@@ -61,22 +61,22 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.LyricsHighBloomKey
-import com.mochyy.mochymusic.constants.LyricsMotionStyle
-import com.mochyy.mochymusic.constants.LyricsMotionStyleKey
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.RubyToken
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.LyricsHighBloomKey
+import com.videshkarmakar.doom.constants.LyricsMotionStyle
+import com.videshkarmakar.doom.constants.LyricsMotionStyleKey
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.RubyToken
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.combine
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.utils.AppMotion
+import com.videshkarmakar.doom.ui.utils.AppMotion
 
 private val TickerFontSize = 17.sp
 private val TickerLineHeight = 22.sp

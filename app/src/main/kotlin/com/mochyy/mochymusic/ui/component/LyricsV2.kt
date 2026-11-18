@@ -1,6 +1,6 @@
 // LyricsV2.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -32,8 +32,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.WordTimestamp
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.WordTimestamp
 import kotlin.math.PI
 import kotlin.math.sin
 

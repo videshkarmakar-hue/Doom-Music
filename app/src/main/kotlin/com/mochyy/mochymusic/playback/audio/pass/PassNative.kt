@@ -1,6 +1,6 @@
 // PassNative.kt
 
-package com.mochyy.mochymusic.playback.audio.pass
+package com.videshkarmakar.doom.playback.audio.pass
 
 import java.nio.ByteBuffer
 
@@ -8,7 +8,7 @@ import java.nio.ByteBuffer
 internal object PassNative {
 
     /** loads the library the first time a native output is wanted, so nobody else pays for it */
-    val loaded: Boolean by lazy { runCatching { System.loadLibrary("mochypass") }.isSuccess }
+    val loaded: Boolean by lazy { runCatching { System.loadLibrary("doompass") }.isSuccess }
 
     external fun usbOpen(fd: Int, plans: IntArray, bcdUsb: Int): Long
     external fun usbChosen(handle: Long): Int

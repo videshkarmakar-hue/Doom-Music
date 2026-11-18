@@ -1,6 +1,6 @@
 // AudioFormatBadge.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.Image
@@ -13,11 +13,11 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AudioQuality
-import com.mochyy.mochymusic.constants.EnableSpatialAudioKey
-import com.mochyy.mochymusic.db.entities.FormatEntity
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AudioQuality
+import com.videshkarmakar.doom.constants.EnableSpatialAudioKey
+import com.videshkarmakar.doom.db.entities.FormatEntity
+import com.videshkarmakar.doom.utils.rememberPreference
 
 @Composable
 fun AudioFormatBadge(

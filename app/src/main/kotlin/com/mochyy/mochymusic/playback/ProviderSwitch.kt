@@ -1,8 +1,8 @@
 // ProviderSwitch.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
-import com.mochyy.mochymusic.module.SourceStream
+import com.videshkarmakar.doom.module.SourceStream
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

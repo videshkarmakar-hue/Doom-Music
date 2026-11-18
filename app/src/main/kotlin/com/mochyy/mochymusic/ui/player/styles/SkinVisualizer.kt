@@ -1,6 +1,6 @@
 // a module player's visualizer: bars, a mirror, a wave, dots or a ring, drawn from the shared clock's bands so they follow what's heard
 
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,9 +18,9 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.modules.skin.SkinBlock
-import com.mochyy.mochymusic.modules.skin.VisualizerStyle
-import com.mochyy.mochymusic.ui.component.damageBoundary
+import com.videshkarmakar.doom.modules.skin.SkinBlock
+import com.videshkarmakar.doom.modules.skin.VisualizerStyle
+import com.videshkarmakar.doom.ui.component.damageBoundary
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.min

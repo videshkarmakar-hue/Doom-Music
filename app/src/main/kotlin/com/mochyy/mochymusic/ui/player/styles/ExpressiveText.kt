@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import android.graphics.Shader
 import androidx.compose.animation.core.Animatable
@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.layer.GraphicsLayer
 import androidx.compose.ui.graphics.layer.drawLayer
 import androidx.compose.ui.graphics.rememberGraphicsLayer
 import androidx.compose.ui.text.style.TextAlign
-import com.mochyy.mochymusic.ui.player.MinInterludeGapMs
+import com.videshkarmakar.doom.ui.player.MinInterludeGapMs
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -54,8 +54,8 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.math.abs
@@ -66,7 +66,7 @@ import kotlin.math.sin
 
 /** big type with no padding above or below the glyphs, so stacked lines sit tight like a poster */
 internal fun posterType(size: TextUnit, weight: FontWeight = FontWeight.Bold) = TextStyle(
-    fontFamily = com.mochyy.mochymusic.ui.theme.InterFontFamily,
+    fontFamily = com.videshkarmakar.doom.ui.theme.InterFontFamily,
     fontSize = size,
     lineHeight = size * 0.96f,
     fontWeight = weight,
@@ -236,7 +236,7 @@ private fun titleFits(
 /** one word of a line, with when it's sung */
 private class TimedWord(val text: String, val startMs: Long, val endMs: Long) {
     // letters' worth of singing: a kanji or kana is a syllable's worth, so one sung at a normal pace isn't taken for a held note
-    val sungLength = com.mochyy.mochymusic.ui.player.sungLength(text)
+    val sungLength = com.videshkarmakar.doom.ui.player.sungLength(text)
 }
 
 /**
@@ -349,7 +349,7 @@ private enum class WordStage { Waiting, Live, Done }
  * script. Drawn one at a time, Arabic letters lost their joins and came out as loose shapes.
  */
 private fun letterBounds(word: String, graphemes: java.text.BreakIterator): IntArray {
-    if (word.isEmpty() || !com.mochyy.mochymusic.ui.player.splitsIntoLetters(word, 0, word.length)) {
+    if (word.isEmpty() || !com.videshkarmakar.doom.ui.player.splitsIntoLetters(word, 0, word.length)) {
         return intArrayOf(0, word.length)
     }
     graphemes.setText(word)
@@ -567,7 +567,7 @@ private fun measureLine(
     val subWidth = maxWidth.roundToInt().coerceAtLeast(1)
     val subs = listOfNotNull(reading?.let { it to 0.74f }, translation?.let { it to 0.56f }).map { (text, alpha) ->
         val style = TextStyle(
-            fontFamily = com.mochyy.mochymusic.ui.theme.InterFontFamily,
+            fontFamily = com.videshkarmakar.doom.ui.theme.InterFontFamily,
             fontSize = with(density) { subPx.toSp() },
             lineHeight = with(density) { (subPx * 1.22f).toSp() },
             fontWeight = FontWeight.SemiBold,
@@ -726,7 +726,7 @@ private class LineCache {
 }
 
 /** the pronunciation of [entry]: its romanisation, or the readings of its words joined up */
-private fun readingOf(roman: String?, ruby: List<com.mochyy.mochymusic.lyrics.RubyToken>?, text: String): String? =
+private fun readingOf(roman: String?, ruby: List<com.videshkarmakar.doom.lyrics.RubyToken>?, text: String): String? =
     roman?.takeIf { it.isNotBlank() && it != text }
         ?: ruby?.joinToString(" ") { it.text.trim() }?.takeIf { it.isNotBlank() && it != text }
 
@@ -928,15 +928,15 @@ private fun InterludeRow(gap: Interlude, position: LivePosition, baseSize: TextU
         LineSide.CENTER -> 0.5f
         LineSide.RIGHT -> 1f
     }
-    com.mochyy.mochymusic.ui.player.LyricsInterludeDots(
+    com.videshkarmakar.doom.ui.player.LyricsInterludeDots(
         startMs = gap.startMs,
         endMs = gap.endMs,
         positionProvider = provider,
         visible = visible,
         alignment = when (gap.side) {
-            LineSide.LEFT -> com.mochyy.mochymusic.ui.player.LyricsAlignment.START
-            LineSide.CENTER -> com.mochyy.mochymusic.ui.player.LyricsAlignment.CENTER
-            LineSide.RIGHT -> com.mochyy.mochymusic.ui.player.LyricsAlignment.END
+            LineSide.LEFT -> com.videshkarmakar.doom.ui.player.LyricsAlignment.START
+            LineSide.CENTER -> com.videshkarmakar.doom.ui.player.LyricsAlignment.CENTER
+            LineSide.RIGHT -> com.videshkarmakar.doom.ui.player.LyricsAlignment.END
         },
         modifier = Modifier
             .graphicsLayer {
@@ -946,7 +946,7 @@ private fun InterludeRow(gap: Interlude, position: LivePosition, baseSize: TextU
             }
             // the row pads itself for the lyrics page; here the dots line up with the words' edge
             .layout { measurable, constraints ->
-                val pad = com.mochyy.mochymusic.ui.player.LyricsHeaderArtX.roundToPx()
+                val pad = com.videshkarmakar.doom.ui.player.LyricsHeaderArtX.roundToPx()
                 val wide = constraints.maxWidth + pad * 2
                 val p = measurable.measure(constraints.copy(minWidth = wide, maxWidth = wide))
                 layout(constraints.maxWidth, p.height) { p.place(-pad, 0) }
@@ -978,7 +978,7 @@ private fun LyricLine(
 
     /** how blurred the [order]th piece is as it comes in or goes, in px; drawn into a smaller layer of its own (see [drawBlurred]) */
     fun blurOf(order: Int, t: Long): Float =
-        if (!gpuGlow || !com.mochyy.mochymusic.ui.utils.AppMotion.elementBlur) 0f
+        if (!gpuGlow || !com.videshkarmakar.doom.ui.utils.AppMotion.elementBlur) 0f
         else (1f - enterOf(order, t)) * blurIn + exitOf(order, t) * blurOut
 
     /** the entrance and exit, for the [order]th piece of the line */

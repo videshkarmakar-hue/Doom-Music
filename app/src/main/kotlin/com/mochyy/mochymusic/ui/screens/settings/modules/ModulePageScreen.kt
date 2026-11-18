@@ -1,6 +1,6 @@
 // a page a module brings, built from its blocks: words, pictures, web links, its own settings, songs and playlists to open, cards, shaders, and a background of its own
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import android.net.Uri
 import android.os.Build
@@ -45,23 +45,23 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.modules.ModuleEntry
-import com.mochyy.mochymusic.modules.skin.ModuleSkin
-import com.mochyy.mochymusic.modules.skin.PageBackground
-import com.mochyy.mochymusic.modules.skin.PageBlock
-import com.mochyy.mochymusic.modules.skin.SkinColor
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.GlassPillBackground
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.ui.screens.search.searchRoute
-import com.mochyy.mochymusic.ui.screens.settings.devspace.openDevUrl
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.viewmodels.ModulesViewModel
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.modules.ModuleEntry
+import com.videshkarmakar.doom.modules.skin.ModuleSkin
+import com.videshkarmakar.doom.modules.skin.PageBackground
+import com.videshkarmakar.doom.modules.skin.PageBlock
+import com.videshkarmakar.doom.modules.skin.SkinColor
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.GlassPillBackground
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.ui.screens.search.searchRoute
+import com.videshkarmakar.doom.ui.screens.settings.devspace.openDevUrl
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.viewmodels.ModulesViewModel
 import com.music.innertube.models.WatchEndpoint
 
 const val ModulePageRoutePattern = "module_page/{id}/{page}"

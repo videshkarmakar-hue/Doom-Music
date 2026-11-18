@@ -1,6 +1,6 @@
 // a look module's own glass for the nav bar, the wide bar and the mini player: what's under the bar, blurred, then the module's agsl over it (docs/notes/module-glass.md)
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -27,8 +27,8 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.positionInWindow
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.constants.BlurQuality
-import com.mochyy.mochymusic.modules.skin.ActiveGlass
+import com.videshkarmakar.doom.constants.BlurQuality
+import com.videshkarmakar.doom.modules.skin.ActiveGlass
 import kotlin.math.ceil
 
 /** the effect a bar last built from a glass, kept while nothing it depends on changes */
@@ -111,7 +111,7 @@ internal fun ModuleChromeGlass(
     }
 }
 
-// mochy's uniforms first, then the module's own; a name the shader doesn't declare is skipped, so a shader only takes what it uses
+// doom's uniforms first, then the module's own; a name the shader doesn't declare is skipped, so a shader only takes what it uses
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 private fun glassEffect(
     glass: ActiveGlass,

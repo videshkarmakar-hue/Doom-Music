@@ -1,6 +1,6 @@
 // PlaylistDetail.kt
 
-package com.mochyy.mochymusic.ui.component.detail
+package com.videshkarmakar.doom.ui.component.detail
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedContentTransitionScope
@@ -111,45 +111,45 @@ import androidx.compose.ui.zIndex
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.transformations
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDetailAccentColor
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlaylistStyle
-import com.mochyy.mochymusic.constants.PlaylistStyleKey
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.BoneColor
-import com.mochyy.mochymusic.ui.component.Bone
-import com.mochyy.mochymusic.ui.component.BonesHost
-import com.mochyy.mochymusic.ui.component.GlassPillBackground
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.HomeCardCornerRadius
-import com.mochyy.mochymusic.ui.component.ItemThumbnail
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.component.RoundedHighlight
-import com.mochyy.mochymusic.ui.component.ScrollAwayCover
-import com.mochyy.mochymusic.ui.component.containerTransformCover
-import com.mochyy.mochymusic.ui.component.containerTransformTarget
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.component.rememberElementBlurAvailable
-import com.mochyy.mochymusic.ui.component.smoothstep
-import com.mochyy.mochymusic.ui.player.BackdropBlurTransformation
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.theme.rememberCoverThemeColor
-import com.mochyy.mochymusic.ui.utils.SoftBlurTransformation
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDetailAccentColor
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlaylistStyle
+import com.videshkarmakar.doom.constants.PlaylistStyleKey
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.BoneColor
+import com.videshkarmakar.doom.ui.component.Bone
+import com.videshkarmakar.doom.ui.component.BonesHost
+import com.videshkarmakar.doom.ui.component.GlassPillBackground
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.HomeCardCornerRadius
+import com.videshkarmakar.doom.ui.component.ItemThumbnail
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.component.RoundedHighlight
+import com.videshkarmakar.doom.ui.component.ScrollAwayCover
+import com.videshkarmakar.doom.ui.component.containerTransformCover
+import com.videshkarmakar.doom.ui.component.containerTransformTarget
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.component.rememberElementBlurAvailable
+import com.videshkarmakar.doom.ui.component.smoothstep
+import com.videshkarmakar.doom.ui.player.BackdropBlurTransformation
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.theme.rememberCoverThemeColor
+import com.videshkarmakar.doom.ui.utils.SoftBlurTransformation
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 import com.music.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.concurrent.ConcurrentHashMap
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.ui.utils.stableStatusBarsPadding
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBarsPadding
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // geometry and type from the Figma playlist frames (16:1162 open, 16:1354 scrolled). internal so
 // the album, artist and generated pages line up on the same inset and type
@@ -403,7 +403,7 @@ fun PlaylistDetailScaffold(
     val pillNeedsGlass = rememberUpdatedState(modeBar is PlaylistModeBar.EditOrder)
 
     // on its side the cover stays at the left with the title on it, and the songs take the right
-    if (com.mochyy.mochymusic.ui.utils.isLandscapeLayout()) {
+    if (com.videshkarmakar.doom.ui.utils.isLandscapeLayout()) {
         PlaylistSideBySide(
             sharedElementKey = sharedElementKey,
             coverUrl = coverUrl,
@@ -535,7 +535,7 @@ private fun PlaylistCoverBackdrop(
     }
     // before android 12 the whole frame can't blur, so the picture alone goes soft from a copy blurred once off the main thread
     val frameBlur = rememberElementBlurAvailable()
-    val (elementBlur) = rememberPreference(com.mochyy.mochymusic.constants.ElementBlurKey, defaultValue = true)
+    val (elementBlur) = rememberPreference(com.videshkarmakar.doom.constants.ElementBlurKey, defaultValue = true)
     val softRequest = remember(coverUrl, frameBlur, elementBlur, cover != null) {
         // a drawn cover is soft already, and with element blur off the cover stays sharp
         if (frameBlur || !elementBlur || cover != null) {
@@ -1466,7 +1466,7 @@ fun PlaylistTrackRow(
                 overflow = TextOverflow.Ellipsis,
             )
         }
-        com.mochyy.mochymusic.ui.component.OnDeviceMarks(songId, modifier = Modifier.padding(end = 2.dp))
+        com.videshkarmakar.doom.ui.component.OnDeviceMarks(songId, modifier = Modifier.padding(end = 2.dp))
         if (trailing == null && liked != null && onLikeClick != null) {
             Box(
                 contentAlignment = Alignment.Center,

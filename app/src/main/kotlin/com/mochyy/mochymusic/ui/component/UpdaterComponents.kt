@@ -1,6 +1,6 @@
 // UpdaterComponents.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -46,7 +46,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.core.content.ContextCompat
-import com.mochyy.mochymusic.core.updater.extractUrls
+import com.videshkarmakar.doom.core.updater.extractUrls
 @Composable
 fun AnimatedActionButton(
     text: String,

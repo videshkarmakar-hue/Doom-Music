@@ -1,10 +1,10 @@
 // ImportedVersions.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.models.toMediaMetadata
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.models.toMediaMetadata
 import com.music.innertube.models.SongItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -1,21 +1,21 @@
 // SecretPreferences.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
-import com.mochyy.mochymusic.constants.DataSyncIdKey
-import com.mochyy.mochymusic.constants.DeeplApiKey
-import com.mochyy.mochymusic.constants.DiscordAccessTokenKey
-import com.mochyy.mochymusic.constants.DiscordRefreshTokenKey
-import com.mochyy.mochymusic.constants.InnerTubeCookieKey
-import com.mochyy.mochymusic.constants.LastFMSessionKey
-import com.mochyy.mochymusic.constants.LibreFmSessionKey
-import com.mochyy.mochymusic.constants.MonochromePlaybackApiTokenKey
-import com.mochyy.mochymusic.constants.OpenRouterApiKey
-import com.mochyy.mochymusic.constants.ProxyPasswordKey
-import com.mochyy.mochymusic.constants.TurnstileBypassTokenKey
-import com.mochyy.mochymusic.constants.VisitorDataKey
+import com.videshkarmakar.doom.constants.DataSyncIdKey
+import com.videshkarmakar.doom.constants.DeeplApiKey
+import com.videshkarmakar.doom.constants.DiscordAccessTokenKey
+import com.videshkarmakar.doom.constants.DiscordRefreshTokenKey
+import com.videshkarmakar.doom.constants.InnerTubeCookieKey
+import com.videshkarmakar.doom.constants.LastFMSessionKey
+import com.videshkarmakar.doom.constants.LibreFmSessionKey
+import com.videshkarmakar.doom.constants.MonochromePlaybackApiTokenKey
+import com.videshkarmakar.doom.constants.OpenRouterApiKey
+import com.videshkarmakar.doom.constants.ProxyPasswordKey
+import com.videshkarmakar.doom.constants.TurnstileBypassTokenKey
+import com.videshkarmakar.doom.constants.VisitorDataKey
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map

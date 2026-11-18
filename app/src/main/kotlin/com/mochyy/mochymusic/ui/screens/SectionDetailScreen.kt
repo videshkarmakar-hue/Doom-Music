@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens
+package com.videshkarmakar.doom.ui.screens
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -27,41 +27,41 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.SongSwipeBox
-import com.mochyy.mochymusic.ui.component.containerTransformSource
-import com.mochyy.mochymusic.ui.component.detail.FeaturedArtistUi
-import com.mochyy.mochymusic.ui.component.detail.FeaturedArtistsRow
-import com.mochyy.mochymusic.ui.component.detail.PlaylistEndOfLine
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackRow
-import com.mochyy.mochymusic.ui.component.librarySwipeAction
-import com.mochyy.mochymusic.ui.component.queueSwipeAction
-import com.mochyy.mochymusic.ui.component.rememberRevealSeenState
-import com.mochyy.mochymusic.ui.component.revealOnAppear
-import com.mochyy.mochymusic.ui.menu.AlbumMenu
-import com.mochyy.mochymusic.ui.menu.ArtistMenu
-import com.mochyy.mochymusic.ui.menu.PlaylistMenu
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeAlbumMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeArtistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubePlaylistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeSongMenu
-import com.mochyy.mochymusic.ui.screens.playlist.GeneratedNoResults
-import com.mochyy.mochymusic.ui.screens.playlist.GeneratedPlaylistPage
-import com.mochyy.mochymusic.ui.screens.playlist.generatedStats
-import com.mochyy.mochymusic.ui.utils.backToMain
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.viewmodels.HomeViewModel
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.SongSwipeBox
+import com.videshkarmakar.doom.ui.component.containerTransformSource
+import com.videshkarmakar.doom.ui.component.detail.FeaturedArtistUi
+import com.videshkarmakar.doom.ui.component.detail.FeaturedArtistsRow
+import com.videshkarmakar.doom.ui.component.detail.PlaylistEndOfLine
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackRow
+import com.videshkarmakar.doom.ui.component.librarySwipeAction
+import com.videshkarmakar.doom.ui.component.queueSwipeAction
+import com.videshkarmakar.doom.ui.component.rememberRevealSeenState
+import com.videshkarmakar.doom.ui.component.revealOnAppear
+import com.videshkarmakar.doom.ui.menu.AlbumMenu
+import com.videshkarmakar.doom.ui.menu.ArtistMenu
+import com.videshkarmakar.doom.ui.menu.PlaylistMenu
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeAlbumMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeArtistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubePlaylistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeSongMenu
+import com.videshkarmakar.doom.ui.screens.playlist.GeneratedNoResults
+import com.videshkarmakar.doom.ui.screens.playlist.GeneratedPlaylistPage
+import com.videshkarmakar.doom.ui.screens.playlist.generatedStats
+import com.videshkarmakar.doom.ui.utils.backToMain
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.viewmodels.HomeViewModel
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
@@ -253,7 +253,7 @@ fun SectionDetailScreen(
                     subtitle = sub,
                     isActive = active,
                     isPlaying = active && isPlaying,
-                    coverShape = if (item is ArtistItem || item is Artist) CircleShape else com.mochyy.mochymusic.ui.component.detail.TrackShape,
+                    coverShape = if (item is ArtistItem || item is Artist) CircleShape else com.videshkarmakar.doom.ui.component.detail.TrackShape,
                     // albums and playlists open growing out of their cover, as from Home
                     coverModifier = Modifier.containerTransformSource(
                         key = when (item) {
@@ -318,7 +318,7 @@ fun SectionDetailScreen(
 }
 
 private fun rowKey(item: Any): String = when (item) {
-    is com.mochyy.mochymusic.db.entities.LocalItem -> item.id
+    is com.videshkarmakar.doom.db.entities.LocalItem -> item.id
     is SongItem -> item.id
     is AlbumItem -> item.id
     is ArtistItem -> item.id
@@ -332,7 +332,7 @@ private fun rowThumbnail(item: Any): String? = when (item) {
     is Album -> item.album.thumbnailUrl
     // a library playlist's own thumbnailUrl is always null; its covers live in thumbnails
     is Playlist -> item.thumbnails.firstOrNull()
-    is com.mochyy.mochymusic.db.entities.LocalItem -> item.thumbnailUrl
+    is com.videshkarmakar.doom.db.entities.LocalItem -> item.thumbnailUrl
     is AlbumItem -> item.thumbnail
     is ArtistItem -> item.thumbnail
     is PlaylistItem -> item.thumbnail

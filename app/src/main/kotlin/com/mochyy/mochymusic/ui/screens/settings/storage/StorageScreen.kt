@@ -1,6 +1,6 @@
-// settings → storage: how much room mochy takes on each drive, the cache limit, clearing things, where things are saved and exporting songs
+// settings → storage: how much room doom takes on each drive, the cache limit, clearing things, where things are saved and exporting songs
 
-package com.mochyy.mochymusic.ui.screens.settings.storage
+package com.videshkarmakar.doom.ui.screens.settings.storage
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
@@ -37,18 +37,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.MaxSongCacheSizeKey
-import com.mochyy.mochymusic.playback.ExportStep
-import com.mochyy.mochymusic.playback.MoveStep
-import com.mochyy.mochymusic.playback.StoredKind
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.screens.library.showConfirm
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.DriveUsage
-import com.mochyy.mochymusic.viewmodels.StorageUsage
-import com.mochyy.mochymusic.viewmodels.StorageViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.MaxSongCacheSizeKey
+import com.videshkarmakar.doom.playback.ExportStep
+import com.videshkarmakar.doom.playback.MoveStep
+import com.videshkarmakar.doom.playback.StoredKind
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.screens.library.showConfirm
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.DriveUsage
+import com.videshkarmakar.doom.viewmodels.StorageUsage
+import com.videshkarmakar.doom.viewmodels.StorageViewModel
 
 const val StorageRoute = "storage_settings"
 
@@ -67,7 +67,7 @@ fun StorageScreen(navController: NavController, viewModel: StorageViewModel = hi
     LaunchedEffect(downloads?.size) { viewModel.measure() }
 
     SubSettingsScaffold(title = stringResource(R.string.storage), onBack = { navController.navigateUp() }) {
-        // one overall card per drive mochy keeps things on, the phone first
+        // one overall card per drive doom keeps things on, the phone first
         val drives = usage?.drives
         if (drives == null) {
             OverallCard(null)
@@ -110,9 +110,9 @@ private fun SectionText(text: String) {
 @Composable
 private fun headline(usage: StorageUsage): String =
     if (usage.drives.size == 1) {
-        stringResource(R.string.storage_uses, percentOf(usage.mochy, usage.phone.total), formatSize(usage.mochy))
+        stringResource(R.string.storage_uses, percentOf(usage.doom, usage.phone.total), formatSize(usage.doom))
     } else {
-        stringResource(R.string.storage_uses_drives, formatSize(usage.mochy), usage.drives.size)
+        stringResource(R.string.storage_uses_drives, formatSize(usage.doom), usage.drives.size)
     }
 
 // like 1.4%, or <0.1% for a sliver, so a small app never reads as using nothing
@@ -136,16 +136,16 @@ private fun OverallCard(drive: DriveUsage?) {
         Spacer(Modifier.height(14.dp))
         UsageBar(
             parts = listOf(
-                BarPart(MochyGreen, drive?.mochy ?: 0),
+                BarPart(DoomGreen, drive?.doom ?: 0),
                 BarPart(OthersGrey, drive?.othersUsed ?: 0),
             ),
             total = drive?.total ?: 0,
         )
         Spacer(Modifier.height(14.dp))
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-            LegendSwatch(MochyGreen)
+            LegendSwatch(DoomGreen)
             Spacer(Modifier.width(8.dp))
-            Text(stringResource(R.string.storage_legend_mochy), style = storageText(16f, FontWeight.SemiBold))
+            Text(stringResource(R.string.storage_legend_doom), style = storageText(16f, FontWeight.SemiBold))
             Spacer(Modifier.width(16.dp))
             LegendSwatch(OthersGrey)
             Spacer(Modifier.width(8.dp))
@@ -165,16 +165,16 @@ private fun BreakdownCard(usage: StorageUsage?) {
         UsageBar(
             parts = listOf(
                 BarPart(CacheOrange, usage?.cache ?: 0),
-                BarPart(MochyGreen, usage?.downloads ?: 0),
+                BarPart(DoomGreen, usage?.downloads ?: 0),
                 BarPart(DatabaseRed, usage?.database ?: 0),
                 BarPart(AppDataBlue, usage?.appData ?: 0),
             ),
-            total = usage?.mochy ?: 0,
+            total = usage?.doom ?: 0,
         )
         Spacer(Modifier.height(16.dp))
         Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
             LegendRow(CacheOrange, stringResource(R.string.storage_legend_cache), usage?.let { formatSize(it.cache) })
-            LegendRow(MochyGreen, stringResource(R.string.storage_legend_downloads), usage?.let { formatSize(it.downloads) })
+            LegendRow(DoomGreen, stringResource(R.string.storage_legend_downloads), usage?.let { formatSize(it.downloads) })
             LegendRow(DatabaseRed, stringResource(R.string.storage_legend_database), usage?.let { formatSize(it.database) })
             LegendRow(AppDataBlue, stringResource(R.string.storage_legend_app_data), usage?.let { formatSize(it.appData) })
         }

@@ -1,6 +1,6 @@
-// every module mochy has: built in, installed as its own app, added from a link or from a zip (a look, or code of its own), with each one's switch and choices
+// every module doom has: built in, installed as its own app, added from a link or from a zip (a look, or code of its own), with each one's switch and choices
 
-package com.mochyy.mochymusic.modules
+package com.videshkarmakar.doom.modules
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,40 +9,40 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.provider.OpenableColumns
 import androidx.core.content.edit
-import com.mochyy.mochymusic.constants.EnableMonochromeBackendKey
-import com.mochyy.mochymusic.lyrics.LyricsProviderRegistry
-import com.mochyy.mochymusic.lyrics.ModuleLyricsProvider
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.HttpRequest
-import com.mochyy.mochymusic.module.HttpResponse
-import com.mochyy.mochymusic.module.LookModule
-import com.mochyy.mochymusic.module.LyricsModule
-import com.mochyy.mochymusic.module.MODULE_API_VERSION
-import com.mochyy.mochymusic.module.MetadataModule
-import com.mochyy.mochymusic.module.MochyModule
-import com.mochyy.mochymusic.module.ModuleArt
-import com.mochyy.mochymusic.module.ModuleFeature
-import com.mochyy.mochymusic.module.ModuleField
-import com.mochyy.mochymusic.module.ModuleFields
-import com.mochyy.mochymusic.module.ModuleHost
-import com.mochyy.mochymusic.module.ModuleStorage
-import com.mochyy.mochymusic.module.applemusic.AppleMusicModule
-import com.mochyy.mochymusic.module.bridge.BridgedModule
-import com.mochyy.mochymusic.module.jiosaavn.JioSaavnModule
-import com.mochyy.mochymusic.module.monochrome.MonochromeModule
-import com.mochyy.mochymusic.modules.code.CodeModules
-import com.mochyy.mochymusic.modules.local.LocalModule
-import com.mochyy.mochymusic.modules.skin.ActiveSkin
-import com.mochyy.mochymusic.modules.skin.ModuleMenu
-import com.mochyy.mochymusic.modules.skin.ModuleSkin
-import com.mochyy.mochymusic.modules.skin.SkinFiles
-import com.mochyy.mochymusic.modules.skin.SkinGlass
-import com.mochyy.mochymusic.modules.skin.SkinParts
-import com.mochyy.mochymusic.modules.skin.SkinSource
-import com.mochyy.mochymusic.modules.web.WebModule
-import com.mochyy.mochymusic.modules.web.WebModuleManifest
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.constants.EnableMonochromeBackendKey
+import com.videshkarmakar.doom.lyrics.LyricsProviderRegistry
+import com.videshkarmakar.doom.lyrics.ModuleLyricsProvider
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.HttpRequest
+import com.videshkarmakar.doom.module.HttpResponse
+import com.videshkarmakar.doom.module.LookModule
+import com.videshkarmakar.doom.module.LyricsModule
+import com.videshkarmakar.doom.module.MODULE_API_VERSION
+import com.videshkarmakar.doom.module.MetadataModule
+import com.videshkarmakar.doom.module.DoomModule
+import com.videshkarmakar.doom.module.ModuleArt
+import com.videshkarmakar.doom.module.ModuleFeature
+import com.videshkarmakar.doom.module.ModuleField
+import com.videshkarmakar.doom.module.ModuleFields
+import com.videshkarmakar.doom.module.ModuleHost
+import com.videshkarmakar.doom.module.ModuleStorage
+import com.videshkarmakar.doom.module.applemusic.AppleMusicModule
+import com.videshkarmakar.doom.module.bridge.BridgedModule
+import com.videshkarmakar.doom.module.jiosaavn.JioSaavnModule
+import com.videshkarmakar.doom.module.monochrome.MonochromeModule
+import com.videshkarmakar.doom.modules.code.CodeModules
+import com.videshkarmakar.doom.modules.local.LocalModule
+import com.videshkarmakar.doom.modules.skin.ActiveSkin
+import com.videshkarmakar.doom.modules.skin.ModuleMenu
+import com.videshkarmakar.doom.modules.skin.ModuleSkin
+import com.videshkarmakar.doom.modules.skin.SkinFiles
+import com.videshkarmakar.doom.modules.skin.SkinGlass
+import com.videshkarmakar.doom.modules.skin.SkinParts
+import com.videshkarmakar.doom.modules.skin.SkinSource
+import com.videshkarmakar.doom.modules.web.WebModule
+import com.videshkarmakar.doom.modules.web.WebModuleManifest
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dalvik.system.PathClassLoader
 import kotlinx.coroutines.CoroutineScope
@@ -74,13 +74,13 @@ sealed interface ModuleOrigin {
     data class App(val packageName: String) : ModuleOrigin
     data class Web(val base: String) : ModuleOrigin
     data class File(val fileName: String) : ModuleOrigin
-    /** a zip that brought code of its own, signed with mochy's key */
+    /** a zip that brought code of its own, signed with doom's key */
     data class Code(val fileName: String) : ModuleOrigin
 }
 
 /** a module as the settings show it */
 data class ModuleEntry(
-    val module: MochyModule,
+    val module: DoomModule,
     val origin: ModuleOrigin,
     val enabled: Boolean,
     /** choice id to the option picked; a choice not in here is on its first option */
@@ -89,7 +89,7 @@ data class ModuleEntry(
     /** the module's own settings, and what each one is set to now */
     val fields: List<ModuleField> = emptyList(),
     val values: Map<String, String> = emptyMap(),
-    /** when it was added, null for built-in ones and ones added before mochy kept the date */
+    /** when it was added, null for built-in ones and ones added before doom kept the date */
     val addedAt: Long? = null,
     /** the github project or link it can update from, null for one added from a file */
     val source: ModuleSource? = null,
@@ -130,9 +130,9 @@ class ModuleRegistry @Inject constructor(
     }
 
     @Volatile
-    private var loaded: List<Pair<MochyModule, ModuleOrigin>>? = null
+    private var loaded: List<Pair<DoomModule, ModuleOrigin>>? = null
 
-    private val modules: List<Pair<MochyModule, ModuleOrigin>>
+    private val modules: List<Pair<DoomModule, ModuleOrigin>>
         get() = loaded ?: synchronized(this) { loaded ?: load().also { loaded = it } }
 
     private val _entries = MutableStateFlow<List<ModuleEntry>>(emptyList())
@@ -145,9 +145,9 @@ class ModuleRegistry @Inject constructor(
         scope.launch { refresh() }
     }
 
-    fun module(id: String): MochyModule? = modules.firstOrNull { it.first.info.id == id }?.first
+    fun module(id: String): DoomModule? = modules.firstOrNull { it.first.info.id == id }?.first
 
-    fun all(): List<MochyModule> = modules.map { it.first }
+    fun all(): List<DoomModule> = modules.map { it.first }
 
     // youtube starts on, modules start off until they're turned on (or signed in to)
     fun isEnabled(id: String): Boolean = prefs.getBoolean("enabled_$id", id == SourceModules.YouTubeId)
@@ -163,7 +163,7 @@ class ModuleRegistry @Inject constructor(
     fun raise(id: String) = setOrder(listOf(id))
 
     // a look that changes settings, the player, the font or the glass; several can be on, the higher one wins where they meet, a module with only pages doesn't count
-    private fun restyles(module: MochyModule): Boolean =
+    private fun restyles(module: DoomModule): Boolean =
         module is LookModule && ModuleFeature.Look in module.adds && (module.look.isNotEmpty() || (module as? SkinSource)?.skin?.restyles == true)
 
     fun picks(id: String): Map<String, String> {
@@ -181,13 +181,13 @@ class ModuleRegistry @Inject constructor(
     /** what each of a module's own settings is set to, the field's default until someone changes it */
     fun fieldValues(id: String): Map<String, String> = module(id)?.let(::valuesFor).orEmpty()
 
-    private fun valuesFor(module: MochyModule): Map<String, String> {
+    private fun valuesFor(module: DoomModule): Map<String, String> {
         val fields = runCatching { (module as? ModuleFields)?.fields }.getOrNull() ?: return emptyMap()
         return fields.associate { field -> field.id to (prefs.getString("field_${module.info.id}_${field.id}", null) ?: field.default) }
     }
 
     // the module hears every value before its first call, so a song asked for straight after a start already gets them
-    private fun handValues(module: MochyModule) {
+    private fun handValues(module: DoomModule) {
         val values = valuesFor(module).takeIf { it.isNotEmpty() } ?: return
         runCatching { (module as? ModuleFields)?.onFields(values) }
     }
@@ -297,7 +297,7 @@ class ModuleRegistry @Inject constructor(
             // the zip it came in and the manifest's folder inside it, to unpack its pictures and fonts from on install
             val zip: Uri? = null,
             val zipRoot: String = "",
-            // the zip's own code, already checked to be signed like mochy, waiting in the cache to be installed
+            // the zip's own code, already checked to be signed like doom, waiting in the cache to be installed
             val code: File? = null,
             // where a newer copy can be found later: the github project or the link it came from
             val source: ModuleSource? = null,
@@ -308,11 +308,11 @@ class ModuleRegistry @Inject constructor(
         data object Website : LinkCheck
         data object NotAZip : LinkCheck
         data object NeedsUrl : LinkCheck
-        /** its code isn't signed with this mochy's key, so it can't run here */
+        /** its code isn't signed with this doom's key, so it can't run here */
         data object NotSigned : LinkCheck
         /** a github project with no published release */
         data object NoRelease : LinkCheck
-        /** the newest release has no zip with mochyymodule in its name */
+        /** the newest release has no zip with doomymodule in its name */
         data object NoModuleInRelease : LinkCheck
     }
 
@@ -369,10 +369,10 @@ class ModuleRegistry @Inject constructor(
         LinkCheck.Ready(null, text, local.info.name, local.adds, module(local.info.id) != null, fileNameOf(uri), uri, root)
     }
 
-    // a zip that brings its own code: checked to be signed like mochy now, so the sheet can say so before anything is added
+    // a zip that brings its own code: checked to be signed like doom now, so the sheet can say so before anything is added
     private fun checkCode(uri: Uri, text: String, root: String, manifest: WebModuleManifest, code: String): LinkCheck {
         val apk = CodeModules.extract(context, uri, root + code.trimStart('/')) ?: return LinkCheck.NotAModule
-        if (!CodeModules.signedLikeMochy(context, apk)) return LinkCheck.NotSigned
+        if (!CodeModules.signedLikeDoom(context, apk)) return LinkCheck.NotSigned
         val adds = buildSet {
             if (manifest.playsSongs) add(ModuleFeature.AudioSource)
             if (manifest.hasLyrics) add(ModuleFeature.Lyrics)
@@ -550,8 +550,8 @@ class ModuleRegistry @Inject constructor(
 
     // ---- loading --------------------------------------------------------------------------------
 
-    private fun load(): List<Pair<MochyModule, ModuleOrigin>> {
-        val builtIn = listOf<MochyModule>(AppleMusicModule(), MonochromeModule(), JioSaavnModule()).map { it to ModuleOrigin.BuiltIn }
+    private fun load(): List<Pair<DoomModule, ModuleOrigin>> {
+        val builtIn = listOf<DoomModule>(AppleMusicModule(), MonochromeModule(), JioSaavnModule()).map { it to ModuleOrigin.BuiltIn }
         val apps = discover()
         val savedCode = savedCodeModules()
         CodeModules.tidy(context, savedCode.map { it.optString("folder") }.toSet())
@@ -597,7 +597,7 @@ class ModuleRegistry @Inject constructor(
         }
     }
 
-    private fun hostFor(module: MochyModule) = object : ModuleHost {
+    private fun hostFor(module: DoomModule) = object : ModuleHost {
         private val store = context.getSharedPreferences("module_${module.info.id}", Context.MODE_PRIVATE)
 
         override val storage = object : ModuleStorage {
@@ -624,25 +624,25 @@ class ModuleRegistry @Inject constructor(
         override val folder: File by lazy { folderFor(module.info.id).also { it.mkdirs() } }
     }
 
-    /** module apps installed on the phone, signed like mochy and built for this api */
+    /** module apps installed on the phone, signed like doom and built for this api */
     @SuppressLint("QueryPermissionsNeeded")
-    private fun discover(): List<Pair<MochyModule, ModuleOrigin>> = runCatching {
+    private fun discover(): List<Pair<DoomModule, ModuleOrigin>> = runCatching {
         val pm = context.packageManager
         pm.queryIntentServices(Intent(ModuleAction), PackageManager.GET_META_DATA).mapNotNull { info ->
             val service = info.serviceInfo ?: return@mapNotNull null
             val pkg = service.packageName
             val entry = service.metaData?.getString(EntryMetaKey) ?: return@mapNotNull null
-            // its code runs inside mochy, so only an app signed with mochy's own key is let in
+            // its code runs inside doom, so only an app signed with doom's own key is let in
             if (pm.checkSignatures(context.packageName, pkg) != PackageManager.SIGNATURE_MATCH) {
-                Timber.tag(Tag).w("Skipping module $pkg: not signed like Mochy")
+                Timber.tag(Tag).w("Skipping module $pkg: not signed like Doom")
                 return@mapNotNull null
             }
             runCatching {
                 val app = service.applicationInfo
                 val loader = PathClassLoader(app.sourceDir, app.nativeLibraryDir, javaClass.classLoader)
-                val module = loader.loadClass(entry).getDeclaredConstructor().newInstance() as MochyModule
+                val module = loader.loadClass(entry).getDeclaredConstructor().newInstance() as DoomModule
                 if (module.info.apiVersion != MODULE_API_VERSION) {
-                    Timber.tag(Tag).w("Skipping module $pkg: built for API ${module.info.apiVersion}, Mochy has $MODULE_API_VERSION")
+                    Timber.tag(Tag).w("Skipping module $pkg: built for API ${module.info.apiVersion}, Doom has $MODULE_API_VERSION")
                     null
                 } else module to ModuleOrigin.App(pkg)
             }.onFailure { Timber.tag(Tag).w(it, "Couldn't load module $pkg") }.getOrNull()
@@ -660,8 +660,8 @@ class ModuleRegistry @Inject constructor(
         private const val MaxManifestBytes = 256 * 1024
         private val ServiceResources = setOf("search", "stream", "lyrics", "metadata")
         // a release with a debug and a release zip: debug, fast and profileable builds are signed with the debug key
-        private val PreferDebugZips = com.mochyy.mochymusic.BuildConfig.BUILD_TYPE != "release"
-        const val ModuleAction = "com.mochyy.mochymusic.SOURCE_MODULE"
-        const val EntryMetaKey = "com.mochyy.mochymusic.module.entry"
+        private val PreferDebugZips = com.videshkarmakar.doom.BuildConfig.BUILD_TYPE != "release"
+        const val ModuleAction = "com.videshkarmakar.doom.SOURCE_MODULE"
+        const val EntryMetaKey = "com.videshkarmakar.doom.module.entry"
     }
 }

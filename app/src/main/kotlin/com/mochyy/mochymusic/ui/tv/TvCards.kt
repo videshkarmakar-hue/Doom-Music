@@ -1,6 +1,6 @@
 // TvCards.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -41,13 +41,13 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.LocalItem
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.ui.component.containerTransformSource
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.LocalItem
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.ui.component.containerTransformSource
 
 internal val TvCardSize = 112.dp
 

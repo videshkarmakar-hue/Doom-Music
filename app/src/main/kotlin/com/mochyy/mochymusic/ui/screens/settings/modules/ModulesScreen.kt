@@ -1,6 +1,6 @@
-// settings → modules: a word on what modules are, mochy's bar, then the looks and the js and source modules, each list dragged into order and swiped to delete
+// settings → modules: a word on what modules are, doom's bar, then the looks and the js and source modules, each list dragged into order and swiped to delete
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
@@ -45,24 +45,24 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.modules.ModuleEntry
-import com.mochyy.mochymusic.ui.component.ActionPromptDialog
-import com.mochyy.mochymusic.ui.component.BetaBadge
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.ui.screens.settings.devspace.openDevUrl
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.viewmodels.ModulesViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.modules.ModuleEntry
+import com.videshkarmakar.doom.ui.component.ActionPromptDialog
+import com.videshkarmakar.doom.ui.component.BetaBadge
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.ui.screens.settings.devspace.openDevUrl
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.viewmodels.ModulesViewModel
 import kotlinx.coroutines.launch
 
 const val ModulesRoute = "modules"
 const val ModuleRoutePattern = "module/{id}"
 fun moduleRoute(id: String) = "module/$id"
 
-/** how to make a module, the guide on mochy's wiki */
-const val ModuleDocsUrl = "https://realidkroo.github.io/Mochy-Music/wiki/#modules-types"
+/** how to make a module, the guide on doom's wiki */
+const val ModuleDocsUrl = "https://realidkroo.github.io/Doom-Music/wiki/#modules-types"
 
 private val CardShape = RoundedCornerShape(26.dp)
 
@@ -87,7 +87,7 @@ fun ModulesScreen(navController: NavController, viewModel: ModulesViewModel = hi
     ) {
         ThirdPartyCard { context.openDevUrl(ModuleDocsUrl) }
         Spacer(Modifier.height(14.dp))
-        // mochy's bar is where people share modules, so its browser sits right up top
+        // doom's bar is where people share modules, so its browser sits right up top
         ModulesBarBanner { navController.navigate(ModuleBrowserRoute) }
         Spacer(Modifier.height(22.dp))
         Box(Modifier.fillMaxWidth().padding(horizontal = 2.dp).height(1.dp).background(Color.White.copy(alpha = 0.28f)))
@@ -182,7 +182,7 @@ private fun TwoPhones(modifier: Modifier) {
     }
 }
 
-/** mochy peeking up from the bottom of the card, leading to the discord server where people share modules */
+/** doom peeking up from the bottom of the card, leading to the discord server where people share modules */
 @Composable
 private fun ModulesBarBanner(onClick: () -> Unit) {
     Row(
@@ -197,7 +197,7 @@ private fun ModulesBarBanner(onClick: () -> Unit) {
     ) {
         // the drawing ends at her jacket, so sitting on the card's bottom edge cuts her off there like the design
         Image(
-            painterResource(R.drawable.modules_bar_mochy), null,
+            painterResource(R.drawable.modules_bar_doom), null,
             contentScale = ContentScale.Fit,
             modifier = Modifier.align(Alignment.Bottom).padding(top = 10.dp).fillMaxHeight(),
         )

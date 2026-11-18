@@ -1,6 +1,6 @@
 // shared building blocks for every onboarding page, width is capped so tablets don't stretch them
 
-package com.mochyy.mochymusic.ui.screens.setup.onboarding
+package com.videshkarmakar.doom.ui.screens.setup.onboarding
 
 import androidx.compose.ui.unit.em
 import androidx.compose.foundation.background
@@ -49,9 +49,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 internal object Onb {
     val Page = Color(0xFF1C1C1C)

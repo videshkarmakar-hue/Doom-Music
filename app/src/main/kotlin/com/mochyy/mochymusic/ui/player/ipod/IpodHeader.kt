@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -33,7 +33,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import com.mochyy.mochymusic.LocalPlayerConnection
+import com.videshkarmakar.doom.LocalPlayerConnection
 
 // the grey bar along the top of the screen: what you're looking at, play state and battery
 @Composable

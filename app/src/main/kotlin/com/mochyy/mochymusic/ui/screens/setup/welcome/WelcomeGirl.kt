@@ -1,6 +1,6 @@
 // the welcome girl on screen: her layers drawn from the idle loop each frame, the phone between her and her fingers
 
-package com.mochyy.mochymusic.ui.screens.setup.welcome
+package com.videshkarmakar.doom.ui.screens.setup.welcome
 
 import android.content.res.Resources
 import android.graphics.Bitmap
@@ -44,7 +44,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.math.ceil
@@ -95,7 +95,7 @@ internal fun WelcomeGirl(
     motion: GirlMotion,
     seconds: FloatState,
     modifier: Modifier = Modifier,
-    screen: @Composable BoxScope.() -> Unit = { MochyPhoneScreen() },
+    screen: @Composable BoxScope.() -> Unit = { DoomPhoneScreen() },
 ) {
     BoxWithConstraints(modifier) {
         val scale = constraints.maxWidth / GirlArt.FrameWidth
@@ -148,9 +148,9 @@ internal fun WelcomeGirl(
     }
 }
 
-// what her phone shows for now: plain gray with the mochy mark
+// what her phone shows for now: plain gray with the doom mark
 @Composable
-internal fun BoxScope.MochyPhoneScreen() {
+internal fun BoxScope.DoomPhoneScreen() {
     Box(
         modifier = Modifier
             .matchParentSize()
@@ -158,7 +158,7 @@ internal fun BoxScope.MochyPhoneScreen() {
         contentAlignment = Alignment.Center,
     ) {
         Icon(
-            painter = painterResource(R.drawable.ic_mochy_mark),
+            painter = painterResource(R.drawable.ic_doom_mark),
             contentDescription = null,
             tint = Color.White.copy(alpha = 0.92f),
             modifier = Modifier

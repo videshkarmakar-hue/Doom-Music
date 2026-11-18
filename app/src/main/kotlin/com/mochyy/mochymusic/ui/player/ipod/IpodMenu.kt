@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import android.content.Context
 import androidx.annotation.StringRes
@@ -15,15 +15,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Song
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Song
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 // one screen of the ipod's menu tree, named the way its header shows it
 @Immutable
 sealed class IpodPage(val title: String, @StringRes val titleRes: Int? = null) {
-    data object Main : IpodPage("Mochy")
+    data object Main : IpodPage("Doom")
     data object Music : IpodPage("", R.string.ps_ipod_music)
     data object NowPlaying : IpodPage("", R.string.ps_ipod_now_playing)
     data object CoverFlow : IpodPage("", R.string.ps_ipod_cover_flow)

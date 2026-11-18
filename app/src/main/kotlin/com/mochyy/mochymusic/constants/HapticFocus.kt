@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.constants
+package com.videshkarmakar.doom.constants
 
 enum class HapticFocus {
     BALANCE,

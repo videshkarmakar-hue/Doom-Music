@@ -1,6 +1,6 @@
 // the welcome page's backdrop: a dot grid with giant outlined welcomes drifting past
 
-package com.mochyy.mochymusic.ui.screens.setup.welcome
+package com.videshkarmakar.doom.ui.screens.setup.welcome
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
@@ -33,8 +33,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.math.ceil

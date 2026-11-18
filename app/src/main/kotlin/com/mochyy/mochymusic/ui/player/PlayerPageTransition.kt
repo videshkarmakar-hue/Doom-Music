@@ -1,6 +1,6 @@
 // PlayerPageTransition.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.runtime.withFrameNanos

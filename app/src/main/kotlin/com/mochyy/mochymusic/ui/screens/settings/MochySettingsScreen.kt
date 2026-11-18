@@ -1,8 +1,8 @@
-// MochySettingsScreen.kt
+// DoomSettingsScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
-import com.mochyy.mochymusic.ui.component.navigateToTab
+import com.videshkarmakar.doom.ui.component.navigateToTab
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -51,24 +51,24 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.scrobble.ScrobbleSite
-import com.mochyy.mochymusic.ui.screens.devices.showDeviceIntegration
-import com.mochyy.mochymusic.ui.screens.settings.importsync.YouTubeSyncRoute
-import com.mochyy.mochymusic.ui.screens.settings.integrations.IntegrationsRoute
-import com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordRoute
-import com.mochyy.mochymusic.ui.screens.settings.integrations.scrobbleServiceRoute
-import com.mochyy.mochymusic.constants.ProfilePicUriKey
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.SettingsHighlight
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.screens.search.SearchAvatar
-import com.mochyy.mochymusic.ui.screens.search.SearchField
-import com.mochyy.mochymusic.ui.screens.search.SearchGlassTopBar
-import com.mochyy.mochymusic.ui.screens.search.rememberScrollCollapseProgress
-import com.mochyy.mochymusic.ui.screens.search.searchTopBarHeight
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.scrobble.ScrobbleSite
+import com.videshkarmakar.doom.ui.screens.devices.showDeviceIntegration
+import com.videshkarmakar.doom.ui.screens.settings.importsync.YouTubeSyncRoute
+import com.videshkarmakar.doom.ui.screens.settings.integrations.IntegrationsRoute
+import com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordRoute
+import com.videshkarmakar.doom.ui.screens.settings.integrations.scrobbleServiceRoute
+import com.videshkarmakar.doom.constants.ProfilePicUriKey
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.SettingsHighlight
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.screens.search.SearchAvatar
+import com.videshkarmakar.doom.ui.screens.search.SearchField
+import com.videshkarmakar.doom.ui.screens.search.SearchGlassTopBar
+import com.videshkarmakar.doom.ui.screens.search.rememberScrollCollapseProgress
+import com.videshkarmakar.doom.ui.screens.search.searchTopBarHeight
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.rememberPreference
 
 private data class SettingsEntry(
     val title: String,
@@ -154,7 +154,7 @@ private val SettingsIndex = listOf(
     SettingsEntry("Cover rounding", "Customisation", "customisation_settings", "square rounded corner radius px thumbnail art"),
     SettingsEntry("Playlist styles", "Customisation", "customisation_settings", "flow classic minimal header layout"),
     SettingsEntry("Player styles", "Customisation", "customisation_settings", "flagship turntable ipod poster timeline lyrics studio customize player cover"),
-    SettingsEntry("Home styles", "Customisation", "customisation_settings", "mochyy listen now hop in hero layout grid"),
+    SettingsEntry("Home styles", "Customisation", "customisation_settings", "doomy listen now hop in hero layout grid"),
     SettingsEntry("Blur", "Customisation", "customisation_settings", "blur glass frosted performance lag"),
     SettingsEntry("Progressive blur", "Customisation", "customisation_settings", "gradient fade top bar hairline flat"),
     SettingsEntry("Blur quality", "Customisation", "customisation_settings", "low high glass performance"),
@@ -253,7 +253,7 @@ private val SettingsIndex = listOf(
     SettingsEntry("Remove all downloads", "Storage", "storage_settings", "delete clear downloads offline space"),
 
     // Experimental
-    SettingsEntry("Device integration", "Import & sync", com.mochyy.mochymusic.ui.screens.devices.DeviceIntegrationRoute, "tv television android tv google tv phone tablet car head unit pair link sync stream downloads big screen remote control devices"),
+    SettingsEntry("Device integration", "Import & sync", com.videshkarmakar.doom.ui.screens.devices.DeviceIntegrationRoute, "tv television android tv google tv phone tablet car head unit pair link sync stream downloads big screen remote control devices"),
     SettingsEntry("Import & sync", "Experimental", "experimental_settings", "import spotify apple music deezer tidal tunemymusic csv youtube sync export backup transfer"),
     SettingsEntry("Big disc cover styles", "Experimental", "experimental_settings", "disc vinyl cover"),
     SettingsEntry("Music haptics", "Experimental", "experimental_settings", "vibration haptic"),
@@ -267,20 +267,20 @@ private val SettingsIndex = listOf(
 internal val BubbleColor = Color(0xFF1C1C1E)
 private val SelectedBubbleColor = Color(0xFF3A3A3E)
 
-// the header holds the mochy mark with the big "Settings" under it, taller than search's title-only header
+// the header holds the doom mark with the big "Settings" under it, taller than search's title-only header
 private val SettingsTitleBlockHeight = 88.dp
 private val SettingsMarkSize = 32.dp
 internal val IconBgColor = Color(0xFF333338)
 
 @Composable
-fun MochySettingsScreen(navController: NavController, pane: SettingsPane? = null) {
+fun DoomSettingsScreen(navController: NavController, pane: SettingsPane? = null) {
     val focusManager = LocalFocusManager.current
-    val sheets = com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState.current
-    val devices = com.mochyy.mochymusic.ui.screens.devices.rememberDevicesLink()
+    val sheets = com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState.current
+    val devices = com.videshkarmakar.doom.ui.screens.devices.rememberDevicesLink()
     // on a wide screen the list stays put and its pages open beside it; device integration is a sheet over either
     val open: (String) -> Unit = { route ->
         when {
-            route == com.mochyy.mochymusic.ui.screens.devices.DeviceIntegrationRoute -> sheets.showDeviceIntegration(devices)
+            route == com.videshkarmakar.doom.ui.screens.devices.DeviceIntegrationRoute -> sheets.showDeviceIntegration(devices)
             pane != null -> navController.openSettingsPage(route)
             else -> navController.navigate(route)
         }
@@ -505,7 +505,7 @@ fun MochySettingsScreen(navController: NavController, pane: SettingsPane? = null
                             title = stringResource(R.string.devices_title),
                             iconRes = R.drawable.cast_connected,
                             selected = false,
-                            onClick = { open(com.mochyy.mochymusic.ui.screens.devices.DeviceIntegrationRoute) }
+                            onClick = { open(com.videshkarmakar.doom.ui.screens.devices.DeviceIntegrationRoute) }
                         )
 
                         CategoryBubble(
@@ -516,12 +516,12 @@ fun MochySettingsScreen(navController: NavController, pane: SettingsPane? = null
                         )
 
                         // pages the modules that are on bring to settings, right under modules
-                        com.mochyy.mochymusic.ui.screens.settings.modules.ModuleSettingsPages(open = open, selected = selected)
+                        com.videshkarmakar.doom.ui.screens.settings.modules.ModuleSettingsPages(open = open, selected = selected)
                     }
                 }
             }
 
-            val bottomInset = com.mochyy.mochymusic.LocalPlayerAwareWindowInsets.current.asPaddingValues()
+            val bottomInset = com.videshkarmakar.doom.LocalPlayerAwareWindowInsets.current.asPaddingValues()
             val bottomPadding = bottomInset.calculateBottomPadding()
             val bottomSpacerHeight = maxOf(340.dp, bottomPadding + 160.dp)
 
@@ -530,7 +530,7 @@ fun MochySettingsScreen(navController: NavController, pane: SettingsPane? = null
         }
         }
 
-        // Top bar: Mochy mark + "Settings" title slide away on scroll (progressive glass blur
+        // Top bar: Doom mark + "Settings" title slide away on scroll (progressive glass blur
         // behind the gradient, matching Library/Search) while the search field glides up to sit
         // beside the profile avatar.
         SearchGlassTopBar(
@@ -542,8 +542,8 @@ fun MochySettingsScreen(navController: NavController, pane: SettingsPane? = null
             titleContent = {
                 Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_mochy_mark),
-                        contentDescription = "Mochy",
+                        painter = painterResource(R.drawable.ic_doom_mark),
+                        contentDescription = "Doom",
                         tint = Color.White,
                         modifier = Modifier.size(SettingsMarkSize),
                     )

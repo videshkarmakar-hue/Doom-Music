@@ -7,7 +7,7 @@
 // only the steps around them live here. The import runs in the background once started, and the
 // Library's banner turns into its progress bar.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
@@ -42,29 +42,29 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.mochyy.mochymusic.importer.account.AccountImportState
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.screens.settings.importsync.CaptureWebContent
-import com.mochyy.mochymusic.ui.screens.settings.importsync.YouTubeLoginWebContent
-import com.mochyy.mochymusic.ui.screens.settings.importsync.clearWebSession
-import com.mochyy.mochymusic.ui.screens.settings.importsync.onSignInTick
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.BehindScale
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.BrowserSpring
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.Onb
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.OnboardingBrowserSheet
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.ProviderListPage
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.ProviderSetupPage
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.SyncOptionsPage
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.WhatToSyncPage
-import com.mochyy.mochymusic.viewmodels.OnboardingViewModel
-import com.mochyy.mochymusic.viewmodels.YouTubeSyncChoices
+import com.videshkarmakar.doom.importer.account.AccountImportState
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.screens.settings.importsync.CaptureWebContent
+import com.videshkarmakar.doom.ui.screens.settings.importsync.YouTubeLoginWebContent
+import com.videshkarmakar.doom.ui.screens.settings.importsync.clearWebSession
+import com.videshkarmakar.doom.ui.screens.settings.importsync.onSignInTick
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.BehindScale
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.BrowserSpring
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.Onb
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.OnboardingBrowserSheet
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.ProviderListPage
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.ProviderSetupPage
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.SyncOptionsPage
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.WhatToSyncPage
+import com.videshkarmakar.doom.viewmodels.OnboardingViewModel
+import com.videshkarmakar.doom.viewmodels.YouTubeSyncChoices
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.component.backdropClick
+import com.videshkarmakar.doom.ui.component.backdropClick
 
 private enum class ImportStep { Providers, ProviderSetup, WhatToSync, SyncOptions }
 

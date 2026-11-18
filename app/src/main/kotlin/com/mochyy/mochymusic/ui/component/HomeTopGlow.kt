@@ -1,6 +1,6 @@
 // HomeTopGlow.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.content.Context
 import android.graphics.Bitmap

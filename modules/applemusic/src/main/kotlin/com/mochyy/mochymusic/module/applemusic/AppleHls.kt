@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.module.applemusic
+package com.videshkarmakar.doom.module.applemusic
 
 import java.util.Base64
 

@@ -1,6 +1,6 @@
 // StorageViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import android.os.Environment
@@ -10,20 +10,20 @@ import androidx.lifecycle.viewModelScope
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadService
 import coil3.SingletonImageLoader
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.playback.CachedSongs
-import com.mochyy.mochymusic.playback.DownloadUtil
-import com.mochyy.mochymusic.playback.ExoDownloadService
-import com.mochyy.mochymusic.playback.DownloadExporter
-import com.mochyy.mochymusic.playback.ExportChoice
-import com.mochyy.mochymusic.playback.ExportStep
-import com.mochyy.mochymusic.playback.MoveStep
-import com.mochyy.mochymusic.playback.StorageMover
-import com.mochyy.mochymusic.playback.StoragePlace
-import com.mochyy.mochymusic.playback.StoragePlaces
-import com.mochyy.mochymusic.playback.StoredKind
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.playback.CachedSongs
+import com.videshkarmakar.doom.playback.DownloadUtil
+import com.videshkarmakar.doom.playback.ExoDownloadService
+import com.videshkarmakar.doom.playback.DownloadExporter
+import com.videshkarmakar.doom.playback.ExportChoice
+import com.videshkarmakar.doom.playback.ExportStep
+import com.videshkarmakar.doom.playback.MoveStep
+import com.videshkarmakar.doom.playback.StorageMover
+import com.videshkarmakar.doom.playback.StoragePlace
+import com.videshkarmakar.doom.playback.StoragePlaces
+import com.videshkarmakar.doom.playback.StoredKind
+import com.videshkarmakar.doom.R
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -42,19 +42,19 @@ import kotlinx.coroutines.withContext
 import java.io.File
 import javax.inject.Inject
 
-/** one drive mochy keeps things on, for its own overall card */
+/** one drive doom keeps things on, for its own overall card */
 data class DriveUsage(
     val label: String,
     val isPhone: Boolean,
     val total: Long,
     val free: Long,
-    /** what mochy has on this drive */
-    val mochy: Long,
+    /** what doom has on this drive */
+    val doom: Long,
 ) {
-    val othersUsed: Long get() = (total - free - mochy).coerceAtLeast(0L)
+    val othersUsed: Long get() = (total - free - doom).coerceAtLeast(0L)
 }
 
-/** How much room Mochy takes, in the four parts the Storage page shows, and every drive it sits on. */
+/** How much room Doom takes, in the four parts the Storage page shows, and every drive it sits on. */
 data class StorageUsage(
     /** the phone first, then any memory card holding downloads or the cache */
     val drives: List<DriveUsage>,
@@ -66,7 +66,7 @@ data class StorageUsage(
     /** the app itself and its settings, everything not counted above */
     val appData: Long,
 ) {
-    val mochy: Long get() = cache + downloads + database + appData
+    val doom: Long get() = cache + downloads + database + appData
     val phone: DriveUsage get() = drives.first()
 }
 
@@ -120,7 +120,7 @@ class StorageViewModel @Inject constructor(
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
-    /** Walks Mochy's folders again. The page calls it on open and whenever the downloads change. */
+    /** Walks Doom's folders again. The page calls it on open and whenever the downloads change. */
     fun measure() {
         viewModelScope.launch { _usage.value = withContext(Dispatchers.IO) { readUsage() } }
     }
@@ -150,7 +150,7 @@ class StorageViewModel @Inject constructor(
         PlaceChoice(StoragePlaces.places(context), StoragePlaces.placeOf(context, kind), mover.bytesToMove(kind))
     }
 
-    // a folder from the folder picker as the place mochy would save into, or null when it isn't on the phone or a card
+    // a folder from the folder picker as the place doom would save into, or null when it isn't on the phone or a card
     suspend fun pickedFolder(tree: android.net.Uri): StoragePlace? = withContext(Dispatchers.IO) {
         StoragePlaces.folderFromTree(context, tree)?.let { StoragePlaces.folderPlace(context, StoragePlaces.rootForPicked(it)) }
     }
@@ -203,7 +203,7 @@ class StorageViewModel @Inject constructor(
             isPhone = true,
             total = stat.totalBytes,
             free = stat.availableBytes,
-            mochy = total - onCards.sumOf { it.second },
+            doom = total - onCards.sumOf { it.second },
         )
         // a card holding both downloads and the cache gets one card on the page, not two
         val cards = StoredKind.entries
@@ -216,7 +216,7 @@ class StorageViewModel @Inject constructor(
                     isPhone = false,
                     total = place.total,
                     free = place.free,
-                    mochy = onCards.filter { (dir, _) -> dir.parentFile == place.root }.sumOf { it.second },
+                    doom = onCards.filter { (dir, _) -> dir.parentFile == place.root }.sumOf { it.second },
                 )
             }
         return StorageUsage(

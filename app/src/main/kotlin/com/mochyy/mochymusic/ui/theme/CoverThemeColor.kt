@@ -1,6 +1,6 @@
 // CoverThemeColor.kt
 
-package com.mochyy.mochymusic.ui.theme
+package com.videshkarmakar.doom.ui.theme
 
 import android.content.Context
 import android.util.LruCache

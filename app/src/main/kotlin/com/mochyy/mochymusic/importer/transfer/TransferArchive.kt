@@ -1,6 +1,6 @@
 // TransferArchive.kt
 
-package com.mochyy.mochymusic.importer.transfer
+package com.videshkarmakar.doom.importer.transfer
 
 import android.content.SharedPreferences
 import android.database.sqlite.SQLiteDatabase
@@ -15,34 +15,34 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
-import com.mochyy.mochymusic.constants.AccountChannelHandleKey
-import com.mochyy.mochymusic.constants.AccountEmailKey
-import com.mochyy.mochymusic.constants.AccountNameKey
-import com.mochyy.mochymusic.constants.DataSyncIdKey
-import com.mochyy.mochymusic.constants.DiscordAccessTokenKey
-import com.mochyy.mochymusic.constants.DiscordLoginStateKey
-import com.mochyy.mochymusic.constants.DiscordLoginVerifierKey
-import com.mochyy.mochymusic.constants.DiscordProfileKey
-import com.mochyy.mochymusic.constants.DiscordRefreshTokenKey
-import com.mochyy.mochymusic.constants.DiscordTokenExpiresAtKey
-import com.mochyy.mochymusic.constants.EnableDiscordRPCKey
-import com.mochyy.mochymusic.constants.EnableLastFMScrobblingKey
-import com.mochyy.mochymusic.constants.EnableLibreFmScrobblingKey
-import com.mochyy.mochymusic.constants.InnerTubeCookieKey
-import com.mochyy.mochymusic.constants.LastFMSessionKey
-import com.mochyy.mochymusic.constants.LastFMUsernameKey
-import com.mochyy.mochymusic.constants.LibreFmSessionKey
-import com.mochyy.mochymusic.constants.LibreFmUsernameKey
-import com.mochyy.mochymusic.constants.MonochromePlaybackApiTokenKey
-import com.mochyy.mochymusic.constants.TurnstileBypassTokenKey
-import com.mochyy.mochymusic.constants.VisitorDataKey
+import com.videshkarmakar.doom.constants.AccountChannelHandleKey
+import com.videshkarmakar.doom.constants.AccountEmailKey
+import com.videshkarmakar.doom.constants.AccountNameKey
+import com.videshkarmakar.doom.constants.DataSyncIdKey
+import com.videshkarmakar.doom.constants.DiscordAccessTokenKey
+import com.videshkarmakar.doom.constants.DiscordLoginStateKey
+import com.videshkarmakar.doom.constants.DiscordLoginVerifierKey
+import com.videshkarmakar.doom.constants.DiscordProfileKey
+import com.videshkarmakar.doom.constants.DiscordRefreshTokenKey
+import com.videshkarmakar.doom.constants.DiscordTokenExpiresAtKey
+import com.videshkarmakar.doom.constants.EnableDiscordRPCKey
+import com.videshkarmakar.doom.constants.EnableLastFMScrobblingKey
+import com.videshkarmakar.doom.constants.EnableLibreFmScrobblingKey
+import com.videshkarmakar.doom.constants.InnerTubeCookieKey
+import com.videshkarmakar.doom.constants.LastFMSessionKey
+import com.videshkarmakar.doom.constants.LastFMUsernameKey
+import com.videshkarmakar.doom.constants.LibreFmSessionKey
+import com.videshkarmakar.doom.constants.LibreFmUsernameKey
+import com.videshkarmakar.doom.constants.MonochromePlaybackApiTokenKey
+import com.videshkarmakar.doom.constants.TurnstileBypassTokenKey
+import com.videshkarmakar.doom.constants.VisitorDataKey
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
 
 /** the layout of a transfer zip, written by the export and read back by the import, so both sides agree on every name */
 internal object TransferArchive {
-    const val Format = "mochy-transfer"
+    const val Format = "doom-transfer"
     const val FormatVersion = 1
 
     // the manifest is always the first entry, so the import can check the zip before unpacking gigabytes
@@ -63,9 +63,9 @@ internal object TransferArchive {
         "audio_lab" to "audio_lab",
         "nanosonic_eq_profiles" to "nanosonic_eq_profiles",
         "listening_signals" to "listening_signals",
-        "not_recommended" to com.mochyy.mochymusic.utils.NotRecommended.PREFS_NAME,
+        "not_recommended" to com.videshkarmakar.doom.utils.NotRecommended.PREFS_NAME,
         "source_modules" to "source_modules",
-        "display" to "mochy_settings",
+        "display" to "doom_settings",
     )
 
     // sign-ins and tokens stay behind, the new app signs in again instead of carrying them around in a zip

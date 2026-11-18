@@ -4,14 +4,14 @@
 // "LYRICS"), Vorbis comments in FLAC, Opus and Ogg, and the ©lyr atom in M4A. Imported files carry their lyrics
 // this way often enough, and these are there offline. Only the tags are read, never the audio.
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import java.io.ByteArrayOutputStream
 import java.nio.charset.Charset
 
 object EmbeddedLyrics {
 
-    /** What [LyricsEntity.provider][com.mochyy.mochymusic.db.entities.LyricsEntity] says for these. */
+    /** What [LyricsEntity.provider][com.videshkarmakar.doom.db.entities.LyricsEntity] says for these. */
     const val Provider = "Embedded"
 
     /** Random access to a file's bytes. */

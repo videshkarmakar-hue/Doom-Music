@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.link
+package com.videshkarmakar.doom.link
 
 import android.content.Context
 import android.content.pm.PackageManager

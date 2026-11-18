@@ -2,7 +2,7 @@
 <!-- Upstream InnerTune strings -->
 <!-- Do not add new features here -->
 <!-- Try to re-use strings here, but be careful on its usage e.g. verb vs noun -->
-<!-- "InnerTune" is replaced with "mochy" -->
+<!-- "InnerTune" is replaced with "doom" -->
 <!-- Translators: Do not modify this file for translations, use InnerTune's Weblate instead. -->
 <resources>
     <!-- Bottom navigation -->
@@ -10,7 +10,7 @@
     <string name="music">Music</string>
     <string name="songs">Músicas</string>
     <string name="artists">Artistas</string>
-    <string name="albums">Álbuns</string>
+    <string name="albums">�lbuns</string>
     <string name="playlists">Listas</string>
     <!-- Top bar -->
     <plurals name="n_selected">
@@ -37,7 +37,7 @@
     <!-- Stats -->
     <string name="most_played_songs">Músicas mais tocadas</string>
     <string name="most_played_artists">Artistas mais tocados</string>
-    <string name="most_played_albums">Álbuns mais tocados</string>
+    <string name="most_played_albums">�lbuns mais tocados</string>
     <!-- Search -->
     <string name="search">Pesquisar</string>
     <string name="search_yt_music">Pesquisar no YouTube Music…</string>
@@ -48,7 +48,7 @@
     <string name="filter_all">Tudo</string>
     <string name="filter_songs">Músicas</string>
     <string name="filter_videos">Vídeos</string>
-    <string name="filter_albums">Álbuns</string>
+    <string name="filter_albums">�lbuns</string>
     <string name="filter_artists">Artistas</string>
     <string name="filter_playlists">Listas</string>
     <string name="filter_community_playlists">Listas da comunidade</string>
@@ -58,7 +58,7 @@
     <!-- Library -->
     <string name="library_song_empty">Músicas na biblioteca aparecerão aqui</string>
     <string name="library_artist_empty">Artistas na biblioteca aparecerão aqui</string>
-    <string name="library_album_empty">Álbuns na biblioteca aparecerão aqui</string>
+    <string name="library_album_empty">�lbuns na biblioteca aparecerão aqui</string>
     <string name="library_playlist_empty">Suas listas aparecerão aqui</string>
     <!-- Artist screen -->
     <string name="from_your_library">Da sua biblioteca</string>
@@ -335,7 +335,7 @@
     <string name="backup_create_failed">Não foi possível criar o backup</string>
     <string name="restore_failed">Falha ao restaurar o backup</string>
     <string name="discord_integration">Integração com o Discord</string>
-    <string name="discord_information">O mochy usa a biblioteca KizzyRPC para definir o estado da sua conta do Discord. Isto envolve o uso da conexão do Discord Gateway, que pode ser considerado uma violação dos termos de serviço do Discord. Porém, não houve nenhum relato de usuários sendo banidos por esta razão. Use por sua própria conta e risco.\n\nO mochy extrairá somente o seu token, e todo o resto é armazenado localmente.</string>
+    <string name="discord_information">O doom usa a biblioteca KizzyRPC para definir o estado da sua conta do Discord. Isto envolve o uso da conexão do Discord Gateway, que pode ser considerado uma violação dos termos de serviço do Discord. Porém, não houve nenhum relato de usuários sendo banidos por esta razão. Use por sua própria conta e risco.\n\nO doom extrairá somente o seu token, e todo o resto é armazenado localmente.</string>
     <string name="dismiss">Ignorar</string>
     <string name="options">Opções</string>
     <string name="preview">Prévia</string>

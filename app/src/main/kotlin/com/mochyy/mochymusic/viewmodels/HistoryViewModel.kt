@@ -1,17 +1,17 @@
 // HistoryViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.pages.HistoryPage
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.constants.HistorySource
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.reportException
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.constants.HistorySource
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers

@@ -3,7 +3,7 @@
 // The page frame every Library screen shares (collapsing title, search pill, the list below) and
 // the search that runs inside it.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -22,23 +22,23 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.ui.screens.search.SearchField
-import com.mochyy.mochymusic.ui.screens.search.SearchGlassTopBar
-import com.mochyy.mochymusic.ui.screens.search.SearchHorizontalPadding
-import com.mochyy.mochymusic.ui.screens.search.searchTopBarHeight
-import com.mochyy.mochymusic.viewmodels.ShelfAlbum
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.ui.screens.search.SearchField
+import com.videshkarmakar.doom.ui.screens.search.SearchGlassTopBar
+import com.videshkarmakar.doom.ui.screens.search.SearchHorizontalPadding
+import com.videshkarmakar.doom.ui.screens.search.searchTopBarHeight
+import com.videshkarmakar.doom.viewmodels.ShelfAlbum
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.Artist as InnertubeArtist
 import com.music.innertube.models.ArtistItem
@@ -153,7 +153,7 @@ internal fun androidx.compose.foundation.lazy.LazyListScope.librarySearchResults
             round = item is ArtistItem,
             songId = (item as? SongItem)?.id,
             // albums and playlists open growing out of their cover, as from Home
-            sharedElementKey = com.mochyy.mochymusic.ui.component.coverTransitionKey(item),
+            sharedElementKey = com.videshkarmakar.doom.ui.component.coverTransitionKey(item),
         )
     }
 }
@@ -166,7 +166,7 @@ internal fun androidx.compose.foundation.lazy.LazyListScope.librarySearchResults
 internal fun openLibraryItem(
     item: YTItem,
     navController: NavController,
-    playerConnection: com.mochyy.mochymusic.playback.PlayerConnection?,
+    playerConnection: com.videshkarmakar.doom.playback.PlayerConnection?,
     librarySongs: List<Song> = emptyList(),
 ) {
     when (item) {

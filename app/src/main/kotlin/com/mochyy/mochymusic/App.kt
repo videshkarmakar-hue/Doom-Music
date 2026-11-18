@@ -1,6 +1,6 @@
 // App.kt
 
-package com.mochyy.mochymusic
+package com.videshkarmakar.doom
 
 import android.app.Application
 import android.app.NotificationChannel
@@ -23,17 +23,17 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.IpVersion
 import com.music.innertube.models.YouTubeLocale
 import com.music.kugou.KuGou
-import com.mochyy.mochymusic.constants.*
-import com.mochyy.mochymusic.di.ApplicationScope
-import com.mochyy.mochymusic.i18n.AppLanguage
-import com.mochyy.mochymusic.extensions.toEnum
-import com.mochyy.mochymusic.utils.CrashHandler
-import com.mochyy.mochymusic.utils.PreferencesCache
-import com.mochyy.mochymusic.utils.cipher.CipherDeobfuscator
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.AppProxy
-import com.mochyy.mochymusic.utils.BotDetectionMitigator
-import com.mochyy.mochymusic.utils.reportException
+import com.videshkarmakar.doom.constants.*
+import com.videshkarmakar.doom.di.ApplicationScope
+import com.videshkarmakar.doom.i18n.AppLanguage
+import com.videshkarmakar.doom.extensions.toEnum
+import com.videshkarmakar.doom.utils.CrashHandler
+import com.videshkarmakar.doom.utils.PreferencesCache
+import com.videshkarmakar.doom.utils.cipher.CipherDeobfuscator
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.AppProxy
+import com.videshkarmakar.doom.utils.BotDetectionMitigator
+import com.videshkarmakar.doom.utils.reportException
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -46,13 +46,13 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import timber.log.Timber
 import javax.inject.Inject
-import com.mochyy.mochymusic.link.isTelevision
+import com.videshkarmakar.doom.link.isTelevision
 
 // how long after the launch intro the PoToken WebView may boot (Home's reveal runs ~1s)
 private const val PoTokenAfterIntroMillis = 2_500L
 
 // one character from each system fallback font titles commonly reach for: japanese, chinese, korean, emoji
-private const val FallbackFontWarmup = "あ漢한😀"
+private const val FallbackFontWarmup = "�漢한😀"
 
 @HiltAndroidApp
 class App : Application(), SingletonImageLoader.Factory {
@@ -62,17 +62,17 @@ class App : Application(), SingletonImageLoader.Factory {
     lateinit var applicationScope: CoroutineScope
 
     @Inject
-    lateinit var musicDatabase: com.mochyy.mochymusic.db.MusicDatabase
+    lateinit var musicDatabase: com.videshkarmakar.doom.db.MusicDatabase
 
     // only built once a tv is paired, it pulls in the downloads
     @Inject
-    lateinit var phoneLink: dagger.Lazy<com.mochyy.mochymusic.link.phone.PhoneLinkHost>
+    lateinit var phoneLink: dagger.Lazy<com.videshkarmakar.doom.link.phone.PhoneLinkHost>
 
     override fun onCreate() {
         // before super, because that's where hilt builds the database and the player caches
-        com.mochyy.mochymusic.importer.transfer.TransferRestore.applyPending(this)
+        com.videshkarmakar.doom.importer.transfer.TransferRestore.applyPending(this)
         // the folders a move to another drive left behind, cleared once nothing has them open
-        com.mochyy.mochymusic.playback.StoragePlaces.cleanUpLeftovers(this)
+        com.videshkarmakar.doom.playback.StoragePlaces.cleanUpLeftovers(this)
         super.onCreate()
 
         AppLanguage.initialize(this)
@@ -86,8 +86,8 @@ class App : Application(), SingletonImageLoader.Factory {
 
         PreferencesCache.start(this, applicationScope)
         // tokens saved before the vault existed are sealed on the first start after the update
-        applicationScope.launch(kotlinx.coroutines.Dispatchers.IO) { (dataStore as? com.mochyy.mochymusic.utils.SecretPreferences)?.sealLeftovers() }
-        com.mochyy.mochymusic.utils.NotRecommended.init(this)
+        applicationScope.launch(kotlinx.coroutines.Dispatchers.IO) { (dataStore as? com.videshkarmakar.doom.utils.SecretPreferences)?.sealLeftovers() }
+        com.videshkarmakar.doom.utils.NotRecommended.init(this)
 
         applicationScope.launch(Dispatchers.IO) {
             try {
@@ -119,7 +119,7 @@ class App : Application(), SingletonImageLoader.Factory {
                 if ((dataStore.data.first()[LyricsCacheWipeKey] ?: 0) < LyricsCacheWipeGeneration) {
                     musicDatabase.clearFetchedLyrics(
                         keepProviders = listOf(
-                            com.mochyy.mochymusic.viewmodels.LyricsMenuViewModel.USER_EDITED,
+                            com.videshkarmakar.doom.viewmodels.LyricsMenuViewModel.USER_EDITED,
                             "Manual",
                         ),
                     )
@@ -148,33 +148,33 @@ class App : Application(), SingletonImageLoader.Factory {
             if (ready == true) {
                 // its WebView boots on the main thread; let the launch intro and Home's reveal
                 // play out first. VISIONOS streams need no token, so nothing waits on this
-                com.mochyy.mochymusic.ui.launch.LaunchGate.awaitIntro()
+                com.videshkarmakar.doom.ui.launch.LaunchGate.awaitIntro()
                 kotlinx.coroutines.delay(PoTokenAfterIntroMillis)
-                com.mochyy.mochymusic.utils.YTPlayerUtils.preWarmPoToken()
+                com.videshkarmakar.doom.utils.YTPlayerUtils.preWarmPoToken()
                 // the player script compiles now, so the first song doesn't wait for it
-                com.mochyy.mochymusic.utils.YTPlayerUtils.preWarmInnerTubeX()
+                com.videshkarmakar.doom.utils.YTPlayerUtils.preWarmInnerTubeX()
             }
         }
 
         applicationScope.launch(Dispatchers.IO) {
-            // a paired device can reach this phone again as soon as mochy is up, after the intro has had the main thread
-            if (isTelevision() || !com.mochyy.mochymusic.link.phone.PhoneLinkHost.hasPairedDevices(this@App)) return@launch
-            com.mochyy.mochymusic.ui.launch.LaunchGate.awaitIntro()
+            // a paired device can reach this phone again as soon as doom is up, after the intro has had the main thread
+            if (isTelevision() || !com.videshkarmakar.doom.link.phone.PhoneLinkHost.hasPairedDevices(this@App)) return@launch
+            com.videshkarmakar.doom.ui.launch.LaunchGate.awaitIntro()
             phoneLink.get().refresh()
-            com.mochyy.mochymusic.link.phone.PhoneLinkService.start(this@App)
+            com.videshkarmakar.doom.link.phone.PhoneLinkService.start(this@App)
         }
 
         applicationScope.launch(Dispatchers.IO) {
             // Local songs whose cover file was cleared away get it back from the song's own file.
             // After the intro, so it doesn't share the disk with the first frames.
-            com.mochyy.mochymusic.ui.launch.LaunchGate.awaitIntro()
-            runCatching { com.mochyy.mochymusic.importer.LocalArtwork.repair(this@App, musicDatabase) }
+            com.videshkarmakar.doom.ui.launch.LaunchGate.awaitIntro()
+            runCatching { com.videshkarmakar.doom.importer.LocalArtwork.repair(this@App, musicDatabase) }
                 .onFailure { Timber.w(it, "Repairing local covers failed") }
         }
 
         applicationScope.launch(Dispatchers.Default) {
             // the first japanese, korean or emoji title loaded its system font inside a scroll frame (6 ms on the avd); here it loads once, off the main thread
-            com.mochyy.mochymusic.ui.launch.LaunchGate.awaitIntro()
+            com.videshkarmakar.doom.ui.launch.LaunchGate.awaitIntro()
             runCatching { android.graphics.Paint().measureText(FallbackFontWarmup) }
         }
     }
@@ -186,8 +186,8 @@ class App : Application(), SingletonImageLoader.Factory {
 
     private suspend fun initializeSettings() {
         val settings = dataStore.data.first()
-        com.mochyy.mochymusic.utils.OfflineMode.set(settings[OfflineModeKey] ?: false)
-        com.mochyy.mochymusic.utils.DataSaver.attach(this)
+        com.videshkarmakar.doom.utils.OfflineMode.set(settings[OfflineModeKey] ?: false)
+        com.videshkarmakar.doom.utils.DataSaver.attach(this)
         val locale = AppLanguage.systemLocale(this)
         val languageTag = locale.language
 
@@ -210,7 +210,7 @@ class App : Application(), SingletonImageLoader.Factory {
 
         YouTube.useLoginForBrowse = settings[UseLoginForBrowse] ?: true
         YouTube.ipVersion = settings[IpVersionKey]?.toEnum(defaultValue = IpVersion.AUTO) ?: IpVersion.AUTO
-        com.mochyy.mochymusic.utils.YTPlayerUtils.backend =
+        com.videshkarmakar.doom.utils.YTPlayerUtils.backend =
             settings[StreamBackendKey]?.toEnum(defaultValue = StreamBackend.INNERTUBEX) ?: StreamBackend.INNERTUBEX
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -231,7 +231,7 @@ class App : Application(), SingletonImageLoader.Factory {
             dataStore.data
                 .map { it[OfflineModeKey] ?: false }
                 .distinctUntilChanged()
-                .collect { com.mochyy.mochymusic.utils.OfflineMode.set(it) }
+                .collect { com.videshkarmakar.doom.utils.OfflineMode.set(it) }
         }
 
         applicationScope.launch(Dispatchers.IO) {
@@ -318,9 +318,9 @@ class App : Application(), SingletonImageLoader.Factory {
                 .map { it[StreamBackendKey]?.toEnum(defaultValue = StreamBackend.INNERTUBEX) ?: StreamBackend.INNERTUBEX }
                 .distinctUntilChanged()
                 .collectIndexed { index, backend ->
-                    com.mochyy.mochymusic.utils.YTPlayerUtils.backend = backend
+                    com.videshkarmakar.doom.utils.YTPlayerUtils.backend = backend
                     // a switch mid-session warms it straight away; at launch that waits for the intro, further up
-                    if (index > 0) com.mochyy.mochymusic.utils.YTPlayerUtils.preWarmInnerTubeX()
+                    if (index > 0) com.videshkarmakar.doom.utils.YTPlayerUtils.preWarmInnerTubeX()
                 }
         }
     }
@@ -340,7 +340,7 @@ class App : Application(), SingletonImageLoader.Factory {
         return ImageLoader.Builder(this).apply {
             components {
                 add(SvgDecoder.Factory())
-                add(com.mochyy.mochymusic.utils.ImageRetry)
+                add(com.videshkarmakar.doom.utils.ImageRetry)
             }
             // covers ease in as they arrive; coil skips the fade for ones already in memory, so scrolling back never flickers
             crossfade(300)

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.eq.data
+package com.videshkarmakar.doom.eq.data
 
 import kotlinx.serialization.Serializable
 

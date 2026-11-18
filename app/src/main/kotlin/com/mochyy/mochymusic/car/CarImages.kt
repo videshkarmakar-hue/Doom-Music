@@ -1,6 +1,6 @@
 // CarImages.kt
 
-package com.mochyy.mochymusic.car
+package com.videshkarmakar.doom.car
 
 import android.content.Context
 import android.util.LruCache
@@ -15,8 +15,8 @@ import coil3.request.transformations
 import coil3.size.Size
 import coil3.toBitmap
 import coil3.transform.RoundedCornersTransformation
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

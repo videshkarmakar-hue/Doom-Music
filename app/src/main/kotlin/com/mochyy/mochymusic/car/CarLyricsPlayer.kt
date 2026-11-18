@@ -1,6 +1,6 @@
 // CarLyricsPlayer.kt
 
-package com.mochyy.mochymusic.car
+package com.videshkarmakar.doom.car
 
 import androidx.media3.common.ForwardingPlayer
 import androidx.media3.common.MediaMetadata

@@ -1,6 +1,6 @@
 // DownloadUtil.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import coil3.SingletonImageLoader
 import coil3.request.CachePolicy
@@ -17,37 +17,37 @@ import androidx.media3.datasource.okhttp.OkHttpDataSource
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadManager
 import androidx.media3.exoplayer.offline.DownloadNotificationHelper
-import com.mochyy.mochymusic.utils.followAppProxy
+import com.videshkarmakar.doom.utils.followAppProxy
 import com.music.innertube.YouTube
-import com.mochyy.mochymusic.constants.AudioQuality
-import com.mochyy.mochymusic.constants.DownloadQuality
-import com.mochyy.mochymusic.constants.DownloadQualityKey
-import com.mochyy.mochymusic.constants.IpVersionKey
-import com.mochyy.mochymusic.constants.OfflineModeKey
-import com.mochyy.mochymusic.module.TrackQuery
-import com.mochyy.mochymusic.modules.SourceModules
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.constants.AudioQuality
+import com.videshkarmakar.doom.constants.DownloadQuality
+import com.videshkarmakar.doom.constants.DownloadQualityKey
+import com.videshkarmakar.doom.constants.IpVersionKey
+import com.videshkarmakar.doom.constants.OfflineModeKey
+import com.videshkarmakar.doom.module.TrackQuery
+import com.videshkarmakar.doom.modules.SourceModules
+import com.videshkarmakar.doom.utils.dataStore
 import com.music.innertube.models.IpVersion
 import okhttp3.Dns
 import java.net.InetAddress
 import java.net.Inet4Address
 import java.net.Inet6Address
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.FormatEntity
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.db.entities.SongEntity
-import com.mochyy.mochymusic.lyrics.LyricsHelper
-import com.mochyy.mochymusic.models.TransferBatch
-import com.mochyy.mochymusic.models.TransferItem
-import com.mochyy.mochymusic.models.TransferState
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.utils.OfflineMode
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.FormatEntity
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.db.entities.SongEntity
+import com.videshkarmakar.doom.lyrics.LyricsHelper
+import com.videshkarmakar.doom.models.TransferBatch
+import com.videshkarmakar.doom.models.TransferItem
+import com.videshkarmakar.doom.models.TransferState
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.utils.OfflineMode
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
-import com.mochyy.mochymusic.di.DownloadCache
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.YTPlayerUtils
-import com.mochyy.mochymusic.utils.enumPreference
+import com.videshkarmakar.doom.di.DownloadCache
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.YTPlayerUtils
+import com.videshkarmakar.doom.utils.enumPreference
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -143,7 +143,7 @@ constructor(
             val mediaId = dataSpec.key ?: error("No media id")
 
             // a tv copying a song its linked phone already has takes the phone's file, the very same song and much quicker
-            com.mochyy.mochymusic.link.PhoneFiles.streamUrl(mediaId)?.let { return@Factory dataSpec.withUri(it.toUri()) }
+            com.videshkarmakar.doom.link.PhoneFiles.streamUrl(mediaId)?.let { return@Factory dataSpec.withUri(it.toUri()) }
 
             moduleDownload(mediaId)?.let { found ->
                 return@Factory dataSpec.buildUpon()
@@ -427,7 +427,7 @@ constructor(
         while (true) {
             downloads.first { map -> map.values.any { it.isUnderWay } }
             val ids = LinkedHashSet<String>()
-            val songs = HashMap<String, com.mochyy.mochymusic.db.entities.Song?>()
+            val songs = HashMap<String, com.videshkarmakar.doom.db.entities.Song?>()
             while (true) {
                 // the manager may only be read on the thread it was made on
                 val running = kotlinx.coroutines.withContext(Dispatchers.Main) {
@@ -489,7 +489,7 @@ constructor(
     private val Download.isUnderWay: Boolean
         get() = state == Download.STATE_QUEUED || state == Download.STATE_DOWNLOADING || state == Download.STATE_RESTARTING
 
-    private fun transferItem(id: String, download: Download?, song: com.mochyy.mochymusic.db.entities.Song?): TransferItem =
+    private fun transferItem(id: String, download: Download?, song: com.videshkarmakar.doom.db.entities.Song?): TransferItem =
         TransferItem(
             key = id,
             title = song?.song?.title
@@ -516,6 +516,6 @@ constructor(
     }
 
     private companion object {
-        const val LOG_TAG = "MochyDownload"
+        const val LOG_TAG = "DoomDownload"
     }
 }

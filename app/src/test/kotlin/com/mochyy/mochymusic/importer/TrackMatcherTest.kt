@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -26,8 +26,8 @@ class TrackMatcherTest {
 
     @Test
     fun similarityHandlesScriptsWithoutSpaces() {
-        assertEquals(1.0, TrackMatcher.similarity("夜に駆ける", "夜に駆ける"), 0.0)
-        assertTrue(TrackMatcher.similarity("夜に駆ける", "夜に駆けるyoasobi") >= 0.8)
+        assertEquals(1.0, TrackMatcher.similarity("夜�駆�る", "夜�駆�る"), 0.0)
+        assertTrue(TrackMatcher.similarity("夜�駆�る", "夜�駆�るyoasobi") >= 0.8)
         assertTrue(TrackMatcher.similarity("blinding lights", "lights blinding") >= 0.99)
         assertTrue(TrackMatcher.similarity("blinding lights", "save your tears") < 0.4)
     }

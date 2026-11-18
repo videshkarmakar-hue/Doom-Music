@@ -1,6 +1,6 @@
 // AudioFingerprint.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import java.nio.ShortBuffer
 import kotlin.math.PI

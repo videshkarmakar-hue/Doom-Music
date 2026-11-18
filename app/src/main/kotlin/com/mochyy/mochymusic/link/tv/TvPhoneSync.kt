@@ -1,6 +1,6 @@
 // TvPhoneSync.kt
 
-package com.mochyy.mochymusic.link.tv
+package com.videshkarmakar.doom.link.tv
 
 import android.content.Context
 import androidx.compose.runtime.Immutable
@@ -8,17 +8,17 @@ import androidx.core.net.toUri
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
-import com.mochyy.mochymusic.db.InternalDatabase
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.link.LinkRows
-import com.mochyy.mochymusic.link.LinkCredentials
-import com.mochyy.mochymusic.link.LinkIdentity
-import com.mochyy.mochymusic.link.LinkWire
-import com.mochyy.mochymusic.link.PhoneFile
-import com.mochyy.mochymusic.link.PhoneFiles
-import com.mochyy.mochymusic.link.discoverPeers
-import com.mochyy.mochymusic.playback.DownloadUtil
-import com.mochyy.mochymusic.playback.ExoDownloadService
+import com.videshkarmakar.doom.db.InternalDatabase
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.link.LinkRows
+import com.videshkarmakar.doom.link.LinkCredentials
+import com.videshkarmakar.doom.link.LinkIdentity
+import com.videshkarmakar.doom.link.LinkWire
+import com.videshkarmakar.doom.link.PhoneFile
+import com.videshkarmakar.doom.link.PhoneFiles
+import com.videshkarmakar.doom.link.discoverPeers
+import com.videshkarmakar.doom.playback.DownloadUtil
+import com.videshkarmakar.doom.playback.ExoDownloadService
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

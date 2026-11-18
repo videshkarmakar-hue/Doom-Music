@@ -1,6 +1,6 @@
 // the "arigatou! :3" sheet with the actual places to donate, opened from donate us! or a dev's profile
 
-package com.mochyy.mochymusic.ui.screens.donate
+package com.videshkarmakar.doom.ui.screens.donate
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
@@ -39,13 +39,13 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.screens.update.VersionRing
-import com.mochyy.mochymusic.ui.screens.update.openUrl
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.screens.update.VersionRing
+import com.videshkarmakar.doom.ui.screens.update.openUrl
 
 const val KofiUrl = "https://ko-fi.com/realidkroo"
 const val SocialBuzzUrl = "https://sociabuzz.com/realidkroo/tribe"

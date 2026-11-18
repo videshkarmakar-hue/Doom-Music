@@ -1,6 +1,6 @@
 // reads a player's animations out of its manifest: keyframes, easings, clocks, states, transitions and events, every number kept in range
 
-package com.mochyy.mochymusic.modules.skin
+package com.videshkarmakar.doom.modules.skin
 
 import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.Easing

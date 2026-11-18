@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.db.entities
+package com.videshkarmakar.doom.db.entities
 
 sealed class LocalItem {
     abstract val id: String

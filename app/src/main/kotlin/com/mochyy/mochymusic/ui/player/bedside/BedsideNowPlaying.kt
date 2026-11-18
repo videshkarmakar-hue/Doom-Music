@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.bedside
+package com.videshkarmakar.doom.ui.player.bedside
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -47,17 +47,17 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.rememberAsyncImagePainter
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.ui.player.LocalSongCarousel
-import com.mochyy.mochymusic.ui.player.SongCarousel
-import com.mochyy.mochymusic.ui.player.carouselText
-import com.mochyy.mochymusic.ui.player.models.TrackInfo
-import com.mochyy.mochymusic.ui.player.rememberTextSlots
-import com.mochyy.mochymusic.ui.player.styles.LocalStyleInteractive
-import com.mochyy.mochymusic.ui.player.styles.StyleTones
-import com.mochyy.mochymusic.ui.player.styles.TransportCircles
-import com.mochyy.mochymusic.ui.player.styles.rememberStyleShowing
-import com.mochyy.mochymusic.ui.player.styles.styleSongSwipe
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.ui.player.LocalSongCarousel
+import com.videshkarmakar.doom.ui.player.SongCarousel
+import com.videshkarmakar.doom.ui.player.carouselText
+import com.videshkarmakar.doom.ui.player.models.TrackInfo
+import com.videshkarmakar.doom.ui.player.rememberTextSlots
+import com.videshkarmakar.doom.ui.player.styles.LocalStyleInteractive
+import com.videshkarmakar.doom.ui.player.styles.StyleTones
+import com.videshkarmakar.doom.ui.player.styles.TransportCircles
+import com.videshkarmakar.doom.ui.player.styles.rememberStyleShowing
+import com.videshkarmakar.doom.ui.player.styles.styleSongSwipe
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine

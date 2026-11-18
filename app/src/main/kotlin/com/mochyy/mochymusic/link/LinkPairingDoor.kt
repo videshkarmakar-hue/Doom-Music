@@ -1,6 +1,6 @@
 // LinkPairingDoor.kt
 
-package com.mochyy.mochymusic.link
+package com.videshkarmakar.doom.link
 
 import android.content.Context
 import androidx.compose.runtime.Immutable
@@ -52,7 +52,7 @@ internal class LinkPairingDoor(
         advert = LinkAdvert(
             context,
             LinkWire.PairServiceType,
-            "Mochy $name",
+            "Doom $name",
             port,
             mapOf(
                 LinkWire.AttrId to LinkIdentity.id(context),

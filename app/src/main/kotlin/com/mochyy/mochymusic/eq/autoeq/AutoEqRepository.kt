@@ -1,9 +1,9 @@
-package com.mochyy.mochymusic.eq.autoeq
+package com.videshkarmakar.doom.eq.autoeq
 
 import android.content.Context
 import android.net.Uri
-import com.mochyy.mochymusic.eq.data.ParametricEQ
-import com.mochyy.mochymusic.eq.data.ParametricEQParser
+import com.videshkarmakar.doom.eq.data.ParametricEQ
+import com.videshkarmakar.doom.eq.data.ParametricEQParser
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
@@ -103,7 +103,7 @@ class AutoEqRepository @Inject constructor(
     }
 
     private fun download(url: String): String {
-        val request = Request.Builder().url(url).header("User-Agent", "Mochy").build()
+        val request = Request.Builder().url(url).header("User-Agent", "Doom").build()
         client.newCall(request).execute().use { response ->
             if (!response.isSuccessful) throw IOException("AutoEq ${response.code} for $url")
             return response.body?.string() ?: throw IOException("Empty AutoEq response")

@@ -1,6 +1,6 @@
 // PlaylistForm.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -21,8 +21,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.playlistcover.CoverChoice
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.playlistcover.CoverChoice
 
 private const val MaxNameLength = 80
 private const val MaxDescriptionLength = 300

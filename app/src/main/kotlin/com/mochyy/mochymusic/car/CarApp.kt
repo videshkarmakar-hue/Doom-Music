@@ -1,6 +1,6 @@
 // CarApp.kt
 
-package com.mochyy.mochymusic.car
+package com.videshkarmakar.doom.car
 
 import androidx.car.app.CarContext
 import androidx.car.app.CarToast
@@ -9,11 +9,11 @@ import androidx.car.app.constraints.ConstraintManager
 import androidx.car.app.media.MediaPlaybackManager
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.car.screens.CarLyricsScreen
-import com.mochyy.mochymusic.car.screens.CarNowPlayingScreen
-import com.mochyy.mochymusic.link.phone.PhoneLinkHost
-import com.mochyy.mochymusic.link.phone.PhonePairing
-import com.mochyy.mochymusic.playback.queues.Queue
+import com.videshkarmakar.doom.car.screens.CarLyricsScreen
+import com.videshkarmakar.doom.car.screens.CarNowPlayingScreen
+import com.videshkarmakar.doom.link.phone.PhoneLinkHost
+import com.videshkarmakar.doom.link.phone.PhonePairing
+import com.videshkarmakar.doom.playback.queues.Queue
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

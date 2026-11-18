@@ -1,12 +1,12 @@
 // YouTubePlaylistQueue.kt
 
-package com.mochyy.mochymusic.playback.queues
+package com.videshkarmakar.doom.playback.queues
 
 import androidx.media3.common.MediaItem
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.MediaMetadata
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext

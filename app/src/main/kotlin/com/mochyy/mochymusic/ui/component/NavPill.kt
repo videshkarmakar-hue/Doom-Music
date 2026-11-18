@@ -1,6 +1,6 @@
-// the lit tab's pill: one shape that stretches from tab to tab, lifts while a finger is on the bar and follows it across, drawn by mochy or by a look's glass
+// the lit tab's pill: one shape that stretches from tab to tab, lifts while a finger is on the bar and follows it across, drawn by doom or by a look's glass
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
@@ -104,7 +104,7 @@ internal fun rememberNavPill(selectedIndex: Int): NavPillState {
     return pill
 }
 
-/** mochy's own pill behind the lit tab, left out while [drawn] says the look's glass draws it; only read while drawing, so it never recomposes the bar */
+/** doom's own pill behind the lit tab, left out while [drawn] says the look's glass draws it; only read while drawing, so it never recomposes the bar */
 internal fun Modifier.navHighlight(pill: NavPillState, tabCount: Int, drawn: () -> Boolean = { true }): Modifier = drawBehind {
     if (!drawn()) return@drawBehind
     val rect = pill.rect(size, tabCount, this) ?: return@drawBehind

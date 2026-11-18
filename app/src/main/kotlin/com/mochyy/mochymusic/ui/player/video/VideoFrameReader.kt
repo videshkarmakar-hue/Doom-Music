@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.video
+package com.videshkarmakar.doom.ui.player.video
 
 import android.graphics.Bitmap
 import android.os.Handler

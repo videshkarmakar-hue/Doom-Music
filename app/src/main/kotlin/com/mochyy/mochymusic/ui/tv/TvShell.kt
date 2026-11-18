@@ -1,6 +1,6 @@
 // TvShell.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import android.app.Activity
 import androidx.compose.animation.core.tween
@@ -56,33 +56,33 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.mochyy.mochymusic.LocalAppContentObscured
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.LocalGlassState
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.LocalSyncUtils
-import com.mochyy.mochymusic.constants.BlurQuality
-import com.mochyy.mochymusic.constants.BlurQualityKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.extensions.togglePlayPause
-import com.mochyy.mochymusic.link.tv.TvControl
-import com.mochyy.mochymusic.link.tv.TvProfile
-import com.mochyy.mochymusic.playback.DownloadUtil
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.LocalBlurQuality
-import com.mochyy.mochymusic.ui.component.LocalBottomSheetPageState
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.component.PopupSheetHost
-import com.mochyy.mochymusic.ui.component.rememberBottomSheetState
-import com.mochyy.mochymusic.ui.component.shimmer.ShimmerTheme
-import com.mochyy.mochymusic.ui.screens.navigationBuilder
-import com.mochyy.mochymusic.utils.SyncUtils
-import com.mochyy.mochymusic.utils.rememberEnumPreference
+import com.videshkarmakar.doom.LocalAppContentObscured
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.LocalGlassState
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.LocalSyncUtils
+import com.videshkarmakar.doom.constants.BlurQuality
+import com.videshkarmakar.doom.constants.BlurQualityKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.extensions.togglePlayPause
+import com.videshkarmakar.doom.link.tv.TvControl
+import com.videshkarmakar.doom.link.tv.TvProfile
+import com.videshkarmakar.doom.playback.DownloadUtil
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.LocalBlurQuality
+import com.videshkarmakar.doom.ui.component.LocalBottomSheetPageState
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.component.PopupSheetHost
+import com.videshkarmakar.doom.ui.component.rememberBottomSheetState
+import com.videshkarmakar.doom.ui.component.shimmer.ShimmerTheme
+import com.videshkarmakar.doom.ui.screens.navigationBuilder
+import com.videshkarmakar.doom.utils.SyncUtils
+import com.videshkarmakar.doom.utils.rememberEnumPreference
 import com.valentinilk.shimmer.LocalShimmerTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
@@ -185,7 +185,7 @@ internal fun TvShell(
                         CompositionLocalProvider(LocalAppContentObscured provides obscured) {
                             // a playlist or album card grows into its own page the same way the phone's cards do
                             androidx.compose.animation.SharedTransitionLayout {
-                                CompositionLocalProvider(com.mochyy.mochymusic.ui.component.LocalSharedTransitionScope provides this) {
+                                CompositionLocalProvider(com.videshkarmakar.doom.ui.component.LocalSharedTransitionScope provides this) {
                                     NavHost(
                                         navController = navController,
                                         startDestination = TvRoutes.Home,

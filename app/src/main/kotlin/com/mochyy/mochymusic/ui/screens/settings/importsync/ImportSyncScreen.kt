@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings.importsync
+package com.videshkarmakar.doom.ui.screens.settings.importsync
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -19,16 +19,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.component.SettingsGroup
-import com.mochyy.mochymusic.ui.component.SettingsGroupStyle
-import com.mochyy.mochymusic.ui.component.SettingsItem
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.screens.devices.rememberDevicesLink
-import com.mochyy.mochymusic.ui.screens.devices.showDeviceIntegration
-import com.mochyy.mochymusic.viewmodels.ImportSyncViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.component.SettingsGroup
+import com.videshkarmakar.doom.ui.component.SettingsGroupStyle
+import com.videshkarmakar.doom.ui.component.SettingsItem
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.screens.devices.rememberDevicesLink
+import com.videshkarmakar.doom.ui.screens.devices.showDeviceIntegration
+import com.videshkarmakar.doom.viewmodels.ImportSyncViewModel
 import java.time.LocalDate
 
 /** experimental hub: import from other services, sync a youtube account, tunemymusic csv, and backup */
@@ -152,12 +152,12 @@ fun ImportSyncScreen(
             items = listOf(
                 SettingsItem(
                     title = { Text(stringResource(R.string.import_sync_export_csv_title)) },
-                    highlightKey = "Export to Mochy CSV",
+                    highlightKey = "Export to Doom CSV",
                     descriptionText = stringResource(R.string.import_sync_export_csv_desc),
                     detail = stringResource(R.string.import_sync_export_csv_detail),
                     icon = painterResource(R.drawable.backup),
                     iconShape = CircleShape,
-                    onClick = { exportLauncher.launch("mochy-library-${LocalDate.now()}.csv") },
+                    onClick = { exportLauncher.launch("doom-library-${LocalDate.now()}.csv") },
                 ),
             ),
         )

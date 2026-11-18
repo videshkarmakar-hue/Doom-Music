@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect

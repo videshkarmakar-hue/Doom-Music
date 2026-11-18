@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.flagship
+package com.videshkarmakar.doom.ui.player.flagship
 
 import android.os.Build
 import androidx.compose.animation.core.withInfiniteAnimationFrameNanos
@@ -21,10 +21,10 @@ import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.unit.Constraints
-import com.mochyy.mochymusic.ui.component.asAgslPaintShader
-import com.mochyy.mochymusic.ui.component.createAgslShader
-import com.mochyy.mochymusic.ui.component.setAgslColorUniform
-import com.mochyy.mochymusic.ui.component.setAgslUniform
+import com.videshkarmakar.doom.ui.component.asAgslPaintShader
+import com.videshkarmakar.doom.ui.component.createAgslShader
+import com.videshkarmakar.doom.ui.component.setAgslColorUniform
+import com.videshkarmakar.doom.ui.component.setAgslUniform
 import kotlinx.coroutines.isActive
 import kotlin.math.PI
 import kotlin.math.cos

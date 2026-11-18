@@ -1,6 +1,6 @@
 // customisation's launcher icons: the one in use, and behind a chevron every family's ready-made ones and a custom colour each
 
-package com.mochyy.mochymusic.ui.screens.gesture
+package com.videshkarmakar.doom.ui.screens.gesture
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -60,18 +60,18 @@ import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.component.rememberResourcePainter
-import com.mochyy.mochymusic.ui.player.findActivity
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.utils.AppIcon
-import com.mochyy.mochymusic.utils.AppIconColor
-import com.mochyy.mochymusic.utils.AppIconFamily
-import com.mochyy.mochymusic.utils.AppIcons
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.component.rememberResourcePainter
+import com.videshkarmakar.doom.ui.player.findActivity
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.utils.AppIcon
+import com.videshkarmakar.doom.utils.AppIconColor
+import com.videshkarmakar.doom.utils.AppIconFamily
+import com.videshkarmakar.doom.utils.AppIcons
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 private val TileSize = 66.dp
 // close to a launcher's squircle, so the tile reads as the icon it will be

@@ -1,6 +1,6 @@
 // DetailCoverBackground.kt
 
-package com.mochyy.mochymusic.ui.component.detail
+package com.videshkarmakar.doom.ui.component.detail
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
@@ -24,7 +24,7 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.mochyy.mochymusic.ui.theme.PlayerColorExtractor
+import com.videshkarmakar.doom.ui.theme.PlayerColorExtractor
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

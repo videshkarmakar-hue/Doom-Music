@@ -1,6 +1,6 @@
 // FloatingLyricsSwitch.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import android.content.Context
 import android.content.Intent
@@ -18,20 +18,20 @@ import androidx.core.net.toUri
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.FloatingLyricsKey
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.FloatingLyricsKey
+import com.videshkarmakar.doom.utils.rememberPreference
 
-// the floating lyrics switch the player menu, customisation and app behaviour share; it only reads as on once android lets mochy show over other apps
+// the floating lyrics switch the player menu, customisation and app behaviour share; it only reads as on once android lets doom show over other apps
 @Composable
 fun rememberFloatingLyricsSwitch(): Pair<Boolean, (Boolean) -> Unit> {
     val context = LocalContext.current
     val (wanted, setWanted) = rememberPreference(FloatingLyricsKey, defaultValue = false)
     var allowed by remember { mutableStateOf(Settings.canDrawOverlays(context)) }
-    // the switch slides on straight away while android asks, instead of sitting off until mochy comes back
+    // the switch slides on straight away while android asks, instead of sitting off until doom comes back
     var asking by remember { mutableStateOf(false) }
     val currentSetWanted by rememberUpdatedState(setWanted)
-    // the permission is given on android's own screen, so it's checked again whenever mochy comes back
+    // the permission is given on android's own screen, so it's checked again whenever doom comes back
     val lifecycle = LocalLifecycleOwner.current.lifecycle
     DisposableEffect(lifecycle) {
         val observer = LifecycleEventObserver { _, event ->

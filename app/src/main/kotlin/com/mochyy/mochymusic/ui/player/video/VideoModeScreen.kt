@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.video
+package com.videshkarmakar.doom.ui.player.video
 
 import android.os.Build
 import androidx.activity.compose.BackHandler
@@ -53,35 +53,35 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.ColorUtils
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState
-import com.mochyy.mochymusic.ui.component.PopupSheetHost
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.constants.VideoModeWholeVideoKey
-import com.mochyy.mochymusic.ui.menu.AddToPlaylistDialog
-import com.mochyy.mochymusic.ui.player.menu.LocalMenuSheetFloating
-import com.mochyy.mochymusic.ui.player.menu.SongDetailsSheet
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.ui.player.PlaybackClock
-import com.mochyy.mochymusic.ui.player.SongVideo
-import com.mochyy.mochymusic.ui.player.models.TrackInfo
-import com.mochyy.mochymusic.ui.player.rememberSongVideoLookup
-import com.mochyy.mochymusic.ui.menu.songedit.VideoPickerSheet
-import com.mochyy.mochymusic.ui.player.styles.StyleActions
-import com.mochyy.mochymusic.ui.player.styles.quarterTurn
-import com.mochyy.mochymusic.ui.player.styles.sin01
-import com.mochyy.mochymusic.ui.player.styles.smooth
-import com.mochyy.mochymusic.ui.player.styles.turnFit
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.AppMotion
-import com.mochyy.mochymusic.ui.utils.isLandscapeWindow
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState
+import com.videshkarmakar.doom.ui.component.PopupSheetHost
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.constants.VideoModeWholeVideoKey
+import com.videshkarmakar.doom.ui.menu.AddToPlaylistDialog
+import com.videshkarmakar.doom.ui.player.menu.LocalMenuSheetFloating
+import com.videshkarmakar.doom.ui.player.menu.SongDetailsSheet
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.ui.player.PlaybackClock
+import com.videshkarmakar.doom.ui.player.SongVideo
+import com.videshkarmakar.doom.ui.player.models.TrackInfo
+import com.videshkarmakar.doom.ui.player.rememberSongVideoLookup
+import com.videshkarmakar.doom.ui.menu.songedit.VideoPickerSheet
+import com.videshkarmakar.doom.ui.player.styles.StyleActions
+import com.videshkarmakar.doom.ui.player.styles.quarterTurn
+import com.videshkarmakar.doom.ui.player.styles.sin01
+import com.videshkarmakar.doom.ui.player.styles.smooth
+import com.videshkarmakar.doom.ui.player.styles.turnFit
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.AppMotion
+import com.videshkarmakar.doom.ui.utils.isLandscapeWindow
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -138,11 +138,11 @@ private fun VideoModeScreen(actions: StyleActions, modifier: Modifier) {
     )
     val scope = rememberCoroutineScope()
     val state = remember(scope) { VideoModeState(scope) }
-    if (com.mochyy.mochymusic.ui.utils.isTvLayout()) {
+    if (com.videshkarmakar.doom.ui.utils.isTvLayout()) {
         LaunchedEffect(state) {
-            com.mochyy.mochymusic.ui.player.TvPlayerRemote.commands.collect { command ->
+            com.videshkarmakar.doom.ui.player.TvPlayerRemote.commands.collect { command ->
                 when (command) {
-                    com.mochyy.mochymusic.ui.player.TvPlayerCommand.Lyrics -> if (state.paneOpen) state.closePane() else state.openPane(VideoPane.LYRICS)
+                    com.videshkarmakar.doom.ui.player.TvPlayerCommand.Lyrics -> if (state.paneOpen) state.closePane() else state.openPane(VideoPane.LYRICS)
                     else -> Unit
                 }
             }
@@ -190,8 +190,8 @@ private fun VideoModeScreen(actions: StyleActions, modifier: Modifier) {
         }
     }
     // with landscape still locked (Experimental) the window stays upright and the turned frame does it all, as it used to
-    val (landscapeUnlocked) = rememberPreference(com.mochyy.mochymusic.constants.LandscapeUnlockedKey, defaultValue = false)
-    com.mochyy.mochymusic.ui.utils.HoldOrientation(
+    val (landscapeUnlocked) = rememberPreference(com.videshkarmakar.doom.constants.LandscapeUnlockedKey, defaultValue = false)
+    com.videshkarmakar.doom.ui.utils.HoldOrientation(
         orientation = android.content.pm.ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE,
         active = holdSideways && landscapeUnlocked,
     )
@@ -208,7 +208,7 @@ private fun VideoModeScreen(actions: StyleActions, modifier: Modifier) {
     // the song select video was opened for, held so a skip doesn't swap it mid-pick
     var songForVideo by remember { mutableStateOf<TrackInfo?>(null) }
     // the lyrics, the queue and the sheets in here fling the right way while the whole frame is turned
-    com.mochyy.mochymusic.ui.player.styles.TurnedFlingFix(active = turned)
+    com.videshkarmakar.doom.ui.player.styles.TurnedFlingFix(active = turned)
     // its own sheet host, inside the turned frame, so "add to playlist" opens the right way up
     val menuSheets = remember { PopupSheetState() }
 

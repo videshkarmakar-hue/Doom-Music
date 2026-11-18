@@ -1,6 +1,6 @@
 // AddDeviceSheet.kt
 
-package com.mochyy.mochymusic.ui.screens.devices
+package com.videshkarmakar.doom.ui.screens.devices
 
 import android.os.Build
 import androidx.compose.animation.core.RepeatMode
@@ -56,17 +56,17 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.LinkIdentity
-import com.mochyy.mochymusic.link.LinkPeer
-import com.mochyy.mochymusic.link.LinkWire
-import com.mochyy.mochymusic.link.PairingCode
-import com.mochyy.mochymusic.link.discoverPeers
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.LinkIdentity
+import com.videshkarmakar.doom.link.LinkPeer
+import com.videshkarmakar.doom.link.LinkWire
+import com.videshkarmakar.doom.link.PairingCode
+import com.videshkarmakar.doom.link.discoverPeers
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.launch
 
 // pairs a new device both ways round: this phone shows its own code for another phone to type, and lists what's in pairing mode nearby

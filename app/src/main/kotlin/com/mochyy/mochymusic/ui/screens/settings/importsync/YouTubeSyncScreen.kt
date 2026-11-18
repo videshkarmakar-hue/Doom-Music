@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings.importsync
+package com.videshkarmakar.doom.ui.screens.settings.importsync
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -23,22 +23,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AccountEmailKey
-import com.mochyy.mochymusic.constants.AccountNameKey
-import com.mochyy.mochymusic.constants.YtExcludeImportsKey
-import com.mochyy.mochymusic.constants.YtPullHistoryKey
-import com.mochyy.mochymusic.constants.YtReportPlaysKey
-import com.mochyy.mochymusic.constants.YtSyncNewPlaylistsKey
-import com.mochyy.mochymusic.constants.YtmSyncKey
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.ui.component.SettingsGroup
-import com.mochyy.mochymusic.ui.component.SettingsGroupStyle
-import com.mochyy.mochymusic.ui.component.SettingsItem
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.ImportSyncViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AccountEmailKey
+import com.videshkarmakar.doom.constants.AccountNameKey
+import com.videshkarmakar.doom.constants.YtExcludeImportsKey
+import com.videshkarmakar.doom.constants.YtPullHistoryKey
+import com.videshkarmakar.doom.constants.YtReportPlaysKey
+import com.videshkarmakar.doom.constants.YtSyncNewPlaylistsKey
+import com.videshkarmakar.doom.constants.YtmSyncKey
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.ui.component.SettingsGroup
+import com.videshkarmakar.doom.ui.component.SettingsGroupStyle
+import com.videshkarmakar.doom.ui.component.SettingsItem
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.ImportSyncViewModel
 
 @Composable
 fun YouTubeSyncScreen(

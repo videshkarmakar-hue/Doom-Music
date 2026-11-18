@@ -1,16 +1,16 @@
 // QueueExt.kt
 
-package com.mochyy.mochymusic.extensions
+package com.videshkarmakar.doom.extensions
 
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.models.PersistQueue
-import com.mochyy.mochymusic.models.QueueData
-import com.mochyy.mochymusic.models.QueueType
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.playback.queues.LocalAlbumRadio
-import com.mochyy.mochymusic.playback.queues.Queue
-import com.mochyy.mochymusic.playback.queues.YouTubeAlbumRadio
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.models.PersistQueue
+import com.videshkarmakar.doom.models.QueueData
+import com.videshkarmakar.doom.models.QueueType
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.playback.queues.LocalAlbumRadio
+import com.videshkarmakar.doom.playback.queues.Queue
+import com.videshkarmakar.doom.playback.queues.YouTubeAlbumRadio
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
 
 fun Queue.toPersistQueue(
     title: String?,

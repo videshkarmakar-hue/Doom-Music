@@ -1,10 +1,10 @@
-// a lyrics module as one of mochy's lyrics sources, the module registry only hands these out while the module is on
+// a lyrics module as one of doom's lyrics sources, the module registry only hands these out while the module is on
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import android.content.Context
-import com.mochyy.mochymusic.module.LyricsModule
-import com.mochyy.mochymusic.module.TrackQuery
+import com.videshkarmakar.doom.module.LyricsModule
+import com.videshkarmakar.doom.module.TrackQuery
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

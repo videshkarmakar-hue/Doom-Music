@@ -1,6 +1,6 @@
 // audio lab's effects as cards, each with a live picture, a switch and options that fold away while it is off
 
-package com.mochyy.mochymusic.ui.screens.audiolab
+package com.videshkarmakar.doom.ui.screens.audiolab
 
 import android.content.Context
 import android.media.AudioManager
@@ -43,16 +43,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AudioNormalizationKey
-import com.mochyy.mochymusic.eq.MaxSpeed
-import com.mochyy.mochymusic.eq.MinSpeed
-import com.mochyy.mochymusic.eq.ReverbPresets
-import com.mochyy.mochymusic.eq.audio.SpatialMode
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.AudioLabViewModel
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AudioNormalizationKey
+import com.videshkarmakar.doom.eq.MaxSpeed
+import com.videshkarmakar.doom.eq.MinSpeed
+import com.videshkarmakar.doom.eq.ReverbPresets
+import com.videshkarmakar.doom.eq.audio.SpatialMode
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.AudioLabViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.math.log10
@@ -181,10 +181,10 @@ private fun LoudnessCard(viewModel: AudioLabViewModel) {
                     )
                     LabChips(
                         chips = listOf(LabChip("track", stringResource(R.string.fx_rg_track)), LabChip("album", stringResource(R.string.fx_rg_album))),
-                        selectedKey = if (rg.replayGainMode == com.mochyy.mochymusic.eq.audio.ReplayGainMode.Album) "album" else "track",
+                        selectedKey = if (rg.replayGainMode == com.videshkarmakar.doom.eq.audio.ReplayGainMode.Album) "album" else "track",
                         onSelect = { key ->
                             viewModel.updateNormalize {
-                                it.copy(replayGainMode = if (key == "album") com.mochyy.mochymusic.eq.audio.ReplayGainMode.Album else com.mochyy.mochymusic.eq.audio.ReplayGainMode.Track)
+                                it.copy(replayGainMode = if (key == "album") com.videshkarmakar.doom.eq.audio.ReplayGainMode.Album else com.videshkarmakar.doom.eq.audio.ReplayGainMode.Track)
                             }
                         },
                     )
@@ -439,7 +439,7 @@ private fun SpeedCard(viewModel: AudioLabViewModel) {
             Spacer(Modifier.height(8.dp))
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
                 LabTextAction(stringResource(R.string.fx_reset), R.drawable.refresh, enabled = !playback.isNormal) {
-                    viewModel.updatePlayback { com.mochyy.mochymusic.eq.PlaybackSettings() }
+                    viewModel.updatePlayback { com.videshkarmakar.doom.eq.PlaybackSettings() }
                 }
             }
         },

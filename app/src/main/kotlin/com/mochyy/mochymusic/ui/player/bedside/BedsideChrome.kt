@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.bedside
+package com.videshkarmakar.doom.ui.player.bedside
 
 import android.content.Context
 import androidx.compose.animation.core.spring
@@ -44,10 +44,10 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.player.styles.StyleActions
-import com.mochyy.mochymusic.ui.player.styles.whileStyleInteractive
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.player.styles.StyleActions
+import com.videshkarmakar.doom.ui.player.styles.whileStyleInteractive
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.drop

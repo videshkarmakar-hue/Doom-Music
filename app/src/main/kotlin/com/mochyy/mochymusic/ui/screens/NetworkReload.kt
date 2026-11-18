@@ -1,11 +1,11 @@
 // NetworkReload.kt
 
-package com.mochyy.mochymusic.ui.screens
+package com.videshkarmakar.doom.ui.screens
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
-import com.mochyy.mochymusic.utils.NetworkConnectivityObserver
+import com.videshkarmakar.doom.utils.NetworkConnectivityObserver
 
 private const val MinOfflineDurationMs = 3000L
 

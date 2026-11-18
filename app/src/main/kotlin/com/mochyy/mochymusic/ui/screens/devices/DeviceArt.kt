@@ -1,6 +1,6 @@
 // DeviceArt.kt
 
-package com.mochyy.mochymusic.ui.screens.devices
+package com.videshkarmakar.doom.ui.screens.devices
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.Composable
@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.link.DeviceKind
+import com.videshkarmakar.doom.link.DeviceKind
 
 private val Body = Color(0xFF3A3A3D)
 private val Edge = Color.White.copy(alpha = 0.55f)

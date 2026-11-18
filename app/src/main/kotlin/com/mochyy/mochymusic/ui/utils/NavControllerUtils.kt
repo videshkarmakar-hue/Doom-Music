@@ -1,9 +1,9 @@
 // NavControllerUtils.kt
 
-package com.mochyy.mochymusic.ui.utils
+package com.videshkarmakar.doom.ui.utils
 
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.ui.screens.Screens
+import com.videshkarmakar.doom.ui.screens.Screens
 
 fun NavController.backToMain() {
     val mainRoutes = Screens.MainScreens.map { it.route }

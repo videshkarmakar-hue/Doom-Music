@@ -1,6 +1,6 @@
 // TvLibraryScreen.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -52,9 +52,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.PhoneFiles
-import com.mochyy.mochymusic.viewmodels.LibraryHomeViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.PhoneFiles
+import com.videshkarmakar.doom.viewmodels.LibraryHomeViewModel
 
 private enum class TvLibraryTab(val label: Int) { All(R.string.tv_tab_all), Cached(R.string.tv_cached), Local(R.string.tv_local_and_downloaded), Imported(R.string.tv_imported) }
 

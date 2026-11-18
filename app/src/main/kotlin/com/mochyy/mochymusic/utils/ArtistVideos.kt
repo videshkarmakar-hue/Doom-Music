@@ -1,6 +1,6 @@
 // ArtistVideos.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
@@ -34,13 +34,13 @@ object ArtistVideos {
     // the live shelf's title in the user's language ("Live performances", "Pertunjukan langsung"...).
     // \b only knows ascii letters, so the korean/japanese/chinese words sit outside it
     private val LiveShelfTitle = Regex(
-        "\\b(live|langsung|en vivo|ao vivo|en directo|en direct|dal vivo|konser|concerts?)\\b|라이브|ライブ|现场|現場",
+        "\\b(live|langsung|en vivo|ao vivo|en directo|en direct|dal vivo|konser|concerts?)\\b|��브|ライブ|现场|�場",
         RegexOption.IGNORE_CASE,
     )
 
     // "Music videos for you", "Video musik untuk Anda"... in the feed
     private val MusicVideoShelfTitle = Regex(
-        "\\b(music videos?|videos?|vídeos?|vidéos?|videoclips?|clipes|musikvideos?|mvs?)\\b|뮤직\\s?비디오|ミュージックビデオ|音乐视频|音樂影片",
+        "\\b(music videos?|videos?|vídeos?|vidéos?|videoclips?|clipes|musikvideos?|mvs?)\\b|뮤�\\s?비디오|ミュージックビデオ|音�视频|音樂影片",
         RegexOption.IGNORE_CASE,
     )
 

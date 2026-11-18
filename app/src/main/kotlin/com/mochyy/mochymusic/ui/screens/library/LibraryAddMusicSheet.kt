@@ -5,7 +5,7 @@
 // "Remove from cache" the cached songs (none ticked). All the same list with a search field and a
 // checkbox per song.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.annotation.StringRes
 import androidx.compose.animation.core.Spring
@@ -54,17 +54,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.SheetSearchField
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.viewmodels.DeviceScan
-import com.mochyy.mochymusic.viewmodels.LibraryImportViewModel
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.SheetSearchField
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.viewmodels.DeviceScan
+import com.videshkarmakar.doom.viewmodels.LibraryImportViewModel
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** A song in a picker sheet. */
 @Immutable

@@ -1,6 +1,6 @@
 // PassPcm.kt
 
-package com.mochyy.mochymusic.playback.audio.pass
+package com.videshkarmakar.doom.playback.audio.pass
 
 import androidx.media3.common.C
 import java.nio.ByteBuffer

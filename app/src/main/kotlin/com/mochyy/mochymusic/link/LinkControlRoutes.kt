@@ -1,20 +1,20 @@
 // LinkControlRoutes.kt
 
-package com.mochyy.mochymusic.link
+package com.videshkarmakar.doom.link
 
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import androidx.media3.common.C
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.constants.PlayerStyle
-import com.mochyy.mochymusic.constants.PlayerStyleKey
-import com.mochyy.mochymusic.extensions.metadata
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.extensions.togglePlayPause
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.constants.PlayerStyle
+import com.videshkarmakar.doom.constants.PlayerStyleKey
+import com.videshkarmakar.doom.extensions.metadata
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.extensions.togglePlayPause
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.json.JSONArray

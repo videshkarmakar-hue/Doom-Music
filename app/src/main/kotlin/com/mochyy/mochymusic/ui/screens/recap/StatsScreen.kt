@@ -5,7 +5,7 @@
 // year / month picker. Cards open into the detail behind them: a line of every day, the top ten,
 // the genre split, the week and the clock. Nothing here is sent anywhere.
 
-package com.mochyy.mochymusic.ui.screens.recap
+package com.videshkarmakar.doom.ui.screens.recap
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
@@ -77,20 +77,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.ProfilePicUriKey
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.LocalBottomSheetPageState
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.ui.utils.stableSystemBars
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.ProfilePicUriKey
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.LocalBottomSheetPageState
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.ui.utils.stableSystemBars
+import com.videshkarmakar.doom.utils.rememberPreference
 import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.Month
@@ -331,7 +331,7 @@ fun StatsScreen(navController: NavController) {
                 )
             }
             val progressiveBar =
-                com.mochyy.mochymusic.ui.component
+                com.videshkarmakar.doom.ui.component
                     .rememberProgressiveBlur()
             Box(
                 Modifier.fillMaxSize().background(
@@ -339,7 +339,7 @@ fun StatsScreen(navController: NavController) {
                         Brush.verticalGradient(listOf(Color.Black, Color.Black.copy(alpha = 0.7f), Color.Transparent))
                     } else {
                         androidx.compose.ui.graphics.SolidColor(
-                            Color.Black.copy(alpha = com.mochyy.mochymusic.ui.component.FlatBarScrimAlpha),
+                            Color.Black.copy(alpha = com.videshkarmakar.doom.ui.component.FlatBarScrimAlpha),
                         )
                     },
                 ),
@@ -363,8 +363,8 @@ fun StatsScreen(navController: NavController) {
         ) {
             Box(contentAlignment = Alignment.CenterStart) {
                 Icon(
-                    painter = painterResource(R.drawable.ic_mochy_mark),
-                    contentDescription = "Mochy",
+                    painter = painterResource(R.drawable.ic_doom_mark),
+                    contentDescription = "Doom",
                     tint = Color.White,
                     modifier =
                         Modifier

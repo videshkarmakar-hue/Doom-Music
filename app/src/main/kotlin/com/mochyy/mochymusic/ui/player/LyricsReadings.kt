@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -7,37 +7,37 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.datastore.preferences.core.Preferences
-import com.mochyy.mochymusic.constants.AiProviderKey
-import com.mochyy.mochymusic.constants.DeeplApiKey
-import com.mochyy.mochymusic.constants.DeeplFormalityKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeBelarusianKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeBulgarianKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeChineseKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeHindiKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeJapaneseKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeKoreanKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeKyrgyzKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeMacedonianKey
-import com.mochyy.mochymusic.constants.LyricsRomanizePunjabiKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeRussianKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeSerbianKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeUkrainianKey
-import com.mochyy.mochymusic.constants.OpenRouterApiKey
-import com.mochyy.mochymusic.constants.OpenRouterBaseUrlKey
-import com.mochyy.mochymusic.constants.OpenRouterModelKey
-import com.mochyy.mochymusic.constants.TranslateLanguageKey
-import com.mochyy.mochymusic.constants.TranslateLyricsKey
-import com.mochyy.mochymusic.constants.TranslateModeKey
-import com.mochyy.mochymusic.constants.TranslateSourceLanguageKey
-import com.mochyy.mochymusic.constants.YouTubeCaptionTranslationKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.LyricsTranslationHelper
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.lyrics.RubyToken
-import com.mochyy.mochymusic.lyrics.WordTimestamp
-import com.mochyy.mochymusic.lyrics.YouTubeCaptionTranslation
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.AiProviderKey
+import com.videshkarmakar.doom.constants.DeeplApiKey
+import com.videshkarmakar.doom.constants.DeeplFormalityKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeBelarusianKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeBulgarianKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeChineseKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeHindiKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeJapaneseKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeKoreanKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeKyrgyzKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeMacedonianKey
+import com.videshkarmakar.doom.constants.LyricsRomanizePunjabiKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeRussianKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeSerbianKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeUkrainianKey
+import com.videshkarmakar.doom.constants.OpenRouterApiKey
+import com.videshkarmakar.doom.constants.OpenRouterBaseUrlKey
+import com.videshkarmakar.doom.constants.OpenRouterModelKey
+import com.videshkarmakar.doom.constants.TranslateLanguageKey
+import com.videshkarmakar.doom.constants.TranslateLyricsKey
+import com.videshkarmakar.doom.constants.TranslateModeKey
+import com.videshkarmakar.doom.constants.TranslateSourceLanguageKey
+import com.videshkarmakar.doom.constants.YouTubeCaptionTranslationKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsTranslationHelper
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.lyrics.RubyToken
+import com.videshkarmakar.doom.lyrics.WordTimestamp
+import com.videshkarmakar.doom.lyrics.YouTubeCaptionTranslation
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -56,7 +56,7 @@ fun LyricsReadings(
     songId: String?,
     database: MusicDatabase,
     /** the stored row, for a translation saved with it */
-    lyricsEntity: com.mochyy.mochymusic.db.entities.LyricsEntity?,
+    lyricsEntity: com.videshkarmakar.doom.db.entities.LyricsEntity?,
 ) {
     val context = LocalContext.current
     // every language switch, in the order of RomanizeLanguageKeys; the list never changes, so reading them in a loop is safe
@@ -96,7 +96,7 @@ fun LyricsReadings(
     val (deeplKey) = rememberPreference(DeeplApiKey, defaultValue = "")
     val (deeplFormality) = rememberPreference(DeeplFormalityKey, defaultValue = "default")
     val (youtubeTranslations) = rememberPreference(YouTubeCaptionTranslationKey, defaultValue = true)
-    val playerConnection = com.mochyy.mochymusic.LocalPlayerConnection.current
+    val playerConnection = com.videshkarmakar.doom.LocalPlayerConnection.current
 
     LaunchedEffect(songId, translateSessionWide) {
         LyricsTranslationHelper.onSongChanged(songId, translateSessionWide)
@@ -190,7 +190,7 @@ fun LyricsReadings(
 // one line's romanisation: the whole line read out, its timed pieces when the line has timing, and the ruby over japanese and chinese words
 class LineReading(val text: String?, val words: List<WordTimestamp>?, val ruby: List<RubyToken>?)
 
-// the switch for the language a song is sung in, or null when it's in nothing mochy can romanise
+// the switch for the language a song is sung in, or null when it's in nothing doom can romanise
 fun romanizeSwitchFor(lines: List<LyricsEntry>): Preferences.Key<Boolean>? {
     val body = lines.joinToString(" ") { it.text }
     return switchFor(body, LyricsUtils.romanizableScript(body))
@@ -285,14 +285,14 @@ val RomanizeLanguageKeys = listOf(
 class ShownLyric(
     val entry: LyricsEntry,
     val subLine: String?,
-    val ruby: List<com.mochyy.mochymusic.lyrics.RubyToken>?,
+    val ruby: List<com.videshkarmakar.doom.lyrics.RubyToken>?,
     val translation: String?,
 )
 
 // what to draw for [entry] right now; the same on the lyrics page, the card, the video mode and a share, so they all agree
 @Composable
 fun rememberShownLyric(entry: LyricsEntry): ShownLyric {
-    val (asMain) = rememberPreference(com.mochyy.mochymusic.constants.LyricsRomanizeAsMainKey, defaultValue = false)
+    val (asMain) = rememberPreference(com.videshkarmakar.doom.constants.LyricsRomanizeAsMainKey, defaultValue = false)
     val romanized by entry.romanizedTextFlow.collectAsState()
     val romanizedWords by entry.romanizedWordsFlow.collectAsState()
     val ruby by entry.rubyFlow.collectAsState()

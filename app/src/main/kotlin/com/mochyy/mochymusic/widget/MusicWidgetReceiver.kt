@@ -1,6 +1,6 @@
 // MusicWidgetReceiver.kt
 
-package com.mochyy.mochymusic.widget
+package com.videshkarmakar.doom.widget
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
@@ -8,7 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import com.mochyy.mochymusic.playback.MusicService
+import com.videshkarmakar.doom.playback.MusicService
 
 class MusicWidgetReceiver : AppWidgetProvider() {
 
@@ -71,10 +71,10 @@ class MusicWidgetReceiver : AppWidgetProvider() {
     }
 
     companion object {
-        const val ACTION_PLAY_PAUSE = "com.mochyy.mochymusic.widget.PLAY_PAUSE"
-        const val ACTION_LIKE = "com.mochyy.mochymusic.widget.LIKE"
-        const val ACTION_NEXT = "com.mochyy.mochymusic.widget.NEXT"
-        const val ACTION_PREVIOUS = "com.mochyy.mochymusic.widget.PREVIOUS"
-        const val ACTION_UPDATE_WIDGET = "com.mochyy.mochymusic.widget.UPDATE_WIDGET"
+        const val ACTION_PLAY_PAUSE = "com.videshkarmakar.doom.widget.PLAY_PAUSE"
+        const val ACTION_LIKE = "com.videshkarmakar.doom.widget.LIKE"
+        const val ACTION_NEXT = "com.videshkarmakar.doom.widget.NEXT"
+        const val ACTION_PREVIOUS = "com.videshkarmakar.doom.widget.PREVIOUS"
+        const val ACTION_UPDATE_WIDGET = "com.videshkarmakar.doom.widget.UPDATE_WIDGET"
     }
 }

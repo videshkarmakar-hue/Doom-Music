@@ -1,29 +1,29 @@
 // LibraryHomeViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AlbumSortType
-import com.mochyy.mochymusic.constants.AlbumsFromLikedSongsKey
-import com.mochyy.mochymusic.constants.ArtistSortType
-import com.mochyy.mochymusic.constants.PlaylistSortType
-import com.mochyy.mochymusic.constants.SongSortType
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.db.entities.SpeedDialItem
-import com.mochyy.mochymusic.importer.ImportProgress
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.importer.MusicImportService
-import com.mochyy.mochymusic.importer.LocalSongRepair
-import com.mochyy.mochymusic.importer.groupLocalAlbums
-import com.mochyy.mochymusic.playback.CachedSongs
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.utils.ArtistImageResolver
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AlbumSortType
+import com.videshkarmakar.doom.constants.AlbumsFromLikedSongsKey
+import com.videshkarmakar.doom.constants.ArtistSortType
+import com.videshkarmakar.doom.constants.PlaylistSortType
+import com.videshkarmakar.doom.constants.SongSortType
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.db.entities.SpeedDialItem
+import com.videshkarmakar.doom.importer.ImportProgress
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.importer.MusicImportService
+import com.videshkarmakar.doom.importer.LocalSongRepair
+import com.videshkarmakar.doom.importer.groupLocalAlbums
+import com.videshkarmakar.doom.playback.CachedSongs
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.utils.ArtistImageResolver
+import com.videshkarmakar.doom.utils.dataStore
 import com.music.innertube.YouTube
 import com.music.innertube.models.YTItem
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -281,8 +281,8 @@ data class ImportedSourceCard(
 
 /**
  * Downloads and imported files as one list, sorted as [sortType] says. They come from two queries
- * because they are two columns ([isDownloaded][com.mochyy.mochymusic.db.entities.SongEntity.isDownloaded]
- * and [isLocal][com.mochyy.mochymusic.db.entities.SongEntity.isLocal]); a download is dated by when
+ * because they are two columns ([isDownloaded][com.videshkarmakar.doom.db.entities.SongEntity.isDownloaded]
+ * and [isLocal][com.videshkarmakar.doom.db.entities.SongEntity.isLocal]); a download is dated by when
  * it finished downloading, an imported file by when it was imported.
  */
 internal fun MusicDatabase.onDeviceSongs(sortType: SongSortType, descending: Boolean): Flow<List<Song>> =

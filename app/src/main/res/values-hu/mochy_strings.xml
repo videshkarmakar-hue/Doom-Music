@@ -59,10 +59,10 @@
     </plurals>
     <string name="similar_content">Hasonló tartalom</string>
     <string name="login_settings">Belépési beállítások</string>
-    <string name="general_settings">Általános beállítások</string>
+    <string name="general_settings">�ltalános beállítások</string>
     <string name="player_background_style">Lejátszó háttér stílus</string>
     <string name="follow_theme">Téma követése</string>
-    <string name="gradient">Átmenet</string>
+    <string name="gradient">�tmenet</string>
     <string name="new_player_design">Új lejátszó design</string>
     <string name="player_background_blur">Homályosított</string>
     <string name="player_buttons_style">Lejátszó gomb színek</string>
@@ -90,7 +90,7 @@
     <string name="ytm_sync">Automatikusan szinkronizálhatja a Youtube Zene fiókjával</string>
     <string name="yt_sync">Automata szinkronizálás a fiókkal</string>
     <string name="more_content">Több tartalom</string>
-    <string name="general">Általános</string>
+    <string name="general">�ltalános</string>
     <string name="proxy">Proxy</string>
     <string name="default_lib_chips">Alap könyvtár chip változtatása</string>
     <string name="set_quick_picks">Gyors választások megadása</string>
@@ -216,7 +216,7 @@
     <string name="lyrics_romanize_kyrgyz">Kirgizisztáni dalszövegek latin betűs átírása</string>
     <string name="lyrics_romanize_serbian">Szerb dalszövegek latin betűs átírása</string>
     <string name="lyrics_romanize_bulgarian">Bolgár dalszövegek latin betűs átírása</string>
-    <string name="line_by_line_option_title">KÍSÉRLETI: Soronkénti nyelvfelismerés</string>
+    <string name="line_by_line_option_title">K�SÉRLETI: Soronkénti nyelvfelismerés</string>
     <string name="line_by_line_option_desc">A cirill nyelv soronként lesz felismerve az egész dalszöveg helyett.</string>
     <string name="line_by_line_dialog_title">Biztos vagy benne?</string>
     <string name="line_by_line_dialog_desc">Ez egy kísérleti funkció, változó megbízhatósággal.\n\nAlapértelmezésben a rendszer a teljes dal alapján határozza meg a nyelvet, ez az opció viszont soronkénti ellenőrzést tesz lehetővé. Ez hasznos a többnyelvű daloknál, DE a nyelvfelismerés nem mindig pontos (például, ha egy ukrán sor nem tartalmaz speciális ukrán karaktereket, a rendszer oroszként írhatja át).\n\nHa nem tapasztalsz problémát, javasolt kikapcsolva hagyni ezt az opciót.</string>
@@ -240,7 +240,7 @@
     <string name="enable_scrobbling">Scrobbling engedélyezése</string>
     <string name="lastfm_now_playing">\"Épp hallgatott\" állapot küldése</string>
     <string name="last_fm_send_likes">Kedvelések küldése</string>
-    <string name="last_fm_send_likes_description">Dalok kedvencnek jelölése/törlése a Last.fm-en, ha a mochy-ben kedveled/nem kedveled őket</string>
+    <string name="last_fm_send_likes_description">Dalok kedvencnek jelölése/törlése a Last.fm-en, ha a doom-ben kedveled/nem kedveled őket</string>
     <string name="logging_in">Bejelentkezés…</string>
     <string name="scrobbling_configuration">Scrobbling beállítása</string>
     <string name="scrobble_min_track_duration">Ennél hosszabb számok scrobble-olása</string>

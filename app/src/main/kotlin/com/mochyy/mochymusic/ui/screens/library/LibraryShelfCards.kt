@@ -4,7 +4,7 @@
 // them - Songs, Playlist, Albums, Artist, then Recently added and Liked. Each tab adds its own
 // pieces around these: Local its import cards, Cached the list of every cached song.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -20,15 +20,15 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.ui.component.LikedCover
-import com.mochyy.mochymusic.ui.screens.search.SearchHorizontalPadding
-import com.mochyy.mochymusic.viewmodels.LibraryHomeViewModel
-import com.mochyy.mochymusic.viewmodels.LibraryShelfKind
-import com.mochyy.mochymusic.viewmodels.ShelfAlbum
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.ui.component.LikedCover
+import com.videshkarmakar.doom.ui.screens.search.SearchHorizontalPadding
+import com.videshkarmakar.doom.viewmodels.LibraryHomeViewModel
+import com.videshkarmakar.doom.viewmodels.LibraryShelfKind
+import com.videshkarmakar.doom.viewmodels.ShelfAlbum
 
 /** What a Local or Cached tab counts. Only collected while the tab is open: the album grouping isn't free. */
 @Immutable

@@ -1,6 +1,6 @@
 // CarLyrics.kt
 
-package com.mochyy.mochymusic.car
+package com.videshkarmakar.doom.car
 
 import android.content.Context
 import android.content.pm.PackageManager
@@ -8,9 +8,9 @@ import androidx.car.app.connection.CarConnection
 import androidx.lifecycle.Observer
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.constants.CarLyricsKey
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.constants.CarLyricsKey
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

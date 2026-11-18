@@ -1,9 +1,9 @@
-package com.mochyy.mochymusic.eq.autoeq
+package com.videshkarmakar.doom.eq.autoeq
 
-import com.mochyy.mochymusic.eq.audio.Biquad
-import com.mochyy.mochymusic.eq.data.FilterType
-import com.mochyy.mochymusic.eq.data.ParametricEQ
-import com.mochyy.mochymusic.eq.data.ParametricEQBand
+import com.videshkarmakar.doom.eq.audio.Biquad
+import com.videshkarmakar.doom.eq.data.FilterType
+import com.videshkarmakar.doom.eq.data.ParametricEQ
+import com.videshkarmakar.doom.eq.data.ParametricEQBand
 import kotlinx.serialization.Serializable
 import kotlin.math.PI
 import kotlin.math.abs

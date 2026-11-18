@@ -1,10 +1,10 @@
 // every page after the welcome screen as stateless composables, OnboardingFlow picks the page and wires the view model
 
-package com.mochyy.mochymusic.ui.screens.setup.onboarding
+package com.videshkarmakar.doom.ui.screens.setup.onboarding
 
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.ui.component.rememberDeviceTilt
+import com.videshkarmakar.doom.ui.component.rememberDeviceTilt
 import androidx.compose.foundation.background
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.WindowInsets
@@ -13,10 +13,10 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.runtime.remember
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.component.glassRoot
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -57,13 +57,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.importer.account.AccountImportState
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.importer.account.RemotePlaylist
-import com.mochyy.mochymusic.importer.transfer.TransferManifest
-import com.mochyy.mochymusic.viewmodels.TransferStep
-import com.mochyy.mochymusic.viewmodels.YouTubeSyncChoices
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.importer.account.AccountImportState
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.importer.account.RemotePlaylist
+import com.videshkarmakar.doom.importer.transfer.TransferManifest
+import com.videshkarmakar.doom.viewmodels.TransferStep
+import com.videshkarmakar.doom.viewmodels.YouTubeSyncChoices
 
 // ---- 1. import? ----
 
@@ -571,7 +571,7 @@ internal fun BlurWarningPage(
                 steps = 3,
                 modifier = Modifier.matchParentSize(),
             )
-            val progressiveBar = com.mochyy.mochymusic.ui.component.rememberProgressiveBlur()
+            val progressiveBar = com.videshkarmakar.doom.ui.component.rememberProgressiveBlur()
             Box(
                 modifier = Modifier
                     .matchParentSize()

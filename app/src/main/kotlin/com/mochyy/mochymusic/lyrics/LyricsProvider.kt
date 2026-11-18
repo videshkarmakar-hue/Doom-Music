@@ -1,6 +1,6 @@
 // LyricsProvider.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import android.content.Context
 

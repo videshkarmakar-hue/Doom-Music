@@ -1,9 +1,9 @@
 // SongVersions.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
-import com.mochyy.mochymusic.ui.player.normalizeCanvasArtistName
-import com.mochyy.mochymusic.ui.player.normalizeCanvasSongTitle
+import com.videshkarmakar.doom.ui.player.normalizeCanvasArtistName
+import com.videshkarmakar.doom.ui.player.normalizeCanvasSongTitle
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV

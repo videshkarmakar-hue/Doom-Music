@@ -4,7 +4,7 @@
 // LibraryImportFlow.kt) - and turns into a progress bar while an import runs - and the import
 // sources' icons, for their category cards.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.animateContentSize
@@ -50,15 +50,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.importer.ImportProgress
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.importer.account.AccountService
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.importer.ImportProgress
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.importer.account.AccountService
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.ProviderSquircle
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.SquircleShape
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.ProviderSquircle
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.SquircleShape
 import kotlin.math.ceil
 
 /** The services the banner flows past - the ones an account can be imported from. */

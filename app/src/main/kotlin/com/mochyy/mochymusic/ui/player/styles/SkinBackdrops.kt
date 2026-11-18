@@ -1,6 +1,6 @@
-// what a module's player draws behind its blocks: one of mochy's backgrounds, colours, a picture or its own shader, with more layers stacked on top
+// what a module's player draws behind its blocks: one of doom's backgrounds, colours, a picture or its own shader, with more layers stacked on top
 
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import android.os.Build
 import androidx.compose.foundation.background
@@ -19,15 +19,15 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalAppContentObscured
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyle
-import com.mochyy.mochymusic.modules.skin.SkinBackground
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.player.customize.PlayerBackgroundContent
-import com.mochyy.mochymusic.ui.player.flagship.AmbientBackdrop
-import com.mochyy.mochymusic.ui.player.flagship.FollowPicture
-import com.mochyy.mochymusic.ui.player.flagship.rememberAmbientClock
-import com.mochyy.mochymusic.ui.player.flagship.rememberAmbientColors
+import com.videshkarmakar.doom.LocalAppContentObscured
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyle
+import com.videshkarmakar.doom.modules.skin.SkinBackground
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.player.customize.PlayerBackgroundContent
+import com.videshkarmakar.doom.ui.player.flagship.AmbientBackdrop
+import com.videshkarmakar.doom.ui.player.flagship.FollowPicture
+import com.videshkarmakar.doom.ui.player.flagship.rememberAmbientClock
+import com.videshkarmakar.doom.ui.player.flagship.rememberAmbientColors
 
 @Composable
 internal fun BoxScope.SkinBackdrop(context: SkinContext) {

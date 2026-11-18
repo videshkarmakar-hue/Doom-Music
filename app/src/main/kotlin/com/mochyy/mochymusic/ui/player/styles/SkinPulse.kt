@@ -1,6 +1,6 @@
 // the module player's one clock: loop time, a clock that runs while paused, and the music's levels worked out once a frame, plus the preset loops and entrances
 
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -21,13 +21,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.GraphicsLayerScope
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.LocalAppContentObscured
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.modules.skin.EnterKind
-import com.mochyy.mochymusic.modules.skin.MotionKind
-import com.mochyy.mochymusic.modules.skin.SkinEnter
-import com.mochyy.mochymusic.modules.skin.SkinMotion
-import com.mochyy.mochymusic.playback.audio.AudioSpectrum
+import com.videshkarmakar.doom.LocalAppContentObscured
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.modules.skin.EnterKind
+import com.videshkarmakar.doom.modules.skin.MotionKind
+import com.videshkarmakar.doom.modules.skin.SkinEnter
+import com.videshkarmakar.doom.modules.skin.SkinMotion
+import com.videshkarmakar.doom.playback.audio.AudioSpectrum
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine

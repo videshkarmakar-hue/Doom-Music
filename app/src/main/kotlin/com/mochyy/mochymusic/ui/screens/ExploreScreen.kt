@@ -1,6 +1,6 @@
 // ExploreScreen.kt
 
-package com.mochyy.mochymusic.ui.screens
+package com.videshkarmakar.doom.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -58,25 +58,25 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.ListItemHeight
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.NavigationTitle
-import com.mochyy.mochymusic.ui.component.YouTubeGridItem
-import com.mochyy.mochymusic.ui.component.YouTubeListItem
-import com.mochyy.mochymusic.ui.component.shimmer.GridItemPlaceHolder
-import com.mochyy.mochymusic.ui.component.shimmer.ShimmerHost
-import com.mochyy.mochymusic.ui.component.shimmer.TextPlaceholder
-import com.mochyy.mochymusic.ui.menu.YouTubeAlbumMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeSongMenu
-import com.mochyy.mochymusic.ui.utils.SnapLayoutInfoProvider
-import com.mochyy.mochymusic.utils.listItemShape
-import com.mochyy.mochymusic.viewmodels.ChartsViewModel
-import com.mochyy.mochymusic.viewmodels.ExploreViewModel
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.ListItemHeight
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.NavigationTitle
+import com.videshkarmakar.doom.ui.component.YouTubeGridItem
+import com.videshkarmakar.doom.ui.component.YouTubeListItem
+import com.videshkarmakar.doom.ui.component.shimmer.GridItemPlaceHolder
+import com.videshkarmakar.doom.ui.component.shimmer.ShimmerHost
+import com.videshkarmakar.doom.ui.component.shimmer.TextPlaceholder
+import com.videshkarmakar.doom.ui.menu.YouTubeAlbumMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeSongMenu
+import com.videshkarmakar.doom.ui.utils.SnapLayoutInfoProvider
+import com.videshkarmakar.doom.utils.listItemShape
+import com.videshkarmakar.doom.viewmodels.ChartsViewModel
+import com.videshkarmakar.doom.viewmodels.ExploreViewModel
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable

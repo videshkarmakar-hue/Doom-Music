@@ -1,6 +1,6 @@
-// every launcher icon mochy can wear, ready-made or on a custom colour, each an activity-alias in the manifest with exactly one switched on
+// every launcher icon doom can wear, ready-made or on a custom colour, each an activity-alias in the manifest with exactly one switched on
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import android.app.Activity
 import android.content.ComponentName
@@ -12,7 +12,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.edit
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 
 enum class AppIconFamily(@StringRes val title: Int) {
     Mark(R.string.app_icon_family_mark),
@@ -131,7 +131,7 @@ object AppIcons {
     }
 
     // the aliases are named after the code's package, which a debug build's app id doesn't share
-    private fun componentOf(context: Context, icon: AppIcon) = ComponentName(context, "com.mochyy.mochymusic.${icon.alias}")
+    private fun componentOf(context: Context, icon: AppIcon) = ComponentName(context, "com.videshkarmakar.doom.${icon.alias}")
 
     private fun prefs(context: Context) = context.getSharedPreferences("app_icon", Context.MODE_PRIVATE)
 

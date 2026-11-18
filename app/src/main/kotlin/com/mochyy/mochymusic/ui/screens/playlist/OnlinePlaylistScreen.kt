@@ -1,6 +1,6 @@
 // OnlinePlaylistScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.playlist
+package com.videshkarmakar.doom.ui.screens.playlist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -58,46 +58,46 @@ import androidx.compose.ui.util.fastForEachReversed
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.exoplayer.offline.Download
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.playback.queues.YouTubePlaylistQueue
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.SongSwipeBox
-import com.mochyy.mochymusic.ui.component.HomeCardHighlight
-import com.mochyy.mochymusic.ui.component.HomeCardSpacing
-import com.mochyy.mochymusic.ui.component.HomeCoverCard
-import com.mochyy.mochymusic.ui.component.coverTransitionKey
-import com.mochyy.mochymusic.ui.component.detail.PlaylistInset
-import com.mochyy.mochymusic.ui.component.librarySwipeAction
-import com.mochyy.mochymusic.ui.component.queueSwipeAction
-import com.mochyy.mochymusic.ui.component.detail.CreatorUi
-import com.mochyy.mochymusic.ui.component.detail.featuredArtistsOf
-import com.mochyy.mochymusic.ui.component.detail.FeaturedArtistsRow
-import com.mochyy.mochymusic.ui.component.detail.PlaylistDetailScaffold
-import com.mochyy.mochymusic.ui.component.detail.PlaylistEndOfLine
-import com.mochyy.mochymusic.ui.component.detail.PlaylistHeader
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSearchBar
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSectionTitle
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackBones
-import com.mochyy.mochymusic.ui.component.detail.PlaylistModeBar
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSelectTick
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackRow
-import com.mochyy.mochymusic.ui.component.rememberRevealSeenState
-import com.mochyy.mochymusic.ui.component.revealOnAppear
-import com.mochyy.mochymusic.ui.menu.YouTubeAlbumMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeArtistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubePlaylistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeSelectionSongMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeSongMenu
-import com.mochyy.mochymusic.ui.menu.toggleSavedPlaylist
-import com.mochyy.mochymusic.ui.utils.backToMain
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.viewmodels.OnlinePlaylistViewModel
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.playback.queues.YouTubePlaylistQueue
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.SongSwipeBox
+import com.videshkarmakar.doom.ui.component.HomeCardHighlight
+import com.videshkarmakar.doom.ui.component.HomeCardSpacing
+import com.videshkarmakar.doom.ui.component.HomeCoverCard
+import com.videshkarmakar.doom.ui.component.coverTransitionKey
+import com.videshkarmakar.doom.ui.component.detail.PlaylistInset
+import com.videshkarmakar.doom.ui.component.librarySwipeAction
+import com.videshkarmakar.doom.ui.component.queueSwipeAction
+import com.videshkarmakar.doom.ui.component.detail.CreatorUi
+import com.videshkarmakar.doom.ui.component.detail.featuredArtistsOf
+import com.videshkarmakar.doom.ui.component.detail.FeaturedArtistsRow
+import com.videshkarmakar.doom.ui.component.detail.PlaylistDetailScaffold
+import com.videshkarmakar.doom.ui.component.detail.PlaylistEndOfLine
+import com.videshkarmakar.doom.ui.component.detail.PlaylistHeader
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSearchBar
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSectionTitle
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackBones
+import com.videshkarmakar.doom.ui.component.detail.PlaylistModeBar
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSelectTick
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackRow
+import com.videshkarmakar.doom.ui.component.rememberRevealSeenState
+import com.videshkarmakar.doom.ui.component.revealOnAppear
+import com.videshkarmakar.doom.ui.menu.YouTubeAlbumMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeArtistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubePlaylistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeSelectionSongMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeSongMenu
+import com.videshkarmakar.doom.ui.menu.toggleSavedPlaylist
+import com.videshkarmakar.doom.ui.utils.backToMain
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.viewmodels.OnlinePlaylistViewModel
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
@@ -277,7 +277,7 @@ fun OnlinePlaylistScreen(
         if (currentPlaylist == null || songs.isEmpty()) {
             if (isLoading) {
                 item(key = "loading_header") {
-                    Spacer(Modifier.height(com.mochyy.mochymusic.ui.component.detail.playlistCoverHeight() * 0.975f))
+                    Spacer(Modifier.height(com.videshkarmakar.doom.ui.component.detail.playlistCoverHeight() * 0.975f))
                 }
                 item(key = "loading_tracks") {
                     PlaylistTrackBones()

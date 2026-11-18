@@ -1,6 +1,6 @@
 // a module player's small flowing lyrics: a few lines rolling up as the song goes, the sung one lit (docs/wiki, blocks)
 
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,9 +17,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.style.TextOverflow
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.modules.skin.SkinBlock
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.modules.skin.SkinBlock
 
 @Composable
 internal fun SkinFlowLyrics(lines: List<LyricsEntry>, block: SkinBlock.Lyrics, context: SkinContext, modifier: Modifier) {

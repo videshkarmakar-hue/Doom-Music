@@ -1,7 +1,7 @@
-package com.mochyy.mochymusic.ui.player.video
+package com.videshkarmakar.doom.ui.player.video
 
-import com.mochyy.mochymusic.utils.VideoTrack
-import com.mochyy.mochymusic.utils.chunked
+import com.videshkarmakar.doom.utils.VideoTrack
+import com.videshkarmakar.doom.utils.chunked
 import java.util.Locale
 
 // a dash manifest written from the sizes youtube handed us, so exoplayer can fetch small pieces and change size on its own

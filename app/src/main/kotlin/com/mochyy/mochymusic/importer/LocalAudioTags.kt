@@ -1,12 +1,12 @@
 // LocalAudioTags.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
 import android.media.MediaMetadataRetriever
 import android.net.Uri
 import android.os.Build
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 
 // the artist a song gets when neither its tags nor its file name name one; local songs without one all share this artist
 internal const val UnknownLocalArtist = "Unknown Artist"

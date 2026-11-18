@@ -1,6 +1,6 @@
 // CachePlaylistScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.playlist
+package com.videshkarmakar.doom.ui.screens.playlist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Spacer
@@ -37,37 +37,37 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.fastForEachReversed
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.SongSortDescendingKey
-import com.mochyy.mochymusic.constants.SongSortType
-import com.mochyy.mochymusic.constants.SongSortTypeKey
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.ui.component.EmptyPlaceholder
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.SongSwipeBox
-import com.mochyy.mochymusic.ui.component.detail.FeaturedArtistsRow
-import com.mochyy.mochymusic.ui.component.detail.PlaylistEndOfLine
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSortControl
-import com.mochyy.mochymusic.ui.component.detail.PlaylistModeBar
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSelectTick
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackRow
-import com.mochyy.mochymusic.ui.component.detail.featuredArtistsOf
-import com.mochyy.mochymusic.ui.component.librarySwipeAction
-import com.mochyy.mochymusic.ui.component.queueSwipeAction
-import com.mochyy.mochymusic.ui.component.rememberRevealSeenState
-import com.mochyy.mochymusic.ui.component.revealOnAppear
-import com.mochyy.mochymusic.ui.menu.CachePlaylistMenu
-import com.mochyy.mochymusic.ui.menu.SelectionSongMenu
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.ui.utils.backToMain
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.CachePlaylistViewModel
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.SongSortDescendingKey
+import com.videshkarmakar.doom.constants.SongSortType
+import com.videshkarmakar.doom.constants.SongSortTypeKey
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.ui.component.EmptyPlaceholder
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.SongSwipeBox
+import com.videshkarmakar.doom.ui.component.detail.FeaturedArtistsRow
+import com.videshkarmakar.doom.ui.component.detail.PlaylistEndOfLine
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSortControl
+import com.videshkarmakar.doom.ui.component.detail.PlaylistModeBar
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSelectTick
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackRow
+import com.videshkarmakar.doom.ui.component.detail.featuredArtistsOf
+import com.videshkarmakar.doom.ui.component.librarySwipeAction
+import com.videshkarmakar.doom.ui.component.queueSwipeAction
+import com.videshkarmakar.doom.ui.component.rememberRevealSeenState
+import com.videshkarmakar.doom.ui.component.revealOnAppear
+import com.videshkarmakar.doom.ui.menu.CachePlaylistMenu
+import com.videshkarmakar.doom.ui.menu.SelectionSongMenu
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.ui.utils.backToMain
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.CachePlaylistViewModel
 import java.time.LocalDateTime
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -158,7 +158,7 @@ fun CachePlaylistScreen(
         searchPlaceholder = "Search cached songs",
         onBackClick = { navController.navigateUp() },
         onBackLongClick = { navController.backToMain() },
-        creator = "mochy",
+        creator = "doom",
         onMoreClick = {
             menuState.show {
                 CachePlaylistMenu(

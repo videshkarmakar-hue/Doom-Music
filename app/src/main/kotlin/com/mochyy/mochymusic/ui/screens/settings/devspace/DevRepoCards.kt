@@ -1,6 +1,6 @@
 // the repo half of dev spaces: the playground numbers and the open and resolved issues with their filters
 
-package com.mochyy.mochymusic.ui.screens.settings.devspace
+package com.videshkarmakar.doom.ui.screens.settings.devspace
 
 import android.content.Context
 import androidx.annotation.StringRes
@@ -49,10 +49,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.OdometerNumber
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.pressBounce
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.OdometerNumber
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.pressBounce
 import java.time.Instant
 import java.time.temporal.ChronoUnit
 

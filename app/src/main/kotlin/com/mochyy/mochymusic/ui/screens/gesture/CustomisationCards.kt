@@ -1,6 +1,6 @@
 // CustomisationCards.kt
 
-package com.mochyy.mochymusic.ui.screens.gesture
+package com.videshkarmakar.doom.ui.screens.gesture
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
@@ -61,16 +61,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlayerStyle
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlayerStyle
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // how far the customize page's cards sit in from the screen's sides, the same as every other settings page
 internal val CustomisePageMargin = 20.dp

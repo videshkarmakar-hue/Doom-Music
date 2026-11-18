@@ -1,6 +1,6 @@
 // RecentSearches.kt
 
-package com.mochyy.mochymusic.ui.screens.search
+package com.videshkarmakar.doom.ui.screens.search
 
 import android.content.Context
 import androidx.compose.foundation.background
@@ -40,8 +40,8 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.utils.getGroupedShape
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.utils.getGroupedShape
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

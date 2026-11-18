@@ -1,6 +1,6 @@
 // CastDiscovery.kt
 
-package com.mochyy.mochymusic.cast
+package com.videshkarmakar.doom.cast
 
 import android.content.Context
 import android.net.nsd.NsdManager

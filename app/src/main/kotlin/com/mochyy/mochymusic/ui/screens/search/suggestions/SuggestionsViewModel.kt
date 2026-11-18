@@ -1,6 +1,6 @@
 // SuggestionsViewModel.kt
 
-package com.mochyy.mochymusic.ui.screens.search.suggestions
+package com.videshkarmakar.doom.ui.screens.search.suggestions
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -19,8 +19,8 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.WatchEndpoint
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
 import androidx.navigation.NavController
 
 @HiltViewModel

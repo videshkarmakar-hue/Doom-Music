@@ -1,6 +1,6 @@
-// MochyLyrics.kt
+// DoomLyrics.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -41,15 +41,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.constants.AppleMusicLyricsBlurKey
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.ui.screens.LyricsPosition
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.AppleMusicLyricsBlurKey
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.ui.screens.LyricsPosition
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.rememberPreference
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun MochyLyricsLine(
+fun DoomLyricsLine(
     entry: LyricsEntry,
     nextEntryTime: Long?,
     effectivePlaybackPosition: Long,
@@ -99,7 +99,7 @@ fun MochyLyricsLine(
     }
 
     val wordData = remember(entry.text, entry.words, activeDuration) {
-        val isHindiText = com.mochyy.mochymusic.lyrics.LyricsUtils.isHindi(entry.text)
+        val isHindiText = com.videshkarmakar.doom.lyrics.LyricsUtils.isHindi(entry.text)
         if (!isHindiText && entry.words != null && entry.words.isNotEmpty()) {
 
             entry.words.mapIndexed { index, word ->

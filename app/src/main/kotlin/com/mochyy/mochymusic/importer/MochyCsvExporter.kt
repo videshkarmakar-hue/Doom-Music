@@ -1,16 +1,16 @@
-// MochyCsvExporter.kt
+// DoomCsvExporter.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.PlaylistEntity
-import com.mochyy.mochymusic.db.entities.Song
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.PlaylistEntity
+import com.videshkarmakar.doom.db.entities.Song
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 
-/** liked songs and library playlists as a csv mochy imports back exactly (rows carry the youtube id) and other tools can read (tunemymusic column names) */
-object MochyCsvExporter {
+/** liked songs and library playlists as a csv doom imports back exactly (rows carry the youtube id) and other tools can read (tunemymusic column names) */
+object DoomCsvExporter {
 
     data class Summary(val likedSongs: Int, val playlists: Int, val playlistSongs: Int)
 
@@ -40,7 +40,7 @@ object MochyCsvExporter {
             }
         }
 
-        writeMochyCsv(rows) to Summary(liked.size, playlists.size, playlistSongs)
+        writeDoomCsv(rows) to Summary(liked.size, playlists.size, playlistSongs)
     }
 
     private fun Song.toRow(playlistName: String?) = CsvExportRow(

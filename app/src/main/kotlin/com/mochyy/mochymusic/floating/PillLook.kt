@@ -1,6 +1,6 @@
 // PillLook.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import android.content.Context
 import android.graphics.BlurMaskFilter
@@ -25,7 +25,7 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.mochyy.mochymusic.ui.theme.extractThemeColor
+import com.videshkarmakar.doom.ui.theme.extractThemeColor
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

@@ -1,5 +1,5 @@
 // CastOptionsProvider.kt
 
-package com.mochyy.mochymusic.cast
+package com.videshkarmakar.doom.cast
 
 class CastOptionsProvider

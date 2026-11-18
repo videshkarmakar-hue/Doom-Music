@@ -1,6 +1,6 @@
 // DeviceIntegrationSheet.kt
 
-package com.mochyy.mochymusic.ui.screens.devices
+package com.videshkarmakar.doom.ui.screens.devices
 
 import android.text.format.DateUtils
 import androidx.compose.foundation.background
@@ -48,15 +48,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.phone.LiveDevice
-import com.mochyy.mochymusic.link.phone.PairedDevice
-import com.mochyy.mochymusic.link.phone.PhoneLinkHost
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.phone.LiveDevice
+import com.videshkarmakar.doom.link.phone.PairedDevice
+import com.videshkarmakar.doom.link.phone.PhoneLinkHost
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.delay
 
 // settings, the import page and the link's notification all open this; it isn't a page of its own any more
@@ -92,7 +92,7 @@ private fun ColumnScope.DeviceIntegrationContent(link: DevicesLink) {
     val menuShown by link.host.menuShown.collectAsState()
     var stays by remember { mutableStateOf(link.host.staysReachable) }
     // pairing and finding devices both need the wi-fi, which android 17 asks about first
-    com.mochyy.mochymusic.link.AskForLocalNetwork(onGranted = { link.host.advertiseAgain() })
+    com.videshkarmakar.doom.link.AskForLocalNetwork(onGranted = { link.host.advertiseAgain() })
     // a device drops to "not around" on its own, so the list looks at the clock now and then
     var now by remember { mutableLongStateOf(System.currentTimeMillis()) }
     LaunchedEffect(Unit) {

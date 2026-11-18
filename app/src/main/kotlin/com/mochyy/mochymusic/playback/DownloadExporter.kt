@@ -1,6 +1,6 @@
 // DownloadExporter.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -13,13 +13,13 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.songedit.LyricsFileReader
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.DocumentTree
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.songedit.LyricsFileReader
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.DocumentTree
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -38,7 +38,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 // the folder everything goes into, wherever the user points the export
-private const val RootFolder = "mochy-preserve"
+private const val RootFolder = "doom-preserve"
 
 private const val CoverPx = 1200
 
@@ -56,7 +56,7 @@ sealed interface ExportStep {
     data class Failed(val message: String) : ExportStep
 }
 
-// copies downloaded songs out as plain files into a folder the user picked; where mochy keeps its own downloads never changes
+// copies downloaded songs out as plain files into a folder the user picked; where doom keeps its own downloads never changes
 @Singleton
 class DownloadExporter @Inject constructor(
     @ApplicationContext private val context: Context,

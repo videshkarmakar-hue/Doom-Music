@@ -1,6 +1,6 @@
 // CarPlayback.kt
 
-package com.mochyy.mochymusic.car
+package com.videshkarmakar.doom.car
 
 import android.content.ComponentName
 import android.content.Context
@@ -9,11 +9,11 @@ import android.content.ServiceConnection
 import android.os.IBinder
 import android.support.v4.media.session.MediaSessionCompat
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.link.LinkPlayer
-import com.mochyy.mochymusic.playback.MusicService
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.playback.queues.Queue
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.link.LinkPlayer
+import com.videshkarmakar.doom.playback.MusicService
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.playback.queues.Queue
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -34,7 +34,7 @@ class CarPlayback(
 
     private var bound = false
 
-    // a paired phone steering this one needs a player even when mochy's own screen was never opened, like a phone in a pocket in the car
+    // a paired phone steering this one needs a player even when doom's own screen was never opened, like a phone in a pocket in the car
     private var standIn: PlayerConnection? = null
 
     private val connection = object : ServiceConnection {

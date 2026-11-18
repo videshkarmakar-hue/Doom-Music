@@ -1,6 +1,6 @@
 // JsonHelpers.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement

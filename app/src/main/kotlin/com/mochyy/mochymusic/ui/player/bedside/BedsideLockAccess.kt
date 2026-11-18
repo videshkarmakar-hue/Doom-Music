@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.bedside
+package com.videshkarmakar.doom.ui.player.bedside
 
 import android.app.AppOpsManager
 import android.content.ActivityNotFoundException
@@ -37,11 +37,11 @@ import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.BedsideLockPromptDismissedKey
-import com.mochyy.mochymusic.constants.BedsideLockScreenKey
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.BedsideLockPromptDismissedKey
+import com.videshkarmakar.doom.constants.BedsideLockScreenKey
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.rememberPreference
 
 // miui and hyperos keep a "show on lock screen" switch of their own per app, off until someone turns it on, and while it's off setShowWhenLocked does nothing at all
 private const val MiuiShowWhenLockedOp = 10020
@@ -59,7 +59,7 @@ private val isMiui: Boolean by lazy {
     !systemProperty("ro.miui.ui.version.name").isNullOrEmpty() || !systemProperty("ro.mi.os.version.name").isNullOrEmpty()
 }
 
-// whether the phone lets mochy stand over the lock screen; only miui and hyperos ever say no
+// whether the phone lets doom stand over the lock screen; only miui and hyperos ever say no
 internal fun canShowOnLockScreen(context: Context): Boolean {
     if (!LockScreenSupported || !isMiui) return true
     return try {

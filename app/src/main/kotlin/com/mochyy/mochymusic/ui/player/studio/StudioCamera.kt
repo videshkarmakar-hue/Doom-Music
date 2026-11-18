@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.studio
+package com.videshkarmakar.doom.ui.player.studio
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect

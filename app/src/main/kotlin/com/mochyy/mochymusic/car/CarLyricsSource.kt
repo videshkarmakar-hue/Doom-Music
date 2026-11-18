@@ -1,13 +1,13 @@
 // CarLyricsSource.kt
 
-package com.mochyy.mochymusic.car
+package com.videshkarmakar.doom.car
 
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.LyricsHelper
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsHelper
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.models.MediaMetadata
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext

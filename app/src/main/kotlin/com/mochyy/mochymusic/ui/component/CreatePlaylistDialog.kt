@@ -1,6 +1,6 @@
 // CreatePlaylistDialog.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.widget.Toast
 import androidx.compose.runtime.Composable
@@ -13,16 +13,16 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.music.innertube.YouTube
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.InnerTubeCookieKey
-import com.mochyy.mochymusic.constants.YtSyncNewPlaylistsKey
-import com.mochyy.mochymusic.db.entities.PlaylistEntity
-import com.mochyy.mochymusic.extensions.isSyncEnabled
-import com.mochyy.mochymusic.playlistcover.CoverChoice
-import com.mochyy.mochymusic.playlistcover.PlaylistCoverStyle
-import com.mochyy.mochymusic.playlistcover.PlaylistCovers
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.InnerTubeCookieKey
+import com.videshkarmakar.doom.constants.YtSyncNewPlaylistsKey
+import com.videshkarmakar.doom.db.entities.PlaylistEntity
+import com.videshkarmakar.doom.extensions.isSyncEnabled
+import com.videshkarmakar.doom.playlistcover.CoverChoice
+import com.videshkarmakar.doom.playlistcover.PlaylistCoverStyle
+import com.videshkarmakar.doom.playlistcover.PlaylistCovers
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

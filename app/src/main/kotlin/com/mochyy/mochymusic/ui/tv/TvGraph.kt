@@ -1,21 +1,21 @@
 // TvGraph.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.mochyy.mochymusic.link.tv.TvProfile
-import com.mochyy.mochymusic.ui.component.LocalNavAnimatedContentScope
+import com.videshkarmakar.doom.link.tv.TvProfile
+import com.videshkarmakar.doom.ui.component.LocalNavAnimatedContentScope
 
 internal object TvRoutes {
     const val Home = "tv_home"
     const val Search = "tv_search"
     const val Library = "tv_library"
     const val Phone = "tv_phone"
-    const val Mochy = "tv_mochy"
+    const val Doom = "tv_doom"
     const val Recap = "tv_recap"
     const val Browse = "tv_browse"
     const val Songs = "tv_songs"
@@ -32,7 +32,7 @@ internal fun NavGraphBuilder.tvGraph(profile: TvProfile) {
     ) { CompositionLocalProvider(LocalNavAnimatedContentScope provides this) { TvSearchScreen() } }
     composable(TvRoutes.Library) { CompositionLocalProvider(LocalNavAnimatedContentScope provides this) { TvLibraryScreen() } }
     composable(TvRoutes.Phone) { TvPhoneScreen(profile) }
-    composable(TvRoutes.Mochy) { TvMochyScreen(profile) }
+    composable(TvRoutes.Doom) { TvDoomScreen(profile) }
     composable(TvRoutes.Recap) { TvRecapScreen() }
     composable(
         "${TvRoutes.Browse}/{browseId}?params={params}",

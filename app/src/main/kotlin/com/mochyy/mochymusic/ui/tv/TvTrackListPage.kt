@@ -1,6 +1,6 @@
 // TvTrackListPage.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -41,10 +41,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.component.containerTransformTarget
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.component.containerTransformTarget
 import kotlinx.coroutines.flow.MutableStateFlow
 
 // one row of the album page, whatever list it came from

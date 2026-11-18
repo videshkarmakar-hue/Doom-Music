@@ -1,7 +1,7 @@
-package com.mochyy.mochymusic.di
+package com.videshkarmakar.doom.di
 
-import com.mochyy.mochymusic.eq.AudioLabStore
-import com.mochyy.mochymusic.playback.SongTuning
+import com.videshkarmakar.doom.eq.AudioLabStore
+import com.videshkarmakar.doom.playback.SongTuning
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent

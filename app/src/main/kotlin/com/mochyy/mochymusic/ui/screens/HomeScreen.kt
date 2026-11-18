@@ -1,8 +1,8 @@
 // HomeScreen.kt
 
-package com.mochyy.mochymusic.ui.screens
+package com.videshkarmakar.doom.ui.screens
 
-import com.mochyy.mochymusic.ui.utils.stableSystemBars
+import com.videshkarmakar.doom.ui.utils.stableSystemBars
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateFloatAsState
@@ -30,11 +30,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.component.GlassPillBackground
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.component.GlassPillBackground
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.component.BlurDirection
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
 import androidx.compose.ui.geometry.Rect
@@ -60,8 +60,8 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.em
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -113,73 +113,73 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.models.YTItem
-import com.mochyy.mochymusic.constants.HomeStyle
-import com.mochyy.mochymusic.constants.HomeStyleKey
-import com.mochyy.mochymusic.constants.ProfilePicUriKey
-import com.mochyy.mochymusic.constants.ThumbnailCornerRadius
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.LocalItem
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.models.ArtistGroup
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.ArtistListCard
-import com.mochyy.mochymusic.ui.component.BonesHost
-import com.mochyy.mochymusic.ui.component.coverTintBackground
-import com.mochyy.mochymusic.ui.component.HeroCarousel
-import com.mochyy.mochymusic.ui.component.HomeCardCornerRadius
-import com.mochyy.mochymusic.ui.component.HomeCardSpacing
-import com.mochyy.mochymusic.ui.component.HomeContentInset
-import com.mochyy.mochymusic.ui.component.HomeCardHighlight
-import com.mochyy.mochymusic.ui.component.HomeCompactTopBones
-import com.mochyy.mochymusic.ui.component.HomeCoverCard
-import com.mochyy.mochymusic.ui.component.HomeHopInCard
-import com.mochyy.mochymusic.ui.component.HomeTopGlow
-import com.mochyy.mochymusic.ui.component.homeRowHeight
-import com.mochyy.mochymusic.ui.component.HomeSectionBones
-import com.mochyy.mochymusic.ui.component.HeroCarouselBones
-import com.mochyy.mochymusic.ui.launch.launchMarkTarget
-import com.mochyy.mochymusic.ui.launch.launchRise
-import com.mochyy.mochymusic.ui.launch.rememberLaunchHold
-import com.mochyy.mochymusic.ui.launch.ReportLaunchHomeComposed
-import com.mochyy.mochymusic.ui.component.HomeSectionTitle
-import com.mochyy.mochymusic.ui.component.HomeTrackRow
-import com.mochyy.mochymusic.ui.component.HomeVideoCard
-import com.mochyy.mochymusic.utils.FeedVideoKind
-import com.mochyy.mochymusic.utils.HomeVideo
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.viewmodels.HomeCategory
+import com.videshkarmakar.doom.constants.HomeStyle
+import com.videshkarmakar.doom.constants.HomeStyleKey
+import com.videshkarmakar.doom.constants.ProfilePicUriKey
+import com.videshkarmakar.doom.constants.ThumbnailCornerRadius
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.LocalItem
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.models.ArtistGroup
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.ArtistListCard
+import com.videshkarmakar.doom.ui.component.BonesHost
+import com.videshkarmakar.doom.ui.component.coverTintBackground
+import com.videshkarmakar.doom.ui.component.HeroCarousel
+import com.videshkarmakar.doom.ui.component.HomeCardCornerRadius
+import com.videshkarmakar.doom.ui.component.HomeCardSpacing
+import com.videshkarmakar.doom.ui.component.HomeContentInset
+import com.videshkarmakar.doom.ui.component.HomeCardHighlight
+import com.videshkarmakar.doom.ui.component.HomeCompactTopBones
+import com.videshkarmakar.doom.ui.component.HomeCoverCard
+import com.videshkarmakar.doom.ui.component.HomeHopInCard
+import com.videshkarmakar.doom.ui.component.HomeTopGlow
+import com.videshkarmakar.doom.ui.component.homeRowHeight
+import com.videshkarmakar.doom.ui.component.HomeSectionBones
+import com.videshkarmakar.doom.ui.component.HeroCarouselBones
+import com.videshkarmakar.doom.ui.launch.launchMarkTarget
+import com.videshkarmakar.doom.ui.launch.launchRise
+import com.videshkarmakar.doom.ui.launch.rememberLaunchHold
+import com.videshkarmakar.doom.ui.launch.ReportLaunchHomeComposed
+import com.videshkarmakar.doom.ui.component.HomeSectionTitle
+import com.videshkarmakar.doom.ui.component.HomeTrackRow
+import com.videshkarmakar.doom.ui.component.HomeVideoCard
+import com.videshkarmakar.doom.utils.FeedVideoKind
+import com.videshkarmakar.doom.utils.HomeVideo
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.viewmodels.HomeCategory
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import kotlinx.coroutines.flow.drop
-import com.mochyy.mochymusic.ui.component.LikedSongsThumbnail
-import com.mochyy.mochymusic.ui.component.LocalBottomSheetPageState
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.PlaylistThumbnail
-import com.mochyy.mochymusic.ui.component.RevealSeenState
-import com.mochyy.mochymusic.ui.component.containerTransformSource
-import com.mochyy.mochymusic.ui.component.rememberRevealSeenState
-import com.mochyy.mochymusic.ui.component.revealOnAppear
-import com.mochyy.mochymusic.ui.menu.AlbumMenu
-import com.mochyy.mochymusic.ui.menu.ArtistMenu
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeAlbumMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeArtistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubePlaylistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeSongMenu
-import com.mochyy.mochymusic.ui.utils.SnapLayoutInfoProvider
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.joinByBullet
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.CommunityPlaylistItem
-import com.mochyy.mochymusic.viewmodels.HomeViewModel
+import com.videshkarmakar.doom.ui.component.LikedSongsThumbnail
+import com.videshkarmakar.doom.ui.component.LocalBottomSheetPageState
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.PlaylistThumbnail
+import com.videshkarmakar.doom.ui.component.RevealSeenState
+import com.videshkarmakar.doom.ui.component.containerTransformSource
+import com.videshkarmakar.doom.ui.component.rememberRevealSeenState
+import com.videshkarmakar.doom.ui.component.revealOnAppear
+import com.videshkarmakar.doom.ui.menu.AlbumMenu
+import com.videshkarmakar.doom.ui.menu.ArtistMenu
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeAlbumMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeArtistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubePlaylistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeSongMenu
+import com.videshkarmakar.doom.ui.utils.SnapLayoutInfoProvider
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.joinByBullet
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.CommunityPlaylistItem
+import com.videshkarmakar.doom.viewmodels.HomeViewModel
 import kotlin.math.min
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -187,7 +187,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.mochyy.mochymusic.ui.component.navigateToTab
+import com.videshkarmakar.doom.ui.component.navigateToTab
 
 sealed class HomeSection(val id: String) {
     data object RecentlyPlayed : HomeSection("recently_played")
@@ -529,8 +529,8 @@ private fun HomeShell() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
-                painter = painterResource(R.drawable.ic_mochy_mark),
-                contentDescription = "Mochy",
+                painter = painterResource(R.drawable.ic_doom_mark),
+                contentDescription = "Doom",
                 tint = Color.White,
                 modifier = Modifier
                     .launchMarkTarget()
@@ -582,7 +582,7 @@ fun HomeScreen(
 ) {
     val menuState = LocalMenuState.current
     val bottomSheetPageState = LocalBottomSheetPageState.current
-    val playerBottomSheetState = com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState.current
+    val playerBottomSheetState = com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState.current
     // the player service comes up a beat after the first frame; Home's skeleton doesn't wait for it
     val playerConnection = LocalPlayerConnection.current ?: run {
         HomeShell()
@@ -611,7 +611,7 @@ fun HomeScreen(
             .shuffled()
             .take(2)
             .map { playlist ->
-                com.mochyy.mochymusic.ui.component.PlaylistPickItem(
+                com.videshkarmakar.doom.ui.component.PlaylistPickItem(
                     id = playlist.id,
                     name = playlist.playlist.name,
                     thumbnailUrl = playlist.playlist.thumbnailUrl ?: playlist.thumbnails.firstOrNull(),
@@ -636,8 +636,8 @@ fun HomeScreen(
             .filter { it.songCount > 0 && it.id != "liked" }
             .take(5)
             .map {
-                com.mochyy.mochymusic.ui.component.StarterItem(
-                    kind = com.mochyy.mochymusic.ui.component.StarterItem.Kind.Playlist,
+                com.videshkarmakar.doom.ui.component.StarterItem(
+                    kind = com.videshkarmakar.doom.ui.component.StarterItem.Kind.Playlist,
                     id = it.id,
                     title = it.playlist.name,
                     detail = "${it.songCount} songs",
@@ -650,11 +650,11 @@ fun HomeScreen(
                 // still being asked for; the hero holds its bones meanwhile
                 songs == null -> emptyList()
                 songs.isNotEmpty() -> songs.map {
-                    com.mochyy.mochymusic.ui.component.StarterSongItem(it.song, it.artistName, it.artistThumbnail)
+                    com.videshkarmakar.doom.ui.component.StarterSongItem(it.song, it.artistName, it.artistThumbnail)
                 }
                 else -> libraryArtists.map {
-                    com.mochyy.mochymusic.ui.component.StarterItem(
-                        kind = com.mochyy.mochymusic.ui.component.StarterItem.Kind.Artist,
+                    com.videshkarmakar.doom.ui.component.StarterItem(
+                        kind = com.videshkarmakar.doom.ui.component.StarterItem.Kind.Artist,
                         id = it.id,
                         title = it.artist.name,
                         detail = "",
@@ -757,7 +757,7 @@ fun HomeScreen(
 
     val lazylistState = rememberLazyListState()
 
-    val carouselHeightDp = com.mochyy.mochymusic.ui.component.heroHeight()
+    val carouselHeightDp = com.videshkarmakar.doom.ui.component.heroHeight()
     val collapseDistancePx = with(LocalDensity.current) {
         if (homeStyle == HomeStyle.MOCHYY) carouselHeightDp.toPx() else 140.dp.toPx()
     }
@@ -1051,7 +1051,7 @@ fun HomeScreen(
             group = group,
             onClick = {
                 group.artistId?.let {
-                    com.mochyy.mochymusic.utils.ArtistPageCache.putPicks(it, group)
+                    com.videshkarmakar.doom.utils.ArtistPageCache.putPicks(it, group)
                     navController.navigate("artist/$it/similar")
                 }
             },
@@ -1302,7 +1302,7 @@ fun HomeScreen(
             ) {
                 val backgroundColor = Color.Black
                 CompositionLocalProvider(
-                    com.mochyy.mochymusic.ui.component.LocalGridItemPadding provides 0.dp
+                    com.videshkarmakar.doom.ui.component.LocalGridItemPadding provides 0.dp
                 ) {
                     LazyColumn(
                         modifier = Modifier.glassRoot(
@@ -1759,7 +1759,7 @@ fun HomeScreen(
                         )
                     }
 
-                    val progressiveBar = com.mochyy.mochymusic.ui.component.rememberProgressiveBlur()
+                    val progressiveBar = com.videshkarmakar.doom.ui.component.rememberProgressiveBlur()
                     Box(
                         modifier = Modifier
                             .matchParentSize()
@@ -1773,7 +1773,7 @@ fun HomeScreen(
                                         1f to Color.Transparent
                                     )
                                 } else {
-                                    androidx.compose.ui.graphics.SolidColor(Color.Black.copy(alpha = com.mochyy.mochymusic.ui.component.FlatBarScrimAlpha))
+                                    androidx.compose.ui.graphics.SolidColor(Color.Black.copy(alpha = com.videshkarmakar.doom.ui.component.FlatBarScrimAlpha))
                                 }
                                 onDrawBehind {
                                     drawRect(brush = fade, alpha = heroScrollProgressProvider().coerceIn(0f, 1f))
@@ -1805,8 +1805,8 @@ fun HomeScreen(
                     // it's also where the launch intro lands the splash mark
                     Box(contentAlignment = Alignment.CenterStart) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_mochy_mark),
-                            contentDescription = "Mochy",
+                            painter = painterResource(R.drawable.ic_doom_mark),
+                            contentDescription = "Doom",
                             tint = Color.White,
                             modifier = Modifier
                                 .launchMarkTarget()

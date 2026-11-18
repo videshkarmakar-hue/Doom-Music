@@ -1,6 +1,6 @@
 // ArtistListRecommendation.kt
 
-package com.mochyy.mochymusic.models
+package com.videshkarmakar.doom.models
 
 import com.music.innertube.models.YTItem
 

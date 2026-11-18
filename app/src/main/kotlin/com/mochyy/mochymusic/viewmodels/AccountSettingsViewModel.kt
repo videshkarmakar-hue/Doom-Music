@@ -1,20 +1,20 @@
 // AccountSettingsViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.App
-import com.mochyy.mochymusic.constants.AccountChannelHandleKey
-import com.mochyy.mochymusic.constants.AccountEmailKey
-import com.mochyy.mochymusic.constants.AccountNameKey
-import com.mochyy.mochymusic.constants.DataSyncIdKey
-import com.mochyy.mochymusic.constants.InnerTubeCookieKey
-import com.mochyy.mochymusic.constants.VisitorDataKey
-import com.mochyy.mochymusic.utils.SyncUtils
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.App
+import com.videshkarmakar.doom.constants.AccountChannelHandleKey
+import com.videshkarmakar.doom.constants.AccountEmailKey
+import com.videshkarmakar.doom.constants.AccountNameKey
+import com.videshkarmakar.doom.constants.DataSyncIdKey
+import com.videshkarmakar.doom.constants.InnerTubeCookieKey
+import com.videshkarmakar.doom.constants.VisitorDataKey
+import com.videshkarmakar.doom.utils.SyncUtils
+import com.videshkarmakar.doom.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

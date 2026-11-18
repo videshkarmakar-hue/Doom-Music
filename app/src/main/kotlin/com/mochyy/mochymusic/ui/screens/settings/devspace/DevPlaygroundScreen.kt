@@ -1,6 +1,6 @@
 // the developer playground page: what the repo did since this build, its issues, and the experimental settings
 
-package com.mochyy.mochymusic.ui.screens.settings.devspace
+package com.videshkarmakar.doom.ui.screens.settings.devspace
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,10 +17,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.BuildConfig
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.screens.settings.CategoryBubble
+import com.videshkarmakar.doom.BuildConfig
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.screens.settings.CategoryBubble
 
 const val DevPlaygroundRoute = "developer_playground"
 

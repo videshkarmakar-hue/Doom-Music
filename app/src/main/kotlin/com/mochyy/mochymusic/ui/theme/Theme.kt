@@ -1,6 +1,6 @@
 // Theme.kt
 
-package com.mochyy.mochymusic.ui.theme
+package com.videshkarmakar.doom.ui.theme
 
 import android.graphics.Bitmap
 import android.os.Build
@@ -27,7 +27,7 @@ import com.materialkolor.score.Score
 val DefaultThemeColor = Color(0xFF8E8E8E)
 
 /**
- * mochy renders dark-only.
+ * doom renders dark-only.
  *
  * The light palette was never finished - large parts of the UI hardcode white text and dark
  * glass - so on a light-mode phone the app looked broken rather than light. Pinned here as one
@@ -36,7 +36,7 @@ val DefaultThemeColor = Color(0xFF8E8E8E)
 const val ForceDarkTheme = true
 
 @Composable
-fun MochyTheme(
+fun DoomTheme(
     darkTheme: Boolean = ForceDarkTheme,
     pureBlack: Boolean = false,
     content: @Composable () -> Unit,

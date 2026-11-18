@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -30,14 +30,14 @@ class CsvImportTest {
     }
 
     @Test
-    fun mochyExportRoundTrips() {
+    fun doomExportRoundTrips() {
         val rows = listOf(
             CsvExportRow(null, "Liked \"Quoted\" Song", "Ärtist", "Album", 215_000, "dQw4w9WgXcQ", "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg"),
-            CsvExportRow("Mix, Vol. 1", "Line\nBreak", "日本のアーティスト", null, null, "abcdefghijk", null),
+            CsvExportRow("Mix, Vol. 1", "Line\nBreak", "日本�アーティスト", null, null, "abcdefghijk", null),
             CsvExportRow("Empty one", null, null, null, null, null, null),
             CsvExportRow("Local files", "From phone", "Someone", null, 1000, null, null),
         )
-        val parsed = parseImportCsv(writeMochyCsv(rows))
+        val parsed = parseImportCsv(writeDoomCsv(rows))
 
         assertEquals(1, parsed.likedSongs.size)
         with(parsed.likedSongs[0]) {
@@ -50,7 +50,7 @@ class CsvImportTest {
         assertEquals(listOf("Mix, Vol. 1", "Empty one", "Local files"), parsed.playlists.keys.toList())
         with(parsed.playlists.getValue("Mix, Vol. 1").single()) {
             assertEquals("Line\nBreak", title)
-            assertEquals("日本のアーティスト", artist)
+            assertEquals("日本�アーティスト", artist)
             assertEquals("abcdefghijk", videoId)
         }
         assertTrue(parsed.playlists.getValue("Empty one").isEmpty())

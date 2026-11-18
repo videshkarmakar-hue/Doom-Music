@@ -1,10 +1,10 @@
-package com.mochyy.mochymusic.playback.audio
+package com.videshkarmakar.doom.playback.audio
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.constants.HapticFocus
-import com.mochyy.mochymusic.constants.HapticSensitivity
+import com.videshkarmakar.doom.constants.HapticFocus
+import com.videshkarmakar.doom.constants.HapticSensitivity
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import kotlin.math.abs

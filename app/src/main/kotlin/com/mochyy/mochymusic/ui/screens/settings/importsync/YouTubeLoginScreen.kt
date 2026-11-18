@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings.importsync
+package com.videshkarmakar.doom.ui.screens.settings.importsync
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
@@ -44,16 +44,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.datastore.preferences.core.edit
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AccountChannelHandleKey
-import com.mochyy.mochymusic.constants.AccountEmailKey
-import com.mochyy.mochymusic.constants.AccountNameKey
-import com.mochyy.mochymusic.constants.DataSyncIdKey
-import com.mochyy.mochymusic.constants.InnerTubeCookieKey
-import com.mochyy.mochymusic.constants.VisitorDataKey
-import com.mochyy.mochymusic.ui.utils.stableStatusBarsPadding
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AccountChannelHandleKey
+import com.videshkarmakar.doom.constants.AccountEmailKey
+import com.videshkarmakar.doom.constants.AccountNameKey
+import com.videshkarmakar.doom.constants.DataSyncIdKey
+import com.videshkarmakar.doom.constants.InnerTubeCookieKey
+import com.videshkarmakar.doom.constants.VisitorDataKey
+import com.videshkarmakar.doom.ui.utils.stableStatusBarsPadding
+import com.videshkarmakar.doom.utils.dataStore
 import com.music.innertube.YouTube
 import com.music.innertube.models.AccountInfo
 import com.music.innertube.utils.parseCookieString

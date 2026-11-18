@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 /**
  * A DASH stream's init and media segments don't carry the song's cache key: Media3 keys each

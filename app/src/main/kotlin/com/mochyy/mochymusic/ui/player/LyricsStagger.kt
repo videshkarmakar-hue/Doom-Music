@@ -1,6 +1,6 @@
 // LyricsStagger.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.mutableIntStateOf

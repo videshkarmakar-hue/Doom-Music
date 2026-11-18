@@ -1,6 +1,6 @@
 // the pieces the discord page is built from, drawn to the user's mock: dark pill-shaped cards, pickers, a switch and a slider
 
-package com.mochyy.mochymusic.ui.screens.settings.integrations.discord
+package com.videshkarmakar.doom.ui.screens.settings.integrations.discord
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -69,14 +69,14 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.discord.PresenceButton
-import com.mochyy.mochymusic.discord.PresenceButtonTarget
-import com.mochyy.mochymusic.discord.PresenceImage
-import com.mochyy.mochymusic.discord.PresenceSettings
-import com.mochyy.mochymusic.discord.SpinStyle
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.discord.PresenceButton
+import com.videshkarmakar.doom.discord.PresenceButtonTarget
+import com.videshkarmakar.doom.discord.PresenceImage
+import com.videshkarmakar.doom.discord.PresenceSettings
+import com.videshkarmakar.doom.discord.SpinStyle
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.delay
 import kotlin.math.roundToInt
 
@@ -486,7 +486,7 @@ internal fun DiscordButtonCard(
                     PresenceButtonTarget.SPOTIFY -> context.getString(R.string.discord_target_spotify)
                     PresenceButtonTarget.APPLE_MUSIC -> context.getString(R.string.discord_target_apple_music)
                     PresenceButtonTarget.TIDAL -> context.getString(R.string.discord_target_tidal)
-                    PresenceButtonTarget.MOCHY -> context.getString(R.string.discord_target_mochy)
+                    PresenceButtonTarget.MOCHY -> context.getString(R.string.discord_target_doom)
                 }
             },
             onSelect = { onChange(button.copy(target = it)) },

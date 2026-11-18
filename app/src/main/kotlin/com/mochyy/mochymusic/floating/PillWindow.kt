@@ -1,6 +1,6 @@
 // PillWindow.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import android.annotation.SuppressLint
 import android.content.Context

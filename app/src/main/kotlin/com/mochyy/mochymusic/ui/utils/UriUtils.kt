@@ -1,11 +1,11 @@
 // UriUtils.kt
 
-package com.mochyy.mochymusic.ui.utils
+package com.videshkarmakar.doom.ui.utils
 
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.ui.platform.UriHandler
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 
 fun UriHandler.safeOpenUri(context: Context, uri: String) {
     if (uri.isBlank()) return

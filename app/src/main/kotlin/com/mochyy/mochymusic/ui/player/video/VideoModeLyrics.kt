@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.video
+package com.videshkarmakar.doom.ui.player.video
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedContentTransitionScope
@@ -64,42 +64,42 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.LyricsHighBloomKey
-import com.mochyy.mochymusic.constants.LyricsMotionStyle
-import com.mochyy.mochymusic.constants.LyricsMotionStyleKey
-import com.mochyy.mochymusic.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.LyricsTranslationHelper
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.ui.player.LyricRow
-import com.mochyy.mochymusic.ui.player.LyricsAlignment
-import com.mochyy.mochymusic.ui.player.LyricsGlowLine
-import com.mochyy.mochymusic.ui.player.rememberShownLyric
-import com.mochyy.mochymusic.ui.player.LyricsInterludeDots
-import com.mochyy.mochymusic.ui.player.LyricsLineState
-import com.mochyy.mochymusic.ui.player.LyricsLoadingDots
-import com.mochyy.mochymusic.ui.player.LyricsReadings
-import com.mochyy.mochymusic.ui.player.LyricsRecenterDurationMs
-import com.mochyy.mochymusic.ui.player.LyricsStagger
-import com.mochyy.mochymusic.ui.player.NoInterlude
-import com.mochyy.mochymusic.ui.player.RubyPlacement
-import com.mochyy.mochymusic.ui.player.TickerSlot
-import com.mochyy.mochymusic.ui.player.activeInterludeOf
-import com.mochyy.mochymusic.ui.player.alignmentFor
-import com.mochyy.mochymusic.ui.player.blurEffectForRadius
-import com.mochyy.mochymusic.ui.player.buildLyricRows
-import com.mochyy.mochymusic.ui.player.lineLook
-import com.mochyy.mochymusic.ui.player.lyricAnchorIndex
-import com.mochyy.mochymusic.ui.player.recenterEasingFor
-import com.mochyy.mochymusic.ui.player.styles.smooth
-import com.mochyy.mochymusic.ui.player.tickerSlot
-import com.mochyy.mochymusic.ui.player.usesAgentAlignment
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.LyricsScreenViewModel
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.LyricsHighBloomKey
+import com.videshkarmakar.doom.constants.LyricsMotionStyle
+import com.videshkarmakar.doom.constants.LyricsMotionStyleKey
+import com.videshkarmakar.doom.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsTranslationHelper
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.ui.player.LyricRow
+import com.videshkarmakar.doom.ui.player.LyricsAlignment
+import com.videshkarmakar.doom.ui.player.LyricsGlowLine
+import com.videshkarmakar.doom.ui.player.rememberShownLyric
+import com.videshkarmakar.doom.ui.player.LyricsInterludeDots
+import com.videshkarmakar.doom.ui.player.LyricsLineState
+import com.videshkarmakar.doom.ui.player.LyricsLoadingDots
+import com.videshkarmakar.doom.ui.player.LyricsReadings
+import com.videshkarmakar.doom.ui.player.LyricsRecenterDurationMs
+import com.videshkarmakar.doom.ui.player.LyricsStagger
+import com.videshkarmakar.doom.ui.player.NoInterlude
+import com.videshkarmakar.doom.ui.player.RubyPlacement
+import com.videshkarmakar.doom.ui.player.TickerSlot
+import com.videshkarmakar.doom.ui.player.activeInterludeOf
+import com.videshkarmakar.doom.ui.player.alignmentFor
+import com.videshkarmakar.doom.ui.player.blurEffectForRadius
+import com.videshkarmakar.doom.ui.player.buildLyricRows
+import com.videshkarmakar.doom.ui.player.lineLook
+import com.videshkarmakar.doom.ui.player.lyricAnchorIndex
+import com.videshkarmakar.doom.ui.player.recenterEasingFor
+import com.videshkarmakar.doom.ui.player.styles.smooth
+import com.videshkarmakar.doom.ui.player.tickerSlot
+import com.videshkarmakar.doom.ui.player.usesAgentAlignment
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.LyricsScreenViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
@@ -183,7 +183,7 @@ internal fun rememberVideoLyrics(): VideoLyrics {
 internal fun rememberVideoLyricLook(): VideoLyricLook {
     val (motion) = rememberEnumPreference(LyricsMotionStyleKey, defaultValue = LyricsMotionStyle.MOTION)
     val (highBloom) = rememberPreference(LyricsHighBloomKey, defaultValue = true)
-    val (blurAllowed) = rememberPreference(com.mochyy.mochymusic.constants.ElementBlurKey, defaultValue = true)
+    val (blurAllowed) = rememberPreference(com.videshkarmakar.doom.constants.ElementBlurKey, defaultValue = true)
     val status by LyricsTranslationHelper.status.collectAsState()
     val translating = status is LyricsTranslationHelper.TranslationStatus.Translating
     return remember(motion, highBloom, blurAllowed, translating) {

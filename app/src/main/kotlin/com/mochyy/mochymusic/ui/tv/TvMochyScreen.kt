@@ -1,6 +1,6 @@
-// TvMochyScreen.kt
+// TvDoomScreen.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -43,24 +43,24 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.BuildConfig
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.tv.TvControl
-import com.mochyy.mochymusic.link.tv.TvProfile
-import com.mochyy.mochymusic.link.tv.TvProfiles
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.screens.donate.showDonateSheet
-import com.mochyy.mochymusic.ui.screens.update.rememberUpdateState
-import com.mochyy.mochymusic.ui.screens.update.showUpdateSheet
+import com.videshkarmakar.doom.BuildConfig
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.tv.TvControl
+import com.videshkarmakar.doom.link.tv.TvProfile
+import com.videshkarmakar.doom.link.tv.TvProfiles
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.screens.donate.showDonateSheet
+import com.videshkarmakar.doom.ui.screens.update.rememberUpdateState
+import com.videshkarmakar.doom.ui.screens.update.showUpdateSheet
 
-// one tile on the mochy page: a place to go, what it is, and a line on how it stands
+// one tile on the doom page: a place to go, what it is, and a line on how it stands
 @Immutable
-private data class TvMochyTile(val key: String, val title: String, val detail: String, val icon: Int, val wide: Boolean = false, val onClick: () -> Unit)
+private data class TvDoomTile(val key: String, val title: String, val detail: String, val icon: Int, val wide: Boolean = false, val onClick: () -> Unit)
 
-// the rail's mochy page: only what a tv needs, your phone, who's listening and whether the phone may drive the tv
+// the rail's doom page: only what a tv needs, your phone, who's listening and whether the phone may drive the tv
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-internal fun TvMochyScreen(profile: TvProfile) {
+internal fun TvDoomScreen(profile: TvProfile) {
     val actions = LocalTvActions.current
     val profiles by TvProfiles.profiles.collectAsState()
     val current = profiles.firstOrNull { it.id == profile.id } ?: profile
@@ -71,32 +71,32 @@ internal fun TvMochyScreen(profile: TvProfile) {
     LaunchedEffect(Unit) { runCatching { first.requestFocus() } }
 
     val tiles = listOf(
-        TvMochyTile(
+        TvDoomTile(
             "phone",
             stringResource(R.string.tv_your_phone),
-            current.phone?.name ?: stringResource(R.string.tv_mochy_link_phone),
+            current.phone?.name ?: stringResource(R.string.tv_doom_link_phone),
             R.drawable.smartphone,
             wide = true,
         ) { actions.navController.navigate(TvRoutes.Phone) },
-        TvMochyTile("profiles", stringResource(R.string.tv_whos_listening), current.name, R.drawable.person) { actions.switchProfile() },
-        TvMochyTile(
+        TvDoomTile("profiles", stringResource(R.string.tv_whos_listening), current.name, R.drawable.person) { actions.switchProfile() },
+        TvDoomTile(
             "control",
-            stringResource(R.string.tv_mochy_phone_control),
+            stringResource(R.string.tv_doom_phone_control),
             stringResource(if (phoneControl) R.string.tv_on else R.string.tv_off),
             R.drawable.sync,
         ) { TvControl.setAllowed(!phoneControl) },
-        TvMochyTile("updates", stringResource(R.string.tv_mochy_updates), stringResource(R.string.tv_mochy_version, BuildConfig.VERSION_NAME), R.drawable.sync) {
+        TvDoomTile("updates", stringResource(R.string.tv_doom_updates), stringResource(R.string.tv_doom_version, BuildConfig.VERSION_NAME), R.drawable.sync) {
             popup.showUpdateSheet(updateState)
         },
-        TvMochyTile("support", stringResource(R.string.tv_mochy_support), stringResource(R.string.tv_mochy_support_detail), R.drawable.favorite) {
+        TvDoomTile("support", stringResource(R.string.tv_doom_support), stringResource(R.string.tv_doom_support_detail), R.drawable.favorite) {
             popup.showDonateSheet()
         },
     )
 
     Row(Modifier.fillMaxSize().padding(start = TvSpace.Start, end = TvSpace.End)) {
         Column(Modifier.width(250.dp).padding(top = TvSpace.Top)) {
-            Text(stringResource(R.string.tv_mochy), style = TvText.PageTitle)
-            Text(stringResource(R.string.tv_mochy_version, BuildConfig.VERSION_NAME), style = TvText.Body.copy(fontSize = 13.sp))
+            Text(stringResource(R.string.tv_doom), style = TvText.PageTitle)
+            Text(stringResource(R.string.tv_doom_version, BuildConfig.VERSION_NAME), style = TvText.Body.copy(fontSize = 13.sp))
         }
         CompositionLocalProvider(LocalBringIntoViewSpec provides TvColumnPivot) {
             LazyVerticalGrid(
@@ -107,7 +107,7 @@ internal fun TvMochyScreen(profile: TvProfile) {
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 itemsIndexed(tiles, key = { _, tile -> tile.key }, span = { _, tile -> GridItemSpan(if (tile.wide) 2 else 1) }) { index, tile ->
-                    TvMochyTileCard(tile, if (index == 0) Modifier.focusRequester(first) else Modifier)
+                    TvDoomTileCard(tile, if (index == 0) Modifier.focusRequester(first) else Modifier)
                 }
             }
         }
@@ -115,7 +115,7 @@ internal fun TvMochyScreen(profile: TvProfile) {
 }
 
 @Composable
-private fun TvMochyTileCard(tile: TvMochyTile, modifier: Modifier) {
+private fun TvDoomTileCard(tile: TvDoomTile, modifier: Modifier) {
     val shape = RoundedCornerShape(20.dp)
     Box(
         modifier

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.core.changelog
+package com.videshkarmakar.doom.core.changelog
 
 import android.content.Context
 import android.content.Intent
@@ -76,10 +76,10 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.BuildConfig
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.core.updater.extractUrls
+import com.videshkarmakar.doom.BuildConfig
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.core.updater.extractUrls
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -139,9 +139,9 @@ fun ChangelogScreen(
                         showingCached = true
                     }
                 } else {
-                    val changelogUrl = URL("https://github.com/realidkroo/Mochy-Music/releases/download/$tag/changelog.json")
+                    val changelogUrl = URL("https://github.com/realidkroo/Doom-Music/releases/download/$tag/changelog.json")
                     val connection = changelogUrl.openConnection() as HttpURLConnection
-                    connection.setRequestProperty("User-Agent", "Mochy-Changelog-App")
+                    connection.setRequestProperty("User-Agent", "Doom-Changelog-App")
                     connection.setRequestProperty("Accept", "application/json")
 
                     if (connection.responseCode == 200) {
@@ -212,9 +212,9 @@ fun ChangelogScreen(
         isFetchingOldReleases = true
         coroutineScope.launch(Dispatchers.IO) {
             try {
-                val releasesUrl = URL("https://api.github.com/repos/realidkroo/Mochy-Music/releases")
+                val releasesUrl = URL("https://api.github.com/repos/realidkroo/Doom-Music/releases")
                 val connection = releasesUrl.openConnection() as HttpURLConnection
-                connection.setRequestProperty("User-Agent", "Mochy-Changelog-App")
+                connection.setRequestProperty("User-Agent", "Doom-Changelog-App")
                 connection.setRequestProperty("Accept", "application/vnd.github+json")
 
                 if (connection.responseCode == 200) {

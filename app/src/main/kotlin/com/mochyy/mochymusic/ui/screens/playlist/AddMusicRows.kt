@@ -1,6 +1,6 @@
 // AddMusicRows.kt
 
-package com.mochyy.mochymusic.ui.screens.playlist
+package com.videshkarmakar.doom.ui.screens.playlist
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -40,13 +40,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.component.Bone
-import com.mochyy.mochymusic.ui.component.BonesHost
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.component.Bone
+import com.videshkarmakar.doom.ui.component.BonesHost
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /*
  * The pieces the "Add music" sheet is drawn from: a song row with its tick box, the two chips

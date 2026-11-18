@@ -1,6 +1,6 @@
 // settings > player > spotify canvas, same cards as the discord page, signing in reuses spotify import's own sign-in page
 
-package com.mochyy.mochymusic.ui.screens.settings.integrations.spotify
+package com.videshkarmakar.doom.ui.screens.settings.integrations.spotify
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
@@ -29,20 +29,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.canvas.SpotifyCanvasProvider
-import com.mochyy.mochymusic.constants.SpotifyCanvasKey
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.screens.settings.importsync.CaptureWebView
-import com.mochyy.mochymusic.ui.screens.settings.importsync.clearWebSession
-import com.mochyy.mochymusic.ui.screens.settings.integrations.IntegrationPageSubtitle
-import com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordCard
-import com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordCardTitle
-import com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordColors
-import com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordSectionTitle
-import com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordSwitchCard
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.canvas.SpotifyCanvasProvider
+import com.videshkarmakar.doom.constants.SpotifyCanvasKey
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.screens.settings.importsync.CaptureWebView
+import com.videshkarmakar.doom.ui.screens.settings.importsync.clearWebSession
+import com.videshkarmakar.doom.ui.screens.settings.integrations.IntegrationPageSubtitle
+import com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordCard
+import com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordCardTitle
+import com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordColors
+import com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordSectionTitle
+import com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordSwitchCard
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

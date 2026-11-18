@@ -1,18 +1,18 @@
 // LyricsHelper.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import android.content.Context
 import android.util.LruCache
-import com.mochyy.mochymusic.constants.LyricsProviderOrderKey
-import com.mochyy.mochymusic.constants.PreferredLyricsProvider
-import com.mochyy.mochymusic.constants.PreferredLyricsProviderKey
-import com.mochyy.mochymusic.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import com.mochyy.mochymusic.extensions.toEnum
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.utils.NetworkConnectivityObserver
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.reportException
+import com.videshkarmakar.doom.constants.LyricsProviderOrderKey
+import com.videshkarmakar.doom.constants.PreferredLyricsProvider
+import com.videshkarmakar.doom.constants.PreferredLyricsProviderKey
+import com.videshkarmakar.doom.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.videshkarmakar.doom.extensions.toEnum
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.utils.NetworkConnectivityObserver
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.reportException
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -96,7 +96,7 @@ constructor(
         }
 
         // offline mode counts as no network: lyrics already saved for the song still show
-        val isNetworkAvailable = !com.mochyy.mochymusic.utils.OfflineMode.isOn && try {
+        val isNetworkAvailable = !com.videshkarmakar.doom.utils.OfflineMode.isOn && try {
             networkConnectivity.isCurrentlyConnected()
         } catch (e: Exception) {
 
@@ -179,7 +179,7 @@ constructor(
         provider: LyricsProvider,
         order: Int,
     ): ProviderCandidate? {
-        if (!provider.isEnabled(context) || com.mochyy.mochymusic.utils.OfflineMode.isOn) return null
+        if (!provider.isEnabled(context) || com.videshkarmakar.doom.utils.OfflineMode.isOn) return null
         val lyrics = try {
             withTimeoutOrNull(ProviderTimeoutMs) {
                 provider.getLyrics(
@@ -218,7 +218,7 @@ constructor(
      * Language comes first, and it is decided from evidence about the SONG rather than from the
      * candidates alone:
      *
-     *  1. A non-Latin title, artist or album ("夜に駆ける", "아이유") says what script the song is in.
+     *  1. A non-Latin title, artist or album ("夜�駆�る", "아�유") says what script the song is in.
      *  2. Otherwise, YouTube's own lyrics or captions for this exact video, when they are in a
      *     non-Latin script. They come from the video itself, not from a title search, so they
      *     cannot be a different song or a translation fetched by mistake.
@@ -493,7 +493,7 @@ constructor(
         }
 
         // offline mode counts as no network: lyrics already saved for the song still show
-        val isNetworkAvailable = !com.mochyy.mochymusic.utils.OfflineMode.isOn && try {
+        val isNetworkAvailable = !com.videshkarmakar.doom.utils.OfflineMode.isOn && try {
             networkConnectivity.isCurrentlyConnected()
         } catch (e: Exception) {
 

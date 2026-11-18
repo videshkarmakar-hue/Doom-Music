@@ -1,6 +1,6 @@
 // SongShare.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
@@ -32,24 +32,24 @@ import androidx.compose.ui.window.DialogWindowProvider
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.constants.ElementBlurKey
-import com.mochyy.mochymusic.constants.LyricsHighBloomKey
-import com.mochyy.mochymusic.constants.LyricsMotionStyle
-import com.mochyy.mochymusic.constants.LyricsMotionStyleKey
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.component.PopupSheetHost
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.player.share.LyricsShareSession
-import com.mochyy.mochymusic.ui.player.share.ShareBackground
-import com.mochyy.mochymusic.ui.player.share.ShareFlight
-import com.mochyy.mochymusic.ui.player.share.showLinePicker
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.constants.ElementBlurKey
+import com.videshkarmakar.doom.constants.LyricsHighBloomKey
+import com.videshkarmakar.doom.constants.LyricsMotionStyle
+import com.videshkarmakar.doom.constants.LyricsMotionStyleKey
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.component.PopupSheetHost
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.player.share.LyricsShareSession
+import com.videshkarmakar.doom.ui.player.share.ShareBackground
+import com.videshkarmakar.doom.ui.player.share.ShareFlight
+import com.videshkarmakar.doom.ui.player.share.showLinePicker
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -235,7 +235,7 @@ private fun SongPreviewAudio(session: SongShareSession) {
     }
 }
 
-// the share's song stops the moment you leave mochy, say for instagram, so it never loops on under the app you post from
+// the share's song stops the moment you leave doom, say for instagram, so it never loops on under the app you post from
 @Composable
 private fun WatchesTheApp(session: SongShareSession) {
     val lifecycle = LocalLifecycleOwner.current.lifecycle

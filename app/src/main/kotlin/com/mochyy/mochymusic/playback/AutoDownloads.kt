@@ -1,17 +1,17 @@
 // AutoDownloads.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
-import com.mochyy.mochymusic.constants.AutoDownloadPlaylistsKey
-import com.mochyy.mochymusic.db.Converters
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.AutoDownloadPlaylistsKey
+import com.videshkarmakar.doom.db.Converters
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject

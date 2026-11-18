@@ -1,10 +1,10 @@
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.runtime.Stable
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.ui.player.models.QueueState
-import com.mochyy.mochymusic.ui.player.models.TrackInfo
-import com.mochyy.mochymusic.ui.player.models.TransportState
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.ui.player.models.QueueState
+import com.videshkarmakar.doom.ui.player.models.TrackInfo
+import com.videshkarmakar.doom.ui.player.models.TransportState
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine

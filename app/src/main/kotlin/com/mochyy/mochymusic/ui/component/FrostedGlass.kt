@@ -1,6 +1,6 @@
 // FrostedGlass.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,11 +19,11 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.shadow.Shadow
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.constants.ChromeGlassStyle
-import com.mochyy.mochymusic.constants.ChromeGlassStyleKey
-import com.mochyy.mochymusic.constants.DisableBlurKey
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.ChromeGlassStyle
+import com.videshkarmakar.doom.constants.ChromeGlassStyleKey
+import com.videshkarmakar.doom.constants.DisableBlurKey
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 
 /*
  * The floating chrome, the nav bar and the mini player, drawn to the Figma: #131313 at 78% over
@@ -91,7 +91,7 @@ fun FrostedChromeGlass(
     }
     val color = if (pureBlack) Color.Black else GlassChromeColor
     // the grain only matters on the finer, high quality glass
-    val grain = LocalBlurQuality.current == com.mochyy.mochymusic.constants.BlurQuality.HIGH
+    val grain = LocalBlurQuality.current == com.videshkarmakar.doom.constants.BlurQuality.HIGH
     Box(
         modifier = modifier.drawWithContent {
             drawContent()
@@ -112,13 +112,13 @@ fun FrostedChromeGlass(
     }
 }
 
-/** the look's glass while the bars draw it, so a bar can leave out the hairline, shadow or pill the glass draws itself; null while they keep mochy's frost */
+/** the look's glass while the bars draw it, so a bar can leave out the hairline, shadow or pill the glass draws itself; null while they keep doom's frost */
 @Composable
-internal fun rememberChromeModuleGlass(): com.mochyy.mochymusic.modules.skin.ActiveGlass? {
+internal fun rememberChromeModuleGlass(): com.videshkarmakar.doom.modules.skin.ActiveGlass? {
     // a look module can swap the frost for a glass shader of its own; android 13+ runs it, older phones and blur switched off keep the frost
     val (style) = rememberEnumPreference(ChromeGlassStyleKey, defaultValue = ChromeGlassStyle.FROSTED)
     val (blurOff) = rememberPreference(DisableBlurKey, defaultValue = false)
-    val glass = com.mochyy.mochymusic.modules.skin.ActiveSkin.glass
+    val glass = com.videshkarmakar.doom.modules.skin.ActiveSkin.glass
     return glass.takeIf { style == ChromeGlassStyle.MODULE && !blurOff && android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU }
 }
 

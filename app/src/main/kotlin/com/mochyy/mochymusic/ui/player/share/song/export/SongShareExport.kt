@@ -1,6 +1,6 @@
 // SongShareExport.kt
 
-package com.mochyy.mochymusic.ui.player.share.song.export
+package com.videshkarmakar.doom.ui.player.share.song.export
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -47,23 +47,23 @@ import androidx.media3.transformer.ExportResult
 import androidx.media3.transformer.ProgressHolder
 import androidx.media3.transformer.Transformer
 import androidx.media3.transformer.VideoEncoderSettings
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.ui.component.LocalBlurQuality
-import com.mochyy.mochymusic.constants.BlurQuality
-import com.mochyy.mochymusic.ui.player.canvasMimeType
-import com.mochyy.mochymusic.ui.player.share.ShareWidth
-import com.mochyy.mochymusic.ui.player.share.song.MaxCardBlur
-import com.mochyy.mochymusic.ui.player.share.song.ShareLayers
-import com.mochyy.mochymusic.ui.player.share.song.ShareVideoSource
-import com.mochyy.mochymusic.ui.player.share.song.SongBackground
-import com.mochyy.mochymusic.ui.player.share.song.SongSharePicture
-import com.mochyy.mochymusic.ui.player.share.song.SongShareSession
-import com.mochyy.mochymusic.ui.player.share.song.cardCornerOf
-import com.mochyy.mochymusic.ui.player.share.song.clippedItem
-import com.mochyy.mochymusic.ui.player.share.song.found
-import com.mochyy.mochymusic.ui.player.share.song.freshMusicVideo
-import com.mochyy.mochymusic.ui.player.share.song.trackFor
-import com.mochyy.mochymusic.utils.followAppProxy
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.ui.component.LocalBlurQuality
+import com.videshkarmakar.doom.constants.BlurQuality
+import com.videshkarmakar.doom.ui.player.canvasMimeType
+import com.videshkarmakar.doom.ui.player.share.ShareWidth
+import com.videshkarmakar.doom.ui.player.share.song.MaxCardBlur
+import com.videshkarmakar.doom.ui.player.share.song.ShareLayers
+import com.videshkarmakar.doom.ui.player.share.song.ShareVideoSource
+import com.videshkarmakar.doom.ui.player.share.song.SongBackground
+import com.videshkarmakar.doom.ui.player.share.song.SongSharePicture
+import com.videshkarmakar.doom.ui.player.share.song.SongShareSession
+import com.videshkarmakar.doom.ui.player.share.song.cardCornerOf
+import com.videshkarmakar.doom.ui.player.share.song.clippedItem
+import com.videshkarmakar.doom.ui.player.share.song.found
+import com.videshkarmakar.doom.ui.player.share.song.freshMusicVideo
+import com.videshkarmakar.doom.ui.player.share.song.trackFor
+import com.videshkarmakar.doom.utils.followAppProxy
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
@@ -314,7 +314,7 @@ private fun exportDir(context: Context): File = File(context.cacheDir, ExportDir
 private fun newExportFile(context: Context, extension: String): File {
     val dir = exportDir(context)
     dir.listFiles()?.filter { it.name != "carrier.png" && System.currentTimeMillis() - it.lastModified() > 60_000L }?.forEach { it.delete() }
-    return File(dir, "mochy-${System.currentTimeMillis()}.$extension")
+    return File(dir, "doom-${System.currentTimeMillis()}.$extension")
 }
 
 private fun webSources(context: Context, headers: Map<String, String>): MediaSource.Factory {

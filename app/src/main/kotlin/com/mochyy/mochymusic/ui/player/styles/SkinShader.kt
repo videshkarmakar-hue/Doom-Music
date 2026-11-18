@@ -1,6 +1,6 @@
 // a module's own agsl drawn as a fill: its uniforms set at draw time from the shared clock, so the shader moves without recomposing anything
 
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -19,15 +19,15 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.ShaderBrush
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.toArgb
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.modules.skin.ActiveSkin
-import com.mochyy.mochymusic.modules.skin.SkinBlock
-import com.mochyy.mochymusic.modules.skin.SkinProgram
-import com.mochyy.mochymusic.modules.skin.SkinShaderSource
-import com.mochyy.mochymusic.ui.component.asAgslPaintShader
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.component.setAgslColorUniform
-import com.mochyy.mochymusic.ui.component.setAgslUniform
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.modules.skin.ActiveSkin
+import com.videshkarmakar.doom.modules.skin.SkinBlock
+import com.videshkarmakar.doom.modules.skin.SkinProgram
+import com.videshkarmakar.doom.modules.skin.SkinShaderSource
+import com.videshkarmakar.doom.ui.component.asAgslPaintShader
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.component.setAgslColorUniform
+import com.videshkarmakar.doom.ui.component.setAgslUniform
 
 /** the shader filling [modifier]'s box, or [fallback] where shaders can't run or this one didn't compile */
 @Composable
@@ -57,7 +57,7 @@ private fun ShaderFill(program: SkinProgram, source: SkinShaderSource, context: 
     )
 }
 
-// mochy's uniforms first, then the module's own; only names the source declares, so a frame never throws for one it left out
+// doom's uniforms first, then the module's own; only names the source declares, so a frame never throws for one it left out
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 private fun DrawScope.setUniforms(program: SkinProgram, source: SkinShaderSource, context: SkinContext, playing: Boolean) {
     val shader = program.shader

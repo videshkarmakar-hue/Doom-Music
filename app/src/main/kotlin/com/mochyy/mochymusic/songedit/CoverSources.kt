@@ -1,15 +1,15 @@
 // CoverSources.kt
 
-package com.mochyy.mochymusic.songedit
+package com.videshkarmakar.doom.songedit
 
 import androidx.compose.runtime.Immutable
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import com.mochyy.mochymusic.module.TrackQuery
-import com.mochyy.mochymusic.modules.ModuleMetadata
-import com.mochyy.mochymusic.ui.player.normalizeCanvasArtistName
-import com.mochyy.mochymusic.ui.player.normalizeCanvasSongTitle
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.module.TrackQuery
+import com.videshkarmakar.doom.modules.ModuleMetadata
+import com.videshkarmakar.doom.ui.player.normalizeCanvasArtistName
+import com.videshkarmakar.doom.ui.player.normalizeCanvasSongTitle
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

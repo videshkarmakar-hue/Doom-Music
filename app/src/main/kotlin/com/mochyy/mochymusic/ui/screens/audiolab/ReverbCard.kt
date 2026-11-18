@@ -1,6 +1,6 @@
 // the reverb card on audio fx: room presets and every slider, and a picture of waves bouncing off a wall that moves with room size
 
-package com.mochyy.mochymusic.ui.screens.audiolab
+package com.videshkarmakar.doom.ui.screens.audiolab
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -26,12 +26,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.eq.ReverbPresets
-import com.mochyy.mochymusic.eq.ReverbSettings
-import com.mochyy.mochymusic.eq.audio.AudioTap
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.viewmodels.AudioLabViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.eq.ReverbPresets
+import com.videshkarmakar.doom.eq.ReverbSettings
+import com.videshkarmakar.doom.eq.audio.AudioTap
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.viewmodels.AudioLabViewModel
 import kotlin.math.exp
 import kotlin.math.log10
 import kotlin.math.max

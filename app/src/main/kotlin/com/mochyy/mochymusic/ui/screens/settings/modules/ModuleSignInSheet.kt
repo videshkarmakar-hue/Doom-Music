@@ -1,6 +1,6 @@
 // a module's sign-in in a sheet over its page: the library import's own browser bar, web view and apple scripts
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -17,25 +17,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.MochyModule
-import com.mochyy.mochymusic.module.SignInSpec
-import com.mochyy.mochymusic.module.applemusic.AppleMusicModule
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.screens.settings.importsync.CaptureWebContent
-import com.mochyy.mochymusic.ui.screens.settings.importsync.onSignInTick
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.BrowserSheetBar
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.ProviderSquircle
-import com.mochyy.mochymusic.viewmodels.ModulesViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.DoomModule
+import com.videshkarmakar.doom.module.SignInSpec
+import com.videshkarmakar.doom.module.applemusic.AppleMusicModule
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.screens.settings.importsync.CaptureWebContent
+import com.videshkarmakar.doom.ui.screens.settings.importsync.onSignInTick
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.BrowserSheetBar
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.ProviderSquircle
+import com.videshkarmakar.doom.viewmodels.ModulesViewModel
 
 // the import browser's own grey, so both sign-ins look the same
 private val BrowserSurface = Color(0xFF1C1C1C)
 
 /** opens the module's sign-in; [onDone] hears how it went once the account is in, the sheet closes itself */
-fun PopupSheetState.showModuleSignInSheet(module: MochyModule, viewModel: ModulesViewModel, onDone: (AccountState) -> Unit) {
+fun PopupSheetState.showModuleSignInSheet(module: DoomModule, viewModel: ModulesViewModel, onDone: (AccountState) -> Unit) {
     val spec = module.signIn ?: return
     var sheet: PopupSheetHandle? = null
     sheet = showWithHandle(fullBleed = true, surface = BrowserSurface) {
@@ -54,7 +54,7 @@ fun PopupSheetState.showModuleSignInSheet(module: MochyModule, viewModel: Module
 
 @Composable
 private fun ModuleSignInContent(
-    module: MochyModule,
+    module: DoomModule,
     spec: SignInSpec,
     viewModel: ModulesViewModel,
     onDone: (AccountState) -> Unit,

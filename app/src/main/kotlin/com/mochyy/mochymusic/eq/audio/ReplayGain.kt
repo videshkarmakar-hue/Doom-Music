@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.eq.audio
+package com.videshkarmakar.doom.eq.audio
 
 import androidx.annotation.OptIn
 import androidx.media3.common.C

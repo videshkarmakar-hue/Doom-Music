@@ -1,6 +1,6 @@
 // SongSwipeBox.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -14,13 +14,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.datastore.preferences.core.Preferences
 import androidx.media3.common.MediaItem
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.SwipeLeftActionKey
-import com.mochyy.mochymusic.constants.SwipeRightActionKey
-import com.mochyy.mochymusic.extensions.metadata
-import com.mochyy.mochymusic.ui.menu.AddToPlaylistDialog
-import com.mochyy.mochymusic.utils.rememberEnumPreference
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.SwipeLeftActionKey
+import com.videshkarmakar.doom.constants.SwipeRightActionKey
+import com.videshkarmakar.doom.extensions.metadata
+import com.videshkarmakar.doom.ui.menu.AddToPlaylistDialog
+import com.videshkarmakar.doom.utils.rememberEnumPreference
 import com.music.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

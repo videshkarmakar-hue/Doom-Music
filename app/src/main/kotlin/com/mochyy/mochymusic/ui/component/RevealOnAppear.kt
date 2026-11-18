@@ -1,6 +1,6 @@
 // RevealOnAppear.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.os.SystemClock
 import androidx.compose.animation.AnimatedContent

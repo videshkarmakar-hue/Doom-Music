@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import com.music.innertube.CaptionCue
 import org.junit.Assert.assertEquals
@@ -114,15 +114,15 @@ class CaptionAlignerTest {
     @Test
     fun readsJapaneseWithoutSpaces() {
         val japanese = listOf(
-            "沈むように溶けてゆくように", "二人だけの空が広がる夜に", "さよならだけだった", "その一言で全てが分かった",
-            "日が沈み出した空と君の姿", "フェンス越しに重なっていた", "初めて会った日から", "僕の心の全てを奪った",
-            "どこか儚い空気を纏う君は", "寂しい目をしてたんだ",
+            "沈むよ��溶��ゆ�よ��", "二人���空�広�る夜�", "�よ�ら�����", "��一言�全��分���",
+            "日�沈�出��空���姿", "フェンス越��������", "���会��日�ら", "僕�心�全�を奪��",
+            "���儚�空気を����", "寂��目を���ん�",
         )
         val lines = lyrics(japanese)
         // captions written in hiragana where the lyrics use katakana, which should still match
         val cues = lines.flatMap { line ->
             val start = line.time - 3_000L
-            line.text.replace("フェンス", "ふぇんす").chunked(4).mapIndexed { k, chunk -> CaptionCue(start + k * 400, start + k * 400 + 380, chunk) }
+            line.text.replace("フェンス", "��ん�").chunked(4).mapIndexed { k, chunk -> CaptionCue(start + k * 400, start + k * 400 + 380, chunk) }
         }
         val alignment = sure(CaptionAligner.align(lines, cues))
         assertTrue(abs(alignment.map.runs[0].deltaMs + 3_000L) <= 400)

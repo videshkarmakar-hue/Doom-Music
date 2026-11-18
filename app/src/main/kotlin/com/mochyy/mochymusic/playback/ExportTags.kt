@@ -1,6 +1,6 @@
 // ExportTags.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.util.Base64
 import java.io.ByteArrayOutputStream
@@ -9,7 +9,7 @@ import java.io.EOFException
 import java.io.InputStream
 import java.io.OutputStream
 
-// a song's details written into its exported file, so other players and mochy's own import know what it is
+// a song's details written into its exported file, so other players and doom's own import know what it is
 internal class ExportTags(
     val title: String,
     val artist: String?,
@@ -135,7 +135,7 @@ internal object ExportTagWriter {
             tags.cover?.let { add("METADATA_BLOCK_PICTURE=" + Base64.encodeToString(flacPicture(it), Base64.NO_WRAP)) }
         }
         val out = ByteArrayOutputStream()
-        val vendor = "Mochy".toByteArray(Charsets.UTF_8)
+        val vendor = "Doom".toByteArray(Charsets.UTF_8)
         out.le32(vendor.size)
         out.write(vendor)
         out.le32(fields.size)

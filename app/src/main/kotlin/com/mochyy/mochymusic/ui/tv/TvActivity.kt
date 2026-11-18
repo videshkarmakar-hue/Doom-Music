@@ -1,6 +1,6 @@
 // TvActivity.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import android.content.ComponentName
 import android.content.Context
@@ -26,20 +26,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.link.LinkPlayer
-import com.mochyy.mochymusic.link.tv.TvControl
-import com.mochyy.mochymusic.link.tv.TvPairing
-import com.mochyy.mochymusic.link.tv.TvPhoneSync
-import com.mochyy.mochymusic.link.tv.TvProfile
-import com.mochyy.mochymusic.link.tv.TvProfiles
-import com.mochyy.mochymusic.playback.DownloadUtil
-import com.mochyy.mochymusic.playback.MusicService
-import com.mochyy.mochymusic.playback.MusicService.MusicBinder
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.ui.launch.LaunchGate
-import com.mochyy.mochymusic.ui.theme.MochyTheme
-import com.mochyy.mochymusic.utils.SyncUtils
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.link.LinkPlayer
+import com.videshkarmakar.doom.link.tv.TvControl
+import com.videshkarmakar.doom.link.tv.TvPairing
+import com.videshkarmakar.doom.link.tv.TvPhoneSync
+import com.videshkarmakar.doom.link.tv.TvProfile
+import com.videshkarmakar.doom.link.tv.TvProfiles
+import com.videshkarmakar.doom.playback.DownloadUtil
+import com.videshkarmakar.doom.playback.MusicService
+import com.videshkarmakar.doom.playback.MusicService.MusicBinder
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.ui.launch.LaunchGate
+import com.videshkarmakar.doom.ui.theme.DoomTheme
+import com.videshkarmakar.doom.utils.SyncUtils
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlin.system.exitProcess
@@ -82,7 +82,7 @@ class TvActivity : ComponentActivity() {
         TvProfiles.load(this)
         val skipPicker = TvProfiles.takePickedBeforeRestart(this) && TvProfiles.active() != null
         setContent {
-            MochyTheme(darkTheme = true, pureBlack = true) {
+            DoomTheme(darkTheme = true, pureBlack = true) {
                 CompositionLocalProvider(LocalTvLink provides remember { TvLink(phoneSync, pairing) }) {
                     TvRoot(
                         player = playerConnection,

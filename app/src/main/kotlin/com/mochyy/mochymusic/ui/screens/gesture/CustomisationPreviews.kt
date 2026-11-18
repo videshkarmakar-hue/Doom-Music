@@ -1,6 +1,6 @@
 // CustomisationPreviews.kt
 
-package com.mochyy.mochymusic.ui.screens.gesture
+package com.videshkarmakar.doom.ui.screens.gesture
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -29,10 +29,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.coerceIn
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.constants.HomeStyle
-import com.mochyy.mochymusic.constants.PlayerStyle
-import com.mochyy.mochymusic.constants.PlaylistStyle
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.constants.HomeStyle
+import com.videshkarmakar.doom.constants.PlayerStyle
+import com.videshkarmakar.doom.constants.PlaylistStyle
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
 
 internal val PreviewWidth = 133.dp
 

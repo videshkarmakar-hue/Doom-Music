@@ -1,6 +1,6 @@
 // StreamFacts.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import androidx.annotation.OptIn
 import androidx.media3.common.C
@@ -8,7 +8,7 @@ import androidx.media3.common.Format
 import androidx.media3.common.MimeTypes
 import androidx.media3.common.Tracks
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.db.entities.FormatEntity
+import com.videshkarmakar.doom.db.entities.FormatEntity
 
 /** What a song is actually playing as, for the player's format badge. */
 data class StreamFacts(

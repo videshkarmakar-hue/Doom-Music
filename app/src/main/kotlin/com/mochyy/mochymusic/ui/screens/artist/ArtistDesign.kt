@@ -4,7 +4,7 @@
 // bands, riding up and zooming like a playlist cover), the round photo and name or name logo, the
 // Play / like / Subscribe row, the release card that slides over to the bio, and the top bar.
 
-package com.mochyy.mochymusic.ui.screens.artist
+package com.videshkarmakar.doom.ui.screens.artist
 
 import android.graphics.Shader
 import androidx.compose.animation.AnimatedVisibility
@@ -86,35 +86,35 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.component.BoneColor
-import com.mochyy.mochymusic.ui.component.DownscaledBlur
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.component.ScrollAwayCover
-import com.mochyy.mochymusic.ui.component.containerTransformSource
-import com.mochyy.mochymusic.ui.component.detail.CircleAction
-import com.mochyy.mochymusic.ui.component.detail.PillContent
-import com.mochyy.mochymusic.ui.component.detail.PillFill
-import com.mochyy.mochymusic.ui.component.detail.PlayPill
-import com.mochyy.mochymusic.ui.component.detail.PlaylistInset
-import com.mochyy.mochymusic.ui.component.detail.PlaylistStatsStyle
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTracking
-import com.mochyy.mochymusic.ui.component.detail.SectionTitleStyle
-import com.mochyy.mochymusic.ui.component.detail.TrackShape
-import com.mochyy.mochymusic.ui.component.detail.TrackSubtitleStyle
-import com.mochyy.mochymusic.ui.component.detail.TrackTitleStyle
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.player.CanvasArtworkPlayer
-import com.mochyy.mochymusic.ui.screens.search.SearchAvatar
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.viewmodels.ArtistRelease
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.ui.utils.stableStatusBarsPadding
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.component.BoneColor
+import com.videshkarmakar.doom.ui.component.DownscaledBlur
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.component.ScrollAwayCover
+import com.videshkarmakar.doom.ui.component.containerTransformSource
+import com.videshkarmakar.doom.ui.component.detail.CircleAction
+import com.videshkarmakar.doom.ui.component.detail.PillContent
+import com.videshkarmakar.doom.ui.component.detail.PillFill
+import com.videshkarmakar.doom.ui.component.detail.PlayPill
+import com.videshkarmakar.doom.ui.component.detail.PlaylistInset
+import com.videshkarmakar.doom.ui.component.detail.PlaylistStatsStyle
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTracking
+import com.videshkarmakar.doom.ui.component.detail.SectionTitleStyle
+import com.videshkarmakar.doom.ui.component.detail.TrackShape
+import com.videshkarmakar.doom.ui.component.detail.TrackSubtitleStyle
+import com.videshkarmakar.doom.ui.component.detail.TrackTitleStyle
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.player.CanvasArtworkPlayer
+import com.videshkarmakar.doom.ui.screens.search.SearchAvatar
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.viewmodels.ArtistRelease
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBarsPadding
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // the round photo sits this far down the banner, and the page's header starts there
 internal const val ArtistAvatarAt = 0.45f
@@ -275,7 +275,7 @@ private fun BoxScope.BannerBlurBand(
     }
     // high quality on android 13+ grows the blur toward the edge in one pass; a faded fixed blur bloomed around bright parts
     val smooth = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU &&
-        com.mochyy.mochymusic.ui.component.LocalBlurQuality.current == com.mochyy.mochymusic.constants.BlurQuality.HIGH
+        com.videshkarmakar.doom.ui.component.LocalBlurQuality.current == com.videshkarmakar.doom.constants.BlurQuality.HIGH
     DownscaledBlur(
         radius = { BlurEffectCache.effectiveRadius(radius) },
         tileMode = Shader.TileMode.CLAMP,
@@ -829,17 +829,17 @@ internal fun ArtistTopBar(
 /** stand-ins for the header while YouTube answers */
 @Composable
 internal fun ArtistHeaderBones(modifier: Modifier = Modifier) {
-    com.mochyy.mochymusic.ui.component.BonesHost(modifier = modifier.fillMaxWidth()) {
+    com.videshkarmakar.doom.ui.component.BonesHost(modifier = modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(start = PlaylistInset - 4.dp)) {
-            com.mochyy.mochymusic.ui.component.Bone(width = ArtistAvatarSize, height = ArtistAvatarSize, shape = CircleShape)
+            com.videshkarmakar.doom.ui.component.Bone(width = ArtistAvatarSize, height = ArtistAvatarSize, shape = CircleShape)
             Spacer(Modifier.height(16.dp))
-            com.mochyy.mochymusic.ui.component.Bone(width = 190.dp, height = 30.dp)
+            com.videshkarmakar.doom.ui.component.Bone(width = 190.dp, height = 30.dp)
             Spacer(Modifier.height(8.dp))
-            com.mochyy.mochymusic.ui.component.Bone(width = 150.dp, height = 10.dp)
+            com.videshkarmakar.doom.ui.component.Bone(width = 150.dp, height = 10.dp)
             Spacer(Modifier.height(16.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(9.dp)) {
-                com.mochyy.mochymusic.ui.component.Bone(width = 92.dp, height = 33.dp, shape = RoundedCornerShape(50))
-                com.mochyy.mochymusic.ui.component.Bone(width = 33.dp, height = 33.dp, shape = CircleShape)
+                com.videshkarmakar.doom.ui.component.Bone(width = 92.dp, height = 33.dp, shape = RoundedCornerShape(50))
+                com.videshkarmakar.doom.ui.component.Bone(width = 33.dp, height = 33.dp, shape = CircleShape)
             }
         }
     }

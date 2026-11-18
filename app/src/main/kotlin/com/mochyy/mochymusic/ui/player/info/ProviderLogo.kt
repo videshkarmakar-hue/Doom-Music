@@ -1,6 +1,6 @@
 // ProviderLogo.kt
 
-package com.mochyy.mochymusic.ui.player.info
+package com.videshkarmakar.doom.ui.player.info
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -21,12 +21,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.modules.SourceModules
-import com.mochyy.mochymusic.playback.PlayingFrom
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.ProviderSquircle
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.SquircleShape
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.modules.SourceModules
+import com.videshkarmakar.doom.playback.PlayingFrom
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.ProviderSquircle
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.SquircleShape
 
 /** a provider's own icon, the same squircle the onboarding uses; a letter for a module with none */
 @Composable

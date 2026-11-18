@@ -1,10 +1,10 @@
 // PassTransport.kt
 
-package com.mochyy.mochymusic.playback.audio.pass
+package com.videshkarmakar.doom.playback.audio.pass
 
 import java.nio.ByteBuffer
 
-/** one output only mochy plays to, opened at one fixed format; nothing in here mixes, resamples or scales a sample */
+/** one output only doom plays to, opened at one fixed format; nothing in here mixes, resamples or scales a sample */
 internal interface PassTransport {
     val sampleRate: Int
     val channels: Int

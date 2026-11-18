@@ -2,10 +2,10 @@
 //
 // The profile page from the mock: the photo, the name in big type with the card number on its
 // baseline, "Edit profile", then listening totals, what you've been playing, your playlists and the
-// artists you play most. It opens out of the ID card on the Mochy page (see ProfileMorph.kt), so
+// artists you play most. It opens out of the ID card on the Doom page (see ProfileMorph.kt), so
 // the photo, name and number stay hidden until the flying copies have landed on them.
 
-package com.mochyy.mochymusic.ui.screens.profile
+package com.videshkarmakar.doom.ui.screens.profile
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -64,31 +64,31 @@ import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.HomeCardCornerRadius
-import com.mochyy.mochymusic.ui.component.HomeCardHighlight
-import com.mochyy.mochymusic.ui.component.HomeCardSpacing
-import com.mochyy.mochymusic.ui.component.HomeContentInset
-import com.mochyy.mochymusic.ui.component.HomeCoverCard
-import com.mochyy.mochymusic.ui.component.HomeSectionTitle
-import com.mochyy.mochymusic.ui.component.LikedSongsThumbnail
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.component.OdometerNumber
-import com.mochyy.mochymusic.ui.component.PlaylistThumbnail
-import com.mochyy.mochymusic.ui.component.homeCardSize
-import com.mochyy.mochymusic.ui.menu.ArtistMenu
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.ui.screens.settings.figureSp
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.idCardName
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.stableSystemBars
-import com.mochyy.mochymusic.viewmodels.ListenTotal
-import com.mochyy.mochymusic.viewmodels.UserProfileViewModel
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.HomeCardCornerRadius
+import com.videshkarmakar.doom.ui.component.HomeCardHighlight
+import com.videshkarmakar.doom.ui.component.HomeCardSpacing
+import com.videshkarmakar.doom.ui.component.HomeContentInset
+import com.videshkarmakar.doom.ui.component.HomeCoverCard
+import com.videshkarmakar.doom.ui.component.HomeSectionTitle
+import com.videshkarmakar.doom.ui.component.LikedSongsThumbnail
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.component.OdometerNumber
+import com.videshkarmakar.doom.ui.component.PlaylistThumbnail
+import com.videshkarmakar.doom.ui.component.homeCardSize
+import com.videshkarmakar.doom.ui.menu.ArtistMenu
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.ui.screens.settings.figureSp
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.idCardName
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.stableSystemBars
+import com.videshkarmakar.doom.viewmodels.ListenTotal
+import com.videshkarmakar.doom.viewmodels.UserProfileViewModel
 
 internal val ProfilePhotoSize = 98.dp
 internal val ProfilePhotoGrey = Color(0xFF4F4F4F)

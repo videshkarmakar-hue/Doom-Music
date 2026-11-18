@@ -1,28 +1,28 @@
 // LibraryImportViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.importer.DeviceMusicScanner
-import com.mochyy.mochymusic.importer.DeviceSong
-import com.mochyy.mochymusic.importer.ImportHistory
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.importer.LocalArtwork
-import com.mochyy.mochymusic.importer.LocalFile
-import com.mochyy.mochymusic.importer.LocalFolders
-import com.mochyy.mochymusic.importer.LocalImportService
-import com.mochyy.mochymusic.importer.LocalSongRepair
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.importer.DeviceMusicScanner
+import com.videshkarmakar.doom.importer.DeviceSong
+import com.videshkarmakar.doom.importer.ImportHistory
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.importer.LocalArtwork
+import com.videshkarmakar.doom.importer.LocalFile
+import com.videshkarmakar.doom.importer.LocalFolders
+import com.videshkarmakar.doom.importer.LocalImportService
+import com.videshkarmakar.doom.importer.LocalSongRepair
 import androidx.media3.exoplayer.offline.DownloadService
-import com.mochyy.mochymusic.models.TransferBatch
-import com.mochyy.mochymusic.models.TransferState
-import com.mochyy.mochymusic.playback.DownloadUtil
-import com.mochyy.mochymusic.playback.ExoDownloadService
-import com.mochyy.mochymusic.ui.component.TopToaster
+import com.videshkarmakar.doom.models.TransferBatch
+import com.videshkarmakar.doom.models.TransferState
+import com.videshkarmakar.doom.playback.DownloadUtil
+import com.videshkarmakar.doom.playback.ExoDownloadService
+import com.videshkarmakar.doom.ui.component.TopToaster
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -131,7 +131,7 @@ class LibraryImportViewModel @Inject constructor(
         TopToaster.show(context.resources.getQuantityString(R.plurals.lib_local_repaired, count, count), iconRes = R.drawable.library_music)
     }
 
-    /** True if Mochy has music folders the user picked. */
+    /** True if Doom has music folders the user picked. */
     fun hasFolders(): Boolean = LocalFolders.read(context).isNotEmpty()
 
     private fun startFolderImport(files: List<LocalFile>, emptyMessage: String?): Boolean {

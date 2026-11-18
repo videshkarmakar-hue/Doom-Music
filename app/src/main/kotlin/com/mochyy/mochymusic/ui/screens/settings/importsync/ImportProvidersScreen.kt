@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings.importsync
+package com.videshkarmakar.doom.ui.screens.settings.importsync
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -17,14 +17,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.importer.LinkSource
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.ui.component.SettingsGroup
-import com.mochyy.mochymusic.ui.component.SettingsGroupStyle
-import com.mochyy.mochymusic.ui.component.SettingsItem
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.viewmodels.ImportSyncViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.importer.LinkSource
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.ui.component.SettingsGroup
+import com.videshkarmakar.doom.ui.component.SettingsGroupStyle
+import com.videshkarmakar.doom.ui.component.SettingsItem
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.viewmodels.ImportSyncViewModel
 
 @Composable
 fun ImportProvidersScreen(
@@ -36,7 +36,7 @@ fun ImportProvidersScreen(
     // some file managers label .csv as text/plain or octet-stream, so don't filter too hard
     val backupPicker =
         rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
-            if (uri != null) viewModel.loadFile(uri, sourceLabel = "Mochy backup")
+            if (uri != null) viewModel.loadFile(uri, sourceLabel = "Doom backup")
         }
 
     SubSettingsScaffold(
@@ -96,9 +96,9 @@ fun ImportProvidersScreen(
             items =
                 listOf(
                     SettingsItem(
-                        title = { Text(stringResource(R.string.import_mochy_backup_title)) },
-                        highlightKey = "Mochy backup",
-                        descriptionText = stringResource(R.string.import_mochy_backup_desc),
+                        title = { Text(stringResource(R.string.import_doom_backup_title)) },
+                        highlightKey = "Doom backup",
+                        descriptionText = stringResource(R.string.import_doom_backup_desc),
                         icon = painterResource(R.drawable.backup),
                         iconShape = CircleShape,
                         onClick = {

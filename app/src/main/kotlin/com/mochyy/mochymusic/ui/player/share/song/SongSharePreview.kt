@@ -1,6 +1,6 @@
 // SongSharePreview.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import android.view.TextureView
 import android.view.ViewGroup
@@ -38,16 +38,16 @@ import androidx.media3.datasource.DefaultDataSource
 import androidx.media3.datasource.okhttp.OkHttpDataSource
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.ui.AspectRatioFrameLayout
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.player.CanvasArtworkPlayer
-import com.mochyy.mochymusic.ui.player.CanvasTexture
-import com.mochyy.mochymusic.ui.player.CanvasVideoSession
-import com.mochyy.mochymusic.ui.player.share.ShareHeight
-import com.mochyy.mochymusic.ui.player.share.ShareRegions
-import com.mochyy.mochymusic.ui.player.share.ShareWidth
-import com.mochyy.mochymusic.utils.VideoTrack
-import com.mochyy.mochymusic.utils.followAppProxy
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.player.CanvasArtworkPlayer
+import com.videshkarmakar.doom.ui.player.CanvasTexture
+import com.videshkarmakar.doom.ui.player.CanvasVideoSession
+import com.videshkarmakar.doom.ui.player.share.ShareHeight
+import com.videshkarmakar.doom.ui.player.share.ShareRegions
+import com.videshkarmakar.doom.ui.player.share.ShareWidth
+import com.videshkarmakar.doom.utils.VideoTrack
+import com.videshkarmakar.doom.utils.followAppProxy
 import okhttp3.OkHttpClient
 import kotlin.math.max
 import kotlin.math.min

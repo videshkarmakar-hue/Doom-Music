@@ -1,14 +1,14 @@
-package com.mochyy.mochymusic.ui.player.studio
+package com.videshkarmakar.doom.ui.player.studio
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlayerMenuSlotsKey
-import com.mochyy.mochymusic.constants.PlayerSideButtonKey
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlayerMenuSlotsKey
+import com.videshkarmakar.doom.constants.PlayerSideButtonKey
+import com.videshkarmakar.doom.utils.rememberPreference
 
 /**
  * Everything the player's round buttons can do: the button beside the chevron and the four in the

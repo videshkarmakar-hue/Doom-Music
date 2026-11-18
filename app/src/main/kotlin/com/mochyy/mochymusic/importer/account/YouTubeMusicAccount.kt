@@ -1,9 +1,9 @@
 // YouTubeMusicAccount.kt
 
-package com.mochyy.mochymusic.importer.account
+package com.videshkarmakar.doom.importer.account
 
-import com.mochyy.mochymusic.importer.ImportedTrack
-import com.mochyy.mochymusic.importer.toImportedTrack
+import com.videshkarmakar.doom.importer.ImportedTrack
+import com.videshkarmakar.doom.importer.toImportedTrack
 import com.music.innertube.YouTube
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.utils.completed

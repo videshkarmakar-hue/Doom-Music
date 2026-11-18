@@ -1,6 +1,6 @@
 // reading one value out of a manifest the forgiving way: numbers written as text still count, and anything odd reads as missing
 
-package com.mochyy.mochymusic.modules.skin
+package com.videshkarmakar.doom.modules.skin
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -19,7 +19,7 @@ internal fun JsonObject.float(name: String): Float? =
 internal fun JsonObject.bool(name: String): Boolean? =
     (this[name] as? JsonPrimitive)?.let { it.booleanOrNull ?: it.contentOrNull?.trim()?.lowercase()?.toBooleanStrictOrNull() }
 
-/** a shader's own float uniforms by name, leaving out the ones mochy fills in itself */
+/** a shader's own float uniforms by name, leaving out the ones doom fills in itself */
 internal fun shaderUniforms(element: JsonElement?, reserved: Set<String>): Map<String, Float> =
     (element as? JsonObject).orEmpty().entries
         .filter { (name, _) -> UniformName.matches(name) && name !in reserved }

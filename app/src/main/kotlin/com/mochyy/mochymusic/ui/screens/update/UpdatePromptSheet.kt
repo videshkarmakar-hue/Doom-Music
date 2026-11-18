@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.update
+package com.videshkarmakar.doom.ui.screens.update
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.animateFloatAsState
@@ -41,16 +41,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.BuildConfig
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.core.updater.GithubRelease
-import com.mochyy.mochymusic.core.updater.downloadApk
-import com.mochyy.mochymusic.core.updater.formatBytes
-import com.mochyy.mochymusic.core.updater.installApk
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.player.menu.MenuSheetSurface
+import com.videshkarmakar.doom.BuildConfig
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.core.updater.GithubRelease
+import com.videshkarmakar.doom.core.updater.downloadApk
+import com.videshkarmakar.doom.core.updater.formatBytes
+import com.videshkarmakar.doom.core.updater.installApk
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.player.menu.MenuSheetSurface
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 private val CardSurface = MenuRowSurface
 
@@ -71,7 +71,7 @@ fun UpdatePromptSheet(
     val progress = remember { mutableFloatStateOf(0f) }
 
     var readyToInstall by remember(release.apkName) {
-        mutableStateOf(com.mochyy.mochymusic.core.updater.isDownloaded(context, release))
+        mutableStateOf(com.videshkarmakar.doom.core.updater.isDownloaded(context, release))
     }
 
     var needsPermission by remember { mutableStateOf(false) }
@@ -82,7 +82,7 @@ fun UpdatePromptSheet(
         } else {
             needsPermission = true
             readyToInstall = true
-            error = "Allow \"Install unknown apps\" for mochy, then tap Install here again."
+            error = "Allow \"Install unknown apps\" for doom, then tap Install here again."
         }
     }
 
@@ -112,7 +112,7 @@ fun UpdatePromptSheet(
                     .background(CardSurface)
             ) {
                 Icon(
-                    painter = painterResource(R.drawable.ic_mochy_mark),
+                    painter = painterResource(R.drawable.ic_doom_mark),
                     contentDescription = null,
                     tint = Color.White,
                     modifier = Modifier.size(52.dp),
@@ -176,7 +176,7 @@ fun UpdatePromptSheet(
                 Spacer(modifier = Modifier.width(12.dp))
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
-                        text = release.apkName ?: "mochy.apk",
+                        text = release.apkName ?: "doom.apk",
                         color = Color.White,
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Bold,
@@ -218,8 +218,8 @@ fun UpdatePromptSheet(
                 dimmed = release.apkUrl == null,
                 onClick = {
                     error = null
-                    val existing = com.mochyy.mochymusic.core.updater.apkFileFor(context, release)
-                    if (com.mochyy.mochymusic.core.updater.isDownloaded(context, release)) {
+                    val existing = com.videshkarmakar.doom.core.updater.apkFileFor(context, release)
+                    if (com.videshkarmakar.doom.core.updater.isDownloaded(context, release)) {
 
                         startInstall(existing)
                     } else {

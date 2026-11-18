@@ -1,6 +1,6 @@
 // shared pieces of every audio lab page (cards, stage, toggle rows, sliders, chips, segments) so the hub, equalizer and audio fx read as one set
 
-package com.mochyy.mochymusic.ui.screens.audiolab
+package com.videshkarmakar.doom.ui.screens.audiolab
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.activity.compose.BackHandler
@@ -81,15 +81,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalAppContentObscured
-import com.mochyy.mochymusic.eq.audio.AudioTap
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.DefaultPlayerSeekBarSlider
-import com.mochyy.mochymusic.ui.component.LocalNavAnimatedContentScope
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.LocalAppContentObscured
+import com.videshkarmakar.doom.eq.audio.AudioTap
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.DefaultPlayerSeekBarSlider
+import com.videshkarmakar.doom.ui.component.LocalNavAnimatedContentScope
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.flow.first
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 object LabColors {
     val Card = Color(0xFF1C1C1E)
@@ -103,7 +103,7 @@ object LabColors {
     val Faint = Color(0xFF5C5C63)
     val Ink = Color(0xFF8A8A92)
 
-    /** the equalizer's node colours, soft enough to sit on mochy's greys and apart enough to tell */
+    /** the equalizer's node colours, soft enough to sit on doom's greys and apart enough to tell */
     val Nodes = listOf(
         Color(0xFFF28BA8), Color(0xFFF2A46B), Color(0xFFF2D46B), Color(0xFF8FD98B),
         Color(0xFF6BD9C4), Color(0xFF6BBAF2), Color(0xFF8C9EF2), Color(0xFFB98CF2),
@@ -159,8 +159,8 @@ fun LabToggleRow(
     enabled: Boolean = true,
     leadingDot: Boolean = false,
 ) {
-    val (hideDescriptions) = com.mochyy.mochymusic.utils.rememberPreference(
-        com.mochyy.mochymusic.constants.HideSettingsDescriptionsKey,
+    val (hideDescriptions) = com.videshkarmakar.doom.utils.rememberPreference(
+        com.videshkarmakar.doom.constants.HideSettingsDescriptionsKey,
         defaultValue = true,
     )
     Row(
@@ -413,7 +413,7 @@ fun LabSegmented(
     }
 }
 
-/** the 32dp light circle with a dark glyph that mochy's settings rows lead with */
+/** the 32dp light circle with a dark glyph that doom's settings rows lead with */
 @Composable
 fun LabGlyph(iconRes: Int, modifier: Modifier = Modifier, size: Dp = 32.dp) {
     Box(
@@ -571,7 +571,7 @@ fun LabSelect(
                 modifier = Modifier.weight(1f),
             )
             Icon(
-                painter = painterResource(com.mochyy.mochymusic.R.drawable.expand_more),
+                painter = painterResource(com.videshkarmakar.doom.R.drawable.expand_more),
                 contentDescription = contentDescription,
                 tint = if (open) Color.White else LabColors.Secondary,
                 modifier = Modifier.size(22.dp).graphicsLayer { rotationZ = chevron },
@@ -631,7 +631,7 @@ private fun LabSelectRow(label: String, picked: Boolean, onClick: () -> Unit) {
         )
         if (picked) {
             Box(Modifier.size(20.dp).clip(CircleShape).background(Color.White), contentAlignment = Alignment.Center) {
-                Icon(painterResource(com.mochyy.mochymusic.R.drawable.check), contentDescription = null, tint = Color.Black, modifier = Modifier.size(14.dp))
+                Icon(painterResource(com.videshkarmakar.doom.R.drawable.check), contentDescription = null, tint = Color.Black, modifier = Modifier.size(14.dp))
             }
         }
     }

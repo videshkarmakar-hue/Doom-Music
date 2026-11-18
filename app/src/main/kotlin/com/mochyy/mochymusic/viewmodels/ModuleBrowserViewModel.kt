@@ -1,15 +1,15 @@
-// the module browser: mochy's bar's modules from the feed, the search and the kind picked, and fetching a module's zip to add
+// the module browser: doom's bar's modules from the feed, the search and the kind picked, and fetching a module's zip to add
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.modules.ModuleRegistry
-import com.mochyy.mochymusic.modules.browser.FeedKind
-import com.mochyy.mochymusic.modules.browser.FeedModule
-import com.mochyy.mochymusic.modules.browser.FeedResult
-import com.mochyy.mochymusic.modules.browser.ModuleFeed
+import com.videshkarmakar.doom.modules.ModuleRegistry
+import com.videshkarmakar.doom.modules.browser.FeedKind
+import com.videshkarmakar.doom.modules.browser.FeedModule
+import com.videshkarmakar.doom.modules.browser.FeedResult
+import com.videshkarmakar.doom.modules.browser.ModuleFeed
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow

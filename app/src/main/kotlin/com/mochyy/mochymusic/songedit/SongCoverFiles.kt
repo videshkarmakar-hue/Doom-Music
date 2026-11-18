@@ -1,6 +1,6 @@
 // SongCoverFiles.kt
 
-package com.mochyy.mochymusic.songedit
+package com.videshkarmakar.doom.songedit
 
 import android.content.Context
 import android.graphics.Bitmap

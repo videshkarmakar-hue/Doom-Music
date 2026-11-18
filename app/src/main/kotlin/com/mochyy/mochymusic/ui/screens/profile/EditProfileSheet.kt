@@ -3,7 +3,7 @@
 // "Edit profile": the username and picture the profile already has, ready to change. Built from the
 // onboarding's own pieces, so it reads like the profile step you filled in on day one.
 
-package com.mochyy.mochymusic.ui.screens.profile
+package com.videshkarmakar.doom.ui.screens.profile
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -42,17 +42,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.screens.setup.PhotoCropperContainer
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.Onb
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.OnbButton
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.OnbTextField
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.OnboardingPage
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.PageBadge
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.screens.setup.PhotoCropperContainer
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.Onb
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.OnbButton
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.OnbTextField
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.OnboardingPage
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.PageBadge
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** Opens the editor filled in with the name and picture the profile shows now. */
 fun PopupSheetState.showEditProfileSheet(currentName: String, currentPhoto: Any?) {

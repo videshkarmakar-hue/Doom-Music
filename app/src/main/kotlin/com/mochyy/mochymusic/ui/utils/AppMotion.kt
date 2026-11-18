@@ -1,6 +1,6 @@
 // customize's animation and element blur settings, mirrored here by mainactivity so draw code and nav lambdas can read them
 
-package com.mochyy.mochymusic.ui.utils
+package com.videshkarmakar.doom.ui.utils
 
 import android.content.Context
 import android.database.ContentObserver

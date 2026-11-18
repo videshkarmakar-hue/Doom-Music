@@ -1,6 +1,6 @@
-// last.fm or libre.fm sign-in right inside mochy, the password goes to the service once and only the key it sends back is kept
+// last.fm or libre.fm sign-in right inside doom, the password goes to the service once and only the key it sends back is kept
 
-package com.mochyy.mochymusic.ui.screens.settings.integrations
+package com.videshkarmakar.doom.ui.screens.settings.integrations
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -34,13 +34,13 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.scrobble.ScrobbleSite
-import com.mochyy.mochymusic.ui.component.SheetLabel
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.SheetTextField
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.viewmodels.IntegrationsViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.scrobble.ScrobbleSite
+import com.videshkarmakar.doom.ui.component.SheetLabel
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.SheetTextField
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.viewmodels.IntegrationsViewModel
 import com.music.lastfm.AudioscrobblerException
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.launch

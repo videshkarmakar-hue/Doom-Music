@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.db
+package com.videshkarmakar.doom.db
 
 import androidx.room.TypeConverter
 import java.time.Instant

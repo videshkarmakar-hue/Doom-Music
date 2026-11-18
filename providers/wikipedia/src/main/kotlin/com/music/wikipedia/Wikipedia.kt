@@ -35,7 +35,7 @@ data class WikiSong(
 object Wikipedia {
     private const val Wikidata = "https://www.wikidata.org/w/api.php"
     // wikimedia asks every app to say who it is
-    private const val UserAgent = "Mochy (https://github.com/realidkroo/Mochy-Music)"
+    private const val UserAgent = "Doom (https://github.com/realidkroo/Doom-Music)"
     private const val Tag = "Wikipedia"
 
     // song, single, musical work, composition: what a song's item is an instance of
@@ -99,7 +99,7 @@ object Wikipedia {
     // the phone's language first, english, then japanese, korean or chinese when the title is written in one
     private fun languagesFor(title: String, language: String): List<String> {
         val script = when {
-            title.any { it in '぀'..'ヿ' } -> "ja"
+            title.any { it in '�'..'ヿ' } -> "ja"
             title.any { it in '가'..'힯' } -> "ko"
             title.any { it in '一'..'鿿' } -> "zh"
             else -> null

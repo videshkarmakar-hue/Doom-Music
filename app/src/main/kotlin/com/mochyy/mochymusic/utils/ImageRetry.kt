@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import coil3.intercept.Interceptor
 import coil3.network.HttpException

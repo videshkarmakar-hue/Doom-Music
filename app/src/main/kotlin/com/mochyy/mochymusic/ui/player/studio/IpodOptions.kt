@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.studio
+package com.videshkarmakar.doom.ui.player.studio
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Canvas
@@ -19,18 +19,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.IpodShadowKey
-import com.mochyy.mochymusic.constants.IpodTallScreenKey
-import com.mochyy.mochymusic.constants.IpodTheme
-import com.mochyy.mochymusic.constants.IpodThemeKey
-import com.mochyy.mochymusic.constants.IpodWheelColor
-import com.mochyy.mochymusic.constants.IpodWheelColorKey
-import com.mochyy.mochymusic.ui.player.customize.CoverOption
-import com.mochyy.mochymusic.ui.player.ipod.IpodLook
-import com.mochyy.mochymusic.ui.player.ipod.lookOf
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.IpodShadowKey
+import com.videshkarmakar.doom.constants.IpodTallScreenKey
+import com.videshkarmakar.doom.constants.IpodTheme
+import com.videshkarmakar.doom.constants.IpodThemeKey
+import com.videshkarmakar.doom.constants.IpodWheelColor
+import com.videshkarmakar.doom.constants.IpodWheelColorKey
+import com.videshkarmakar.doom.ui.player.customize.CoverOption
+import com.videshkarmakar.doom.ui.player.ipod.IpodLook
+import com.videshkarmakar.doom.ui.player.ipod.lookOf
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 
 // the ipod's sheet: its body, its wheel, how tall its screen is and the shading round it
 @Composable

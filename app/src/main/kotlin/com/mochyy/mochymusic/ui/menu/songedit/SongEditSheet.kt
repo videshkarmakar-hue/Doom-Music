@@ -1,6 +1,6 @@
 // SongEditSheet.kt
 
-package com.mochyy.mochymusic.ui.menu.songedit
+package com.videshkarmakar.doom.ui.menu.songedit
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -24,20 +24,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.di.AudioLabEntryPoint
-import com.mochyy.mochymusic.eq.AudioLabStore
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.playback.SongTuning
-import com.mochyy.mochymusic.songedit.SongEditSaver
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.viewmodels.LyricsMenuViewModel
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.di.AudioLabEntryPoint
+import com.videshkarmakar.doom.eq.AudioLabStore
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.playback.SongTuning
+import com.videshkarmakar.doom.songedit.SongEditSaver
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.viewmodels.LyricsMenuViewModel
 import dagger.hilt.android.EntryPointAccessors
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope

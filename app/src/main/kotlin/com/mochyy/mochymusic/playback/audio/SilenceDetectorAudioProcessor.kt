@@ -1,6 +1,6 @@
 // SilenceDetectorAudioProcessor.kt
 
-package com.mochyy.mochymusic.playback.audio
+package com.videshkarmakar.doom.playback.audio
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor

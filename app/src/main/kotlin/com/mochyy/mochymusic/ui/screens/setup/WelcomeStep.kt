@@ -1,6 +1,6 @@
-// the first onboarding page: the mochy girl showing off her phone over drifting welcomes, a tap anywhere moves on
+// the first onboarding page: the doom girl showing off her phone over drifting welcomes, a tap anywhere moves on
 
-package com.mochyy.mochymusic.ui.screens.setup
+package com.videshkarmakar.doom.ui.screens.setup
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -42,18 +42,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.mochyy.mochymusic.LocalAppContentObscured
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.OnbTitleTracking
-import com.mochyy.mochymusic.ui.screens.setup.welcome.GirlArt
-import com.mochyy.mochymusic.ui.screens.setup.welcome.GirlMotion
-import com.mochyy.mochymusic.ui.screens.setup.welcome.WelcomeColors
-import com.mochyy.mochymusic.ui.screens.setup.welcome.WelcomeDots
-import com.mochyy.mochymusic.ui.screens.setup.welcome.WelcomeGirl
-import com.mochyy.mochymusic.ui.screens.setup.welcome.WelcomeWords
-import com.mochyy.mochymusic.ui.utils.AppMotion
-import com.mochyy.mochymusic.ui.utils.HighRefreshWhile
+import com.videshkarmakar.doom.LocalAppContentObscured
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.OnbTitleTracking
+import com.videshkarmakar.doom.ui.screens.setup.welcome.GirlArt
+import com.videshkarmakar.doom.ui.screens.setup.welcome.GirlMotion
+import com.videshkarmakar.doom.ui.screens.setup.welcome.WelcomeColors
+import com.videshkarmakar.doom.ui.screens.setup.welcome.WelcomeDots
+import com.videshkarmakar.doom.ui.screens.setup.welcome.WelcomeGirl
+import com.videshkarmakar.doom.ui.screens.setup.welcome.WelcomeWords
+import com.videshkarmakar.doom.ui.utils.AppMotion
+import com.videshkarmakar.doom.ui.utils.HighRefreshWhile
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged

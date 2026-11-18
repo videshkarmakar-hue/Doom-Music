@@ -1,6 +1,6 @@
 // TransferSection.kt
 
-package com.mochyy.mochymusic.ui.screens.settings.storage
+package com.videshkarmakar.doom.ui.screens.settings.storage
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -21,11 +21,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.screens.library.showConfirm
-import com.mochyy.mochymusic.viewmodels.TransferStep
-import com.mochyy.mochymusic.viewmodels.TransferViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.screens.library.showConfirm
+import com.videshkarmakar.doom.viewmodels.TransferStep
+import com.videshkarmakar.doom.viewmodels.TransferViewModel
 import kotlinx.coroutines.launch
 
 private val ZipTypes = arrayOf("application/zip", "application/x-zip-compressed", "application/octet-stream")

@@ -1,6 +1,6 @@
 // TvRecapAndBrowse.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.LocalBringIntoViewSpec
@@ -20,12 +20,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.ui.screens.recap.RecapAvailability
-import com.mochyy.mochymusic.ui.screens.recap.RecapRepository
-import com.mochyy.mochymusic.viewmodels.GenreViewModel
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.ui.screens.recap.RecapAvailability
+import com.videshkarmakar.doom.ui.screens.recap.RecapRepository
+import com.videshkarmakar.doom.viewmodels.GenreViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.time.LocalDate

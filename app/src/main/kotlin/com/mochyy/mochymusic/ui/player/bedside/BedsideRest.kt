@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.bedside
+package com.videshkarmakar.doom.ui.player.bedside
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.VectorConverter
@@ -31,15 +31,15 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.ColorUtils
-import com.mochyy.mochymusic.LocalArtworkColor
-import com.mochyy.mochymusic.constants.BedsideKeepAwakeKey
-import com.mochyy.mochymusic.constants.BedsideLockScreenKey
-import com.mochyy.mochymusic.constants.BedsideNightTint
-import com.mochyy.mochymusic.constants.BedsideNightTintKey
-import com.mochyy.mochymusic.constants.BedsideScreenSaverKey
-import com.mochyy.mochymusic.ui.player.styles.rememberStyleShowing
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalArtworkColor
+import com.videshkarmakar.doom.constants.BedsideKeepAwakeKey
+import com.videshkarmakar.doom.constants.BedsideLockScreenKey
+import com.videshkarmakar.doom.constants.BedsideNightTint
+import com.videshkarmakar.doom.constants.BedsideNightTintKey
+import com.videshkarmakar.doom.constants.BedsideScreenSaverKey
+import com.videshkarmakar.doom.ui.player.styles.rememberStyleShowing
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged

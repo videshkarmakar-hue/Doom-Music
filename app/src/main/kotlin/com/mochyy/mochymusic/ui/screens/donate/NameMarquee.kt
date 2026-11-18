@@ -1,6 +1,6 @@
 // the blue band at the top of the support sheet, two rows of huge MOCHY MUSIC gliding past each other
 
-package com.mochyy.mochymusic.ui.screens.donate
+package com.videshkarmakar.doom.ui.screens.donate
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -32,8 +32,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.content.res.ResourcesCompat
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.damageBoundary
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.damageBoundary
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.math.ceil

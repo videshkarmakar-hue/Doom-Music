@@ -1,12 +1,12 @@
 // PlaylistAddedHere.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
 import androidx.core.content.edit
 import org.json.JSONArray
 
-// for playlists that mirror youtube: the songs added in mochy (newest first) and what youtube had last time, so a sync keeps one and follows the other
+// for playlists that mirror youtube: the songs added in doom (newest first) and what youtube had last time, so a sync keeps one and follows the other
 object PlaylistAddedHere {
     private const val Prefs = "playlist_added_here"
     private const val MaxRemembered = 300

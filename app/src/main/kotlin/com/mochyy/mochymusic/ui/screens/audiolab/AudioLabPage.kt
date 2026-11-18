@@ -1,6 +1,6 @@
 // the page every audio lab screen sits on: a dotted backdrop with the title and picture fixed, and a black sheet that slides up over it
 
-package com.mochyy.mochymusic.ui.screens.audiolab
+package com.videshkarmakar.doom.ui.screens.audiolab
 
 import android.os.Build
 import androidx.compose.foundation.ScrollState
@@ -62,12 +62,12 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 
 /** the backdrop behind the sheet, and the sheet itself */
 private val PageBackdrop = Color(0xFF141416)

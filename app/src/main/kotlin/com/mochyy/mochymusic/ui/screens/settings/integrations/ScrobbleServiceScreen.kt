@@ -1,6 +1,6 @@
 // the last.fm or libre.fm page: every song that counts is scrobbled, and offline plays wait for a network
 
-package com.mochyy.mochymusic.ui.screens.settings.integrations
+package com.videshkarmakar.doom.ui.screens.settings.integrations
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Spacer
@@ -20,19 +20,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.LastFMUseNowPlaying
-import com.mochyy.mochymusic.constants.LastFMUseSendLikes
-import com.mochyy.mochymusic.scrobble.ScrobbleSite
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.SettingsGroup
-import com.mochyy.mochymusic.ui.component.SettingsGroupStyle
-import com.mochyy.mochymusic.ui.component.SettingsItem
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.IntegrationsViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.LastFMUseNowPlaying
+import com.videshkarmakar.doom.constants.LastFMUseSendLikes
+import com.videshkarmakar.doom.scrobble.ScrobbleSite
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.SettingsGroup
+import com.videshkarmakar.doom.ui.component.SettingsGroupStyle
+import com.videshkarmakar.doom.ui.component.SettingsItem
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.IntegrationsViewModel
 
 const val ScrobbleServiceRoute = "integrations_settings/scrobble/{site}"
 

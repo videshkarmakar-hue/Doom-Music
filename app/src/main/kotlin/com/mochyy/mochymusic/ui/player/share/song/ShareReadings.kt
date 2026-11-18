@@ -1,6 +1,6 @@
 // ShareReadings.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -8,21 +8,21 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.platform.LocalContext
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.constants.LyricsRomanizeAsMainKey
-import com.mochyy.mochymusic.constants.TranslateLanguageKey
-import com.mochyy.mochymusic.constants.TranslateSourceLanguageKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.lyrics.GoogleTranslateEngine
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.LyricsTranslationHelper
-import com.mochyy.mochymusic.lyrics.YouTubeCaptionTranslation
-import com.mochyy.mochymusic.ui.player.LineReading
-import com.mochyy.mochymusic.ui.player.readSong
-import com.mochyy.mochymusic.ui.player.romanizeSwitchFor
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.constants.LyricsRomanizeAsMainKey
+import com.videshkarmakar.doom.constants.TranslateLanguageKey
+import com.videshkarmakar.doom.constants.TranslateSourceLanguageKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.lyrics.GoogleTranslateEngine
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsTranslationHelper
+import com.videshkarmakar.doom.lyrics.YouTubeCaptionTranslation
+import com.videshkarmakar.doom.ui.player.LineReading
+import com.videshkarmakar.doom.ui.player.readSong
+import com.videshkarmakar.doom.ui.player.romanizeSwitchFor
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first

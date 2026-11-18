@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.bedside
+package com.videshkarmakar.doom.ui.player.bedside
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -27,20 +27,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.LocalArtworkColor
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.BedsideClockFace
-import com.mochyy.mochymusic.constants.BedsideClockFaceKey
-import com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState
-import com.mochyy.mochymusic.ui.player.styles.LocalStyleInteractive
-import com.mochyy.mochymusic.ui.player.styles.StyleStage
-import com.mochyy.mochymusic.ui.player.styles.StyleActions
-import com.mochyy.mochymusic.ui.player.styles.StyleCircle
-import com.mochyy.mochymusic.ui.player.styles.StyleMenu
-import com.mochyy.mochymusic.ui.player.styles.StyleTones
-import com.mochyy.mochymusic.ui.player.styles.rememberStyleTones
-import com.mochyy.mochymusic.utils.rememberEnumPreference
+import com.videshkarmakar.doom.LocalArtworkColor
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.BedsideClockFace
+import com.videshkarmakar.doom.constants.BedsideClockFaceKey
+import com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState
+import com.videshkarmakar.doom.ui.player.styles.LocalStyleInteractive
+import com.videshkarmakar.doom.ui.player.styles.StyleStage
+import com.videshkarmakar.doom.ui.player.styles.StyleActions
+import com.videshkarmakar.doom.ui.player.styles.StyleCircle
+import com.videshkarmakar.doom.ui.player.styles.StyleMenu
+import com.videshkarmakar.doom.ui.player.styles.StyleTones
+import com.videshkarmakar.doom.ui.player.styles.rememberStyleTones
+import com.videshkarmakar.doom.utils.rememberEnumPreference
 
 private val ButtonSize = 40.dp
 private val EdgeGap = 18.dp

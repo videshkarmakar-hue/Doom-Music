@@ -1,6 +1,6 @@
 // BottomSheetPlayer.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.CubicBezierEasing
@@ -18,9 +18,9 @@ import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.constants.PlayerHorizontalPadding
-import com.mochyy.mochymusic.extensions.toggleRepeatMode
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.constants.PlayerHorizontalPadding
+import com.videshkarmakar.doom.extensions.toggleRepeatMode
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -50,7 +50,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.player.studio.playHoldRamp
+import com.videshkarmakar.doom.ui.player.studio.playHoldRamp
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.zIndex
@@ -74,61 +74,61 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.joinAll
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyle
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyleKey
-import com.mochyy.mochymusic.constants.PlayerCoverStyle
-import com.mochyy.mochymusic.constants.DefaultPlayerCoverStyle
-import com.mochyy.mochymusic.constants.PlayerCoverStyleKey
-import com.mochyy.mochymusic.constants.PlayerStyle
-import com.mochyy.mochymusic.constants.ShowPlayerBottomCardKey
-import com.mochyy.mochymusic.constants.PlayerBottomBarStyle
-import com.mochyy.mochymusic.constants.PlayerBottomBarStyleKey
-import com.mochyy.mochymusic.constants.InfiniteQueueKey
-import com.mochyy.mochymusic.constants.FlagshipBackgroundStyleKey
-import com.mochyy.mochymusic.constants.FlagshipBottomBarStyleKey
-import com.mochyy.mochymusic.constants.FlagshipTransportLayout
-import com.mochyy.mochymusic.constants.FlagshipTransportLayoutKey
-import com.mochyy.mochymusic.ui.player.flagship.FlagshipBarHeight
-import com.mochyy.mochymusic.ui.player.flagship.FlagshipBottomBar
-import com.mochyy.mochymusic.ui.player.flagship.FlagshipLandscape
-import com.mochyy.mochymusic.ui.player.flagship.FlagshipPillLook
-import com.mochyy.mochymusic.ui.player.flagship.FlagshipPillMorphSurface
-import com.mochyy.mochymusic.ui.player.flagship.FlagshipTransportRow
-import com.mochyy.mochymusic.ui.player.flagship.ControlsShade
-import com.mochyy.mochymusic.ui.player.flagship.CoverFrost
-import com.mochyy.mochymusic.ui.player.flagship.flagshipBarFootprint
-import com.mochyy.mochymusic.ui.player.flagship.rememberAmbientColors
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyle
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyleKey
+import com.videshkarmakar.doom.constants.PlayerCoverStyle
+import com.videshkarmakar.doom.constants.DefaultPlayerCoverStyle
+import com.videshkarmakar.doom.constants.PlayerCoverStyleKey
+import com.videshkarmakar.doom.constants.PlayerStyle
+import com.videshkarmakar.doom.constants.ShowPlayerBottomCardKey
+import com.videshkarmakar.doom.constants.PlayerBottomBarStyle
+import com.videshkarmakar.doom.constants.PlayerBottomBarStyleKey
+import com.videshkarmakar.doom.constants.InfiniteQueueKey
+import com.videshkarmakar.doom.constants.FlagshipBackgroundStyleKey
+import com.videshkarmakar.doom.constants.FlagshipBottomBarStyleKey
+import com.videshkarmakar.doom.constants.FlagshipTransportLayout
+import com.videshkarmakar.doom.constants.FlagshipTransportLayoutKey
+import com.videshkarmakar.doom.ui.player.flagship.FlagshipBarHeight
+import com.videshkarmakar.doom.ui.player.flagship.FlagshipBottomBar
+import com.videshkarmakar.doom.ui.player.flagship.FlagshipLandscape
+import com.videshkarmakar.doom.ui.player.flagship.FlagshipPillLook
+import com.videshkarmakar.doom.ui.player.flagship.FlagshipPillMorphSurface
+import com.videshkarmakar.doom.ui.player.flagship.FlagshipTransportRow
+import com.videshkarmakar.doom.ui.player.flagship.ControlsShade
+import com.videshkarmakar.doom.ui.player.flagship.CoverFrost
+import com.videshkarmakar.doom.ui.player.flagship.flagshipBarFootprint
+import com.videshkarmakar.doom.ui.player.flagship.rememberAmbientColors
 import androidx.activity.compose.BackHandler
-import com.mochyy.mochymusic.ui.component.BottomSheet
-import com.mochyy.mochymusic.ui.component.BottomSheetState
-import com.mochyy.mochymusic.ui.component.ExpandedSwipe
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.player.studio.EditTiles
-import com.mochyy.mochymusic.ui.player.studio.PlayerSelectorOverlay
-import com.mochyy.mochymusic.ui.player.studio.StudioEditOverlay
-import com.mochyy.mochymusic.ui.player.studio.StudioSheets
-import com.mochyy.mochymusic.ui.player.studio.StudioStage
-import com.mochyy.mochymusic.ui.player.studio.studioAnchor
-import com.mochyy.mochymusic.ui.player.studio.studioCaptureSource
-import com.mochyy.mochymusic.ui.player.studio.studioBarLayer
-import com.mochyy.mochymusic.ui.player.studio.LiftedPart
-import com.mochyy.mochymusic.ui.player.studio.StudioCameraEffect
-import com.mochyy.mochymusic.ui.player.studio.StudioPieces
-import com.mochyy.mochymusic.ui.player.studio.studioCoverLayer
-import com.mochyy.mochymusic.ui.player.studio.studioMiddleLayer
-import com.mochyy.mochymusic.ui.player.studio.studioSheetLayer
-import com.mochyy.mochymusic.ui.player.studio.studioTransportLayer
-import com.mochyy.mochymusic.ui.player.studio.studioPiece
-import com.mochyy.mochymusic.ui.player.studio.holdAnywhere
-import com.mochyy.mochymusic.ui.player.menu.PlayerActionMenu
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.ui.component.BottomSheet
+import com.videshkarmakar.doom.ui.component.BottomSheetState
+import com.videshkarmakar.doom.ui.component.ExpandedSwipe
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.player.studio.EditTiles
+import com.videshkarmakar.doom.ui.player.studio.PlayerSelectorOverlay
+import com.videshkarmakar.doom.ui.player.studio.StudioEditOverlay
+import com.videshkarmakar.doom.ui.player.studio.StudioSheets
+import com.videshkarmakar.doom.ui.player.studio.StudioStage
+import com.videshkarmakar.doom.ui.player.studio.studioAnchor
+import com.videshkarmakar.doom.ui.player.studio.studioCaptureSource
+import com.videshkarmakar.doom.ui.player.studio.studioBarLayer
+import com.videshkarmakar.doom.ui.player.studio.LiftedPart
+import com.videshkarmakar.doom.ui.player.studio.StudioCameraEffect
+import com.videshkarmakar.doom.ui.player.studio.StudioPieces
+import com.videshkarmakar.doom.ui.player.studio.studioCoverLayer
+import com.videshkarmakar.doom.ui.player.studio.studioMiddleLayer
+import com.videshkarmakar.doom.ui.player.studio.studioSheetLayer
+import com.videshkarmakar.doom.ui.player.studio.studioTransportLayer
+import com.videshkarmakar.doom.ui.player.studio.studioPiece
+import com.videshkarmakar.doom.ui.player.studio.holdAnywhere
+import com.videshkarmakar.doom.ui.player.menu.PlayerActionMenu
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlin.math.abs
 import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 
 /**
  * How far the controls are pulled up over the artwork.
@@ -266,7 +266,7 @@ private fun PlayerSheet(
     val showLyrics by remember { derivedStateOf { transition.page == PlayerPage.LYRICS } }
     val showQueue by remember { derivedStateOf { transition.page == PlayerPage.QUEUE } }
     // a wide window on its side: the flagships lay the cover beside the controls (FlagshipLandscape)
-    val landscapeWindow = com.mochyy.mochymusic.ui.utils.isLandscapeWindow()
+    val landscapeWindow = com.videshkarmakar.doom.ui.utils.isLandscapeWindow()
     likeBurst.slotProvider = {
         when {
             // the landscape player has one like button, beside the cover, whatever page is open
@@ -281,8 +281,8 @@ private fun PlayerSheet(
 
     // the player studio: the selector the player shrinks into, and the flagship's in-place editor
     // a look module with a player of its own puts that style first in the selector, for as long as it's on
-    val onTv = com.mochyy.mochymusic.ui.utils.isTvLayout()
-    val hasModuleStyle = !onTv && com.mochyy.mochymusic.modules.skin.ActiveSkin.current?.player != null
+    val onTv = com.videshkarmakar.doom.ui.utils.isTvLayout()
+    val hasModuleStyle = !onTv && com.videshkarmakar.doom.modules.skin.ActiveSkin.current?.player != null
     // the selector's columns, as indexes into PlayerStyle.entries: the flagship with its older layouts under it
     val selectorColumns = remember(hasModuleStyle, onTv) {
         val columns = if (hasModuleStyle) listOf(listOf(PlayerStyle.MODULE)) + PlayerStyle.selectorColumns else PlayerStyle.selectorColumns
@@ -290,15 +290,15 @@ private fun PlayerSheet(
         val shown = if (onTv) columns.map { column -> column.filter { it.availableOnTv } }.filter { it.isNotEmpty() } else columns
         shown.map { column -> column.map { it.ordinal } }
     }
-    val studio = com.mochyy.mochymusic.ui.player.studio.rememberPlayerStudioState(selectorColumns)
-    val studioAnchors = remember { com.mochyy.mochymusic.ui.player.studio.StudioAnchors() }
-    val studioParts = com.mochyy.mochymusic.ui.player.studio.rememberStudioParts(studio, studioAnchors)
-    val menuLayout = com.mochyy.mochymusic.ui.player.studio.rememberPlayerMenuLayout()
+    val studio = com.videshkarmakar.doom.ui.player.studio.rememberPlayerStudioState(selectorColumns)
+    val studioAnchors = remember { com.videshkarmakar.doom.ui.player.studio.StudioAnchors() }
+    val studioParts = com.videshkarmakar.doom.ui.player.studio.rememberStudioParts(studio, studioAnchors)
+    val menuLayout = com.videshkarmakar.doom.ui.player.studio.rememberPlayerMenuLayout()
     val studioFrame = androidx.compose.ui.graphics.rememberGraphicsLayer()
-    val studioCapture = remember(studioFrame) { com.mochyy.mochymusic.ui.player.studio.StudioCapture(studioFrame) }
+    val studioCapture = remember(studioFrame) { com.videshkarmakar.doom.ui.player.studio.StudioCapture(studioFrame) }
     // the pieces the editor lifts off the player while a part is edited (the middle part's, or the
     // transport and the bottom bar), so it moves the player's own drawing of each
-    val studioPieces = com.mochyy.mochymusic.ui.player.studio.rememberStudioPieces()
+    val studioPieces = com.videshkarmakar.doom.ui.player.studio.rememberStudioPieces()
     // where the editor's hold put the controls (and so how big the cover is) and how tall the card is
     val layoutTweaks = rememberPlayerLayoutTweaks()
     androidx.compose.runtime.SideEffect {
@@ -328,8 +328,8 @@ private fun PlayerSheet(
 
     var coverStyle by rememberEnumPreference(PlayerCoverStyleKey, DefaultPlayerCoverStyle)
     val (savedPlayerStyle, savePlayerStyle) = rememberEnumPreference(
-        com.mochyy.mochymusic.constants.PlayerStyleKey,
-        com.mochyy.mochymusic.constants.PlayerStyle.FLAGSHIP,
+        com.videshkarmakar.doom.constants.PlayerStyleKey,
+        com.videshkarmakar.doom.constants.PlayerStyle.FLAGSHIP,
     )
     // A style picked in the studio shows at once. The saved one only comes back after the
     // settings file is written, which landed in the middle of the player growing back out of its
@@ -362,7 +362,7 @@ private fun PlayerSheet(
     LaunchedEffect(savedPlayerStyle) {
         if (savedPlayerStyle == pickedPlayerStyle) pickedPlayerStyle = null
     }
-    val (videoModeReturn, saveVideoModeReturn) = rememberPreference(com.mochyy.mochymusic.constants.VideoModeReturnStyleKey, "")
+    val (videoModeReturn, saveVideoModeReturn) = rememberPreference(com.videshkarmakar.doom.constants.VideoModeReturnStyleKey, "")
     val onPlayerStyleChange: (PlayerStyle) -> Unit = { style ->
         // the style the full video mode goes back to when it's left
         if (style == PlayerStyle.VIDEO && playerStyle != PlayerStyle.VIDEO) saveVideoModeReturn(playerStyle.name)
@@ -370,7 +370,7 @@ private fun PlayerSheet(
         savePlayerStyle(style)
     }
     // the Turntable is the flagship around a record player, whatever cover the flagship is set to
-    val isTurntable = playerStyle == com.mochyy.mochymusic.constants.PlayerStyle.TURNTABLE
+    val isTurntable = playerStyle == com.videshkarmakar.doom.constants.PlayerStyle.TURNTABLE
     val shownCoverStyle = if (isTurntable) PlayerCoverStyle.TURNTABLE else coverStyle
     val controlsDrawShift = if (shownCoverStyle == PlayerCoverStyle.EDGE_TO_EDGE) ControlsDrawShift else 0.dp
     // the new flagship: its own buttons and bottom bar, the cover frosting into moving colours
@@ -402,9 +402,9 @@ private fun PlayerSheet(
     val pillMorph = newBottomBar && showVolumeBar
     val pageLook = if (pillMorph) FlagshipPillLook else cardLook
     // a style stored by the ones these replaced lands on its successor
-    val (storedPlayerStyle, onStoredPlayerStyle) = rememberPreference(com.mochyy.mochymusic.constants.PlayerStyleKey, "")
+    val (storedPlayerStyle, onStoredPlayerStyle) = rememberPreference(com.videshkarmakar.doom.constants.PlayerStyleKey, "")
     LaunchedEffect(storedPlayerStyle) {
-        com.mochyy.mochymusic.constants.PlayerStyle.fromStored(storedPlayerStyle)?.let { onStoredPlayerStyle(it.name) }
+        com.videshkarmakar.doom.constants.PlayerStyle.fromStored(storedPlayerStyle)?.let { onStoredPlayerStyle(it.name) }
     }
 
     // plain fields, not state: they are written every frame of the slide but only read when a swipe starts
@@ -433,7 +433,7 @@ private fun PlayerSheet(
             if (!studio.engaged && pending?.isActive != true) {
                 studioContext.playHoldRamp()
                 pending = studioScope.launch {
-                    kotlinx.coroutines.delay(com.mochyy.mochymusic.ui.player.studio.HoldRampMs)
+                    kotlinx.coroutines.delay(com.videshkarmakar.doom.ui.player.studio.HoldRampMs)
                     openStudio()
                 }
             }
@@ -479,14 +479,14 @@ private fun PlayerSheet(
     // the rotate button on the styles' menus, each style remembering its own; never on a tv, which doesn't turn
     val styleCanTurn = playerStyle.turnable && !onTv
     val (styleTurnedSaved, setStyleTurned) = rememberPreference(
-        com.mochyy.mochymusic.constants.playerStyleRotatedKey(playerStyle),
+        com.videshkarmakar.doom.constants.playerStyleRotatedKey(playerStyle),
         defaultValue = playerStyle.startsSideways,
     )
     val styleTurned = styleCanTurn && styleTurnedSaved
     val styleTurnedNow by androidx.compose.runtime.rememberUpdatedState(styleTurned)
     val setStyleTurnedNow by androidx.compose.runtime.rememberUpdatedState(setStyleTurned)
     val styleTurn = remember {
-        com.mochyy.mochymusic.ui.player.styles.StyleTurn(isTurned = { styleTurnedNow }, toggle = { setStyleTurnedNow(!styleTurnedNow) })
+        com.videshkarmakar.doom.ui.player.styles.StyleTurn(isTurned = { styleTurnedNow }, toggle = { setStyleTurnedNow(!styleTurnedNow) })
     }
     // the window turns once the player is all the way open and stays turned until it's back down to the mini player, like the full video mode
     var playerFullyOpen by remember { mutableStateOf(false) }
@@ -496,13 +496,13 @@ private fun PlayerSheet(
         }
     }
     // user landscape keeps to the phone's rotation lock; the sensor one ignored it and flipped the player whenever the phone tilted
-    com.mochyy.mochymusic.ui.utils.HoldOrientation(
+    com.videshkarmakar.doom.ui.utils.HoldOrientation(
         orientation = android.content.pm.ActivityInfo.SCREEN_ORIENTATION_USER_LANDSCAPE,
         active = styleTurned && playerFullyOpen,
     )
 
     val styleActions = remember(openStudio) {
-        com.mochyy.mochymusic.ui.player.styles.StyleActions(
+        com.videshkarmakar.doom.ui.player.styles.StyleActions(
             onOtherMenu = {
                 // the styles that perform the lyrics get the lyrics tools too: provider, translation
                 menuFromLyrics = currentPlayerStyleForStudio == PlayerStyle.POSTER ||
@@ -559,11 +559,11 @@ private fun PlayerSheet(
     val sheetShowing by remember(state) { derivedStateOf { state.progress > 0f } }
 
     // the record and the lyrics move with no finger on them, which android 15+ otherwise draws at 60hz
-    com.mochyy.mochymusic.ui.utils.HighRefreshWhile { sheetShowing && transportState.isPlaying }
+    com.videshkarmakar.doom.ui.utils.HighRefreshWhile { sheetShowing && transportState.isPlaying }
 
     // Settings > Customise > Gesture: a swipe down anywhere on the open player closes it (#121)
     val (swipeDownAnywhere) = rememberPreference(
-        com.mochyy.mochymusic.constants.PlayerSwipeDownAnywhereKey,
+        com.videshkarmakar.doom.constants.PlayerSwipeDownAnywhereKey,
         defaultValue = false,
     )
     val currentSwipeDownAnywhere by androidx.compose.runtime.rememberUpdatedState(swipeDownAnywhere)
@@ -658,7 +658,7 @@ private fun PlayerSheet(
     // the like and the page is growing out of (or back into) the card. Switching over from the
     // queue it opens out from behind the chevron like the page's other buttons.
     fun likeMovesToLyrics(): Boolean =
-        menuLayout.side == com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.LIKE &&
+        menuLayout.side == com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.LIKE &&
             transition.isCardMorph(PlayerPage.LYRICS)
 
     // Each page's own content. Opened from the player it is the header's progress (one motion);
@@ -848,7 +848,7 @@ private fun PlayerSheet(
         val miniSwipe = remember(songCarousel, density) {
             val flingPx = with(density) { MiniSwipeFling.toPx() }
             songCarousel?.let { row ->
-                object : com.mochyy.mochymusic.ui.component.CollapsedSwipe {
+                object : com.videshkarmakar.doom.ui.component.CollapsedSwipe {
                     private var hasPrevious = false
                     private var hasNext = false
 
@@ -871,40 +871,40 @@ private fun PlayerSheet(
 
         // what the round buttons do: the side button by the chevron and the chevron's menu, each
         // set to one of these in the editor
-        val menuExtras = com.mochyy.mochymusic.ui.player.studio.rememberPlayerMenuExtras(
+        val menuExtras = com.videshkarmakar.doom.ui.player.studio.rememberPlayerMenuExtras(
             playerConnection = playerConnection,
             openLyrics = { if (transition.page != PlayerPage.LYRICS) transition.open(PlayerPage.LYRICS) },
         )
-        fun menuActionActive(action: com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction): Boolean = when (action) {
-            com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.LIKE -> trackInfo.liked
-            com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.SLEEP_TIMER -> playerConnection.service.sleepTimer.isActive
-            com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.SEE_VIDEO -> seeVideo
-            com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.REPEAT -> transportState.repeatMode != Player.REPEAT_MODE_OFF
-            com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.SHUFFLE -> transportState.shuffleModeEnabled
-            com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.ROTATE -> styleTurned
+        fun menuActionActive(action: com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction): Boolean = when (action) {
+            com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.LIKE -> trackInfo.liked
+            com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.SLEEP_TIMER -> playerConnection.service.sleepTimer.isActive
+            com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.SEE_VIDEO -> seeVideo
+            com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.REPEAT -> transportState.repeatMode != Player.REPEAT_MODE_OFF
+            com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.SHUFFLE -> transportState.shuffleModeEnabled
+            com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.ROTATE -> styleTurned
             else -> menuExtras.isActive(action)
         }
-        val onMenuAction: (com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction) -> Unit = { action ->
+        val onMenuAction: (com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction) -> Unit = { action ->
             when (action) {
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.LIKE ->
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.LIKE ->
                     likeBurst.likeFromButton(LikeSlot.PLAYER, trackInfo.liked, playerConnection::toggleLike)
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.OTHER_MENU -> {
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.OTHER_MENU -> {
                     // The lyrics tools are in this menu now (no button in the lyrics header).
                     menuFromLyrics = showLyrics
                     showActionMenu = true
                 }
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.SLEEP_TIMER -> showSleepTimer = true
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.SEE_VIDEO -> seeVideo = !seeVideo
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.REPEAT -> playerConnection.player.toggleRepeatMode()
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.SHUFFLE ->
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.SLEEP_TIMER -> showSleepTimer = true
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.SEE_VIDEO -> seeVideo = !seeVideo
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.REPEAT -> playerConnection.player.toggleRepeatMode()
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.SHUFFLE ->
                     playerConnection.player.shuffleModeEnabled = !playerConnection.player.shuffleModeEnabled
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.LYRICS -> transition.open(PlayerPage.LYRICS)
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.QUEUE -> transition.open(PlayerPage.QUEUE)
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.SPEED -> showPlaybackSpeed = true
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.EQUALIZER -> openEqualizer()
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.OUTPUT -> showDeviceOutput = true
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.FULL_VIDEO -> enterVideoMode()
-                com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.ROTATE -> styleTurn.toggle()
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.LYRICS -> transition.open(PlayerPage.LYRICS)
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.QUEUE -> transition.open(PlayerPage.QUEUE)
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.SPEED -> showPlaybackSpeed = true
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.EQUALIZER -> openEqualizer()
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.OUTPUT -> showDeviceOutput = true
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.FULL_VIDEO -> enterVideoMode()
+                com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.ROTATE -> styleTurn.toggle()
                 else -> menuExtras.run(action)
             }
         }
@@ -1067,10 +1067,10 @@ private fun PlayerSheet(
                         },
                 ) {
                     androidx.compose.runtime.CompositionLocalProvider(
-                        com.mochyy.mochymusic.ui.player.styles.LocalStyleInteractive provides styleInteractive,
-                        com.mochyy.mochymusic.ui.player.styles.LocalStyleCovered provides styleCoveredNow,
+                        com.videshkarmakar.doom.ui.player.styles.LocalStyleInteractive provides styleInteractive,
+                        com.videshkarmakar.doom.ui.player.styles.LocalStyleCovered provides styleCoveredNow,
                     ) {
-                        com.mochyy.mochymusic.ui.player.styles.AlternatePlayerStyle(
+                        com.videshkarmakar.doom.ui.player.styles.AlternatePlayerStyle(
                             style = playerStyle,
                             actions = styleActions,
                             // under a lyrics page that fills the screen it needn't be drawn
@@ -1087,14 +1087,14 @@ private fun PlayerSheet(
                         styleQueueOpen = false
                     }
                 }
-                com.mochyy.mochymusic.ui.player.styles.StyleLyricsPage(
+                com.videshkarmakar.doom.ui.player.styles.StyleLyricsPage(
                     open = styleLyricsOpen && styleOpen,
                     onClose = { styleLyricsOpen = false },
                     screenHeight = screenHeight,
                     onCoveredChange = { styleCovered = it },
                     onSwitchSource = { showLyricsSource = true },
                 )
-                com.mochyy.mochymusic.ui.player.styles.StyleQueuePage(
+                com.videshkarmakar.doom.ui.player.styles.StyleQueuePage(
                     open = styleQueueOpen && styleOpen,
                     onClose = { styleQueueOpen = false },
                     onCoveredChange = { styleQueueCovered = it },
@@ -1450,8 +1450,8 @@ private fun PlayerSheet(
                             // measured only on the plain player: in the editor they're moving with it
                             onSidePlaced = { if (!studio.editing) studioAnchors.capture(studioAnchors.sideButton, it) },
                             onChevronPlaced = { if (!studio.editing) studioAnchors.capture(studioAnchors.chevron, it) },
-                            sideModifier = Modifier.studioPiece(studioPieces, com.mochyy.mochymusic.ui.player.studio.StudioPieces.SIDE),
-                            chevronModifier = Modifier.studioPiece(studioPieces, com.mochyy.mochymusic.ui.player.studio.StudioPieces.CHEVRON),
+                            sideModifier = Modifier.studioPiece(studioPieces, com.videshkarmakar.doom.ui.player.studio.StudioPieces.SIDE),
+                            chevronModifier = Modifier.studioPiece(studioPieces, com.videshkarmakar.doom.ui.player.studio.StudioPieces.CHEVRON),
                             onSongInfoClick = { if (!studioEngaged) showSongDetails = true },
                             onStreamInfoClick = { if (!studioEngaged) showStreamInfo = true },
                             // the header's title is this one moving, so it hides as that takes over
@@ -1548,7 +1548,7 @@ private fun PlayerSheet(
                                     val lyricsSideAction = menuLayout.side
                                     val lyricsSideActive = menuActionActive(lyricsSideAction)
                                     val lyricsSideIsLike = lyricsSideAction ==
-                                        com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.LIKE
+                                        com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.LIKE
                                     PressScaleActionButton(
                                         icon = if (lyricsSideIsLike) {
                                             if (trackInfo.liked) R.drawable.ic_untitled_heart else R.drawable.ic_untitled_heart_unfill
@@ -1662,8 +1662,8 @@ private fun PlayerSheet(
                             active = sheetShowing,
                             onSeekBarPlaced = { if (!studio.editing) studioAnchors.capture(studioAnchors.seekBar, it) },
                             onEndTimePlaced = { if (!studio.editing) studioAnchors.capture(studioAnchors.endTime, it) },
-                            seekBarModifier = Modifier.studioPiece(studioPieces, com.mochyy.mochymusic.ui.player.studio.StudioPieces.SEEK_BAR),
-                            endTimeModifier = Modifier.studioPiece(studioPieces, com.mochyy.mochymusic.ui.player.studio.StudioPieces.END_TIME),
+                            seekBarModifier = Modifier.studioPiece(studioPieces, com.videshkarmakar.doom.ui.player.studio.StudioPieces.SEEK_BAR),
+                            endTimeModifier = Modifier.studioPiece(studioPieces, com.videshkarmakar.doom.ui.player.studio.StudioPieces.END_TIME),
                         )
                     }
                 }
@@ -1735,17 +1735,17 @@ private fun PlayerSheet(
             slots = run {
                 val set = if (isTurntable) {
                     listOf(
-                        com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.SHUFFLE,
-                        com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.REPEAT,
+                        com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.SHUFFLE,
+                        com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.REPEAT,
                     ).filterNot { it in menuLayout.slots } + menuLayout.slots
                 } else {
                     menuLayout.slots
                 }
                 // with a youtube video on the cover, the full video mode goes on top unless it's already one of the four
-                val fullVideo = com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.FULL_VIDEO
+                val fullVideo = com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.FULL_VIDEO
                 val withVideo = if (videoShowing && fullVideo !in set) listOf(fullVideo) + set else set
                 // the turntable's rotate button sits last, the way the other styles keep theirs at the end
-                if (isTurntable && styleCanTurn) withVideo + com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.ROTATE else withVideo
+                if (isTurntable && styleCanTurn) withVideo + com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.ROTATE else withVideo
             },
             isActive = ::menuActionActive,
             onAction = onMenuAction,
@@ -1771,7 +1771,7 @@ private fun PlayerSheet(
         PageBackHandler(state, pageOpen = showQueue || showLyrics) { transition.close() }
 
         if (showSleepTimer) {
-            com.mochyy.mochymusic.ui.player.menu.SleepTimerSheet(
+            com.videshkarmakar.doom.ui.player.menu.SleepTimerSheet(
                 onDismiss = { showSleepTimer = false }
             )
         }
@@ -1779,7 +1779,7 @@ private fun PlayerSheet(
         if (showSongDetails) {
             // Opening an artist or the album leaves the player: it closes on its way to the page,
             // the way the song menus' "view artist" does
-            com.mochyy.mochymusic.ui.player.menu.SongDetailsSheet(
+            com.videshkarmakar.doom.ui.player.menu.SongDetailsSheet(
                 onDismiss = { showSongDetails = false },
                 onOpenArtist = { artistId ->
                     showSongDetails = false
@@ -1795,7 +1795,7 @@ private fun PlayerSheet(
         }
 
         if (showStreamInfo) {
-            com.mochyy.mochymusic.ui.player.info.StreamInfoSheet(onDismiss = { showStreamInfo = false })
+            com.videshkarmakar.doom.ui.player.info.StreamInfoSheet(onDismiss = { showStreamInfo = false })
         }
 
         if (showActionMenu) {
@@ -1822,14 +1822,14 @@ private fun PlayerSheet(
         }
 
         if (showPlaybackSpeed) {
-            com.mochyy.mochymusic.ui.player.menu.PlaybackSpeedSheet(onDismiss = { showPlaybackSpeed = false })
+            com.videshkarmakar.doom.ui.player.menu.PlaybackSpeedSheet(onDismiss = { showPlaybackSpeed = false })
         }
         if (showDeviceOutput) {
-            com.mochyy.mochymusic.ui.player.menu.DeviceOutputSheet(onDismiss = { showDeviceOutput = false })
+            com.videshkarmakar.doom.ui.player.menu.DeviceOutputSheet(onDismiss = { showDeviceOutput = false })
         }
         // opened by "Switch" at the end of the lyrics page
         if (showLyricsSource) {
-            com.mochyy.mochymusic.ui.player.menu.LyricsProviderSheet(onDismiss = { showLyricsSource = false })
+            com.videshkarmakar.doom.ui.player.menu.LyricsProviderSheet(onDismiss = { showLyricsSource = false })
         }
 
         // the player studio, over the player: the selector, the editor's header and editors, its sheets
@@ -1848,14 +1848,14 @@ private fun PlayerSheet(
                     val restyled = playerStyle != PlayerStyle.POSTER
                     if (restyled) onPlayerStyleChange(PlayerStyle.POSTER)
                     studio.settleOn(focused, restyled) {
-                        studio.openSheet(com.mochyy.mochymusic.ui.player.studio.StudioSheet.POSTER)
+                        studio.openSheet(com.videshkarmakar.doom.ui.player.studio.StudioSheet.POSTER)
                     }
                 } else if (playerStyles.getOrNull(focused) == PlayerStyle.IPOD) {
                     // the ipod's colours, wheel, screen and shadow, in a sheet over the ipod itself
                     val restyled = playerStyle != PlayerStyle.IPOD
                     if (restyled) onPlayerStyleChange(PlayerStyle.IPOD)
                     studio.settleOn(focused, restyled) {
-                        studio.openSheet(com.mochyy.mochymusic.ui.player.studio.StudioSheet.IPOD)
+                        studio.openSheet(com.videshkarmakar.doom.ui.player.studio.StudioSheet.IPOD)
                     }
                 } else if (playerStyles.getOrNull(focused)?.isBedside == true) {
                     // either bedside: the night look and the screen options, in a sheet over the style itself
@@ -1863,14 +1863,14 @@ private fun PlayerSheet(
                     val restyled = playerStyle != bedside
                     if (restyled) onPlayerStyleChange(bedside)
                     studio.settleOn(focused, restyled) {
-                        studio.openSheet(com.mochyy.mochymusic.ui.player.studio.StudioSheet.BEDSIDE)
+                        studio.openSheet(com.videshkarmakar.doom.ui.player.studio.StudioSheet.BEDSIDE)
                     }
                 } else if (playerStyles.getOrNull(focused) == PlayerStyle.TURNTABLE) {
                     // its one edit is the disc label: back to the player, with the label's sheet
                     val restyled = playerStyle != PlayerStyle.TURNTABLE
                     if (restyled) onPlayerStyleChange(PlayerStyle.TURNTABLE)
                     studio.settleOn(focused, restyled) {
-                        studio.openSheet(com.mochyy.mochymusic.ui.player.studio.StudioSheet.DISC_LABEL)
+                        studio.openSheet(com.videshkarmakar.doom.ui.player.studio.StudioSheet.DISC_LABEL)
                     }
                 } else {
                     // the full editor, on whichever flagship is in view
@@ -1883,10 +1883,10 @@ private fun PlayerSheet(
         )
         // the Poster's, the iPod's and the bedside's sheets, each over its own style
         if (playerStyle == PlayerStyle.POSTER || playerStyle == PlayerStyle.IPOD || playerStyle.isBedside) {
-            com.mochyy.mochymusic.ui.player.studio.StyleSheets(studio)
+            com.videshkarmakar.doom.ui.player.studio.StyleSheets(studio)
         }
         if (playerStyle.flagshipFamily) {
-            val (showBigDiscStyles) = rememberPreference(com.mochyy.mochymusic.constants.ShowBigDiscStylesKey, defaultValue = false)
+            val (showBigDiscStyles) = rememberPreference(com.videshkarmakar.doom.constants.ShowBigDiscStylesKey, defaultValue = false)
             val coverStyles = remember(showBigDiscStyles, coverStyle) {
                 PlayerCoverStyle.entries.filter { style ->
                     style != PlayerCoverStyle.TURNTABLE
@@ -1896,18 +1896,18 @@ private fun PlayerSheet(
             }
             val backgroundStyles = remember { PlayerBackgroundStyle.entries.toList() }
             var seekBarStyle by rememberEnumPreference(
-                com.mochyy.mochymusic.constants.SeekBarStyleKey,
-                com.mochyy.mochymusic.ui.component.SeekBarStyle.DEFAULT,
+                com.videshkarmakar.doom.constants.SeekBarStyleKey,
+                com.videshkarmakar.doom.ui.component.SeekBarStyle.DEFAULT,
             )
             var buttonStyle by rememberEnumPreference(
-                com.mochyy.mochymusic.constants.ButtonStyleKey,
-                com.mochyy.mochymusic.ui.component.ButtonStyle.DEFAULT,
+                com.videshkarmakar.doom.constants.ButtonStyleKey,
+                com.videshkarmakar.doom.ui.component.ButtonStyle.DEFAULT,
             )
             val endTimestamp by rememberEnumPreference(
-                com.mochyy.mochymusic.constants.PlayerEndTimestampKey,
-                com.mochyy.mochymusic.constants.PlayerEndTimestamp.END_TIME,
+                com.videshkarmakar.doom.constants.PlayerEndTimestampKey,
+                com.videshkarmakar.doom.constants.PlayerEndTimestamp.END_TIME,
             )
-            val artworkPalette = com.mochyy.mochymusic.ui.theme.ArtworkPalette.from(com.mochyy.mochymusic.LocalArtworkColor.current)
+            val artworkPalette = com.videshkarmakar.doom.ui.theme.ArtworkPalette.from(com.videshkarmakar.doom.LocalArtworkColor.current)
             if (playerStyle.hasFullEditor) StudioEditOverlay(
                 parts = studioParts,
                 glassState = morphingGlassState,
@@ -1937,7 +1937,7 @@ private fun PlayerSheet(
                 // the new flagship picks its button layout there instead of a button style
                 transportLayout = if (isFlagship) transportLayout else null,
                 onTransportLayout = { transportLayout = it },
-                transportColors = com.mochyy.mochymusic.ui.component.TransportColors(
+                transportColors = com.videshkarmakar.doom.ui.component.TransportColors(
                     accent = artworkPalette.accent,
                     onAccent = artworkPalette.onAccent,
                     container = artworkPalette.container,
@@ -1992,9 +1992,9 @@ private fun ExpandMenuOverlay(
     visible: Boolean,
     onDismiss: () -> Unit,
     /** the actions, top to bottom: the four set in the editor, and any the style adds */
-    slots: List<com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction>,
-    isActive: (com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction) -> Boolean,
-    onAction: (com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction) -> Unit,
+    slots: List<com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction>,
+    isActive: (com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction) -> Boolean,
+    onAction: (com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction) -> Unit,
     repeatMode: Int,
     getChevronRect: () -> androidx.compose.ui.geometry.Rect?,
     screenWidth: androidx.compose.ui.unit.Dp,
@@ -2016,7 +2016,7 @@ private fun ExpandMenuOverlay(
             isRendered = true
             launch {
                 bgAlpha.animateTo(
-                    targetValue = com.mochyy.mochymusic.ui.player.styles.ChevronMenuDim,
+                    targetValue = com.videshkarmakar.doom.ui.player.styles.ChevronMenuDim,
                     animationSpec = tween(durationMillis = 350, easing = CubicBezierEasing(0.22f, 1f, 0.36f, 1f))
                 )
             }
@@ -2179,9 +2179,9 @@ private fun ExpandMenuOverlay(
                             val isToggled = isActive(action)
                             // a downloaded song's button deletes it, and a turned turntable's turns it back, so the words say that
                             val labelText = when {
-                                action == com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.DOWNLOAD && isToggled ->
+                                action == com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.DOWNLOAD && isToggled ->
                                     stringResource(R.string.player_menu_delete_download)
-                                action == com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.ROTATE && isToggled ->
+                                action == com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.ROTATE && isToggled ->
                                     stringResource(R.string.player_turn_upright)
                                 else -> item.first
                             }
@@ -2202,15 +2202,15 @@ private fun ExpandMenuOverlay(
                                 tint = iconTint,
                                 containerColor = containerColor,
                                 hasShadow = false,
-                                badgeText = if (action == com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.REPEAT &&
+                                badgeText = if (action == com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.REPEAT &&
                                     repeatMode == Player.REPEAT_MODE_ONE
                                 ) "1" else null,
                                 onClick = {
                                     when (action) {
                                         // toggles that stay open, so the change shows on the button
-                                        com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.REPEAT,
-                                        com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.SHUFFLE,
-                                        com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction.LIKE -> onAction(action)
+                                        com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.REPEAT,
+                                        com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.SHUFFLE,
+                                        com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction.LIKE -> onAction(action)
                                         else -> { onDismiss(); onAction(action) }
                                     }
                                 }

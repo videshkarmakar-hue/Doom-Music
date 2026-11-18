@@ -1,16 +1,16 @@
 // VideoLyricsSync.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import android.content.Context
 import android.util.LruCache
-import com.mochyy.mochymusic.constants.SyncLyricsToVideoKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.utils.OfflineMode
-import com.mochyy.mochymusic.utils.SongVersions
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.constants.SyncLyricsToVideoKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.utils.OfflineMode
+import com.videshkarmakar.doom.utils.SongVersions
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
@@ -131,7 +131,7 @@ object VideoLyricsSync {
     private val VideoTimedProviders = setOf(
         YouTubeCaptionsLyricsProvider.name,
         YouTubeSubtitleLyricsProvider.name,
-        com.mochyy.mochymusic.viewmodels.LyricsMenuViewModel.USER_EDITED,
+        com.videshkarmakar.doom.viewmodels.LyricsMenuViewModel.USER_EDITED,
     )
 
     // lrc minutes are two digits

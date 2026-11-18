@@ -1,6 +1,6 @@
 // PlayerLayoutTweaks.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -14,12 +14,12 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.constants.PlayerCardGrowthKey
-import com.mochyy.mochymusic.constants.PlayerControlsShiftKey
-import com.mochyy.mochymusic.ui.player.customize.CoverRegionFraction
-import com.mochyy.mochymusic.ui.player.customize.MaxCoverRegionFraction
-import com.mochyy.mochymusic.ui.player.customize.MinCoverRegionFraction
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.PlayerCardGrowthKey
+import com.videshkarmakar.doom.constants.PlayerControlsShiftKey
+import com.videshkarmakar.doom.ui.player.customize.CoverRegionFraction
+import com.videshkarmakar.doom.ui.player.customize.MaxCoverRegionFraction
+import com.videshkarmakar.doom.ui.player.customize.MinCoverRegionFraction
+import com.videshkarmakar.doom.utils.rememberPreference
 
 /** How much taller than usual the card can be pulled: room for a reading, a translation and the next line. */
 internal val CardGrowthMax = 72.dp

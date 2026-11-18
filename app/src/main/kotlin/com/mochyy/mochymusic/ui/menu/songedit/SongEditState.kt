@@ -1,6 +1,6 @@
 // SongEditState.kt
 
-package com.mochyy.mochymusic.ui.menu.songedit
+package com.videshkarmakar.doom.ui.menu.songedit
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
@@ -9,15 +9,15 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.EditedArtist
-import com.mochyy.mochymusic.lyrics.LyricsHelper
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.SongTuning
-import com.mochyy.mochymusic.songedit.CoverPick
-import com.mochyy.mochymusic.songedit.PickedLyrics
-import com.mochyy.mochymusic.songedit.SongEditDraft
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.EditedArtist
+import com.videshkarmakar.doom.lyrics.LyricsHelper
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.SongTuning
+import com.videshkarmakar.doom.songedit.CoverPick
+import com.videshkarmakar.doom.songedit.PickedLyrics
+import com.videshkarmakar.doom.songedit.SongEditDraft
 import kotlin.math.abs
 
 // lyric offset range from the mock: two minutes early to three minutes late

@@ -1,6 +1,6 @@
 // ShareExportParts.kt
 
-package com.mochyy.mochymusic.ui.player.share.song.export
+package com.videshkarmakar.doom.ui.player.share.song.export
 
 import android.media.MediaCodecList
 import android.os.Handler

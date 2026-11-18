@@ -1,15 +1,15 @@
 // PairAttempt.kt
 
-package com.mochyy.mochymusic.ui.screens.devices
+package com.videshkarmakar.doom.ui.screens.devices
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.LinkPeer
-import com.mochyy.mochymusic.link.phone.PairException
-import com.mochyy.mochymusic.link.phone.PhoneLinkHost
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.LinkPeer
+import com.videshkarmakar.doom.link.phone.PairException
+import com.videshkarmakar.doom.link.phone.PhoneLinkHost
 
 // where a pairing attempt is, for the line under the code
 sealed interface PairUi {
@@ -18,7 +18,7 @@ sealed interface PairUi {
     data object WrongCode : PairUi
     data object Full : PairUi
     data object Failed : PairUi
-    // the device found runs an older mochy that pairs the old, unsafe way
+    // the device found runs an older doom that pairs the old, unsafe way
     data object Outdated : PairUi
     data object NoneFound : PairUi
     data class Done(val name: String) : PairUi

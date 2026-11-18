@@ -1,19 +1,19 @@
 // PillScript.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import androidx.compose.runtime.Immutable
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.lyrics.WordTimestamp
-import com.mochyy.mochymusic.ui.player.LineReading
-import com.mochyy.mochymusic.ui.player.LyricsAlignment
-import com.mochyy.mochymusic.ui.player.MinInterludeGapMs
-import com.mochyy.mochymusic.ui.player.alignmentFor
-import com.mochyy.mochymusic.ui.player.lyricsReadRtl
-import com.mochyy.mochymusic.ui.player.splitBackingVocal
-import com.mochyy.mochymusic.ui.player.usesAgentAlignment
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.lyrics.WordTimestamp
+import com.videshkarmakar.doom.ui.player.LineReading
+import com.videshkarmakar.doom.ui.player.LyricsAlignment
+import com.videshkarmakar.doom.ui.player.MinInterludeGapMs
+import com.videshkarmakar.doom.ui.player.alignmentFor
+import com.videshkarmakar.doom.ui.player.lyricsReadRtl
+import com.videshkarmakar.doom.ui.player.splitBackingVocal
+import com.videshkarmakar.doom.ui.player.usesAgentAlignment
 
 // after the last line the pill waits this long before the song's title comes back
 private const val OutroHoldMs = 1_500L

@@ -1,34 +1,34 @@
 // the module api as json both ways, for the bridge; anything missing reads as its default, so an older or newer side still gets along
 
-package com.mochyy.mochymusic.module.bridge
+package com.videshkarmakar.doom.module.bridge
 
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.DiagnosticStep
-import com.mochyy.mochymusic.module.FieldKind
-import com.mochyy.mochymusic.module.HttpRequest
-import com.mochyy.mochymusic.module.ItemListModule
-import com.mochyy.mochymusic.module.ItemProblem
-import com.mochyy.mochymusic.module.ItemsAdded
-import com.mochyy.mochymusic.module.LicenseServer
-import com.mochyy.mochymusic.module.MatchedTrack
-import com.mochyy.mochymusic.module.MochyModule
-import com.mochyy.mochymusic.module.ModuleArt
-import com.mochyy.mochymusic.module.ModuleChoice
-import com.mochyy.mochymusic.module.ModuleField
-import com.mochyy.mochymusic.module.ModuleFeature
-import com.mochyy.mochymusic.module.ModuleInfo
-import com.mochyy.mochymusic.module.ModuleItem
-import com.mochyy.mochymusic.module.ModuleServer
-import com.mochyy.mochymusic.module.ResolveResult
-import com.mochyy.mochymusic.module.ServerListModule
-import com.mochyy.mochymusic.module.ServerProblem
-import com.mochyy.mochymusic.module.SignInSpec
-import com.mochyy.mochymusic.module.SourceStream
-import com.mochyy.mochymusic.module.StreamDrm
-import com.mochyy.mochymusic.module.StreamFormat
-import com.mochyy.mochymusic.module.StreamOption
-import com.mochyy.mochymusic.module.TrackMetadata
-import com.mochyy.mochymusic.module.TrackQuery
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.DiagnosticStep
+import com.videshkarmakar.doom.module.FieldKind
+import com.videshkarmakar.doom.module.HttpRequest
+import com.videshkarmakar.doom.module.ItemListModule
+import com.videshkarmakar.doom.module.ItemProblem
+import com.videshkarmakar.doom.module.ItemsAdded
+import com.videshkarmakar.doom.module.LicenseServer
+import com.videshkarmakar.doom.module.MatchedTrack
+import com.videshkarmakar.doom.module.DoomModule
+import com.videshkarmakar.doom.module.ModuleArt
+import com.videshkarmakar.doom.module.ModuleChoice
+import com.videshkarmakar.doom.module.ModuleField
+import com.videshkarmakar.doom.module.ModuleFeature
+import com.videshkarmakar.doom.module.ModuleInfo
+import com.videshkarmakar.doom.module.ModuleItem
+import com.videshkarmakar.doom.module.ModuleServer
+import com.videshkarmakar.doom.module.ResolveResult
+import com.videshkarmakar.doom.module.ServerListModule
+import com.videshkarmakar.doom.module.ServerProblem
+import com.videshkarmakar.doom.module.SignInSpec
+import com.videshkarmakar.doom.module.SourceStream
+import com.videshkarmakar.doom.module.StreamDrm
+import com.videshkarmakar.doom.module.StreamFormat
+import com.videshkarmakar.doom.module.StreamOption
+import com.videshkarmakar.doom.module.TrackMetadata
+import com.videshkarmakar.doom.module.TrackQuery
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
@@ -67,7 +67,7 @@ internal object Wire {
 
     // ---- the module itself ----
 
-    fun aboutToJson(module: MochyModule): JsonObject = buildJsonObject {
+    fun aboutToJson(module: DoomModule): JsonObject = buildJsonObject {
         put("info", infoToJson(module.info))
         put("adds", strings(module.adds.map { it.name }))
         module.signIn?.let { put("signIn", signInToJson(it)) }
@@ -105,7 +105,7 @@ internal object Wire {
         put("author", info.author)
     }
 
-    // a module too old to say its api version reads as version 0, and mochy turns that away
+    // a module too old to say its api version reads as version 0, and doom turns that away
     private fun infoFrom(o: JsonObject) = ModuleInfo(
         id = o.text("id").orEmpty(),
         name = o.text("name").orEmpty(),
@@ -202,7 +202,7 @@ internal object Wire {
         },
     )
 
-    // a kind this mochy doesn't know yet reads as a line to type in, the one every value fits
+    // a kind this doom doesn't know yet reads as a line to type in, the one every value fits
     fun fieldsFrom(element: JsonElement): List<ModuleField> = element.objects().mapNotNull { o ->
         val id = o.text("id")?.takeIf { it.isNotBlank() } ?: return@mapNotNull null
         ModuleField(
@@ -261,7 +261,7 @@ internal object Wire {
         isrc = o.text("isrc"),
     )
 
-    /** a stream's license server can't cross as json, so it goes as an id the module hands out and mochy asks back with */
+    /** a stream's license server can't cross as json, so it goes as an id the module hands out and doom asks back with */
     fun resultToJson(result: ResolveResult, licenseId: (LicenseServer) -> String) = buildJsonObject {
         when (result) {
             is ResolveResult.Found -> put("found", streamToJson(result.stream, licenseId))
@@ -346,7 +346,7 @@ internal object Wire {
 
     fun serversFrom(element: JsonElement) = element.objects().map { ModuleServer(it.text("url").orEmpty(), it.text("name").orEmpty(), it.bool("builtIn")) }
 
-    // a problem a newer module knows and this mochy doesn't still reads as one
+    // a problem a newer module knows and this doom doesn't still reads as one
     fun serverProblemFrom(element: JsonElement): ServerProblem? =
         (element as? JsonPrimitive)?.contentOrNull?.let { enumOrNull<ServerProblem>(it) ?: ServerProblem.NotAServer }
 
@@ -385,7 +385,7 @@ internal object Wire {
         return ItemsAdded.Problem(o.text("problem")?.let { enumOrNull<ItemProblem>(it) } ?: ItemProblem.Broken)
     }
 
-    // ---- what the module reaches through mochy ----
+    // ---- what the module reaches through doom ----
 
     fun requestToJson(request: HttpRequest) = buildJsonObject {
         put("url", request.url)

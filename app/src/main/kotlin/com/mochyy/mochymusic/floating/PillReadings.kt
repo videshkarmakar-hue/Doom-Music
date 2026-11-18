@@ -1,22 +1,22 @@
 // PillReadings.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import android.content.Context
 import androidx.datastore.preferences.core.Preferences
-import com.mochyy.mochymusic.constants.LyricsRomanizeAsMainKey
-import com.mochyy.mochymusic.constants.TranslateLanguageKey
-import com.mochyy.mochymusic.constants.TranslateModeKey
-import com.mochyy.mochymusic.constants.TranslateSourceLanguageKey
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.lyrics.GoogleTranslateEngine
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.LyricsTranslationHelper
-import com.mochyy.mochymusic.lyrics.YouTubeCaptionTranslation
-import com.mochyy.mochymusic.ui.player.LineReading
-import com.mochyy.mochymusic.ui.player.RomanizeLanguageKeys
-import com.mochyy.mochymusic.ui.player.readSong
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.constants.LyricsRomanizeAsMainKey
+import com.videshkarmakar.doom.constants.TranslateLanguageKey
+import com.videshkarmakar.doom.constants.TranslateModeKey
+import com.videshkarmakar.doom.constants.TranslateSourceLanguageKey
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.lyrics.GoogleTranslateEngine
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsTranslationHelper
+import com.videshkarmakar.doom.lyrics.YouTubeCaptionTranslation
+import com.videshkarmakar.doom.ui.player.LineReading
+import com.videshkarmakar.doom.ui.player.RomanizeLanguageKeys
+import com.videshkarmakar.doom.ui.player.readSong
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
@@ -42,7 +42,7 @@ internal fun readingSettings(context: Context): Flow<ReadingSettings> = context.
     }
     .distinctUntilChanged()
 
-// every line's romanisation, worked out the way the lyrics page does it; null when the song is in nothing mochy romanises
+// every line's romanisation, worked out the way the lyrics page does it; null when the song is in nothing doom romanises
 internal suspend fun romanizedLines(lines: List<LyricsEntry>, settings: ReadingSettings): List<LineReading?>? {
     val out = arrayOfNulls<LineReading>(lines.size)
     readSong(lines, allowed = { settings.romanize[it] != false }) { index, reading -> out[index] = reading }

@@ -1,12 +1,12 @@
 // LyricsFileReader.kt
 
-package com.mochyy.mochymusic.songedit
+package com.videshkarmakar.doom.songedit
 
 import android.content.Context
 import android.net.Uri
 import android.provider.OpenableColumns
 import androidx.compose.runtime.Immutable
-import com.mochyy.mochymusic.lyrics.LyricsUtils
+import com.videshkarmakar.doom.lyrics.LyricsUtils
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

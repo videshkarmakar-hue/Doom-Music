@@ -1,6 +1,6 @@
 // AboutSourceSheet.kt
 
-package com.mochyy.mochymusic.ui.player.info
+package com.videshkarmakar.doom.ui.player.info
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
@@ -36,13 +36,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.ui.player.menu.LocalMenuSheetClose
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.player.menu.MenuSheetSurface
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.ProviderSquircle
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.ui.player.menu.LocalMenuSheetClose
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.player.menu.MenuSheetSurface
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.ProviderSquircle
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** picks where "about" reads from; each row previews what that source says, so the choice is an easy one */
 @Composable
@@ -61,7 +61,7 @@ fun AboutSourceSheet(
             InfoColumn(modifier = Modifier.widthIn(max = 600.dp)) {
                 InfoSheetTitle(stringResource(R.string.pc_about_from))
                 Spacer(Modifier.height(16.dp))
-                AboutSource.entries.filter { it != AboutSource.Modules || com.mochyy.mochymusic.modules.ModuleMetadata.sources.isNotEmpty() }.forEach { source ->
+                AboutSource.entries.filter { it != AboutSource.Modules || com.videshkarmakar.doom.modules.ModuleMetadata.sources.isNotEmpty() }.forEach { source ->
                     SourceRow(
                         source = source,
                         preview = previewOf(about, source),

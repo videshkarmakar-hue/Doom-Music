@@ -1,6 +1,6 @@
 // PhoneLibraryRoutes.kt
 
-package com.mochyy.mochymusic.link.phone
+package com.videshkarmakar.doom.link.phone
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -9,13 +9,13 @@ import androidx.media3.datasource.DataSpec
 import androidx.media3.datasource.cache.CacheDataSource
 import androidx.media3.datasource.cache.ContentMetadata
 import androidx.media3.exoplayer.offline.Download
-import com.mochyy.mochymusic.db.InternalDatabase
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.importer.transfer.snapshotDatabase
-import com.mochyy.mochymusic.link.LinkRequest
-import com.mochyy.mochymusic.link.LinkResponse
-import com.mochyy.mochymusic.link.LinkRows
-import com.mochyy.mochymusic.playback.DownloadUtil
+import com.videshkarmakar.doom.db.InternalDatabase
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.importer.transfer.snapshotDatabase
+import com.videshkarmakar.doom.link.LinkRequest
+import com.videshkarmakar.doom.link.LinkResponse
+import com.videshkarmakar.doom.link.LinkRows
+import com.videshkarmakar.doom.playback.DownloadUtil
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
@@ -185,7 +185,7 @@ internal class PhoneLibraryRoutes(
     }
 
     companion object {
-        const val SnapshotType = "application/x-mochy-library+gzip"
+        const val SnapshotType = "application/x-doom-library+gzip"
 
         // parents before the maps that point at them, so nothing is turned away by a foreign key
         val ParentTables = listOf("song", "artist", "album", "song_artist_map", "song_album_map", "album_artist_map")

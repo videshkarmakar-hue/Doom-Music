@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -44,11 +44,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.SeekBarStyle
-import com.mochyy.mochymusic.ui.component.SeekBarTrack
-import com.mochyy.mochymusic.ui.player.studio.PlayerMenuAction
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.SeekBarStyle
+import com.videshkarmakar.doom.ui.component.SeekBarTrack
+import com.videshkarmakar.doom.ui.player.studio.PlayerMenuAction
 import kotlin.math.roundToInt
 
 /** the bar's own height, from the volume line to the bottom of its buttons */

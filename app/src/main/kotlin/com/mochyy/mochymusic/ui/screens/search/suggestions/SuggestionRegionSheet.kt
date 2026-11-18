@@ -1,6 +1,6 @@
 // SuggestionRegionSheet.kt
 
-package com.mochyy.mochymusic.ui.screens.search.suggestions
+package com.videshkarmakar.doom.ui.screens.search.suggestions
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.clickable
@@ -24,9 +24,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.SuggestionRegionSlugToName
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.SuggestionRegionSlugToName
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

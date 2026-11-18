@@ -1,6 +1,6 @@
 // UsbDacAccess.kt
 
-package com.mochyy.mochymusic.playback.audio.pass
+package com.videshkarmakar.doom.playback.audio.pass
 
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -11,7 +11,7 @@ import android.hardware.usb.UsbDevice
 import android.hardware.usb.UsbManager
 import android.os.Build
 import androidx.core.content.ContextCompat
-import com.mochyy.mochymusic.playback.audio.UsbDacReader
+import com.videshkarmakar.doom.playback.audio.UsbDacReader
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -30,7 +30,7 @@ internal class UsbDacAccess(context: Context, private val onChanged: () -> Unit)
     /** told when a dac goes away, so a stream to it stops at once instead of at its next write */
     var onDetached: ((Int) -> Unit)? = null
 
-    /** null with no dac plugged in, else whether android lets mochy open it */
+    /** null with no dac plugged in, else whether android lets doom open it */
     private val _permitted = MutableStateFlow<Boolean?>(null)
     val permitted: StateFlow<Boolean?> = _permitted.asStateFlow()
 
@@ -78,7 +78,7 @@ internal class UsbDacAccess(context: Context, private val onChanged: () -> Unit)
         _permitted.value = device()?.let(::hasPermission)
     }
 
-    /** shows android's "allow mochy to access" dialog, once per plug */
+    /** shows android's "allow doom to access" dialog, once per plug */
     @Synchronized
     fun requestPermission() {
         val usb = manager ?: return

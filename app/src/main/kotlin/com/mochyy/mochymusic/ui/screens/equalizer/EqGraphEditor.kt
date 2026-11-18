@@ -1,6 +1,6 @@
 // the equalizer's graph tab: drag nodes for frequency and gain, double tap to add one
 
-package com.mochyy.mochymusic.ui.screens.equalizer
+package com.videshkarmakar.doom.ui.screens.equalizer
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateFloatAsState
@@ -57,27 +57,27 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.eq.audio.AudioTap
-import com.mochyy.mochymusic.eq.audio.ResponseCurve
-import com.mochyy.mochymusic.eq.audio.SpectrumAnalyzer
-import com.mochyy.mochymusic.eq.data.FilterType
-import com.mochyy.mochymusic.eq.data.ParametricEQBand
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.screens.audiolab.LabCard
-import com.mochyy.mochymusic.ui.screens.audiolab.LabChip
-import com.mochyy.mochymusic.ui.screens.audiolab.LabChips
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSectionLabel
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSlider
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberLabTime
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberOnScreen
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberPicturesHeld
-import com.mochyy.mochymusic.ui.screens.audiolab.trackOnScreen
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.viewmodels.frequencyLabel
-import com.mochyy.mochymusic.viewmodels.gainLabel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.eq.audio.AudioTap
+import com.videshkarmakar.doom.eq.audio.ResponseCurve
+import com.videshkarmakar.doom.eq.audio.SpectrumAnalyzer
+import com.videshkarmakar.doom.eq.data.FilterType
+import com.videshkarmakar.doom.eq.data.ParametricEQBand
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.screens.audiolab.LabCard
+import com.videshkarmakar.doom.ui.screens.audiolab.LabChip
+import com.videshkarmakar.doom.ui.screens.audiolab.LabChips
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSectionLabel
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSlider
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberLabTime
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberOnScreen
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberPicturesHeld
+import com.videshkarmakar.doom.ui.screens.audiolab.trackOnScreen
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.viewmodels.frequencyLabel
+import com.videshkarmakar.doom.viewmodels.gainLabel
 import kotlin.math.abs
 import kotlin.math.hypot
 import kotlin.math.log10

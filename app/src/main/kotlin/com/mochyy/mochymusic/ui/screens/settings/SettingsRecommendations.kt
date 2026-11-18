@@ -1,6 +1,6 @@
 // the recommended card at the top of settings: tips for things you haven't set up yet, the ones that fit right now first
 
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
 import android.content.Context
 import android.media.AudioManager
@@ -44,37 +44,37 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.getSystemService
 import androidx.datastore.preferences.core.Preferences
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AudioQualityKey
-import com.mochyy.mochymusic.constants.BlurQualityKey
-import com.mochyy.mochymusic.constants.CanvasThumbnailAnimationKey
-import com.mochyy.mochymusic.constants.CrossmixMode
-import com.mochyy.mochymusic.constants.DataSaverKey
-import com.mochyy.mochymusic.constants.DiscordAccessTokenKey
-import com.mochyy.mochymusic.constants.FloatingLyricsKey
-import com.mochyy.mochymusic.constants.HomeStyleKey
-import com.mochyy.mochymusic.constants.LarpModeKey
-import com.mochyy.mochymusic.constants.LastFMSessionKey
-import com.mochyy.mochymusic.constants.LibreFmSessionKey
-import com.mochyy.mochymusic.constants.LyricsMotionStyleKey
-import com.mochyy.mochymusic.constants.PauseOnMute
-import com.mochyy.mochymusic.constants.PlayerStyleKey
-import com.mochyy.mochymusic.constants.ResumeOnBluetoothConnectKey
-import com.mochyy.mochymusic.constants.SwipeLeftActionKey
-import com.mochyy.mochymusic.constants.SwipeRightActionKey
-import com.mochyy.mochymusic.constants.transitionModeOf
-import com.mochyy.mochymusic.di.AudioLabEntryPoint
-import com.mochyy.mochymusic.eq.EqSettings
-import com.mochyy.mochymusic.playback.audio.AudioOutputs
-import com.mochyy.mochymusic.scrobble.ScrobbleSite
-import com.mochyy.mochymusic.ui.component.SettingsHighlight
-import com.mochyy.mochymusic.ui.screens.devices.DeviceIntegrationRoute
-import com.mochyy.mochymusic.ui.screens.settings.importsync.ImportSyncRoute
-import com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordRoute
-import com.mochyy.mochymusic.ui.screens.settings.integrations.scrobbleServiceRoute
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.PreferencesCache
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AudioQualityKey
+import com.videshkarmakar.doom.constants.BlurQualityKey
+import com.videshkarmakar.doom.constants.CanvasThumbnailAnimationKey
+import com.videshkarmakar.doom.constants.CrossmixMode
+import com.videshkarmakar.doom.constants.DataSaverKey
+import com.videshkarmakar.doom.constants.DiscordAccessTokenKey
+import com.videshkarmakar.doom.constants.FloatingLyricsKey
+import com.videshkarmakar.doom.constants.HomeStyleKey
+import com.videshkarmakar.doom.constants.LarpModeKey
+import com.videshkarmakar.doom.constants.LastFMSessionKey
+import com.videshkarmakar.doom.constants.LibreFmSessionKey
+import com.videshkarmakar.doom.constants.LyricsMotionStyleKey
+import com.videshkarmakar.doom.constants.PauseOnMute
+import com.videshkarmakar.doom.constants.PlayerStyleKey
+import com.videshkarmakar.doom.constants.ResumeOnBluetoothConnectKey
+import com.videshkarmakar.doom.constants.SwipeLeftActionKey
+import com.videshkarmakar.doom.constants.SwipeRightActionKey
+import com.videshkarmakar.doom.constants.transitionModeOf
+import com.videshkarmakar.doom.di.AudioLabEntryPoint
+import com.videshkarmakar.doom.eq.EqSettings
+import com.videshkarmakar.doom.playback.audio.AudioOutputs
+import com.videshkarmakar.doom.scrobble.ScrobbleSite
+import com.videshkarmakar.doom.ui.component.SettingsHighlight
+import com.videshkarmakar.doom.ui.screens.devices.DeviceIntegrationRoute
+import com.videshkarmakar.doom.ui.screens.settings.importsync.ImportSyncRoute
+import com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordRoute
+import com.videshkarmakar.doom.ui.screens.settings.integrations.scrobbleServiceRoute
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.PreferencesCache
+import com.videshkarmakar.doom.utils.dataStore
 import dagger.hilt.android.EntryPointAccessors
 
 // what the tips look at before they show; settings and audio lab are already in memory, the network and outputs are one quick ask each

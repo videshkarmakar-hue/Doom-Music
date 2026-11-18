@@ -1,12 +1,12 @@
 // DeviceDecoders.kt
 
-package com.mochyy.mochymusic.modules
+package com.videshkarmakar.doom.modules
 
 import android.media.MediaCodecList
 import androidx.annotation.OptIn
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.decoder.ffmpeg.FfmpegLibrary
-import com.mochyy.mochymusic.module.SourceStream
+import com.videshkarmakar.doom.module.SourceStream
 import java.util.concurrent.ConcurrentHashMap
 
 /** whether a module's stream can be decoded here, by the phone or our ffmpeg; one nothing takes plays on in silence, so it's passed over (docs/notes/audio-output.md) */

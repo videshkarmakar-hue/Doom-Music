@@ -4,7 +4,7 @@
 // them) are playlist pages with the artist's banner as their cover. These are the parts they share:
 // the title line with the grid / list toggles, the two-up grid, and its square and video cells.
 
-package com.mochyy.mochymusic.ui.screens.artist
+package com.videshkarmakar.doom.ui.screens.artist
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
@@ -48,22 +48,22 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.BoneColor
-import com.mochyy.mochymusic.ui.component.HomeCardHighlight
-import com.mochyy.mochymusic.ui.component.ItemThumbnail
-import com.mochyy.mochymusic.ui.component.containerTransformSource
-import com.mochyy.mochymusic.ui.component.detail.PillContent
-import com.mochyy.mochymusic.ui.component.detail.PillFill
-import com.mochyy.mochymusic.ui.component.detail.PlaylistInset
-import com.mochyy.mochymusic.ui.component.detail.PlaylistStatsStyle
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTitleStyle
-import com.mochyy.mochymusic.ui.component.detail.TrackSubtitleStyle
-import com.mochyy.mochymusic.ui.component.detail.TrackTitleStyle
-import com.mochyy.mochymusic.ui.component.detail.playlistCoverHeight
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.ArtistPageCache
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.BoneColor
+import com.videshkarmakar.doom.ui.component.HomeCardHighlight
+import com.videshkarmakar.doom.ui.component.ItemThumbnail
+import com.videshkarmakar.doom.ui.component.containerTransformSource
+import com.videshkarmakar.doom.ui.component.detail.PillContent
+import com.videshkarmakar.doom.ui.component.detail.PillFill
+import com.videshkarmakar.doom.ui.component.detail.PlaylistInset
+import com.videshkarmakar.doom.ui.component.detail.PlaylistStatsStyle
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTitleStyle
+import com.videshkarmakar.doom.ui.component.detail.TrackSubtitleStyle
+import com.videshkarmakar.doom.ui.component.detail.TrackTitleStyle
+import com.videshkarmakar.doom.ui.component.detail.playlistCoverHeight
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.ArtistPageCache
 
 private val CellShape = RoundedCornerShape(18.dp)
 internal val SubpageGridGap = 14.dp
@@ -284,7 +284,7 @@ internal fun SubpageVideoCell(
                         .fillMaxSize()
                         .background(Brush.verticalGradient(listOf(Color.Black.copy(alpha = 0.1f), Color.Black.copy(alpha = 0.45f))))
                 )
-                com.mochyy.mochymusic.ui.component.PlayingIndicatorBox(
+                com.videshkarmakar.doom.ui.component.PlayingIndicatorBox(
                     isActive = true,
                     playWhenReady = isPlaying,
                     shape = RoundedCornerShape(14.dp),

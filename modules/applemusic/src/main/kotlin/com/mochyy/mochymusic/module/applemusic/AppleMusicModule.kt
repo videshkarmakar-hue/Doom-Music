@@ -1,24 +1,24 @@
-package com.mochyy.mochymusic.module.applemusic
+package com.videshkarmakar.doom.module.applemusic
 
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.DiagnosticStep
-import com.mochyy.mochymusic.module.HttpRequest
-import com.mochyy.mochymusic.module.HttpResponse
-import com.mochyy.mochymusic.module.LicenseServer
-import com.mochyy.mochymusic.module.MatchedTrack
-import com.mochyy.mochymusic.module.ModuleChoice
-import com.mochyy.mochymusic.module.ModuleHost
-import com.mochyy.mochymusic.module.ModuleInfo
-import com.mochyy.mochymusic.module.ResolveResult
-import com.mochyy.mochymusic.module.SignInSpec
-import com.mochyy.mochymusic.module.SourceModule
-import com.mochyy.mochymusic.module.SourceStream
-import com.mochyy.mochymusic.module.StreamDrm
-import com.mochyy.mochymusic.module.StreamFormat
-import com.mochyy.mochymusic.module.StreamOption
-import com.mochyy.mochymusic.module.TrackQuery
-import com.mochyy.mochymusic.module.CatalogTrack
-import com.mochyy.mochymusic.module.TrackMatcher
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.DiagnosticStep
+import com.videshkarmakar.doom.module.HttpRequest
+import com.videshkarmakar.doom.module.HttpResponse
+import com.videshkarmakar.doom.module.LicenseServer
+import com.videshkarmakar.doom.module.MatchedTrack
+import com.videshkarmakar.doom.module.ModuleChoice
+import com.videshkarmakar.doom.module.ModuleHost
+import com.videshkarmakar.doom.module.ModuleInfo
+import com.videshkarmakar.doom.module.ResolveResult
+import com.videshkarmakar.doom.module.SignInSpec
+import com.videshkarmakar.doom.module.SourceModule
+import com.videshkarmakar.doom.module.SourceStream
+import com.videshkarmakar.doom.module.StreamDrm
+import com.videshkarmakar.doom.module.StreamFormat
+import com.videshkarmakar.doom.module.StreamOption
+import com.videshkarmakar.doom.module.TrackQuery
+import com.videshkarmakar.doom.module.CatalogTrack
+import com.videshkarmakar.doom.module.TrackMatcher
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
@@ -35,13 +35,13 @@ import java.util.Base64
 import java.util.concurrent.ConcurrentHashMap
 
 /**
- * Plays the user's own Apple Music subscription inside Mochy.
+ * Plays the user's own Apple Music subscription inside Doom.
  *
  * Signing in happens on music.apple.com itself; the module keeps the web player's developer token
  * and the account's music-user token. A song is found in the catalog by title, artist and length,
  * its web-playback stream is opened, and the device's Widevine CDM decrypts it inside the
  * platform, licensed by Apple's web license server exactly as the web player in Chrome is.
- * Mochy's own player does the playing, so every effect applies.
+ * Doom's own player does the playing, so every effect applies.
  *
  * What it can't do: lossless, Atmos and Apple's Spatial mix (only in streams encoded for FairPlay,
  * Apple's own DRM) and downloads (no offline licenses; the audio is never decrypted outside the
@@ -53,7 +53,7 @@ class AppleMusicModule : SourceModule {
         id = Id,
         name = "Apple Music",
         version = "1.0",
-        description = "Plays your Apple Music subscription in Mochy, in AAC 256, with every Audio Lab effect",
+        description = "Plays your Apple Music subscription in Doom, in AAC 256, with every Audio Lab effect",
     )
 
     private lateinit var host: ModuleHost
@@ -71,7 +71,7 @@ class AppleMusicModule : SourceModule {
         sessionOrigins = setOf("https://music.apple.com"),
         desktopSite = false,
         title = "Sign in to Apple Music",
-        subtitle = "Your subscription plays in Mochy",
+        subtitle = "Your subscription plays in Doom",
     )
 
     override val choices = listOf(
@@ -185,7 +185,7 @@ class AppleMusicModule : SourceModule {
         val ranked = matches[key]?.let { listOf(TrackMatcher.Scored(it, 1f)) } ?: match(track, region)
         if (ranked.isEmpty()) {
             misses[key] = System.currentTimeMillis()
-            report(DiagnosticStep("Find the song", false, "No matching recording of “${track.title}” in $region"))
+            report(DiagnosticStep("Find the song", false, "No matching recording of “${track.title}� in $region"))
             return ResolveResult.NotFound("No matching recording on Apple Music")
         }
         val best = ranked.first()

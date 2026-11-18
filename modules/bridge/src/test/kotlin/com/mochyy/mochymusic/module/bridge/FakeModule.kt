@@ -1,35 +1,35 @@
-package com.mochyy.mochymusic.module.bridge
+package com.videshkarmakar.doom.module.bridge
 
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.DiagnosticStep
-import com.mochyy.mochymusic.module.FieldKind
-import com.mochyy.mochymusic.module.HttpRequest
-import com.mochyy.mochymusic.module.ItemListModule
-import com.mochyy.mochymusic.module.ItemProblem
-import com.mochyy.mochymusic.module.ItemsAdded
-import com.mochyy.mochymusic.module.LicenseServer
-import com.mochyy.mochymusic.module.MatchedTrack
-import com.mochyy.mochymusic.module.MetadataModule
-import com.mochyy.mochymusic.module.ModuleArt
-import com.mochyy.mochymusic.module.ModuleChoice
-import com.mochyy.mochymusic.module.ModuleFeature
-import com.mochyy.mochymusic.module.ModuleField
-import com.mochyy.mochymusic.module.ModuleFields
-import com.mochyy.mochymusic.module.ModuleHost
-import com.mochyy.mochymusic.module.ModuleInfo
-import com.mochyy.mochymusic.module.ModuleItem
-import com.mochyy.mochymusic.module.ResolveResult
-import com.mochyy.mochymusic.module.SourceModule
-import com.mochyy.mochymusic.module.SourceStream
-import com.mochyy.mochymusic.module.StreamDrm
-import com.mochyy.mochymusic.module.StreamFormat
-import com.mochyy.mochymusic.module.StreamOption
-import com.mochyy.mochymusic.module.TrackMetadata
-import com.mochyy.mochymusic.module.TrackQuery
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.DiagnosticStep
+import com.videshkarmakar.doom.module.FieldKind
+import com.videshkarmakar.doom.module.HttpRequest
+import com.videshkarmakar.doom.module.ItemListModule
+import com.videshkarmakar.doom.module.ItemProblem
+import com.videshkarmakar.doom.module.ItemsAdded
+import com.videshkarmakar.doom.module.LicenseServer
+import com.videshkarmakar.doom.module.MatchedTrack
+import com.videshkarmakar.doom.module.MetadataModule
+import com.videshkarmakar.doom.module.ModuleArt
+import com.videshkarmakar.doom.module.ModuleChoice
+import com.videshkarmakar.doom.module.ModuleFeature
+import com.videshkarmakar.doom.module.ModuleField
+import com.videshkarmakar.doom.module.ModuleFields
+import com.videshkarmakar.doom.module.ModuleHost
+import com.videshkarmakar.doom.module.ModuleInfo
+import com.videshkarmakar.doom.module.ModuleItem
+import com.videshkarmakar.doom.module.ResolveResult
+import com.videshkarmakar.doom.module.SourceModule
+import com.videshkarmakar.doom.module.SourceStream
+import com.videshkarmakar.doom.module.StreamDrm
+import com.videshkarmakar.doom.module.StreamFormat
+import com.videshkarmakar.doom.module.StreamOption
+import com.videshkarmakar.doom.module.TrackMetadata
+import com.videshkarmakar.doom.module.TrackQuery
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.awaitCancellation
 
-// a module the bridge test loads on its own class loader, it reports back only through mochy's host
+// a module the bridge test loads on its own class loader, it reports back only through doom's host
 class FakeModule : SourceModule, ItemListModule {
 
     override val info = ModuleInfo("fake", "Fake", "1.0", "Answers the bridge test")
@@ -97,7 +97,7 @@ class FakeModule : SourceModule, ItemListModule {
     }
 }
 
-// a module built against an older api, which mochy has to turn away
+// a module built against an older api, which doom has to turn away
 class OldModule : SourceModule {
     override val info = ModuleInfo("old", "Old", "1.0", "Too old", apiVersion = 2)
     override fun attach(host: ModuleHost) = Unit

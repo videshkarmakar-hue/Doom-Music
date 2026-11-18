@@ -1,19 +1,19 @@
 // where songs play and download from: the provider order and the download order over youtube and the modules that add audio, and the walk down each
 
-package com.mochyy.mochymusic.modules
+package com.videshkarmakar.doom.modules
 
 import android.content.Context
 import androidx.core.content.edit
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.ModuleFeature
-import com.mochyy.mochymusic.module.ResolveResult
-import com.mochyy.mochymusic.module.SourceModule
-import com.mochyy.mochymusic.module.SourceStream
-import com.mochyy.mochymusic.module.StreamFormat
-import com.mochyy.mochymusic.module.TrackQuery
-import com.mochyy.mochymusic.module.applemusic.AppleMusicModule
-import com.mochyy.mochymusic.module.monochrome.MonochromeModule
-import com.mochyy.mochymusic.utils.DataSaver
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.ModuleFeature
+import com.videshkarmakar.doom.module.ResolveResult
+import com.videshkarmakar.doom.module.SourceModule
+import com.videshkarmakar.doom.module.SourceStream
+import com.videshkarmakar.doom.module.StreamFormat
+import com.videshkarmakar.doom.module.TrackQuery
+import com.videshkarmakar.doom.module.applemusic.AppleMusicModule
+import com.videshkarmakar.doom.module.monochrome.MonochromeModule
+import com.videshkarmakar.doom.utils.DataSaver
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope

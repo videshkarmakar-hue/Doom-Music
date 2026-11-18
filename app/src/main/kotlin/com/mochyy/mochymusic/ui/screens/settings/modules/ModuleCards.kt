@@ -1,6 +1,6 @@
 // the cards near the top of a module's page: its switch, where it's from, its account and server checks, and what data saver does to it
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import android.os.Build
 import androidx.compose.foundation.background
@@ -31,18 +31,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.ItemListModule
-import com.mochyy.mochymusic.module.ModuleFeature
-import com.mochyy.mochymusic.modules.ModuleEntry
-import com.mochyy.mochymusic.modules.ModuleOrigin
-import com.mochyy.mochymusic.modules.SourceModules
-import com.mochyy.mochymusic.modules.skin.ActiveSkin
-import com.mochyy.mochymusic.modules.skin.SkinSource
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.rememberDataSaverActive
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.ItemListModule
+import com.videshkarmakar.doom.module.ModuleFeature
+import com.videshkarmakar.doom.modules.ModuleEntry
+import com.videshkarmakar.doom.modules.ModuleOrigin
+import com.videshkarmakar.doom.modules.SourceModules
+import com.videshkarmakar.doom.modules.skin.ActiveSkin
+import com.videshkarmakar.doom.modules.skin.SkinSource
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.rememberDataSaverActive
 import java.text.DateFormat
 import java.util.Date
 

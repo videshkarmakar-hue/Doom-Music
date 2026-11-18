@@ -1,6 +1,6 @@
 // TvPhoneScreen.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -41,15 +41,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.PhoneFiles
-import com.mochyy.mochymusic.link.tv.PairTarget
-import com.mochyy.mochymusic.link.tv.PhoneSyncState
-import com.mochyy.mochymusic.link.tv.TvPairing
-import com.mochyy.mochymusic.link.tv.TvPhoneSync
-import com.mochyy.mochymusic.link.tv.TvProfile
-import com.mochyy.mochymusic.link.tv.TvProfiles
-import com.mochyy.mochymusic.viewmodels.LibraryHomeViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.PhoneFiles
+import com.videshkarmakar.doom.link.tv.PairTarget
+import com.videshkarmakar.doom.link.tv.PhoneSyncState
+import com.videshkarmakar.doom.link.tv.TvPairing
+import com.videshkarmakar.doom.link.tv.TvPhoneSync
+import com.videshkarmakar.doom.link.tv.TvProfile
+import com.videshkarmakar.doom.link.tv.TvProfiles
+import com.videshkarmakar.doom.viewmodels.LibraryHomeViewModel
 import kotlinx.coroutines.flow.first
 
 // the tv's side of the phone link, handed to every page that shows or starts it
@@ -202,7 +202,7 @@ private fun TvPhonePairing(profile: TvProfile) {
 internal fun TvPairingSteps(pairing: TvPairing, modifier: Modifier = Modifier) {
     val code by pairing.code.collectAsState()
     // the phone finds this code over the wi-fi, which android 17 asks about first
-    com.mochyy.mochymusic.link.AskForLocalNetwork(onGranted = { pairing.advertiseAgain() })
+    com.videshkarmakar.doom.link.AskForLocalNetwork(onGranted = { pairing.advertiseAgain() })
     val seen = remember { HashSet<Any>() }
     Column(modifier) {
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {

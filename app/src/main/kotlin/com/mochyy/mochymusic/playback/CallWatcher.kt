@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.content.Context
 import android.media.AudioManager

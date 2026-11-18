@@ -1,6 +1,6 @@
 // a module player's own animations: keyframes, the clocks that drive them, states that blend in and out, and one-shot animations on events
 
-package com.mochyy.mochymusic.modules.skin
+package com.videshkarmakar.doom.modules.skin
 
 import androidx.compose.animation.core.Easing
 import androidx.compose.runtime.Immutable

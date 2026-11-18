@@ -1,6 +1,6 @@
 // the capsule beside the back button that switches between people on dev spaces, its pill follows the pager while you swipe
 
-package com.mochyy.mochymusic.ui.screens.settings.devspace
+package com.videshkarmakar.doom.ui.screens.settings.devspace
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -42,11 +42,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
 import androidx.compose.ui.util.lerp
-import com.mochyy.mochymusic.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.component.pressBounce
 import kotlin.math.abs
 import kotlin.math.ceil
 import kotlin.math.floor
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 internal val DevBarButtonFill = Color.White.copy(alpha = 0.22f)
 private val PickerHeight = 36.dp

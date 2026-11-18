@@ -1,10 +1,10 @@
 // YouTubeArtistMenu.kt
 
-package com.mochyy.mochymusic.ui.menu
+package com.videshkarmakar.doom.ui.menu
 
-import com.mochyy.mochymusic.ui.component.SheetHeaderGap
-import com.mochyy.mochymusic.ui.component.SheetHeaderButton
-import com.mochyy.mochymusic.ui.component.SheetHeader
+import com.videshkarmakar.doom.ui.component.SheetHeaderGap
+import com.videshkarmakar.doom.ui.component.SheetHeaderButton
+import com.videshkarmakar.doom.ui.component.SheetHeader
 import android.content.Intent
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.PaddingValues
@@ -31,17 +31,17 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.music.innertube.models.ArtistItem
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.SpeedDialItem
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.Material3MenuGroup
-import com.mochyy.mochymusic.ui.component.Material3MenuItemData
-import com.mochyy.mochymusic.ui.component.NewAction
-import com.mochyy.mochymusic.ui.component.NewActionGrid
-import com.mochyy.mochymusic.ui.component.YouTubeListItem
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.SpeedDialItem
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.Material3MenuGroup
+import com.videshkarmakar.doom.ui.component.Material3MenuItemData
+import com.videshkarmakar.doom.ui.component.NewAction
+import com.videshkarmakar.doom.ui.component.NewActionGrid
+import com.videshkarmakar.doom.ui.component.YouTubeListItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.rememberCoroutineScope

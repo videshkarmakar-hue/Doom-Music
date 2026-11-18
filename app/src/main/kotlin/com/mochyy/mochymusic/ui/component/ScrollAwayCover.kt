@@ -1,6 +1,6 @@
 // ScrollAwayCover.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.graphics.Shader
 import android.os.Build
@@ -21,10 +21,10 @@ import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.layer.drawLayer
 import androidx.compose.ui.graphics.rememberGraphicsLayer
-import com.mochyy.mochymusic.constants.BlurQuality
-import com.mochyy.mochymusic.constants.DisableBlurKey
-import com.mochyy.mochymusic.constants.ElementBlurKey
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.BlurQuality
+import com.videshkarmakar.doom.constants.DisableBlurKey
+import com.videshkarmakar.doom.constants.ElementBlurKey
+import com.videshkarmakar.doom.utils.rememberPreference
 
 private const val CoverZoom = 0.22f
 private const val CoverSoftBy = 0.55f

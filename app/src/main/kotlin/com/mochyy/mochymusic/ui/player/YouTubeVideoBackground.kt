@@ -1,6 +1,6 @@
 // YouTubeVideoBackground.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,12 +9,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.player.video.DriveYouTubeVideo
-import com.mochyy.mochymusic.ui.player.video.VideoLoadingIndicator
-import com.mochyy.mochymusic.ui.player.video.YouTubeVideoSurface
-import com.mochyy.mochymusic.ui.player.video.rememberYouTubeVideoSession
-import com.mochyy.mochymusic.ui.utils.rememberSettled
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.player.video.DriveYouTubeVideo
+import com.videshkarmakar.doom.ui.player.video.VideoLoadingIndicator
+import com.videshkarmakar.doom.ui.player.video.YouTubeVideoSurface
+import com.videshkarmakar.doom.ui.player.video.rememberYouTubeVideoSession
+import com.videshkarmakar.doom.ui.utils.rememberSettled
 
 /** how long a song has to stay before its video starts */
 private const val VideoSettleMs = 700L

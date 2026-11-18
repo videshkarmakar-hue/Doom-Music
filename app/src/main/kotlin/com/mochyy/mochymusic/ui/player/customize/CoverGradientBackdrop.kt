@@ -1,6 +1,6 @@
 // CoverGradientBackdrop.kt
 
-package com.mochyy.mochymusic.ui.player.customize
+package com.videshkarmakar.doom.ui.player.customize
 
 import androidx.compose.animation.core.withInfiniteAnimationFrameNanos
 import androidx.compose.foundation.background
@@ -22,14 +22,14 @@ import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.request.transformations
 import coil3.size.Size as CoilSize
-import com.mochyy.mochymusic.ui.player.BackdropBlurTransformation
-import com.mochyy.mochymusic.ui.player.LocalCrossfadeShown
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.ui.player.BackdropBlurTransformation
+import com.videshkarmakar.doom.ui.player.LocalCrossfadeShown
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.isActive
-import com.mochyy.mochymusic.ui.component.createAgslShader
-import com.mochyy.mochymusic.ui.component.setAgslUniform
-import com.mochyy.mochymusic.ui.component.asAgslPaintShader
-import com.mochyy.mochymusic.ui.component.setAgslInputShader
+import com.videshkarmakar.doom.ui.component.createAgslShader
+import com.videshkarmakar.doom.ui.component.setAgslUniform
+import com.videshkarmakar.doom.ui.component.asAgslPaintShader
+import com.videshkarmakar.doom.ui.component.setAgslInputShader
 import coil3.toBitmap
 import coil3.imageLoader
 import androidx.compose.ui.graphics.ShaderBrush

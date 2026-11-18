@@ -1,6 +1,6 @@
 // StreamInfoSheet.kt
 
-package com.mochyy.mochymusic.ui.player.info
+package com.videshkarmakar.doom.ui.player.info
 
 import android.content.Context
 import android.media.AudioManager
@@ -41,23 +41,23 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AudioNormalizationKey
-import com.mochyy.mochymusic.constants.CrossmixMode
-import com.mochyy.mochymusic.constants.CrossmixModeKey
-import com.mochyy.mochymusic.constants.HiResOutputKey
-import com.mochyy.mochymusic.constants.MusicHapticsEnabledKey
-import com.mochyy.mochymusic.constants.SkipSilenceKey
-import com.mochyy.mochymusic.constants.DefaultTransitionMode
-import com.mochyy.mochymusic.playback.MusicService
-import com.mochyy.mochymusic.playback.PlayingFrom
-import com.mochyy.mochymusic.playback.StreamDetails
-import com.mochyy.mochymusic.ui.player.menu.LocalMenuSheetStack
-import com.mochyy.mochymusic.ui.player.menu.MenuSheetSurface
-import com.mochyy.mochymusic.ui.player.menu.SongHeader
-import com.mochyy.mochymusic.ui.player.menu.rememberMenuSheetStack
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AudioNormalizationKey
+import com.videshkarmakar.doom.constants.CrossmixMode
+import com.videshkarmakar.doom.constants.CrossmixModeKey
+import com.videshkarmakar.doom.constants.HiResOutputKey
+import com.videshkarmakar.doom.constants.MusicHapticsEnabledKey
+import com.videshkarmakar.doom.constants.SkipSilenceKey
+import com.videshkarmakar.doom.constants.DefaultTransitionMode
+import com.videshkarmakar.doom.playback.MusicService
+import com.videshkarmakar.doom.playback.PlayingFrom
+import com.videshkarmakar.doom.playback.StreamDetails
+import com.videshkarmakar.doom.ui.player.menu.LocalMenuSheetStack
+import com.videshkarmakar.doom.ui.player.menu.MenuSheetSurface
+import com.videshkarmakar.doom.ui.player.menu.SongHeader
+import com.videshkarmakar.doom.ui.player.menu.rememberMenuSheetStack
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -141,8 +141,8 @@ private fun ProviderRow(service: MusicService, from: PlayingFrom?, onForce: () -
                 overflow = TextOverflow.Ellipsis,
             )
             // larping, the source swears it's handing over the master
-            val larp = com.mochyy.mochymusic.ui.player.rememberLarpMode()
-            val quality = if (larp != null) com.mochyy.mochymusic.ui.player.larpQualityText(larp) else from.quality
+            val larp = com.videshkarmakar.doom.ui.player.rememberLarpMode()
+            val quality = if (larp != null) com.videshkarmakar.doom.ui.player.larpQualityText(larp) else from.quality
             quality?.let {
                 Text(text = it, color = InfoMuted, fontSize = 12.sp, lineHeight = 16.sp)
             }
@@ -226,7 +226,7 @@ private fun rememberStatCards(service: MusicService, mediaId: String, durationMs
         details = details.takeIf { it.mediaId == null || it.mediaId == mediaId } ?: StreamDetails(mediaId = mediaId),
         facts = facts,
         // youtube's record only describes youtube's stream
-        youtubeFormat = format?.takeIf { from?.providerId == com.mochyy.mochymusic.modules.SourceModules.YouTubeId },
+        youtubeFormat = format?.takeIf { from?.providerId == com.videshkarmakar.doom.modules.SourceModules.YouTubeId },
         from = from,
         durationMs = durationMs,
         playerVolume = volume,
@@ -255,8 +255,8 @@ private fun rememberStatCards(service: MusicService, mediaId: String, durationMs
     )
     val cards = remember(input) { buildStatCards(context, input) }
     // larping, the nerds get the level's gear story instead
-    val larp = com.mochyy.mochymusic.ui.player.rememberLarpMode()
-    return if (larp != null) com.mochyy.mochymusic.ui.player.larpStatCards(larp) else cards
+    val larp = com.videshkarmakar.doom.ui.player.rememberLarpMode()
+    return if (larp != null) com.videshkarmakar.doom.ui.player.larpStatCards(larp) else cards
 }
 
 private val hardwareDecoders = ConcurrentHashMap<String, Boolean>()

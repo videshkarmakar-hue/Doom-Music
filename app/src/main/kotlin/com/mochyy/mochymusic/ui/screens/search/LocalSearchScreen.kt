@@ -1,6 +1,6 @@
 // LocalSearchScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.search
+package com.videshkarmakar.doom.ui.screens.search
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -44,28 +44,28 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.CONTENT_TYPE_LIST
-import com.mochyy.mochymusic.constants.ListItemHeight
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.ui.component.AlbumListItem
-import com.mochyy.mochymusic.ui.component.ArtistListItem
-import com.mochyy.mochymusic.ui.component.ChipsRow
-import com.mochyy.mochymusic.ui.component.EmptyPlaceholder
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.PlaylistListItem
-import com.mochyy.mochymusic.ui.component.SongListItem
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.utils.listItemShape
-import com.mochyy.mochymusic.viewmodels.LocalFilter
-import com.mochyy.mochymusic.viewmodels.LocalSearchViewModel
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.CONTENT_TYPE_LIST
+import com.videshkarmakar.doom.constants.ListItemHeight
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.ui.component.AlbumListItem
+import com.videshkarmakar.doom.ui.component.ArtistListItem
+import com.videshkarmakar.doom.ui.component.ChipsRow
+import com.videshkarmakar.doom.ui.component.EmptyPlaceholder
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.PlaylistListItem
+import com.videshkarmakar.doom.ui.component.SongListItem
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.utils.listItemShape
+import com.videshkarmakar.doom.viewmodels.LocalFilter
+import com.videshkarmakar.doom.viewmodels.LocalSearchViewModel
 import kotlinx.coroutines.flow.drop
 
 @OptIn(ExperimentalFoundationApi::class)

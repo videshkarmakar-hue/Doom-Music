@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -28,10 +28,10 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.lerp
-import com.mochyy.mochymusic.LocalGlassState
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.extensions.toggleRepeatMode
+import com.videshkarmakar.doom.LocalGlassState
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.extensions.toggleRepeatMode
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -49,8 +49,8 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.ui.screens.Screens
-import com.mochyy.mochymusic.ui.utils.stableSystemBars
+import com.videshkarmakar.doom.ui.screens.Screens
+import com.videshkarmakar.doom.ui.utils.stableSystemBars
 
 // where the mini player's pill sits across the screen, and whether the wide bar's one glass already lies under it
 @Immutable
@@ -172,7 +172,7 @@ fun WideBarBackground(
 ) {
     val glassState = LocalGlassState.current ?: remember { GlassState() }
     val accentWash = rememberChromeAccentWash()
-    // a look's glass that draws its own edge leaves mochy's hairline and shadow out
+    // a look's glass that draws its own edge leaves doom's hairline and shadow out
     val moduleGlass = rememberChromeModuleGlass()
     Box(modifier = modifier) {
         Box(
@@ -225,7 +225,7 @@ fun WideBarTabs(
                 .width(bar.tabsWidth)
                 .height(bar.height)
                 .padding(horizontal = NavRowPadding)
-                // the wide bar's tabs sit apart from its glass, so mochy draws this pill even when the look's glass draws the nav bar's
+                // the wide bar's tabs sit apart from its glass, so doom draws this pill even when the look's glass draws the nav bar's
                 .navHighlight(pill, navigationItems.size)
                 .navPillDrag(pill, navigationItems.size, selectedIndex) { index ->
                     navigationItems.getOrNull(index)?.let { onItemClick(it, index == selectedIndex) }

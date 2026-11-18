@@ -3,7 +3,7 @@
 // The pieces every share's background pager is made of: its cards, the add circle, the picture's
 // blur and opacity, and the colour swatches with the full spectrum.
 
-package com.mochyy.mochymusic.ui.player.share
+package com.videshkarmakar.doom.ui.player.share
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -37,11 +37,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.screens.audiolab.LabCard
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSlider
-import com.mochyy.mochymusic.ui.screens.audiolab.LabToggleRow
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.screens.audiolab.LabCard
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSlider
+import com.videshkarmakar.doom.ui.screens.audiolab.LabToggleRow
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlin.math.abs
 
 // plain colours offered next to the cover's own

@@ -1,6 +1,6 @@
 // TransferRestore.kt
 
-package com.mochyy.mochymusic.importer.transfer
+package com.videshkarmakar.doom.importer.transfer
 
 import android.app.Application
 import android.content.Context
@@ -8,13 +8,13 @@ import android.content.Intent
 import android.os.Build
 import android.util.Log
 import androidx.datastore.preferences.core.edit
-import com.mochyy.mochymusic.MainActivity
-import com.mochyy.mochymusic.db.InternalDatabase
-import com.mochyy.mochymusic.markOnboardedOnThisInstall
-import com.mochyy.mochymusic.playback.MusicService
-import com.mochyy.mochymusic.playback.StoragePlaces
-import com.mochyy.mochymusic.playback.StoredKind
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.MainActivity
+import com.videshkarmakar.doom.db.InternalDatabase
+import com.videshkarmakar.doom.markOnboardedOnThisInstall
+import com.videshkarmakar.doom.playback.MusicService
+import com.videshkarmakar.doom.playback.StoragePlaces
+import com.videshkarmakar.doom.playback.StoredKind
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.runBlocking
 import org.json.JSONObject
 import java.io.File

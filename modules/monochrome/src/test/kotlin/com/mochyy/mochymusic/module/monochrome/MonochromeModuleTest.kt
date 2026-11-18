@@ -1,15 +1,15 @@
-package com.mochyy.mochymusic.module.monochrome
+package com.videshkarmakar.doom.module.monochrome
 
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.HttpRequest
-import com.mochyy.mochymusic.module.HttpResponse
-import com.mochyy.mochymusic.module.ModuleHost
-import com.mochyy.mochymusic.module.ModuleServer
-import com.mochyy.mochymusic.module.ModuleStorage
-import com.mochyy.mochymusic.module.ResolveResult
-import com.mochyy.mochymusic.module.ServerProblem
-import com.mochyy.mochymusic.module.StreamFormat
-import com.mochyy.mochymusic.module.TrackQuery
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.HttpRequest
+import com.videshkarmakar.doom.module.HttpResponse
+import com.videshkarmakar.doom.module.ModuleHost
+import com.videshkarmakar.doom.module.ModuleServer
+import com.videshkarmakar.doom.module.ModuleStorage
+import com.videshkarmakar.doom.module.ResolveResult
+import com.videshkarmakar.doom.module.ServerProblem
+import com.videshkarmakar.doom.module.StreamFormat
+import com.videshkarmakar.doom.module.TrackQuery
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

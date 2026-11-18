@@ -1,6 +1,6 @@
 // the small parts a module player is built from: single buttons, plain shapes, times, and the items it adds to the chevron menu
 
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
@@ -22,20 +22,20 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.extensions.toggleRepeatMode
-import com.mochyy.mochymusic.modules.skin.ButtonKind
-import com.mochyy.mochymusic.modules.skin.ShapeKind
-import com.mochyy.mochymusic.modules.skin.SkinBlock
-import com.mochyy.mochymusic.modules.skin.SkinTarget
-import com.mochyy.mochymusic.modules.skin.TimeKind
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.ui.player.menu.openModuleTarget
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.extensions.toggleRepeatMode
+import com.videshkarmakar.doom.modules.skin.ButtonKind
+import com.videshkarmakar.doom.modules.skin.ShapeKind
+import com.videshkarmakar.doom.modules.skin.SkinBlock
+import com.videshkarmakar.doom.modules.skin.SkinTarget
+import com.videshkarmakar.doom.modules.skin.TimeKind
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.ui.player.menu.openModuleTarget
+import com.videshkarmakar.doom.utils.makeTimeString
 import androidx.media3.common.Player
 
-/** one control or custom action as a circle, with mochy's icon or the module's own picture */
+/** one control or custom action as a circle, with doom's icon or the module's own picture */
 @Composable
 internal fun SkinButton(block: SkinBlock.Button, context: SkinContext, modifier: Modifier) {
     val on = rememberTargetOn(block.target)

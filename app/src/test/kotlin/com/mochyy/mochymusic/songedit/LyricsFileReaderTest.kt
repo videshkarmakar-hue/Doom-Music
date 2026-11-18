@@ -1,6 +1,6 @@
-package com.mochyy.mochymusic.songedit
+package com.videshkarmakar.doom.songedit
 
-import com.mochyy.mochymusic.lyrics.LyricsUtils
+import com.videshkarmakar.doom.lyrics.LyricsUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test

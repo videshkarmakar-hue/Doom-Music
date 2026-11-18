@@ -1,6 +1,6 @@
 // BrowseScreen.kt
 
-package com.mochyy.mochymusic.ui.screens
+package com.videshkarmakar.doom.ui.screens
 
  import androidx.compose.foundation.ExperimentalFoundationApi
  import androidx.compose.foundation.combinedClickable
@@ -26,23 +26,23 @@ package com.mochyy.mochymusic.ui.screens
  import com.music.innertube.models.AlbumItem
  import com.music.innertube.models.ArtistItem
  import com.music.innertube.models.PlaylistItem
- import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
- import com.mochyy.mochymusic.LocalPlayerConnection
- import com.mochyy.mochymusic.R
- import com.mochyy.mochymusic.constants.GridItemSize
- import com.mochyy.mochymusic.constants.GridItemsSizeKey
- import com.mochyy.mochymusic.constants.GridThumbnailHeight
- import com.mochyy.mochymusic.ui.component.IconButton
- import com.mochyy.mochymusic.ui.component.LocalMenuState
- import com.mochyy.mochymusic.ui.component.YouTubeGridItem
- import com.mochyy.mochymusic.ui.component.shimmer.GridItemPlaceHolder
- import com.mochyy.mochymusic.ui.component.shimmer.ShimmerHost
- import com.mochyy.mochymusic.ui.menu.YouTubeAlbumMenu
- import com.mochyy.mochymusic.ui.menu.YouTubeArtistMenu
- import com.mochyy.mochymusic.ui.menu.YouTubePlaylistMenu
- import com.mochyy.mochymusic.ui.utils.backToMain
- import com.mochyy.mochymusic.utils.rememberEnumPreference
- import com.mochyy.mochymusic.viewmodels.BrowseViewModel
+ import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+ import com.videshkarmakar.doom.LocalPlayerConnection
+ import com.videshkarmakar.doom.R
+ import com.videshkarmakar.doom.constants.GridItemSize
+ import com.videshkarmakar.doom.constants.GridItemsSizeKey
+ import com.videshkarmakar.doom.constants.GridThumbnailHeight
+ import com.videshkarmakar.doom.ui.component.IconButton
+ import com.videshkarmakar.doom.ui.component.LocalMenuState
+ import com.videshkarmakar.doom.ui.component.YouTubeGridItem
+ import com.videshkarmakar.doom.ui.component.shimmer.GridItemPlaceHolder
+ import com.videshkarmakar.doom.ui.component.shimmer.ShimmerHost
+ import com.videshkarmakar.doom.ui.menu.YouTubeAlbumMenu
+ import com.videshkarmakar.doom.ui.menu.YouTubeArtistMenu
+ import com.videshkarmakar.doom.ui.menu.YouTubePlaylistMenu
+ import com.videshkarmakar.doom.ui.utils.backToMain
+ import com.videshkarmakar.doom.utils.rememberEnumPreference
+ import com.videshkarmakar.doom.viewmodels.BrowseViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
  @Composable

@@ -1,6 +1,6 @@
 // LibraryAlbumsScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -11,15 +11,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.viewmodels.LibraryHomeViewModel
-import com.mochyy.mochymusic.viewmodels.LibraryImportedViewModel
-import com.mochyy.mochymusic.viewmodels.LibraryShelfKind
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.viewmodels.LibraryHomeViewModel
+import com.videshkarmakar.doom.viewmodels.LibraryImportedViewModel
+import com.videshkarmakar.doom.viewmodels.LibraryShelfKind
 
 /**
  * The library's albums, or with a [shelf] the Local or Cached tab's: only the albums one of that

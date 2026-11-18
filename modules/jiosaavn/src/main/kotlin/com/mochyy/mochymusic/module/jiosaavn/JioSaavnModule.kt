@@ -1,21 +1,21 @@
-package com.mochyy.mochymusic.module.jiosaavn
+package com.videshkarmakar.doom.module.jiosaavn
 
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.CatalogTrack
-import com.mochyy.mochymusic.module.DiagnosticStep
-import com.mochyy.mochymusic.module.HttpRequest
-import com.mochyy.mochymusic.module.MatchedTrack
-import com.mochyy.mochymusic.module.ModuleChoice
-import com.mochyy.mochymusic.module.ModuleHost
-import com.mochyy.mochymusic.module.ModuleInfo
-import com.mochyy.mochymusic.module.NO_ACCOUNT_LABEL
-import com.mochyy.mochymusic.module.ResolveResult
-import com.mochyy.mochymusic.module.SourceModule
-import com.mochyy.mochymusic.module.SourceStream
-import com.mochyy.mochymusic.module.StreamFormat
-import com.mochyy.mochymusic.module.StreamOption
-import com.mochyy.mochymusic.module.TrackMatcher
-import com.mochyy.mochymusic.module.TrackQuery
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.CatalogTrack
+import com.videshkarmakar.doom.module.DiagnosticStep
+import com.videshkarmakar.doom.module.HttpRequest
+import com.videshkarmakar.doom.module.MatchedTrack
+import com.videshkarmakar.doom.module.ModuleChoice
+import com.videshkarmakar.doom.module.ModuleHost
+import com.videshkarmakar.doom.module.ModuleInfo
+import com.videshkarmakar.doom.module.NO_ACCOUNT_LABEL
+import com.videshkarmakar.doom.module.ResolveResult
+import com.videshkarmakar.doom.module.SourceModule
+import com.videshkarmakar.doom.module.SourceStream
+import com.videshkarmakar.doom.module.StreamFormat
+import com.videshkarmakar.doom.module.StreamOption
+import com.videshkarmakar.doom.module.TrackMatcher
+import com.videshkarmakar.doom.module.TrackQuery
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject
@@ -111,7 +111,7 @@ class JioSaavnModule : SourceModule {
                 ?.let { scored -> songs.first { it.catalog === scored.track } }
             if (best == null) {
                 misses[key] = System.currentTimeMillis()
-                report(DiagnosticStep("Find the song", false, "No matching recording of “${track.title}”"))
+                report(DiagnosticStep("Find the song", false, "No matching recording of “${track.title}�"))
                 return ResolveResult.NotFound("No matching recording on JioSaavn")
             }
             matches[key] = best

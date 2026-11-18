@@ -1,9 +1,9 @@
 // SimilarRecommendation.kt
 
-package com.mochyy.mochymusic.models
+package com.videshkarmakar.doom.models
 
 import com.music.innertube.models.YTItem
-import com.mochyy.mochymusic.db.entities.LocalItem
+import com.videshkarmakar.doom.db.entities.LocalItem
 
 data class SimilarRecommendation(
     val title: LocalItem,

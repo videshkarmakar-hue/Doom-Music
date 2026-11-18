@@ -1,21 +1,21 @@
 // RemoteControl.kt
 
-package com.mochyy.mochymusic.link.remote
+package com.videshkarmakar.doom.link.remote
 
 import android.content.Context
 import androidx.media3.common.MediaItem
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.di.ApplicationScope
-import com.mochyy.mochymusic.extensions.metadata
-import com.mochyy.mochymusic.link.LinkPlayer
-import com.mochyy.mochymusic.link.LinkSongs
-import com.mochyy.mochymusic.link.isTelevision
-import com.mochyy.mochymusic.link.phone.LiveDevice
-import com.mochyy.mochymusic.link.phone.PairedDevice
-import com.mochyy.mochymusic.link.phone.PhoneLinkHost
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.playback.queues.Queue
-import com.mochyy.mochymusic.ui.component.TopToaster
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.di.ApplicationScope
+import com.videshkarmakar.doom.extensions.metadata
+import com.videshkarmakar.doom.link.LinkPlayer
+import com.videshkarmakar.doom.link.LinkSongs
+import com.videshkarmakar.doom.link.isTelevision
+import com.videshkarmakar.doom.link.phone.LiveDevice
+import com.videshkarmakar.doom.link.phone.PairedDevice
+import com.videshkarmakar.doom.link.phone.PhoneLinkHost
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.playback.queues.Queue
+import com.videshkarmakar.doom.ui.component.TopToaster
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -72,7 +72,7 @@ class RemoteControl @Inject constructor(
                     if (list.none { it.id == steered.id && it.remoteControl }) stop()
                 }
             }
-            // mochy may open after the device already turned up, which is an arrival too
+            // doom may open after the device already turned up, which is an arrival too
             host.liveDevices().firstOrNull { live -> autoControls(live.id) }?.let(::onArrival)
         }
     }
@@ -222,7 +222,7 @@ class RemoteControl @Inject constructor(
         if (answer != null) _now.value = RemoteNow.fromJson(answer, System.currentTimeMillis())
     }
 
-    // only while mochy is on screen, quick while a remote is open and slow otherwise, so the pill knows the device is still there
+    // only while doom is on screen, quick while a remote is open and slow otherwise, so the pill knows the device is still there
     private suspend fun poll() {
         combine(_target, host.foreground, watchers) { target, shown, open -> Triple(target, shown, open > 0) }
             .distinctUntilChanged()

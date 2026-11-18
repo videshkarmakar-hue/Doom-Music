@@ -1,15 +1,15 @@
 // ArtistSimilarScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.artist
+package com.videshkarmakar.doom.ui.screens.artist
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.ArtistPageCache
-import com.mochyy.mochymusic.viewmodels.ArtistSimilarViewModel
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.ArtistPageCache
+import com.videshkarmakar.doom.viewmodels.ArtistSimilarViewModel
 
 /** "similar to <artist>": the artists around them, the playlists they're on, those artists' songs */
 @Composable

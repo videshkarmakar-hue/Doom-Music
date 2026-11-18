@@ -1,11 +1,11 @@
 // LibraryLocalImport.kt
 //
-// Bringing music in from the phone, from the Library's Local tab. With storage access, Mochy
+// Bringing music in from the phone, from the Library's Local tab. With storage access, Doom
 // lists every song on the phone in the Add music sheet; without it, the system file picker lets
 // the user choose files by hand. Either way the import runs in LocalImportService and its progress
 // sheet opens straight away.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import android.content.Intent
 import android.net.Uri
@@ -24,11 +24,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.importer.DeviceMusicScanner
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.viewmodels.LibraryImportViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.importer.DeviceMusicScanner
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.viewmodels.LibraryImportViewModel
 import kotlinx.coroutines.launch
 
 // every audio type plus lyrics files and pictures, which go to the song with the same name; .lrc and .krc often come without a proper type, so plain binary files show too
@@ -52,7 +52,7 @@ private val LocalAudioMimeTypes = arrayOf(
 /** The Local tab's ways in, as one handle. */
 @Stable
 class LocalImportActions internal constructor(hasStorageAccess: Boolean) {
-    /** Mochy may read the phone's music; until then the tab offers to ask. */
+    /** Doom may read the phone's music; until then the tab offers to ask. */
     var hasStorageAccess by mutableStateOf(hasStorageAccess)
         internal set
 
@@ -62,7 +62,7 @@ class LocalImportActions internal constructor(hasStorageAccess: Boolean) {
     internal var pickFolderLauncher: () -> Unit = {}
     internal var refreshThenScan: () -> Unit = {}
 
-    /** The import card: the songs found on the phone when Mochy may look, the file picker otherwise. */
+    /** The import card: the songs found on the phone when Doom may look, the file picker otherwise. */
     fun importFromPhone() = if (hasStorageAccess) openAddMusic() else pickFiles()
 
     /** The storage card: asks for access first if needed, then lists what's on the phone. */

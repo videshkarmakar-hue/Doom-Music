@@ -1,6 +1,6 @@
 // LinkAuth.kt
 
-package com.mochyy.mochymusic.link
+package com.videshkarmakar.doom.link
 
 import android.util.Base64
 import java.net.URLDecoder
@@ -21,7 +21,7 @@ class LinkCredentials(val id: String, val key: String)
 
 // how paired devices prove a call is theirs: an hmac over the call with the time and a nonce, so a copied call is no good to anyone listening on the wi-fi
 object LinkAuth {
-    const val Header = "X-Mochy-Auth"
+    const val Header = "X-Doom-Auth"
     private const val Scheme = "v2"
     private const val MacName = "HmacSHA256"
 
@@ -120,7 +120,7 @@ object LinkAuth {
         agreement.init(pair.private)
         agreement.doPhase(other, true)
         val digest = MessageDigest.getInstance("SHA-256")
-        digest.update("mochy-link-v2".toByteArray())
+        digest.update("doom-link-v2".toByteArray())
         digest.update(agreement.generateSecret())
         digest.update(code.trim().toByteArray())
         ids.sorted().forEach { digest.update(it.toByteArray()) }

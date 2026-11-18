@@ -1,6 +1,6 @@
 // MetroLyrics.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.graphics.BlurMaskFilter
 import android.graphics.Typeface
@@ -52,14 +52,14 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.res.ResourcesCompat
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.constants.AppleMusicLyricsBlurKey
-import com.mochyy.mochymusic.constants.LyricsRomanizeAsMainKey
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.ui.screens.LyricsPosition
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.constants.AppleMusicLyricsBlurKey
+import com.videshkarmakar.doom.constants.LyricsRomanizeAsMainKey
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.ui.screens.LyricsPosition
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.isActive
 import kotlin.math.PI
 import kotlin.math.cos

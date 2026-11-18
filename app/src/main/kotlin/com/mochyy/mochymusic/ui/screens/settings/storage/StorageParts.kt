@@ -1,6 +1,6 @@
 // the pieces the storage page is built from: usage bars, legends, the cache limit slider and the action buttons
 
-package com.mochyy.mochymusic.ui.screens.settings.storage
+package com.videshkarmakar.doom.ui.screens.settings.storage
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.Animatable
@@ -58,17 +58,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 internal val StorageCard = Color(0xFF1C1C1E)
 internal val StorageTrack = Color(0xFF3A3A3C)
 internal val StorageMuted = Color(0xFF8E8E93)
 internal val StorageDanger = Color(0xFFF07A70)
 
-internal val MochyGreen = Color(0xFF86EF7F)
+internal val DoomGreen = Color(0xFF86EF7F)
 internal val OthersGrey = Color(0xFF6E6E73)
 internal val CacheOrange = Color(0xFFF5B26B)
 internal val DatabaseRed = Color(0xFFEE6E5E)

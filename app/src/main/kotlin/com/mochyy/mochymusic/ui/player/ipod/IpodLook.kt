@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
@@ -7,14 +7,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import com.mochyy.mochymusic.constants.IpodShadowKey
-import com.mochyy.mochymusic.constants.IpodTallScreenKey
-import com.mochyy.mochymusic.constants.IpodTheme
-import com.mochyy.mochymusic.constants.IpodThemeKey
-import com.mochyy.mochymusic.constants.IpodWheelColor
-import com.mochyy.mochymusic.constants.IpodWheelColorKey
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.IpodShadowKey
+import com.videshkarmakar.doom.constants.IpodTallScreenKey
+import com.videshkarmakar.doom.constants.IpodTheme
+import com.videshkarmakar.doom.constants.IpodThemeKey
+import com.videshkarmakar.doom.constants.IpodWheelColor
+import com.videshkarmakar.doom.constants.IpodWheelColorKey
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 
 // every colour the ipod is drawn with, plus the two layout switches, worked out once from the settings
 @Immutable

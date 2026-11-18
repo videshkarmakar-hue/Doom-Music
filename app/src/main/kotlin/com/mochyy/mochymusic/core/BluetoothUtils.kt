@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.core
+package com.videshkarmakar.doom.core
 
 import android.content.Context
 import android.media.AudioDeviceInfo

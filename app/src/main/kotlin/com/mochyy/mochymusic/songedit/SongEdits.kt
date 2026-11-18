@@ -1,10 +1,10 @@
 // SongEdits.kt
 
-package com.mochyy.mochymusic.songedit
+package com.videshkarmakar.doom.songedit
 
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.SongEdit
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.SongEdit
+import com.videshkarmakar.doom.models.MediaMetadata
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

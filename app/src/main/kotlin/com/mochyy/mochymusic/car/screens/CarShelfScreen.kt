@@ -1,6 +1,6 @@
 // CarShelfScreen.kt
 
-package com.mochyy.mochymusic.car.screens
+package com.videshkarmakar.doom.car.screens
 
 import androidx.car.app.Screen
 import androidx.car.app.model.Action
@@ -11,8 +11,8 @@ import androidx.car.app.model.SectionedItemTemplate
 import androidx.car.app.model.Template
 import androidx.lifecycle.lifecycleScope
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.car.CarApp
-import com.mochyy.mochymusic.car.CarShelf
+import com.videshkarmakar.doom.car.CarApp
+import com.videshkarmakar.doom.car.CarShelf
 import kotlinx.coroutines.launch
 
 // one home category opened up: its albums and playlists as tiles, its songs as rows that start that song's radio

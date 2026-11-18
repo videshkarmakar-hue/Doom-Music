@@ -1,6 +1,6 @@
 // GestureScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.gesture
+package com.videshkarmakar.doom.ui.screens.gesture
 
 import android.widget.Toast
 import androidx.compose.animation.Crossfade
@@ -48,37 +48,37 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.HomeStyle
-import com.mochyy.mochymusic.constants.HomeStyleKey
-import com.mochyy.mochymusic.constants.PlayerStyle
-import com.mochyy.mochymusic.constants.PlayerStyleKey
-import com.mochyy.mochymusic.constants.PlaylistStyle
-import com.mochyy.mochymusic.constants.PlaylistStyleKey
-import com.mochyy.mochymusic.constants.SwipeLeftActionKey
-import com.mochyy.mochymusic.constants.SwipeRightActionKey
-import com.mochyy.mochymusic.constants.ThumbnailCornerRadiusKey
-import com.mochyy.mochymusic.ui.component.DefaultSwipeLeft
-import com.mochyy.mochymusic.ui.component.DefaultSwipeRight
-import com.mochyy.mochymusic.ui.component.HomeCardCornerRadius
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState
-import com.mochyy.mochymusic.ui.component.SheetIcon
-import com.mochyy.mochymusic.ui.component.SheetOptionRow
-import com.mochyy.mochymusic.ui.component.SongSwipeAction
-import com.mochyy.mochymusic.ui.component.bleedHorizontally
-import com.mochyy.mochymusic.ui.screens.audiolab.LabBackButton
-import com.mochyy.mochymusic.ui.screens.audiolab.LabCard
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.constants.PlayerSwipeDownAnywhereKey
-import com.mochyy.mochymusic.constants.PlayerSwipeUpFollowsKey
-import com.mochyy.mochymusic.ui.screens.audiolab.LabToggleRow
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.HomeStyle
+import com.videshkarmakar.doom.constants.HomeStyleKey
+import com.videshkarmakar.doom.constants.PlayerStyle
+import com.videshkarmakar.doom.constants.PlayerStyleKey
+import com.videshkarmakar.doom.constants.PlaylistStyle
+import com.videshkarmakar.doom.constants.PlaylistStyleKey
+import com.videshkarmakar.doom.constants.SwipeLeftActionKey
+import com.videshkarmakar.doom.constants.SwipeRightActionKey
+import com.videshkarmakar.doom.constants.ThumbnailCornerRadiusKey
+import com.videshkarmakar.doom.ui.component.DefaultSwipeLeft
+import com.videshkarmakar.doom.ui.component.DefaultSwipeRight
+import com.videshkarmakar.doom.ui.component.HomeCardCornerRadius
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState
+import com.videshkarmakar.doom.ui.component.SheetIcon
+import com.videshkarmakar.doom.ui.component.SheetOptionRow
+import com.videshkarmakar.doom.ui.component.SongSwipeAction
+import com.videshkarmakar.doom.ui.component.bleedHorizontally
+import com.videshkarmakar.doom.ui.screens.audiolab.LabBackButton
+import com.videshkarmakar.doom.ui.screens.audiolab.LabCard
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.constants.PlayerSwipeDownAnywhereKey
+import com.videshkarmakar.doom.constants.PlayerSwipeUpFollowsKey
+import com.videshkarmakar.doom.ui.screens.audiolab.LabToggleRow
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.relocation.BringIntoViewRequester
 import androidx.compose.foundation.relocation.bringIntoViewRequester
@@ -90,14 +90,14 @@ import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.graphics.drawscope.Stroke
-import com.mochyy.mochymusic.ui.component.LocalSettingsScroll
-import com.mochyy.mochymusic.ui.component.SettingsHighlight
-import com.mochyy.mochymusic.ui.component.SettingsPlacement
-import com.mochyy.mochymusic.ui.component.SettingsScroll
-import com.mochyy.mochymusic.ui.component.reveal
-import com.mochyy.mochymusic.ui.component.SubSettingsSearchBar
-import com.mochyy.mochymusic.ui.screens.settings.BottomBarHighlightKey
-import com.mochyy.mochymusic.ui.screens.settings.TopBarHighlightKey
+import com.videshkarmakar.doom.ui.component.LocalSettingsScroll
+import com.videshkarmakar.doom.ui.component.SettingsHighlight
+import com.videshkarmakar.doom.ui.component.SettingsPlacement
+import com.videshkarmakar.doom.ui.component.SettingsScroll
+import com.videshkarmakar.doom.ui.component.reveal
+import com.videshkarmakar.doom.ui.component.SubSettingsSearchBar
+import com.videshkarmakar.doom.ui.screens.settings.BottomBarHighlightKey
+import com.videshkarmakar.doom.ui.screens.settings.TopBarHighlightKey
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.filter
 
@@ -119,11 +119,11 @@ fun GestureScreen(navController: NavController) = CustomisationScreen(navControl
 
 // the customize page's parts in order, with what a search or a settings result can find each one by
 private enum class CustomiseSection(@StringRes val titleRes: Int, val keys: List<String>, val words: String) {
-    ICONS(R.string.customise_icons, listOf("Icons", "App icon"), "icon icons app launcher home screen mochy outline anime material you white black dark transparent"),
+    ICONS(R.string.customise_icons, listOf("Icons", "App icon"), "icon icons app launcher home screen doom outline anime material you white black dark transparent"),
     ROUNDING(R.string.customise_cover_rounding, listOf("Cover rounding"), "cover rounding corner radius square rounded art"),
     PLAYLIST(R.string.customise_playlist_styles, listOf("Playlist styles"), "playlist styles flow classic minimal header"),
     PLAYER(R.string.customise_player_styles, listOf("Player styles"), "player styles flagship turntable ipod poster timeline lyrics editor customize landscape sideways full cover square"),
-    HOME(R.string.customise_home_styles, listOf("Home styles"), "home styles mochyy listen now hop in hero"),
+    HOME(R.string.customise_home_styles, listOf("Home styles"), "home styles doomy listen now hop in hero"),
     BLUR(R.string.appearance_blur, listOf("Blur", "Progressive blur", "Blur quality", "Blur strength"), "blur glass frosted progressive flat quality low high strength px"),
     ELEMENT_BLUR(R.string.customise_element_blur, listOf("Element blur"), "element blur lyrics lines cover zoom titles menus page swipes"),
     ANIMATION(R.string.appearance_animation, listOf("Animation", "Animation speed"), "animation speed motion transitions off faster slower"),
@@ -278,7 +278,7 @@ private fun PlayerSection() {
 // the flagship turned sideways: a rounded square beside the controls, or the whole cover melting into them
 @Composable
 private fun LandscapePlayerCard() {
-    val (fullCover, setFullCover) = rememberPreference(com.mochyy.mochymusic.constants.LandscapeFullCoverKey, defaultValue = false)
+    val (fullCover, setFullCover) = rememberPreference(com.videshkarmakar.doom.constants.LandscapeFullCoverKey, defaultValue = false)
     LabCard(padding = CardPadding) {
         Text(
             stringResource(R.string.customise_landscape_player),

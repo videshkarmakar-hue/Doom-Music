@@ -1,6 +1,6 @@
 // SongShareSession.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import android.net.Uri
 import android.view.ViewGroup
@@ -16,16 +16,16 @@ import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.luminance
-import com.mochyy.mochymusic.constants.LyricsMotionStyle
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.player.LineReading
-import com.mochyy.mochymusic.ui.player.share.LyricsShareSession
-import com.mochyy.mochymusic.ui.player.share.ShareBackground
-import com.mochyy.mochymusic.ui.player.share.ShareSong
-import com.mochyy.mochymusic.ui.player.share.ShareStyle
-import com.mochyy.mochymusic.ui.player.share.contentColorOn
-import com.mochyy.mochymusic.utils.VideoStreams
+import com.videshkarmakar.doom.constants.LyricsMotionStyle
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.player.LineReading
+import com.videshkarmakar.doom.ui.player.share.LyricsShareSession
+import com.videshkarmakar.doom.ui.player.share.ShareBackground
+import com.videshkarmakar.doom.ui.player.share.ShareSong
+import com.videshkarmakar.doom.ui.player.share.ShareStyle
+import com.videshkarmakar.doom.ui.player.share.contentColorOn
+import com.videshkarmakar.doom.utils.VideoStreams
 
 // how much of the song a share plays: 10 seconds to start with, anything from 2 to 40 with the timeline's arrows
 internal const val ShareWindowMs = 10_000L
@@ -120,7 +120,7 @@ internal class SongShareSession(val song: MediaMetadata) {
     // a page with the picture on it is up and wants the song playing under it
     var previewWanted by mutableStateOf(false)
 
-    // mochy is the app in front; leaving for instagram or anywhere else stops the song
+    // doom is the app in front; leaving for instagram or anywhere else stops the song
     var onScreen by mutableStateOf(true)
 
     var background by mutableStateOf<SongBackground>(SongBackground.Still(ShareBackground.FromMusic))

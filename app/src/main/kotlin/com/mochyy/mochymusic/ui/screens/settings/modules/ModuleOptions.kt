@@ -1,6 +1,6 @@
 // a module's options, the mock's "Options": its choices and its own settings as lists to pick from, lines to type in and switches
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -41,13 +41,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.module.FieldKind
-import com.mochyy.mochymusic.module.ModuleField
-import com.mochyy.mochymusic.module.StreamOption
-import com.mochyy.mochymusic.modules.ModuleEntry
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.module.FieldKind
+import com.videshkarmakar.doom.module.ModuleField
+import com.videshkarmakar.doom.module.StreamOption
+import com.videshkarmakar.doom.modules.ModuleEntry
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.drop

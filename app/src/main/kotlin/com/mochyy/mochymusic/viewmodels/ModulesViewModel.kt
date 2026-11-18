@@ -1,6 +1,6 @@
 // ModulesViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.media.MediaDrm
 import android.media.NotProvisionedException
@@ -9,29 +9,29 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.common.C
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.DiagnosticStep
-import com.mochyy.mochymusic.module.ItemListModule
-import com.mochyy.mochymusic.module.ItemProblem
-import com.mochyy.mochymusic.module.ItemsAdded
-import com.mochyy.mochymusic.module.LyricsModule
-import com.mochyy.mochymusic.module.MetadataModule
-import com.mochyy.mochymusic.module.ModuleFeature
-import com.mochyy.mochymusic.module.ModuleItem
-import com.mochyy.mochymusic.module.ModuleServer
-import com.mochyy.mochymusic.module.ResolveResult
-import com.mochyy.mochymusic.module.ServerListModule
-import com.mochyy.mochymusic.module.ServerProblem
-import com.mochyy.mochymusic.module.StreamDrm
-import com.mochyy.mochymusic.module.TrackQuery
-import com.mochyy.mochymusic.modules.CatalogModule
-import com.mochyy.mochymusic.modules.ModuleCatalog
-import com.mochyy.mochymusic.modules.ModuleRegistry
-import com.mochyy.mochymusic.modules.SourceModules
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.DiagnosticStep
+import com.videshkarmakar.doom.module.ItemListModule
+import com.videshkarmakar.doom.module.ItemProblem
+import com.videshkarmakar.doom.module.ItemsAdded
+import com.videshkarmakar.doom.module.LyricsModule
+import com.videshkarmakar.doom.module.MetadataModule
+import com.videshkarmakar.doom.module.ModuleFeature
+import com.videshkarmakar.doom.module.ModuleItem
+import com.videshkarmakar.doom.module.ModuleServer
+import com.videshkarmakar.doom.module.ResolveResult
+import com.videshkarmakar.doom.module.ServerListModule
+import com.videshkarmakar.doom.module.ServerProblem
+import com.videshkarmakar.doom.module.StreamDrm
+import com.videshkarmakar.doom.module.TrackQuery
+import com.videshkarmakar.doom.modules.CatalogModule
+import com.videshkarmakar.doom.modules.ModuleCatalog
+import com.videshkarmakar.doom.modules.ModuleRegistry
+import com.videshkarmakar.doom.modules.SourceModules
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import org.json.JSONObject
-import com.mochyy.mochymusic.playback.custom.WidevineDrm
+import com.videshkarmakar.doom.playback.custom.WidevineDrm
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -317,8 +317,8 @@ class ModulesViewModel @Inject constructor(
     }
 
     /** a module's skin (its player, font and pages), when it brings one */
-    fun skinOf(id: String): com.mochyy.mochymusic.modules.skin.ModuleSkin? =
-        (registry.module(id) as? com.mochyy.mochymusic.modules.skin.SkinSource)?.skin
+    fun skinOf(id: String): com.videshkarmakar.doom.modules.skin.ModuleSkin? =
+        (registry.module(id) as? com.videshkarmakar.doom.modules.skin.SkinSource)?.skin
 
     fun remove(id: String) {
         registry.remove(id)
@@ -388,8 +388,8 @@ class ModulesViewModel @Inject constructor(
                 onSuccess = { text ->
                     val lines = text?.lines()?.map { it.replace(LrcTime, "").trim() }?.filter { it.isNotEmpty() }.orEmpty()
                     val timed = text?.let { LrcTime.containsMatchIn(it) } == true
-                    if (lines.isEmpty()) DiagnosticStep(StepLyrics, false, "No lyrics for “${track.title}”")
-                    else DiagnosticStep(StepLyrics, true, "${lines.size} ${if (timed) "timed" else "plain"} lines · “${lines.first()}”")
+                    if (lines.isEmpty()) DiagnosticStep(StepLyrics, false, "No lyrics for “${track.title}�")
+                    else DiagnosticStep(StepLyrics, true, "${lines.size} ${if (timed) "timed" else "plain"} lines · “${lines.first()}�")
                 },
                 onFailure = { DiagnosticStep(StepLyrics, false, it.message ?: it.javaClass.simpleName) },
             )
@@ -402,7 +402,7 @@ class ModulesViewModel @Inject constructor(
         report(
             found.fold(
                 onSuccess = { info ->
-                    if (info == null) return@fold DiagnosticStep(StepInfo, false, "Nothing about “${track.title}”")
+                    if (info == null) return@fold DiagnosticStep(StepInfo, false, "Nothing about “${track.title}�")
                     val facts = listOfNotNull(
                         info.genres.firstOrNull(),
                         info.releaseDate,
@@ -432,7 +432,7 @@ class ModulesViewModel @Inject constructor(
      * whole path playback takes (playlist, segments, DRM sessions, the decoder), nothing faked.
      */
     @androidx.annotation.OptIn(UnstableApi::class)
-    private suspend fun checkPlayback(stream: com.mochyy.mochymusic.module.SourceStream): String {
+    private suspend fun checkPlayback(stream: com.videshkarmakar.doom.module.SourceStream): String {
         val drm = stream.drm as? StreamDrm.Widevine
         val factory = androidx.media3.exoplayer.source.DefaultMediaSourceFactory(
             androidx.media3.datasource.DefaultDataSource.Factory(context)
@@ -450,7 +450,7 @@ class ModulesViewModel @Inject constructor(
             val item = androidx.media3.common.MediaItem.Builder()
                 .setUri(stream.url)
                 .apply {
-                    if (stream.format == com.mochyy.mochymusic.module.StreamFormat.Hls) setMimeType(androidx.media3.common.MimeTypes.APPLICATION_M3U8)
+                    if (stream.format == com.videshkarmakar.doom.module.StreamFormat.Hls) setMimeType(androidx.media3.common.MimeTypes.APPLICATION_M3U8)
                     if (drm != null) setDrmConfiguration(
                         androidx.media3.common.MediaItem.DrmConfiguration.Builder(C.WIDEVINE_UUID).setMultiSession(true).build()
                     )

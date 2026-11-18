@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings.importsync
+package com.videshkarmakar.doom.ui.screens.settings.importsync
 
 import android.net.Uri
 import android.webkit.CookieManager
@@ -34,21 +34,21 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil3.compose.rememberAsyncImagePainter
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.YtmSyncKey
-import com.mochyy.mochymusic.importer.ResyncStart
-import com.mochyy.mochymusic.importer.account.AccountImportState
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.importer.account.WEB_PLAYER_QUERY_HEADER
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.ui.component.SettingsGroup
-import com.mochyy.mochymusic.ui.component.SettingsGroupStyle
-import com.mochyy.mochymusic.ui.component.SettingsItem
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.menu.ResyncLinkDialog
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.AccountImportViewModel
-import com.mochyy.mochymusic.viewmodels.ImportSyncViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.YtmSyncKey
+import com.videshkarmakar.doom.importer.ResyncStart
+import com.videshkarmakar.doom.importer.account.AccountImportState
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.importer.account.WEB_PLAYER_QUERY_HEADER
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.ui.component.SettingsGroup
+import com.videshkarmakar.doom.ui.component.SettingsGroupStyle
+import com.videshkarmakar.doom.ui.component.SettingsItem
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.menu.ResyncLinkDialog
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.AccountImportViewModel
+import com.videshkarmakar.doom.viewmodels.ImportSyncViewModel
 import timber.log.Timber
 
 const val AccountImportRoutePattern = "account_import/{service}?resync={resync}&then={then}"
@@ -84,12 +84,12 @@ internal const val ApplePageProbeJs = """
 internal const val AppleAutoSignInJs = """
 (function() {
   try {
-    if (window.__mochySignInPressed) return 'pressed';
+    if (window.__doomSignInPressed) return 'pressed';
     var m = window.MusicKit && MusicKit.getInstance && MusicKit.getInstance();
     if (m && m.isAuthorized) return 'authorized';
     var button = document.querySelector('[data-testid="sign-in-button"]');
     if (!button) return 'waiting';
-    window.__mochySignInPressed = true;
+    window.__doomSignInPressed = true;
     button.click();
     return 'pressed';
   } catch (e) { return 'error'; }
@@ -106,9 +106,9 @@ private const val SpotifySignedInCookie = "sp_dc"
 private val SpotifyFindQueriesJs = """
 (function() {
   try {
-    if (window.__mochyQueriesFound) return 'done';
-    if (window.__mochyFinding) return 'finding';
-    var scanned = window.__mochyScanned = window.__mochyScanned || {};
+    if (window.__doomQueriesFound) return 'done';
+    if (window.__doomFinding) return 'finding';
+    var scanned = window.__doomScanned = window.__doomScanned || {};
     var sources = [];
     [].forEach.call(document.scripts, function(s) { if (s.src) sources.push(s.src); });
     (performance.getEntriesByType('resource') || []).forEach(function(e) { sources.push(e.name); });
@@ -116,7 +116,7 @@ private val SpotifyFindQueriesJs = """
       return /spotifycdn\.com\/cdn\/build\/web-player\/.*\.js/.test(src) && !scanned[src] && sources.indexOf(src) === i;
     });
     if (!sources.length) return 'waiting';
-    window.__mochyFinding = true;
+    window.__doomFinding = true;
     var found = {};
     Promise.all(sources.map(function(src) {
       scanned[src] = true;
@@ -130,8 +130,8 @@ private val SpotifyFindQueriesJs = """
         var query = { name: name, hash: found[name], url: 'https://api-partner.spotify.com/pathfinder/v2/query', post: true, guessed: true };
         window.$BRIDGE_NAME.onHeader('$WEB_PLAYER_QUERY_HEADER', JSON.stringify(query), location.href);
       });
-      if (found.fetchLibraryTracks) window.__mochyQueriesFound = true;
-      window.__mochyFinding = false;
+      if (found.fetchLibraryTracks) window.__doomQueriesFound = true;
+      window.__doomFinding = false;
     });
     return 'finding';
   } catch (e) { return 'error'; }

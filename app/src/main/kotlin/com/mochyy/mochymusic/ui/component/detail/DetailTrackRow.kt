@@ -1,6 +1,6 @@
 // DetailTrackRow.kt
 
-package com.mochyy.mochymusic.ui.component.detail
+package com.videshkarmakar.doom.ui.component.detail
 
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Column
@@ -22,9 +22,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.ThumbnailCornerRadius
-import com.mochyy.mochymusic.ui.component.ItemThumbnail
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.ThumbnailCornerRadius
+import com.videshkarmakar.doom.ui.component.ItemThumbnail
 
 @Composable
 fun DetailTrackRow(

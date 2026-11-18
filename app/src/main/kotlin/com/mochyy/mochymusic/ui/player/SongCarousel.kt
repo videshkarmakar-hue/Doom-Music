@@ -11,7 +11,7 @@
 // same slot (same composition, picture already loaded) now in the middle, and the row just carries
 // on to it.
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -42,10 +42,10 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.ui.player.models.QueueItemData
-import com.mochyy.mochymusic.ui.player.models.QueueState
-import com.mochyy.mochymusic.ui.player.models.TrackInfo
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.ui.player.models.QueueItemData
+import com.videshkarmakar.doom.ui.player.models.QueueState
+import com.videshkarmakar.doom.ui.player.models.TrackInfo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

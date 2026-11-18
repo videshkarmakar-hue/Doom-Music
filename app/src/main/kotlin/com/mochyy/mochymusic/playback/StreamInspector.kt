@@ -1,6 +1,6 @@
 // StreamInspector.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.os.Handler
 import android.os.Looper
@@ -46,7 +46,7 @@ data class StreamDetails(
     val tunneling: Boolean = false,
     val underruns: Int = 0,
     val fileSizeBytes: Long? = null,
-    /** mochy's own resampler, when it's converting this song */
+    /** doom's own resampler, when it's converting this song */
     val resampledFrom: Int? = null,
     val resampledTo: Int? = null,
     val resamplerTaps: Int? = null,
@@ -136,7 +136,7 @@ class StreamInspector : AnalyticsListener {
     }
 
     // what the precision sink is doing to the song's samples; arrives on the playback thread
-    fun onProcessing(resampler: com.mochyy.mochymusic.playback.audio.SincResampler?, dithered: Boolean) {
+    fun onProcessing(resampler: com.videshkarmakar.doom.playback.audio.SincResampler?, dithered: Boolean) {
         val from = resampler?.inRate
         val to = resampler?.outRate
         val taps = resampler?.taps

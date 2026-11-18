@@ -1,11 +1,11 @@
 // YouTubeCaptionTranslation.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import android.os.SystemClock
 import android.util.LruCache
-import com.mochyy.mochymusic.ui.player.findOfficialMusicVideoId
-import com.mochyy.mochymusic.utils.OfflineMode
+import com.videshkarmakar.doom.ui.player.findOfficialMusicVideoId
+import com.videshkarmakar.doom.utils.OfflineMode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers

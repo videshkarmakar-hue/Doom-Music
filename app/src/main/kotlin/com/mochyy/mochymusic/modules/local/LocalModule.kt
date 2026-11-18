@@ -1,23 +1,23 @@
 // a module added from a zip with no service behind it: a look, a player, a font, a glass, pages, menu rows, nothing that ever reaches the network
 
-package com.mochyy.mochymusic.modules.local
+package com.videshkarmakar.doom.modules.local
 
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.LookModule
-import com.mochyy.mochymusic.module.ModuleArt
-import com.mochyy.mochymusic.module.ModuleField
-import com.mochyy.mochymusic.module.ModuleFields
-import com.mochyy.mochymusic.module.ModuleHost
-import com.mochyy.mochymusic.module.ModuleInfo
-import com.mochyy.mochymusic.module.NO_ACCOUNT_LABEL
-import com.mochyy.mochymusic.modules.skin.ModuleSkin
-import com.mochyy.mochymusic.modules.skin.SkinGlass
-import com.mochyy.mochymusic.modules.skin.SkinParser
-import com.mochyy.mochymusic.modules.skin.SkinSource
-import com.mochyy.mochymusic.modules.skin.appliedLook
-import com.mochyy.mochymusic.modules.web.ManifestSettings
-import com.mochyy.mochymusic.modules.web.WebModuleManifest
-import com.mochyy.mochymusic.modules.web.resolveModuleArt
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.LookModule
+import com.videshkarmakar.doom.module.ModuleArt
+import com.videshkarmakar.doom.module.ModuleField
+import com.videshkarmakar.doom.module.ModuleFields
+import com.videshkarmakar.doom.module.ModuleHost
+import com.videshkarmakar.doom.module.ModuleInfo
+import com.videshkarmakar.doom.module.NO_ACCOUNT_LABEL
+import com.videshkarmakar.doom.modules.skin.ModuleSkin
+import com.videshkarmakar.doom.modules.skin.SkinGlass
+import com.videshkarmakar.doom.modules.skin.SkinParser
+import com.videshkarmakar.doom.modules.skin.SkinSource
+import com.videshkarmakar.doom.modules.skin.appliedLook
+import com.videshkarmakar.doom.modules.web.ManifestSettings
+import com.videshkarmakar.doom.modules.web.WebModuleManifest
+import com.videshkarmakar.doom.modules.web.resolveModuleArt
 import java.io.File
 
 internal class LocalModule(private val manifest: WebModuleManifest, files: File?) : LookModule, ModuleArt, ModuleFields, SkinSource {

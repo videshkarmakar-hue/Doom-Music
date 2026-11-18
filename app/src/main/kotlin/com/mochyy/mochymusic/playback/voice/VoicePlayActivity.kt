@@ -1,6 +1,6 @@
 // VoicePlayActivity.kt
 
-package com.mochyy.mochymusic.playback.voice
+package com.videshkarmakar.doom.playback.voice
 
 import android.app.Activity
 import android.app.SearchManager
@@ -17,9 +17,9 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionError
 import androidx.media3.session.SessionToken
-import com.mochyy.mochymusic.playback.MusicService
+import com.videshkarmakar.doom.playback.MusicService
 
-// google assistant on the phone sends "play … on mochy" here; it draws nothing, hands the words to the music service and closes
+// google assistant on the phone sends "play … on doom" here; it draws nothing, hands the words to the music service and closes
 class VoicePlayActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

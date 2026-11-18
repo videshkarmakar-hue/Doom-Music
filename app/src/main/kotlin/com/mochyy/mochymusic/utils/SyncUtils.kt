@@ -1,6 +1,6 @@
 // SyncUtils.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
@@ -11,30 +11,30 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.utils.completed
 import com.music.innertube.utils.parseCookieString
-import com.mochyy.mochymusic.constants.InnerTubeCookieKey
-import com.mochyy.mochymusic.constants.LastFullSyncKey
-import com.mochyy.mochymusic.constants.SYNC_COOLDOWN
-import com.mochyy.mochymusic.constants.SelectedYtmPlaylistsKey
-import com.mochyy.mochymusic.constants.YtExcludeImportsKey
-import com.mochyy.mochymusic.constants.YtSyncHoldKey
-import com.mochyy.mochymusic.constants.YtSyncLikedSongsKey
-import com.mochyy.mochymusic.constants.YtSyncSourcesTaggedKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.importer.PlaylistAddedHere
-import com.mochyy.mochymusic.scrobble.Scrobbler
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.db.entities.ImportedPlaylist
-import com.mochyy.mochymusic.db.entities.ImportedSong
-import com.mochyy.mochymusic.db.entities.PlaylistEntity
-import com.mochyy.mochymusic.db.entities.PlaylistSongMap
-import com.mochyy.mochymusic.db.entities.SongEntity
-import com.mochyy.mochymusic.extensions.collectLatest
-import com.mochyy.mochymusic.extensions.isInternetConnected
-import com.mochyy.mochymusic.extensions.isSyncEnabled
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.importer.PendingYouTubeLikes
-import com.mochyy.mochymusic.importer.SyncUndo
-import com.mochyy.mochymusic.models.toMediaMetadata
+import com.videshkarmakar.doom.constants.InnerTubeCookieKey
+import com.videshkarmakar.doom.constants.LastFullSyncKey
+import com.videshkarmakar.doom.constants.SYNC_COOLDOWN
+import com.videshkarmakar.doom.constants.SelectedYtmPlaylistsKey
+import com.videshkarmakar.doom.constants.YtExcludeImportsKey
+import com.videshkarmakar.doom.constants.YtSyncHoldKey
+import com.videshkarmakar.doom.constants.YtSyncLikedSongsKey
+import com.videshkarmakar.doom.constants.YtSyncSourcesTaggedKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.importer.PlaylistAddedHere
+import com.videshkarmakar.doom.scrobble.Scrobbler
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.db.entities.ImportedPlaylist
+import com.videshkarmakar.doom.db.entities.ImportedSong
+import com.videshkarmakar.doom.db.entities.PlaylistEntity
+import com.videshkarmakar.doom.db.entities.PlaylistSongMap
+import com.videshkarmakar.doom.db.entities.SongEntity
+import com.videshkarmakar.doom.extensions.collectLatest
+import com.videshkarmakar.doom.extensions.isInternetConnected
+import com.videshkarmakar.doom.extensions.isSyncEnabled
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.importer.PendingYouTubeLikes
+import com.videshkarmakar.doom.importer.SyncUndo
+import com.videshkarmakar.doom.models.toMediaMetadata
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -1017,7 +1017,7 @@ class SyncUtils @Inject constructor(
                         .sortedBy { it.map.position }
                         .map { it.song.id }
 
-                    // songs added in mochy stay on top through every sync, even when youtube never got them
+                    // songs added in doom stay on top through every sync, even when youtube never got them
                     // (signed out, or someone else's playlist); the sync used to wipe them a few seconds later
                     val addedHere = PlaylistAddedHere.added(context, playlistId).filter { it in localIds }
                     val seen = PlaylistAddedHere.remoteSeen(context, playlistId)

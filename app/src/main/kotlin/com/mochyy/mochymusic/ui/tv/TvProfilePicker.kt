@@ -1,6 +1,6 @@
 // TvProfilePicker.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
@@ -39,9 +39,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.tv.TvProfile
-import com.mochyy.mochymusic.link.tv.TvProfiles
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.tv.TvProfile
+import com.videshkarmakar.doom.link.tv.TvProfiles
 
 // "whos listening": every profile's circle, the last one used focused first, and a plus for someone new
 @Composable

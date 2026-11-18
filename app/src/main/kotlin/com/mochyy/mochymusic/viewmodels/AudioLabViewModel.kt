@@ -1,22 +1,22 @@
 // AudioLabViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.eq.AudioLabStore
-import com.mochyy.mochymusic.eq.AutoEqCorrection
-import com.mochyy.mochymusic.eq.EqPresets
-import com.mochyy.mochymusic.eq.EqSettings
-import com.mochyy.mochymusic.eq.audio.Biquad
-import com.mochyy.mochymusic.eq.autoeq.AutoEqEntry
-import com.mochyy.mochymusic.eq.autoeq.AutoEqFitter
-import com.mochyy.mochymusic.eq.autoeq.AutoEqMeasurement
-import com.mochyy.mochymusic.eq.autoeq.AutoEqModel
-import com.mochyy.mochymusic.eq.autoeq.AutoEqRepository
-import com.mochyy.mochymusic.eq.autoeq.AutoEqTuning
-import com.mochyy.mochymusic.eq.data.FilterType
-import com.mochyy.mochymusic.eq.data.ParametricEQBand
+import com.videshkarmakar.doom.eq.AudioLabStore
+import com.videshkarmakar.doom.eq.AutoEqCorrection
+import com.videshkarmakar.doom.eq.EqPresets
+import com.videshkarmakar.doom.eq.EqSettings
+import com.videshkarmakar.doom.eq.audio.Biquad
+import com.videshkarmakar.doom.eq.autoeq.AutoEqEntry
+import com.videshkarmakar.doom.eq.autoeq.AutoEqFitter
+import com.videshkarmakar.doom.eq.autoeq.AutoEqMeasurement
+import com.videshkarmakar.doom.eq.autoeq.AutoEqModel
+import com.videshkarmakar.doom.eq.autoeq.AutoEqRepository
+import com.videshkarmakar.doom.eq.autoeq.AutoEqTuning
+import com.videshkarmakar.doom.eq.data.FilterType
+import com.videshkarmakar.doom.eq.data.ParametricEQBand
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
@@ -46,9 +46,9 @@ class AudioLabViewModel @Inject constructor(
     val store: AudioLabStore,
     private val autoEq: AutoEqRepository,
     /** what the effects are doing right now, for the pictures' meters */
-    val fx: com.mochyy.mochymusic.eq.AudioFxService,
+    val fx: com.videshkarmakar.doom.eq.AudioFxService,
     /** the providers and their order, for the hub's quality tile */
-    val sources: com.mochyy.mochymusic.modules.SourceModules,
+    val sources: com.videshkarmakar.doom.modules.SourceModules,
 ) : ViewModel() {
 
     val eq = store.eq
@@ -217,22 +217,22 @@ class AudioLabViewModel @Inject constructor(
 
     // ---- Audio FX ---------------------------------------------------------------------------
 
-    fun updateReverb(transform: (com.mochyy.mochymusic.eq.ReverbSettings) -> com.mochyy.mochymusic.eq.ReverbSettings) =
+    fun updateReverb(transform: (com.videshkarmakar.doom.eq.ReverbSettings) -> com.videshkarmakar.doom.eq.ReverbSettings) =
         store.updateReverb(transform)
 
-    fun updateLoudness(transform: (com.mochyy.mochymusic.eq.LoudnessSettings) -> com.mochyy.mochymusic.eq.LoudnessSettings) =
+    fun updateLoudness(transform: (com.videshkarmakar.doom.eq.LoudnessSettings) -> com.videshkarmakar.doom.eq.LoudnessSettings) =
         store.updateLoudness(transform)
 
-    fun updateSpatial(transform: (com.mochyy.mochymusic.eq.SpatialSettings) -> com.mochyy.mochymusic.eq.SpatialSettings) =
+    fun updateSpatial(transform: (com.videshkarmakar.doom.eq.SpatialSettings) -> com.videshkarmakar.doom.eq.SpatialSettings) =
         store.updateSpatial(transform)
 
-    fun updatePlayback(transform: (com.mochyy.mochymusic.eq.PlaybackSettings) -> com.mochyy.mochymusic.eq.PlaybackSettings) =
+    fun updatePlayback(transform: (com.videshkarmakar.doom.eq.PlaybackSettings) -> com.videshkarmakar.doom.eq.PlaybackSettings) =
         store.updatePlayback(transform)
 
-    fun updateVolume(transform: (com.mochyy.mochymusic.eq.VolumeSettings) -> com.mochyy.mochymusic.eq.VolumeSettings) =
+    fun updateVolume(transform: (com.videshkarmakar.doom.eq.VolumeSettings) -> com.videshkarmakar.doom.eq.VolumeSettings) =
         store.updateVolume(transform)
 
-    fun updateNormalize(transform: (com.mochyy.mochymusic.eq.NormalizeSettings) -> com.mochyy.mochymusic.eq.NormalizeSettings) =
+    fun updateNormalize(transform: (com.videshkarmakar.doom.eq.NormalizeSettings) -> com.videshkarmakar.doom.eq.NormalizeSettings) =
         store.updateNormalize(transform)
 
     companion object {

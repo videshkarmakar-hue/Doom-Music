@@ -1,19 +1,19 @@
 // CanvasArtworkUtils.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import android.content.Context
-import com.mochyy.mochymusic.applecanvas.AppleMusicCanvasProvider
-import com.mochyy.mochymusic.canvas.CanvasArtwork
-import com.mochyy.mochymusic.canvas.MonochromeApiCanvas
-import com.mochyy.mochymusic.canvas.SpotifyCanvasProvider
-import com.mochyy.mochymusic.constants.CanvasOrder
-import com.mochyy.mochymusic.constants.CanvasOrderKey
-import com.mochyy.mochymusic.constants.CanvasSource
-import com.mochyy.mochymusic.constants.SpotifyCanvasKey
-import com.mochyy.mochymusic.extensions.toEnum
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.applecanvas.AppleMusicCanvasProvider
+import com.videshkarmakar.doom.canvas.CanvasArtwork
+import com.videshkarmakar.doom.canvas.MonochromeApiCanvas
+import com.videshkarmakar.doom.canvas.SpotifyCanvasProvider
+import com.videshkarmakar.doom.constants.CanvasOrder
+import com.videshkarmakar.doom.constants.CanvasOrderKey
+import com.videshkarmakar.doom.constants.CanvasSource
+import com.videshkarmakar.doom.constants.SpotifyCanvasKey
+import com.videshkarmakar.doom.extensions.toEnum
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

@@ -1,6 +1,6 @@
 // MorphingSongInfo.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,7 +28,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.ui.player.models.TrackInfo
+import com.videshkarmakar.doom.ui.player.models.TrackInfo
 
 private val TargetX = 36.dp + 60.dp + 18.dp
 

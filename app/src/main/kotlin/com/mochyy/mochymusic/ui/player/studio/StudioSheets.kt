@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.studio
+package com.videshkarmakar.doom.ui.player.studio
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -39,30 +39,30 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.constants.DiscLabelContent
-import com.mochyy.mochymusic.constants.DiscLabelContentKey
-import com.mochyy.mochymusic.constants.DiscNameKey
-import com.mochyy.mochymusic.constants.PlayerCoverStyle
-import com.mochyy.mochymusic.constants.PlayerEndTimestamp
-import com.mochyy.mochymusic.constants.PlayerEndTimestampKey
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.ButtonStyle
-import com.mochyy.mochymusic.constants.FlagshipTransportLayout
-import com.mochyy.mochymusic.ui.player.flagship.TransportLayoutPreview
-import com.mochyy.mochymusic.ui.component.PlayerTransportButtons
-import com.mochyy.mochymusic.ui.component.SeekBarStyle
-import com.mochyy.mochymusic.ui.component.SeekBarTrack
-import com.mochyy.mochymusic.ui.component.TransportColors
-import com.mochyy.mochymusic.ui.player.customize.CoverOption
-import com.mochyy.mochymusic.ui.player.customize.options
-import com.mochyy.mochymusic.ui.player.menu.LocalMenuSheetClose
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.player.menu.MenuSheetSurface
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.DiscLabelContent
+import com.videshkarmakar.doom.constants.DiscLabelContentKey
+import com.videshkarmakar.doom.constants.DiscNameKey
+import com.videshkarmakar.doom.constants.PlayerCoverStyle
+import com.videshkarmakar.doom.constants.PlayerEndTimestamp
+import com.videshkarmakar.doom.constants.PlayerEndTimestampKey
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.ButtonStyle
+import com.videshkarmakar.doom.constants.FlagshipTransportLayout
+import com.videshkarmakar.doom.ui.player.flagship.TransportLayoutPreview
+import com.videshkarmakar.doom.ui.component.PlayerTransportButtons
+import com.videshkarmakar.doom.ui.component.SeekBarStyle
+import com.videshkarmakar.doom.ui.component.SeekBarTrack
+import com.videshkarmakar.doom.ui.component.TransportColors
+import com.videshkarmakar.doom.ui.player.customize.CoverOption
+import com.videshkarmakar.doom.ui.player.customize.options
+import com.videshkarmakar.doom.ui.player.menu.LocalMenuSheetClose
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.player.menu.MenuSheetSurface
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 
 /** the sheet the editor has open, if any */
 @Composable
@@ -261,7 +261,7 @@ private fun ColumnScope.PosterOptions() {
                 title = stringResource(R.string.ps_studio_visualizer),
                 description = stringResource(R.string.ps_studio_visualizer_desc),
                 icon = R.drawable.graphic_eq,
-                key = com.mochyy.mochymusic.constants.PosterVisualizerKey,
+                key = com.videshkarmakar.doom.constants.PosterVisualizerKey,
                 default = false,
             ),
         )

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.bedside
+package com.videshkarmakar.doom.ui.player.bedside
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -31,21 +31,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.BedsideInfoTilePageKey
-import com.mochyy.mochymusic.constants.BedsideMusicTilePageKey
-import com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState
-import com.mochyy.mochymusic.ui.player.LocalSongCarousel
-import com.mochyy.mochymusic.ui.player.styles.LocalStyleInteractive
-import com.mochyy.mochymusic.ui.player.styles.StyleStage
-import com.mochyy.mochymusic.ui.player.styles.StyleActions
-import com.mochyy.mochymusic.ui.player.styles.StyleCircle
-import com.mochyy.mochymusic.ui.player.styles.StyleMenu
-import com.mochyy.mochymusic.ui.player.styles.StyleTones
-import com.mochyy.mochymusic.ui.player.styles.rememberStyleTones
-import com.mochyy.mochymusic.ui.player.styles.styleSongSwipe
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.BedsideInfoTilePageKey
+import com.videshkarmakar.doom.constants.BedsideMusicTilePageKey
+import com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState
+import com.videshkarmakar.doom.ui.player.LocalSongCarousel
+import com.videshkarmakar.doom.ui.player.styles.LocalStyleInteractive
+import com.videshkarmakar.doom.ui.player.styles.StyleStage
+import com.videshkarmakar.doom.ui.player.styles.StyleActions
+import com.videshkarmakar.doom.ui.player.styles.StyleCircle
+import com.videshkarmakar.doom.ui.player.styles.StyleMenu
+import com.videshkarmakar.doom.ui.player.styles.StyleTones
+import com.videshkarmakar.doom.ui.player.styles.rememberStyleTones
+import com.videshkarmakar.doom.ui.player.styles.styleSongSwipe
+import com.videshkarmakar.doom.utils.rememberPreference
 
 private val MenuButton = 34.dp
 private val EdgeGap = 16.dp

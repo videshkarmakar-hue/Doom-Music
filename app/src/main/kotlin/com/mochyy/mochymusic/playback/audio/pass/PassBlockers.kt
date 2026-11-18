@@ -1,29 +1,29 @@
 // PassBlockers.kt
 
-package com.mochyy.mochymusic.playback.audio.pass
+package com.videshkarmakar.doom.playback.audio.pass
 
 import androidx.datastore.preferences.core.MutablePreferences
 import androidx.datastore.preferences.core.Preferences
-import com.mochyy.mochymusic.constants.AudioNormalizationKey
-import com.mochyy.mochymusic.constants.CrossfadeEnabledKey
-import com.mochyy.mochymusic.constants.CrossmixMode
-import com.mochyy.mochymusic.constants.CrossmixModeKey
-import com.mochyy.mochymusic.constants.MusicHapticsEnabledKey
-import com.mochyy.mochymusic.constants.SkipSilenceKey
-import com.mochyy.mochymusic.constants.TransportEffect
-import com.mochyy.mochymusic.constants.TransportEffectKey
-import com.mochyy.mochymusic.constants.transitionModeOf
-import com.mochyy.mochymusic.eq.AudioLabStore
-import com.mochyy.mochymusic.eq.EqSettings
-import com.mochyy.mochymusic.eq.LoudnessSettings
-import com.mochyy.mochymusic.eq.PlaybackSettings
-import com.mochyy.mochymusic.eq.ReverbSettings
-import com.mochyy.mochymusic.eq.SpatialSettings
-import com.mochyy.mochymusic.eq.VolumeSettings
-import com.mochyy.mochymusic.extensions.toEnum
+import com.videshkarmakar.doom.constants.AudioNormalizationKey
+import com.videshkarmakar.doom.constants.CrossfadeEnabledKey
+import com.videshkarmakar.doom.constants.CrossmixMode
+import com.videshkarmakar.doom.constants.CrossmixModeKey
+import com.videshkarmakar.doom.constants.MusicHapticsEnabledKey
+import com.videshkarmakar.doom.constants.SkipSilenceKey
+import com.videshkarmakar.doom.constants.TransportEffect
+import com.videshkarmakar.doom.constants.TransportEffectKey
+import com.videshkarmakar.doom.constants.transitionModeOf
+import com.videshkarmakar.doom.eq.AudioLabStore
+import com.videshkarmakar.doom.eq.EqSettings
+import com.videshkarmakar.doom.eq.LoudnessSettings
+import com.videshkarmakar.doom.eq.PlaybackSettings
+import com.videshkarmakar.doom.eq.ReverbSettings
+import com.videshkarmakar.doom.eq.SpatialSettings
+import com.videshkarmakar.doom.eq.VolumeSettings
+import com.videshkarmakar.doom.extensions.toEnum
 import kotlinx.serialization.Serializable
 
-/** each of these changes the sound on mochy's side, and an output that takes the song untouched can't, so songs play the normal way while one is on */
+/** each of these changes the sound on doom's side, and an output that takes the song untouched can't, so songs play the normal way while one is on */
 enum class PassBlocker { EQUALIZER, AUDIO_FX, VOLUME, NORMALIZATION, SPEED, TRANSITIONS, SILENCE_OR_HAPTICS }
 
 /** the pieces of audio lab the blockers are read from, gathered so one call can decide */

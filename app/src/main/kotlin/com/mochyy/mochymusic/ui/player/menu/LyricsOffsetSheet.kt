@@ -1,6 +1,6 @@
 // LyricsOffsetSheet.kt
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.rememberScrollState
@@ -48,14 +48,14 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.lyrics.LyricsAutoSync
-import com.mochyy.mochymusic.lyrics.LyricsUtils
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.lyrics.LyricsAutoSync
+import com.videshkarmakar.doom.lyrics.LyricsUtils
 import kotlin.math.abs
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** The slider and the typed value both stop here: 10 seconds either way, shown in ms. */
 private const val MaxOffsetMs = 10_000

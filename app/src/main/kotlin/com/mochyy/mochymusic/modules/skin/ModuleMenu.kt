@@ -1,6 +1,6 @@
 // the rows switched-on modules add to the player's menu, kept where the menu can read them without a view model
 
-package com.mochyy.mochymusic.modules.skin
+package com.videshkarmakar.doom.modules.skin
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue

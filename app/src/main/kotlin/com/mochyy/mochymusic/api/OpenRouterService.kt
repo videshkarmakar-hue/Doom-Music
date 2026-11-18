@@ -1,6 +1,6 @@
 // OpenRouterService.kt
 
-package com.mochyy.mochymusic.api
+package com.videshkarmakar.doom.api
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -58,7 +58,7 @@ CRITICAL RULES:
 
 CRITICAL REQUIREMENTS:
 - Use ONLY simple ASCII characters (a-z, A-Z, 0-9, basic punctuation)
-- NO special characters like ā, ī, ū, ñ, ç, etc.
+- NO special characters like �, ī, ū, ñ, ç, etc.
 - NO diacritics or accent marks
 - If text is already in Latin script, return it UNCHANGED
 - For non-Latin scripts (Hindi, Chinese, Japanese, Korean, Cyrillic, etc.), provide simple romanization
@@ -67,9 +67,9 @@ CRITICAL REQUIREMENTS:
 - Preserve line-by-line structure exactly
 
 Examples of correct simple romanization:
-- Sanskrit/Hindi "आ" → "aa" (not "ā")
-- Japanese "東京" → "toukyou" or "tokyo" (not "tōkyō")
-- Korean "서울" → "seoul" (not "sŏul")
+- Sanskrit/Hindi "आ" → "aa" (not "�")
+- Japanese "�京" → "toukyou" or "tokyo" (not "t�ky�")
+- Korean "서울" → "seoul" (not "s�ul")
 
 Input ($lineCount lines):
 $text
@@ -88,9 +88,9 @@ CRITICAL REQUIREMENTS:
 - If text is already in $targetLanguage script, return it UNCHANGED
 
 Examples:
-- Japanese "こんにちは" to Hindi → "कोन्निचिवा" (phonetic, not translation)
+- Japanese "�ん���" to Hindi → "कोन�निचिवा" (phonetic, not translation)
 - English "Hello" to Hindi → "हेलो" (phonetic)
-- Korean "안녕하세요" to Hindi → "अन्न्योंग हासेयो" (phonetic)
+- Korean "안녕하세요" to Hindi → "अन�न�योंग हासेयो" (phonetic)
 
 Input ($lineCount lines):
 $text
@@ -140,8 +140,8 @@ Output MUST be a JSON array with EXACTLY $lineCount strings."""
                         }
                     }
                     .addHeader("Content-Type", "application/json")
-                    .addHeader("HTTP-Referer", "https://github.com/realidkroo/Mochy-Music")
-                    .addHeader("X-Title", "mochy")
+                    .addHeader("HTTP-Referer", "https://github.com/realidkroo/Doom-Music")
+                    .addHeader("X-Title", "doom")
                     .post(jsonBody.toString().toRequestBody(JSON))
                     .build()
 

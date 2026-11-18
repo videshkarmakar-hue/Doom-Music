@@ -2,9 +2,9 @@
 //
 // The Library's Imported tab: the import banner, then what each service brought in, as songs
 // (All music), as playlists and as albums, and Manage imports at the bottom. Songs YouTube sync keeps up to
-// date count under YouTube here, apart from the songs liked in Mochy itself.
+// date count under YouTube here, apart from the songs liked in Doom itself.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -14,13 +14,13 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.importer.ImportProgress
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.ui.screens.search.SearchHorizontalPadding
-import com.mochyy.mochymusic.viewmodels.ImportedAlbums
-import com.mochyy.mochymusic.viewmodels.ImportedSourceCard
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.importer.ImportProgress
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.ui.screens.search.SearchHorizontalPadding
+import com.videshkarmakar.doom.viewmodels.ImportedAlbums
+import com.videshkarmakar.doom.viewmodels.ImportedSourceCard
 
 /** What one service brought in, for its cards. */
 @Immutable

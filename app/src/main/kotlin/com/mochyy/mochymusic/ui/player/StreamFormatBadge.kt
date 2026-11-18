@@ -1,6 +1,6 @@
 // StreamFormatBadge.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -19,8 +19,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.playback.StreamFacts
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.playback.StreamFacts
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 
 /**
  * "OPUS", or "OPUS · 48,0 KHz" with the sample rate on: an outlined tag in the design's proportions,

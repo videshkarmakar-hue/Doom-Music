@@ -1,6 +1,6 @@
 // ShareTargets.kt
 
-package com.mochyy.mochymusic.ui.player.share.song.export
+package com.videshkarmakar.doom.ui.player.share.song.export
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -15,10 +15,10 @@ import android.provider.MediaStore
 import androidx.annotation.StringRes
 import androidx.core.content.FileProvider
 import androidx.media3.datasource.DataSource
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.player.share.song.ShareLayers
-import com.mochyy.mochymusic.ui.player.share.song.SongShareKind
-import com.mochyy.mochymusic.ui.player.share.song.SongShareSession
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.player.share.song.ShareLayers
+import com.videshkarmakar.doom.ui.player.share.song.SongShareKind
+import com.videshkarmakar.doom.ui.player.share.song.SongShareSession
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -141,7 +141,7 @@ private suspend fun saveToGallery(context: Context, file: ShareFile): Boolean = 
         val values = ContentValues().apply {
             put(MediaStore.MediaColumns.DISPLAY_NAME, file.file.name)
             put(MediaStore.MediaColumns.MIME_TYPE, file.mimeType)
-            put(MediaStore.MediaColumns.RELATIVE_PATH, (if (video) Environment.DIRECTORY_MOVIES else Environment.DIRECTORY_PICTURES) + "/Mochy")
+            put(MediaStore.MediaColumns.RELATIVE_PATH, (if (video) Environment.DIRECTORY_MOVIES else Environment.DIRECTORY_PICTURES) + "/Doom")
         }
         val collection = if (video) MediaStore.Video.Media.EXTERNAL_CONTENT_URI else MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         val uri = context.contentResolver.insert(collection, values) ?: return@runCatching false

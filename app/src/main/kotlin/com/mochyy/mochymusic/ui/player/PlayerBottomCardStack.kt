@@ -1,6 +1,6 @@
 // PlayerBottomCardStack.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
@@ -64,12 +64,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.viewmodels.LyricsScreenViewModel
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.viewmodels.LyricsScreenViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.abs
 import kotlin.math.roundToInt
@@ -188,7 +188,7 @@ internal fun PlayerBottomCardStack(
     // lyrics page does. Only while it's tall: otherwise nothing here would show them.
     val tall by remember { derivedStateOf { growthProvider() > 0.5f } }
     if (tall && lines.isNotEmpty()) {
-        LyricsReadings(lines, mediaMetadata?.id, com.mochyy.mochymusic.LocalDatabase.current, lyricsEntity)
+        LyricsReadings(lines, mediaMetadata?.id, com.videshkarmakar.doom.LocalDatabase.current, lyricsEntity)
     }
 
     val flipDistancePx = with(density) { FlipDistance.toPx() }

@@ -1,6 +1,6 @@
 // UsbDacDetails.kt
 
-package com.mochyy.mochymusic.playback.audio
+package com.videshkarmakar.doom.playback.audio
 
 import android.content.Context
 import android.hardware.usb.UsbConstants
@@ -31,7 +31,7 @@ data class UsbDacDetails(
     val bitDepths: List<Int>,
     /** what android 14's mixer can hand it untouched; null on older android */
     val bitPerfect: List<DacFormat>?,
-    /** false while mochy's own driver holds it, android doesn't see it as an output then */
+    /** false while doom's own driver holds it, android doesn't see it as an output then */
     val androidOutput: Boolean,
 )
 

@@ -1,6 +1,6 @@
-// puts the values of every look module that's on onto mochy's look settings, and gives the user's own back once no look sets them
+// puts the values of every look module that's on onto doom's look settings, and gives the user's own back once no look sets them
 
-package com.mochyy.mochymusic.modules
+package com.videshkarmakar.doom.modules
 
 import android.content.Context
 import androidx.compose.ui.graphics.toArgb
@@ -8,35 +8,35 @@ import androidx.core.content.edit
 import androidx.datastore.preferences.core.MutablePreferences
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
-import com.mochyy.mochymusic.constants.BlurQuality
-import com.mochyy.mochymusic.constants.BlurQualityKey
-import com.mochyy.mochymusic.constants.BlurStrengthPxKey
-import com.mochyy.mochymusic.constants.ChromeGlassStyle
-import com.mochyy.mochymusic.constants.ChromeGlassStyleKey
-import com.mochyy.mochymusic.constants.DynamicThemeKey
-import com.mochyy.mochymusic.constants.ElementBlurKey
-import com.mochyy.mochymusic.constants.EnableProgressiveBlurKey
-import com.mochyy.mochymusic.constants.FlagshipBackgroundStyleKey
-import com.mochyy.mochymusic.constants.HomeStyle
-import com.mochyy.mochymusic.constants.HomeStyleKey
-import com.mochyy.mochymusic.constants.IpodTheme
-import com.mochyy.mochymusic.constants.IpodThemeKey
-import com.mochyy.mochymusic.constants.IpodWheelColor
-import com.mochyy.mochymusic.constants.IpodWheelColorKey
-import com.mochyy.mochymusic.constants.LyricsMotionStyle
-import com.mochyy.mochymusic.constants.LyricsMotionStyleKey
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyle
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyleKey
-import com.mochyy.mochymusic.constants.PlayerStyle
-import com.mochyy.mochymusic.constants.PlayerStyleKey
-import com.mochyy.mochymusic.constants.PlaylistStyle
-import com.mochyy.mochymusic.constants.PlaylistStyleKey
-import com.mochyy.mochymusic.constants.PureBlackKey
-import com.mochyy.mochymusic.constants.SelectedThemeColorKey
-import com.mochyy.mochymusic.constants.ThumbnailCornerRadiusKey
-import com.mochyy.mochymusic.module.LookSetting
-import com.mochyy.mochymusic.modules.skin.parseHexColor
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.constants.BlurQuality
+import com.videshkarmakar.doom.constants.BlurQualityKey
+import com.videshkarmakar.doom.constants.BlurStrengthPxKey
+import com.videshkarmakar.doom.constants.ChromeGlassStyle
+import com.videshkarmakar.doom.constants.ChromeGlassStyleKey
+import com.videshkarmakar.doom.constants.DynamicThemeKey
+import com.videshkarmakar.doom.constants.ElementBlurKey
+import com.videshkarmakar.doom.constants.EnableProgressiveBlurKey
+import com.videshkarmakar.doom.constants.FlagshipBackgroundStyleKey
+import com.videshkarmakar.doom.constants.HomeStyle
+import com.videshkarmakar.doom.constants.HomeStyleKey
+import com.videshkarmakar.doom.constants.IpodTheme
+import com.videshkarmakar.doom.constants.IpodThemeKey
+import com.videshkarmakar.doom.constants.IpodWheelColor
+import com.videshkarmakar.doom.constants.IpodWheelColorKey
+import com.videshkarmakar.doom.constants.LyricsMotionStyle
+import com.videshkarmakar.doom.constants.LyricsMotionStyleKey
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyle
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyleKey
+import com.videshkarmakar.doom.constants.PlayerStyle
+import com.videshkarmakar.doom.constants.PlayerStyleKey
+import com.videshkarmakar.doom.constants.PlaylistStyle
+import com.videshkarmakar.doom.constants.PlaylistStyleKey
+import com.videshkarmakar.doom.constants.PureBlackKey
+import com.videshkarmakar.doom.constants.SelectedThemeColorKey
+import com.videshkarmakar.doom.constants.ThumbnailCornerRadiusKey
+import com.videshkarmakar.doom.module.LookSetting
+import com.videshkarmakar.doom.modules.skin.parseHexColor
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import org.json.JSONObject
@@ -49,7 +49,7 @@ internal class ModuleLooks(private val context: Context) {
     // two syncs at once would each read the other's half-written holds
     private val lock = Mutex()
 
-    /** puts the looks that are on onto mochy's settings, the first in [looks] winning where two set the same one, and gives back the user's own where none does anymore */
+    /** puts the looks that are on onto doom's settings, the first in [looks] winning where two set the same one, and gives back the user's own where none does anymore */
     suspend fun sync(looks: List<Map<String, String>>) = lock.withLock {
         val wanted = LinkedHashMap<String, String>()
         looks.forEach { look ->

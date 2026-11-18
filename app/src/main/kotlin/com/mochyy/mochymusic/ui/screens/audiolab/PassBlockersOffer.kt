@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.audiolab
+package com.videshkarmakar.doom.ui.screens.audiolab
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -22,11 +22,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.playback.audio.pass.PassBlocker
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.screens.update.SheetPrimaryButton
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.playback.audio.pass.PassBlocker
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.screens.update.SheetPrimaryButton
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 
 // asked right when passthrough goes on while something still changes the sound, so nobody has to find the card further down to learn why nothing happened
 fun PopupSheetState.showPassBlockersOffer(blockers: Set<PassBlocker>, onTurnOff: () -> Unit) {

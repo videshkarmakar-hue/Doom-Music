@@ -1,6 +1,6 @@
 // bits the support sheet and the donate sheet share: the coffee girl, her sizing, and the pill buttons
 
-package com.mochyy.mochymusic.ui.screens.donate
+package com.videshkarmakar.doom.ui.screens.donate
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -28,10 +28,10 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // the art is 768 x 1013, solid down to 56% of her height and fading out below that
 internal const val CharacterAspect = 1013f / 768f

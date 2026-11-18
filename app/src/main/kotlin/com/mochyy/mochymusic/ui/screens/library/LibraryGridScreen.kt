@@ -6,7 +6,7 @@
 // A grid rather than the A-Z pill list because these are browsed by cover, not scanned by name;
 // that's also why neither has an alphabet rail.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -35,7 +35,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
 import androidx.compose.material3.Icon
@@ -44,19 +44,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.BoneColor
-import com.mochyy.mochymusic.ui.component.HomeCardCornerRadius
-import com.mochyy.mochymusic.ui.component.HomeCardHighlight
-import com.mochyy.mochymusic.ui.component.HomeCardSpacing
-import com.mochyy.mochymusic.ui.component.containerTransformSource
-import com.mochyy.mochymusic.ui.component.detail.TrackSubtitleStyle
-import com.mochyy.mochymusic.ui.component.detail.TrackTitleStyle
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.ui.screens.search.SearchHorizontalPadding
-import com.mochyy.mochymusic.ui.screens.search.rememberCollapseProgress
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.BoneColor
+import com.videshkarmakar.doom.ui.component.HomeCardCornerRadius
+import com.videshkarmakar.doom.ui.component.HomeCardHighlight
+import com.videshkarmakar.doom.ui.component.HomeCardSpacing
+import com.videshkarmakar.doom.ui.component.containerTransformSource
+import com.videshkarmakar.doom.ui.component.detail.TrackSubtitleStyle
+import com.videshkarmakar.doom.ui.component.detail.TrackTitleStyle
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.ui.screens.search.SearchHorizontalPadding
+import com.videshkarmakar.doom.ui.screens.search.rememberCollapseProgress
 
 /** One tile in the grid. */
 data class LibraryGridEntry(

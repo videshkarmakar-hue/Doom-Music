@@ -1,6 +1,6 @@
 // AudioPass.kt
 
-package com.mochyy.mochymusic.playback.audio.pass
+package com.videshkarmakar.doom.playback.audio.pass
 
 import android.content.Context
 import android.media.AudioDeviceInfo
@@ -10,9 +10,9 @@ import android.os.SystemClock
 import androidx.media3.common.C
 import androidx.media3.common.Format
 import androidx.media3.common.MimeTypes
-import com.mochyy.mochymusic.constants.AudioPassMode
-import com.mochyy.mochymusic.playback.audio.AudioOutputs
-import com.mochyy.mochymusic.playback.audio.UsbDacReader
+import com.videshkarmakar.doom.constants.AudioPassMode
+import com.videshkarmakar.doom.playback.audio.AudioOutputs
+import com.videshkarmakar.doom.playback.audio.UsbDacReader
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -48,7 +48,7 @@ class AudioPass(context: Context, private val outputs: AudioOutputs) {
     private val _dacVolume = MutableStateFlow<DacVolume?>(null)
     val dacVolume: StateFlow<DacVolume?> = _dacVolume.asStateFlow()
 
-    /** whether the dac is mochy's to open, null with none plugged in */
+    /** whether the dac is doom's to open, null with none plugged in */
     val usbPermitted: StateFlow<Boolean?> get() = usb.permitted
 
     @Volatile private var enabled = false

@@ -3,13 +3,13 @@
 // What the Library's Cached tab lists: the songs the player kept whole in its cache while
 // streaming them, so they play again without a connection.
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import androidx.media3.datasource.cache.ContentMetadata
 import androidx.media3.datasource.cache.SimpleCache
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.di.PlayerCache
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.di.PlayerCache
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

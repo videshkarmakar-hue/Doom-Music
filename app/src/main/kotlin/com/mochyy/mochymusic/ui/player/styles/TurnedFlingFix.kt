@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect

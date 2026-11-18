@@ -1,6 +1,6 @@
 // StringExt.kt
 
-package com.mochyy.mochymusic.extensions
+package com.videshkarmakar.doom.extensions
 
 import androidx.sqlite.db.SimpleSQLiteQuery
 

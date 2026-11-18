@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

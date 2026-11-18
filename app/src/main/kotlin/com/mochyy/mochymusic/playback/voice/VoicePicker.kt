@@ -1,6 +1,6 @@
 // VoicePicker.kt
 
-package com.mochyy.mochymusic.playback.voice
+package com.videshkarmakar.doom.playback.voice
 
 import android.content.Context
 import androidx.media3.common.MediaItem
@@ -13,27 +13,27 @@ import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
 import com.music.innertube.pages.ArtistPage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.constants.SongSortType
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.playback.queues.Queue
-import com.mochyy.mochymusic.playback.queues.YouTubePlaylistQueue
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.constants.SongSortType
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.playback.queues.Queue
+import com.videshkarmakar.doom.playback.queues.YouTubePlaylistQueue
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
 
-// turns a voice request into a queue mochy already plays, with the songs found before anything that's playing stops
+// turns a voice request into a queue doom already plays, with the songs found before anything that's playing stops
 class VoicePicker(
     private val context: Context,
     private val database: MusicDatabase,

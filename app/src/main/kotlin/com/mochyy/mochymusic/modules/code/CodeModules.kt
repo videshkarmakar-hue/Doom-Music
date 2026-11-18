@@ -1,6 +1,6 @@
-// modules that bring their own code in a zip: only an apk signed with mochy's own key gets in, it's copied into the app's files, and its code runs behind the bridge (docs/notes/modules.md)
+// modules that bring their own code in a zip: only an apk signed with doom's own key gets in, it's copied into the app's files, and its code runs behind the bridge (docs/notes/modules.md)
 
-package com.mochyy.mochymusic.modules.code
+package com.videshkarmakar.doom.modules.code
 
 import android.content.Context
 import android.content.pm.PackageInfo
@@ -10,10 +10,10 @@ import android.net.Uri
 import android.os.Build
 import android.os.Process
 import androidx.annotation.RequiresApi
-import com.mochyy.mochymusic.module.bridge.BridgeOnlyParent
-import com.mochyy.mochymusic.module.bridge.BridgedModule
-import com.mochyy.mochymusic.module.bridge.shared.ModuleBridge
-import com.mochyy.mochymusic.modules.ModuleRegistry
+import com.videshkarmakar.doom.module.bridge.BridgeOnlyParent
+import com.videshkarmakar.doom.module.bridge.BridgedModule
+import com.videshkarmakar.doom.module.bridge.shared.ModuleBridge
+import com.videshkarmakar.doom.modules.ModuleRegistry
 import dalvik.system.DexClassLoader
 import timber.log.Timber
 import java.io.File
@@ -43,11 +43,11 @@ internal object CodeModules {
         return null
     }
 
-    /** true when the apk is signed with exactly the keys this copy of mochy is signed with */
-    fun signedLikeMochy(context: Context, apk: File): Boolean =
-        signedLikeMochy(context, context.packageManager.getPackageArchiveInfo(apk.path, SignatureFlags))
+    /** true when the apk is signed with exactly the keys this copy of doom is signed with */
+    fun signedLikeDoom(context: Context, apk: File): Boolean =
+        signedLikeDoom(context, context.packageManager.getPackageArchiveInfo(apk.path, SignatureFlags))
 
-    /** puts a checked apk in place under [key] and starts it; null when its code can't run in this mochy */
+    /** puts a checked apk in place under [key] and starts it; null when its code can't run in this doom */
     fun install(context: Context, key: String, apk: File): Loaded? {
         // each copy gets a folder of its own, since a native library stays open in the class loader that loaded it and one path can't be loaded twice
         val folder = "${safe(key)}/${System.currentTimeMillis()}"
@@ -70,8 +70,8 @@ internal object CodeModules {
         // android 14 refuses to load code from a file the app could still write to
         apk.setReadOnly()
         val info = context.packageManager.getPackageArchiveInfo(apk.path, SignatureFlags or PackageManager.GET_META_DATA)
-        if (!signedLikeMochy(context, info)) {
-            Timber.tag(Tag).w("Skipping the module in $folder: not signed like Mochy")
+        if (!signedLikeDoom(context, info)) {
+            Timber.tag(Tag).w("Skipping the module in $folder: not signed like Doom")
             return null
         }
         val entry = info?.applicationInfo?.metaData?.getString(ModuleRegistry.EntryMetaKey) ?: return null
@@ -98,7 +98,7 @@ internal object CodeModules {
 
     private fun safe(key: String) = key.lowercase().replace(Regex("[^a-z0-9._-]"), "-").ifBlank { "module" }
 
-    private fun signedLikeMochy(context: Context, theirs: PackageInfo?): Boolean {
+    private fun signedLikeDoom(context: Context, theirs: PackageInfo?): Boolean {
         val own = signers(context.packageManager.getPackageInfo(context.packageName, SignatureFlags))
         return own.isNotEmpty() && own == signers(theirs)
     }

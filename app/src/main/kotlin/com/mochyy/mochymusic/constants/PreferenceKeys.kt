@@ -1,6 +1,6 @@
 // PreferenceKeys.kt
 
-package com.mochyy.mochymusic.constants
+package com.videshkarmakar.doom.constants
 
 import android.os.Build
 import androidx.datastore.preferences.core.Preferences
@@ -55,7 +55,7 @@ val SwipeLeftActionKey = stringPreferencesKey("swipeLeftAction")
 
 // the top layout of the home tab, picked in customisation settings
 enum class HomeStyle(val displayName: String) {
-    MOCHYY("Mochyy"),
+    MOCHYY("Doomy"),
     LISTEN_NOW("Listen now"),
     HOP_IN("Hop in"),
 }
@@ -136,7 +136,7 @@ val SelectedYtmPlaylistsKey = stringPreferencesKey("selectedYtmPlaylists")
 val YtSyncNewPlaylistsKey = booleanPreferencesKey("ytSyncNewPlaylists")
 /** Plays long enough to count go to the signed-in account's YouTube history. */
 val YtReportPlaysKey = booleanPreferencesKey("ytReportPlays")
-/** YouTube Music history is copied into Mochy's own listening history. */
+/** YouTube Music history is copied into Doom's own listening history. */
 val YtPullHistoryKey = booleanPreferencesKey("ytPullHistory")
 /** Newest YouTube history entry already copied, so the next pull stops there. */
 val YtHistoryLastSeenKey = stringPreferencesKey("ytHistoryLastSeen")
@@ -163,7 +163,7 @@ val DataSaverKey = booleanPreferencesKey("dataSaver")
 val DataSaverMobileOnlyKey = booleanPreferencesKey("dataSaverMobileOnly")
 val IpVersionKey = stringPreferencesKey("ipVersion")
 
-// who finds a youtube song's stream: innertubex first with mochy's own client walk behind it, or only the walk
+// who finds a youtube song's stream: innertubex first with doom's own client walk behind it, or only the walk
 val StreamBackendKey = stringPreferencesKey("streamBackend")
 
 enum class StreamBackend {
@@ -221,11 +221,11 @@ enum class AudioPassMode(val minSdk: Int) {
     EXCLUSIVE_DAC(27),
     ;
 
-    /** whether songs go to an output only mochy plays to, instead of through android's mixer */
+    /** whether songs go to an output only doom plays to, instead of through android's mixer */
     val exclusive: Boolean get() = this != SONG_RATE
 
     companion object {
-        /** android 14 brought the dac's own mixer; before it only mochy's own driver reaches the dac */
+        /** android 14 brought the dac's own mixer; before it only doom's own driver reaches the dac */
         val Default: AudioPassMode
             get() = if (android.os.Build.VERSION.SDK_INT >= 34) SONG_RATE else DIRECT_USB
     }
@@ -346,14 +346,14 @@ val PauseListenHistoryKey = booleanPreferencesKey("pauseListenHistory")
 val PauseSearchHistoryKey = booleanPreferencesKey("pauseSearchHistory")
 val DisableScreenshotKey = booleanPreferencesKey("disableScreenshot")
 
-// Discord: signed in on Discord's own page in the browser (OAuth), so Mochy only ever holds a
+// Discord: signed in on Discord's own page in the browser (OAuth), so Doom only ever holds a
 // token Discord gave it for this, never the account's password or login token
 val DiscordAccessTokenKey = stringPreferencesKey("discordAccessToken")
 val DiscordRefreshTokenKey = stringPreferencesKey("discordRefreshToken")
 val DiscordTokenExpiresAtKey = longPreferencesKey("discordTokenExpiresAt")
 /** the signed-in account's name, picture, banner and bio, as JSON, for the profile preview */
 val DiscordProfileKey = stringPreferencesKey("discordProfile")
-/** a login started in the browser, kept on disk in case Android closes Mochy meanwhile */
+/** a login started in the browser, kept on disk in case Android closes Doom meanwhile */
 val DiscordLoginStateKey = stringPreferencesKey("discordLoginState")
 val DiscordLoginVerifierKey = stringPreferencesKey("discordLoginVerifier")
 
@@ -367,7 +367,7 @@ val DiscordLargeTextKey = stringPreferencesKey("discordPresenceLargeText")
 val DiscordSmallTextKey = stringPreferencesKey("discordPresenceSmallText")
 val DiscordLargeImageKey = stringPreferencesKey("discordPresenceLargeImage")
 val DiscordSmallImageKey = stringPreferencesKey("discordPresenceSmallImage")
-// the pictures picked for "your own picture", kept as files in mochy's own folder
+// the pictures picked for "your own picture", kept as files in doom's own folder
 val DiscordLargeCustomImageKey = stringPreferencesKey("discordPresenceLargeCustomImage")
 val DiscordSmallCustomImageKey = stringPreferencesKey("discordPresenceSmallCustomImage")
 val DiscordSpinSecondsKey = intPreferencesKey("discordPresenceSpinSeconds")
@@ -1071,7 +1071,7 @@ val LanguageCodeToName =
         "gl" to "Galego",
         "hr" to "Hrvatski",
         "zu" to "IsiZulu",
-        "is" to "Íslenska",
+        "is" to "�slenska",
         "it" to "Italiano",
         "sw" to "Kiswahili",
         "lt" to "Lietuvių",
@@ -1085,46 +1085,46 @@ val LanguageCodeToName =
         "pt" to "Português (Brasil)",
         "ro" to "Română",
         "sq" to "Shqip",
-        "sk" to "Slovenčina",
-        "sl" to "Slovenščina",
+        "sk" to "Sloven�ina",
+        "sl" to "Slovenš�ina",
         "fi" to "Suomi",
         "sv" to "Svenska",
-        "bo" to "Tibetan བོད་སྐད།",
+        "bo" to "Tibetan བོད་ས�ད�",
         "vi" to "Tiếng Việt",
         "tr" to "Türkçe",
-        "bg" to "Български",
+        "bg" to "Българ�ки",
         "ky" to "Кыргызча",
         "kk" to "Қазақ Тілі",
-        "mk" to "Македонски",
+        "mk" to "Македон�ки",
         "mn" to "Монгол",
-        "ru" to "Русский",
-        "sr" to "Српски",
-        "uk" to "Українська",
+        "ru" to "Ру��кий",
+        "sr" to "Срп�ки",
+        "uk" to "Україн�ька",
         "el" to "Ελληνικά",
         "hy" to "Հայերեն",
         "iw" to "עברית",
         "ur" to "اردو",
         "ar" to "العربية",
-        "fa" to "فارسی",
+        "fa" to "�ارسی",
         "ne" to "नेपाली",
         "mr" to "मराठी",
-        "hi" to "हिन्दी",
+        "hi" to "हिन�दी",
         "bn" to "বাংলা",
         "pa" to "ਪੰਜਾਬੀ",
-        "gu" to "ગુજરાતી",
-        "ta" to "தமிழ்",
-        "te" to "తెలుగు",
-        "kn" to "ಕನ್ನಡ",
+        "gu" to "ગ�જરાતી",
+        "ta" to "தமிழ�",
+        "te" to "తెల�గ�",
+        "kn" to "ಕನ�ನಡ",
         "ml" to "മലയാളം",
         "si" to "සිංහල",
         "th" to "ภาษาไทย",
         "lo" to "ລາວ",
         "my" to "ဗမာ",
-        "ka" to "ქართული",
+        "ka" to "ქ�რთული",
         "am" to "አማርኛ",
-        "km" to "ខ្មែរ",
+        "km" to "�្មែរ",
         "zh-CN" to "中文 (简体)",
-        "zh-TW" to "中文 (繁體)",
+        "zh-TW" to "中文 (�體)",
         "zh-HK" to "中文 (香港)",
         "ja" to "日本語",
         "ko" to "한국어",
@@ -1339,7 +1339,7 @@ val BlurQualityKey = stringPreferencesKey("blurQuality")
 
 enum class BlurQuality { LOW, HIGH }
 
-// the glass of the nav bar and the mini player; a look module can swap mochy's frost for a glass shader it brings itself
+// the glass of the nav bar and the mini player; a look module can swap doom's frost for a glass shader it brings itself
 val ChromeGlassStyleKey = stringPreferencesKey("chromeGlassStyle")
 
 enum class ChromeGlassStyle {

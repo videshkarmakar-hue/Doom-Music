@@ -5,7 +5,7 @@
 // came from an account opens that service's sign-in page first, and an old import that never
 // saved where it came from asks for its link.
 
-package com.mochyy.mochymusic.ui.menu
+package com.videshkarmakar.doom.ui.menu
 
 import android.content.Context
 import android.widget.Toast
@@ -27,18 +27,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.di.PlaylistResyncEntryPoint
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.importer.PlaylistResync
-import com.mochyy.mochymusic.importer.ResyncAllStart
-import com.mochyy.mochymusic.importer.ResyncStart
-import com.mochyy.mochymusic.importer.resyncSourceOf
-import com.mochyy.mochymusic.ui.component.Material3MenuItemData
-import com.mochyy.mochymusic.ui.component.TextFieldDialog
-import com.mochyy.mochymusic.ui.screens.settings.importsync.accountResyncAllRoute
-import com.mochyy.mochymusic.ui.screens.settings.importsync.accountResyncRoute
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.di.PlaylistResyncEntryPoint
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.importer.PlaylistResync
+import com.videshkarmakar.doom.importer.ResyncAllStart
+import com.videshkarmakar.doom.importer.ResyncStart
+import com.videshkarmakar.doom.importer.resyncSourceOf
+import com.videshkarmakar.doom.ui.component.Material3MenuItemData
+import com.videshkarmakar.doom.ui.component.TextFieldDialog
+import com.videshkarmakar.doom.ui.screens.settings.importsync.accountResyncAllRoute
+import com.videshkarmakar.doom.ui.screens.settings.importsync.accountResyncRoute
 import dagger.hilt.android.EntryPointAccessors
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch

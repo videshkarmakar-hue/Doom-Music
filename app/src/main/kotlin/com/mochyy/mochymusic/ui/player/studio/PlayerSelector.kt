@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.studio
+package com.videshkarmakar.doom.ui.player.studio
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
@@ -60,15 +60,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlayerStyle
-import com.mochyy.mochymusic.ui.player.styles.AlternatePlayerStyle
-import com.mochyy.mochymusic.ui.player.styles.StyleActions
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlayerStyle
+import com.videshkarmakar.doom.ui.player.styles.AlternatePlayerStyle
+import com.videshkarmakar.doom.ui.player.styles.StyleActions
 import kotlin.math.abs
 import kotlin.math.ceil
 import kotlin.math.floor
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 
 // a card a row above the one in view is gone: it fades as it slides up out of the way
 private fun rowLeaving(row: Int, rowPosition: Float): Float = (1f - (rowPosition - row)).coerceIn(0f, 1f)
@@ -456,7 +456,7 @@ fun PlayerSelectorOverlay(
                     AnimatedContent(
                         // the module style goes by the name its look gives it
                         targetState = styles.getOrNull(focused)?.let { style ->
-                            if (style == PlayerStyle.MODULE) com.mochyy.mochymusic.modules.skin.ActiveSkin.current?.player?.name ?: style.selectorName
+                            if (style == PlayerStyle.MODULE) com.videshkarmakar.doom.modules.skin.ActiveSkin.current?.player?.name ?: style.selectorName
                             else style.selectorName
                         }.orEmpty(),
                         transitionSpec = {

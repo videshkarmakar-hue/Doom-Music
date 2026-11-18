@@ -211,7 +211,7 @@
     <string name="lyrics_line_spacing">Songtekst regel afstand</string>
     <string name="show_wrapped_card">Toon Wrapped</string>
     <string name="progress_percent">Vooruitgang %s%%</string>
-    <string name="visit_mochy">Bezoek mochy</string>
+    <string name="visit_doom">Bezoek doom</string>
     <string name="copied_title">Titel gekopieerd</string>
     <string name="copied_artist">Artiest gekopieerd</string>
     <string name="lyrics_glow_effect">Gloeiende songtekst</string>
@@ -257,7 +257,7 @@
     <string name="skip_silence_instant_desc">Spoel tijdens stille momenten vooruit in plaats van het afspelen te versnellen</string>
     <string name="discord_use_details_description">Toon de titel van het nummer duidelijk in plaats van de naam van de artiest</string>
     <string name="audio_quality_max">Max (bèta)</string>
-    <string name="min_playback_duration_description">De minimale hoeveelheid van een nummer die moet worden afgespeeld voordat het als “afgespeeld” wordt geregistreerd</string>
+    <string name="min_playback_duration_description">De minimale hoeveelheid van een nummer die moet worden afgespeeld voordat het als “afgespeeld� wordt geregistreerd</string>
     <string name="percentage_format">%d%%</string>
     <string name="minimum_playback_duration">Minimale afspeelduur</string>
     <string name="playlist_add_local_to_synced_note">Opmerking: het toevoegen van lokale nummers aan gesynchroniseerde/externe afspeellijsten wordt niet ondersteund. Alle andere combinaties zijn geldig</string>

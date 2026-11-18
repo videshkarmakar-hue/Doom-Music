@@ -3,7 +3,7 @@
 // The back of the profile ID card: a real Code 128 barcode (a phone camera reads it), hidden under
 // a silver scratch-off strip, and the green scanner sweep that "reads" it before the recap opens.
 
-package com.mochyy.mochymusic.ui.screens.recap
+package com.videshkarmakar.doom.ui.screens.recap
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.Canvas
@@ -53,8 +53,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.IdCardAspect
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.MarqueeStrip
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.IdCardAspect
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.MarqueeStrip
 import kotlin.math.hypot
 import kotlin.math.max
 import kotlin.math.min

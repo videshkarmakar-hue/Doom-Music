@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.update
+package com.videshkarmakar.doom.ui.screens.update
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -26,9 +26,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.PopupSheetHandleHeight
-import com.mochyy.mochymusic.ui.component.PopupSheetState
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.PopupSheetHandleHeight
+import com.videshkarmakar.doom.ui.component.PopupSheetState
 
 // the concept's grey, a touch lighter than the version sheet under it
 private val PathSurface = Color(0xFF1F1F1F)

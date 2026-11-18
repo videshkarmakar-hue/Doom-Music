@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.setup
+package com.videshkarmakar.doom.ui.screens.setup
 
 import android.graphics.Bitmap
 import android.graphics.ImageDecoder
@@ -30,7 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -44,7 +44,7 @@ import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.RoundRect
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.platform.LocalDensity
-import com.mochyy.mochymusic.ui.component.backdropClick
+import com.videshkarmakar.doom.ui.component.backdropClick
 
 private val IMAGE_INSET = 20.dp
 private val IMAGE_CORNER = 28.dp

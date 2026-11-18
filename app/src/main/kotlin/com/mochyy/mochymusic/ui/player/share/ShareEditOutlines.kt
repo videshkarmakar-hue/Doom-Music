@@ -4,7 +4,7 @@
 // spring, so the outline moves along when the song slides past the words or a word goes big,
 // breathes softly so it reads as something to tap, and squishes a little under the finger.
 
-package com.mochyy.mochymusic.ui.player.share
+package com.videshkarmakar.doom.ui.player.share
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.RepeatMode
@@ -49,12 +49,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** How the editor's boxes chase what they outline: quick, with a little give. */
 private val BoxSpring = spring<Rect>(dampingRatio = 0.72f, stiffness = 420f)

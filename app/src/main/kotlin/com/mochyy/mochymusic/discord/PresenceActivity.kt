@@ -1,9 +1,9 @@
 // PresenceActivity.kt
 
-package com.mochyy.mochymusic.discord
+package com.videshkarmakar.doom.discord
 
 import android.net.Uri
-import com.mochyy.mochymusic.core.updater.GithubRepoUrl
+import com.videshkarmakar.doom.core.updater.GithubRepoUrl
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.buildJsonArray
@@ -116,7 +116,7 @@ data class PresenceActivity(
     }
 }
 
-/** The page a button opens for [track]: the song itself where Mochy knows it, a search otherwise. */
+/** The page a button opens for [track]: the song itself where Doom knows it, a search otherwise. */
 fun PresenceButtonTarget.linkFor(track: NowPlaying): String {
     val query = Uri.encode("${track.title} ${track.artist}".trim())
     return when (this) {

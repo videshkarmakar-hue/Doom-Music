@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.studio
+package com.videshkarmakar.doom.ui.player.studio
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
@@ -75,29 +75,29 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyle
-import com.mochyy.mochymusic.constants.PlayerBottomBarStyle
-import com.mochyy.mochymusic.constants.PlayerCoverStyle
-import com.mochyy.mochymusic.constants.PlayerEndTimestamp
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.component.SeekBarStyle
-import com.mochyy.mochymusic.ui.component.SeekBarTrack
-import com.mochyy.mochymusic.ui.player.customize.PlayerBackgroundPreview
-import com.mochyy.mochymusic.ui.player.customize.coverArtBox
-import com.mochyy.mochymusic.ui.player.customize.displayName
-import com.mochyy.mochymusic.ui.player.customize.isDisc
-import com.mochyy.mochymusic.ui.player.styles.Responsive
-import com.mochyy.mochymusic.ui.player.styles.rememberResponsive
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyle
+import com.videshkarmakar.doom.constants.PlayerBottomBarStyle
+import com.videshkarmakar.doom.constants.PlayerCoverStyle
+import com.videshkarmakar.doom.constants.PlayerEndTimestamp
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.component.SeekBarStyle
+import com.videshkarmakar.doom.ui.component.SeekBarTrack
+import com.videshkarmakar.doom.ui.player.customize.PlayerBackgroundPreview
+import com.videshkarmakar.doom.ui.player.customize.coverArtBox
+import com.videshkarmakar.doom.ui.player.customize.displayName
+import com.videshkarmakar.doom.ui.player.customize.isDisc
+import com.videshkarmakar.doom.ui.player.styles.Responsive
+import com.videshkarmakar.doom.ui.player.styles.rememberResponsive
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.makeTimeString
 import kotlin.math.abs
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.ui.utils.stableStatusBarsPadding
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBarsPadding
 
 internal val PlayerBackgroundStyle.studioName: String
     @Composable get() = when (this) {
@@ -228,7 +228,7 @@ private fun StudioTopBar(studio: PlayerStudioState, glassState: GlassState) {
                 .height(statusTop + 92.dp)
                 .graphicsLayer { alpha = (1f - studio.backdrop.value * studio.cover.value).coerceIn(0f, 1f) },
         )
-        val progressiveBar = com.mochyy.mochymusic.ui.component.rememberProgressiveBlur()
+        val progressiveBar = com.videshkarmakar.doom.ui.component.rememberProgressiveBlur()
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -461,7 +461,7 @@ private fun CoverEditor(
         if (coverStyle.isDisc) {
             val art = parts.anchors.cover.value
             if (art.width > 0f) {
-                val card = remember(coverStyle) { com.mochyy.mochymusic.ui.player.customize.discGeometryFor(coverStyle).albumCard }
+                val card = remember(coverStyle) { com.videshkarmakar.doom.ui.player.customize.discGeometryFor(coverStyle).albumCard }
                 val target = if (card != null) {
                     val side = minOf(art.width, art.height) * card.side
                     val c = Offset(art.left + art.width * card.centerX, art.top + art.height * card.centerY)

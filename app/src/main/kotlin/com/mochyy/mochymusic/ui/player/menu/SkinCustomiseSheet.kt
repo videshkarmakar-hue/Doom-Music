@@ -1,6 +1,6 @@
 // the look module's customise sheet: the settings its player names, changed right over the player
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -20,10 +20,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.modules.skin.ActiveSkin
-import com.mochyy.mochymusic.ui.screens.settings.modules.ModuleOptions
-import com.mochyy.mochymusic.viewmodels.ModulesViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.modules.skin.ActiveSkin
+import com.videshkarmakar.doom.ui.screens.settings.modules.ModuleOptions
+import com.videshkarmakar.doom.viewmodels.ModulesViewModel
 
 @Composable
 fun SkinCustomiseSheet(onDismiss: () -> Unit) {

@@ -1,6 +1,6 @@
 // audio lab home: big cards for the equalizer and effects, shorter ones for quality and transitions, each drawing shows its state
 
-package com.mochyy.mochymusic.ui.screens.audiolab
+package com.videshkarmakar.doom.ui.screens.audiolab
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -57,22 +57,22 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AudioQuality
-import com.mochyy.mochymusic.constants.AudioQualityKey
-import com.mochyy.mochymusic.constants.CrossmixMode
-import com.mochyy.mochymusic.constants.CrossmixModeKey
-import com.mochyy.mochymusic.constants.DefaultTransitionMode
-import com.mochyy.mochymusic.eq.EqPresets
-import com.mochyy.mochymusic.eq.EqSettings
-import com.mochyy.mochymusic.playback.audio.AudioOutputs
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.AudioLabViewModel
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AudioQuality
+import com.videshkarmakar.doom.constants.AudioQualityKey
+import com.videshkarmakar.doom.constants.CrossmixMode
+import com.videshkarmakar.doom.constants.CrossmixModeKey
+import com.videshkarmakar.doom.constants.DefaultTransitionMode
+import com.videshkarmakar.doom.eq.EqPresets
+import com.videshkarmakar.doom.eq.EqSettings
+import com.videshkarmakar.doom.playback.audio.AudioOutputs
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.AudioLabViewModel
 import kotlin.math.roundToInt
 import kotlin.math.sin
 
@@ -98,8 +98,8 @@ fun AudioLabScreen(
     androidx.compose.runtime.LaunchedEffect(Unit) { viewModel.sources.refresh() }
     // whichever provider plays first sets what "quality" means
     val firstProvider = order.firstOrNull { id ->
-        if (id == com.mochyy.mochymusic.modules.SourceModules.YouTubeId) youTubeOn
-        else modules.any { it.module.info.id == id && it.enabled && it.account is com.mochyy.mochymusic.module.AccountState.SignedIn }
+        if (id == com.videshkarmakar.doom.modules.SourceModules.YouTubeId) youTubeOn
+        else modules.any { it.module.info.id == id && it.enabled && it.account is com.videshkarmakar.doom.module.AccountState.SignedIn }
     }
     val (mode) = rememberEnumPreference(CrossmixModeKey, defaultValue = DefaultTransitionMode)
 
@@ -214,8 +214,8 @@ private fun equalizerStatus(eq: EqSettings, userPresets: Map<String, String>): S
 
 @Composable
 private fun qualityName(q: AudioQuality, firstProvider: String?): String = when (firstProvider) {
-    com.mochyy.mochymusic.module.monochrome.MonochromeModule.Id -> stringResource(R.string.lab_quality_monochrome)
-    com.mochyy.mochymusic.module.applemusic.AppleMusicModule.Id -> stringResource(R.string.lab_quality_apple_music)
+    com.videshkarmakar.doom.module.monochrome.MonochromeModule.Id -> stringResource(R.string.lab_quality_monochrome)
+    com.videshkarmakar.doom.module.applemusic.AppleMusicModule.Id -> stringResource(R.string.lab_quality_apple_music)
     else -> stringResource(
         R.string.lab_quality_youtube,
         stringResource(
@@ -333,7 +333,7 @@ private fun BoxScope.EqualizerSketch(eq: EqSettings) {
     val mid by animateFloatAsState(band(250.0, 4000.0), spring(dampingRatio = 0.6f, stiffness = 140f), label = "mid")
     val high by animateFloatAsState(band(4000.0, 30_000.0), spring(dampingRatio = 0.6f, stiffness = 140f), label = "high")
     val level = remember { LevelFollower() }
-    val time = sketchTime { eq.enabled && com.mochyy.mochymusic.eq.audio.AudioTap.isLive }
+    val time = sketchTime { eq.enabled && com.videshkarmakar.doom.eq.audio.AudioTap.isLive }
     val last = remember { floatArrayOf(-1f) }
     Canvas(Modifier.fillMaxSize()) {
         val t = time.value
@@ -390,8 +390,8 @@ private fun BoxScope.FxSketch(active: Boolean) {
 @Composable
 private fun BoxScope.QualitySketch(quality: AudioQuality, firstProvider: String?) {
     val fine = when {
-        firstProvider == com.mochyy.mochymusic.module.monochrome.MonochromeModule.Id -> 1f
-        firstProvider == com.mochyy.mochymusic.module.applemusic.AppleMusicModule.Id -> 0.65f
+        firstProvider == com.videshkarmakar.doom.module.monochrome.MonochromeModule.Id -> 1f
+        firstProvider == com.videshkarmakar.doom.module.applemusic.AppleMusicModule.Id -> 0.65f
         quality == AudioQuality.LOW -> 0f
         quality == AudioQuality.MEDIUM -> 0.35f
         else -> 0.65f

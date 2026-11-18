@@ -1,6 +1,6 @@
 // YouTubeSelectionSongMenu.kt
 
-package com.mochyy.mochymusic.ui.menu
+package com.videshkarmakar.doom.ui.menu
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
@@ -35,20 +35,20 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.LocalSyncUtils
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.ExoDownloadService
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.ui.component.Material3MenuGroup
-import com.mochyy.mochymusic.ui.component.Material3MenuItemData
-import com.mochyy.mochymusic.ui.component.SheetActionCard
-import com.mochyy.mochymusic.ui.component.SheetActionCardRow
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.LocalSyncUtils
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.ExoDownloadService
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.ui.component.Material3MenuGroup
+import com.videshkarmakar.doom.ui.component.Material3MenuItemData
+import com.videshkarmakar.doom.ui.component.SheetActionCard
+import com.videshkarmakar.doom.ui.component.SheetActionCardRow
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 
@@ -121,8 +121,8 @@ fun YouTubeSelectionSongMenu(
             songSelection.map { song ->
 
                 val metadata = song.toMediaMetadata()
-                com.mochyy.mochymusic.db.entities.Song(
-                    song = com.mochyy.mochymusic.db.entities.SongEntity(
+                com.videshkarmakar.doom.db.entities.Song(
+                    song = com.videshkarmakar.doom.db.entities.SongEntity(
                         id = metadata.id,
                         title = metadata.title,
                         duration = metadata.duration,
@@ -137,13 +137,13 @@ fun YouTubeSelectionSongMenu(
                         libraryRemoveToken = metadata.libraryRemoveToken
                     ),
                     artists = metadata.artists.map { artist ->
-                        com.mochyy.mochymusic.db.entities.ArtistEntity(
+                        com.videshkarmakar.doom.db.entities.ArtistEntity(
                             id = artist.id ?: "",
                             name = artist.name
                         )
                     },
                     album = metadata.album?.let { album ->
-                        com.mochyy.mochymusic.db.entities.AlbumEntity(
+                        com.videshkarmakar.doom.db.entities.AlbumEntity(
                             id = album.id,
                             title = album.title,
                             thumbnailUrl = metadata.thumbnailUrl,
@@ -395,7 +395,7 @@ fun YouTubeSelectionSongMenu(
 
                                         insert(metadata)
 
-                                        val songEntity = com.mochyy.mochymusic.db.entities.SongEntity(
+                                        val songEntity = com.videshkarmakar.doom.db.entities.SongEntity(
                                             id = metadata.id,
                                             title = metadata.title,
                                             duration = metadata.duration,

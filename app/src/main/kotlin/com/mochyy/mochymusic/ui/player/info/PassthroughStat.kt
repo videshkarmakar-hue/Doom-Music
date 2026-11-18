@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.info
+package com.videshkarmakar.doom.ui.player.info
 
 import android.os.Build
 import androidx.compose.runtime.Composable
@@ -6,18 +6,18 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AudioPassMode
-import com.mochyy.mochymusic.constants.AudioPassModeKey
-import com.mochyy.mochymusic.constants.UsbPassthroughKey
-import com.mochyy.mochymusic.playback.MusicService
-import com.mochyy.mochymusic.playback.audio.AudioOutputs
-import com.mochyy.mochymusic.playback.audio.pass.AudioPass
-import com.mochyy.mochymusic.ui.screens.audiolab.androidName
-import com.mochyy.mochymusic.ui.screens.audiolab.label
-import com.mochyy.mochymusic.ui.screens.audiolab.statusLine
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AudioPassMode
+import com.videshkarmakar.doom.constants.AudioPassModeKey
+import com.videshkarmakar.doom.constants.UsbPassthroughKey
+import com.videshkarmakar.doom.playback.MusicService
+import com.videshkarmakar.doom.playback.audio.AudioOutputs
+import com.videshkarmakar.doom.playback.audio.pass.AudioPass
+import com.videshkarmakar.doom.ui.screens.audiolab.androidName
+import com.videshkarmakar.doom.ui.screens.audiolab.label
+import com.videshkarmakar.doom.ui.screens.audiolab.statusLine
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 
 // the output card's line on passthrough: straight to the dac, or why this song wasn't (issue 235 had no way to tell)
 @Composable

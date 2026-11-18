@@ -1,9 +1,9 @@
-package com.mochyy.mochymusic.core.updater
+package com.videshkarmakar.doom.core.updater
 
 import android.content.Context
 import android.content.Intent
 import androidx.core.content.FileProvider
-import com.mochyy.mochymusic.BuildConfig
+import com.videshkarmakar.doom.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
@@ -13,7 +13,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 const val GithubOwner = "realidkroo"
-const val GithubRepo = "Mochy-Music"
+const val GithubRepo = "Doom-Music"
 
 const val GithubProfileUrl = "https://github.com/$GithubOwner"
 const val GithubRepoUrl = "https://github.com/$GithubOwner/$GithubRepo"
@@ -152,7 +152,7 @@ private suspend fun fetchReleases(): Result<List<ParsedRelease>> = withContext(D
             connectTimeout = 12_000
             readTimeout = 12_000
             setRequestProperty("Accept", "application/vnd.github+json")
-            setRequestProperty("User-Agent", "mochy-android")
+            setRequestProperty("User-Agent", "doom-android")
         }
         val json = connection.inputStream.bufferedReader().use { it.readText() }
         val releases = JSONArray(json)
@@ -264,7 +264,7 @@ suspend fun downloadApk(
             connectTimeout = 15_000
             readTimeout = 30_000
             instanceFollowRedirects = true
-            setRequestProperty("User-Agent", "mochy-android")
+            setRequestProperty("User-Agent", "doom-android")
         }
         val total = release.apkSizeBytes.takeIf { it > 0 }
             ?: connection.contentLengthLong.takeIf { it > 0 }
@@ -289,7 +289,7 @@ suspend fun downloadApk(
 }
 
 fun apkFileFor(context: Context, release: GithubRelease): File =
-    File(context.cacheDir, release.apkName ?: "mochy-update.apk")
+    File(context.cacheDir, release.apkName ?: "doom-update.apk")
 
 fun isDownloaded(context: Context, release: GithubRelease): Boolean {
     val f = apkFileFor(context, release)

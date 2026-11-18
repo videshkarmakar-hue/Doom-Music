@@ -1,6 +1,6 @@
 // ShowMediaInfo.kt
 
-package com.mochyy.mochymusic.ui.utils
+package com.videshkarmakar.doom.ui.utils
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -48,14 +48,14 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.models.MediaInfo
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.FormatEntity
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.ui.component.LocalBottomSheetPageState
-import com.mochyy.mochymusic.ui.component.shimmer.ShimmerHost
-import com.mochyy.mochymusic.ui.component.shimmer.TextPlaceholder
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.FormatEntity
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.ui.component.LocalBottomSheetPageState
+import com.videshkarmakar.doom.ui.component.shimmer.ShimmerHost
+import com.videshkarmakar.doom.ui.component.shimmer.TextPlaceholder
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable

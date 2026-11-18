@@ -1,12 +1,12 @@
 // MusicImportService.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.ImportSession
-import com.mochyy.mochymusic.extensions.isUserLoggedIn
-import com.mochyy.mochymusic.importer.account.AccountImportException
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.ImportSession
+import com.videshkarmakar.doom.extensions.isUserLoggedIn
+import com.videshkarmakar.doom.importer.account.AccountImportException
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler

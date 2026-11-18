@@ -1,6 +1,6 @@
 // LyricsSourceFooter.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -45,13 +45,13 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.lyrics.EmbeddedLyrics
-import com.mochyy.mochymusic.lyrics.LyricsProviderRegistry
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.safeOpenUri
-import com.mochyy.mochymusic.viewmodels.LyricsMenuViewModel
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.lyrics.EmbeddedLyrics
+import com.videshkarmakar.doom.lyrics.LyricsProviderRegistry
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.safeOpenUri
+import com.videshkarmakar.doom.viewmodels.LyricsMenuViewModel
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 private val LabelColor = Color.White.copy(alpha = 0.55f)
 private val ValueColor = Color.White.copy(alpha = 0.38f)

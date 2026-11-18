@@ -1,6 +1,6 @@
 // CarSongsScreen.kt
 
-package com.mochyy.mochymusic.car.screens
+package com.videshkarmakar.doom.car.screens
 
 import androidx.car.app.Screen
 import androidx.car.app.model.Action
@@ -11,10 +11,10 @@ import androidx.car.app.model.SectionedItemTemplate
 import androidx.car.app.model.Template
 import androidx.lifecycle.lifecycleScope
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.car.CarApp
-import com.mochyy.mochymusic.car.CarSong
-import com.mochyy.mochymusic.playback.queues.ListQueue
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.car.CarApp
+import com.videshkarmakar.doom.car.CarSong
+import com.videshkarmakar.doom.playback.queues.ListQueue
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.launch
 

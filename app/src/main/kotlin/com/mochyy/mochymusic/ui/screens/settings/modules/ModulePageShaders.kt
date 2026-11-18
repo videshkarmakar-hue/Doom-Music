@@ -1,6 +1,6 @@
 // a module page's own shaders: compiled off the main thread once per file, drawn with a clock that rests while the page is hidden, and told where a finger is
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -24,16 +24,16 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.ShaderBrush
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.input.pointer.pointerInput
-import com.mochyy.mochymusic.LocalAppContentObscured
-import com.mochyy.mochymusic.modules.skin.ActiveSkin
-import com.mochyy.mochymusic.modules.skin.ModuleSkin
-import com.mochyy.mochymusic.modules.skin.SkinProgram
-import com.mochyy.mochymusic.modules.skin.SkinShaderSource
-import com.mochyy.mochymusic.ui.component.asAgslPaintShader
-import com.mochyy.mochymusic.ui.component.createAgslShader
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.component.setAgslColorUniform
-import com.mochyy.mochymusic.ui.component.setAgslUniform
+import com.videshkarmakar.doom.LocalAppContentObscured
+import com.videshkarmakar.doom.modules.skin.ActiveSkin
+import com.videshkarmakar.doom.modules.skin.ModuleSkin
+import com.videshkarmakar.doom.modules.skin.SkinProgram
+import com.videshkarmakar.doom.modules.skin.SkinShaderSource
+import com.videshkarmakar.doom.ui.component.asAgslPaintShader
+import com.videshkarmakar.doom.ui.component.createAgslShader
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.component.setAgslColorUniform
+import com.videshkarmakar.doom.ui.component.setAgslUniform
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged

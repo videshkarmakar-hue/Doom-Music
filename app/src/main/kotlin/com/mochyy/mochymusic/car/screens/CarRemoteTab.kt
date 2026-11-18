@@ -1,15 +1,15 @@
 // CarRemoteTab.kt
 
-package com.mochyy.mochymusic.car.screens
+package com.videshkarmakar.doom.car.screens
 
 import androidx.car.app.model.Pane
 import androidx.car.app.model.PaneTemplate
 import androidx.car.app.model.Row
 import androidx.car.app.model.Template
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.car.CarApp
-import com.mochyy.mochymusic.link.phone.PhoneLinkHost
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.car.CarApp
+import com.videshkarmakar.doom.link.phone.PhoneLinkHost
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.delay

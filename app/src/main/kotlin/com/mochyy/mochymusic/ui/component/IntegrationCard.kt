@@ -1,6 +1,6 @@
 // IntegrationCard.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background

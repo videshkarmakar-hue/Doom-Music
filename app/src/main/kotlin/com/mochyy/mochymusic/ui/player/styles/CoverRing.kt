@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
@@ -40,8 +40,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.utils.makeTimeString
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -137,7 +137,7 @@ fun CoverRing(
     val scope = rememberCoroutineScope()
     val measurer = rememberTextMeasurer(cacheSize = 24)
     val labelStyle = remember {
-        TextStyle(fontFamily = com.mochyy.mochymusic.ui.theme.InterFontFamily, fontWeight = FontWeight.SemiBold, fontSize = 12.sp, color = Color.White)
+        TextStyle(fontFamily = com.videshkarmakar.doom.ui.theme.InterFontFamily, fontWeight = FontWeight.SemiBold, fontSize = 12.sp, color = Color.White)
     }
     val currentCircle by rememberUpdatedState(circle)
     val showing = rememberStyleShowing()

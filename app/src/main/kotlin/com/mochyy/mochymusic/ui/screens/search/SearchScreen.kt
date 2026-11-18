@@ -1,6 +1,6 @@
 // SearchScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.search
+package com.videshkarmakar.doom.ui.screens.search
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -18,7 +18,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.ui.unit.Dp
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -65,7 +65,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.ui.screens.Screens
+import com.videshkarmakar.doom.ui.screens.Screens
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
@@ -73,25 +73,25 @@ import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.models.YTItem
 import com.music.innertube.utils.YouTubeUrlParser
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PauseSearchHistoryKey
-import com.mochyy.mochymusic.constants.ProfilePicUriKey
-import com.mochyy.mochymusic.db.entities.SearchHistory
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.MoodAndGenresViewModel
-import com.mochyy.mochymusic.viewmodels.coverKey
-import com.mochyy.mochymusic.viewmodels.OnlineSearchSuggestionViewModel
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PauseSearchHistoryKey
+import com.videshkarmakar.doom.constants.ProfilePicUriKey
+import com.videshkarmakar.doom.db.entities.SearchHistory
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.MoodAndGenresViewModel
+import com.videshkarmakar.doom.viewmodels.coverKey
+import com.videshkarmakar.doom.viewmodels.OnlineSearchSuggestionViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.component.navigateToTab
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.navigateToTab
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** set on the search page's entry to open its field with the keyboard up */
 internal const val SearchFocusKey = "focusSearch"
@@ -108,7 +108,7 @@ fun SearchScreen(
     pureBlack: Boolean,
 ) {
     // on its side the field and its history stay in the pane at the left (SearchSidePane), so this side shows the categories
-    if (com.mochyy.mochymusic.ui.utils.isLandscapeLayout()) {
+    if (com.videshkarmakar.doom.ui.utils.isLandscapeLayout()) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -130,7 +130,7 @@ fun SearchScreen(
     val keyboardController = LocalSoftwareKeyboardController.current
     val playerConnection = LocalPlayerConnection.current
     val pauseSearchHistory by rememberPreference(PauseSearchHistoryKey, defaultValue = false)
-    val offlineMode by rememberPreference(com.mochyy.mochymusic.constants.OfflineModeKey, defaultValue = false)
+    val offlineMode by rememberPreference(com.videshkarmakar.doom.constants.OfflineModeKey, defaultValue = false)
     val profilePicStr by rememberPreference(ProfilePicUriKey, defaultValue = "")
 
     var query by rememberSaveable(stateSaver = TextFieldValue.Saver) {
@@ -430,7 +430,7 @@ private fun SearchBrowseContent(
 internal fun SearchActiveContent(
     listState: LazyListState,
     query: String,
-    state: com.mochyy.mochymusic.viewmodels.SearchSuggestionViewState,
+    state: com.videshkarmakar.doom.viewmodels.SearchSuggestionViewState,
     onFill: (String) -> Unit,
     onSubmit: (String) -> Unit,
     onDeleteHistory: (SearchHistory) -> Unit,
@@ -438,7 +438,7 @@ internal fun SearchActiveContent(
     topPadding: Dp = searchTopBarHeight(withTitle = false),
 ) {
     val playerConnection = LocalPlayerConnection.current
-    val offlineMode by rememberPreference(com.mochyy.mochymusic.constants.OfflineModeKey, defaultValue = false)
+    val offlineMode by rememberPreference(com.videshkarmakar.doom.constants.OfflineModeKey, defaultValue = false)
     val bottomInset = LocalPlayerAwareWindowInsets.current
         .asPaddingValues()
         .calculateBottomPadding()
@@ -587,7 +587,7 @@ private fun SuggestionResultRow(
             url = item.thumbnail,
             size = 44.dp,
             circle = item is ArtistItem,
-            sharedElementKey = com.mochyy.mochymusic.ui.component.coverTransitionKey(item),
+            sharedElementKey = com.videshkarmakar.doom.ui.component.coverTransitionKey(item),
         )
         Spacer(modifier = Modifier.width(14.dp))
         Column(modifier = Modifier.weight(1f)) {

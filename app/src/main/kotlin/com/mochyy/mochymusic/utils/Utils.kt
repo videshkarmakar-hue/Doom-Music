@@ -1,6 +1,6 @@
 // Utils.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.Dp

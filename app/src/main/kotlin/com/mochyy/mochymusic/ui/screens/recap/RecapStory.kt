@@ -2,7 +2,7 @@
 //
 // The monthly recap: everything after the barcode is scratched. It runs in a full-screen dialog
 // window so it can cover the nav bar and mini player, and it starts and ends on exactly what the
-// Mochy page is showing - the same card, the same giant column, the same dots - so the window
+// Doom page is showing - the same card, the same giant column, the same dots - so the window
 // never shows as a seam: it fades in over an identical picture, and on the way out it shrinks back
 // into the page header before it goes.
 //
@@ -11,11 +11,11 @@
 // gets an enter and exit 0..1 and lays itself out from those. All of it is read in draw/layer
 // lambdas, so a running story redraws without recomposing.
 
-package com.mochyy.mochymusic.ui.screens.recap
+package com.videshkarmakar.doom.ui.screens.recap
 
 import androidx.compose.ui.unit.IntSize
 import android.os.SystemClock
-import com.mochyy.mochymusic.ui.component.rememberDeviceTilt
+import com.videshkarmakar.doom.ui.component.rememberDeviceTilt
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.view.WindowManager
@@ -99,12 +99,12 @@ import androidx.core.view.WindowCompat
 import coil3.compose.AsyncImage
 import coil3.imageLoader
 import coil3.request.ImageRequest
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.IdCardAspect
-import com.mochyy.mochymusic.ui.screens.setup.onboarding.ProfileIdCard
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.IdCardAspect
+import com.videshkarmakar.doom.ui.screens.setup.onboarding.ProfileIdCard
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
@@ -601,7 +601,7 @@ private suspend fun animateDragBack(s: StoryState) {
 private fun StoryLogo(s: StoryState) {
     val geo = s.geo
     Icon(
-        painter = painterResource(R.drawable.ic_mochy_mark),
+        painter = painterResource(R.drawable.ic_doom_mark),
         contentDescription = null,
         tint = Color.White,
         modifier = Modifier

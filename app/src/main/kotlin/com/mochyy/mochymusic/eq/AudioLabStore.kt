@@ -1,22 +1,22 @@
-package com.mochyy.mochymusic.eq
+package com.videshkarmakar.doom.eq
 
 import android.content.Context
 import androidx.core.content.edit
-import com.mochyy.mochymusic.eq.audio.Biquad
-import com.mochyy.mochymusic.eq.audio.LoudnessParams
-import com.mochyy.mochymusic.eq.audio.PeakLimiter
-import com.mochyy.mochymusic.eq.audio.ReplayGainMode
-import com.mochyy.mochymusic.eq.audio.ReplayGainParams
-import com.mochyy.mochymusic.eq.audio.ResponseCurve
-import com.mochyy.mochymusic.eq.audio.SpatialMode
-import com.mochyy.mochymusic.eq.audio.SpatialParams
-import com.mochyy.mochymusic.eq.audio.VolumeCurve
-import com.mochyy.mochymusic.eq.autoeq.AutoEqTuning
-import com.mochyy.mochymusic.eq.autoeq.HeadphoneForm
-import com.mochyy.mochymusic.eq.data.EQProfileRepository
-import com.mochyy.mochymusic.eq.data.FilterType
-import com.mochyy.mochymusic.eq.data.ParametricEQ
-import com.mochyy.mochymusic.eq.data.ParametricEQBand
+import com.videshkarmakar.doom.eq.audio.Biquad
+import com.videshkarmakar.doom.eq.audio.LoudnessParams
+import com.videshkarmakar.doom.eq.audio.PeakLimiter
+import com.videshkarmakar.doom.eq.audio.ReplayGainMode
+import com.videshkarmakar.doom.eq.audio.ReplayGainParams
+import com.videshkarmakar.doom.eq.audio.ResponseCurve
+import com.videshkarmakar.doom.eq.audio.SpatialMode
+import com.videshkarmakar.doom.eq.audio.SpatialParams
+import com.videshkarmakar.doom.eq.audio.VolumeCurve
+import com.videshkarmakar.doom.eq.autoeq.AutoEqTuning
+import com.videshkarmakar.doom.eq.autoeq.HeadphoneForm
+import com.videshkarmakar.doom.eq.data.EQProfileRepository
+import com.videshkarmakar.doom.eq.data.FilterType
+import com.videshkarmakar.doom.eq.data.ParametricEQ
+import com.videshkarmakar.doom.eq.data.ParametricEQBand
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -95,7 +95,7 @@ data class SpatialSettings(
     val feedDb: Float = 4.5f,
     val speakerAngle: Float = 30f,
     val amount: Float = 1f,
-    /** dolby atmos / surround rendered binaurally by mochy rather than by the device */
+    /** dolby atmos / surround rendered binaurally by doom rather than by the device */
     val surround: Boolean = false,
     /** both ears hear the whole mix */
     val mono: Boolean = false,

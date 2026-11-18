@@ -1,6 +1,6 @@
 // Items.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -83,26 +83,26 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.LocalCropAlbumArt
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.GridItemSize
-import com.mochyy.mochymusic.constants.GridThumbnailHeight
-import com.mochyy.mochymusic.constants.ListItemHeight
-import com.mochyy.mochymusic.constants.ListThumbnailSize
-import com.mochyy.mochymusic.constants.SmallGridThumbnailHeight
-import com.mochyy.mochymusic.constants.ThumbnailCornerRadius
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.joinByBullet
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.LocalCropAlbumArt
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.GridItemSize
+import com.videshkarmakar.doom.constants.GridThumbnailHeight
+import com.videshkarmakar.doom.constants.ListItemHeight
+import com.videshkarmakar.doom.constants.ListThumbnailSize
+import com.videshkarmakar.doom.constants.SmallGridThumbnailHeight
+import com.videshkarmakar.doom.constants.ThumbnailCornerRadius
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.joinByBullet
+import com.videshkarmakar.doom.utils.makeTimeString
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.first
 import kotlin.math.roundToInt
@@ -113,7 +113,7 @@ const val ActiveBoxAlpha = 0.6f
 
 @Composable
 fun currentGridThumbnailHeight(): Dp {
-    val gridItemSize = com.mochyy.mochymusic.LocalGridItemSize.current
+    val gridItemSize = com.videshkarmakar.doom.LocalGridItemSize.current
     return if (gridItemSize == GridItemSize.BIG) GridThumbnailHeight else SmallGridThumbnailHeight
 }
 
@@ -510,7 +510,7 @@ fun SongGridItem(
             thumbnailUrl = song.song.thumbnailUrl,
             isActive = isActive,
             isPlaying = isPlaying,
-            shape = RoundedCornerShape(com.mochyy.mochymusic.constants.GridThumbnailCornerRadius),
+            shape = RoundedCornerShape(com.videshkarmakar.doom.constants.GridThumbnailCornerRadius),
             modifier = Modifier.size(gridHeight)
         )
         if (!isActive) {
@@ -682,7 +682,7 @@ fun AlbumGridItem(
             thumbnailUrl = album.album.thumbnailUrl,
             isActive = isActive,
             isPlaying = isPlaying,
-            shape = RoundedCornerShape(com.mochyy.mochymusic.constants.GridThumbnailCornerRadius),
+            shape = RoundedCornerShape(com.videshkarmakar.doom.constants.GridThumbnailCornerRadius),
             modifier = Modifier.homeSharedElement(sharedElementKey),
         )
     },
@@ -819,7 +819,7 @@ fun PlaylistGridItem(
                 size = width,
                 modifier = Modifier.homeSharedElement(
                     sharedElementKey,
-                    com.mochyy.mochymusic.constants.GridThumbnailCornerRadius,
+                    com.videshkarmakar.doom.constants.GridThumbnailCornerRadius,
                     coverUrl = playlist.thumbnails.firstOrNull(),
                 ),
                 placeHolder = {
@@ -843,7 +843,7 @@ fun PlaylistGridItem(
                     )
                 }
             },
-            shape = RoundedCornerShape(com.mochyy.mochymusic.constants.GridThumbnailCornerRadius)
+            shape = RoundedCornerShape(com.videshkarmakar.doom.constants.GridThumbnailCornerRadius)
         )
         }
     },
@@ -1024,10 +1024,10 @@ fun YouTubeGridItem(
             thumbnailUrl = item.thumbnail,
             isActive = isActive,
             isPlaying = isPlaying,
-            shape = if (item is ArtistItem) CircleShape else RoundedCornerShape(com.mochyy.mochymusic.constants.GridThumbnailCornerRadius),
+            shape = if (item is ArtistItem) CircleShape else RoundedCornerShape(com.videshkarmakar.doom.constants.GridThumbnailCornerRadius),
             modifier = Modifier.homeSharedElement(
                 if (item is AlbumItem || item is PlaylistItem) sharedElementKey else null,
-                com.mochyy.mochymusic.constants.GridThumbnailCornerRadius,
+                com.videshkarmakar.doom.constants.GridThumbnailCornerRadius,
                 coverUrl = item.thumbnail,
             ),
         )
@@ -1523,7 +1523,7 @@ object Icon {
 @Composable
 fun LikedSongsThumbnail(
     size: Dp,
-    shape: Shape = RoundedCornerShape(com.mochyy.mochymusic.constants.ThumbnailCornerRadius),
+    shape: Shape = RoundedCornerShape(com.videshkarmakar.doom.constants.ThumbnailCornerRadius),
     modifier: Modifier = Modifier,
 ) {
     LikedCover(

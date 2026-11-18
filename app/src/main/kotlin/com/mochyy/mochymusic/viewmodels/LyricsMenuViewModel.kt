@@ -1,20 +1,20 @@
 // LyricsMenuViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.lyrics.LyricsHelper
-import com.mochyy.mochymusic.lyrics.LyricsProviderRegistry
-import com.mochyy.mochymusic.lyrics.LyricsResult
-import com.mochyy.mochymusic.lyrics.LyricsWithProvider
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.utils.NetworkConnectivityObserver
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.lyrics.LyricsHelper
+import com.videshkarmakar.doom.lyrics.LyricsProviderRegistry
+import com.videshkarmakar.doom.lyrics.LyricsResult
+import com.videshkarmakar.doom.lyrics.LyricsWithProvider
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.utils.NetworkConnectivityObserver
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -98,7 +98,7 @@ constructor(
             // replaced and the refetch becomes a no-op.
             val lyricsWithProvider = lyricsHelper.getLyrics(mediaMetadata, forceRefresh = true)
             // offline, a refetch would replace the lyrics there are with "not found"
-            if (lyricsWithProvider.provider == com.mochyy.mochymusic.lyrics.LyricsHelper.NoConnectionProvider) return@launch
+            if (lyricsWithProvider.provider == com.videshkarmakar.doom.lyrics.LyricsHelper.NoConnectionProvider) return@launch
             database.query {
                 upsert(LyricsEntity(mediaMetadata.id, lyricsWithProvider.lyrics, lyricsWithProvider.provider))
             }

@@ -1,6 +1,6 @@
 // TvHomeScreen.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.Crossfade
@@ -71,22 +71,22 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.music.innertube.models.YTItem
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.LocalItem
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.link.tv.TvProfile
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.ui.component.HeroCarouselItem
-import com.mochyy.mochymusic.ui.component.StarterSongItem
-import com.mochyy.mochymusic.ui.component.extraHeroPicks
-import com.mochyy.mochymusic.ui.component.heroCarouselItems
-import com.mochyy.mochymusic.ui.screens.recap.RecapAvailability
-import com.mochyy.mochymusic.ui.screens.recap.RecapRepository
-import com.mochyy.mochymusic.viewmodels.HomeCategory
-import com.mochyy.mochymusic.viewmodels.HomeViewModel
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.LocalItem
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.link.tv.TvProfile
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.ui.component.HeroCarouselItem
+import com.videshkarmakar.doom.ui.component.StarterSongItem
+import com.videshkarmakar.doom.ui.component.extraHeroPicks
+import com.videshkarmakar.doom.ui.component.heroCarouselItems
+import com.videshkarmakar.doom.ui.screens.recap.RecapAvailability
+import com.videshkarmakar.doom.ui.screens.recap.RecapRepository
+import com.videshkarmakar.doom.viewmodels.HomeCategory
+import com.videshkarmakar.doom.viewmodels.HomeViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.MutableStateFlow

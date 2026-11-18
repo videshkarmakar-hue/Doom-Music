@@ -1,8 +1,8 @@
 // PlaylistCovers.kt
 
-package com.mochyy.mochymusic.playlistcover
+package com.videshkarmakar.doom.playlistcover
 
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import androidx.core.content.res.ResourcesCompat
 import android.content.Context
 import android.graphics.Bitmap
@@ -30,9 +30,9 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.size.Scale
 import coil3.toBitmap
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.PlaylistEntity
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.PlaylistEntity
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

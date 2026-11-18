@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.flagship
+package com.videshkarmakar.doom.ui.player.flagship
 
 import android.graphics.Shader
 import androidx.compose.foundation.clickable
@@ -57,29 +57,29 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.BlurQuality
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.component.DownscaledBlur
-import com.mochyy.mochymusic.ui.component.LocalBlurQuality
-import com.mochyy.mochymusic.ui.player.CarouselCrossfade
-import com.mochyy.mochymusic.ui.player.CarouselPictures
-import com.mochyy.mochymusic.ui.player.LikeBurstState
-import com.mochyy.mochymusic.ui.player.LikeSlot
-import com.mochyy.mochymusic.ui.player.LocalSongCarousel
-import com.mochyy.mochymusic.ui.player.LyricsScreen
-import com.mochyy.mochymusic.ui.player.PlayerPage
-import com.mochyy.mochymusic.ui.player.PlayerPageTransition
-import com.mochyy.mochymusic.ui.player.PlayerProgressSlider
-import com.mochyy.mochymusic.ui.player.PressScaleActionButton
-import com.mochyy.mochymusic.ui.player.QueueScreen
-import com.mochyy.mochymusic.ui.player.carouselText
-import com.mochyy.mochymusic.ui.player.likeButtonTarget
-import com.mochyy.mochymusic.ui.player.rememberTextSlots
-import com.mochyy.mochymusic.ui.player.styles.styleSongSwipe
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.BlurQuality
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.component.DownscaledBlur
+import com.videshkarmakar.doom.ui.component.LocalBlurQuality
+import com.videshkarmakar.doom.ui.player.CarouselCrossfade
+import com.videshkarmakar.doom.ui.player.CarouselPictures
+import com.videshkarmakar.doom.ui.player.LikeBurstState
+import com.videshkarmakar.doom.ui.player.LikeSlot
+import com.videshkarmakar.doom.ui.player.LocalSongCarousel
+import com.videshkarmakar.doom.ui.player.LyricsScreen
+import com.videshkarmakar.doom.ui.player.PlayerPage
+import com.videshkarmakar.doom.ui.player.PlayerPageTransition
+import com.videshkarmakar.doom.ui.player.PlayerProgressSlider
+import com.videshkarmakar.doom.ui.player.PressScaleActionButton
+import com.videshkarmakar.doom.ui.player.QueueScreen
+import com.videshkarmakar.doom.ui.player.carouselText
+import com.videshkarmakar.doom.ui.player.likeButtonTarget
+import com.videshkarmakar.doom.ui.player.rememberTextSlots
+import com.videshkarmakar.doom.ui.player.styles.styleSongSwipe
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.resize
 
 // the cover takes this much of the width beside the controls, and is at most this much wider than it is tall, like the concept
 private const val CoverWidthShare = 0.55f
@@ -157,12 +157,12 @@ internal fun FlagshipLandscape(
     val track by connection.uiState.trackInfo.collectAsState()
     val carousel = LocalSongCarousel.current
     // on a tv the remote does the playing; the player is the cover and its lyrics, no buttons and no queue
-    val onTv = com.mochyy.mochymusic.ui.utils.isTvLayout()
+    val onTv = com.videshkarmakar.doom.ui.utils.isTvLayout()
     val fadeShare = if (onTv) TvCoverFadeShare else CoverFadeShare
     // the tv's "flagship square": the whole cover, square and rounded, instead of one melting down the side
-    val tvSquare by com.mochyy.mochymusic.utils.rememberPreference(com.mochyy.mochymusic.constants.TvFlagshipSquareKey, defaultValue = false)
+    val tvSquare by com.videshkarmakar.doom.utils.rememberPreference(com.videshkarmakar.doom.constants.TvFlagshipSquareKey, defaultValue = false)
     // set in Settings > Customise > Player: the cover melting in from the left instead of the rounded square
-    val fullCover by com.mochyy.mochymusic.utils.rememberPreference(com.mochyy.mochymusic.constants.LandscapeFullCoverKey, defaultValue = false)
+    val fullCover by com.videshkarmakar.doom.utils.rememberPreference(com.videshkarmakar.doom.constants.LandscapeFullCoverKey, defaultValue = false)
     val look = when {
         onTv -> if (tvSquare) CoverLook.TV_SQUARE else CoverLook.FULL
         turntable -> CoverLook.RECORD
@@ -173,7 +173,7 @@ internal fun FlagshipLandscape(
     val seekInPanel = !onTv && look != CoverLook.FULL
     // the tv's control bar takes over the title: the cover's own one glides down into it and fades
     val handedToBar = androidx.compose.animation.core.animateFloatAsState(
-        if (onTv && com.mochyy.mochymusic.ui.player.TvPlayerRemote.controlsShown) 1f else 0f,
+        if (onTv && com.videshkarmakar.doom.ui.player.TvPlayerRemote.controlsShown) 1f else 0f,
         androidx.compose.animation.core.tween(420),
         label = "handedToBar",
     )
@@ -433,8 +433,8 @@ private fun BoxScope.LandscapeRecord(
     val transport by connection.uiState.transportState.collectAsState()
     // it only spins while the player is all the way open, the arm settles first
     val open by remember { derivedStateOf { expanded() } }
-    com.mochyy.mochymusic.ui.player.customize.DiscCoverStack(
-        style = com.mochyy.mochymusic.constants.PlayerCoverStyle.TURNTABLE,
+    com.videshkarmakar.doom.ui.player.customize.DiscCoverStack(
+        style = com.videshkarmakar.doom.constants.PlayerCoverStyle.TURNTABLE,
         artworkUrl = thumbnailUrl,
         mediaId = mediaId,
         isPlaying = transport.isPlaying,

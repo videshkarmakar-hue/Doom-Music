@@ -1,6 +1,6 @@
 // PlayerExt.kt
 
-package com.mochyy.mochymusic.extensions
+package com.videshkarmakar.doom.extensions
 
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
@@ -10,7 +10,7 @@ import androidx.media3.common.Player.REPEAT_MODE_OFF
 import androidx.media3.common.Player.REPEAT_MODE_ONE
 import androidx.media3.common.Timeline
 import androidx.media3.common.TrackSelectionParameters
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.models.MediaMetadata
 import java.util.ArrayDeque
 
 fun Player.togglePlayPause() {

@@ -1,6 +1,6 @@
 // PillDropTargets.kt
 
-package com.mochyy.mochymusic.floating
+package com.videshkarmakar.doom.floating
 
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
@@ -21,11 +21,11 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import kotlin.math.abs
 import kotlin.math.roundToInt
 
-// the two pills a carried bubble can be dropped on: close hides it until mochy opens again, never turns floating lyrics off
+// the two pills a carried bubble can be dropped on: close hides it until doom opens again, never turns floating lyrics off
 internal enum class PillDrop { CLOSE, NEVER }
 
 private const val RestFill = 0xF0242528.toInt()

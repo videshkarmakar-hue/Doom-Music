@@ -34,7 +34,7 @@ object LrcLib {
             }
 
             // says who's asking so the server owner can reach us instead of blocking us
-            install(UserAgent) { agent = "Mochy (+https://github.com/realidkroo/Mochy-Music)" }
+            install(UserAgent) { agent = "Doom (+https://github.com/realidkroo/Doom-Music)" }
 
             expectSuccess = true
         }
@@ -43,7 +43,7 @@ object LrcLib {
     private val titleCleanupPatterns = listOf(
         Regex("""\s*\(.*?(official|video|audio|lyrics|lyric|visualizer|hd|hq|4k|remaster|remix|live|acoustic|version|edit|extended|radio|clean|explicit).*?\)""", RegexOption.IGNORE_CASE),
         Regex("""\s*\[.*?(official|video|audio|lyrics|lyric|visualizer|hd|hq|4k|remaster|remix|live|acoustic|version|edit|extended|radio|clean|explicit).*?\]""", RegexOption.IGNORE_CASE),
-        Regex("""\s*【.*?】"""),
+        Regex("""\s*�.*?】"""),
         Regex("""\s*\|.*$"""),
         Regex("""\s*-\s*(official|video|audio|lyrics|lyric|visualizer).*$""", RegexOption.IGNORE_CASE),
         Regex("""\s*\(feat\..*?\)""", RegexOption.IGNORE_CASE),

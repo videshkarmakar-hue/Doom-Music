@@ -1,17 +1,17 @@
 // SongEditSaver.kt
 
-package com.mochyy.mochymusic.songedit
+package com.videshkarmakar.doom.songedit
 
 import android.content.Context
 import android.net.Uri
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.db.entities.EditedArtist
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.db.entities.SongArtistMap
-import com.mochyy.mochymusic.db.entities.SongEdit
-import com.mochyy.mochymusic.playback.SongTuning
-import com.mochyy.mochymusic.viewmodels.LyricsMenuViewModel
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.db.entities.EditedArtist
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.db.entities.SongArtistMap
+import com.videshkarmakar.doom.db.entities.SongEdit
+import com.videshkarmakar.doom.playback.SongTuning
+import com.videshkarmakar.doom.viewmodels.LyricsMenuViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.math.abs
@@ -95,7 +95,7 @@ object SongEditSaver {
         true
     }
 
-    // the youtube video for the cover video and the video mode: a picked one, none at all, or both null to let mochy find it again
+    // the youtube video for the cover video and the video mode: a picked one, none at all, or both null to let doom find it again
     suspend fun setVideo(database: MusicDatabase, songId: String, videoId: String?, noVideo: Boolean) =
         withContext(Dispatchers.IO) {
             database.withTransaction {

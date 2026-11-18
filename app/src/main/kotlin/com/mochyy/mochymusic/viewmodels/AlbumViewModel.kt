@@ -1,16 +1,16 @@
 // AlbumViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.utils.reportException
-import com.mochyy.mochymusic.utils.ArtistImageResolver
-import com.mochyy.mochymusic.utils.ArtistPageCache
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.utils.reportException
+import com.videshkarmakar.doom.utils.ArtistImageResolver
+import com.videshkarmakar.doom.utils.ArtistPageCache
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -18,8 +18,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
-import com.mochyy.mochymusic.utils.Wikipedia
-import com.mochyy.mochymusic.utils.AppleMusicAboutAlbum
+import com.videshkarmakar.doom.utils.Wikipedia
+import com.videshkarmakar.doom.utils.AppleMusicAboutAlbum
 import javax.inject.Inject
 
 @HiltViewModel

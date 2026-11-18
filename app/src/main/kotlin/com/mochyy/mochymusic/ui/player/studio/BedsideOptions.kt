@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.studio
+package com.videshkarmakar.doom.ui.player.studio
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.ColumnScope
@@ -17,21 +17,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.LocalArtworkColor
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.BedsideKeepAwakeKey
-import com.mochyy.mochymusic.constants.BedsideLockScreenKey
-import com.mochyy.mochymusic.constants.BedsideNightTint
-import com.mochyy.mochymusic.constants.BedsideNightTintKey
-import com.mochyy.mochymusic.constants.BedsideScreenSaverKey
-import com.mochyy.mochymusic.ui.player.bedside.BedsideOrange
-import com.mochyy.mochymusic.ui.player.bedside.LockScreenSupported
-import com.mochyy.mochymusic.ui.player.bedside.coverTint
-import com.mochyy.mochymusic.ui.player.bedside.openLockScreenAccess
-import com.mochyy.mochymusic.ui.player.bedside.rememberLockScreenAccess
-import com.mochyy.mochymusic.ui.player.customize.CoverOption
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalArtworkColor
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.BedsideKeepAwakeKey
+import com.videshkarmakar.doom.constants.BedsideLockScreenKey
+import com.videshkarmakar.doom.constants.BedsideNightTint
+import com.videshkarmakar.doom.constants.BedsideNightTintKey
+import com.videshkarmakar.doom.constants.BedsideScreenSaverKey
+import com.videshkarmakar.doom.ui.player.bedside.BedsideOrange
+import com.videshkarmakar.doom.ui.player.bedside.LockScreenSupported
+import com.videshkarmakar.doom.ui.player.bedside.coverTint
+import com.videshkarmakar.doom.ui.player.bedside.openLockScreenAccess
+import com.videshkarmakar.doom.ui.player.bedside.rememberLockScreenAccess
+import com.videshkarmakar.doom.ui.player.customize.CoverOption
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 
 // both bedside styles' sheet: what they turn into when left alone and how they treat the screen; the clock faces are swiped on the clock itself
 @Composable

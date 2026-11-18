@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.eq.audio
+package com.videshkarmakar.doom.eq.audio
 
 import kotlin.math.PI
 import kotlin.math.cos

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.tween
@@ -40,12 +40,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.ui.player.models.TrackInfo
-import com.mochyy.mochymusic.ui.player.styles.LivePosition
-import com.mochyy.mochymusic.ui.player.styles.rememberDurationMs
-import com.mochyy.mochymusic.ui.player.styles.rememberLivePosition
-import com.mochyy.mochymusic.ui.player.styles.rememberPlayedSeconds
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.ui.player.models.TrackInfo
+import com.videshkarmakar.doom.ui.player.styles.LivePosition
+import com.videshkarmakar.doom.ui.player.styles.rememberDurationMs
+import com.videshkarmakar.doom.ui.player.styles.rememberLivePosition
+import com.videshkarmakar.doom.ui.player.styles.rememberPlayedSeconds
 
 // what the bottom of now playing shows: the song's time, the volume while the wheel turns it, or the scrubber
 enum class IpodBar { PROGRESS, VOLUME, SCRUB }

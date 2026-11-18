@@ -1,13 +1,13 @@
 // PhonePairing.kt
 
-package com.mochyy.mochymusic.link.phone
+package com.videshkarmakar.doom.link.phone
 
 import android.content.Context
-import com.mochyy.mochymusic.link.DeviceKind
-import com.mochyy.mochymusic.link.LinkIdentity
-import com.mochyy.mochymusic.link.LinkPairingDoor
-import com.mochyy.mochymusic.link.LinkResponse
-import com.mochyy.mochymusic.link.PairingCode
+import com.videshkarmakar.doom.link.DeviceKind
+import com.videshkarmakar.doom.link.LinkIdentity
+import com.videshkarmakar.doom.link.LinkPairingDoor
+import com.videshkarmakar.doom.link.LinkResponse
+import com.videshkarmakar.doom.link.PairingCode
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -40,7 +40,7 @@ class PhonePairing @Inject constructor(
         val accepted = host.acceptPairing(body, remoteHost, code).getOrElse {
             return when ((it as? PairException)?.reason) {
                 PairException.Reason.Full -> LinkResponse.status(409, PhoneLinkHost.FullReply)
-                PairException.Reason.Outdated -> LinkResponse.status(426, "update mochy on the other device")
+                PairException.Reason.Outdated -> LinkResponse.status(426, "update doom on the other device")
                 else -> LinkResponse.status(400)
             }
         }

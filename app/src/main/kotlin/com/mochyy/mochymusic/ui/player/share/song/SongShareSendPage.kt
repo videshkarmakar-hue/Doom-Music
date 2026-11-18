@@ -1,6 +1,6 @@
 // SongShareSendPage.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import android.content.Context
 import android.util.Log
@@ -57,23 +57,23 @@ import androidx.compose.ui.unit.sp
 import androidx.core.graphics.drawable.toBitmap
 import androidx.media3.datasource.DataSource
 import androidx.media3.transformer.ExportException
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.player.share.ShareMuted
-import com.mochyy.mochymusic.ui.player.share.song.export.ShareApp
-import com.mochyy.mochymusic.ui.player.share.song.export.ShareEncoders
-import com.mochyy.mochymusic.ui.player.share.song.export.ShareExportJob
-import com.mochyy.mochymusic.ui.player.share.song.export.ShareQuality
-import com.mochyy.mochymusic.ui.player.share.song.export.ShareRequest
-import com.mochyy.mochymusic.ui.player.share.song.export.ShareTheme
-import com.mochyy.mochymusic.ui.player.share.song.export.exportAndShare
-import com.mochyy.mochymusic.ui.player.share.song.export.installedPackage
-import com.mochyy.mochymusic.ui.player.share.song.export.sendTo
-import com.mochyy.mochymusic.ui.player.share.song.export.takesSticker
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.player.share.ShareMuted
+import com.videshkarmakar.doom.ui.player.share.song.export.ShareApp
+import com.videshkarmakar.doom.ui.player.share.song.export.ShareEncoders
+import com.videshkarmakar.doom.ui.player.share.song.export.ShareExportJob
+import com.videshkarmakar.doom.ui.player.share.song.export.ShareQuality
+import com.videshkarmakar.doom.ui.player.share.song.export.ShareRequest
+import com.videshkarmakar.doom.ui.player.share.song.export.ShareTheme
+import com.videshkarmakar.doom.ui.player.share.song.export.exportAndShare
+import com.videshkarmakar.doom.ui.player.share.song.export.installedPackage
+import com.videshkarmakar.doom.ui.player.share.song.export.sendTo
+import com.videshkarmakar.doom.ui.player.share.song.export.takesSticker
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -83,7 +83,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.FileNotFoundException
 import java.io.IOException
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // "Share to": the finished picture, the three apps, and export and share for everything else
 internal fun PopupSheetState.showSendPage(session: SongShareSession) {

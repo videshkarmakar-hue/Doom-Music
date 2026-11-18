@@ -1,6 +1,6 @@
 // BottomSheet.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 import androidx.compose.foundation.gestures.waitForUpOrCancellation
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationSpec
@@ -23,7 +23,7 @@ import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.drag
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import com.mochyy.mochymusic.LocalPlayerConnection
+import com.videshkarmakar.doom.LocalPlayerConnection
 import androidx.compose.ui.unit.IntOffset
 import kotlin.math.roundToInt
 import kotlin.math.abs
@@ -73,7 +73,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.constants.NavigationBarAnimationSpec
+import com.videshkarmakar.doom.constants.NavigationBarAnimationSpec
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.snapshotFlow
 import kotlinx.coroutines.CoroutineScope
@@ -206,8 +206,8 @@ fun BottomSheet(
     val currentSwipe by androidx.compose.runtime.rememberUpdatedState(expandedSwipe)
     val currentSideSwipe by androidx.compose.runtime.rememberUpdatedState(collapsedSwipe)
     val currentOnTouchActivity by androidx.compose.runtime.rememberUpdatedState(onTouchActivity)
-    val (swipeUpFollows) = com.mochyy.mochymusic.utils.rememberPreference(
-        com.mochyy.mochymusic.constants.PlayerSwipeUpFollowsKey,
+    val (swipeUpFollows) = com.videshkarmakar.doom.utils.rememberPreference(
+        com.videshkarmakar.doom.constants.PlayerSwipeUpFollowsKey,
         defaultValue = true,
     )
     val currentSwipeUpFollows by androidx.compose.runtime.rememberUpdatedState(swipeUpFollows)
@@ -327,7 +327,7 @@ fun BottomSheet(
 
             // where the mini player sits across the screen, and whether the wide bar's glass already lies under it
             val pillFrame = LocalMiniPillFrame.current
-            // a look's glass that draws its own edge leaves mochy's hairline and shadow off the mini player
+            // a look's glass that draws its own edge leaves doom's hairline and shadow off the mini player
             val moduleGlass = rememberChromeModuleGlass()
             val currentPillFrame by androidx.compose.runtime.rememberUpdatedState(pillFrame)
             // in the wide bar the pill is a stadium like the bar round it, so it lifts out of it cleanly

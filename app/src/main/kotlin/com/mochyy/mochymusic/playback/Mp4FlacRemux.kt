@@ -1,6 +1,6 @@
 // Mp4FlacRemux.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import java.io.DataInputStream
 import java.io.EOFException

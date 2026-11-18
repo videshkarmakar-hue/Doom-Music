@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
-package com.mochyy.mochymusic.core
+package com.videshkarmakar.doom.core
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -40,7 +40,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.runtime.key
-import com.mochyy.mochymusic.core.shapes.RoundedStarShape
+import com.videshkarmakar.doom.core.shapes.RoundedStarShape
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -125,11 +125,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.constants.AudioQuality
-import com.mochyy.mochymusic.constants.AudioQualityKey
-import com.mochyy.mochymusic.utils.rememberEnumPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.constants.AudioQuality
+import com.videshkarmakar.doom.constants.AudioQualityKey
+import com.videshkarmakar.doom.utils.rememberEnumPreference
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 

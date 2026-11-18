@@ -1,8 +1,8 @@
 // StatPeriod.kt
 
-package com.mochyy.mochymusic.constants
+package com.videshkarmakar.doom.constants
 
-import com.mochyy.mochymusic.ui.screens.OptionStats
+import com.videshkarmakar.doom.ui.screens.OptionStats
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 

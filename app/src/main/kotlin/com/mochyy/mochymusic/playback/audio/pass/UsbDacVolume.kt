@@ -1,6 +1,6 @@
 // UsbDacVolume.kt
 
-package com.mochyy.mochymusic.playback.audio.pass
+package com.videshkarmakar.doom.playback.audio.pass
 
 import kotlin.math.floor
 

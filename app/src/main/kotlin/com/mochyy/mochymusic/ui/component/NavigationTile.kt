@@ -1,6 +1,6 @@
 // NavigationTile.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background

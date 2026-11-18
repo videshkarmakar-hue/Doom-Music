@@ -1,6 +1,6 @@
 // TvSearchScreen.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -57,10 +57,10 @@ import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.pages.SearchSummary
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.SearchHistory
-import com.mochyy.mochymusic.viewmodels.MoodAndGenresViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.SearchHistory
+import com.videshkarmakar.doom.viewmodels.MoodAndGenresViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

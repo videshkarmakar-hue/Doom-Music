@@ -1,6 +1,6 @@
 // MenuSheet.kt
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.CubicBezierEasing
@@ -63,8 +63,8 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 val MenuSurface = Color(0xFF0B0B0C)
 val MenuRowSurface = Color(0xFF161619)
@@ -200,7 +200,7 @@ fun MenuSheetSurface(
     // a floating card is as tall as what's in it and scrolls inside itself; it never grows to a taller detent
     val forcedFloating = LocalMenuSheetFloating.current
     // on its side every sheet floats the way the video mode's do, a full-width sheet there is a wall of rows
-    val floating = forcedFloating || com.mochyy.mochymusic.ui.utils.isLandscapeLayout()
+    val floating = forcedFloating || com.videshkarmakar.doom.ui.utils.isLandscapeLayout()
     val wraps = wrapHeight || floating
     val floatingMarginPx = if (floating) with(density) { FloatingMargin.toPx() } else 0f
 

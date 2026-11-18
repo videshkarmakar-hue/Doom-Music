@@ -1,6 +1,6 @@
 // the people on dev spaces and the top half of each page: banner, avatar, name, a line about them and their links
 
-package com.mochyy.mochymusic.ui.screens.settings.devspace
+package com.videshkarmakar.doom.ui.screens.settings.devspace
 
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.core.Animatable
@@ -46,16 +46,16 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.transformations
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.core.updater.DiscordUrl
-import com.mochyy.mochymusic.core.updater.InstagramUrl
-import com.mochyy.mochymusic.core.updater.ThreadsUrl
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.screens.donate.showDonateSheet
-import com.mochyy.mochymusic.ui.utils.SoftBlurTransformation
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.rememberResourcePainter
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.core.updater.DiscordUrl
+import com.videshkarmakar.doom.core.updater.InstagramUrl
+import com.videshkarmakar.doom.core.updater.ThreadsUrl
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.screens.donate.showDonateSheet
+import com.videshkarmakar.doom.ui.utils.SoftBlurTransformation
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.rememberResourcePainter
 
 internal data class DevSocial(val label: String, val url: String)
 

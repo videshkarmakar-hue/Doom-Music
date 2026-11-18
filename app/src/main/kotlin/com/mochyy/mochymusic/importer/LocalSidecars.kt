@@ -1,12 +1,12 @@
 // LocalSidecars.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
 import android.net.Uri
-import com.mochyy.mochymusic.importer.LocalFileNames.Kind
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.songedit.LyricsFileReader
+import com.videshkarmakar.doom.importer.LocalFileNames.Kind
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.songedit.LyricsFileReader
 import java.io.ByteArrayOutputStream
 
 // a song file and what came with it: the lyrics and picture sharing its name, or the folder's cover
@@ -15,7 +15,7 @@ data class LocalFile(val uri: Uri, val name: String?, val lyrics: Uri? = null, v
 // a file seen in a folder or a pick, before it's known what it belongs to
 class NamedFile(val uri: Uri, val name: String, val kind: Kind)
 
-// lyrics and covers kept next to songs the way other players and mochy's own export leave them
+// lyrics and covers kept next to songs the way other players and doom's own export leave them
 object LocalSidecars {
     // a cover past this is a photo someone left in the folder, not album art
     private const val MaxCoverBytes = 20 * 1024 * 1024

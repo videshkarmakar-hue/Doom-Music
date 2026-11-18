@@ -1,6 +1,6 @@
 // TurntableControls.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -44,14 +44,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.ShowFormatBadgeKey
-import com.mochyy.mochymusic.constants.ShowFormatSampleRateKey
-import com.mochyy.mochymusic.extensions.togglePlayPause
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.ShowFormatBadgeKey
+import com.videshkarmakar.doom.constants.ShowFormatSampleRateKey
+import com.videshkarmakar.doom.extensions.togglePlayPause
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // The Turntable frame's controls, at its sizes: four pills stacked on the right (like, back,
 // play/pause, forward) above the title row - the chevron on the left, the title and its format

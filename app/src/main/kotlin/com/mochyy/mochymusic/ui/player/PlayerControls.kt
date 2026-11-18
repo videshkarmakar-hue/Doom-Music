@@ -1,6 +1,6 @@
 // PlayerControls.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.animation.graphics.ExperimentalAnimationGraphicsApi
 import androidx.compose.animation.graphics.res.animatedVectorResource
@@ -49,16 +49,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.Player
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlayerHorizontalPadding
-import com.mochyy.mochymusic.extensions.togglePlayPause
-import com.mochyy.mochymusic.ui.component.tapOrHold
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedPlayGlyph
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedSkipGlyph
-import com.mochyy.mochymusic.ui.player.flagship.SkipCycleState
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlayerHorizontalPadding
+import com.videshkarmakar.doom.extensions.togglePlayPause
+import com.videshkarmakar.doom.ui.component.tapOrHold
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedPlayGlyph
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedSkipGlyph
+import com.videshkarmakar.doom.ui.player.flagship.SkipCycleState
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 @Composable
 fun PlayerControls(
@@ -124,24 +124,24 @@ fun PlayerTransportRow(
     // A hold that outlives the row (the player closed under the finger) still lets go.
     androidx.compose.runtime.DisposableEffect(holdSpeed) { onDispose { holdSpeed.end() } }
     val hold = remember(holdSpeed) {
-        com.mochyy.mochymusic.ui.component.TransportHold(
+        com.videshkarmakar.doom.ui.component.TransportHold(
             onPreviousHoldStart = { holdSpeed.start(HoldSlowFactor) },
             onNextHoldStart = { holdSpeed.start(HoldFastFactor) },
             onHoldEnd = holdSpeed::end,
         )
     }
 
-    val buttonStyle by com.mochyy.mochymusic.utils.rememberEnumPreference(
-        com.mochyy.mochymusic.constants.ButtonStyleKey,
-        com.mochyy.mochymusic.ui.component.ButtonStyle.DEFAULT,
+    val buttonStyle by com.videshkarmakar.doom.utils.rememberEnumPreference(
+        com.videshkarmakar.doom.constants.ButtonStyleKey,
+        com.videshkarmakar.doom.ui.component.ButtonStyle.DEFAULT,
     )
-    val artworkColor = com.mochyy.mochymusic.LocalArtworkColor.current
+    val artworkColor = com.videshkarmakar.doom.LocalArtworkColor.current
     val palette = remember(artworkColor) {
-        com.mochyy.mochymusic.ui.theme.ArtworkPalette.from(artworkColor)
+        com.videshkarmakar.doom.ui.theme.ArtworkPalette.from(artworkColor)
     }
 
-    if (buttonStyle != com.mochyy.mochymusic.ui.component.ButtonStyle.DEFAULT) {
-        com.mochyy.mochymusic.ui.component.PlayerTransportButtons(
+    if (buttonStyle != com.videshkarmakar.doom.ui.component.ButtonStyle.DEFAULT) {
+        com.videshkarmakar.doom.ui.component.PlayerTransportButtons(
             style = buttonStyle,
             isPlaying = transportState.isPlaying,
             canSkipPrevious = transportState.canSkipPrevious,
@@ -157,7 +157,7 @@ fun PlayerTransportRow(
             },
             onNext = playerConnection::seekToNext,
             hold = hold,
-            colors = com.mochyy.mochymusic.ui.component.TransportColors(
+            colors = com.videshkarmakar.doom.ui.component.TransportColors(
                 accent = palette.accent,
                 onAccent = palette.onAccent,
                 container = palette.container,

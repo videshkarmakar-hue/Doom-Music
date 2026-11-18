@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
@@ -7,14 +7,14 @@ import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
-import com.mochyy.mochymusic.crossmix.CrossmixAnalysisRepository
-import com.mochyy.mochymusic.crossmix.CrossmixPlan
-import com.mochyy.mochymusic.crossmix.CrossmixPlanner
-import com.mochyy.mochymusic.crossmix.CrossmixRole
-import com.mochyy.mochymusic.crossmix.CrossmixSettings
-import com.mochyy.mochymusic.crossmix.CrossmixStyle
-import com.mochyy.mochymusic.crossmix.CrossmixTrackInput
-import com.mochyy.mochymusic.playback.audio.CrossmixTransitionAudioProcessor
+import com.videshkarmakar.doom.crossmix.CrossmixAnalysisRepository
+import com.videshkarmakar.doom.crossmix.CrossmixPlan
+import com.videshkarmakar.doom.crossmix.CrossmixPlanner
+import com.videshkarmakar.doom.crossmix.CrossmixRole
+import com.videshkarmakar.doom.crossmix.CrossmixSettings
+import com.videshkarmakar.doom.crossmix.CrossmixStyle
+import com.videshkarmakar.doom.crossmix.CrossmixTrackInput
+import com.videshkarmakar.doom.playback.audio.CrossmixTransitionAudioProcessor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -109,7 +109,7 @@ class CrossmixDirector(
         android.util.Log.i(Tag, status)
     }
 
-    private fun voiceSource(lyrics: String?, analysis: com.mochyy.mochymusic.crossmix.TrackAnalysis?): String = when {
+    private fun voiceSource(lyrics: String?, analysis: com.videshkarmakar.doom.crossmix.TrackAnalysis?): String = when {
         lyrics != null && Regex("""\[\d{1,2}:\d{2}""").containsMatchIn(lyrics) -> "synced lyrics"
         analysis?.vocal?.isNotEmpty() == true -> "the sound"
         else -> "a guess"

@@ -1,6 +1,6 @@
 // LinkHttp.kt
 
-package com.mochyy.mochymusic.link
+package com.videshkarmakar.doom.link
 
 import timber.log.Timber
 import java.io.BufferedInputStream

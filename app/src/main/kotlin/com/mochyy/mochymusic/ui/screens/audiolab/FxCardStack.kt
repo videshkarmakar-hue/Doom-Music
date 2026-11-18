@@ -1,6 +1,6 @@
 // audio fx header: a fanned stack of cards, one per effect that's on, the front one moves to the back every few seconds or on a tap
 
-package com.mochyy.mochymusic.ui.screens.audiolab
+package com.videshkarmakar.doom.ui.screens.audiolab
 
 import androidx.annotation.StringRes
 import androidx.compose.animation.core.Animatable
@@ -35,16 +35,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.eq.LoudnessSettings
-import com.mochyy.mochymusic.eq.PlaybackSettings
-import com.mochyy.mochymusic.eq.ReverbSettings
-import com.mochyy.mochymusic.eq.SpatialSettings
-import com.mochyy.mochymusic.eq.VolumeSettings
-import com.mochyy.mochymusic.ui.component.damageBoundary
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.eq.LoudnessSettings
+import com.videshkarmakar.doom.eq.PlaybackSettings
+import com.videshkarmakar.doom.eq.ReverbSettings
+import com.videshkarmakar.doom.eq.SpatialSettings
+import com.videshkarmakar.doom.eq.VolumeSettings
+import com.videshkarmakar.doom.ui.component.damageBoundary
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /** an effect that's on, as the header's cards and the hub's status line name it */
 class ActiveEffect(val key: String, val label: String)

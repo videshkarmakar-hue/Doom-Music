@@ -1,6 +1,6 @@
-// the "support mochy's development" sheet: the auto prompt, help us! on the version sheet
+// the "support doom's development" sheet: the auto prompt, help us! on the version sheet
 
-package com.mochyy.mochymusic.ui.screens.donate
+package com.videshkarmakar.doom.ui.screens.donate
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -25,10 +25,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.core.updater.GithubRepoUrl
-import com.mochyy.mochymusic.ui.component.PopupSheetHandleHeight
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.screens.update.openUrl
+import com.videshkarmakar.doom.core.updater.GithubRepoUrl
+import com.videshkarmakar.doom.ui.component.PopupSheetHandleHeight
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.screens.update.openUrl
 
 // the band ends around her chest, above where her fade starts (56%), or the letters show through her
 private const val BandEndsOnCharacter = 0.53f
@@ -70,14 +70,14 @@ private fun SupportSheetContent() {
             DonateCharacter(width = characterWidth)
             Spacer(Modifier.height(14.dp))
             Text(
-                text = "Enjoying Mochy Music?",
+                text = "Enjoying Doom Music?",
                 fontSize = 13.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = DonateSoftText,
             )
             Spacer(Modifier.height(6.dp))
             Text(
-                text = "Support Mochy’s development!",
+                text = "Support Doom’s development!",
                 fontSize = 32.sp,
                 lineHeight = 36.sp,
                 fontWeight = FontWeight.Bold,
@@ -87,9 +87,9 @@ private fun SupportSheetContent() {
             )
             Spacer(Modifier.height(14.dp))
             Text(
-                text = "thanks for trying it out! btw, Mochy Music will always be free, forever yours! <3\n\n" +
+                text = "thanks for trying it out! btw, Doom Music will always be free, forever yours! <3\n\n" +
                     "It would be very useful for us if you support the developer, no matter how small it is!! <3\n" +
-                    "giving a star to Mochy’s repo is already enough. and thanks again!",
+                    "giving a star to Doom’s repo is already enough. and thanks again!",
                 fontSize = 13.5.sp,
                 lineHeight = 18.sp,
                 fontWeight = FontWeight.Bold,

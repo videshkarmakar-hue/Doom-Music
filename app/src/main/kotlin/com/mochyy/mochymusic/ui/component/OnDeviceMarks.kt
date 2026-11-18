@@ -4,7 +4,7 @@
 // Apple Music marks its downloads, and for a file imported from the device its format ("FLAC",
 // "MP3") in the player's badge.
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -24,11 +24,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.offline.Download
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.playback.StreamFacts
-import com.mochyy.mochymusic.ui.player.StreamFormatBadge
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.playback.StreamFacts
+import com.videshkarmakar.doom.ui.player.StreamFormatBadge
 import kotlinx.coroutines.flow.map
 
 /** Imported files have ids of their own; everything else is a YouTube video id. */

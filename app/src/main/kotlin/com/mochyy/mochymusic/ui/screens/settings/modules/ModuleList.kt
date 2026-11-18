@@ -1,6 +1,6 @@
 // a section of the modules page: each module's card on a fixed slot, dragged by the lines beside it into order and swiped left to delete
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.animateFloatAsState
@@ -51,13 +51,13 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.modules.ModuleEntry
-import com.mochyy.mochymusic.ui.component.SwipeAction
-import com.mochyy.mochymusic.ui.component.SwipeActionsBox
-import com.mochyy.mochymusic.ui.component.SwipeRemoveColor
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.modules.ModuleEntry
+import com.videshkarmakar.doom.ui.component.SwipeAction
+import com.videshkarmakar.doom.ui.component.SwipeActionsBox
+import com.videshkarmakar.doom.ui.component.SwipeRemoveColor
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import kotlin.math.roundToInt
 
 private val RowGap = 12.dp

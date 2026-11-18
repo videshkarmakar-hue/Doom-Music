@@ -1,6 +1,6 @@
 // CaptionAligner.kt
 
-package com.mochyy.mochymusic.lyrics
+package com.videshkarmakar.doom.lyrics
 
 import com.music.innertube.CaptionCue
 import java.text.Normalizer
@@ -85,7 +85,7 @@ internal object CaptionAligner {
     }
 
     private fun isCjk(ch: Char): Boolean =
-        ch in '぀'..'ヿ' || ch in '一'..'鿿' || ch in '가'..'힯' || ch in '㐀'..'䶿'
+        ch in '�'..'ヿ' || ch in '一'..'鿿' || ch in '가'..'힯' || ch in '�'..'䶿'
 
     // every caption letter in order, each with the moment it's on screen (a cue's letters spread over its time)
     private class CaptionStream(val text: String, val times: LongArray) {

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.graphics.Shader
 import android.os.Build
@@ -67,7 +67,7 @@ object BlurEffectCache {
     fun element(
         radius: Float,
         tileMode: Shader.TileMode = Shader.TileMode.CLAMP,
-    ): RenderEffect? = if (com.mochyy.mochymusic.ui.utils.AppMotion.elementBlur) get(radius, tileMode) else null
+    ): RenderEffect? = if (com.videshkarmakar.doom.ui.utils.AppMotion.elementBlur) get(radius, tileMode) else null
 
     /** The radius [get] actually blurs by: clamped on API <= 34 unless [allowLargeRadius]. */
     fun effectiveRadius(radius: Float, allowLargeRadius: Boolean = false): Float =

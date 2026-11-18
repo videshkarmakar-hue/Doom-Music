@@ -1,6 +1,6 @@
 // CustomisationLivePreviews.kt
 
-package com.mochyy.mochymusic.ui.screens.gesture
+package com.videshkarmakar.doom.ui.screens.gesture
 
 import android.graphics.Shader
 import androidx.compose.animation.core.Animatable
@@ -28,7 +28,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.runtime.Composable
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import androidx.compose.ui.res.stringResource
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
@@ -55,28 +55,28 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.constants.LyricsHighBloomKey
-import com.mochyy.mochymusic.constants.LyricsMotionStyle
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.WordTimestamp
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.component.GlassChromeBlurRadius
-import com.mochyy.mochymusic.ui.component.GlassChromeColor
-import com.mochyy.mochymusic.ui.component.GlassPillBackground
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.ProgressiveGlassBackground
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.ui.player.LyricsAlignment
-import com.mochyy.mochymusic.ui.player.LyricsGlowLine
-import com.mochyy.mochymusic.ui.player.LyricsLineState
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberLabTime
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberOnScreen
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberPicturesHeld
-import com.mochyy.mochymusic.ui.screens.audiolab.trackOnScreen
-import com.mochyy.mochymusic.ui.utils.AppMotion
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.LyricsHighBloomKey
+import com.videshkarmakar.doom.constants.LyricsMotionStyle
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.WordTimestamp
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.component.GlassChromeBlurRadius
+import com.videshkarmakar.doom.ui.component.GlassChromeColor
+import com.videshkarmakar.doom.ui.component.GlassPillBackground
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.ProgressiveGlassBackground
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.ui.player.LyricsAlignment
+import com.videshkarmakar.doom.ui.player.LyricsGlowLine
+import com.videshkarmakar.doom.ui.player.LyricsLineState
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberLabTime
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberOnScreen
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberPicturesHeld
+import com.videshkarmakar.doom.ui.screens.audiolab.trackOnScreen
+import com.videshkarmakar.doom.ui.utils.AppMotion
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlin.math.abs
@@ -275,7 +275,7 @@ internal fun LyricsStylePreview(style: LyricsMotionStyle) {
     }
     val (highBloom) = rememberPreference(LyricsHighBloomKey, defaultValue = true)
     // with translation on, the first line shows one under it, so the card shows how a translated line sits
-    val (translate) = rememberPreference(com.mochyy.mochymusic.constants.TranslateLyricsKey, defaultValue = false)
+    val (translate) = rememberPreference(com.videshkarmakar.doom.constants.TranslateLyricsKey, defaultValue = false)
     val sampleTranslation = stringResource(R.string.customise_lyrics_preview_translation)
     val heights = remember { mutableStateListOf(0, 0, 0) }
     val scroll by animateFloatAsState(

@@ -1,6 +1,6 @@
 // CarRows.kt
 
-package com.mochyy.mochymusic.car.screens
+package com.videshkarmakar.doom.car.screens
 
 import androidx.car.app.model.Action
 import androidx.car.app.model.CarIcon
@@ -8,9 +8,9 @@ import androidx.car.app.model.GridItem
 import androidx.car.app.model.GridSection
 import androidx.car.app.model.Row
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.car.CarApp
-import com.mochyy.mochymusic.car.CarCollection
-import com.mochyy.mochymusic.car.CarSong
+import com.videshkarmakar.doom.car.CarApp
+import com.videshkarmakar.doom.car.CarCollection
+import com.videshkarmakar.doom.car.CarSong
 
 // the rows and tiles every car list is made of, so a song looks the same wherever it shows up
 

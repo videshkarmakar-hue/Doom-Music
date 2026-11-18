@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.update
+package com.videshkarmakar.doom.ui.screens.update
 
 import android.graphics.Paint
 import android.graphics.Path
@@ -32,9 +32,9 @@ import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.component.rememberElementBlurAvailable
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.component.rememberElementBlurAvailable
 import kotlin.math.PI
 import kotlin.math.floor
 

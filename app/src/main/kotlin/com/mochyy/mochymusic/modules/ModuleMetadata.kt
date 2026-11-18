@@ -1,10 +1,10 @@
 // the song facts modules that are on, asked together for about song; the first one in the modules' order to know a fact wins it
 
-package com.mochyy.mochymusic.modules
+package com.videshkarmakar.doom.modules
 
-import com.mochyy.mochymusic.module.MetadataModule
-import com.mochyy.mochymusic.module.TrackMetadata
-import com.mochyy.mochymusic.module.TrackQuery
+import com.videshkarmakar.doom.module.MetadataModule
+import com.videshkarmakar.doom.module.TrackMetadata
+import com.videshkarmakar.doom.module.TrackQuery
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope

@@ -2,7 +2,7 @@
 // About sheet - about section removed
 //
 
-package com.mochyy.mochymusic.ui.screens.update
+package com.videshkarmakar.doom.ui.screens.update
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -34,16 +34,16 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.mochyy.mochymusic.BuildConfig
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.core.updater.GithubOwner
-import com.mochyy.mochymusic.core.updater.GithubRepo
-import com.mochyy.mochymusic.core.updater.GithubRepoUrl
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.screens.donate.showSupportSheet
+import com.videshkarmakar.doom.BuildConfig
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.core.updater.GithubOwner
+import com.videshkarmakar.doom.core.updater.GithubRepo
+import com.videshkarmakar.doom.core.updater.GithubRepoUrl
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.screens.donate.showSupportSheet
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
@@ -206,7 +206,7 @@ private suspend fun fetchContributors(): List<ContributorEntry> {
                     connectTimeout = 8_000
                     readTimeout = 8_000
                     setRequestProperty("Accept", "application/vnd.github+json")
-                    setRequestProperty("User-Agent", "mochy-android")
+                    setRequestProperty("User-Agent", "doom-android")
                 }
             try {
                 val arr = JSONArray(conn.inputStream.bufferedReader().use { it.readText() })
@@ -312,7 +312,7 @@ private fun ColumnScope.AboutSheetContent(
                     contentAlignment = Alignment.Center,
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_mochy_mark),
+                        painter = painterResource(R.drawable.ic_doom_mark),
                         contentDescription = null,
                         tint = Color.White,
                         modifier = Modifier.size(38.dp),
@@ -320,7 +320,7 @@ private fun ColumnScope.AboutSheetContent(
                 }
                 Spacer(Modifier.height(14.dp))
                 Text(
-                    text = "Mochy Music",
+                    text = "Doom Music",
                     fontSize = 36.sp,
                     lineHeight = 38.sp,
                     fontWeight = FontWeight.Bold,
@@ -346,7 +346,7 @@ private fun ColumnScope.AboutSheetContent(
                         .padding(horizontal = 18.dp, vertical = 16.dp),
             ) {
                 Text(
-                    text = "Mochy Music is a music player for Android.",
+                    text = "Doom Music is a music player for Android.",
                     fontSize = 15.sp,
                     lineHeight = 19.sp,
                     fontWeight = FontWeight.Bold,

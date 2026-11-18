@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.video
+package com.videshkarmakar.doom.ui.player.video
 
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.pluralStringResource
@@ -64,24 +64,24 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedPlayGlyph
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedSkipGlyph
-import com.mochyy.mochymusic.ui.player.flagship.SkipCycleState
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.player.PressScaleActionButton
-import com.mochyy.mochymusic.ui.player.models.TrackInfo
-import com.mochyy.mochymusic.ui.player.rememberMusicVolume
-import com.mochyy.mochymusic.ui.player.styles.rememberDurationMs
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.utils.makeTimeString
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedPlayGlyph
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedSkipGlyph
+import com.videshkarmakar.doom.ui.player.flagship.SkipCycleState
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.player.PressScaleActionButton
+import com.videshkarmakar.doom.ui.player.models.TrackInfo
+import com.videshkarmakar.doom.ui.player.rememberMusicVolume
+import com.videshkarmakar.doom.ui.player.styles.rememberDurationMs
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.utils.makeTimeString
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // how far down the top row sits; how far in from the sides comes from the frame, upright or sideways
 private val TopRow = 32.dp
@@ -229,7 +229,7 @@ internal fun BoxScope.VideoTransport(
 ) {
     val visible by rememberControlsVisible(controls)
     // the remote plays and skips on a tv
-    if (!visible || com.mochyy.mochymusic.ui.utils.isTvLayout()) return
+    if (!visible || com.videshkarmakar.doom.ui.utils.isTvLayout()) return
     val connection = LocalPlayerConnection.current ?: return
     val scope = rememberCoroutineScope()
     // the flagship's running triangles, each a step on with every press

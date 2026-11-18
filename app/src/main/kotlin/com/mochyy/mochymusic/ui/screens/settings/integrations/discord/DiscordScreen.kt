@@ -1,6 +1,6 @@
-// mochy → settings → integrations → discord: log in in the browser, then shape the status friends see with a live preview
+// doom → settings → integrations → discord: log in in the browser, then shape the status friends see with a live preview
 
-package com.mochyy.mochymusic.ui.screens.settings.integrations.discord
+package com.videshkarmakar.doom.ui.screens.settings.integrations.discord
 
 import android.content.Context
 import android.content.Intent
@@ -46,20 +46,20 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.discord.DiscordLogin
-import com.mochyy.mochymusic.discord.NowPlaying
-import com.mochyy.mochymusic.discord.PresenceConnection
-import com.mochyy.mochymusic.discord.PresenceImage
-import com.mochyy.mochymusic.discord.PresenceKind
-import com.mochyy.mochymusic.discord.PresenceSettings
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.screens.settings.integrations.IntegrationPageSubtitle
-import com.mochyy.mochymusic.viewmodels.DiscordViewModel
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.discord.DiscordLogin
+import com.videshkarmakar.doom.discord.NowPlaying
+import com.videshkarmakar.doom.discord.PresenceConnection
+import com.videshkarmakar.doom.discord.PresenceImage
+import com.videshkarmakar.doom.discord.PresenceKind
+import com.videshkarmakar.doom.discord.PresenceSettings
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.screens.settings.integrations.IntegrationPageSubtitle
+import com.videshkarmakar.doom.viewmodels.DiscordViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 
 const val DiscordRoute = "integrations_settings/discord"
 
@@ -225,7 +225,7 @@ private fun AccountButton(
     }
     if (inviting) {
         LoginNote(stringResource(R.string.discord_login_note), Modifier.padding(top = 8.dp))
-        // discord's consent page lists the whole presence bundle, so say up front what mochy really uses
+        // discord's consent page lists the whole presence bundle, so say up front what doom really uses
         LoginNote(stringResource(R.string.discord_permissions_note), Modifier.padding(top = 4.dp, bottom = 8.dp))
     }
 }
@@ -300,7 +300,7 @@ private fun CustomizeSection(
         )
     }
     Spacer(gap)
-    DiscordTextCard(stringResource(R.string.discord_activity_name_title), settings.name, { text -> edit { copy(name = text) } }, hint = "Mochy")
+    DiscordTextCard(stringResource(R.string.discord_activity_name_title), settings.name, { text -> edit { copy(name = text) } }, hint = "Doom")
 
     DiscordSectionTitle(stringResource(R.string.discord_section_strings))
     DiscordNoticeCard(stringResource(R.string.discord_empty_to_hide))

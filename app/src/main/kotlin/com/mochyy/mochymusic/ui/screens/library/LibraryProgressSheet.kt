@@ -4,7 +4,7 @@
 // "Cancel all downloads" for downloads, "Create playlist" for local imports to keep them together. Opened from the Library's progress card, and right after a local
 // import starts.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.annotation.StringRes
 import androidx.compose.animation.core.animateFloatAsState
@@ -36,16 +36,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.models.TransferBatch
-import com.mochyy.mochymusic.models.TransferItem
-import com.mochyy.mochymusic.models.TransferState
-import com.mochyy.mochymusic.ui.component.CreatePlaylistDialog
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.screens.search.SearchColors
-import com.mochyy.mochymusic.viewmodels.LibraryImportViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.models.TransferBatch
+import com.videshkarmakar.doom.models.TransferItem
+import com.videshkarmakar.doom.models.TransferState
+import com.videshkarmakar.doom.ui.component.CreatePlaylistDialog
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.screens.search.SearchColors
+import com.videshkarmakar.doom.viewmodels.LibraryImportViewModel
 import kotlinx.coroutines.flow.StateFlow
 
 /** Which job a progress card or sheet follows. */

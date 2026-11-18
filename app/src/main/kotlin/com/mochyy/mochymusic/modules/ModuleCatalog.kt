@@ -1,8 +1,8 @@
-// the modules people can find from the modules page, read from modules/catalog.json in mochy's repo so the list grows without an app update
+// the modules people can find from the modules page, read from modules/catalog.json in doom's repo so the list grows without an app update
 
-package com.mochyy.mochymusic.modules
+package com.videshkarmakar.doom.modules
 
-import com.mochyy.mochymusic.module.ModuleFeature
+import com.videshkarmakar.doom.module.ModuleFeature
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
@@ -64,6 +64,6 @@ class ModuleCatalog @Inject constructor() {
     }
 
     private companion object {
-        const val CatalogUrl = "https://raw.githubusercontent.com/realidkroo/Mochy-Music/main/modules/catalog.json"
+        const val CatalogUrl = "https://raw.githubusercontent.com/realidkroo/Doom-Music/main/modules/catalog.json"
     }
 }

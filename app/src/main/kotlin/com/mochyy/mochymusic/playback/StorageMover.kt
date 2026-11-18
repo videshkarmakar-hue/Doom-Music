@@ -1,11 +1,11 @@
 // StorageMover.kt
 
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.content.Context
 import android.util.Log
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.importer.transfer.TransferRestore
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.importer.transfer.TransferRestore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -114,10 +114,10 @@ class StorageMover @Inject constructor(
         }
     }
 
-    // writes and removes a small file first, so a folder android won't let mochy write in fails here instead of after the restart
+    // writes and removes a small file first, so a folder android won't let doom write in fails here instead of after the restart
     private fun checkWritable(root: File) {
         if (!root.exists() && !root.mkdirs()) throw IOException("couldn't make ${root.path}")
-        val probe = File(root, ".mochy-write-check")
+        val probe = File(root, ".doom-write-check")
         probe.writeText("")
         if (!probe.delete()) throw IOException("couldn't tidy up in ${root.path}")
     }

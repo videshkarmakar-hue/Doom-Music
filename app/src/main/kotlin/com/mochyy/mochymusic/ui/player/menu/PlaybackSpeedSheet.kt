@@ -1,6 +1,6 @@
 // PlaybackSpeedSheet.kt
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
@@ -43,15 +43,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.playback.SongTuning
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSelectTick
-import com.mochyy.mochymusic.di.AudioLabEntryPoint
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.playback.SongTuning
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSelectTick
+import com.videshkarmakar.doom.di.AudioLabEntryPoint
 import dagger.hilt.android.EntryPointAccessors
 import kotlin.math.abs
 import kotlin.math.log2
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 private val CardSurface = MenuRowSurface
 

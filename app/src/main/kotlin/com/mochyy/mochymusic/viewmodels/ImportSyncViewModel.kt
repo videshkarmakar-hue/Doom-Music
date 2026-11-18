@@ -1,24 +1,24 @@
 // ImportSyncViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import android.net.Uri
 import android.provider.OpenableColumns
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.App
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.importer.ImportOptions
-import com.mochyy.mochymusic.importer.ImportProgress
-import com.mochyy.mochymusic.importer.LinkImportException
-import com.mochyy.mochymusic.importer.LinkImporter
-import com.mochyy.mochymusic.importer.MusicImportService
-import com.mochyy.mochymusic.importer.MochyCsvExporter
-import com.mochyy.mochymusic.importer.ParsedImport
-import com.mochyy.mochymusic.importer.YouTubeSyncManager
-import com.mochyy.mochymusic.importer.YtSyncState
-import com.mochyy.mochymusic.importer.parseImportCsv
+import com.videshkarmakar.doom.App
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.importer.ImportOptions
+import com.videshkarmakar.doom.importer.ImportProgress
+import com.videshkarmakar.doom.importer.LinkImportException
+import com.videshkarmakar.doom.importer.LinkImporter
+import com.videshkarmakar.doom.importer.MusicImportService
+import com.videshkarmakar.doom.importer.DoomCsvExporter
+import com.videshkarmakar.doom.importer.ParsedImport
+import com.videshkarmakar.doom.importer.YouTubeSyncManager
+import com.videshkarmakar.doom.importer.YtSyncState
+import com.videshkarmakar.doom.importer.parseImportCsv
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
@@ -75,7 +75,7 @@ class ImportSyncViewModel @Inject constructor(
         }
     }
 
-    /** [sourceLabel] is only for the review dialog ("Mochy backup", "TuneMyMusic"). */
+    /** [sourceLabel] is only for the review dialog ("Doom backup", "TuneMyMusic"). */
     fun loadFile(uri: Uri, sourceLabel: String) {
         loadJob?.cancel()
         _pending.value = PendingImport.Loading("Reading the file…")
@@ -131,7 +131,7 @@ class ImportSyncViewModel @Inject constructor(
         _exportMessage.value = "Exporting…"
         viewModelScope.launch(Dispatchers.IO) {
             _exportMessage.value = try {
-                val (csv, summary) = MochyCsvExporter.build(database)
+                val (csv, summary) = DoomCsvExporter.build(database)
                 context.contentResolver.openOutputStream(uri)?.use { out ->
                     // the BOM makes Excel read names in any script correctly; our reader skips it
                     out.write(byteArrayOf(0xEF.toByte(), 0xBB.toByte(), 0xBF.toByte()))

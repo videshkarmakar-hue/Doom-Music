@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.db.entities
+package com.videshkarmakar.doom.db.entities
 
 import androidx.room.Embedded
 import androidx.room.Relation

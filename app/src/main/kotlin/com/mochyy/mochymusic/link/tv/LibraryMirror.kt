@@ -1,12 +1,12 @@
 // LibraryMirror.kt
 
-package com.mochyy.mochymusic.link.tv
+package com.videshkarmakar.doom.link.tv
 
 import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.mochyy.mochymusic.link.LinkRows
+import com.videshkarmakar.doom.link.LinkRows
 import timber.log.Timber
 import java.io.File
 

@@ -1,6 +1,6 @@
 // the small pieces the modules list and a module's page share: its icon, what it adds, its status line and dot, the section titles and the dashed slot
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -36,15 +36,15 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.SubcomposeAsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.ModuleFeature
-import com.mochyy.mochymusic.module.applemusic.AppleMusicModule
-import com.mochyy.mochymusic.module.monochrome.MonochromeModule
-import com.mochyy.mochymusic.modules.ModuleEntry
-import com.mochyy.mochymusic.modules.ModuleOrigin
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.ModuleFeature
+import com.videshkarmakar.doom.module.applemusic.AppleMusicModule
+import com.videshkarmakar.doom.module.monochrome.MonochromeModule
+import com.videshkarmakar.doom.modules.ModuleEntry
+import com.videshkarmakar.doom.modules.ModuleOrigin
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 import java.io.File
 
 /** the darker card a module's row and the empty slots sit on, the mock's #131313 */
@@ -170,7 +170,7 @@ internal fun moduleOrigin(entry: ModuleEntry): String = stringResource(
     entry.module.info.version,
 )
 
-/** a module only changes how mochy looks (or adds pages and menu rows), it brings nothing to play or read */
+/** a module only changes how doom looks (or adds pages and menu rows), it brings nothing to play or read */
 internal val ModuleEntry.isLookOnly: Boolean
     get() = adds(ModuleFeature.Look) && !adds(ModuleFeature.AudioSource) && !adds(ModuleFeature.Lyrics) && !adds(ModuleFeature.Metadata)
 

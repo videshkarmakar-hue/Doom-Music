@@ -1,6 +1,6 @@
 // AboutPreview.kt
 
-package com.mochyy.mochymusic.ui.player.info
+package com.videshkarmakar.doom.ui.player.info
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
@@ -28,11 +28,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AboutSongSourceKey
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AboutSongSourceKey
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 private const val PreviewLines = 4
 private val PreviewLineHeight = 20.sp

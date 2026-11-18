@@ -1,11 +1,11 @@
-package com.mochyy.mochymusic.playback.audio
+package com.videshkarmakar.doom.playback.audio
 
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.audio.AudioSink
 import androidx.media3.exoplayer.audio.ForwardingAudioSink
-import com.mochyy.mochymusic.eq.AudioFxService
-import com.mochyy.mochymusic.eq.audio.ReplayGainTags
-import com.mochyy.mochymusic.eq.audio.VolumeCurve
+import com.videshkarmakar.doom.eq.AudioFxService
+import com.videshkarmakar.doom.eq.audio.ReplayGainTags
+import com.videshkarmakar.doom.eq.audio.VolumeCurve
 import java.nio.ByteBuffer
 
 /**

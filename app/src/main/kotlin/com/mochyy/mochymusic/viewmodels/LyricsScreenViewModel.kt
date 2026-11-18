@@ -1,13 +1,13 @@
 // LyricsScreenViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.lyrics.LyricsHelper
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.lyrics.LyricsHelper
+import com.videshkarmakar.doom.models.MediaMetadata
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -36,12 +36,12 @@ constructor(
             // a cached copy from either that still reads as syllable-split is fetched again once.
             val staleSyllableSplit = existing != null &&
                 existing.provider in SyllableFixedProviders &&
-                com.mochyy.mochymusic.lyrics.LyricsUtils.isSyllableSplit(existing.lyrics)
+                com.videshkarmakar.doom.lyrics.LyricsUtils.isSyllableSplit(existing.lyrics)
             if (existing != null && !staleSyllableSplit) return@launch
 
             val lyricsWithProvider = lyricsHelper.getLyrics(mediaMetadata)
             // nothing was asked: not a "not found" to keep
-            if (lyricsWithProvider.provider == com.mochyy.mochymusic.lyrics.LyricsHelper.NoConnectionProvider) return@launch
+            if (lyricsWithProvider.provider == com.videshkarmakar.doom.lyrics.LyricsHelper.NoConnectionProvider) return@launch
             database.query {
                 upsert(
                     LyricsEntity(

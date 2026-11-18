@@ -1,6 +1,6 @@
 // AppNavigation.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -34,7 +34,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
-import com.mochyy.mochymusic.ui.screens.Screens
+import com.videshkarmakar.doom.ui.screens.Screens
 import androidx.compose.runtime.getValue
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.fillMaxSize
@@ -45,7 +45,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.size
-import com.mochyy.mochymusic.LocalGlassState
+import com.videshkarmakar.doom.LocalGlassState
 
 @Immutable
 private data class NavItemState(
@@ -114,7 +114,7 @@ private val RouteOwners: List<Pair<String, String>> = listOf(
     "library/" to "library",
     "cipher_settings" to "settings",
     "playback_diagnostics" to "settings",
-    "mochy_settings" to "settings",
+    "doom_settings" to "settings",
     "general_settings" to "settings",
     "playback_settings" to "settings",
     "now_playing_settings" to "settings",
@@ -224,7 +224,7 @@ fun AppNavigationBar(
     val selectedIndex = navigationItems.indexOfFirst { it.route == selectedTabRoute }
     val tabCount = navigationItems.size
     val pill = rememberNavPill(selectedIndex)
-    // a look's glass can draw its own edge and its own pill, and then mochy leaves its hairline, shadow or highlight out
+    // a look's glass can draw its own edge and its own pill, and then doom leaves its hairline, shadow or highlight out
     val moduleGlass = rememberChromeModuleGlass()
     val density = LocalDensity.current
     val glassPill = remember(pill, tabCount, density) {

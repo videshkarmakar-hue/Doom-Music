@@ -1,6 +1,6 @@
 // ShazamSignatureGenerator.kt
 
-package com.mochyy.mochymusic.recognition
+package com.videshkarmakar.doom.recognition
 
 import android.util.Base64
 import java.io.ByteArrayOutputStream

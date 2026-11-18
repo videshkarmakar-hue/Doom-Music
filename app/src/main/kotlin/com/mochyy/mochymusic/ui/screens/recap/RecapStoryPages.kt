@@ -3,7 +3,7 @@
 // What each recap page shows. Every page is a pure function of its PageAnim (enter/exit 0..1) and
 // the shared StoryState; nothing here starts an animation of its own.
 
-package com.mochyy.mochymusic.ui.screens.recap
+package com.videshkarmakar.doom.ui.screens.recap
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -63,10 +63,10 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.resize
 import java.time.DayOfWeek
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -1066,7 +1066,7 @@ private fun EndPage(
 ) {
     val geo = s.geo
     val anim = s.pages[P_END]
-    val cardBottom = geo.top + geo.dp(175f) + (geo.width - 2 * geo.inset) / com.mochyy.mochymusic.ui.screens.setup.onboarding.IdCardAspect
+    val cardBottom = geo.top + geo.dp(175f) + (geo.width - 2 * geo.inset) / com.videshkarmakar.doom.ui.screens.setup.onboarding.IdCardAspect
     Text(
         stringResource(R.string.rc_story_there_you_go),
         style = recapBold(34f).copy(color = Color.White.copy(alpha = 0.72f)),

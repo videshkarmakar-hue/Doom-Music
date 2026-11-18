@@ -1,6 +1,6 @@
 // NetworkUtils.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

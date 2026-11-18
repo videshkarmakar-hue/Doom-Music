@@ -1,6 +1,6 @@
 // FileExt.kt
 
-package com.mochyy.mochymusic.extensions
+package com.videshkarmakar.doom.extensions
 
 import java.io.File
 import java.io.InputStream

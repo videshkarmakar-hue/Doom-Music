@@ -1,6 +1,6 @@
 // data saver as playback and the pages read it: on when its switch is, and only on mobile data unless it's set to always
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -12,8 +12,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.getSystemService
-import com.mochyy.mochymusic.constants.DataSaverKey
-import com.mochyy.mochymusic.constants.DataSaverMobileOnlyKey
+import com.videshkarmakar.doom.constants.DataSaverKey
+import com.videshkarmakar.doom.constants.DataSaverMobileOnlyKey
 
 object DataSaver {
 

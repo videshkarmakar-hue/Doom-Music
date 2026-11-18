@@ -1,9 +1,9 @@
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
-import com.mochyy.mochymusic.ui.player.customize.coverArtBoxF
-import com.mochyy.mochymusic.ui.player.customize.turntableLeftOffset
-import com.mochyy.mochymusic.ui.player.customize.turntableStageWidth
-import com.mochyy.mochymusic.ui.player.customize.turntableTopPadding
+import com.videshkarmakar.doom.ui.player.customize.coverArtBoxF
+import com.videshkarmakar.doom.ui.player.customize.turntableLeftOffset
+import com.videshkarmakar.doom.ui.player.customize.turntableStageWidth
+import com.videshkarmakar.doom.ui.player.customize.turntableTopPadding
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

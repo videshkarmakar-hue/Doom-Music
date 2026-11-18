@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.playback.custom
+package com.videshkarmakar.doom.playback.custom
 
 import android.net.Uri
 import android.os.Handler

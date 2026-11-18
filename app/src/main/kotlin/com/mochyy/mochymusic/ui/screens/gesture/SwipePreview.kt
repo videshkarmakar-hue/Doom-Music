@@ -4,7 +4,7 @@
 // the gap, then turns the action's colour and says what it will do, then the row slides back.
 // The pill is the one the lists use (SwipePill), so what you see here is what you get there.
 
-package com.mochyy.mochymusic.ui.screens.gesture
+package com.videshkarmakar.doom.ui.screens.gesture
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.foundation.background
@@ -42,18 +42,18 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.ui.component.HighlightColor
-import com.mochyy.mochymusic.ui.component.PillEdgeInset
-import com.mochyy.mochymusic.ui.component.PillGap
-import com.mochyy.mochymusic.ui.component.SlabInset
-import com.mochyy.mochymusic.ui.component.SongSwipeAction
-import com.mochyy.mochymusic.ui.component.SwipeAction
-import com.mochyy.mochymusic.ui.component.SwipePill
-import com.mochyy.mochymusic.ui.component.damageBoundary
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberLabTime
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberOnScreen
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberPicturesHeld
-import com.mochyy.mochymusic.ui.screens.audiolab.trackOnScreen
+import com.videshkarmakar.doom.ui.component.HighlightColor
+import com.videshkarmakar.doom.ui.component.PillEdgeInset
+import com.videshkarmakar.doom.ui.component.PillGap
+import com.videshkarmakar.doom.ui.component.SlabInset
+import com.videshkarmakar.doom.ui.component.SongSwipeAction
+import com.videshkarmakar.doom.ui.component.SwipeAction
+import com.videshkarmakar.doom.ui.component.SwipePill
+import com.videshkarmakar.doom.ui.component.damageBoundary
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberLabTime
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberOnScreen
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberPicturesHeld
+import com.videshkarmakar.doom.ui.screens.audiolab.trackOnScreen
 
 private val RowHeight = 60.dp
 

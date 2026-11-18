@@ -1,6 +1,6 @@
 // PlayerActionMenu.kt
 
-package com.mochyy.mochymusic.ui.player.menu
+package com.videshkarmakar.doom.ui.player.menu
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
@@ -59,27 +59,27 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.KeepScreenOn
-import com.mochyy.mochymusic.constants.PlayVideoBackgroundKey
-import com.mochyy.mochymusic.ui.menu.songedit.SongEditSheet
-import com.mochyy.mochymusic.ui.menu.songedit.VideoPickerSheet
-import com.mochyy.mochymusic.ui.player.hasFoundVideo
-import com.mochyy.mochymusic.playback.ExoDownloadService
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.SheetActionCard
-import com.mochyy.mochymusic.ui.component.SheetActionCardRow
-import com.mochyy.mochymusic.ui.component.SheetDownloadCard
-import com.mochyy.mochymusic.ui.component.SheetHeaderGap
-import com.mochyy.mochymusic.ui.component.SheetIcon
-import com.mochyy.mochymusic.ui.menu.AddToPlaylistDialog
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.KeepScreenOn
+import com.videshkarmakar.doom.constants.PlayVideoBackgroundKey
+import com.videshkarmakar.doom.ui.menu.songedit.SongEditSheet
+import com.videshkarmakar.doom.ui.menu.songedit.VideoPickerSheet
+import com.videshkarmakar.doom.ui.player.hasFoundVideo
+import com.videshkarmakar.doom.playback.ExoDownloadService
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.SheetActionCard
+import com.videshkarmakar.doom.ui.component.SheetActionCardRow
+import com.videshkarmakar.doom.ui.component.SheetDownloadCard
+import com.videshkarmakar.doom.ui.component.SheetHeaderGap
+import com.videshkarmakar.doom.ui.component.SheetIcon
+import com.videshkarmakar.doom.ui.menu.AddToPlaylistDialog
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlinx.coroutines.flow.flowOf
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 /**
  * @param fromLyrics true when the menu was opened from the lyrics page. The lyrics tools are only
@@ -130,13 +130,13 @@ fun PlayerActionMenu(
     var showLyricsOffset by remember { mutableStateOf(false) }
     var showSkinCustomise by remember { mutableStateOf(false) }
     // the song as it was when the row was tapped, so a skip doesn't swap the sheet's song under you
-    var songToEdit by remember { mutableStateOf<com.mochyy.mochymusic.models.MediaMetadata?>(null) }
-    var songForVideo by remember { mutableStateOf<com.mochyy.mochymusic.models.MediaMetadata?>(null) }
+    var songToEdit by remember { mutableStateOf<com.videshkarmakar.doom.models.MediaMetadata?>(null) }
+    var songForVideo by remember { mutableStateOf<com.videshkarmakar.doom.models.MediaMetadata?>(null) }
     val videoBackgroundOn by rememberPreference(PlayVideoBackgroundKey, defaultValue = false)
 
     // Only touched by the lyrics section. hiltViewModel() itself is cheap, but the flows are
     // collected lazily so a menu opened from the player does no lyrics work at all.
-    val lyricsMenuViewModel: com.mochyy.mochymusic.viewmodels.LyricsMenuViewModel = hiltViewModel()
+    val lyricsMenuViewModel: com.videshkarmakar.doom.viewmodels.LyricsMenuViewModel = hiltViewModel()
     val lyricsMetadata by playerConnection.mediaMetadata.collectAsState()
     val lyricsEntity by playerConnection.currentLyrics.collectAsState(initial = null)
 
@@ -311,7 +311,7 @@ fun PlayerActionMenu(
                         onClick = {
                             currentMetadata?.let { metadata ->
                                 onDismiss()
-                                com.mochyy.mochymusic.ui.player.share.song.SongShare.open(metadata)
+                                com.videshkarmakar.doom.ui.player.share.song.SongShare.open(metadata)
                             }
                         },
                         modifier = Modifier.weight(1f),
@@ -351,7 +351,7 @@ fun PlayerActionMenu(
                     title = stringResource(R.string.menu_change_output),
                     onClick = { showAudioDevices = true },
                 )
-                // a linked tv with mochy open: play there, line it up there, or work it as a remote
+                // a linked tv with doom open: play there, line it up there, or work it as a remote
                 DeviceMenuRows(onDismiss = onDismiss)
                 Spacer(modifier = Modifier.height(8.dp))
                 SleepTimerRow(onClick = { showSleepTimer = true })
@@ -521,7 +521,7 @@ internal fun MenuRow(
     }
 }
 
-/** The phone doesn't sleep while Mochy is open: for following lyrics, or a phone on a car mount. */
+/** The phone doesn't sleep while Doom is open: for following lyrics, or a phone on a car mount. */
 @Composable
 private fun KeepScreenOnRow() {
     val (keepScreenOn, setKeepScreenOn) = rememberPreference(KeepScreenOn, defaultValue = false)
@@ -533,10 +533,10 @@ private fun KeepScreenOnRow() {
     )
 }
 
-// the line being sung floating over other apps once mochy is out of sight
+// the line being sung floating over other apps once doom is out of sight
 @Composable
 private fun FloatingLyricsRow() {
-    val (floating, setFloating) = com.mochyy.mochymusic.floating.rememberFloatingLyricsSwitch()
+    val (floating, setFloating) = com.videshkarmakar.doom.floating.rememberFloatingLyricsSwitch()
     MenuRow(
         icon = R.drawable.lyrics,
         title = androidx.compose.ui.res.stringResource(R.string.settings_floating_lyrics),

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.db
+package com.videshkarmakar.doom.db
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -16,51 +16,51 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.pages.AlbumPage
 import com.music.innertube.pages.ArtistPage
-import com.mochyy.mochymusic.constants.AlbumSortType
-import com.mochyy.mochymusic.constants.ArtistSongSortType
-import com.mochyy.mochymusic.constants.ArtistSortType
-import com.mochyy.mochymusic.constants.PlaylistSortType
-import com.mochyy.mochymusic.constants.SongSortType
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.db.entities.AlbumArtistMap
-import com.mochyy.mochymusic.db.entities.AlbumEntity
-import com.mochyy.mochymusic.db.entities.AlbumSongRow
-import com.mochyy.mochymusic.db.entities.AlbumWithSongs
-import com.mochyy.mochymusic.db.entities.Artist
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.db.entities.Event
-import com.mochyy.mochymusic.db.entities.EventWithSong
-import com.mochyy.mochymusic.db.entities.FormatEntity
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.db.entities.PlayCountEntity
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.db.entities.PlaylistEntity
-import com.mochyy.mochymusic.db.entities.ImportSession
-import com.mochyy.mochymusic.db.entities.ImportSessionSong
-import com.mochyy.mochymusic.db.entities.ImportedPlaylist
-import com.mochyy.mochymusic.db.entities.ImportedPlaylistTrack
-import com.mochyy.mochymusic.db.entities.ImportedSong
-import com.mochyy.mochymusic.db.entities.ImportedAlbumRow
-import com.mochyy.mochymusic.db.entities.ImportedSourceCount
-import com.mochyy.mochymusic.db.entities.PlaylistEvent
-import com.mochyy.mochymusic.db.entities.PlaylistSong
-import com.mochyy.mochymusic.db.entities.PlaylistSongMap
-import com.mochyy.mochymusic.db.entities.RecognitionHistory
-import com.mochyy.mochymusic.db.entities.RelatedSongMap
-import com.mochyy.mochymusic.db.entities.SearchHistory
-import com.mochyy.mochymusic.db.entities.SetVideoIdEntity
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.db.entities.SongAlbumMap
-import com.mochyy.mochymusic.db.entities.SongArtistMap
-import com.mochyy.mochymusic.db.entities.SongEdit
-import com.mochyy.mochymusic.db.entities.SongEntity
-import com.mochyy.mochymusic.db.entities.SongWithStats
-import com.mochyy.mochymusic.extensions.reversed
-import com.mochyy.mochymusic.extensions.toSQLiteQuery
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playlistcover.PlaylistCoverStore
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.constants.AlbumSortType
+import com.videshkarmakar.doom.constants.ArtistSongSortType
+import com.videshkarmakar.doom.constants.ArtistSortType
+import com.videshkarmakar.doom.constants.PlaylistSortType
+import com.videshkarmakar.doom.constants.SongSortType
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.db.entities.AlbumArtistMap
+import com.videshkarmakar.doom.db.entities.AlbumEntity
+import com.videshkarmakar.doom.db.entities.AlbumSongRow
+import com.videshkarmakar.doom.db.entities.AlbumWithSongs
+import com.videshkarmakar.doom.db.entities.Artist
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.db.entities.Event
+import com.videshkarmakar.doom.db.entities.EventWithSong
+import com.videshkarmakar.doom.db.entities.FormatEntity
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.db.entities.PlayCountEntity
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.db.entities.PlaylistEntity
+import com.videshkarmakar.doom.db.entities.ImportSession
+import com.videshkarmakar.doom.db.entities.ImportSessionSong
+import com.videshkarmakar.doom.db.entities.ImportedPlaylist
+import com.videshkarmakar.doom.db.entities.ImportedPlaylistTrack
+import com.videshkarmakar.doom.db.entities.ImportedSong
+import com.videshkarmakar.doom.db.entities.ImportedAlbumRow
+import com.videshkarmakar.doom.db.entities.ImportedSourceCount
+import com.videshkarmakar.doom.db.entities.PlaylistEvent
+import com.videshkarmakar.doom.db.entities.PlaylistSong
+import com.videshkarmakar.doom.db.entities.PlaylistSongMap
+import com.videshkarmakar.doom.db.entities.RecognitionHistory
+import com.videshkarmakar.doom.db.entities.RelatedSongMap
+import com.videshkarmakar.doom.db.entities.SearchHistory
+import com.videshkarmakar.doom.db.entities.SetVideoIdEntity
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.db.entities.SongAlbumMap
+import com.videshkarmakar.doom.db.entities.SongArtistMap
+import com.videshkarmakar.doom.db.entities.SongEdit
+import com.videshkarmakar.doom.db.entities.SongEntity
+import com.videshkarmakar.doom.db.entities.SongWithStats
+import com.videshkarmakar.doom.extensions.reversed
+import com.videshkarmakar.doom.extensions.toSQLiteQuery
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playlistcover.PlaylistCoverStore
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
@@ -2017,7 +2017,7 @@ interface DatabaseDao {
             current.copy(
                 name = playlistItem.title,
                 browseId = playlistItem.id,
-                // a cover made or picked in mochy stays, youtube's own picture went over it on every sync
+                // a cover made or picked in doom stays, youtube's own picture went over it on every sync
                 thumbnailUrl = current.thumbnailUrl.takeIf(PlaylistCoverStore::isManaged) ?: playlistItem.thumbnail,
                 isEditable = playlistItem.isEditable,
                 remoteSongCount = playlistItem.songCountText?.let { Regex("""\d+""").find(it)?.value?.toIntOrNull() },

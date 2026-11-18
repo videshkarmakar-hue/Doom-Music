@@ -1,8 +1,8 @@
 // YouTubePlaylistMirror.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
-import com.mochyy.mochymusic.db.MusicDatabase
+import com.videshkarmakar.doom.db.MusicDatabase
 import com.music.innertube.YouTube
 import com.music.innertube.utils.completed
 import kotlinx.coroutines.delay

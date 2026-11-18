@@ -1,14 +1,14 @@
 // the proxy from settings for everything that talks to youtube, read on each request so a change needs no restart
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import androidx.datastore.preferences.core.Preferences
-import com.mochyy.mochymusic.constants.ProxyEnabledKey
-import com.mochyy.mochymusic.constants.ProxyPasswordKey
-import com.mochyy.mochymusic.constants.ProxyTypeKey
-import com.mochyy.mochymusic.constants.ProxyUrlKey
-import com.mochyy.mochymusic.constants.ProxyUsernameKey
-import com.mochyy.mochymusic.extensions.toEnum
+import com.videshkarmakar.doom.constants.ProxyEnabledKey
+import com.videshkarmakar.doom.constants.ProxyPasswordKey
+import com.videshkarmakar.doom.constants.ProxyTypeKey
+import com.videshkarmakar.doom.constants.ProxyUrlKey
+import com.videshkarmakar.doom.constants.ProxyUsernameKey
+import com.videshkarmakar.doom.extensions.toEnum
 import com.music.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

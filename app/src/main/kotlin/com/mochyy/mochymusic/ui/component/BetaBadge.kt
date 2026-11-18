@@ -1,6 +1,6 @@
 // the little outlined tag that marks something still settling: modules, lyrics share, which channel a build is
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.padding
@@ -13,7 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 
 /** [label] in a thin pill of [color], a yellow "BETA" unless told otherwise */
 @Composable

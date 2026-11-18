@@ -1,11 +1,11 @@
 // RemoteState.kt
 
-package com.mochyy.mochymusic.link.remote
+package com.videshkarmakar.doom.link.remote
 
 import androidx.compose.runtime.Immutable
-import com.mochyy.mochymusic.link.DeviceKind
-import com.mochyy.mochymusic.link.LinkSongs
-import com.mochyy.mochymusic.models.MediaMetadata
+import com.videshkarmakar.doom.link.DeviceKind
+import com.videshkarmakar.doom.link.LinkSongs
+import com.videshkarmakar.doom.models.MediaMetadata
 import org.json.JSONObject
 
 // the device a phone is steering, as the pill and the remote show it

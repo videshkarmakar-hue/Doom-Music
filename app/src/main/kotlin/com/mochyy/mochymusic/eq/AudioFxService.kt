@@ -1,10 +1,10 @@
-package com.mochyy.mochymusic.eq
+package com.videshkarmakar.doom.eq
 
-import com.mochyy.mochymusic.eq.audio.LoudnessParams
-import com.mochyy.mochymusic.eq.audio.ReplayGainParams
-import com.mochyy.mochymusic.eq.audio.ReverbParams
-import com.mochyy.mochymusic.eq.audio.SpatialParams
-import com.mochyy.mochymusic.eq.audio.VolumeCurve
+import com.videshkarmakar.doom.eq.audio.LoudnessParams
+import com.videshkarmakar.doom.eq.audio.ReplayGainParams
+import com.videshkarmakar.doom.eq.audio.ReverbParams
+import com.videshkarmakar.doom.eq.audio.SpatialParams
+import com.videshkarmakar.doom.eq.audio.VolumeCurve
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -3,7 +3,7 @@
 // What sits behind the words on a lyrics share picture: soft clouds made from the cover, your own
 // picture, or a plain colour - and which ink reads on each.
 
-package com.mochyy.mochymusic.ui.player.share
+package com.videshkarmakar.doom.ui.player.share
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -32,8 +32,8 @@ import androidx.compose.ui.platform.LocalContext
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.transformations
-import com.mochyy.mochymusic.ui.utils.SoftBlurTransformation
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.ui.utils.SoftBlurTransformation
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlin.math.cos
 import kotlin.math.sin
 

@@ -1,6 +1,6 @@
 // SongPreviewPlayer.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import android.content.Context
 import android.os.Handler

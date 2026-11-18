@@ -1,13 +1,13 @@
-package com.mochyy.mochymusic.eq
+package com.videshkarmakar.doom.eq
 
-import com.mochyy.mochymusic.eq.audio.ResponseCurve
-import com.mochyy.mochymusic.eq.autoeq.AutoEqFitter
-import com.mochyy.mochymusic.eq.autoeq.AutoEqMeasurement
-import com.mochyy.mochymusic.eq.autoeq.AutoEqRepository
-import com.mochyy.mochymusic.eq.autoeq.AutoEqTuning
-import com.mochyy.mochymusic.eq.autoeq.HeadphoneForm
-import com.mochyy.mochymusic.eq.autoeq.percentDecode
-import com.mochyy.mochymusic.eq.data.ParametricEQ
+import com.videshkarmakar.doom.eq.audio.ResponseCurve
+import com.videshkarmakar.doom.eq.autoeq.AutoEqFitter
+import com.videshkarmakar.doom.eq.autoeq.AutoEqMeasurement
+import com.videshkarmakar.doom.eq.autoeq.AutoEqRepository
+import com.videshkarmakar.doom.eq.autoeq.AutoEqTuning
+import com.videshkarmakar.doom.eq.autoeq.HeadphoneForm
+import com.videshkarmakar.doom.eq.autoeq.percentDecode
+import com.videshkarmakar.doom.eq.data.ParametricEQ
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertSame

@@ -1,9 +1,9 @@
-package com.mochyy.mochymusic.eq.audio
+package com.videshkarmakar.doom.eq.audio
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.eq.data.ParametricEQ
+import com.videshkarmakar.doom.eq.data.ParametricEQ
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import kotlin.math.pow

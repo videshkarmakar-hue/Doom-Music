@@ -1,6 +1,6 @@
 // storage → choose where downloads or the cache are saved: this phone or any folder picked with the folder picker, then a move and one restart
 
-package com.mochyy.mochymusic.ui.screens.settings.storage
+package com.videshkarmakar.doom.ui.screens.settings.storage
 
 import android.content.Intent
 import android.net.Uri
@@ -49,19 +49,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.playback.MoveStep
-import com.mochyy.mochymusic.playback.StoragePlace
-import com.mochyy.mochymusic.playback.StoredKind
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.SheetLabel
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSelectTick
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.screens.library.showConfirm
-import com.mochyy.mochymusic.viewmodels.PlaceChoice
-import com.mochyy.mochymusic.viewmodels.StorageViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.playback.MoveStep
+import com.videshkarmakar.doom.playback.StoragePlace
+import com.videshkarmakar.doom.playback.StoredKind
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.SheetLabel
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSelectTick
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.screens.library.showConfirm
+import com.videshkarmakar.doom.viewmodels.PlaceChoice
+import com.videshkarmakar.doom.viewmodels.StorageViewModel
 import kotlinx.coroutines.launch
 
 // what the sheet and its button both need: the drives on offer once they're read, and the one tapped
@@ -226,7 +226,7 @@ private fun ChooseFolderRow(onClick: () -> Unit) {
     }
 }
 
-// why mochy needs all files access for the picked folder, and the way to give it
+// why doom needs all files access for the picked folder, and the way to give it
 @Composable
 private fun AccessCard(folder: String, onAllow: () -> Unit) {
     Column(

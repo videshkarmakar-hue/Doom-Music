@@ -1,6 +1,6 @@
 // PoTokenWebView.kt
 
-package com.mochyy.mochymusic.utils.potoken
+package com.videshkarmakar.doom.utils.potoken
 
 import android.content.Context
 import android.webkit.ConsoleMessage
@@ -10,7 +10,7 @@ import android.webkit.WebView
 import androidx.annotation.MainThread
 import androidx.collection.ArrayMap
 import com.music.innertube.YouTube
-import com.mochyy.mochymusic.BuildConfig
+import com.videshkarmakar.doom.BuildConfig
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope

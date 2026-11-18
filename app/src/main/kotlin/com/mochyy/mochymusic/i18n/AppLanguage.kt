@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.i18n
+package com.videshkarmakar.doom.i18n
 
 import android.app.Activity
 import android.app.Application
@@ -11,9 +11,9 @@ import android.os.Build
 import android.os.LocaleList
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
-import com.mochyy.mochymusic.constants.AppLanguageKey
-import com.mochyy.mochymusic.constants.SYSTEM_DEFAULT
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.constants.AppLanguageKey
+import com.videshkarmakar.doom.constants.SYSTEM_DEFAULT
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking

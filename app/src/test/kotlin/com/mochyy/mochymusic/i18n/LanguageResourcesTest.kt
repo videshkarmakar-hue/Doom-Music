@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.i18n
+package com.videshkarmakar.doom.i18n
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

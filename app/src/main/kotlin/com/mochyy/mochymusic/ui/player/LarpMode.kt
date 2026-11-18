@@ -1,17 +1,17 @@
 // LarpMode.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.LarpLevelKey
-import com.mochyy.mochymusic.constants.LarpModeKey
-import com.mochyy.mochymusic.playback.StreamFacts
-import com.mochyy.mochymusic.ui.player.info.StatCard
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.LarpLevelKey
+import com.videshkarmakar.doom.constants.LarpModeKey
+import com.videshkarmakar.doom.playback.StreamFacts
+import com.videshkarmakar.doom.ui.player.info.StatCard
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 import java.util.Locale
 
 // how hard the player larps, from a setup a real iem nerd could own up to the wadax; every level has its own numbers and gear

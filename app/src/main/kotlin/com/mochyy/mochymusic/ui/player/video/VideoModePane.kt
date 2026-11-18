@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.video
+package com.videshkarmakar.doom.ui.player.video
 
 import android.os.Build
 import androidx.compose.foundation.background
@@ -30,17 +30,17 @@ import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.constants.BlurQuality
-import com.mochyy.mochymusic.constants.DisableBlurKey
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.component.DownscaledBlur
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.LocalBlurQuality
-import com.mochyy.mochymusic.ui.component.drawGlassNode
-import com.mochyy.mochymusic.ui.component.glassNodeHasContent
-import com.mochyy.mochymusic.ui.player.QueueScreen
-import com.mochyy.mochymusic.ui.player.styles.smooth
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.BlurQuality
+import com.videshkarmakar.doom.constants.DisableBlurKey
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.component.DownscaledBlur
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.LocalBlurQuality
+import com.videshkarmakar.doom.ui.component.drawGlassNode
+import com.videshkarmakar.doom.ui.component.glassNodeHasContent
+import com.videshkarmakar.doom.ui.player.QueueScreen
+import com.videshkarmakar.doom.ui.player.styles.smooth
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlin.math.roundToInt
 
 // how hard the pane blurs the video under it, at its right side

@@ -1,11 +1,11 @@
-package com.mochyy.mochymusic.crossmix
+package com.videshkarmakar.doom.crossmix
 
 import android.content.Context
 import android.net.Uri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DataSource
-import com.mochyy.mochymusic.playback.audio.StreamPcmDecoder
+import com.videshkarmakar.doom.playback.audio.StreamPcmDecoder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Deferred

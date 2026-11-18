@@ -1,6 +1,6 @@
 // PhoneLinkService.kt
 
-package com.mochyy.mochymusic.link.phone
+package com.videshkarmakar.doom.link.phone
 
 import android.app.Service
 import android.content.BroadcastReceiver
@@ -14,16 +14,16 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
-import com.mochyy.mochymusic.MainActivity
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.link.isTelevision
+import com.videshkarmakar.doom.MainActivity
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.link.isTelevision
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import javax.inject.Inject
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 
-// keeps the phone reachable for its paired devices while mochy is closed, with a quiet notification saying so
+// keeps the phone reachable for its paired devices while doom is closed, with a quiet notification saying so
 @AndroidEntryPoint
 class PhoneLinkService : Service() {
     @Inject
@@ -112,7 +112,7 @@ class PhoneLinkService : Service() {
             android.app.PendingIntent.FLAG_IMMUTABLE or android.app.PendingIntent.FLAG_UPDATE_CURRENT,
         )
         return NotificationCompat.Builder(this, ChannelId)
-            .setSmallIcon(R.drawable.mochy_notification)
+            .setSmallIcon(R.drawable.doom_notification)
             .setContentTitle(title)
             .setContentText(text)
             .setContentIntent(open)
@@ -126,13 +126,13 @@ class PhoneLinkService : Service() {
     companion object {
         private const val ChannelId = "tv_link"
         private const val NotificationId = 4_711
-        private const val ActionStop = "com.mochyy.mochymusic.link.STOP"
-        const val ActionOpenTvLink = "com.mochyy.mochymusic.action.TV_LINK"
+        private const val ActionStop = "com.videshkarmakar.doom.link.STOP"
+        const val ActionOpenTvLink = "com.videshkarmakar.doom.action.TV_LINK"
 
         // a tv that fetched a song from here this recently counts as streaming
         private const val StreamingForMs = 3 * 60_000L
 
-        // android 12+ refuses this from the background, the link then only runs while mochy itself is up
+        // android 12+ refuses this from the background, the link then only runs while doom itself is up
         fun start(context: Context) {
             if (context.isTelevision()) return
             if (!PhoneLinkHost.hasPairedDevices(context) || !PhoneLinkHost.staysReachable(context)) return
@@ -146,7 +146,7 @@ class PhoneLinkService : Service() {
     }
 }
 
-// a phone that restarts comes back on for its devices without opening mochy first
+// a phone that restarts comes back on for its devices without opening doom first
 class PhoneLinkBootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action != Intent.ACTION_BOOT_COMPLETED && intent.action != Intent.ACTION_MY_PACKAGE_REPLACED) return

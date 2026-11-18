@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -17,11 +17,11 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.ui.screens.audiolab.LevelFollower
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberLabTime
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberOnScreen
-import com.mochyy.mochymusic.ui.screens.audiolab.rememberPicturesHeld
-import com.mochyy.mochymusic.ui.screens.audiolab.trackOnScreen
+import com.videshkarmakar.doom.ui.screens.audiolab.LevelFollower
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberLabTime
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberOnScreen
+import com.videshkarmakar.doom.ui.screens.audiolab.rememberPicturesHeld
+import com.videshkarmakar.doom.ui.screens.audiolab.trackOnScreen
 import kotlin.math.abs
 import kotlin.math.exp
 import kotlin.math.max

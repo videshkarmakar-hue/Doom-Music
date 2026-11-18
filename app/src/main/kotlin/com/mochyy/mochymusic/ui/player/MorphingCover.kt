@@ -1,6 +1,6 @@
 // MorphingCover.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.foundation.gestures.waitForUpOrCancellation
 import androidx.compose.animation.AnimatedContent
@@ -92,65 +92,65 @@ import coil3.request.crossfade
 import coil3.request.transformations
 import coil3.size.Precision
 import coil3.size.Size as CoilSize
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.constants.ThumbnailCornerRadius
-import com.mochyy.mochymusic.extensions.togglePlayPause
-import com.mochyy.mochymusic.ui.player.models.TrackInfo
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.constants.ThumbnailCornerRadius
+import com.videshkarmakar.doom.extensions.togglePlayPause
+import com.videshkarmakar.doom.ui.player.models.TrackInfo
+import com.videshkarmakar.doom.ui.utils.resize
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.component.DownscaledBlur
-import com.mochyy.mochymusic.ui.component.rememberCoverBlurAvailable
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.component.DownscaledBlur
+import com.videshkarmakar.doom.ui.component.rememberCoverBlurAvailable
 import kotlinx.coroutines.flow.collectLatest
 import kotlin.math.roundToInt
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedPlayGlyph
-import com.mochyy.mochymusic.ui.player.flagship.AnimatedSkipGlyph
-import com.mochyy.mochymusic.ui.player.flagship.SkipCycleState
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedPlayGlyph
+import com.videshkarmakar.doom.ui.player.flagship.AnimatedSkipGlyph
+import com.videshkarmakar.doom.ui.player.flagship.SkipCycleState
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.coroutines.isActive
-import com.mochyy.mochymusic.canvas.CanvasArtwork
-import com.mochyy.mochymusic.LocalGlassState
-import com.mochyy.mochymusic.constants.CanvasThumbnailAnimationKey
-import com.mochyy.mochymusic.constants.CanvasWifiOnlyKey
-import com.mochyy.mochymusic.constants.DisableBlurKey
-import com.mochyy.mochymusic.constants.ForceYtBackdropBlur1500Key
-import com.mochyy.mochymusic.constants.PlayVideoBackgroundKey
-import com.mochyy.mochymusic.constants.DisableVideoAutoplayKey
-import com.mochyy.mochymusic.constants.PlayerBackgroundStyle
-import com.mochyy.mochymusic.constants.PlayerCoverStyle
-import com.mochyy.mochymusic.ui.player.customize.DiscCoverStack
-import com.mochyy.mochymusic.ui.player.customize.PlayerBackgroundContent
-import com.mochyy.mochymusic.ui.player.customize.CoverGradientBackdrop
-import com.mochyy.mochymusic.ui.player.flagship.AmbientBackdrop
-import com.mochyy.mochymusic.ui.player.flagship.AmbientColors
-import com.mochyy.mochymusic.ui.player.flagship.BlurredCoverPicture
-import com.mochyy.mochymusic.ui.player.flagship.CoverVeil
-import com.mochyy.mochymusic.ui.player.flagship.FollowPicture
-import com.mochyy.mochymusic.ui.player.customize.coverArtBox
-import com.mochyy.mochymusic.ui.player.customize.coverArtBoxF
-import com.mochyy.mochymusic.ui.player.customize.usesBoxedStage
-import com.mochyy.mochymusic.ui.player.customize.isDisc
-import com.mochyy.mochymusic.ui.component.ChromeHighlightColor
-import com.mochyy.mochymusic.ui.component.FrostedChromeGlass
-import com.mochyy.mochymusic.ui.component.agslRenderEffect
-import com.mochyy.mochymusic.ui.player.customize.rememberWarpShader
-import com.mochyy.mochymusic.ui.component.setAgslUniform
-import com.mochyy.mochymusic.ui.component.drawGlassNode
-import com.mochyy.mochymusic.ui.component.glassNodeHasContent
-import com.mochyy.mochymusic.ui.component.glassNodeHeight
-import com.mochyy.mochymusic.ui.component.glassNodeWidth
-import com.mochyy.mochymusic.ui.component.RoundedHighlight
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.glassRoot
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.canvas.CanvasArtwork
+import com.videshkarmakar.doom.LocalGlassState
+import com.videshkarmakar.doom.constants.CanvasThumbnailAnimationKey
+import com.videshkarmakar.doom.constants.CanvasWifiOnlyKey
+import com.videshkarmakar.doom.constants.DisableBlurKey
+import com.videshkarmakar.doom.constants.ForceYtBackdropBlur1500Key
+import com.videshkarmakar.doom.constants.PlayVideoBackgroundKey
+import com.videshkarmakar.doom.constants.DisableVideoAutoplayKey
+import com.videshkarmakar.doom.constants.PlayerBackgroundStyle
+import com.videshkarmakar.doom.constants.PlayerCoverStyle
+import com.videshkarmakar.doom.ui.player.customize.DiscCoverStack
+import com.videshkarmakar.doom.ui.player.customize.PlayerBackgroundContent
+import com.videshkarmakar.doom.ui.player.customize.CoverGradientBackdrop
+import com.videshkarmakar.doom.ui.player.flagship.AmbientBackdrop
+import com.videshkarmakar.doom.ui.player.flagship.AmbientColors
+import com.videshkarmakar.doom.ui.player.flagship.BlurredCoverPicture
+import com.videshkarmakar.doom.ui.player.flagship.CoverVeil
+import com.videshkarmakar.doom.ui.player.flagship.FollowPicture
+import com.videshkarmakar.doom.ui.player.customize.coverArtBox
+import com.videshkarmakar.doom.ui.player.customize.coverArtBoxF
+import com.videshkarmakar.doom.ui.player.customize.usesBoxedStage
+import com.videshkarmakar.doom.ui.player.customize.isDisc
+import com.videshkarmakar.doom.ui.component.ChromeHighlightColor
+import com.videshkarmakar.doom.ui.component.FrostedChromeGlass
+import com.videshkarmakar.doom.ui.component.agslRenderEffect
+import com.videshkarmakar.doom.ui.player.customize.rememberWarpShader
+import com.videshkarmakar.doom.ui.component.setAgslUniform
+import com.videshkarmakar.doom.ui.component.drawGlassNode
+import com.videshkarmakar.doom.ui.component.glassNodeHasContent
+import com.videshkarmakar.doom.ui.component.glassNodeHeight
+import com.videshkarmakar.doom.ui.component.glassNodeWidth
+import com.videshkarmakar.doom.ui.component.RoundedHighlight
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.glassRoot
+import com.videshkarmakar.doom.utils.rememberPreference
 import androidx.core.content.getSystemService
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 
 @Stable
 private class MorphEndpoints(
@@ -455,7 +455,7 @@ fun MorphingCover(
     val fadeCoverEdge = (!coverBlur || frostedCover) && coverStyle == PlayerCoverStyle.EDGE_TO_EDGE
 
     // data saver turns video backgrounds and auto-playing videos off; the full video mode still plays when asked for
-    val dataSaving = com.mochyy.mochymusic.utils.rememberDataSaverActive()
+    val dataSaving = com.videshkarmakar.doom.utils.rememberDataSaverActive()
     val playVideoPref = rememberPreference(PlayVideoBackgroundKey, defaultValue = false).value && !dataSaving
     val disableVideoAutoplay = rememberPreference(DisableVideoAutoplayKey, defaultValue = false).value || dataSaving
     val currentMetadata by (playerConnection?.mediaMetadata ?: remember { kotlinx.coroutines.flow.MutableStateFlow(null) })
@@ -492,9 +492,9 @@ fun MorphingCover(
     val currentOnVideoShowing by androidx.compose.runtime.rememberUpdatedState(onVideoShowingChange)
     LaunchedEffect(isVideoActive) { currentOnVideoShowing(isVideoActive) }
     // where the pill sits across the screen: the phone's full width, or the wide bar's left part
-    val pillFrame = com.mochyy.mochymusic.ui.component.LocalMiniPillFrame.current
+    val pillFrame = com.videshkarmakar.doom.ui.component.LocalMiniPillFrame.current
     // the wide bar's pill shrinks on a short screen, and the mini player's cover and buttons with it
-    val miniScale = pillFrame.height / com.mochyy.mochymusic.constants.MiniPlayerHeight
+    val miniScale = pillFrame.height / com.videshkarmakar.doom.constants.MiniPlayerHeight
     val targetMiniArtWidth = if (isVideoActive) (48.dp * miniScale * 16f / 9f) else 48.dp * miniScale
     val animatedMiniArtWidth by animateDpAsState(
         targetValue = targetMiniArtWidth,
@@ -888,7 +888,7 @@ fun MorphingCover(
                                         // and a touch beside it (the room round a big record) is
                                         // left for the player's own hold
                                         detectDiscDoubleTap(
-                                            onDisc = { p -> com.mochyy.mochymusic.ui.player.customize.isOnDisc(currentCoverStyle, androidx.compose.ui.geometry.Size(size.width.toFloat(), size.height.toFloat()), p) },
+                                            onDisc = { p -> com.videshkarmakar.doom.ui.player.customize.isOnDisc(currentCoverStyle, androidx.compose.ui.geometry.Size(size.width.toFloat(), size.height.toFloat()), p) },
                                             onDoubleTap = likeAt,
                                         )
                                     } else {
@@ -949,7 +949,7 @@ fun MorphingCover(
                                         // how far the finger goes for one song: a record's spacing in the
                                         // row, or the cover's own width
                                         spacing = if (swipesDisc) {
-                                            com.mochyy.mochymusic.ui.player.customize.discSpacingPx(
+                                            com.videshkarmakar.doom.ui.player.customize.discSpacingPx(
                                                 currentCoverStyle,
                                                 androidx.compose.ui.geometry.Size(size.width.toFloat(), size.height.toFloat()),
                                             )
@@ -1832,8 +1832,8 @@ private fun SheetPillGlass(
 ) {
     val glassState = LocalGlassState.current ?: remember { GlassState() }
     // outside the mount check, so the wash keeps its place while the glass comes and goes
-    val accentWash = com.mochyy.mochymusic.ui.component.rememberChromeAccentWash()
-    val pillFrame = com.mochyy.mochymusic.ui.component.LocalMiniPillFrame.current
+    val accentWash = com.videshkarmakar.doom.ui.component.rememberChromeAccentWash()
+    val pillFrame = com.videshkarmakar.doom.ui.component.LocalMiniPillFrame.current
     // at rest in the wide bar the bar's own glass lies under the mini player, so this one only comes in as the player opens
     val merged = pillFrame.merged
     val mountedHolder = remember { booleanArrayOf(true) }
@@ -1868,7 +1868,7 @@ private fun SheetPillGlass(
             pureBlack = pureBlack,
             accentWash = accentWash,
             modifier = Modifier.fillMaxSize(),
-            surface = com.mochyy.mochymusic.ui.component.ChromeSurface.MiniPlayer,
+            surface = com.videshkarmakar.doom.ui.component.ChromeSurface.MiniPlayer,
         )
     }
 }
@@ -2023,7 +2023,7 @@ private fun CoverCanvasLayer(
         val connectivityManager = context.getSystemService<android.net.ConnectivityManager>()
         if (canvasWifiOnly && connectivityManager?.isActiveNetworkMetered == true) return@LaunchedEffect
         // data saver keeps the cover still, a canvas is a video loop
-        if (com.mochyy.mochymusic.utils.DataSaver.isActive(context)) return@LaunchedEffect
+        if (com.videshkarmakar.doom.utils.DataSaver.isActive(context)) return@LaunchedEffect
 
         val cached = CanvasArtworkPlaybackCache.get(mediaId)
         if (cached != null) {

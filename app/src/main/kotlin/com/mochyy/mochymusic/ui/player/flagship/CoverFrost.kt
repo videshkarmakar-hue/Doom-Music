@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.flagship
+package com.videshkarmakar.doom.ui.player.flagship
 
 import android.os.Build
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,12 +18,12 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.mochyy.mochymusic.constants.BlurQuality
-import com.mochyy.mochymusic.ui.component.BlurDirection
-import com.mochyy.mochymusic.ui.component.GlassPillBackground
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.LocalBlurQuality
-import com.mochyy.mochymusic.ui.component.rememberCoverBlurAvailable
+import com.videshkarmakar.doom.constants.BlurQuality
+import com.videshkarmakar.doom.ui.component.BlurDirection
+import com.videshkarmakar.doom.ui.component.GlassPillBackground
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.LocalBlurQuality
+import com.videshkarmakar.doom.ui.component.rememberCoverBlurAvailable
 import kotlin.math.roundToInt
 
 // the frost starts above the title row and runs past the screen's bottom so it never ends in view

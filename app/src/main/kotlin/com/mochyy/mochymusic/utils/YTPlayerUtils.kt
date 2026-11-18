@@ -1,6 +1,6 @@
 // YTPlayerUtils.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import android.net.ConnectivityManager
 import android.util.Log
@@ -9,7 +9,7 @@ import com.music.innertube.NewPipeExtractor
 import com.music.innertube.YouTube
 import com.music.innertube.models.YouTubeClient
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
-import com.mochyy.mochymusic.utils.BotDetectionMitigator
+import com.videshkarmakar.doom.utils.BotDetectionMitigator
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_65_10
@@ -27,17 +27,17 @@ import com.music.innertube.models.YouTubeClient.Companion.WEB_CREATOR
 import com.music.innertube.models.YouTubeClient.Companion.WEB_EMBEDDED_PLAYER
 import com.music.innertube.models.YouTubeClient.Companion.WEB_REMIX
 import com.music.innertube.models.response.PlayerResponse
-import com.mochyy.mochymusic.constants.AudioQuality
-import com.mochyy.mochymusic.constants.StreamBackend
-import com.mochyy.mochymusic.utils.cipher.CipherDeobfuscator
-import com.mochyy.mochymusic.utils.YTPlayerUtils.MAIN_CLIENT
-import com.mochyy.mochymusic.utils.YTPlayerUtils.STREAM_FALLBACK_CLIENTS
-import com.mochyy.mochymusic.utils.YTPlayerUtils.validateStatus
-import com.mochyy.mochymusic.utils.potoken.PoTokenGenerator
-import com.mochyy.mochymusic.utils.potoken.PoTokenResult
-import com.mochyy.mochymusic.utils.sabr.EjsNTransformSolver
-import com.mochyy.mochymusic.utils.PlaybackLogLevel
-import com.mochyy.mochymusic.utils.PlaybackLogManager
+import com.videshkarmakar.doom.constants.AudioQuality
+import com.videshkarmakar.doom.constants.StreamBackend
+import com.videshkarmakar.doom.utils.cipher.CipherDeobfuscator
+import com.videshkarmakar.doom.utils.YTPlayerUtils.MAIN_CLIENT
+import com.videshkarmakar.doom.utils.YTPlayerUtils.STREAM_FALLBACK_CLIENTS
+import com.videshkarmakar.doom.utils.YTPlayerUtils.validateStatus
+import com.videshkarmakar.doom.utils.potoken.PoTokenGenerator
+import com.videshkarmakar.doom.utils.potoken.PoTokenResult
+import com.videshkarmakar.doom.utils.sabr.EjsNTransformSolver
+import com.videshkarmakar.doom.utils.PlaybackLogLevel
+import com.videshkarmakar.doom.utils.PlaybackLogManager
 import com.music.innertube.models.IpVersion
 import io.ktor.client.plugins.ResponseException
 import okhttp3.Dns
@@ -203,7 +203,7 @@ object YTPlayerUtils {
     /**
      * Headers googlevideo expects alongside a stream url. It checks these against the client
      * named in the url's own `c=` parameter, so a WEB_REMIX url fetched without the YouTube
-     * Music origin is refused. mochy previously sent none of this.
+     * Music origin is refused. doom previously sent none of this.
      */
     internal fun YouTubeClient.streamHeaders(): Map<String, String> =
         buildMap {

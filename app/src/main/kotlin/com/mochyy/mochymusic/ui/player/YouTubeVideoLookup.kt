@@ -1,6 +1,6 @@
 // YouTubeVideoLookup.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
@@ -16,13 +16,13 @@ import kotlinx.coroutines.sync.withLock
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_OMV
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.constants.YtVideoBackgroundLyricsSyncKey
-import com.mochyy.mochymusic.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import com.mochyy.mochymusic.songedit.SongEdits
-import com.mochyy.mochymusic.utils.VideoStreams
-import com.mochyy.mochymusic.utils.YTPlayerUtils
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.constants.YtVideoBackgroundLyricsSyncKey
+import com.videshkarmakar.doom.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.videshkarmakar.doom.songedit.SongEdits
+import com.videshkarmakar.doom.utils.VideoStreams
+import com.videshkarmakar.doom.utils.YTPlayerUtils
+import com.videshkarmakar.doom.utils.rememberPreference
 
 data class OfficialMusicVideo(
     val videoId: String,
@@ -245,7 +245,7 @@ private fun rememberVideoTimeline(mediaId: String, videoId: String): ((Long) -> 
         lyricTimeline = timeline
     }
 
-    var audioMap by remember(mediaId) { mutableStateOf<com.mochyy.mochymusic.lyrics.SongVideoMap?>(null) }
+    var audioMap by remember(mediaId) { mutableStateOf<com.videshkarmakar.doom.lyrics.SongVideoMap?>(null) }
     LaunchedEffect(mediaId, videoId, lyricsSyncEnabled) {
         audioMap = if (lyricsSyncEnabled) playerConnection.service.matchSongToVideo(mediaId, videoId) else null
     }

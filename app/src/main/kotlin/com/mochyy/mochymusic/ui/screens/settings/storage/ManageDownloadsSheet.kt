@@ -1,6 +1,6 @@
 // storage → manage downloads: every downloaded song with its size, suggestions of what to clear first, pick songs to remove them together
 
-package com.mochyy.mochymusic.ui.screens.settings.storage
+package com.videshkarmakar.doom.ui.screens.settings.storage
 
 import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedContent
@@ -54,20 +54,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.BoneColor
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.SheetLabel
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.SheetSearchField
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSelectTick
-import com.mochyy.mochymusic.ui.screens.library.showConfirm
-import com.mochyy.mochymusic.ui.screens.playlist.SheetNote
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.viewmodels.DownloadedSong
-import com.mochyy.mochymusic.viewmodels.StorageViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.BoneColor
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.SheetLabel
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.SheetSearchField
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSelectTick
+import com.videshkarmakar.doom.ui.screens.library.showConfirm
+import com.videshkarmakar.doom.ui.screens.playlist.SheetNote
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.viewmodels.DownloadedSong
+import com.videshkarmakar.doom.viewmodels.StorageViewModel
 
 /** how many songs each suggestion shelf shows */
 private const val ShelfSize = 4

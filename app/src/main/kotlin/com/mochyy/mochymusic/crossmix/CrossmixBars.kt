@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.crossmix
+package com.videshkarmakar.doom.crossmix
 
 import kotlin.math.abs
 import kotlin.math.log10

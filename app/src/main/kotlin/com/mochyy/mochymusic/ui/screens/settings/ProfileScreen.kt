@@ -2,10 +2,10 @@
 // Profile screen - update feature removed
 //
 
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
-import com.mochyy.mochymusic.ui.component.BlurEffectCache
-import com.mochyy.mochymusic.ui.component.rememberDeviceTilt
+import com.videshkarmakar.doom.ui.component.BlurEffectCache
+import com.videshkarmakar.doom.ui.component.rememberDeviceTilt
 import androidx.activity.compose.BackHandler
 import androidx.compose.compose.foundation.background
 import androidx.compose.foundation.border
@@ -18,7 +18,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
 import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -60,10 +60,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
-import com.mochyy.mochymusic.core.updater.GithubRepoUrl
-import com.mochyy.mochymusic.ui.component.PopupSheetHandleHeight
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.screens.update.openUrl
+import com.videshkarmakar.doom.core.updater.GithubRepoUrl
+import com.videshkarmakar.doom.ui.component.PopupSheetHandleHeight
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.screens.update.openUrl
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import java.time.LocalDateTime

@@ -1,6 +1,6 @@
 // DeviceKind.kt
 
-package com.mochyy.mochymusic.link
+package com.videshkarmakar.doom.link
 
 import android.app.UiModeManager
 import android.content.Context

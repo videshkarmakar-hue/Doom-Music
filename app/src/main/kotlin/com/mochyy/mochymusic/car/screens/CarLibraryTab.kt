@@ -1,6 +1,6 @@
 // CarLibraryTab.kt
 
-package com.mochyy.mochymusic.car.screens
+package com.videshkarmakar.doom.car.screens
 
 import androidx.annotation.DrawableRes
 import androidx.car.app.model.Row
@@ -8,8 +8,8 @@ import androidx.car.app.model.RowSection
 import androidx.car.app.model.SectionedItemTemplate
 import androidx.car.app.model.Template
 import androidx.media3.common.util.UnstableApi
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.car.CarApp
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.car.CarApp
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 

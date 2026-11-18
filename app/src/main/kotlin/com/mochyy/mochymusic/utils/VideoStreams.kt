@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import android.media.MediaCodecInfo
 import android.media.MediaCodecList

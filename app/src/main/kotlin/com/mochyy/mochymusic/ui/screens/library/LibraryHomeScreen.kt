@@ -5,7 +5,7 @@
 // are in LibraryLocalTab.kt, LibraryCachedTab.kt and LibraryImportedTab.kt. While songs download or
 // files come in from the phone, a progress card sits at the top of All and Local.
 
-package com.mochyy.mochymusic.ui.screens.library
+package com.videshkarmakar.doom.ui.screens.library
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -32,27 +32,27 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.ui.menu.rememberResyncAll
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.constants.ProfilePicUriKey
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.TransferBatch
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.ui.component.GlassState
-import com.mochyy.mochymusic.ui.component.LikedCover
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.navigateToTab
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.ui.screens.search.SearchAvatar
-import com.mochyy.mochymusic.ui.screens.search.SearchHorizontalPadding
-import com.mochyy.mochymusic.ui.screens.search.rememberCollapseProgress
-import com.mochyy.mochymusic.ui.screens.settings.importsync.ImportProgressRoute
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.LibraryHomeViewModel
-import com.mochyy.mochymusic.viewmodels.LibraryImportViewModel
+import com.videshkarmakar.doom.ui.menu.rememberResyncAll
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.constants.ProfilePicUriKey
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.TransferBatch
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.ui.component.GlassState
+import com.videshkarmakar.doom.ui.component.LikedCover
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.navigateToTab
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.ui.screens.search.SearchAvatar
+import com.videshkarmakar.doom.ui.screens.search.SearchHorizontalPadding
+import com.videshkarmakar.doom.ui.screens.search.rememberCollapseProgress
+import com.videshkarmakar.doom.ui.screens.settings.importsync.ImportProgressRoute
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.LibraryHomeViewModel
+import com.videshkarmakar.doom.viewmodels.LibraryImportViewModel
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
 
@@ -315,7 +315,7 @@ private fun LazyListScope.libraryAllTab(
                         row.forEach { item ->
                             LibraryPinnedTile(
                                 thumbnailUrl = item.thumbnail,
-                                sharedElementKey = com.mochyy.mochymusic.ui.component.coverTransitionKey(item),
+                                sharedElementKey = com.videshkarmakar.doom.ui.component.coverTransitionKey(item),
                                 onClick = { onOpen(item) },
                                 onLongClick = { onUnpin(item.id) },
                                 modifier = Modifier.weight(1f),
@@ -382,7 +382,7 @@ private fun openShelfResult(
     item: YTItem,
     shelf: ShelfTabData,
     navController: NavController,
-    playerConnection: com.mochyy.mochymusic.playback.PlayerConnection?,
+    playerConnection: com.videshkarmakar.doom.playback.PlayerConnection?,
 ) {
     val index = if (item is SongItem) shelf.songs.indexOfFirst { it.id == item.id } else -1
     if (index < 0) {
@@ -396,7 +396,7 @@ private fun openShelfResult(
 private fun playShelf(
     shelf: ShelfTabData,
     startIndex: Int,
-    playerConnection: com.mochyy.mochymusic.playback.PlayerConnection?,
+    playerConnection: com.videshkarmakar.doom.playback.PlayerConnection?,
 ) {
     playerConnection?.playQueue(
         ListQueue(

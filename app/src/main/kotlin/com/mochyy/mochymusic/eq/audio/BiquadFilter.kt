@@ -1,7 +1,7 @@
-package com.mochyy.mochymusic.eq.audio
+package com.videshkarmakar.doom.eq.audio
 
-import com.mochyy.mochymusic.eq.data.FilterType
-import com.mochyy.mochymusic.eq.data.ParametricEQBand
+import com.videshkarmakar.doom.eq.data.FilterType
+import com.videshkarmakar.doom.eq.data.ParametricEQBand
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.log10

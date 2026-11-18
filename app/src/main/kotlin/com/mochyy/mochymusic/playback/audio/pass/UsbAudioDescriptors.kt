@@ -1,6 +1,6 @@
 // UsbAudioDescriptors.kt
 
-package com.mochyy.mochymusic.playback.audio.pass
+package com.videshkarmakar.doom.playback.audio.pass
 
 /** reads a usb audio class 1 or 2 dac's raw descriptors: which setting, endpoint and clock carry a song, and where its volume knob is */
 internal object UsbAudioDescriptors {

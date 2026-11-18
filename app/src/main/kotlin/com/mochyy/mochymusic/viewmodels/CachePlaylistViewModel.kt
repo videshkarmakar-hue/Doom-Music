@@ -1,21 +1,21 @@
 // CachePlaylistViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.datasource.cache.SimpleCache
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.di.DownloadCache
-import com.mochyy.mochymusic.di.PlayerCache
-import com.mochyy.mochymusic.extensions.filterExplicit
-import com.mochyy.mochymusic.extensions.filterVideoSongs
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.di.DownloadCache
+import com.videshkarmakar.doom.di.PlayerCache
+import com.videshkarmakar.doom.extensions.filterExplicit
+import com.videshkarmakar.doom.extensions.filterVideoSongs
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.delay

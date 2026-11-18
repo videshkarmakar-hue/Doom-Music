@@ -1,6 +1,6 @@
 // HeroCarousel.kt
 
-package com.mochyy.mochymusic.ui.component
+package com.videshkarmakar.doom.ui.component
 
 import android.content.Context
 import android.graphics.Shader
@@ -104,27 +104,27 @@ import coil3.compose.AsyncImage
 import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.canvas.CanvasArtwork
-import com.mochyy.mochymusic.constants.CanvasThumbnailAnimationKey
-import com.mochyy.mochymusic.constants.CanvasWifiOnlyKey
-import com.mochyy.mochymusic.constants.DisableBlurKey
-import com.mochyy.mochymusic.db.entities.LocalItem
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.models.SimilarRecommendation
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.player.CanvasArtworkPlaybackCache
-import com.mochyy.mochymusic.ui.player.CanvasArtworkPlayer
-import com.mochyy.mochymusic.ui.player.normalizeCanvasArtistName
-import com.mochyy.mochymusic.ui.player.normalizeCanvasSongTitle
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.ui.utils.isLandscapeWindow
-import com.mochyy.mochymusic.ui.utils.isTvLayout
-import com.mochyy.mochymusic.ui.utils.isWideLayout
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.DailyDiscoverItem
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.canvas.CanvasArtwork
+import com.videshkarmakar.doom.constants.CanvasThumbnailAnimationKey
+import com.videshkarmakar.doom.constants.CanvasWifiOnlyKey
+import com.videshkarmakar.doom.constants.DisableBlurKey
+import com.videshkarmakar.doom.db.entities.LocalItem
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.models.SimilarRecommendation
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.player.CanvasArtworkPlaybackCache
+import com.videshkarmakar.doom.ui.player.CanvasArtworkPlayer
+import com.videshkarmakar.doom.ui.player.normalizeCanvasArtistName
+import com.videshkarmakar.doom.ui.player.normalizeCanvasSongTitle
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.ui.utils.isLandscapeWindow
+import com.videshkarmakar.doom.ui.utils.isTvLayout
+import com.videshkarmakar.doom.ui.utils.isWideLayout
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.DailyDiscoverItem
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
@@ -372,7 +372,7 @@ internal fun heroCarouselItems(
     dailyDiscover: List<DailyDiscoverItem>?,
     extras: List<HeroCarouselItem>,
     playlistPicks: List<PlaylistPickItem>,
-    keepListening: List<com.mochyy.mochymusic.db.entities.LocalItem>?,
+    keepListening: List<com.videshkarmakar.doom.db.entities.LocalItem>?,
     starterItems: List<HeroCarouselItem>,
     showGacha: Boolean,
 ): List<HeroCarouselItem> = buildList {
@@ -398,7 +398,7 @@ internal fun heroCarouselItems(
 
     val regular = count { it !is GachaItem }
     if (regular < 5) {
-        keepListening?.filterIsInstance<com.mochyy.mochymusic.db.entities.Song>()
+        keepListening?.filterIsInstance<com.videshkarmakar.doom.db.entities.Song>()
             ?.filter { song -> none { it.mediaId == song.id } }
             ?.take(5 - regular)
             ?.forEach { song ->
@@ -416,11 +416,11 @@ internal fun heroCarouselItems(
  */
 internal fun extraHeroPicks(
     similar: List<SimilarRecommendation>?,
-    onRepeat: List<com.mochyy.mochymusic.db.entities.Song>?,
-    forgotten: List<com.mochyy.mochymusic.db.entities.Song>?,
+    onRepeat: List<com.videshkarmakar.doom.db.entities.Song>?,
+    forgotten: List<com.videshkarmakar.doom.db.entities.Song>?,
 ): List<HeroCarouselItem> = buildList {
     similar.orEmpty()
-        .sortedBy { if (it.title is com.mochyy.mochymusic.db.entities.Artist) 0 else 1 }
+        .sortedBy { if (it.title is com.videshkarmakar.doom.db.entities.Artist) 0 else 1 }
         .take(4)
         .forEach { row ->
             val pick = row.items.firstOrNull { it is SongItem && !it.thumbnail.isNullOrEmpty() }
@@ -428,9 +428,9 @@ internal fun extraHeroPicks(
                 ?: return@forEach
             val seed = row.title
             val reason = when (seed) {
-                is com.mochyy.mochymusic.db.entities.Artist ->
+                is com.videshkarmakar.doom.db.entities.Artist ->
                     HeroLabel("Because you listen to", seed.thumbnailUrl, seed.title, roundCover = true, textRes = R.string.pc_hero_because_listen)
-                is com.mochyy.mochymusic.db.entities.Album -> HeroLabel("Because you played", seed.thumbnailUrl, seed.title, textRes = R.string.pc_hero_because_played)
+                is com.videshkarmakar.doom.db.entities.Album -> HeroLabel("Because you played", seed.thumbnailUrl, seed.title, textRes = R.string.pc_hero_because_played)
                 else -> HeroLabel("Similar to", seed.thumbnailUrl, seed.title, textRes = R.string.pc_hero_similar_to)
             }
             add(RelatedPickItem(pick, reason))
@@ -590,8 +590,8 @@ fun HeroCarousel(
     starterItems: List<HeroCarouselItem> = emptyList(),
     playlistPicks: List<PlaylistPickItem> = emptyList(),
     similarRecommendations: List<SimilarRecommendation>? = null,
-    onRepeat: List<com.mochyy.mochymusic.db.entities.Song>? = null,
-    forgottenFavorites: List<com.mochyy.mochymusic.db.entities.Song>? = null,
+    onRepeat: List<com.videshkarmakar.doom.db.entities.Song>? = null,
+    forgottenFavorites: List<com.videshkarmakar.doom.db.entities.Song>? = null,
 ) {
     val showGacha = gachaPool.size >= GachaMinPool
     // only the first song of each list is used, so a reload that reshuffles the tails doesn't
@@ -761,7 +761,7 @@ private fun HeroPager(
     // the same goes for the gacha's drift and the auto-advance: Home sinking back behind a page, or
     // the player sliding up over it, keeps the app in one cached picture, and any of them moving
     // made that whole picture render again for every one of its frames
-    val obscured = com.mochyy.mochymusic.LocalAppContentObscured.current
+    val obscured = com.videshkarmakar.doom.LocalAppContentObscured.current
     val heroHeld = remember(obscured, navSettledState) { { !navSettledState.value || obscured.value } }
 
     if (!isSingleItem) {
@@ -947,7 +947,7 @@ private fun HeroMedia(
         val connectivityManager = context.getSystemService<android.net.ConnectivityManager>()
         if (canvasWifiOnly && connectivityManager?.isActiveNetworkMetered == true) return@LaunchedEffect
         // data saver keeps the cover still, a canvas is a video loop
-        if (com.mochyy.mochymusic.utils.DataSaver.isActive(context)) return@LaunchedEffect
+        if (com.videshkarmakar.doom.utils.DataSaver.isActive(context)) return@LaunchedEffect
 
         CanvasArtworkPlaybackCache.get(id)?.let {
             canvasArtwork = it
@@ -959,7 +959,7 @@ private fun HeroMedia(
         if (song.isBlank() || artist.isBlank()) return@LaunchedEffect
 
         val storefront = Locale.getDefault().country.takeIf { it.length == 2 }?.lowercase(Locale.ROOT) ?: "us"
-        val fetched = com.mochyy.mochymusic.ui.player.findCanvas(context, song, artist, item.albumTitle, storefront)
+        val fetched = com.videshkarmakar.doom.ui.player.findCanvas(context, song, artist, item.albumTitle, storefront)
         if (fetched != null) {
             canvasArtwork = fetched
             CanvasArtworkPlaybackCache.put(id, fetched)
@@ -1009,7 +1009,7 @@ private fun HeroMedia(
                             // also held while the open player covers Home: it kept decoding and drawing
                             // frames under it. It picks up where it was once Home shows again.
                             isPlaying = canvasMayPlay() && heroAtRest && !isPagerMoving() &&
-                                !com.mochyy.mochymusic.LocalAppContentObscured.current.value,
+                                !com.videshkarmakar.doom.LocalAppContentObscured.current.value,
                             modifier = Modifier.fillMaxSize()
                         )
                     }
@@ -1087,7 +1087,7 @@ private fun BoxScope.HeroBlurBand(
     // a half-size copy. Both bands redraw with every frame of the hero's video, so it adds up.
     // high quality on android 13+ grows the blur toward the edge in one pass; a faded fixed blur bloomed around bright parts
     val smooth = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU &&
-        LocalBlurQuality.current == com.mochyy.mochymusic.constants.BlurQuality.HIGH
+        LocalBlurQuality.current == com.videshkarmakar.doom.constants.BlurQuality.HIGH
     DownscaledBlur(
         radius = { BlurEffectCache.effectiveRadius(radius) },
         tileMode = Shader.TileMode.CLAMP,

@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -17,21 +17,21 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.DontSkipOnFailureKey
-import com.mochyy.mochymusic.constants.MixWithOtherAppsKey
-import com.mochyy.mochymusic.constants.PauseOnMute
-import com.mochyy.mochymusic.constants.PersistentQueueKey
-import com.mochyy.mochymusic.constants.PersistentShuffleAcrossQueuesKey
-import com.mochyy.mochymusic.constants.ResumeOnBluetoothConnectKey
-import com.mochyy.mochymusic.constants.SkipSilenceKey
-import com.mochyy.mochymusic.constants.StopPlaybackOnTaskRemovedKey
-import com.mochyy.mochymusic.constants.StreamFailureTimeoutKey
-import com.mochyy.mochymusic.ui.component.DefaultPlayerSeekBarSlider
-import com.mochyy.mochymusic.ui.component.SettingsItem
-import com.mochyy.mochymusic.ui.component.SubSettingsScaffold
-import com.mochyy.mochymusic.ui.component.SubSettingsSearchBar
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.DontSkipOnFailureKey
+import com.videshkarmakar.doom.constants.MixWithOtherAppsKey
+import com.videshkarmakar.doom.constants.PauseOnMute
+import com.videshkarmakar.doom.constants.PersistentQueueKey
+import com.videshkarmakar.doom.constants.PersistentShuffleAcrossQueuesKey
+import com.videshkarmakar.doom.constants.ResumeOnBluetoothConnectKey
+import com.videshkarmakar.doom.constants.SkipSilenceKey
+import com.videshkarmakar.doom.constants.StopPlaybackOnTaskRemovedKey
+import com.videshkarmakar.doom.constants.StreamFailureTimeoutKey
+import com.videshkarmakar.doom.ui.component.DefaultPlayerSeekBarSlider
+import com.videshkarmakar.doom.ui.component.SettingsItem
+import com.videshkarmakar.doom.ui.component.SubSettingsScaffold
+import com.videshkarmakar.doom.ui.component.SubSettingsSearchBar
+import com.videshkarmakar.doom.utils.rememberPreference
 
 const val PlaybackSettingsRoute = "playback_settings"
 

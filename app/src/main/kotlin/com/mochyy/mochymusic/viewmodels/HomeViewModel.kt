@@ -1,6 +1,6 @@
 // HomeViewModel.kt
 
-package com.mochyy.mochymusic.viewmodels
+package com.videshkarmakar.doom.viewmodels
 
 import android.content.Context
 import android.os.SystemClock
@@ -27,41 +27,41 @@ import com.music.innertube.pages.ExplorePage
 import com.music.innertube.pages.HomePage
 import com.music.innertube.pages.ArtistPage
 import com.music.innertube.utils.completed
-import com.mochyy.mochymusic.constants.DisableAiFilterKey
-import com.mochyy.mochymusic.constants.HideExplicitKey
-import com.mochyy.mochymusic.constants.HideVideoSongsKey
-import com.mochyy.mochymusic.constants.HideYoutubeShortsKey
-import com.mochyy.mochymusic.constants.OfflineModeKey
-import com.mochyy.mochymusic.constants.InnerTubeCookieKey
-import com.mochyy.mochymusic.constants.QuickPicks
-import com.mochyy.mochymusic.constants.QuickPicksKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.Album
-import com.mochyy.mochymusic.db.entities.LocalItem
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.db.entities.SpeedDialItem
-import com.mochyy.mochymusic.extensions.filterVideoSongs
-import com.mochyy.mochymusic.extensions.toEnum
-import com.mochyy.mochymusic.models.ArtistGroup
-import com.mochyy.mochymusic.models.SimilarRecommendation
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.playback.PlayerConnection
-import com.mochyy.mochymusic.utils.ArtistVideos
-import com.mochyy.mochymusic.utils.FeedVideoKind
-import com.mochyy.mochymusic.utils.HomeVideo
-import com.mochyy.mochymusic.utils.NotRecommended
-import com.mochyy.mochymusic.utils.SongVersions
-import com.mochyy.mochymusic.utils.SyncUtils
-import com.mochyy.mochymusic.utils.dataStore
-import com.mochyy.mochymusic.utils.get
-import com.mochyy.mochymusic.utils.reportException
+import com.videshkarmakar.doom.constants.DisableAiFilterKey
+import com.videshkarmakar.doom.constants.HideExplicitKey
+import com.videshkarmakar.doom.constants.HideVideoSongsKey
+import com.videshkarmakar.doom.constants.HideYoutubeShortsKey
+import com.videshkarmakar.doom.constants.OfflineModeKey
+import com.videshkarmakar.doom.constants.InnerTubeCookieKey
+import com.videshkarmakar.doom.constants.QuickPicks
+import com.videshkarmakar.doom.constants.QuickPicksKey
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.Album
+import com.videshkarmakar.doom.db.entities.LocalItem
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.db.entities.SpeedDialItem
+import com.videshkarmakar.doom.extensions.filterVideoSongs
+import com.videshkarmakar.doom.extensions.toEnum
+import com.videshkarmakar.doom.models.ArtistGroup
+import com.videshkarmakar.doom.models.SimilarRecommendation
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.playback.PlayerConnection
+import com.videshkarmakar.doom.utils.ArtistVideos
+import com.videshkarmakar.doom.utils.FeedVideoKind
+import com.videshkarmakar.doom.utils.HomeVideo
+import com.videshkarmakar.doom.utils.NotRecommended
+import com.videshkarmakar.doom.utils.SongVersions
+import com.videshkarmakar.doom.utils.SyncUtils
+import com.videshkarmakar.doom.utils.dataStore
+import com.videshkarmakar.doom.utils.get
+import com.videshkarmakar.doom.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
-import com.mochyy.mochymusic.constants.LastPlayedLikedSongsTimeKey
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.constants.LastPlayedLikedSongsTimeKey
+import com.videshkarmakar.doom.R
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -103,7 +103,7 @@ class HomeViewModel @Inject constructor(
     @ApplicationContext val context: Context,
     val database: MusicDatabase,
     val syncUtils: SyncUtils,
-    musicImportService: com.mochyy.mochymusic.importer.MusicImportService,
+    musicImportService: com.videshkarmakar.doom.importer.MusicImportService,
 ) : ViewModel() {
     private val homeFeedCache = HomeFeedCache(context)
 
@@ -121,7 +121,7 @@ class HomeViewModel @Inject constructor(
     val keepListening = MutableStateFlow<List<LocalItem>?>(null)
     val similarRecommendations = MutableStateFlow<List<SimilarRecommendation>?>(null)
     val accountPlaylists = MutableStateFlow<List<PlaylistItem>?>(null)
-    val localPlaylists = MutableStateFlow<List<com.mochyy.mochymusic.db.entities.Playlist>?>(null)
+    val localPlaylists = MutableStateFlow<List<com.videshkarmakar.doom.db.entities.Playlist>?>(null)
 
     /**
      * A new install's hero: one song from each artist picked in onboarding, until there's history.
@@ -131,7 +131,7 @@ class HomeViewModel @Inject constructor(
     val starterSongs = MutableStateFlow<List<StarterSong>?>(null)
 
     /** Library artists (onboarding's picks on a new install), for the hero before there's any history. */
-    val libraryArtists = database.artists(com.mochyy.mochymusic.constants.ArtistSortType.CREATE_DATE, true)
+    val libraryArtists = database.artists(com.videshkarmakar.doom.constants.ArtistSortType.CREATE_DATE, true)
         .map { artists -> artists.filter { it.artist.isYouTubeArtist }.take(5) }
         .flowOn(Dispatchers.Default)
         .stateIn(viewModelScope, kotlinx.coroutines.flow.SharingStarted.Lazily, emptyList())
@@ -254,7 +254,7 @@ class HomeViewModel @Inject constructor(
                                 year = item.album.year,
                                 thumbnail = item.thumbnailUrl ?: ""
                             )
-                            is com.mochyy.mochymusic.db.entities.Playlist -> com.music.innertube.models.PlaylistItem(
+                            is com.videshkarmakar.doom.db.entities.Playlist -> com.music.innertube.models.PlaylistItem(
                                 id = item.id,
                                 title = item.title,
                                 author = Artist(name = "Local Playlist", id = null),
@@ -286,7 +286,7 @@ class HomeViewModel @Inject constructor(
                                 thumbnail = item.thumbnailUrl ?: "",
                                 explicit = false
                             )
-                            is com.mochyy.mochymusic.db.entities.Playlist -> com.music.innertube.models.PlaylistItem(
+                            is com.videshkarmakar.doom.db.entities.Playlist -> com.music.innertube.models.PlaylistItem(
                                 id = item.id,
                                 title = item.title,
                                 author = Artist(name = "Local Playlist", id = null),
@@ -325,7 +325,7 @@ class HomeViewModel @Inject constructor(
                             thumbnail = item.thumbnailUrl ?: "",
                             explicit = false
                         ))
-                        is com.mochyy.mochymusic.db.entities.Playlist -> otherSources.add(com.music.innertube.models.PlaylistItem(
+                        is com.videshkarmakar.doom.db.entities.Playlist -> otherSources.add(com.music.innertube.models.PlaylistItem(
                             id = item.id,
                             title = item.title,
                             author = Artist(name = "Local Playlist", id = null),
@@ -591,8 +591,8 @@ class HomeViewModel @Inject constructor(
         val lastPlayedLikedSongs = context.dataStore.get(LastPlayedLikedSongsTimeKey, 0L)
         if (System.currentTimeMillis() - lastPlayedLikedSongs < 86400000L * 7) {
             val likedCount = database.likedSongsCount().first()
-            val likedPlaylistEntity = com.mochyy.mochymusic.db.entities.Playlist(
-                playlist = com.mochyy.mochymusic.db.entities.PlaylistEntity(id = "liked", name = context.getString(R.string.liked), thumbnailUrl = likedCoverImage()),
+            val likedPlaylistEntity = com.videshkarmakar.doom.db.entities.Playlist(
+                playlist = com.videshkarmakar.doom.db.entities.PlaylistEntity(id = "liked", name = context.getString(R.string.liked), thumbnailUrl = likedCoverImage()),
                 songCount = likedCount,
                 songThumbnails = listOf()
             )
@@ -763,8 +763,8 @@ class HomeViewModel @Inject constructor(
         val lastPlayedLikedSongs = context.dataStore.get(LastPlayedLikedSongsTimeKey, 0L)
         if (System.currentTimeMillis() - lastPlayedLikedSongs < 86400000L * 7) {
             val likedCount = database.likedSongsCount().first()
-            val likedPlaylistEntity = com.mochyy.mochymusic.db.entities.Playlist(
-                playlist = com.mochyy.mochymusic.db.entities.PlaylistEntity(id = "liked", name = context.getString(R.string.liked), thumbnailUrl = likedCoverImage()),
+            val likedPlaylistEntity = com.videshkarmakar.doom.db.entities.Playlist(
+                playlist = com.videshkarmakar.doom.db.entities.PlaylistEntity(id = "liked", name = context.getString(R.string.liked), thumbnailUrl = likedCoverImage()),
                 songCount = likedCount,
                 songThumbnails = listOf()
             )
@@ -777,7 +777,7 @@ class HomeViewModel @Inject constructor(
         localPlaylists.value = playlists.distinctBy { it.id }
 
         allLocalItems.value = (quickPicks.value.orEmpty() + forgottenFavorites.value.orEmpty() + keepListening.value.orEmpty())
-            .filter { it is Song || it is Album || it is com.mochyy.mochymusic.db.entities.Playlist }
+            .filter { it is Song || it is Album || it is com.videshkarmakar.doom.db.entities.Playlist }
     }
 
     private suspend fun loadSimilarRecommendations() {
@@ -891,7 +891,7 @@ class HomeViewModel @Inject constructor(
                 rec.items.forEach { item ->
                     when {
                         item is ArtistItem -> addToGroup(item.id ?: item.title, item.title, item.thumbnail, item.id, null)
-                        seed is com.mochyy.mochymusic.db.entities.Artist -> addToGroup(seed.id, seed.title, seed.thumbnailUrl, seed.id, item)
+                        seed is com.videshkarmakar.doom.db.entities.Artist -> addToGroup(seed.id, seed.title, seed.thumbnailUrl, seed.id, item)
                         else -> {
                             val itemArtist = when (item) {
                                 is SongItem -> item.artists.firstOrNull()
@@ -927,7 +927,7 @@ class HomeViewModel @Inject constructor(
             return
         }
         val hideExplicit = context.dataStore.get(HideExplicitKey, false)
-        val picked = database.artists(com.mochyy.mochymusic.constants.ArtistSortType.CREATE_DATE, true).first()
+        val picked = database.artists(com.videshkarmakar.doom.constants.ArtistSortType.CREATE_DATE, true).first()
             .filter { it.artist.isYouTubeArtist }
             .take(5)
         try {
@@ -1284,7 +1284,7 @@ class HomeViewModel @Inject constructor(
 
         viewModelScope.launch(Dispatchers.IO) {
             // its database writes ripple through every Home row; not while the launch intro plays
-            com.mochyy.mochymusic.ui.launch.LaunchGate.awaitIntro()
+            com.videshkarmakar.doom.ui.launch.LaunchGate.awaitIntro()
             syncUtils.tryAutoSync()
         }
 
@@ -1332,7 +1332,7 @@ class HomeViewModel @Inject constructor(
 
     // liked songs' cover as a picture, so home's cards, their colours and the see-all list show it like any playlist's
     private suspend fun likedCoverImage(): String? = try {
-        com.mochyy.mochymusic.ui.component.LikedCoverImage.url(context, database.likedCovers().first())
+        com.videshkarmakar.doom.ui.component.LikedCoverImage.url(context, database.likedCovers().first())
     } catch (e: kotlinx.coroutines.CancellationException) {
         throw e
     } catch (e: Exception) {

@@ -1,6 +1,6 @@
 // SongSharePages.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.background
@@ -41,26 +41,26 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.component.TopToaster
-import com.mochyy.mochymusic.ui.component.pressBounce
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.player.share.BackdropOf
-import com.mochyy.mochymusic.ui.player.share.LyricsShareSession
-import com.mochyy.mochymusic.ui.player.share.ShareMuted
-import com.mochyy.mochymusic.ui.player.share.ShareStyle
-import com.mochyy.mochymusic.ui.player.share.ShareTitle
-import com.mochyy.mochymusic.ui.player.share.shake
-import com.mochyy.mochymusic.ui.player.share.showLinePicker
-import com.mochyy.mochymusic.ui.player.share.song.export.copySongLink
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.resize
-import com.mochyy.mochymusic.ui.component.RemoteFocus
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.component.TopToaster
+import com.videshkarmakar.doom.ui.component.pressBounce
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.player.share.BackdropOf
+import com.videshkarmakar.doom.ui.player.share.LyricsShareSession
+import com.videshkarmakar.doom.ui.player.share.ShareMuted
+import com.videshkarmakar.doom.ui.player.share.ShareStyle
+import com.videshkarmakar.doom.ui.player.share.ShareTitle
+import com.videshkarmakar.doom.ui.player.share.shake
+import com.videshkarmakar.doom.ui.player.share.showLinePicker
+import com.videshkarmakar.doom.ui.player.share.song.export.copySongLink
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.resize
+import com.videshkarmakar.doom.ui.component.RemoteFocus
 
 // from a menu: the song on a card, its lyrics, or just the link
 internal fun PopupSheetState.showKindPage(session: SongShareSession): PopupSheetHandle {

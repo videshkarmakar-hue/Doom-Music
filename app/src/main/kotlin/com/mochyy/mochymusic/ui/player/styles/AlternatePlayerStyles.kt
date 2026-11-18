@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.styles
+package com.videshkarmakar.doom.ui.player.styles
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.basicMarquee
@@ -33,7 +33,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.R
+import com.videshkarmakar.doom.R
 import kotlinx.coroutines.flow.collectLatest
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -60,14 +60,14 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.constants.PlayerStyle
-import com.mochyy.mochymusic.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import com.mochyy.mochymusic.lyrics.LyricsEntry
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.ui.player.carouselText
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.constants.PlayerStyle
+import com.videshkarmakar.doom.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.videshkarmakar.doom.lyrics.LyricsEntry
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.ui.player.carouselText
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
 
 /** the player's alternate styles, drawn as they look on the player or, [preview], on a selector card */
 @Composable
@@ -81,10 +81,10 @@ fun AlternatePlayerStyle(
         PlayerStyle.POSTER -> PosterPlayerStyle(actions, modifier, preview)
         PlayerStyle.TIMELINE -> TimelinePlayerStyle(actions, modifier, preview)
         PlayerStyle.LYRICS -> LyricsPlayerStyle(actions, modifier, preview)
-        PlayerStyle.IPOD -> com.mochyy.mochymusic.ui.player.ipod.IpodPlayerStyle(modifier, preview)
-        PlayerStyle.VIDEO -> com.mochyy.mochymusic.ui.player.video.VideoPlayerStyle(actions, modifier, preview)
-        PlayerStyle.BEDSIDE -> com.mochyy.mochymusic.ui.player.bedside.BedsidePlayerStyle(actions, modifier, preview)
-        PlayerStyle.BEDSIDE_TILES -> com.mochyy.mochymusic.ui.player.bedside.BedsideTilesStyle(actions, modifier, preview)
+        PlayerStyle.IPOD -> com.videshkarmakar.doom.ui.player.ipod.IpodPlayerStyle(modifier, preview)
+        PlayerStyle.VIDEO -> com.videshkarmakar.doom.ui.player.video.VideoPlayerStyle(actions, modifier, preview)
+        PlayerStyle.BEDSIDE -> com.videshkarmakar.doom.ui.player.bedside.BedsidePlayerStyle(actions, modifier, preview)
+        PlayerStyle.BEDSIDE_TILES -> com.videshkarmakar.doom.ui.player.bedside.BedsideTilesStyle(actions, modifier, preview)
         PlayerStyle.MODULE -> ModulePlayerStyle(actions, modifier, preview)
         PlayerStyle.FLAGSHIP, PlayerStyle.CLASSIC, PlayerStyle.TURNTABLE -> Unit
     }
@@ -104,8 +104,8 @@ internal fun rememberStyleTrack(): StyleTrack {
  * The player's row of songs on the live player; a selector card shows the playing song, still.
  */
 @Composable
-internal fun rememberStyleCarousel(preview: Boolean): com.mochyy.mochymusic.ui.player.SongCarousel? =
-    if (preview) null else com.mochyy.mochymusic.ui.player.LocalSongCarousel.current
+internal fun rememberStyleCarousel(preview: Boolean): com.videshkarmakar.doom.ui.player.SongCarousel? =
+    if (preview) null else com.videshkarmakar.doom.ui.player.LocalSongCarousel.current
 
 /** a song's synced lines, and which song they're for */
 internal class StyleLyrics(val mediaId: String?, val lines: List<LyricsEntry>)
@@ -121,7 +121,7 @@ internal class StyleSong(val track: StyleTrack, val lines: List<LyricsEntry>)
  */
 @Composable
 internal fun StyleSongs(
-    carousel: com.mochyy.mochymusic.ui.player.SongCarousel?,
+    carousel: com.videshkarmakar.doom.ui.player.SongCarousel?,
     track: StyleTrack,
     lyrics: StyleLyrics,
     content: @Composable (song: StyleSong, slotModifier: Modifier) -> Unit,
@@ -130,7 +130,7 @@ internal fun StyleSongs(
         content(StyleSong(track, lyrics.lines), Modifier)
         return
     }
-    for (slot in com.mochyy.mochymusic.ui.player.rememberTextSlots(carousel)) {
+    for (slot in com.videshkarmakar.doom.ui.player.rememberTextSlots(carousel)) {
         androidx.compose.runtime.key(slot.uid) {
             val playing = slot.step == carousel.step
             val held = remember { arrayOf(emptyList<LyricsEntry>()) }
@@ -186,7 +186,7 @@ internal fun StyleFrame(
         ) {
             // Inter and nothing else, in every style
             androidx.compose.material3.ProvideTextStyle(
-                androidx.compose.ui.text.TextStyle(fontFamily = com.mochyy.mochymusic.ui.theme.InterFontFamily)
+                androidx.compose.ui.text.TextStyle(fontFamily = com.videshkarmakar.doom.ui.theme.InterFontFamily)
             ) {
                 content(landscape, menuOpen) { menuOpen = it }
             }
@@ -261,20 +261,20 @@ private fun PosterPlayerStyle(actions: StyleActions, modifier: Modifier, preview
     val lyrics = rememberStyleLyrics(readings = !preview)
     val carousel = rememberStyleCarousel(preview)
     val backgroundClock = rememberBackdropClock(running = !preview)
-    val backgroundStyle by com.mochyy.mochymusic.utils.rememberEnumPreference(
-        com.mochyy.mochymusic.constants.PlayerBackgroundStyleKey,
-        com.mochyy.mochymusic.constants.PlayerBackgroundStyle.COVER_GRADIENT,
+    val backgroundStyle by com.videshkarmakar.doom.utils.rememberEnumPreference(
+        com.videshkarmakar.doom.constants.PlayerBackgroundStyleKey,
+        com.videshkarmakar.doom.constants.PlayerBackgroundStyle.COVER_GRADIENT,
     )
-    val (visualizer) = com.mochyy.mochymusic.utils.rememberPreference(com.mochyy.mochymusic.constants.PosterVisualizerKey, defaultValue = false)
+    val (visualizer) = com.videshkarmakar.doom.utils.rememberPreference(com.videshkarmakar.doom.constants.PosterVisualizerKey, defaultValue = false)
     // a tv has no finger to tap them with; the remote's own control strip plays, skips and likes instead
-    val onTv = com.mochyy.mochymusic.ui.utils.isTvLayout()
+    val onTv = com.videshkarmakar.doom.ui.utils.isTvLayout()
     val ring = rememberCoverRingState()
     // The live player, not a selector card, whether open or not. Tied to the player being open, the
     // ring jumped to a fixed spot and lost its bars the moment a close began.
     val live = !preview
     val density = LocalDensity.current
     // the pills' column, and the room the words keep from it
-    val pillsWidth = com.mochyy.mochymusic.ui.player.TurntablePillWidth
+    val pillsWidth = com.videshkarmakar.doom.ui.player.TurntablePillWidth
     StyleFrame(
         preview, modifier, tones,
         background = {
@@ -282,13 +282,13 @@ private fun PosterPlayerStyle(actions: StyleActions, modifier: Modifier, preview
             BoxWithConstraints(Modifier.fillMaxSize()) {
                 val w = maxWidth
                 val h = maxHeight
-                if (backgroundStyle == com.mochyy.mochymusic.constants.PlayerBackgroundStyle.COVER_GRADIENT) {
-                    com.mochyy.mochymusic.ui.player.CarouselCrossfade(
+                if (backgroundStyle == com.videshkarmakar.doom.constants.PlayerBackgroundStyle.COVER_GRADIENT) {
+                    com.videshkarmakar.doom.ui.player.CarouselCrossfade(
                         carousel = carousel,
                         fallbackUrl = track.artwork,
                         modifier = Modifier.fillMaxSize(),
                     ) { url ->
-                        com.mochyy.mochymusic.ui.player.customize.PlayerBackgroundPreview(
+                        com.videshkarmakar.doom.ui.player.customize.PlayerBackgroundPreview(
                             style = backgroundStyle,
                             thumbnailUrl = url,
                             width = w,
@@ -299,7 +299,7 @@ private fun PosterPlayerStyle(actions: StyleActions, modifier: Modifier, preview
                         )
                     }
                 } else {
-                    com.mochyy.mochymusic.ui.player.customize.PlayerBackgroundPreview(
+                    com.videshkarmakar.doom.ui.player.customize.PlayerBackgroundPreview(
                         style = backgroundStyle,
                         thumbnailUrl = track.artwork,
                         width = w,
@@ -365,7 +365,7 @@ private fun PosterPlayerStyle(actions: StyleActions, modifier: Modifier, preview
                         .align(Alignment.BottomEnd)
                         .padding(end = 22.dp, bottom = bottom),
                 ) {
-                    com.mochyy.mochymusic.ui.player.TurntablePills()
+                    com.videshkarmakar.doom.ui.player.TurntablePills()
                 }
                 // the menu at the top, opening down, clear of the transport
                 StyleMenu(
@@ -419,7 +419,7 @@ private fun PosterPlayerStyle(actions: StyleActions, modifier: Modifier, preview
                         .align(Alignment.TopEnd)
                         .padding(top = 18.dp, end = 20.dp + insets.end + PosterChevron + 8.dp),
                 ) {
-                    com.mochyy.mochymusic.ui.player.TurntablePills(horizontal = true)
+                    com.videshkarmakar.doom.ui.player.TurntablePills(horizontal = true)
                 }
                 StyleMenu(
                     open = menuOpen, onOpenChange = setMenuOpen, tones = tones, actions = actions,
@@ -608,13 +608,13 @@ internal fun rememberStyleLyrics(readings: Boolean): StyleLyrics {
         val metadata by connection.mediaMetadata.collectAsState()
         // The flagship's bottom card is what asks for a song's lyrics; a style has no card, so it
         // asks itself. Without this the words only came once the flagship had been shown.
-        val loader: com.mochyy.mochymusic.viewmodels.LyricsScreenViewModel = androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel()
+        val loader: com.videshkarmakar.doom.viewmodels.LyricsScreenViewModel = androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel()
         androidx.compose.runtime.LaunchedEffect(metadata?.id) {
             metadata?.let(loader::ensureLyricsLoaded)
         }
         if (all.isNotEmpty()) {
             // the whole song, background lines too, so a stored translation lines up with the lyrics page's
-            com.mochyy.mochymusic.ui.player.LyricsReadings(all, metadata?.id, com.mochyy.mochymusic.LocalDatabase.current, lyricsEntity)
+            com.videshkarmakar.doom.ui.player.LyricsReadings(all, metadata?.id, com.videshkarmakar.doom.LocalDatabase.current, lyricsEntity)
         }
     }
     val lines = remember(all) { all.filter { !it.isBackground && it.text.isNotBlank() } }
@@ -627,7 +627,7 @@ internal fun rememberStyleLyrics(readings: Boolean): StyleLyrics {
  */
 @Composable
 private fun CircleCover(
-    carousel: com.mochyy.mochymusic.ui.player.SongCarousel?,
+    carousel: com.videshkarmakar.doom.ui.player.SongCarousel?,
     url: String?,
     center: Offset,
     radius: Float,
@@ -675,7 +675,7 @@ private fun CircleCover(
                 },
         ) {
             // the songs' covers slide past under the circle, the next one coming in as this one goes
-            com.mochyy.mochymusic.ui.player.CarouselPictures(
+            com.videshkarmakar.doom.ui.player.CarouselPictures(
                 carousel = carousel,
                 fallbackUrl = url,
                 modifier = Modifier.fillMaxSize(),
@@ -726,7 +726,7 @@ private fun TimelinePlayerStyle(actions: StyleActions, modifier: Modifier, previ
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 // the icon's covers and the words beside them ride the row of songs
-                com.mochyy.mochymusic.ui.player.CarouselPictures(
+                com.videshkarmakar.doom.ui.player.CarouselPictures(
                     carousel = carousel,
                     fallbackUrl = track.artwork,
                     modifier = Modifier

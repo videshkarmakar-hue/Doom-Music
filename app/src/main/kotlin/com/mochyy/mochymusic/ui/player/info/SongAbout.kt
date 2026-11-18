@@ -1,15 +1,15 @@
 // SongAbout.kt
 
-package com.mochyy.mochymusic.ui.player.info
+package com.videshkarmakar.doom.ui.player.info
 
 import android.content.Context
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.importer.account.AccountService
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.module.TrackMetadata
-import com.mochyy.mochymusic.module.TrackQuery
-import com.mochyy.mochymusic.modules.ModuleMetadata
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.importer.account.AccountService
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.module.TrackMetadata
+import com.videshkarmakar.doom.module.TrackQuery
+import com.videshkarmakar.doom.modules.ModuleMetadata
+import com.videshkarmakar.doom.ui.utils.resize
 import com.music.innertube.YouTube
 import com.music.musixmatch.Musixmatch
 import com.music.musixmatch.MusixmatchSong

@@ -1,6 +1,6 @@
 // StringUtils.kt
 
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import java.math.BigInteger
 import java.security.MessageDigest

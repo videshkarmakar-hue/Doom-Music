@@ -1,6 +1,6 @@
 // a zip module's pictures and fonts, unpacked into the app's own files so its look works offline
 
-package com.mochyy.mochymusic.modules.skin
+package com.videshkarmakar.doom.modules.skin
 
 import android.content.Context
 import android.net.Uri

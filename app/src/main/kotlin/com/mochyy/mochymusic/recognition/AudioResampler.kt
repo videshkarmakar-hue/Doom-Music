@@ -1,6 +1,6 @@
 // AudioResampler.kt
 
-package com.mochyy.mochymusic.recognition
+package com.videshkarmakar.doom.recognition
 
 import androidx.annotation.OptIn
 import androidx.media3.common.util.UnstableApi

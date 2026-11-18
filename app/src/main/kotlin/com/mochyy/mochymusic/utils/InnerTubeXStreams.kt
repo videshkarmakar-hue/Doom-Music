@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import android.net.ConnectivityManager
 import com.metrolist.innertubex.InnerTubeLogLevel
@@ -14,8 +14,8 @@ import com.metrolist.innertubex.extraction.TokenProviderCapabilities
 import com.metrolist.innertubex.extraction.YtConfigParserImpl
 import com.metrolist.innertubex.extraction.generateClientPlaybackNonce
 import com.metrolist.innertubex.extraction.strategy.PoTokenProviderKind
-import com.mochyy.mochymusic.constants.AudioQuality
-import com.mochyy.mochymusic.utils.potoken.PoTokenResult
+import com.videshkarmakar.doom.constants.AudioQuality
+import com.videshkarmakar.doom.utils.potoken.PoTokenResult
 import com.music.innertube.YouTube
 import com.music.innertube.models.Thumbnail
 import com.music.innertube.models.Thumbnails
@@ -33,14 +33,14 @@ import com.metrolist.innertubex.extraction.AudioQuality as XAudioQuality
 import com.metrolist.innertubex.extraction.PoTokenResult as XPoTokenResult
 import com.metrolist.innertubex.models.YouTubeLocale as XLocale
 
-// innertubex's stream finder, asked before mochy's own client walk; it rides the walk's okhttp, so the app proxy and ip version follow it
+// innertubex's stream finder, asked before doom's own client walk; it rides the walk's okhttp, so the app proxy and ip version follow it
 internal class InnerTubeXStreams(
     private val okHttp: OkHttpClient,
     private val mintToken: suspend (videoId: String, sessionId: String) -> PoTokenResult?,
 ) {
     private class Engine(val innerTube: InnerTubeX, val extractor: InnerTubeExtractor)
 
-    // mochy's sign-in, guest id and region as innertubex last saw them
+    // doom's sign-in, guest id and region as innertubex last saw them
     private data class Session(
         val cookie: String?,
         val visitorData: String?,
@@ -158,7 +158,7 @@ internal class InnerTubeXStreams(
         }
     }
 
-    // mochy's quality ladder in innertubex's words: medium is the 128k aac rung, the lossless tiers belong to modules
+    // doom's quality ladder in innertubex's words: medium is the 128k aac rung, the lossless tiers belong to modules
     private fun AudioQuality.toInnerTubeX(connectivityManager: ConnectivityManager): XAudioQuality {
         val metered = connectivityManager.isActiveNetworkMetered
         return when {

@@ -1,6 +1,6 @@
 // PictureHosts.kt
 
-package com.mochyy.mochymusic.discord
+package com.videshkarmakar.doom.discord
 
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
@@ -34,7 +34,7 @@ internal object PictureHosts {
             json.parseToJsonElement(reply).jsonObject["files"]?.jsonArray?.firstOrNull()
                 ?.jsonObject?.get("url")?.jsonPrimitive?.contentOrNull.orEmpty()
         },
-        // catbox keeps files for good; the 30 days only bound how long mochy reuses one
+        // catbox keeps files for good; the 30 days only bound how long doom reuses one
         Host("catbox.moe", keepsMs = 30 * 24 * HourMs) { bytes, name, mime ->
             post("https://catbox.moe/user/api.php", "fileToUpload", bytes, name, mime, "reqtype" to "fileupload")
         },

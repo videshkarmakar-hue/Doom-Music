@@ -1,13 +1,13 @@
 // MediaMetadata.kt
 
-package com.mochyy.mochymusic.models
+package com.videshkarmakar.doom.models
 
 import androidx.compose.runtime.Immutable
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.db.entities.SongEntity
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.db.entities.SongEntity
+import com.videshkarmakar.doom.ui.utils.resize
 import java.io.Serializable
 import java.time.LocalDateTime
 

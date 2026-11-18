@@ -1,6 +1,6 @@
 // CustomisationEffects.kt
 
-package com.mochyy.mochymusic.ui.screens.gesture
+package com.videshkarmakar.doom.ui.screens.gesture
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDpAsState
@@ -46,29 +46,29 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AnimationSpeedKey
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AnimationSpeedKey
 import androidx.compose.ui.res.stringResource
-import com.mochyy.mochymusic.constants.BlurQuality
-import com.mochyy.mochymusic.constants.BlurQualityKey
-import com.mochyy.mochymusic.constants.BlurStrengthPxKey
-import com.mochyy.mochymusic.constants.DisableBlurKey
-import com.mochyy.mochymusic.constants.ElementBlurKey
-import com.mochyy.mochymusic.constants.EnableElementBlurAnimatorKey
-import com.mochyy.mochymusic.constants.EnableProgressiveBlurKey
-import com.mochyy.mochymusic.constants.LyricsMotionStyle
-import com.mochyy.mochymusic.constants.LyricsMotionStyleKey
-import com.mochyy.mochymusic.constants.PlayerNavBarDefault
-import com.mochyy.mochymusic.constants.PlayerNavBarKey
-import com.mochyy.mochymusic.constants.PlayerStatusBarDefault
-import com.mochyy.mochymusic.constants.PlayerStatusBarKey
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.screens.audiolab.LabColors
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.AnimationSpeeds
-import com.mochyy.mochymusic.ui.utils.animationSpeedLabel
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.constants.BlurQuality
+import com.videshkarmakar.doom.constants.BlurQualityKey
+import com.videshkarmakar.doom.constants.BlurStrengthPxKey
+import com.videshkarmakar.doom.constants.DisableBlurKey
+import com.videshkarmakar.doom.constants.ElementBlurKey
+import com.videshkarmakar.doom.constants.EnableElementBlurAnimatorKey
+import com.videshkarmakar.doom.constants.EnableProgressiveBlurKey
+import com.videshkarmakar.doom.constants.LyricsMotionStyle
+import com.videshkarmakar.doom.constants.LyricsMotionStyleKey
+import com.videshkarmakar.doom.constants.PlayerNavBarDefault
+import com.videshkarmakar.doom.constants.PlayerNavBarKey
+import com.videshkarmakar.doom.constants.PlayerStatusBarDefault
+import com.videshkarmakar.doom.constants.PlayerStatusBarKey
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.screens.audiolab.LabColors
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.AnimationSpeeds
+import com.videshkarmakar.doom.ui.utils.animationSpeedLabel
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
 import kotlin.math.roundToInt
 
 private const val MinBlurStrength = 10f
@@ -93,12 +93,12 @@ private val PillTextStyle = TextStyle(
 internal fun BlurSection(modifier: Modifier = Modifier) {
     val (disableBlur, onDisableBlur) = rememberPreference(DisableBlurKey, defaultValue = false)
     val (progressive, onProgressive) = rememberPreference(EnableProgressiveBlurKey, defaultValue = true)
-    val (quality, onQuality) = rememberEnumPreference(BlurQualityKey, com.mochyy.mochymusic.ui.component.DefaultBlurQuality)
+    val (quality, onQuality) = rememberEnumPreference(BlurQualityKey, com.videshkarmakar.doom.ui.component.DefaultBlurQuality)
     val (strength, onStrength) = rememberPreference(BlurStrengthPxKey, defaultValue = DefaultBlurStrength)
     val haptic = LocalHapticFeedback.current
     var lastTick by remember { mutableIntStateOf((strength / 5f).roundToInt()) }
     val blurOn = !disableBlur
-    val defaultQuality = com.mochyy.mochymusic.ui.component.DefaultBlurQuality
+    val defaultQuality = com.videshkarmakar.doom.ui.component.DefaultBlurQuality
     val changed = disableBlur || !progressive || quality != defaultQuality || kotlin.math.abs(strength - DefaultBlurStrength) >= 0.5f
 
     Column(modifier.fillMaxWidth()) {
@@ -248,36 +248,36 @@ internal fun LyricsStyleSection(modifier: Modifier = Modifier) {
 // romanisation, the romanisation as the line itself and translation, what every style draws under and over its words, plus the lyrics floating over other apps
 @Composable
 private fun LyricsReadingToggles(modifier: Modifier = Modifier) {
-    val languages = com.mochyy.mochymusic.ui.player.RomanizeLanguageKeys.map { rememberPreference(it, defaultValue = true) }
+    val languages = com.videshkarmakar.doom.ui.player.RomanizeLanguageKeys.map { rememberPreference(it, defaultValue = true) }
     val romanize = languages.any { it.value }
-    val (asMain, onAsMain) = rememberPreference(com.mochyy.mochymusic.constants.LyricsRomanizeAsMainKey, defaultValue = false)
-    val (translate, onTranslate) = rememberPreference(com.mochyy.mochymusic.constants.TranslateLyricsKey, defaultValue = false)
-    val (floating, onFloating) = com.mochyy.mochymusic.floating.rememberFloatingLyricsSwitch()
-    com.mochyy.mochymusic.ui.screens.audiolab.LabCard(padding = 20.dp, modifier = modifier) {
-        com.mochyy.mochymusic.ui.screens.audiolab.LabToggleRow(
+    val (asMain, onAsMain) = rememberPreference(com.videshkarmakar.doom.constants.LyricsRomanizeAsMainKey, defaultValue = false)
+    val (translate, onTranslate) = rememberPreference(com.videshkarmakar.doom.constants.TranslateLyricsKey, defaultValue = false)
+    val (floating, onFloating) = com.videshkarmakar.doom.floating.rememberFloatingLyricsSwitch()
+    com.videshkarmakar.doom.ui.screens.audiolab.LabCard(padding = 20.dp, modifier = modifier) {
+        com.videshkarmakar.doom.ui.screens.audiolab.LabToggleRow(
             title = stringResource(R.string.customise_lyrics_romanisation),
             subtitle = stringResource(R.string.customise_lyrics_romanisation_desc),
             checked = romanize,
             onCheckedChange = { on -> languages.forEach { it.value = on } },
         )
-        com.mochyy.mochymusic.ui.screens.audiolab.LabToggleRow(
+        com.videshkarmakar.doom.ui.screens.audiolab.LabToggleRow(
             title = stringResource(R.string.settings_romanize_as_main),
             subtitle = stringResource(R.string.settings_romanize_as_main_desc),
             checked = asMain,
             onCheckedChange = onAsMain,
             enabled = romanize,
         )
-        com.mochyy.mochymusic.ui.screens.audiolab.LabToggleRow(
+        com.videshkarmakar.doom.ui.screens.audiolab.LabToggleRow(
             title = stringResource(R.string.customise_lyrics_translation),
             subtitle = stringResource(R.string.customise_lyrics_translation_desc),
             checked = translate,
             onCheckedChange = { on ->
                 onTranslate(on)
                 // takes effect on the song playing now, not only from the next one
-                if (on) com.mochyy.mochymusic.lyrics.LyricsTranslationHelper.triggerManualTranslation() else com.mochyy.mochymusic.lyrics.LyricsTranslationHelper.triggerClearTranslations()
+                if (on) com.videshkarmakar.doom.lyrics.LyricsTranslationHelper.triggerManualTranslation() else com.videshkarmakar.doom.lyrics.LyricsTranslationHelper.triggerClearTranslations()
             },
         )
-        com.mochyy.mochymusic.ui.screens.audiolab.LabToggleRow(
+        com.videshkarmakar.doom.ui.screens.audiolab.LabToggleRow(
             title = stringResource(R.string.settings_floating_lyrics),
             subtitle = stringResource(R.string.settings_floating_lyrics_desc),
             checked = floating,

@@ -1,6 +1,6 @@
 // DiscordAuth.kt
 
-package com.mochyy.mochymusic.discord
+package com.videshkarmakar.doom.discord
 
 import android.content.Context
 import android.net.Uri
@@ -9,14 +9,14 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.mochyy.mochymusic.BuildConfig
-import com.mochyy.mochymusic.constants.DiscordAccessTokenKey
-import com.mochyy.mochymusic.constants.DiscordLoginStateKey
-import com.mochyy.mochymusic.constants.DiscordLoginVerifierKey
-import com.mochyy.mochymusic.constants.DiscordProfileKey
-import com.mochyy.mochymusic.constants.DiscordRefreshTokenKey
-import com.mochyy.mochymusic.constants.DiscordTokenExpiresAtKey
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.BuildConfig
+import com.videshkarmakar.doom.constants.DiscordAccessTokenKey
+import com.videshkarmakar.doom.constants.DiscordLoginStateKey
+import com.videshkarmakar.doom.constants.DiscordLoginVerifierKey
+import com.videshkarmakar.doom.constants.DiscordProfileKey
+import com.videshkarmakar.doom.constants.DiscordRefreshTokenKey
+import com.videshkarmakar.doom.constants.DiscordTokenExpiresAtKey
+import com.videshkarmakar.doom.utils.dataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -55,7 +55,7 @@ sealed interface DiscordLogin {
 
 /**
  * Signing in to Discord on Discord's own page, in the browser. It's OAuth with PKCE, so no secret
- * ships inside Mochy, and the password never passes through it. Discord sends the browser back
+ * ships inside Doom, and the password never passes through it. Discord sends the browser back
  * to discord-<id>:/authorize/callback, and [DiscordLoginActivity] hands that to [finish].
  */
 @Singleton
@@ -82,7 +82,7 @@ class DiscordAuth @Inject constructor(
 
     /**
      * The page to send the user to. The check value and the PKCE verifier are saved first, since
-     * Android may close Mochy while the browser is in front.
+     * Android may close Doom while the browser is in front.
      */
     suspend fun loginUri(): Uri {
         val state = randomCode(24)
@@ -126,7 +126,7 @@ class DiscordAuth @Inject constructor(
         if (code == null) {
             _login.value = DiscordLogin.Failed(
                 if (redirect.getQueryParameter("error") == "access_denied") {
-                    "You said no on Discord's page, so Mochy isn't connected."
+                    "You said no on Discord's page, so Doom isn't connected."
                 } else {
                     "Discord didn't let the sign-in through. Try again."
                 },
@@ -179,7 +179,7 @@ class DiscordAuth @Inject constructor(
 
     /**
      * Discord turned [rejected] down. Renew it once; if Discord says the login itself is gone
-     * (the user removed Mochy from their authorised apps), sign out so the page says so.
+     * (the user removed Doom from their authorised apps), sign out so the page says so.
      */
     suspend fun renew(rejected: String): String? = refreshing.withLock {
         val prefs = context.dataStore.data.first()
@@ -231,7 +231,7 @@ class DiscordAuth @Inject constructor(
     }
 
     /**
-     * Older Mochy builds logged in by reading the account's own login token out of a web page.
+     * Older Doom builds logged in by reading the account's own login token out of a web page.
      * That token can do anything the account can, so it's wiped rather than left lying around.
      */
     suspend fun forgetOldLogin() {

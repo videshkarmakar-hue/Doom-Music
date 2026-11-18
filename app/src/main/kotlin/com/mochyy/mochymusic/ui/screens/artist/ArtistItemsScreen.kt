@@ -1,6 +1,6 @@
 // ArtistItemsScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.artist
+package com.videshkarmakar.doom.ui.screens.artist
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
@@ -42,40 +42,40 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.playback.queues.YouTubeQueue
-import com.mochyy.mochymusic.ui.component.HomeCardHighlight
-import com.mochyy.mochymusic.ui.component.HomeVideoCard
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.SongSwipeBox
-import com.mochyy.mochymusic.ui.component.containerTransformSource
-import com.mochyy.mochymusic.ui.component.detail.CreatorUi
-import com.mochyy.mochymusic.ui.component.detail.PlaylistDetailScaffold
-import com.mochyy.mochymusic.ui.component.detail.PlaylistEndOfLine
-import com.mochyy.mochymusic.ui.component.detail.PlaylistHeader
-import com.mochyy.mochymusic.ui.component.detail.PlaylistInset
-import com.mochyy.mochymusic.ui.component.detail.PlaylistStatsStyle
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackBones
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackRow
-import com.mochyy.mochymusic.ui.component.detail.playlistCoverHeight
-import com.mochyy.mochymusic.ui.component.librarySwipeAction
-import com.mochyy.mochymusic.ui.component.queueSwipeAction
-import com.mochyy.mochymusic.ui.component.rememberRevealSeenState
-import com.mochyy.mochymusic.ui.component.revealOnAppear
-import com.mochyy.mochymusic.ui.menu.YouTubeAlbumMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeArtistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubePlaylistMenu
-import com.mochyy.mochymusic.ui.menu.YouTubeSongMenu
-import com.mochyy.mochymusic.ui.screens.library.LibraryIndexRail
-import com.mochyy.mochymusic.ui.screens.library.indexSections
-import com.mochyy.mochymusic.ui.utils.backToMain
-import com.mochyy.mochymusic.utils.ArtistVideos
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.viewmodels.ArtistItemsViewModel
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.playback.queues.YouTubeQueue
+import com.videshkarmakar.doom.ui.component.HomeCardHighlight
+import com.videshkarmakar.doom.ui.component.HomeVideoCard
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.SongSwipeBox
+import com.videshkarmakar.doom.ui.component.containerTransformSource
+import com.videshkarmakar.doom.ui.component.detail.CreatorUi
+import com.videshkarmakar.doom.ui.component.detail.PlaylistDetailScaffold
+import com.videshkarmakar.doom.ui.component.detail.PlaylistEndOfLine
+import com.videshkarmakar.doom.ui.component.detail.PlaylistHeader
+import com.videshkarmakar.doom.ui.component.detail.PlaylistInset
+import com.videshkarmakar.doom.ui.component.detail.PlaylistStatsStyle
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackBones
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackRow
+import com.videshkarmakar.doom.ui.component.detail.playlistCoverHeight
+import com.videshkarmakar.doom.ui.component.librarySwipeAction
+import com.videshkarmakar.doom.ui.component.queueSwipeAction
+import com.videshkarmakar.doom.ui.component.rememberRevealSeenState
+import com.videshkarmakar.doom.ui.component.revealOnAppear
+import com.videshkarmakar.doom.ui.menu.YouTubeAlbumMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeArtistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubePlaylistMenu
+import com.videshkarmakar.doom.ui.menu.YouTubeSongMenu
+import com.videshkarmakar.doom.ui.screens.library.LibraryIndexRail
+import com.videshkarmakar.doom.ui.screens.library.indexSections
+import com.videshkarmakar.doom.ui.utils.backToMain
+import com.videshkarmakar.doom.utils.ArtistVideos
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.viewmodels.ArtistItemsViewModel
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
@@ -250,7 +250,7 @@ fun ArtistItemsScreen(
                     title = heading,
                     creators = listOfNotNull(
                         artistName.takeIf { it.isNotBlank() }?.let {
-                            CreatorUi(name = it, avatarUrl = viewModel.artistId?.let { id -> com.mochyy.mochymusic.utils.ArtistPageCache.header(id)?.avatarUrl }, artistId = viewModel.artistId)
+                            CreatorUi(name = it, avatarUrl = viewModel.artistId?.let { id -> com.videshkarmakar.doom.utils.ArtistPageCache.header(id)?.avatarUrl }, artistId = viewModel.artistId)
                         }
                     ),
                     stats = "${songs.size} ${if (songs.size == 1) "song" else "songs"}",
@@ -355,7 +355,7 @@ fun ArtistItemsScreen(
                                 subtitle = cellSubtitle(item),
                                 thumbnailUrl = item.thumbnail,
                                 round = item is ArtistItem,
-                                sharedElementKey = com.mochyy.mochymusic.ui.component.coverTransitionKey(item),
+                                sharedElementKey = com.videshkarmakar.doom.ui.component.coverTransitionKey(item),
                                 isActive = active,
                                 isPlaying = active && isPlaying,
                                 onClick = { open(item) },
@@ -375,9 +375,9 @@ fun ArtistItemsScreen(
                     subtitle = cellSubtitle(item).orEmpty(),
                     isActive = active,
                     isPlaying = active && isPlaying,
-                    coverShape = if (item is ArtistItem) CircleShape else com.mochyy.mochymusic.ui.component.detail.TrackShape,
+                    coverShape = if (item is ArtistItem) CircleShape else com.videshkarmakar.doom.ui.component.detail.TrackShape,
                     coverModifier = Modifier.containerTransformSource(
-                        key = com.mochyy.mochymusic.ui.component.coverTransitionKey(item),
+                        key = com.videshkarmakar.doom.ui.component.coverTransitionKey(item),
                         cornerRadius = 9.dp,
                         coverUrl = item.thumbnail,
                     ),

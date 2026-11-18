@@ -1,6 +1,6 @@
 // LocalSongRepair.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
 import android.net.Uri
@@ -9,13 +9,13 @@ import android.provider.MediaStore
 import androidx.core.net.toUri
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.db.entities.LyricsEntity
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.db.entities.SongArtistMap
-import com.mochyy.mochymusic.lyrics.EmbeddedLyrics
-import com.mochyy.mochymusic.utils.dataStore
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.db.entities.LyricsEntity
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.db.entities.SongArtistMap
+import com.videshkarmakar.doom.lyrics.EmbeddedLyrics
+import com.videshkarmakar.doom.utils.dataStore
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

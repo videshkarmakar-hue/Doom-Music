@@ -1,6 +1,6 @@
 // SongShareBackgroundSheet.kt
 
-package com.mochyy.mochymusic.ui.player.share.song
+package com.videshkarmakar.doom.ui.player.share.song
 
 import android.content.Context
 import android.media.MediaMetadataRetriever
@@ -53,22 +53,22 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.component.PopupSheetHandle
-import com.mochyy.mochymusic.ui.component.PopupSheetState
-import com.mochyy.mochymusic.ui.component.SheetPillButton
-import com.mochyy.mochymusic.ui.player.share.AddCircle
-import com.mochyy.mochymusic.ui.player.share.BackdropOf
-import com.mochyy.mochymusic.ui.player.share.ColourBackgroundControls
-import com.mochyy.mochymusic.ui.player.share.PictureBackgroundControls
-import com.mochyy.mochymusic.ui.player.share.ShareBackground
-import com.mochyy.mochymusic.ui.player.share.ShareBasicColours
-import com.mochyy.mochymusic.ui.player.share.ShareHint
-import com.mochyy.mochymusic.ui.player.share.backgroundPageCard
-import com.mochyy.mochymusic.ui.screens.audiolab.LabCard
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSlider
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.component.PopupSheetHandle
+import com.videshkarmakar.doom.ui.component.PopupSheetState
+import com.videshkarmakar.doom.ui.component.SheetPillButton
+import com.videshkarmakar.doom.ui.player.share.AddCircle
+import com.videshkarmakar.doom.ui.player.share.BackdropOf
+import com.videshkarmakar.doom.ui.player.share.ColourBackgroundControls
+import com.videshkarmakar.doom.ui.player.share.PictureBackgroundControls
+import com.videshkarmakar.doom.ui.player.share.ShareBackground
+import com.videshkarmakar.doom.ui.player.share.ShareBasicColours
+import com.videshkarmakar.doom.ui.player.share.ShareHint
+import com.videshkarmakar.doom.ui.player.share.backgroundPageCard
+import com.videshkarmakar.doom.ui.screens.audiolab.LabCard
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSlider
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

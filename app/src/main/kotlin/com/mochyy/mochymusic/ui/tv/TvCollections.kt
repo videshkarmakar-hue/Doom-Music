@@ -1,6 +1,6 @@
 // TvCollections.kt
 
-package com.mochyy.mochymusic.ui.tv
+package com.videshkarmakar.doom.ui.tv
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.LocalBringIntoViewSpec
@@ -29,20 +29,20 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.SongSortType
-import com.mochyy.mochymusic.db.MusicDatabase
-import com.mochyy.mochymusic.db.entities.LocalItem
-import com.mochyy.mochymusic.db.entities.Song
-import com.mochyy.mochymusic.importer.ImportSource
-import com.mochyy.mochymusic.link.PhoneFiles
-import com.mochyy.mochymusic.playback.CachedSongs
-import com.mochyy.mochymusic.playback.queues.LocalAlbumRadio
-import com.mochyy.mochymusic.viewmodels.AlbumViewModel
-import com.mochyy.mochymusic.viewmodels.LibraryHomeViewModel
-import com.mochyy.mochymusic.viewmodels.LocalPlaylistViewModel
-import com.mochyy.mochymusic.viewmodels.OnlinePlaylistViewModel
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.SongSortType
+import com.videshkarmakar.doom.db.MusicDatabase
+import com.videshkarmakar.doom.db.entities.LocalItem
+import com.videshkarmakar.doom.db.entities.Song
+import com.videshkarmakar.doom.importer.ImportSource
+import com.videshkarmakar.doom.link.PhoneFiles
+import com.videshkarmakar.doom.playback.CachedSongs
+import com.videshkarmakar.doom.playback.queues.LocalAlbumRadio
+import com.videshkarmakar.doom.viewmodels.AlbumViewModel
+import com.videshkarmakar.doom.viewmodels.LibraryHomeViewModel
+import com.videshkarmakar.doom.viewmodels.LocalPlaylistViewModel
+import com.videshkarmakar.doom.viewmodels.OnlinePlaylistViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

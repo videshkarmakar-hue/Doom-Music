@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.screens.settings
+package com.videshkarmakar.doom.ui.screens.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -24,18 +24,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.ui.screens.settings.devspace.DevPlaygroundRoute
-import com.mochyy.mochymusic.ui.screens.settings.importsync.ImportSyncRoute
-import com.mochyy.mochymusic.ui.screens.settings.integrations.IntegrationsRoute
-import com.mochyy.mochymusic.ui.screens.settings.integrations.ScrobbleServiceRoute
-import com.mochyy.mochymusic.ui.screens.settings.integrations.discord.DiscordRoute
-import com.mochyy.mochymusic.ui.screens.settings.modules.ModulesRoute
-import com.mochyy.mochymusic.ui.screens.settings.storage.StorageRoute
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.ui.screens.settings.devspace.DevPlaygroundRoute
+import com.videshkarmakar.doom.ui.screens.settings.importsync.ImportSyncRoute
+import com.videshkarmakar.doom.ui.screens.settings.integrations.IntegrationsRoute
+import com.videshkarmakar.doom.ui.screens.settings.integrations.ScrobbleServiceRoute
+import com.videshkarmakar.doom.ui.screens.settings.integrations.discord.DiscordRoute
+import com.videshkarmakar.doom.ui.screens.settings.modules.ModulesRoute
+import com.videshkarmakar.doom.ui.screens.settings.storage.StorageRoute
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
 
 // the settings list's own route; on a wide screen it stays at the left while its pages open beside it
-const val SettingsListRoute = "mochy_settings"
+const val SettingsListRoute = "doom_settings"
 
 // the pages that open beside the list on a wide screen; anything else (an artist, the player's equalizer from home) takes the whole width
 val SettingsPaneRoutes = setOf(
@@ -99,7 +99,7 @@ fun NavController.openSettingsPage(route: String) {
 fun SettingsListPane(navController: NavController, selectedRoute: String?, modifier: Modifier = Modifier) {
     val windowWidth = androidx.compose.ui.platform.LocalConfiguration.current.screenWidthDp.dp
     Box(modifier = modifier.width(settingsListWidth(windowWidth)).fillMaxHeight()) {
-        MochySettingsScreen(navController = navController, pane = SettingsPane(selectedRoute))
+        DoomSettingsScreen(navController = navController, pane = SettingsPane(selectedRoute))
         Box(
             modifier = Modifier
                 .align(Alignment.CenterEnd)
@@ -125,7 +125,7 @@ fun SettingsPanePlaceholder() {
             modifier = Modifier.padding(horizontal = 40.dp),
         ) {
             Icon(
-                painter = painterResource(R.drawable.ic_mochy_mark),
+                painter = painterResource(R.drawable.ic_doom_mark),
                 contentDescription = null,
                 tint = Color.White.copy(alpha = 0.35f),
                 modifier = Modifier.size(40.dp),

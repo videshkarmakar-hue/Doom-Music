@@ -1,6 +1,6 @@
 // LocalFileNames.kt
 
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import android.content.Context
 import android.net.Uri
@@ -39,7 +39,7 @@ object LocalFileNames {
         }
     }
 
-    // "night drive.mp3" for any file mochy can open; null when nothing better than an id is known
+    // "night drive.mp3" for any file doom can open; null when nothing better than an id is known
     fun of(context: Context, uri: Uri): String? {
         if (uri.scheme == "file") return uri.path?.let { File(it).name }
         val queried = runCatching {
@@ -55,7 +55,7 @@ object LocalFileNames {
     fun withoutExtension(name: String): String =
         if (kind(name) != Kind.Other) name.substringBeforeLast('.') else name
 
-    // "MILI - Not My Paradiso" as MILI and Not My Paradiso, the way mochy's export and most rips name songs
+    // "MILI - Not My Paradiso" as MILI and Not My Paradiso, the way doom's export and most rips name songs
     fun guess(fileName: String): Guess {
         var base = withoutExtension(fileName).trim()
         // names downloaded from chats often swap every space for an underscore

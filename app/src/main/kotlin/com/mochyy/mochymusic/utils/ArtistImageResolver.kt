@@ -1,8 +1,8 @@
-package com.mochyy.mochymusic.utils
+package com.videshkarmakar.doom.utils
 
 import android.util.Log
-import com.mochyy.mochymusic.db.entities.ArtistEntity
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.db.entities.ArtistEntity
+import com.videshkarmakar.doom.ui.utils.resize
 import com.music.innertube.YouTube
 import com.music.innertube.models.ArtistItem
 import okhttp3.OkHttpClient

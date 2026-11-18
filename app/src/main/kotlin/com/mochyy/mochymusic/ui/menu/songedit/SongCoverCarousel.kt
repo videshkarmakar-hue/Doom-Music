@@ -1,6 +1,6 @@
 // SongCoverCarousel.kt
 
-package com.mochyy.mochymusic.ui.menu.songedit
+package com.videshkarmakar.doom.ui.menu.songedit
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -52,12 +52,12 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.songedit.CoverOption
-import com.mochyy.mochymusic.songedit.CoverPick
-import com.mochyy.mochymusic.songedit.CoverSources
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.songedit.CoverOption
+import com.videshkarmakar.doom.songedit.CoverPick
+import com.videshkarmakar.doom.songedit.CoverSources
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.absoluteValue

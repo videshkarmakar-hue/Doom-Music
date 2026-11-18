@@ -1,9 +1,9 @@
-package com.mochyy.mochymusic.playback
+package com.videshkarmakar.doom.playback
 
 import android.os.SystemClock
-import com.mochyy.mochymusic.models.MediaMetadata
-import com.mochyy.mochymusic.utils.YTPlayerUtils
-import com.mochyy.mochymusic.utils.reportException
+import com.videshkarmakar.doom.models.MediaMetadata
+import com.videshkarmakar.doom.utils.YTPlayerUtils
+import com.videshkarmakar.doom.utils.reportException
 import com.music.innertube.YouTube
 import com.music.innertube.models.response.PlayerResponse.PlaybackTracking
 import kotlinx.coroutines.CompletableDeferred
@@ -32,7 +32,7 @@ class YouTubePlayReporter(
             if (!value) drop()
         }
 
-    // how long a song has to play before it counts, the same wait as mochy's own history
+    // how long a song has to play before it counts, the same wait as doom's own history
     var countAfterMs = DEFAULT_COUNT_AFTER_MS
 
     // its own scope so a song's last report still goes out while the service shuts down

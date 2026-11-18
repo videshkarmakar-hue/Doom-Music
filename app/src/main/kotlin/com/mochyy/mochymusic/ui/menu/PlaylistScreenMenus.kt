@@ -1,6 +1,6 @@
 // PlaylistScreenMenus.kt
 
-package com.mochyy.mochymusic.ui.menu
+package com.videshkarmakar.doom.ui.menu
 
 import android.content.Context
 import android.content.Intent
@@ -28,18 +28,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.db.entities.Playlist
-import com.mochyy.mochymusic.db.entities.PlaylistSong
-import com.mochyy.mochymusic.playback.AutoDownloads
-import com.mochyy.mochymusic.ui.component.AppSwitch
-import com.mochyy.mochymusic.ui.component.Material3MenuGroup
-import com.mochyy.mochymusic.ui.component.Material3MenuItemData
-import com.mochyy.mochymusic.ui.component.SheetActionCard
-import com.mochyy.mochymusic.ui.component.SheetActionCardRow
-import com.mochyy.mochymusic.ui.component.SheetDownloadCard
-import com.mochyy.mochymusic.ui.component.SheetSearchLauncher
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.db.entities.Playlist
+import com.videshkarmakar.doom.db.entities.PlaylistSong
+import com.videshkarmakar.doom.playback.AutoDownloads
+import com.videshkarmakar.doom.ui.component.AppSwitch
+import com.videshkarmakar.doom.ui.component.Material3MenuGroup
+import com.videshkarmakar.doom.ui.component.Material3MenuItemData
+import com.videshkarmakar.doom.ui.component.SheetActionCard
+import com.videshkarmakar.doom.ui.component.SheetActionCardRow
+import com.videshkarmakar.doom.ui.component.SheetDownloadCard
+import com.videshkarmakar.doom.ui.component.SheetSearchLauncher
 import kotlinx.coroutines.launch
 
 /**

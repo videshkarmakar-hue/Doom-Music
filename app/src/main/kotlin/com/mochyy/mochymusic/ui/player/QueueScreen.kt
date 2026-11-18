@@ -1,6 +1,6 @@
 // QueueScreen.kt
 
-package com.mochyy.mochymusic.ui.player
+package com.videshkarmakar.doom.ui.player
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -56,20 +56,20 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.PlayerHorizontalPadding
-import com.mochyy.mochymusic.ui.component.PlayingIndicatorBox
-import com.mochyy.mochymusic.ui.component.SwipeAction
-import com.mochyy.mochymusic.ui.component.SwipeActionsBox
-import com.mochyy.mochymusic.ui.component.SwipeQueueColor
-import com.mochyy.mochymusic.ui.component.SwipeSaveColor
-import com.mochyy.mochymusic.ui.player.models.QueueItemData
-import com.mochyy.mochymusic.ui.utils.resize
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.PlayerHorizontalPadding
+import com.videshkarmakar.doom.ui.component.PlayingIndicatorBox
+import com.videshkarmakar.doom.ui.component.SwipeAction
+import com.videshkarmakar.doom.ui.component.SwipeActionsBox
+import com.videshkarmakar.doom.ui.component.SwipeQueueColor
+import com.videshkarmakar.doom.ui.component.SwipeSaveColor
+import com.videshkarmakar.doom.ui.player.models.QueueItemData
+import com.videshkarmakar.doom.ui.utils.resize
 import kotlinx.coroutines.delay
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
-import com.mochyy.mochymusic.ui.utils.stableStatusBarsPadding
+import com.videshkarmakar.doom.ui.utils.stableStatusBarsPadding
 
 private val RowArtSize = 44.dp
 

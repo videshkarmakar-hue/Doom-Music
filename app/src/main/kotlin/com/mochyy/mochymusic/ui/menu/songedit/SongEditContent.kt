@@ -1,6 +1,6 @@
 // SongEditContent.kt
 
-package com.mochyy.mochymusic.ui.menu.songedit
+package com.videshkarmakar.doom.ui.menu.songedit
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -39,22 +39,22 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.eq.AudioLabStore
-import com.mochyy.mochymusic.eq.EqPresets
-import com.mochyy.mochymusic.lyrics.LyricsProviderRegistry
-import com.mochyy.mochymusic.lyrics.LyricsUtils
-import com.mochyy.mochymusic.songedit.SongEdits
-import com.mochyy.mochymusic.ui.component.RemoteFocus
-import com.mochyy.mochymusic.ui.component.SheetIcon
-import com.mochyy.mochymusic.ui.component.SheetLabel
-import com.mochyy.mochymusic.ui.component.SheetTextField
-import com.mochyy.mochymusic.ui.component.bleedHorizontally
-import com.mochyy.mochymusic.ui.player.menu.LineSlider
-import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
-import com.mochyy.mochymusic.ui.screens.audiolab.LabSelect
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.viewmodels.LyricsMenuViewModel
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.eq.AudioLabStore
+import com.videshkarmakar.doom.eq.EqPresets
+import com.videshkarmakar.doom.lyrics.LyricsProviderRegistry
+import com.videshkarmakar.doom.lyrics.LyricsUtils
+import com.videshkarmakar.doom.songedit.SongEdits
+import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.component.SheetIcon
+import com.videshkarmakar.doom.ui.component.SheetLabel
+import com.videshkarmakar.doom.ui.component.SheetTextField
+import com.videshkarmakar.doom.ui.component.bleedHorizontally
+import com.videshkarmakar.doom.ui.player.menu.LineSlider
+import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
+import com.videshkarmakar.doom.ui.screens.audiolab.LabSelect
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.viewmodels.LyricsMenuViewModel
 import java.util.Locale
 import kotlin.math.roundToInt
 

@@ -1,11 +1,11 @@
-package com.mochyy.mochymusic.importer
+package com.videshkarmakar.doom.importer
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class LocalFileNamesTest {
     @Test
-    fun `mochy's export name splits into artist and title`() {
+    fun `doom's export name splits into artist and title`() {
         assertEquals(LocalFileNames.Guess("MILI", "Not My Paradiso"), LocalFileNames.guess("MILI - Not My Paradiso.opus"))
     }
 

@@ -2,7 +2,7 @@
 //
 // The cover's colours, which the backgrounds, the card and the line picker are all tinted with.
 
-package com.mochyy.mochymusic.ui.player.share
+package com.videshkarmakar.doom.ui.player.share
 
 import android.content.Context
 import androidx.compose.ui.graphics.Color

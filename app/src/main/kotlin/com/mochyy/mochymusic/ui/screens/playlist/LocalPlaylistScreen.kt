@@ -1,6 +1,6 @@
 // LocalPlaylistScreen.kt
 
-package com.mochyy.mochymusic.ui.screens.playlist
+package com.videshkarmakar.doom.ui.screens.playlist
 
 import android.annotation.SuppressLint
 import androidx.activity.compose.BackHandler
@@ -88,62 +88,62 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalDatabase
-import com.mochyy.mochymusic.LocalDownloadUtil
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.constants.AccountNameKey
-import com.mochyy.mochymusic.constants.PlaylistEditLockKey
-import com.mochyy.mochymusic.constants.PlaylistSongSortDescendingKey
-import com.mochyy.mochymusic.constants.PlaylistSongSortType
-import com.mochyy.mochymusic.constants.PlaylistSongSortTypeKey
-import com.mochyy.mochymusic.constants.PlaylistSortType
-import com.mochyy.mochymusic.constants.ProfilePicUriKey
-import com.mochyy.mochymusic.db.entities.PlaylistEvent
-import com.mochyy.mochymusic.db.entities.PlaylistSongMap
-import com.mochyy.mochymusic.extensions.move
-import com.mochyy.mochymusic.extensions.toMediaItem
-import com.mochyy.mochymusic.models.toMediaMetadata
-import com.mochyy.mochymusic.playback.ExoDownloadService
-import com.mochyy.mochymusic.playback.queues.ListQueue
-import com.mochyy.mochymusic.ui.component.HomeCardHighlight
-import com.mochyy.mochymusic.ui.component.BoneColor
-import com.mochyy.mochymusic.ui.component.DefaultDialog
-import com.mochyy.mochymusic.ui.component.DraggableScrollbar
-import com.mochyy.mochymusic.ui.component.EmptyPlaceholder
-import com.mochyy.mochymusic.playlistcover.PlaylistCoverStore
-import com.mochyy.mochymusic.ui.component.LocalMenuState
-import com.mochyy.mochymusic.ui.component.showEditPlaylistSheet
-import com.mochyy.mochymusic.ui.component.SongSwipeBox
-import com.mochyy.mochymusic.ui.component.TextFieldDialog
-import com.mochyy.mochymusic.ui.component.librarySwipeAction
-import com.mochyy.mochymusic.ui.component.queueSwipeAction
-import com.mochyy.mochymusic.ui.component.removeFromPlaylistSwipeAction
-import com.mochyy.mochymusic.ui.component.detail.CreatorUi
-import com.mochyy.mochymusic.ui.component.detail.featuredArtistsOf
-import com.mochyy.mochymusic.ui.component.detail.FeaturedArtistsRow
-import com.mochyy.mochymusic.ui.component.detail.PlaylistDetailScaffold
-import com.mochyy.mochymusic.ui.component.detail.PlaylistEndOfLine
-import com.mochyy.mochymusic.ui.component.detail.PlaylistHeader
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSearchBar
-import com.mochyy.mochymusic.ui.component.detail.PlaylistModeBar
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSectionTitle
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSelectTick
-import com.mochyy.mochymusic.ui.component.detail.PlaylistSortControl
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackBones
-import com.mochyy.mochymusic.ui.component.detail.PlaylistTrackRow
-import com.mochyy.mochymusic.ui.component.detail.playlistCoverHeight
-import com.mochyy.mochymusic.ui.component.rememberRevealSeenState
-import com.mochyy.mochymusic.ui.component.revealOnAppear
-import com.mochyy.mochymusic.ui.menu.LocalPlaylistMenu
-import com.mochyy.mochymusic.ui.menu.SelectionSongMenu
-import com.mochyy.mochymusic.ui.menu.SongMenu
-import com.mochyy.mochymusic.ui.utils.backToMain
-import com.mochyy.mochymusic.utils.makeTimeString
-import com.mochyy.mochymusic.utils.rememberEnumPreference
-import com.mochyy.mochymusic.utils.rememberPreference
-import com.mochyy.mochymusic.viewmodels.LocalPlaylistViewModel
+import com.videshkarmakar.doom.LocalDatabase
+import com.videshkarmakar.doom.LocalDownloadUtil
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.constants.AccountNameKey
+import com.videshkarmakar.doom.constants.PlaylistEditLockKey
+import com.videshkarmakar.doom.constants.PlaylistSongSortDescendingKey
+import com.videshkarmakar.doom.constants.PlaylistSongSortType
+import com.videshkarmakar.doom.constants.PlaylistSongSortTypeKey
+import com.videshkarmakar.doom.constants.PlaylistSortType
+import com.videshkarmakar.doom.constants.ProfilePicUriKey
+import com.videshkarmakar.doom.db.entities.PlaylistEvent
+import com.videshkarmakar.doom.db.entities.PlaylistSongMap
+import com.videshkarmakar.doom.extensions.move
+import com.videshkarmakar.doom.extensions.toMediaItem
+import com.videshkarmakar.doom.models.toMediaMetadata
+import com.videshkarmakar.doom.playback.ExoDownloadService
+import com.videshkarmakar.doom.playback.queues.ListQueue
+import com.videshkarmakar.doom.ui.component.HomeCardHighlight
+import com.videshkarmakar.doom.ui.component.BoneColor
+import com.videshkarmakar.doom.ui.component.DefaultDialog
+import com.videshkarmakar.doom.ui.component.DraggableScrollbar
+import com.videshkarmakar.doom.ui.component.EmptyPlaceholder
+import com.videshkarmakar.doom.playlistcover.PlaylistCoverStore
+import com.videshkarmakar.doom.ui.component.LocalMenuState
+import com.videshkarmakar.doom.ui.component.showEditPlaylistSheet
+import com.videshkarmakar.doom.ui.component.SongSwipeBox
+import com.videshkarmakar.doom.ui.component.TextFieldDialog
+import com.videshkarmakar.doom.ui.component.librarySwipeAction
+import com.videshkarmakar.doom.ui.component.queueSwipeAction
+import com.videshkarmakar.doom.ui.component.removeFromPlaylistSwipeAction
+import com.videshkarmakar.doom.ui.component.detail.CreatorUi
+import com.videshkarmakar.doom.ui.component.detail.featuredArtistsOf
+import com.videshkarmakar.doom.ui.component.detail.FeaturedArtistsRow
+import com.videshkarmakar.doom.ui.component.detail.PlaylistDetailScaffold
+import com.videshkarmakar.doom.ui.component.detail.PlaylistEndOfLine
+import com.videshkarmakar.doom.ui.component.detail.PlaylistHeader
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSearchBar
+import com.videshkarmakar.doom.ui.component.detail.PlaylistModeBar
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSectionTitle
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSelectTick
+import com.videshkarmakar.doom.ui.component.detail.PlaylistSortControl
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackBones
+import com.videshkarmakar.doom.ui.component.detail.PlaylistTrackRow
+import com.videshkarmakar.doom.ui.component.detail.playlistCoverHeight
+import com.videshkarmakar.doom.ui.component.rememberRevealSeenState
+import com.videshkarmakar.doom.ui.component.revealOnAppear
+import com.videshkarmakar.doom.ui.menu.LocalPlaylistMenu
+import com.videshkarmakar.doom.ui.menu.SelectionSongMenu
+import com.videshkarmakar.doom.ui.menu.SongMenu
+import com.videshkarmakar.doom.ui.utils.backToMain
+import com.videshkarmakar.doom.utils.makeTimeString
+import com.videshkarmakar.doom.utils.rememberEnumPreference
+import com.videshkarmakar.doom.utils.rememberPreference
+import com.videshkarmakar.doom.viewmodels.LocalPlaylistViewModel
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.utils.completed
@@ -172,7 +172,7 @@ fun LocalPlaylistScreen(
 
     val playlist by viewModel.playlist.collectAsState()
     val songs by viewModel.playlistSongs.collectAsState()
-    val mutableSongs = remember { mutableStateListOf<com.mochyy.mochymusic.db.entities.PlaylistSong>() }
+    val mutableSongs = remember { mutableStateListOf<com.videshkarmakar.doom.db.entities.PlaylistSong>() }
     val playlistLength = remember(songs) { songs.fastSumBy { it.song.song.duration } }
     val (sortType, onSortTypeChange) = rememberEnumPreference(PlaylistSongSortTypeKey, PlaylistSongSortType.CUSTOM)
     val (sortDescending, onSortDescendingChange) = rememberPreference(PlaylistSongSortDescendingKey, true)
@@ -394,7 +394,7 @@ fun LocalPlaylistScreen(
     }
     val creatorAvatar = profilePicUri.takeIf { it.isNotBlank() }?.let { if (it.contains("://")) it else "file://$it" }
 
-    fun play(items: List<com.mochyy.mochymusic.db.entities.PlaylistSong>, startIndex: Int = 0) {
+    fun play(items: List<com.videshkarmakar.doom.db.entities.PlaylistSong>, startIndex: Int = 0) {
         val current = playlist ?: return
         playerConnection.playQueue(
             ListQueue(
@@ -644,7 +644,7 @@ fun LocalPlaylistScreen(
                     val removed = currentItem
                     deleteFromPlaylist()
                     val browseId = playlist?.playlist?.browseId
-                    com.mochyy.mochymusic.ui.component.TopToaster.show(
+                    com.videshkarmakar.doom.ui.component.TopToaster.show(
                         text = context.getString(
                             R.string.playlist_removed_song_from,
                             removed.song.song.title,

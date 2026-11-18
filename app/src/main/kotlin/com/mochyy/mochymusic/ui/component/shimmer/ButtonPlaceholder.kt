@@ -1,6 +1,6 @@
 // ButtonPlaceholder.kt
 
-package com.mochyy.mochymusic.ui.component.shimmer
+package com.videshkarmakar.doom.ui.component.shimmer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer

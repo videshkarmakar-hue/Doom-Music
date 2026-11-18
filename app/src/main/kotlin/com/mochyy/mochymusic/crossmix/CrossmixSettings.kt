@@ -1,7 +1,7 @@
-package com.mochyy.mochymusic.crossmix
+package com.videshkarmakar.doom.crossmix
 
-import com.mochyy.mochymusic.constants.CrossmixLength
-import com.mochyy.mochymusic.constants.CrossmixTempoMatch
+import com.videshkarmakar.doom.constants.CrossmixLength
+import com.videshkarmakar.doom.constants.CrossmixTempoMatch
 
 /** the listener's choices for how crossmix mixes, read by the planner; the defaults are the planner left to itself */
 data class CrossmixSettings(

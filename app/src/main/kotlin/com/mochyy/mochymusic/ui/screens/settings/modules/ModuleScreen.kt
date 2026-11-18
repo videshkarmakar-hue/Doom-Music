@@ -1,6 +1,6 @@
 // one module's page: its banner and icon, the switch, what it is, data saver, its options and lists, a test with any song, and removing it
 
-package com.mochyy.mochymusic.ui.screens.settings.modules
+package com.videshkarmakar.doom.ui.screens.settings.modules
 
 import android.os.Build
 import android.widget.Toast
@@ -48,19 +48,19 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.mochyy.mochymusic.LocalPlayerAwareWindowInsets
-import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.module.AccountState
-import com.mochyy.mochymusic.module.ItemListModule
-import com.mochyy.mochymusic.module.ModuleFeature
-import com.mochyy.mochymusic.module.ServerListModule
-import com.mochyy.mochymusic.module.applemusic.AppleMusicModule
-import com.mochyy.mochymusic.modules.ModuleEntry
-import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
-import com.mochyy.mochymusic.ui.component.coverTintBackground
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.stableStatusBars
-import com.mochyy.mochymusic.viewmodels.ModulesViewModel
+import com.videshkarmakar.doom.LocalPlayerAwareWindowInsets
+import com.videshkarmakar.doom.R
+import com.videshkarmakar.doom.module.AccountState
+import com.videshkarmakar.doom.module.ItemListModule
+import com.videshkarmakar.doom.module.ModuleFeature
+import com.videshkarmakar.doom.module.ServerListModule
+import com.videshkarmakar.doom.module.applemusic.AppleMusicModule
+import com.videshkarmakar.doom.modules.ModuleEntry
+import com.videshkarmakar.doom.ui.component.LocalZoomOutOverlayState
+import com.videshkarmakar.doom.ui.component.coverTintBackground
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.stableStatusBars
+import com.videshkarmakar.doom.viewmodels.ModulesViewModel
 import kotlinx.coroutines.launch
 
 private val BannerHeight = 260.dp

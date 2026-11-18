@@ -1,4 +1,4 @@
-package com.mochyy.mochymusic.ui.player.ipod
+package com.videshkarmakar.doom.ui.player.ipod
 
 import android.content.Context
 import android.media.AudioManager
@@ -43,24 +43,24 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.mochyy.mochymusic.LocalPlayerConnection
-import com.mochyy.mochymusic.ui.component.BottomSheetState
-import com.mochyy.mochymusic.ui.component.LocalPlayerBottomSheetState
-import com.mochyy.mochymusic.ui.player.styles.LocalStyleInteractive
-import com.mochyy.mochymusic.ui.player.styles.rememberStyleShowing
-import com.mochyy.mochymusic.ui.player.styles.whileStyleInteractive
-import com.mochyy.mochymusic.ui.theme.InterFontFamily
-import com.mochyy.mochymusic.ui.utils.stableSystemBars
-import com.mochyy.mochymusic.constants.PlayerStatusBarDefault
-import com.mochyy.mochymusic.constants.PlayerStatusBarKey
-import com.mochyy.mochymusic.ui.player.findActivity
-import com.mochyy.mochymusic.ui.theme.ForceDarkTheme
-import com.mochyy.mochymusic.utils.rememberPreference
+import com.videshkarmakar.doom.LocalPlayerConnection
+import com.videshkarmakar.doom.ui.component.BottomSheetState
+import com.videshkarmakar.doom.ui.component.LocalPlayerBottomSheetState
+import com.videshkarmakar.doom.ui.player.styles.LocalStyleInteractive
+import com.videshkarmakar.doom.ui.player.styles.rememberStyleShowing
+import com.videshkarmakar.doom.ui.player.styles.whileStyleInteractive
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import com.videshkarmakar.doom.ui.utils.stableSystemBars
+import com.videshkarmakar.doom.constants.PlayerStatusBarDefault
+import com.videshkarmakar.doom.constants.PlayerStatusBarKey
+import com.videshkarmakar.doom.ui.player.findActivity
+import com.videshkarmakar.doom.ui.theme.ForceDarkTheme
+import com.videshkarmakar.doom.utils.rememberPreference
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import kotlinx.coroutines.flow.distinctUntilChanged
-import com.mochyy.mochymusic.viewmodels.IpodLibraryViewModel
+import com.videshkarmakar.doom.viewmodels.IpodLibraryViewModel
 import kotlinx.coroutines.delay
 
 // the ipod classic as a player: fills a phone edge to edge, sits whole on black on a big screen
