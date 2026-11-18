@@ -164,52 +164,6 @@ private val MoreCredits =
         ),
     )
 
-private val Licenses =
-    listOf(
-        LicenseEntry(
-            tag = "GPL-3.0",
-            title = "Mochy Music · GNU General Public License v3.0",
-            subtitle = "Free and open source software, source code on GitHub",
-            url = "$GithubRepoUrl/blob/main/LICENSE",
-        ),
-        LicenseEntry(
-            tag = "GPL-3.0",
-            title = "ViviMusic · GNU General Public License v3.0",
-            subtitle = "by vivizzz007 · base project this app was forked from",
-            url = "https://github.com/vivizzz007/vivi-music/blob/main/LICENSE",
-        ),
-        LicenseEntry(
-            tag = "GPL-3.0",
-            title = "Metrolist · GNU General Public License v3.0",
-            subtitle = "by Mostafa Alagamy · base framework",
-            url = "https://github.com/mostafaalagamy/Metrolist/blob/main/LICENSE",
-        ),
-        LicenseEntry(
-            tag = "GPL-3.0",
-            title = "SimpMusic · GNU General Public License v3.0",
-            subtitle = "by maxrave-dev · lyrics provider integration",
-            url = "https://github.com/maxrave-dev/SimpMusic/blob/dev/LICENSE",
-        ),
-        LicenseEntry(
-            tag = "GPL-3.0",
-            title = "ArchiveTune · GNU General Public License v3.0",
-            subtitle = "by Rukamori · design and architectural inspiration",
-            url = "https://github.com/rukamori/ArchiveTune/blob/main/LICENSE",
-        ),
-        LicenseEntry(
-            tag = "MIT",
-            title = "LRCLIB · MIT License",
-            subtitle = "by tranxuanthang · synchronized lyrics database",
-            url = "https://github.com/tranxuanthang/lrclib/blob/main/LICENSE",
-        ),
-        LicenseEntry(
-            tag = "MIT",
-            title = "AutoEq · MIT License",
-            subtitle = "by Jaakko Pasanen · headphone correction profiles",
-            url = "https://github.com/jaakkopasanen/AutoEq/blob/master/LICENSE",
-        ),
-    )
-
 // this guy promote the app
 private val ExtraContributors =
     listOf(
