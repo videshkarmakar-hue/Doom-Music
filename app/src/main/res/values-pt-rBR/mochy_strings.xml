@@ -94,7 +94,7 @@
     <string name="hide_player_thumbnail_desc">Substituir arte do álbum com a logo do app no tocador</string>
     <string name="thumbnail_corner_radius">Thumbnail Corner Radius</string>
     <string name="thumbnail_corner_radius_desc">Change the corner radius of the album cover thumbnail</string>
-    <string name="crop_album_art">Cortar Capa do �lbum</string>
+    <string name="crop_album_art">Cortar Capa do Álbum</string>
     <string name="crop_album_art_desc">Forçar formato quadrado nas miniaturas dos vídeos</string>
     <string name="doom_canvas">Canvas</string>
     <string name="doom_canvas_desc">Show animated album covers when available</string>
@@ -448,7 +448,7 @@
     <string name="wrapped_end_playlist_saved">Lista de Reprodução Salva</string>
     <string name="wrapped_logo_content_description">doom Logo</string>
     <string name="wrapped_year">2025</string>
-    <string name="wrapped_ready_title">SEU EMBRULHO EST� PRONTO!</string>
+    <string name="wrapped_ready_title">SEU EMBRULHO ESTÁ PRONTO!</string>
     <string name="wrapped_ready_subtitle">Hora de checar o que você amou esse ano.</string>
     <string name="wrapped_thank_you">Obrigado por ouvir</string>
     <string name="wrapped_special_thanks">Agradecimentos especiais ao MO Agamy por criar o doom</string>
@@ -537,7 +537,7 @@
     <string name="copy_error">Copiar erro</string>
     <string name="error_copy_hint">Copie as informações do erro para ajudar os desenvolvedores a identificar o problema</string>
     <!-- Widget strings -->
-    <string name="album_art">Capa do �lbum</string>
+    <string name="album_art">Capa do Álbum</string>
     <string name="no_song_playing">Nenhuma música tocando</string>
     <string name="tap_to_open">Clique para abrir o doom</string>
     <string name="previous">Anterior</string>
@@ -708,7 +708,7 @@
     <string name="palette_rose">Rosa</string>
     <string name="palette_purple">Roxo</string>
     <string name="palette_deep_purple">Roxo Profundo</string>
-    <string name="palette_indigo">�ndigo</string>
+    <string name="palette_indigo">Índigo</string>
     <string name="palette_blue">Azul</string>
     <string name="palette_sky_blue">Azul celeste</string>
     <string name="palette_cyan">Ciano</string>

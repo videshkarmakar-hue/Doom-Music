@@ -324,7 +324,8 @@ fun UpdateScreen(navController: NavHostController) {
                                                 ContextCompat.startActivity(context, installIntent, null)
                                             }
                                         } else {
-                                            val urlToDownload = currentStatus.apkUrl ?: "https://github.com/realidkroo/Doom-Music/releases/download/${currentStatus.version}/doom.apk"
+                                            val urlToDownload = currentStatus.apkUrl
+                                                ?: return@AnimatedActionButton
                                             val downloadRequest = OneTimeWorkRequestBuilder<UpdateDownloadWorker>()
                                                 .setInputData(workDataOf("apk_url" to urlToDownload, "version" to currentStatus.version, "file_size" to currentStatus.size))
                                                 .addTag("update_download")
@@ -611,30 +612,31 @@ private fun formatGitHubDate(githubDate: String): String = try {
     githubDate
 }
 
-fun isNewerVersion(latestVersion: String, currentVersion: String): Boolean {
-    val latestVersionClean = latestVersion.removePrefix("b").removePrefix("v")
-    val currentVersionClean = currentVersion.removePrefix("b").removePrefix("v")
+fun isNewerVersion(latestVersion: String, currentVersion: String): Boolean =
+    parseFullVersion(latestVersion) > parseFullVersion(currentVersion)
 
-    val latestParts = latestVersionClean.split(".").map { it.toIntOrNull() ?: 0 }
-    val currentParts = currentVersionClean.split(".").map { it.toIntOrNull() ?: 0 }
+// the CI publishes Doom-Music-<arch>-<variant>-b<build>.apk; pick the ABI this install can run,
+// then universal, then whatever APK the release carries
+private fun pickUpdateAsset(assets: JSONArray): JSONObject? {
+    val appArch = runCatching { BuildConfig.ARCHITECTURE }.getOrDefault("universal")
+    var universal: JSONObject? = null
+    var fallback: JSONObject? = null
 
-    for (i in 0 until maxOf(latestParts.size, currentParts.size)) {
-        val latest = latestParts.getOrElse(i) { 0 }
-        val current = currentParts.getOrElse(i) { 0 }
-        when {
-            latest > current -> return true
-            latest < current -> return false
+    for (i in 0 until assets.length()) {
+        val asset = assets.optJSONObject(i) ?: continue
+        val name = asset.optString("name").orEmpty()
+        if (!name.endsWith(".apk", ignoreCase = true)) continue
+
+        if (assetNameMatchesArch(name, appArch)) {
+            return asset
+        }
+        if (name.contains("universal", ignoreCase = true)) {
+            if (universal == null) universal = asset
+        } else if (fallback == null) {
+            fallback = asset
         }
     }
-
-    if (latestVersionClean == currentVersionClean) {
-        val latestIsBeta = latestVersion.startsWith("b")
-        val currentIsBeta = currentVersion.startsWith("b")
-
-        if (currentIsBeta && !latestIsBeta) return true
-    }
-
-    return false
+    return universal ?: fallback
 }
 
 suspend fun checkForUpdate(
@@ -644,7 +646,7 @@ suspend fun checkForUpdate(
 ) {
     withContext(Dispatchers.IO) {
         try {
-            val url = URL("https://api.github.com/repos/realidkroo/Doom-Music/releases")
+            val url = URL("https://api.github.com/repos/${GithubOwner}/${GithubRepo}/releases")
             val json = url.openStream().bufferedReader().use { it.readText() }
             val releases = JSONArray(json)
 
@@ -656,7 +658,7 @@ suspend fun checkForUpdate(
 
             if (betaEnabled) {
                 try {
-                    val nightlyUrl = URL("https://api.github.com/repos/realidkroo/Doom-Music/actions/workflows/nightly.yml/runs?status=success&per_page=1")
+                    val nightlyUrl = URL("https://api.github.com/repos/${GithubOwner}/${GithubRepo}/actions/workflows/nightly.yml/runs?status=success&per_page=1")
                     val nightlyJson = nightlyUrl.openStream().bufferedReader().use { it.readText() }
                     val nightlyData = JSONObject(nightlyJson)
                     val runs = nightlyData.optJSONArray("workflow_runs")
@@ -708,7 +710,7 @@ suspend fun checkForUpdate(
                 changelogList.add(ChangelogSection(context.getString(R.string.changelog), listOf(subjectLine)))
 
                 val formattedReleaseDate = formatGitHubDate(runUpdatedAt)
-                val apkDownloadUrl = "https://nightly.link/realidkroo/Doom-Music/workflows/nightly.yml/main/doom-gms-nightly.zip"
+                val apkDownloadUrl = "https://nightly.link/${GithubOwner}/${GithubRepo}/workflows/nightly.yml/main/doom-gms-nightly.zip"
 
                 withContext(Dispatchers.Main) {
                     onSuccess(displayTag, true, changelogList, "~30", formattedReleaseDate, "Bleeding-edge nightly build from main branch.", null, apkDownloadUrl)
@@ -768,7 +770,7 @@ suspend fun checkForUpdate(
                     var imageUrl: String? = null
                     try {
                         val changelogUrl =
-                            URL("https://github.com/realidkroo/Doom-Music/releases/download/$tagWithPrefix/changelog.json")
+                            URL("https://github.com/${GithubOwner}/${GithubRepo}/releases/download/$tagWithPrefix/changelog.json")
                         val changelogJson = changelogUrl.openStream().bufferedReader().use { it.readText() }
                         val changelogData = JSONObject(changelogJson)
 
@@ -799,15 +801,10 @@ suspend fun checkForUpdate(
 
                     var apkSizeInMB = ""
                     var apkDownloadUrl = ""
-                    for (j in 0 until assets.length()) {
-                        val asset = assets.getJSONObject(j)
-                        val assetName = asset.getString("name")
-                        if (assetName == "doom.apk") {
-                            val apkSizeInBytes = asset.getLong("size")
-                            apkSizeInMB = String.format("%.1f", apkSizeInBytes / (1024.0 * 1024.0))
-                            apkDownloadUrl = asset.getString("browser_download_url")
-                            break
-                        }
+                    pickUpdateAsset(assets)?.let { asset ->
+                        val apkSizeInBytes = asset.optLong("size", 0L)
+                        apkSizeInMB = String.format("%.1f", apkSizeInBytes / (1024.0 * 1024.0))
+                        apkDownloadUrl = asset.optString("browser_download_url").orEmpty()
                     }
 
                     if (apkDownloadUrl.isNotEmpty()) {

@@ -301,7 +301,7 @@
     <string name="wrapped_end_create_playlist">Crea tu lista de reproducción Recap</string>
     <string name="wrapped_end_creating_playlist">Creando...</string>
     <string name="wrapped_end_playlist_saved">Lista de reproducción guardada</string>
-    <string name="wrapped_ready_title">¡TU RECAP EST� LISTO!</string>
+    <string name="wrapped_ready_title">¡TU RECAP ESTÁ LISTO!</string>
     <string name="wrapped_ready_subtitle">Es hora de ver lo que te gustó este año.</string>
     <string name="wrapped_thank_you">Gracias por escuchar</string>
     <string name="wrapped_special_thanks">Un agradecimiento especial a MO Agamy por crear doom</string>
@@ -478,7 +478,7 @@
     <string name="palette_rose">Rosa</string>
     <string name="palette_purple">Morado</string>
     <string name="palette_deep_purple">Púrpura intenso</string>
-    <string name="palette_indigo">�ndigo</string>
+    <string name="palette_indigo">Índigo</string>
     <string name="palette_blue">Azul</string>
     <string name="palette_sky_blue">Celeste</string>
     <string name="palette_cyan">Cian</string>
@@ -487,7 +487,7 @@
     <string name="palette_light_green">Verde claro</string>
     <string name="palette_lime">Lima</string>
     <string name="palette_yellow">Amarillo</string>
-    <string name="palette_amber">�mbar</string>
+    <string name="palette_amber">Ámbar</string>
     <string name="palette_orange">Naranja</string>
     <string name="palette_deep_orange">Naranja intenso</string>
     <string name="palette_brown">Marrón</string>

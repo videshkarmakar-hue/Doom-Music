@@ -150,7 +150,7 @@
     <string name="settings_rec_import">Bring your playlists over from another app</string>
     <string name="settings_rec_devices">Play on your TV or another phone</string>
     <string name="customise_title">Customize</string>
-    <string name="customise_nothing_matches">Nothing here matches “%1$s�. Try another word.</string>
+    <string name="customise_nothing_matches">Nothing here matches “%1$s”. Try another word.</string>
     <string name="customise_reset">Reset to default</string>
     <string name="customise_cover_rounding">Cover\nrounding</string>
     <string name="customise_icons">Icons</string>

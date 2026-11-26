@@ -44,8 +44,8 @@
     <string name="module_use_lyrics">Liriknya ikut jadi sumber lirikmu.</string>
     <string name="module_use_look">Tampilannya menggantikan setelan tampilanmu selama aktif, dan setelanmu kembali saat kamu mematikannya.</string>
     <string name="module_test">Uji pemutaran</string>
-    <string name="module_test_body">Menjalankan setiap langkah di ponsel ini dengan “%1$s�: mencari lagu, membuka stream, dan memutar awal lagunya tanpa suara.</string>
-    <string name="module_test_body_drm">Menjalankan setiap langkah di ponsel ini dengan “%1$s�: mencari lagu, membuka stream, meminta lisensi dari Widevine ponsel ini, dan memutar awal lagunya tanpa suara.</string>
+    <string name="module_test_body">Menjalankan setiap langkah di ponsel ini dengan “%1$s”: mencari lagu, membuka stream, dan memutar awal lagunya tanpa suara.</string>
+    <string name="module_test_body_drm">Menjalankan setiap langkah di ponsel ini dengan “%1$s”: mencari lagu, membuka stream, meminta lisensi dari Widevine ponsel ini, dan memutar awal lagunya tanpa suara.</string>
     <string name="module_run_test">Jalankan uji</string>
     <string name="module_testing">Menguji…</string>
     <string name="module_test_passed">Semua berjalan. Dengan %1$s aktif, putar apa saja dan sebuah toast memberi tahu asal setiap lagu.</string>

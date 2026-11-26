@@ -9,6 +9,41 @@ val localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
     localProperties.load(localPropertiesFile.inputStream())
 }
+
+// Stable release/upload signing. keystore.properties is local and gitignored; CI passes the same
+// values as STORE_FILE/STORE_PASSWORD/KEY_ALIAS/KEY_PASSWORD environment variables.
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(keystorePropertiesFile.inputStream())
+}
+
+fun signingValue(property: String, env: String): String? =
+    keystoreProperties.getProperty(property)?.takeIf { it.isNotBlank() }
+        ?: System.getenv(env)?.takeIf { it.isNotBlank() }
+
+val releaseStoreFile = rootProject.file(
+    signingValue("storeFile", "STORE_FILE") ?: "app/keystore/release.keystore"
+)
+val releaseStorePassword = signingValue("storePassword", "STORE_PASSWORD")
+val releaseKeyAlias = signingValue("keyAlias", "KEY_ALIAS")
+val releaseKeyPassword = signingValue("keyPassword", "KEY_PASSWORD")
+val hasReleaseSigning = releaseStoreFile.isFile &&
+    releaseStorePassword != null && releaseKeyAlias != null && releaseKeyPassword != null
+
+// Debug builds must keep working on machines without the upload key. Only release/Play tasks
+// require stable signing.
+val requestedTaskNames = gradle.startParameter.taskNames
+val requestedStableSigning = requestedTaskNames.any { name ->
+    name.contains("Release", ignoreCase = true) || name.contains("Play", ignoreCase = true)
+}
+if (!hasReleaseSigning && requestedStableSigning) {
+    throw GradleException(
+        "Release/Play builds need stable signing. Create app/keystore/release.keystore and " +
+            "keystore.properties (see PLAY_INTERNAL_TESTING.md), or provide STORE_FILE, " +
+            "STORE_PASSWORD, KEY_ALIAS and KEY_PASSWORD."
+    )
+}
 plugins {
     id("com.android.application")
     alias(libs.plugins.hilt)
@@ -27,8 +62,9 @@ extensions.configure<ApplicationExtension> {
         applicationId = "com.videshkarmakar.doom"
         minSdk = 24
         targetSdk = 37
-        versionCode = 73
-        versionName = "8.4.1 build#1259"
+        versionCode = providers.gradleProperty("versionCode").orNull?.toIntOrNull() ?: 1271
+        versionName = providers.gradleProperty("versionName").orNull ?: "8.4.2 build#1271"
+        buildConfigField("Boolean", "PLAY_DISTRIBUTION", "false")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -132,14 +168,15 @@ extensions.configure<ApplicationExtension> {
         }
     }
 
-    // Release signing only works when the CI secrets are present. Locally they are not, which
-    // used to make `assembleRelease` unbuildable and left debug as the only variant anyone ever
-    // ran — and a debug Compose build is several times slower per frame than release, so all
-    // local performance impressions were being formed against the wrong binary.
-    val hasReleaseSigning = System.getenv("STORE_PASSWORD") != null &&
-        System.getenv("KEY_ALIAS") != null &&
-        System.getenv("KEY_PASSWORD") != null &&
-        file("keystore/release.keystore").exists()
+    // Release builds must use the stable upload key. A missing key produces an unsigned build
+    // instead of silently signing with the throwaway debug key, and the play variant refuses to
+    // configure at all without one.
+    if (!hasReleaseSigning) {
+        logger.warn(
+            "Release signing is not configured. Create app/keystore/release.keystore and " +
+                "keystore.properties before building a release or Play artifact."
+        )
+    }
 
     signingConfigs {
         create("persistentDebug") {
@@ -148,12 +185,12 @@ extensions.configure<ApplicationExtension> {
             keyAlias = "androiddebugkey"
             keyPassword = "android"
         }
-        if (hasReleaseSigning) {
-            create("release") {
-                storeFile = file("keystore/release.keystore")
-                storePassword = System.getenv("STORE_PASSWORD")
-                keyAlias = System.getenv("KEY_ALIAS")
-                keyPassword = System.getenv("KEY_PASSWORD")
+        create("release") {
+            if (hasReleaseSigning) {
+                storeFile = releaseStoreFile
+                storePassword = releaseStorePassword
+                keyAlias = releaseKeyAlias
+                keyPassword = releaseKeyPassword
             }
         }
         getByName("debug") {
@@ -174,13 +211,17 @@ extensions.configure<ApplicationExtension> {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            // Fall back to the debug keystore locally so a release-quality build is always
-            // runnable on a dev machine. CI still signs with the real key when secrets exist.
-            signingConfig = if (hasReleaseSigning) {
-                signingConfigs.getByName("release")
-            } else {
-                signingConfigs.getByName("debug")
-            }
+            signingConfig = if (hasReleaseSigning) signingConfigs.getByName("release") else null
+        }
+
+        // Google Play distribution: release-identical output, no self-update permission, no
+        // all-files storage permission, and a build flag that replaces update UI with Play guidance.
+        create("play") {
+            initWith(getByName("release"))
+            isDebuggable = false
+            matchingFallbacks += listOf("release")
+            signingConfig = if (hasReleaseSigning) signingConfigs.getByName("release") else null
+            buildConfigField("Boolean", "PLAY_DISTRIBUTION", "true")
         }
         debug {
             applicationIdSuffix = ".debug"
@@ -324,6 +365,7 @@ composeCompiler {
     val buildingReleaseLike = gradle.startParameter.taskNames.any { name ->
         name.contains("Release", ignoreCase = true) ||
             name.contains("Profileable", ignoreCase = true) ||
+            name.contains("Play", ignoreCase = true) ||
             name.contains("Fast", ignoreCase = true)
     }
     includeSourceInformation.set(!buildingReleaseLike)

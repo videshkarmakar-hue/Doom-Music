@@ -49,8 +49,9 @@ import com.videshkarmakar.doom.core.updater.formatBytes
 import com.videshkarmakar.doom.core.updater.installApk
 import com.videshkarmakar.doom.ui.player.menu.MenuRowSurface
 import com.videshkarmakar.doom.ui.player.menu.MenuSheetSurface
-import kotlinx.coroutines.launch
 import com.videshkarmakar.doom.ui.component.RemoteFocus
+import com.videshkarmakar.doom.ui.theme.InterFontFamily
+import kotlinx.coroutines.launch
 
 private val CardSurface = MenuRowSurface
 
@@ -91,7 +92,6 @@ fun UpdatePromptSheet(
         modifier = modifier,
         wrapHeight = true,
         fullDetent = 0.92f,
-
         dismissEnabled = !downloading,
         revealProvider = onReveal,
     ) { _ ->
@@ -100,92 +100,93 @@ fun UpdatePromptSheet(
                 .verticalScroll(rememberScrollState())
                 .navigationBarsPadding()
                 .padding(horizontal = 24.dp)
-                .padding(top = 12.dp, bottom = 24.dp)
-                .animateContentSize()
+                .padding(top = 8.dp, bottom = 24.dp)
+                .animateContentSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
 
+            // ---- the mark, small and quiet ----
             Box(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier
-                    .size(96.dp)
+                    .size(64.dp)
                     .clip(CircleShape)
-                    .background(CardSurface)
+                    .background(CardSurface),
             ) {
-                Icon(
+                Image(
                     painter = painterResource(R.drawable.ic_doom_mark),
                     contentDescription = null,
-                    tint = Color.White,
-                    modifier = Modifier.size(52.dp),
+                    modifier = Modifier.size(44.dp),
                 )
             }
-
-            Spacer(modifier = Modifier.height(18.dp))
-
-            Text(
-                text = if (userName.isBlank()) "Update available!" else "Update available, $userName!",
-                color = Color.White,
-                fontSize = 17.sp,
-                fontWeight = FontWeight.Bold,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-            )
 
             Spacer(modifier = Modifier.height(16.dp))
 
+            // ---- title + version, nothing else ----
+            Text(
+                text = if (userName.isBlank()) "Update available" else "Update available, $userName",
+                color = Color.White,
+                fontFamily = InterFontFamily,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            Text(
+                text = release.version,
+                color = Color.White.copy(alpha = 0.5f),
+                fontFamily = InterFontFamily,
+                fontSize = 13.sp,
+                fontWeight = FontWeight.Medium,
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // ---- changelog, compact ----
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(18.dp))
+                    .clip(RoundedCornerShape(16.dp))
                     .background(CardSurface)
-                    .padding(16.dp)
+                    .padding(16.dp),
             ) {
-                Text(
-                    text = "What changed on ${release.version}",
-                    color = Color.White,
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold,
-                )
-                Spacer(modifier = Modifier.height(4.dp))
                 ChangelogMarkdown(markdown = release.body)
             }
 
-            Spacer(modifier = Modifier.height(18.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
-            Text(
-                text = "To Be Installed -",
-                color = Color(0xFF8A8A8A),
-                fontSize = 11.sp,
-                fontWeight = FontWeight.SemiBold,
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-
+            // ---- what's going to be installed, one line ----
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(18.dp))
+                    .clip(RoundedCornerShape(16.dp))
                     .background(CardSurface)
-                    .padding(14.dp)
+                    .padding(12.dp),
             ) {
-
                 AppIconImage(
                     modifier = Modifier
-                        .size(48.dp)
-                        .clip(RoundedCornerShape(12.dp)),
+                        .size(40.dp)
+                        .clip(RoundedCornerShape(10.dp)),
                 )
                 Spacer(modifier = Modifier.width(12.dp))
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
                         text = release.apkName ?: "doom.apk",
                         color = Color.White,
-                        fontSize = 14.sp,
-                        fontWeight = FontWeight.Bold,
+                        fontFamily = InterFontFamily,
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.SemiBold,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                     )
                     Text(
                         text = "${BuildConfig.APPLICATION_ID} · ${formatBytes(release.apkSizeBytes)}",
-                        color = Color(0xFF9A9A9A),
+                        color = Color.White.copy(alpha = 0.45f),
+                        fontFamily = InterFontFamily,
                         fontSize = 11.sp,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
@@ -195,10 +196,15 @@ fun UpdatePromptSheet(
 
             error?.let {
                 Spacer(modifier = Modifier.height(10.dp))
-                Text(text = it, color = Color(0xFFE0736B), fontSize = 12.sp)
+                Text(
+                    text = it,
+                    color = Color(0xFFE0736B),
+                    fontFamily = InterFontFamily,
+                    fontSize = 12.sp,
+                )
             }
 
-            Spacer(modifier = Modifier.height(22.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             val animatedProgress by animateFloatAsState(
                 targetValue = progress.floatValue,
@@ -210,7 +216,6 @@ fun UpdatePromptSheet(
                 progress = animatedProgress,
                 label = when {
                     downloading -> "Downloading… ${(animatedProgress * 100).toInt()}%"
-                    release.apkUrl == null -> "No APK in this release"
                     needsPermission -> "Install here"
                     readyToInstall -> "Install here"
                     else -> "Install here"
@@ -220,7 +225,6 @@ fun UpdatePromptSheet(
                     error = null
                     val existing = com.videshkarmakar.doom.core.updater.apkFileFor(context, release)
                     if (com.videshkarmakar.doom.core.updater.isDownloaded(context, release)) {
-
                         startInstall(existing)
                     } else {
                         downloading = true
@@ -237,23 +241,16 @@ fun UpdatePromptSheet(
                 },
             )
 
-            Spacer(modifier = Modifier.height(10.dp))
+            if (release.apkUrl == null) {
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "No direct download for this release.",
+                    color = Color.White.copy(alpha = 0.45f),
+                    fontFamily = InterFontFamily,
+                    fontSize = 11.sp,
+                )
+            }
 
-            PromptButton(
-                enabled = !downloading,
-                label = "Open the web",
-                dimmed = downloading,
-                onClick = { context.openReleaseUrl(release.htmlUrl) },
-            )
-
-            Spacer(modifier = Modifier.height(10.dp))
-
-            PromptButton(
-                enabled = !downloading,
-                label = "no thanks remind me in 24 hour",
-                dimmed = downloading,
-                onClick = onSnooze,
-            )
         }
     }
 }
@@ -270,8 +267,7 @@ private fun PromptButton(
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .fillMaxWidth()
-            .height(56.dp)
-
+            .height(50.dp)
             .clip(RoundedCornerShape(50))
             .background(CardSurface)
             .clickable(
@@ -279,32 +275,23 @@ private fun PromptButton(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = RemoteFocus,
                 onClick = onClick,
-            )
+            ),
     ) {
         if (progress > 0f) {
             Box(
                 modifier = Modifier
-
                     .align(Alignment.CenterStart)
                     .fillMaxHeight()
                     .fillMaxWidth(fraction = progress)
-                    .background(Color(0xFF444444))
+                    .background(Color(0xFF2A2A2E)),
             )
         }
         Text(
             text = label,
-            color = Color.White.copy(alpha = if (dimmed) 0.5f else 1f),
+            color = Color.White.copy(alpha = if (dimmed) 0.4f else 1f),
+            fontFamily = InterFontFamily,
             fontSize = 14.sp,
-            fontWeight = FontWeight.Bold,
-        )
-    }
-}
-
-private fun android.content.Context.openReleaseUrl(url: String) {
-    runCatching {
-        startActivity(
-            android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(url))
-                .addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+            fontWeight = FontWeight.SemiBold,
         )
     }
 }

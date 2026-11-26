@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Restored from the 8.4.2 upstream sources so the about/profile UI links -->
+    <string name="about_actions">Actions</string>
+    <string name="about_and_more">And more \u2192</string>
+    <string name="about_app">About app</string>
+    <string name="about_app_description">Doom Music is a music app but\nkinda cool.</string>
+    <string name="about_cool_contributors">Cool contributors</string>
+    <string name="about_credits">Credits</string>
+    <string name="about_doom_music_version">Doom Music | %1$s</string>
+    <string name="about_github">Doom Music github \u2192</string>
+    <string name="about_license">License</string>
+    <string name="about_meet_lead_dev">Meet the lead dev</string>
+    <string name="about_more_license">More about license</string>
+    <string name="about_support_me">Support me please :3 \u2192</string>
+    <string name="about_we_wont_exist">We wont exist without these guys</string>
+    <string name="artist_saved_albums_of">Albums of %1$s you saved</string>
+    <string name="profile_capsule_about">About app</string>
+    <string name="profile_capsule_update">Update</string>
+    <string name="profile_join_discord">Join doom’s discord server!</string>
+    <string name="profile_meet_dev_contributors">meet da dev and contributors :3</string>
+    <string name="profile_version_about_app">Version &amp; about app</string>
+</resources>

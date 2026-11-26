@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- settings > app info: what doom is, who makes it, and the resources behind it -->
+    <string name="app_info_title">App Info</string>
+    <string name="app_info_tagline">The Next Generation of Music. Without Limits.</string>
+
+    <string name="app_info_intro_one">DOOM is a next-generation music streaming platform and a powerful alternative to Spotify and YouTube Music, specially optimized for low-end devices.</string>
+    <string name="app_info_intro_two">Built with a focus on performance, simplicity, and accessibility, DOOM delivers a smooth and immersive music experience without unnecessary complexity or excessive resource consumption.</string>
+    <string name="app_info_intro_three">Designed to make music streaming faster, lighter, and more accessible, DOOM brings modern music listening to everyone—even on low-end devices.</string>
+
+    <string name="app_info_section_information">APP INFORMATION</string>
+    <string name="app_info_application">Application</string>
+    <string name="app_info_application_value">DOOM</string>
+    <string name="app_info_version">Version</string>
+    <string name="app_info_platform">Platform</string>
+    <string name="app_info_platform_value">Android</string>
+    <string name="app_info_developed_by">Developed &amp; Designed By</string>
+    <string name="app_info_developed_by_value">Videsh Karmakar</string>
+    <string name="app_info_design">UI/UX &amp; Product Design</string>
+    <string name="app_info_design_value">Figma &amp; Stitch</string>
+
+    <string name="app_info_section_about">ABOUT DOOM</string>
+    <string name="app_info_about_one">DOOM is designed to redefine music streaming by combining next-generation features with lightweight performance.</string>
+    <string name="app_info_about_two">Built as an alternative to Spotify and YouTube Music, DOOM focuses on delivering a modern listening experience while remaining smooth and responsive on low-end devices.</string>
+    <string name="app_info_about_three">With an emphasis on speed, simplicity, and an intuitive interface, DOOM makes discovering and enjoying music effortless.</string>
+    <string name="app_info_motto">Powerful. Lightweight. Next Generation.</string>
+    <string name="app_info_motto_note">That philosophy drives every aspect of DOOM\'s design and development.</string>
+
+    <string name="app_info_section_legal">SUPPORT</string>
+    <string name="app_info_legal_intro">DOOM is committed to providing a transparent, secure, and reliable experience for every user. The following resources are available for information and assistance:</string>
+
+    <string name="app_info_open_source">Open Source Licenses</string>
+    <string name="app_info_open_source_desc">View the open-source software and components used within DOOM.</string>
+    <string name="app_info_report">Report a Problem</string>
+    <string name="app_info_report_desc">Report bugs, technical issues, or unexpected behavior.</string>
+
+    <string name="app_info_section_version">VERSION &amp; BUILD</string>
+    <string name="app_info_version_line">DOOM %1$s</string>
+    <string name="app_info_released">Released: To be announced</string>
+    <string name="app_info_copyright_line">© 2026 Videsh Karmakar. All rights reserved.</string>
+</resources>

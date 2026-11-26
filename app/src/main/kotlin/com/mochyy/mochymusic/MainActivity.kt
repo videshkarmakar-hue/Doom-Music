@@ -488,7 +488,7 @@ class MainActivity : ComponentActivity() {
         val context = LocalContext.current
 
         LaunchedEffect(Unit) {
-            if (getAutoUpdateCheckSetting(context)) {
+            if (!BuildConfig.PLAY_DISTRIBUTION && getAutoUpdateCheckSetting(context)) {
 
                 delay(2000L)
                 // Same cached lookup the version sheet and home prompt use (this app's own
@@ -1001,13 +1001,22 @@ class MainActivity : ComponentActivity() {
                                         TopAppBar(
                                             navigationIcon = {},
                                             title = {
-                                                Text(
-                                                    text = currentTitleRes?.let { stringResource(it) } ?: "",
-                                                    style = MaterialTheme.typography.titleLarge.copy(
-                                                        fontWeight = FontWeight.Bold,
-                                                        fontSize = 24.sp
-                                                    ),
-                                                )
+                                                Column {
+                                                    Text(
+                                                        text = currentTitleRes?.let { stringResource(it) } ?: "",
+                                                        style = MaterialTheme.typography.titleLarge.copy(
+                                                            fontWeight = FontWeight.Bold,
+                                                            fontSize = 24.sp
+                                                        ),
+                                                    )
+                                                    Text(
+                                                        text = "© Crafted by VIDESH KARMAKAR",
+                                                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.35f),
+                                                        fontSize = 9.sp,
+                                                        fontWeight = FontWeight.Medium,
+                                                        maxLines = 1,
+                                                    )
+                                                }
                                             },
                                             actions = {
                                                 if (showHistoryButton) {
@@ -1719,6 +1728,7 @@ private const val UpdateSnoozeWindowMillis = 24L * 60L * 60L * 1000L
 
 @Composable
 private fun HomeUpdatePrompt(currentRoute: String?) {
+    if (BuildConfig.PLAY_DISTRIBUTION) return
     if (currentRoute != Screens.Home.route) return
     val (noticeHidden) = rememberPreference(com.videshkarmakar.doom.constants.HideUpdateNoticeKey, defaultValue = false)
     if (noticeHidden) return

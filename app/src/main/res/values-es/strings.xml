@@ -3,7 +3,7 @@
     <string name="home">Inicio</string>
     <string name="songs">Canciones</string>
     <string name="artists">Artistas</string>
-    <string name="albums">�lbumes</string>
+    <string name="albums">Álbumes</string>
     <string name="playlists">Listas de reproducción</string>
     <plurals name="n_selected">
         <item quantity="one">%d seleccionada</item>
@@ -19,14 +19,14 @@
     <string name="forgotten_favorites">Favoritos olvidados</string>
     <string name="keep_listening">Seguir escuchando</string>
     <string name="similar_to">Similares a</string>
-    <string name="new_release_albums">�lbumes recién lanzados</string>
+    <string name="new_release_albums">Álbumes recién lanzados</string>
     <string name="today">Hoy</string>
     <string name="yesterday">Ayer</string>
     <string name="this_week">Esta semana</string>
     <string name="last_week">La semana pasada</string>
     <string name="most_played_songs">Canciones más reproducidas</string>
     <string name="most_played_artists">Artistas más reproducidos</string>
-    <string name="most_played_albums">�lbumes más reproducidos</string>
+    <string name="most_played_albums">Álbumes más reproducidos</string>
     <string name="search">Buscar</string>
     <string name="search_yt_music">Buscar en YouTube Music…</string>
     <string name="search_library">Buscar en la biblioteca…</string>
@@ -36,7 +36,7 @@
     <string name="filter_all">Todo</string>
     <string name="filter_songs">Canciones</string>
     <string name="filter_videos">Vídeos</string>
-    <string name="filter_albums">�lbumes</string>
+    <string name="filter_albums">Álbumes</string>
     <string name="filter_artists">Artistas</string>
     <string name="filter_playlists">Listas de reproducción</string>
     <string name="filter_community_playlists">Listas de la comunidad</string>

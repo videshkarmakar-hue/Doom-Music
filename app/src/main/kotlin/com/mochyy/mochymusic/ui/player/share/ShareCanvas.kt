@@ -95,7 +95,6 @@ internal fun DoomMark(color: Color, size: Float = 14f) {
         Icon(
             painter = painterResource(R.drawable.ic_doom_mark),
             contentDescription = null,
-            tint = color,
             modifier = Modifier.size((size + 2f).dp),
         )
         Spacer(Modifier.width(6.dp))

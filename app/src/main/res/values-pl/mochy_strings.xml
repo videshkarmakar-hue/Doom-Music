@@ -37,7 +37,7 @@
     <string name="cancel">Anuluj</string>
     <string name="no_title">Brak tytułu</string>
     <string name="unknown_artist">Nieznany wykonawca</string>
-    <string name="loading_charts">�adowanie wykresów…</string>
+    <string name="loading_charts">Ładowanie wykresów…</string>
     <string name="album_cover_desc">Okładka</string>
     <string name="sync_playlist">Synchronizuj playlistę</string>
     <string name="player_background_blur">Rozmycie</string>
@@ -64,7 +64,7 @@
     <string name="text_color">Kolor tekstu</string>
     <string name="secondary_text_color">Drugi kolor tekstu</string>
     <string name="similar_content_desc">Automatycznie dodawaj więcej podobnych utworów po osiągnięciu końca kolejki</string>
-    <string name="min_playback_duration_description">Minimalna ilość utworu, który musi zostać odtworzony, zanim zostanie uznany za „odtworzony�</string>
+    <string name="min_playback_duration_description">Minimalna ilość utworu, który musi zostać odtworzony, zanim zostanie uznany za „odtworzony”</string>
     <string name="clear_downloads_dialog">Czy na pewno chcesz wyczyścić wszystkie pobrane pliki?</string>
     <string name="top_music_videos">Najlepsze teledyski</string>
     <string name="sync_disabled">Synchronizacja wyłączona</string>

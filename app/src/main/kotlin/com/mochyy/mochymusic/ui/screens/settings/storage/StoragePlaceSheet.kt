@@ -46,6 +46,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import com.videshkarmakar.doom.BuildConfig
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -186,7 +187,8 @@ private fun PlaceSheetContent(viewModel: StorageViewModel, kind: StoredKind, pic
                     onClick = { pick.picked = place },
                 )
             }
-            ChooseFolderRow(onClick = { folderPicker.launch(null) })
+            // Play builds use app-owned storage only, so they cannot open the all-files folder picker.
+            if (!BuildConfig.PLAY_DISTRIBUTION) ChooseFolderRow(onClick = { folderPicker.launch(null) })
         }
         waiting?.let { place -> AccessCard(place.label, onAllow = ::askForAccess) }
         val failed = step is MoveStep.Failed

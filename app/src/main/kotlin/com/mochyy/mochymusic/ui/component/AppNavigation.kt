@@ -130,6 +130,8 @@ private val RouteOwners: List<Pair<String, String>> = listOf(
     "youtube_login" to "settings",
     "account_import/" to "settings",
     "equalizer" to "settings",
+    "app_info" to "settings",
+    "developer_credit" to "settings",
 )
 
 private fun owningTabRoute(currentRoute: String?, navigationItems: List<Screens>): String? {

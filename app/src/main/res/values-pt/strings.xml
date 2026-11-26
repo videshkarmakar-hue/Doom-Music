@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="home">Início</string>
-    <string name="albums">�lbuns</string>
+    <string name="albums">Álbuns</string>
     <string name="playlists">Listas de reprodução</string>
     <plurals name="n_selected">
         <item quantity="one">%d selecionada</item>
@@ -20,7 +20,7 @@
     <string name="similar_to">Semelhantes</string>
     <string name="today">Hoje</string>
     <string name="yesterday">Ontem</string>
-    <string name="most_played_albums">�lbuns mais reproduzidos</string>
+    <string name="most_played_albums">Álbuns mais reproduzidos</string>
     <string name="search">Pesquisar</string>
     <string name="search_yt_music">Pesquisar no YouTube Music…</string>
     <string name="filter_liked">Gosto</string>
@@ -247,7 +247,7 @@
     <string name="most_played_songs">Músicas mais reproduzidas</string>
     <string name="most_played_artists">Artistas mais reproduzidos</string>
     <string name="filter_videos">Vídeos</string>
-    <string name="filter_albums">�lbuns</string>
+    <string name="filter_albums">Álbuns</string>
     <string name="filter_artists">Artistas</string>
     <string name="filter_playlists">Listas de reprodução</string>
     <string name="from_your_library">Da sua biblioteca</string>

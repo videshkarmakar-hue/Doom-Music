@@ -146,6 +146,7 @@ private val LocalizedSettingsPages = mapOf(
     "Audio Lab" to R.string.settings_audio_lab_category,
     "Modules" to R.string.settings_modules_category,
     "Integrations" to R.string.integrations,
+    "App update" to R.string.app_updates_title,
 )
 
 private val SettingsIndex = listOf(
@@ -262,6 +263,16 @@ private val SettingsIndex = listOf(
     SettingsEntry("Repeat initial setup", "Experimental", "experimental_settings", "onboarding wizard setup"),
     SettingsEntry("Show where songs play from", "Experimental", "experimental_settings", "source banner toast apple music monochrome youtube"),
     SettingsEntry("Force playback", "Experimental", "experimental_settings", "fallback skip error stream failed youtube"),
+
+    // App update
+    SettingsEntry("App update", "App update", AppUpdateSettingsRoute, "update updates upgrade version nightly release channel check download install apk github changelog", R.string.app_updates_title, R.string.app_updates_title),
+
+    // App info
+    SettingsEntry("App Info", "App Info", AppInfoRoute, "about app info version build platform developer designer open source licenses report problem credits", R.string.app_info_title, R.string.app_info_title),
+
+    // Developer credit
+    SettingsEntry("Developer Credits", "Developer Credit", DeveloperCreditRoute, "developer credit credits author creator videsh karmakar designer figma stitch acknowledgement thanks copyright platform about", R.string.developer_credit_title, R.string.developer_credit_title),
+    SettingsEntry("Report Problems", "Report Problems", ReportProblemsRoute, "report problem bug issue contact email instagram support help", R.string.report_problems_title, R.string.report_problems_title),
 )
 
 internal val BubbleColor = Color(0xFF1C1C1E)
@@ -303,8 +314,6 @@ fun DoomSettingsScreen(navController: NavController, pane: SettingsPane? = null)
     }
 
     val context = LocalContext.current
-    // picked again each time the list opens, so a tip that was just followed stops showing
-    val recommendations = remember(context) { pickRecommendations(context) }
     val results = remember(query.text, context) {
         val q = query.text.trim()
         if (q.isBlank()) {
@@ -429,21 +438,6 @@ fun DoomSettingsScreen(navController: NavController, pane: SettingsPane? = null)
                         .fillMaxWidth()
                         .graphicsLayer { alpha = contentAlpha }
                 ) {
-                    RecommendedCard(recommendations = recommendations, open = open)
-
-                    Spacer(modifier = Modifier.height(18.dp))
-
-                    // Divider
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 20.dp)
-                            .height(0.8.dp)
-                            .background(Color.White.copy(alpha = 0.1f))
-                    )
-
-                    Spacer(modifier = Modifier.height(18.dp))
-
                     // Separate Bubble Pills for Categories (No outlines, individually bubble-wrapped)
                     Column(
                         modifier = Modifier
@@ -515,8 +509,36 @@ fun DoomSettingsScreen(navController: NavController, pane: SettingsPane? = null)
                             onClick = { open("modules") }
                         )
 
+                        CategoryBubble(
+                            title = stringResource(R.string.app_updates_title),
+                            iconRes = R.drawable.update,
+                            selected = selected == AppUpdateSettingsRoute,
+                            onClick = { open(AppUpdateSettingsRoute) }
+                        )
+
                         // pages the modules that are on bring to settings, right under modules
                         com.videshkarmakar.doom.ui.screens.settings.modules.ModuleSettingsPages(open = open, selected = selected)
+
+                        CategoryBubble(
+                            title = stringResource(R.string.app_info_title),
+                            iconRes = R.drawable.info,
+                            selected = selected == AppInfoRoute,
+                            onClick = { open(AppInfoRoute) }
+                        )
+
+                        CategoryBubble(
+                            title = stringResource(R.string.developer_credit_title),
+                            iconRes = R.drawable.person_dev,
+                            selected = selected == DeveloperCreditRoute,
+                            onClick = { open(DeveloperCreditRoute) }
+                        )
+
+                        CategoryBubble(
+                            title = stringResource(R.string.report_problems_title),
+                            iconRes = R.drawable.bug_report,
+                            selected = selected == ReportProblemsRoute,
+                            onClick = { open(ReportProblemsRoute) }
+                        )
                     }
                 }
             }

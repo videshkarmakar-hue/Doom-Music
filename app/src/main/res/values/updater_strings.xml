@@ -52,6 +52,20 @@
     <string name="settings_check_updates_title">Check for updates</string>
     <string name="later">Later</string>
 
+    <!-- settings > app update page -->
+    <string name="app_update_intro">Updates come from this project\'s GitHub releases.</string>
+    <string name="app_update_version_title">Current version</string>
+    <string name="app_update_last_checked">Last checked</string>
+    <string name="app_update_never_checked">Not checked yet</string>
+    <string name="app_update_channel">Update channel</string>
+    <string name="app_update_channel_release">Release builds only</string>
+    <string name="app_update_channel_nightly">Nightlies and prereleases too</string>
+    <string name="app_update_channel_release_label">Release</string>
+    <string name="app_update_channel_nightly_label">Nightly</string>
+    <string name="app_update_open_releases">Open releases on GitHub</string>
+    <string name="app_update_open_releases_desc">Download any build by hand</string>
+    <string name="update_no_direct_download">This release has no APK attached, so it can\'t be installed from inside the app.</string>
+
 
     <string name="doom_music_title">doom MUSIC</string>
     <string name="developer_section">DEVELOPER</string>

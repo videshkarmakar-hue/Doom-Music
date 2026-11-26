@@ -4,7 +4,7 @@ set -e
 # build defaults
 BUILD_ATTEMPT_FILE=".build_number"
 if [ ! -f "$BUILD_ATTEMPT_FILE" ]; then
-    echo "841" > "$BUILD_ATTEMPT_FILE"
+    echo "1260" > "$BUILD_ATTEMPT_FILE"
 fi
 
 FLAVOR="foss"
@@ -170,9 +170,9 @@ if [ "$SKIP_BUILD" = false ]; then
 
     # update beta notice
     if [ -f "$BETA_NOTICE_FILE" ]; then
-        NOTICE_TITLE="mochy build #$BUILD_ATTEMPT $VARIANT"
+        NOTICE_TITLE="DOOM build #$BUILD_ATTEMPT $VARIANT"
         if [ -n "$CUSTOM_DATE" ]; then
-            NOTICE_TITLE="mochy build #$BUILD_ATTEMPT $VARIANT ($CUSTOM_DATE)"
+            NOTICE_TITLE="DOOM build #$BUILD_ATTEMPT $VARIANT ($CUSTOM_DATE)"
         fi
         sed -i '' -e "s/text = \"Mochy DEV PREV\"/text = \"$NOTICE_TITLE\"/g" "$BETA_NOTICE_FILE"
         sed -i '' -e "s/text = \"mochy build #[0-9]* .*\"/text = \"$NOTICE_TITLE\"/g" "$BETA_NOTICE_FILE"
@@ -217,6 +217,7 @@ if [ "$PUBLISH_RELEASE" = true ]; then
     echo "Preparing GitHub release on 'dev' tag..."
     OUTPUT_DIR="apk-generated"
     mkdir -p "$OUTPUT_DIR"
+    rm -f "$OUTPUT_DIR"/Doom-Music-*.apk 2>/dev/null || true
 
     # format apk names
     format_apk() {
@@ -229,28 +230,28 @@ if [ "$PUBLISH_RELEASE" = true ]; then
         fi
     }
 
-    format_apk "*universal-${FLAVOR}-release.apk" "mochy-$VERSION_LABEL-universal.apk"
-    format_apk "*arm64-${FLAVOR}-release.apk" "mochy-$VERSION_LABEL-arm64-v8a.apk"
-    format_apk "*armeabi-${FLAVOR}-release.apk" "mochy-$VERSION_LABEL-armeabi-v7a.apk"
-    format_apk "*x86_64-${FLAVOR}-release.apk" "mochy-$VERSION_LABEL-x86_64.apk"
-    format_apk "*x86-${FLAVOR}-release.apk" "mochy-$VERSION_LABEL-x86.apk"
+    format_apk "*universal-${FLAVOR}-${VARIANT}.apk" "Doom-Music-universal-$VARIANT-b$BUILD_ATTEMPT.apk"
+    format_apk "*arm64-${FLAVOR}-${VARIANT}.apk" "Doom-Music-arm64-$VARIANT-b$BUILD_ATTEMPT.apk"
+    format_apk "*armeabi-${FLAVOR}-${VARIANT}.apk" "Doom-Music-armeabi-$VARIANT-b$BUILD_ATTEMPT.apk"
+    format_apk "*x86_64-${FLAVOR}-${VARIANT}.apk" "Doom-Music-x86_64-$VARIANT-b$BUILD_ATTEMPT.apk"
+    format_apk "*x86-${FLAVOR}-${VARIANT}.apk" "Doom-Music-x86-$VARIANT-b$BUILD_ATTEMPT.apk"
 
     if [ -z "$CHANGELOG_TEXT" ]; then
-        CHANGELOG_TEXT="mochy $VERSION_LABEL ($BUILD_ATTEMPT)"
+        CHANGELOG_TEXT="DOOM $VERSION_LABEL ($BUILD_ATTEMPT)"
     fi
 
     # a nightly is its own prerelease, tagged by its version, so the app's nightly channel can tell them apart
     if [ -n "$NIGHTLY_NUMBER" ]; then
         TAG="nightly-$VERSION_LABEL"
-        TITLE="Mochy $VERSION_LABEL nightly ($BUILD_ATTEMPT)"
+        TITLE="DOOM $VERSION_LABEL nightly ($BUILD_ATTEMPT)"
         echo "Publishing nightly prerelease: '$TITLE'..."
         git tag -f "$TAG" main 2>/dev/null || true
         git push -f origin "$TAG" 2>/dev/null || true
         if gh release view "$TAG" >/dev/null 2>&1; then
             gh release edit "$TAG" --title "$TITLE" --notes "$CHANGELOG_TEXT" --prerelease
-            gh release upload "$TAG" "$OUTPUT_DIR"/mochy-"$VERSION_LABEL"-*.apk --clobber
+            gh release upload "$TAG" "$OUTPUT_DIR"/Doom-Music-*.apk --clobber
         else
-            gh release create "$TAG" "$OUTPUT_DIR"/mochy-"$VERSION_LABEL"-*.apk --title "$TITLE" --notes "$CHANGELOG_TEXT" --prerelease
+            gh release create "$TAG" "$OUTPUT_DIR"/Doom-Music-*.apk --title "$TITLE" --notes "$CHANGELOG_TEXT" --prerelease
         fi
         echo "Nightly published to https://github.com/realidkroo/Mochy-Music/releases/tag/$TAG"
         PUBLISH_RELEASE=false
@@ -263,14 +264,14 @@ if [ "$PUBLISH_RELEASE" = true ]; then
     git tag -f dev main 2>/dev/null || true
     git push -f origin dev 2>/dev/null || true
 
-    TITLE="mochy $BASE_VERSION ($BUILD_ATTEMPT)"
+    TITLE="DOOM $BASE_VERSION ($BUILD_ATTEMPT)"
     echo "Publishing GitHub release: '$TITLE'..."
 
     if gh release view dev >/dev/null 2>&1; then
         gh release edit dev --title "$TITLE" --notes "$CHANGELOG_TEXT" --prerelease
-        gh release upload dev "$OUTPUT_DIR"/mochy-"$BASE_VERSION"-*.apk --clobber
+        gh release upload dev "$OUTPUT_DIR"/Doom-Music-*.apk --clobber
     else
-        gh release create dev "$OUTPUT_DIR"/mochy-"$BASE_VERSION"-*.apk --title "$TITLE" --notes "$CHANGELOG_TEXT" --prerelease
+        gh release create dev "$OUTPUT_DIR"/Doom-Music-*.apk --title "$TITLE" --notes "$CHANGELOG_TEXT" --prerelease
     fi
 
     echo "Release successfully published to https://github.com/realidkroo/Mochy-Music/releases/tag/dev"

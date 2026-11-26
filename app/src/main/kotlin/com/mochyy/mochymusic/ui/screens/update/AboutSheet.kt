@@ -1,20 +1,36 @@
-//
-// About sheet - about section removed
-//
+// about app, upstream credits and license sheets pushed from the version sheet or the doom page
 
 package com.videshkarmakar.doom.ui.screens.update
 
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.weight
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -29,7 +45,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
@@ -165,7 +183,59 @@ private val MoreCredits =
         ),
     )
 
-// this guy promote the app
+private val Licenses =
+    listOf(
+        LicenseEntry(
+            tag = "GPL-3.0",
+            title = "Doom Music · GNU General Public License v3.0",
+            subtitle = "Free and open source software, source code on GitHub",
+            url = "$GithubRepoUrl/blob/main/LICENSE",
+        ),
+        LicenseEntry(
+            tag = "GPL-3.0",
+            title = "ViviMusic · GNU General Public License v3.0",
+            subtitle = "by vivizzz007 · base project this app was forked from",
+            url = "https://github.com/vivizzz007/vivi-music/blob/main/LICENSE",
+        ),
+        LicenseEntry(
+            tag = "GPL-3.0",
+            title = "Metrolist · GNU General Public License v3.0",
+            subtitle = "by Mostafa Alagamy · base framework",
+            url = "https://github.com/mostafaalagamy/Metrolist/blob/main/LICENSE",
+        ),
+        LicenseEntry(
+            tag = "GPL-3.0",
+            title = "SimpMusic · GNU General Public License v3.0",
+            subtitle = "by maxrave-dev · lyrics provider integration",
+            url = "https://github.com/maxrave-dev/SimpMusic/blob/dev/LICENSE",
+        ),
+        LicenseEntry(
+            tag = "GPL-3.0",
+            title = "ArchiveTune · GNU General Public License v3.0",
+            subtitle = "by Rukamori · design and architectural inspiration",
+            url = "https://github.com/rukamori/ArchiveTune/blob/main/LICENSE",
+        ),
+        LicenseEntry(
+            tag = "GPL-3.0",
+            title = "RiMusic · GNU General Public License v3.0",
+            subtitle = "by fast4x · InnerTube API wrapper",
+            url = "https://github.com/fast4x/RiMusic/blob/master/LICENSE",
+        ),
+        LicenseEntry(
+            tag = "MIT",
+            title = "LRCLIB · MIT License",
+            subtitle = "by tranxuanthang · synchronized lyrics database",
+            url = "https://github.com/tranxuanthang/lrclib/blob/main/LICENSE",
+        ),
+        LicenseEntry(
+            tag = "MIT",
+            title = "AutoEq · MIT License",
+            subtitle = "by Jaakko Pasanen · headphone correction profiles",
+            url = "https://github.com/jaakkopasanen/AutoEq/blob/master/LICENSE",
+        ),
+    )
+
+//  this guy promote the app
 private val ExtraContributors =
     listOf(
         ContributorEntry(
@@ -246,7 +316,8 @@ private fun PopupSheetState.showCreditsSheet() {
     }
 }
 
-private fun PopupSheetState.showLicenseSheet() {
+// also the settings list's App Info page's "Open Source Licenses" row, so the licences are listed in one place
+internal fun PopupSheetState.showLicenseSheet() {
     val popup = this
     show(buttonBar = { SheetPrimaryButton(text = stringResource(R.string.done), onClick = popup::dismiss) }) {
         LicenseSheetContent()
@@ -271,7 +342,7 @@ private fun ColumnScope.AboutSheetContent(
     Box(Modifier.fillMaxWidth()) {
         // zero-size layout places the spinning ring behind the top icon without pushing the column down
         VersionRing(
-            text = "MOCHY $installed",
+            text = "DOOM $installed",
             scrollProgress = { scrollState.value / ringScrollRangePx },
             modifier =
                 Modifier
@@ -320,7 +391,7 @@ private fun ColumnScope.AboutSheetContent(
                 }
                 Spacer(Modifier.height(14.dp))
                 Text(
-                    text = "Doom Music",
+                    text = stringResource(R.string.about_app),
                     fontSize = 36.sp,
                     lineHeight = 38.sp,
                     fontWeight = FontWeight.Bold,
@@ -328,7 +399,7 @@ private fun ColumnScope.AboutSheetContent(
                 )
                 Spacer(Modifier.height(4.dp))
                 Text(
-                    text = "Version $installed",
+                    text = stringResource(R.string.about_doom_music_version, installed),
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold,
                     letterSpacing = (-0.4).sp,
@@ -346,7 +417,7 @@ private fun ColumnScope.AboutSheetContent(
                         .padding(horizontal = 18.dp, vertical = 16.dp),
             ) {
                 Text(
-                    text = "Doom Music is a music player for Android.",
+                    text = stringResource(R.string.about_app_description),
                     fontSize = 15.sp,
                     lineHeight = 19.sp,
                     fontWeight = FontWeight.Bold,
@@ -355,21 +426,21 @@ private fun ColumnScope.AboutSheetContent(
             }
 
             Spacer(Modifier.height(18.dp))
-            SectionHeader("Actions")
+            SectionHeader(stringResource(R.string.about_actions))
             Spacer(Modifier.height(8.dp))
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 AboutPillRow(
-                    text = "Support me",
+                    text = stringResource(R.string.about_support_me),
                     onClick = { popup.showSupportSheet() },
                 )
                 AboutPillRow(
-                    text = "GitHub",
+                    text = stringResource(R.string.about_github),
                     onClick = { context.openUrl(GithubRepoUrl) },
                 )
             }
 
             Spacer(Modifier.height(18.dp))
-            SectionHeader("Lead Developer")
+            SectionHeader(stringResource(R.string.about_meet_lead_dev))
             Spacer(Modifier.height(8.dp))
             Column(
                 modifier =
@@ -392,7 +463,7 @@ private fun ColumnScope.AboutSheetContent(
             }
 
             Spacer(Modifier.height(18.dp))
-            SectionHeader("Credits")
+            SectionHeader(stringResource(R.string.about_we_wont_exist))
             Spacer(Modifier.height(8.dp))
             Column(
                 modifier =
@@ -420,15 +491,15 @@ private fun ColumnScope.AboutSheetContent(
             )
 
             Spacer(Modifier.height(18.dp))
-            SectionHeader("License")
+            SectionHeader(stringResource(R.string.about_license))
             Spacer(Modifier.height(8.dp))
             AboutCardButton(
-                text = "More license",
+                text = stringResource(R.string.about_more_license),
                 onClick = { popup.showLicenseSheet() },
             )
 
             Spacer(Modifier.height(18.dp))
-            SectionHeader("Contributors")
+            SectionHeader(stringResource(R.string.about_cool_contributors))
             Spacer(Modifier.height(8.dp))
             Column(
                 modifier =
@@ -464,7 +535,7 @@ private fun ColumnScope.CreditsSheetContent() {
     ) {
         Spacer(Modifier.height(8.dp))
         Text(
-            text = "Credits",
+            text = stringResource(R.string.about_credits),
             fontSize = 36.sp,
             lineHeight = 38.sp,
             fontWeight = FontWeight.Bold,
@@ -504,7 +575,7 @@ private fun ColumnScope.LicenseSheetContent() {
     ) {
         Spacer(Modifier.height(8.dp))
         Text(
-            text = "License",
+            text = stringResource(R.string.about_license),
             fontSize = 36.sp,
             lineHeight = 38.sp,
             fontWeight = FontWeight.Bold,
@@ -683,7 +754,7 @@ private fun AndMoreRow(
         }
         Spacer(Modifier.width(12.dp))
         Text(
-            text = "And more",
+            text = stringResource(R.string.about_and_more),
             fontSize = 15.sp,
             fontWeight = FontWeight.Bold,
             letterSpacing = (-0.4).sp,

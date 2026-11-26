@@ -70,7 +70,7 @@ internal fun TvDoomScreen(profile: TvProfile) {
     val first = remember { FocusRequester() }
     LaunchedEffect(Unit) { runCatching { first.requestFocus() } }
 
-    val tiles = listOf(
+    val tiles = listOfNotNull(
         TvDoomTile(
             "phone",
             stringResource(R.string.tv_your_phone),
@@ -85,9 +85,11 @@ internal fun TvDoomScreen(profile: TvProfile) {
             stringResource(if (phoneControl) R.string.tv_on else R.string.tv_off),
             R.drawable.sync,
         ) { TvControl.setAllowed(!phoneControl) },
-        TvDoomTile("updates", stringResource(R.string.tv_doom_updates), stringResource(R.string.tv_doom_version, BuildConfig.VERSION_NAME), R.drawable.sync) {
-            popup.showUpdateSheet(updateState)
-        },
+        if (!BuildConfig.PLAY_DISTRIBUTION) {
+            TvDoomTile("updates", stringResource(R.string.tv_doom_updates), stringResource(R.string.tv_doom_version, BuildConfig.VERSION_NAME), R.drawable.sync) {
+                popup.showUpdateSheet(updateState)
+            }
+        } else null,
         TvDoomTile("support", stringResource(R.string.tv_doom_support), stringResource(R.string.tv_doom_support_detail), R.drawable.favorite) {
             popup.showDonateSheet()
         },

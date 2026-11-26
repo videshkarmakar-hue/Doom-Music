@@ -1,4 +1,4 @@
-// the "support doom's development" sheet: the auto prompt, help us! on the version sheet
+// the "support doom's development" sheet: the auto prompt, help us! on the version sheet, and support me on about app all open this
 
 package com.videshkarmakar.doom.ui.screens.donate
 

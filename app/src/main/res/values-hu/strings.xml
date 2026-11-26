@@ -184,7 +184,7 @@
     <string name="audio_quality_auto">Automata</string>
     <string name="audio_quality_high">Magas</string>
     <string name="audio_quality_low">Gyenge</string>
-    <string name="persistent_queue">�llandó lista</string>
+    <string name="persistent_queue">Állandó lista</string>
     <string name="skip_silence">Csend átugrása</string>
     <string name="audio_normalization">Hang normalizálása</string>
     <string name="equalizer">Hangszínszabályzó</string>

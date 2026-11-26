@@ -603,7 +603,6 @@ private fun StoryLogo(s: StoryState) {
     Icon(
         painter = painterResource(R.drawable.ic_doom_mark),
         contentDescription = null,
-        tint = Color.White,
         modifier = Modifier
             .requiredSize(31.dp, 34.dp)
             .graphicsLayer {

@@ -531,7 +531,6 @@ private fun HomeShell() {
             Icon(
                 painter = painterResource(R.drawable.ic_doom_mark),
                 contentDescription = "Doom",
-                tint = Color.White,
                 modifier = Modifier
                     .launchMarkTarget()
                     .size(HomeMarkWidth, HomeMarkHeight)
@@ -1807,7 +1806,6 @@ fun HomeScreen(
                         Icon(
                             painter = painterResource(R.drawable.ic_doom_mark),
                             contentDescription = "Doom",
-                            tint = Color.White,
                             modifier = Modifier
                                 .launchMarkTarget()
                                 .size(HomeMarkWidth, HomeMarkHeight)

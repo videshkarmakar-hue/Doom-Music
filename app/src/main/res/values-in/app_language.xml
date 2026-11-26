@@ -32,7 +32,7 @@
     <string name="settings_audio_lab_category">Lab Audio</string>
     <string name="settings_modules_category">Modul</string>
     <string name="settings_recommended_item">Pengaturan yang disarankan</string>
-    <string name="settings_nothing_matches">Tidak ada hasil untuk “%1$s�.</string>
+    <string name="settings_nothing_matches">Tidak ada hasil untuk “%1$s”.</string>
     <string name="settings_search_placeholder">Cari pengaturan</string>
     <string name="settings_clear_search">Hapus pencarian</string>
     <string name="library_local_search">Cari musik lokal Anda</string>

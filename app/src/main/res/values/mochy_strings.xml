@@ -908,17 +908,17 @@
     <string-array name="welcome_words" translatable="false">
         <item>WELCOME</item>
         <item>SELAMAT DATANG</item>
-        <item>よ���</item>
+        <item>ようこそ</item>
         <item>欢迎</item>
-        <item>환�합니다</item>
+        <item>환영합니다</item>
         <item>BIENVENIDO</item>
         <item>BIENVENUE</item>
         <item>WILLKOMMEN</item>
         <item>BENVENUTO</item>
         <item>BEM-VINDO</item>
-        <item>ДОБРО ПОЖ�ЛОВ�ТЬ</item>
+        <item>ДОБРО ПОЖАЛОВАТЬ</item>
         <item>أهلاً وسهلاً</item>
-        <item>स�वागत है</item>
+        <item>स्वागत है</item>
         <item>ยินดีต้อนรับ</item>
         <item>CHÀO MỪNG</item>
         <item>HOŞ GELDİNİZ</item>

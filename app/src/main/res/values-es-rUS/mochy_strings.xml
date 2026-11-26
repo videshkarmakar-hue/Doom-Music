@@ -27,7 +27,7 @@
     <string name="show_liked_playlist">Mostrar \"Mis me gusta\"</string>
     <string name="show_downloaded_playlist">Mostrar \"Música descargada\"</string>
     <string name="show_top_playlist">Mostrar \"Top de reproducción\"</string>
-    <string name="show_cached_playlist">Mostrar la lista de reproducción “En caché�</string>
+    <string name="show_cached_playlist">Mostrar la lista de reproducción “En caché”</string>
     <string name="enable_similar_content">Habilitar contenido similar</string>
     <string name="import_online">Importar una lista \"m3u\"</string>
     <string name="import_csv">Importar una lista \"csv\"</string>
@@ -330,7 +330,7 @@
     <string name="wrapped_end_playlist_saved">Lista de reproducción guardada</string>
     <string name="wrapped_logo_content_description">Logo de doom</string>
     <string name="wrapped_year">2025</string>
-    <string name="wrapped_ready_title">¡TU RECAP EST� LISTO!</string>
+    <string name="wrapped_ready_title">¡TU RECAP ESTÁ LISTO!</string>
     <string name="wrapped_ready_subtitle">Hora de ver lo que te gustó este año.</string>
     <string name="wrapped_thank_you">Gracias por escuchar</string>
     <string name="wrapped_special_thanks">Agradecimiento especial a MO Agamy por crear doom</string>
@@ -568,7 +568,7 @@
     <string name="palette_light_green">Verde Claro</string>
     <string name="palette_lime">Verde Lima</string>
     <string name="palette_yellow">Amarillo</string>
-    <string name="palette_amber">�mbar</string>
+    <string name="palette_amber">Ámbar</string>
     <string name="palette_orange">Naranja</string>
     <string name="palette_deep_orange">Naranja Intenso</string>
     <string name="palette_brown">Café</string>

@@ -11,9 +11,9 @@
     <string name="update_status_new_update">New update!</string>
     <string name="update_action_update_now">UPDATE NOW</string>
     <string name="update_status_looking">Looking for updates</string>
-    <string name="update_status_latest">You're on the latest</string>
+    <string name="update_status_latest">You\'re on the latest</string>
     <string name="update_status_all_good">All good</string>
-    <string name="update_status_failed">Couldn't check for updates</string>
+    <string name="update_status_failed">Couldn\'t check for updates</string>
     <string name="update_status_offline">Offline?</string>
     <string name="update_action_try_again">TRY AGAIN</string>
     <string name="update_install_permission_error">Allow "Install unknown apps" for doom, then tap Install here again.</string>
@@ -33,14 +33,14 @@
     <string name="artist_link_label">Artist Link</string>
     <string name="artist_top_songs">Top songs</string>
     <string name="artist_albums">Albums</string>
-    <string name="artist_singles_eps">Singles & EPs</string>
+    <string name="artist_singles_eps">Singles &amp; EPs</string>
     <string name="artist_videos">Videos</string>
     <string name="artist_concert">Concert</string>
     <string name="artist_featured_on">Featured on</string>
     <string name="artist_similar">Similar Artist</string>
     <string name="artist_in_your_library">In your library</string>
     <string name="artist_about">About %1$s</string>
-    <string name="artist_load_failed">Couldn't load this artist. Tap to try again</string>
+    <string name="artist_load_failed">Couldn\'t load this artist. Tap to try again</string>
 
     <!-- Playlist Screens -->
     <string name="playlist_removed_song_from">Removed %1$s from %2$s</string>
@@ -79,13 +79,13 @@
     <string name="suggestion_search_desc">Search</string>
     <string name="suggestion_system">System</string>
     <string name="suggestion_system_default">System Default</string>
-    <string name="suggestion_countries_regions">Countries & Regions</string>
+    <string name="suggestion_countries_regions">Countries &amp; Regions</string>
     <string name="suggestion_selected_desc">Selected</string>
 
     <!-- Donate Sheet -->
     <string name="donate_dismiss_button">what no i dont want to</string>
     <string name="donate_thank_you_title">Arigatou! :3</string>
-    <string name="donate_subtitle">Here's a way to support and donate to us!</string>
+    <string name="donate_subtitle">Here\'s a way to support and donate to us!</string>
     <string name="donate_kofi">Support us on Ko-fi</string>
     <string name="donate_sociabuzz">Support us on SociaBuzz</string>
     <string name="donate_sociabuzz_desc">Recommended for some SEA and LATAM countries</string>
@@ -98,5 +98,5 @@
     <string name="album_other_versions">Other versions</string>
     <string name="album_releases_for_you">Releases for you</string>
     <string name="album_explicit_tag">Explicit</string>
-    <string name="album_load_failed">Couldn't load this album. Tap to try again</string>
+    <string name="album_load_failed">Couldn\'t load this album. Tap to try again</string>
 </resources>

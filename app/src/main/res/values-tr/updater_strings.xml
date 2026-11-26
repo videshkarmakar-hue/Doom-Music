@@ -49,8 +49,7 @@
     <string name="auto_update_check_subtitle">Güncelleme ekranını açtığınızda otomatik olarak güncellemeleri kontrol et</string>
     <string name="update_notifications">Güncelleme bildirimleri</string>
     <string name="update_notifications_subtitle">Yeni bir güncelleme bulunduğunda bir bildirim göster</string>
-
-
+    <string name="later">Later</string>
     <string name="doom_music_title">doom MUSIC</string>
     <string name="developer_section">GELİŞTİRİCİ</string>
     <string name="collaborator_section">İŞBİRLİKÇİ</string>

@@ -404,6 +404,22 @@ fun NavGraphBuilder.navigationBuilder(
         com.videshkarmakar.doom.ui.screens.settings.AppBehaviourSettingsScreen(navController = navController)
     }
 
+    composable(com.videshkarmakar.doom.ui.screens.settings.AppUpdateSettingsRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.AppUpdateSettingsScreen(navController = navController)
+    }
+
+    composable(com.videshkarmakar.doom.ui.screens.settings.AppInfoRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.AppInfoScreen(navController = navController)
+    }
+
+    composable(com.videshkarmakar.doom.ui.screens.settings.DeveloperCreditRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.DeveloperCreditScreen(navController = navController)
+    }
+
+    composable(com.videshkarmakar.doom.ui.screens.settings.ReportProblemsRoute) {
+        com.videshkarmakar.doom.ui.screens.settings.ReportProblemsScreen(navController = navController)
+    }
+
     composable(com.videshkarmakar.doom.ui.screens.settings.PlaybackSettingsRoute) {
         com.videshkarmakar.doom.ui.screens.settings.PlaybackSettingsScreen(navController = navController)
     }

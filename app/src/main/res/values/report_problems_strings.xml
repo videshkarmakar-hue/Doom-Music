@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- settings > report problems: contact the developer directly -->
+    <string name="report_problems_title">Report Problems</string>
+    <string name="report_problems_intro">Found a bug or have an issue? Reach out to the developer directly.</string>
+    <string name="report_problems_section_contact">CONTACT</string>
+    <string name="report_problems_email">Email</string>
+    <string name="report_problems_email_desc">videshkarmakar@gmail.com</string>
+    <string name="report_problems_instagram">Instagram</string>
+    <string name="report_problems_instagram_desc">@code.red_videsh</string>
+</resources>
